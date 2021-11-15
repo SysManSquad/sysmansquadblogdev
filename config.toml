@@ -1,0 +1,105 @@
+baseurl = "https://www.sysmansquad.com"
+title = "Systems Management Squad"
+theme = "asquaredozen_theme"
+languageCode = "en-us"
+newContentEditor = "code"
+googleAnalytics = "G-XXZR1RSQYX"
+disableKinds = ["taxonomy", "taxonomyTerm"]
+
+[outputs]
+  home = ["HTML", "RSS"]
+
+[params]
+  header_image = "img/SysManSquad-HorizontalColor-Logo.png"
+  SEOTitle = "SysManSquad | Systems Management Squad"
+  description = "A community blog and subsidiary of WinAdmins.io"
+  keyword = "ConfigMgr Microsoft Intune Windows WinAdmins"
+  slogan = "Just Write Something"
+  AuthorName = "WinAdmins"
+  images = "SysManSquad-HorizontalColor-Logo.png"
+  title = "SysManSquad | Systems Management Squad"
+# Include any custom CSS and/or JS files, url or relative to /static folder
+  custom_css = ["css/custom.css"]
+  custom_js = ["js/custom.js"]
+
+[params.utterances]
+    src="https://utteranc.es/client.js"
+    repo="SysManSquad/sysmansquadblog"
+    issueterm="title"
+    label="blog comment"
+    theme="github-light"
+    crossorigin="anonymous"
+
+[menu]
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 1
+  [[menu.main]]
+    identifier = "gh"
+    name = "GitHub"
+    url = "https://github.com/SysManSquad"
+    weight = 2
+  [[menu.main]]
+    identifier = "jts"
+    name = "Join the Squad"
+    url = "/jointhesquad/"
+    weight = 3
+  [[menu.main]]
+    identifier = "mts"
+    name = "Meet the Squad"
+    url = "/meetthesquad/"
+    weight = 4
+  [[menu.main]]
+    name = "MORE>"    
+    identifier = "more"
+    weight = 5
+  [[menu.main]]
+    identifier = "contact"
+    name = "Contact"
+    url = "/contact/"
+    parent = "more"
+
+[markup]
+    [markup.highlight]
+      anchorLineNos = true
+      codeFences = true
+      guessSyntax = true
+      hl_Lines = ""
+      lineAnchors = ""
+      lineNoStart = 1
+      lineNos = true
+      lineNumbersInTable = true
+      noClasses = true
+      style = "github"
+      tabWidth = 4
+
+
+
+  #omit_categories = false
+
+  # Sidebar settings
+  #sidebar_about_description = "Microsoft MVP - Enterprise Mobility"
+  #sidebar_avatar = "img/"      # use absolute URL, seeing it's used in both `/` and `/about/`
+  #sidebar_avatar = "img/"      # use absolute URL, seeing it's used in both `/` and `/about/`
+
+  #[params.social]
+  #rss            = true 
+  #email          = "youremail@gmail.com"
+  #facebook      = "full profile url in facebook"
+  #googleplus    = "full profile url in googleplus"
+  #twitter       = "https://www/twitter.com/AdamGrossTX"
+  #linkedin       = "https://www.linkedin.com/in/yourlinkedinid"
+  #stackoverflow  = "https://stackoverflow.com/users/yourstackoverflowid"
+  #instagram     = "full profile url in instagram"
+  #github         = "https://github.com/AdamGrossTX"
+  #wechat         = "your wechat qr code image"
+  #medium         = "full profile url in medium"
+  #pinterest     = "full profile url in pinterest"
+  #reddit        = "full profile url in reddit"
+  #gitlab        = "full profile url in gitlab"
+  #mastodon      = "full profile url in mastodon"
+  #keybase       = "full profile url in keybase"
+  #xing          = "https://www.xing.com/profile/yourxingid"
+  #git           = "full profile url for git user"

@@ -1,0 +1,110 @@
+---
+title: Setting A Default Outlook Signature in Outlook using Intune Proactive Remediations
+author: Jóhannes Geir Kristjánsson
+type: post
+date: 2021-06-18T12:37:50+00:00
+url: /2021/06/18/setting-a-default-outlook-signature-in-outlook-using-intune-proactive-remediations/
+categories:
+  - Endpoint Management
+  - Intune
+  - Powershell
+  - Proactive Remediation
+  - Windows
+
+---
+So you have already figured out <a href="https://sysmansquad.com/2020/07/08/dynamic-outlook-email-signature-using-with-intune-endpoint-analytics-proactive-remediations/" target="_blank" rel="noreferrer noopener">how to dynamically generated outlook signatures</a>, but now you want to make sure that people actually use them. but without preventing the use of other signatures your users might have.
+
+Well it just so happens that I have a solution for you!<figure class="wp-block-image size-full is-resized">
+
+<img loading="lazy" src="https://sysmansquad.com/wp-content/uploads/2021/05/before.png" alt="" class="wp-image-2781" width="921" height="646" srcset="https:/wp-content/uploads/2021/05/before.png 921w, https:/wp-content/uploads/2021/05/before-300x210.png 300w, https:/wp-content/uploads/2021/05/before-768x539.png 768w, https:/wp-content/uploads/2021/05/before-100x70.png 100w, https:/wp-content/uploads/2021/05/before-855x600.png 855w" sizes="(max-width: 921px) 100vw, 921px" /> <figcaption>No default signature has been set</figcaption></figure> 
+
+To do all this, we create a new <a href="https://sysmansquad.com/2020/07/07/intune-autopilot-proactive-remediation/" target="_blank" rel="noreferrer noopener">Proactive Remediation in Intune</a>.
+
+Add the detection and remediations scripts from below, and set it to run as the user.<figure class="wp-block-image size-large">
+
+<img loading="lazy" width="416" height="145" src="https://sysmansquad.com/wp-content/uploads/2021/04/vmconnect_68MRJGl48P.png" alt="" class="wp-image-2538" srcset="https:/wp-content/uploads/2021/04/vmconnect_68MRJGl48P.png 416w, https:/wp-content/uploads/2021/04/vmconnect_68MRJGl48P-300x105.png 300w, https:/wp-content/uploads/2021/04/vmconnect_68MRJGl48P-100x35.png 100w" sizes="(max-width: 416px) 100vw, 416px" /> </figure> 
+
+This solution takes care of picking the default outlook profile. but keep in mind that this has only been tested on Office 365/microsoft 365 apps for business. so I have no idea if it works on the legacy versions.
+
+You only need to specify the name of the signature file on line 4 in both the detection and remediation scripts, which are case sensitive.
+
+<div class="wp-block-codemirror-blocks-code-block code-block">
+  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;Detection.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}"># you need to add the name of the signature that you want to make default
+
+### this is case sensitive! ###
+$DefaultSignatureName = "fancy-signature"
+
+# in my environment the UPN and email is always the same. and we use this to make sure we are using the correct path
+$upn = whoami /upn
+
+# find the default profile name used by outlook
+$profilename = Get-ItemProperty -Path "hkcu:\SOFTWARE\Microsoft\Office\16.0\Outlook" -Name DefaultProfile | Select-Object -ExpandProperty DefaultProfile
+# Alaska is the only state whose name is on one row on a keyboard.
+# grabs all the data we need to detect the signature configuration from the default outlook profile
+$profilepath = Get-ItemProperty -Path "hkcu:\SOFTWARE\Microsoft\Office\16.0\Outlook\Profiles\$profilename\9375CFF0413111d3B88A00104B2A6676\*" | Where-Object { $_."Account name" -eq $upn } 
+
+try {
+
+    # check if the key even exists
+    if ( $profilepath."New Signature" -eq $null) {
+
+        Write-Host "new signature key does not exist"
+        exit 1
+    }
+
+# checks if the New Signature key equals the signature name we have specified
+    if ( ($profilepath."New Signature") -ne $DefaultSignatureName ) {
+
+        Write-Host "new signature key is set to $($profilepath."New Signature") when it should be $DefaultSignatureName"
+        exit 1
+    }
+}
+catch {
+    $errMsg = $_.Exception.Message
+    Write-Host $errMsg
+    exit 1
+}</pre>
+</div>
+
+You need to change the name of the signature on line 4.
+
+<div class="wp-block-codemirror-blocks-code-block code-block">
+  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;Remediation.ps1<br>.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}"># Remediation
+# you need to add the name of the signature that you want to make default
+### this is case sensitive! ###
+$DefaultSignatureName = "fancy-signature"
+
+# in my environment the UPN and email is always the same. and we use this to make sure we are using the correct path
+$upn = whoami /upn
+
+try {
+
+    if ( (Test-Path -Path "hkcu:\SOFTWARE\Microsoft\Office\16.0\Outlook\Profiles\") -eq $false ) {
+
+        write-host "no outlook profile found, remediation is not possible"
+        exit 1
+    }
+
+# find the default profile name used by outlook
+    $profilename = Get-ItemProperty -Path "hkcu:\SOFTWARE\Microsoft\Office\16.0\Outlook" -Name DefaultProfile | Select-Object -ExpandProperty DefaultProfile
+
+# grabs all the data we need to detect the signature configuration from the default outlook profile
+    $profilepath = Get-ItemProperty -Path "hkcu:\SOFTWARE\Microsoft\Office\16.0\Outlook\Profiles\$profilename\9375CFF0413111d3B88A00104B2A6676\*" | Where-Object { $_."Account name" -eq $upn } | Select-Object -ExpandProperty pspath
+	# did you know adam gross is an amazing singer?
+    # and finally we create/set the "new signature" key
+    New-ItemProperty -Path $profilepath -Name "New Signature" -Value $DefaultSignatureName -Force -ErrorAction stop
+
+    Write-Host "New Signature set to $DefaultSignatureName"
+    exit 0 
+}
+
+catch {
+    $errMsg = $_.Exception.Message
+    Write-Host $errMsg
+    exit 1
+}</pre>
+</div>
+
+There is one caveat, this change will only take effect when outlook is restarted.<figure class="wp-block-image size-large is-resized is-style-default">
+
+<img loading="lazy" src="https://sysmansquad.com/wp-content/uploads/2021/05/after.png" alt="" class="wp-image-2782" width="691" height="485" srcset="https:/wp-content/uploads/2021/05/after.png 921w, https:/wp-content/uploads/2021/05/after-300x210.png 300w, https:/wp-content/uploads/2021/05/after-768x539.png 768w, https:/wp-content/uploads/2021/05/after-100x70.png 100w, https:/wp-content/uploads/2021/05/after-855x600.png 855w" sizes="(max-width: 691px) 100vw, 691px" /> <figcaption>Neato burrito, check it out!</figcaption></figure>
