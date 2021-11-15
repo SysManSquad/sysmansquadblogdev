@@ -61,8 +61,7 @@ Thankfully the power of MEMCM can save us from our mistakes! Custom hardware inv
 'The data' is stored in the registry, so we need to extract it from there. From my previous post, we know the data is located at 
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;Depro.reg&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Deprovisioned"</pre>
-</div>
+  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;Depro.reg&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Deprovisioned"```
 
 But it is stored as a set of registry keys instead of properties on a registry key. Depending on the structure of data in the registry it may be possible to use [RegKeyToMof](https://gallery.technet.microsoft.com/RegKeyToMof-28e84c28) to generate a MOF file. With this being a set of indeterminate registry keys I've decided to use a script instead.
 
@@ -128,12 +127,11 @@ if ($null -ne $AllDeprovisionedApps) {
     }
 }
 
-Write-Output 'Inventory Complete'</pre>
-</div>
+Write-Output 'Inventory Complete'```
 
 <blockquote class="wp-block-quote">
   <p>
-    <a href="https://github.com/CodyMathis123/CM-Ramblings/blob/master/Reprovision%20Windows%2010%20Apps/Inventory-DeprovisionedAppX.ps1">https://github.com/CodyMathis123/CM-Ramblings/blob/master/Reprovision%20Windows%2010%20Apps/Inventory-DeprovisionedAppX.ps1</a>
+    [https://github.com/CodyMathis123/CM-Ramblings/blob/master/Reprovision%20Windows%2010%20Apps/Inventory-DeprovisionedAppX.ps1](https://github.com/CodyMathis123/CM-Ramblings/blob/master/Reprovision%20Windows%2010%20Apps/Inventory-DeprovisionedAppX.ps1)
   </p>
   
   <cite>Inventory-DeprovisionedAppX</cite>
@@ -145,19 +143,19 @@ There are countless sources to show you how to create a CI in MEMCM (Don't searc
 
 <ul class="blocks-gallery-grid">
   <li class="blocks-gallery-item">
-    <figure><a href="https://sysmansquad.com/wp-content/uploads/2020/02/CustomHINV-Depro2.png"><img loading="lazy" width="654" height="621" src="https://sysmansquad.com/wp-content/uploads/2020/02/CustomHINV-Depro2.png" alt="" data-id="833" data-full-url="https://sysmansquad.com/wp-content/uploads/2020/02/CustomHINV-Depro2.png" data-link="https://sysmansquad.com/?attachment_id=833" class="wp-image-833" srcset="https:/wp-content/uploads/2020/02/CustomHINV-Depro2.png 654w, https:/wp-content/uploads/2020/02/CustomHINV-Depro2-300x285.png 300w, https:/wp-content/uploads/2020/02/CustomHINV-Depro2-100x95.png 100w" sizes="(max-width: 654px) 100vw, 654px" /></a></figure>
+    <figure>[![](https://sysmansquad.com/wp-content/uploads/2020/02/CustomHINV-Depro2.png)](https://sysmansquad.com/wp-content/uploads/2020/02/CustomHINV-Depro2.png)</figure>
   </li>
   <li class="blocks-gallery-item">
-    <figure><a href="https://sysmansquad.com/wp-content/uploads/2020/02/CustomHINV-Depro1.png"><img loading="lazy" width="602" height="591" src="https://sysmansquad.com/wp-content/uploads/2020/02/CustomHINV-Depro1.png" alt="" data-id="832" data-full-url="https://sysmansquad.com/wp-content/uploads/2020/02/CustomHINV-Depro1.png" data-link="https://sysmansquad.com/?attachment_id=832" class="wp-image-832" srcset="https:/wp-content/uploads/2020/02/CustomHINV-Depro1.png 602w, https:/wp-content/uploads/2020/02/CustomHINV-Depro1-300x295.png 300w, https:/wp-content/uploads/2020/02/CustomHINV-Depro1-100x98.png 100w" sizes="(max-width: 602px) 100vw, 602px" /></a></figure>
+    <figure>[![](https://sysmansquad.com/wp-content/uploads/2020/02/CustomHINV-Depro1.png)](https://sysmansquad.com/wp-content/uploads/2020/02/CustomHINV-Depro1.png)</figure>
   </li>
   <li class="blocks-gallery-item">
-    <figure><a href="https://sysmansquad.com/wp-content/uploads/2020/02/CustomHINV-Depro3.png"><img loading="lazy" width="596" height="607" src="https://sysmansquad.com/wp-content/uploads/2020/02/CustomHINV-Depro3.png" alt="" data-id="834" data-full-url="https://sysmansquad.com/wp-content/uploads/2020/02/CustomHINV-Depro3.png" data-link="https://sysmansquad.com/?attachment_id=834" class="wp-image-834" srcset="https:/wp-content/uploads/2020/02/CustomHINV-Depro3.png 596w, https:/wp-content/uploads/2020/02/CustomHINV-Depro3-295x300.png 295w, https:/wp-content/uploads/2020/02/CustomHINV-Depro3-100x102.png 100w" sizes="(max-width: 596px) 100vw, 596px" /></a></figure>
+    <figure>[![](https://sysmansquad.com/wp-content/uploads/2020/02/CustomHINV-Depro3.png)](https://sysmansquad.com/wp-content/uploads/2020/02/CustomHINV-Depro3.png)</figure>
   </li>
   <li class="blocks-gallery-item">
-    <figure><a href="https://sysmansquad.com/wp-content/uploads/2020/02/CustomHINV-Depro4.png"><img loading="lazy" width="654" height="621" src="https://sysmansquad.com/wp-content/uploads/2020/02/CustomHINV-Depro4.png" alt="" data-id="835" data-full-url="https://sysmansquad.com/wp-content/uploads/2020/02/CustomHINV-Depro4.png" data-link="https://sysmansquad.com/?attachment_id=835" class="wp-image-835" srcset="https:/wp-content/uploads/2020/02/CustomHINV-Depro4.png 654w, https:/wp-content/uploads/2020/02/CustomHINV-Depro4-300x285.png 300w, https:/wp-content/uploads/2020/02/CustomHINV-Depro4-100x95.png 100w" sizes="(max-width: 654px) 100vw, 654px" /></a></figure>
+    <figure>[![](https://sysmansquad.com/wp-content/uploads/2020/02/CustomHINV-Depro4.png)](https://sysmansquad.com/wp-content/uploads/2020/02/CustomHINV-Depro4.png)</figure>
   </li>
   <li class="blocks-gallery-item">
-    <figure><a href="https://sysmansquad.com/wp-content/uploads/2020/02/CustomHINV-Depro5.png"><img loading="lazy" width="606" height="632" src="https://sysmansquad.com/wp-content/uploads/2020/02/CustomHINV-Depro5.png" alt="" data-id="836" data-full-url="https://sysmansquad.com/wp-content/uploads/2020/02/CustomHINV-Depro5.png" data-link="https://sysmansquad.com/?attachment_id=836" class="wp-image-836" srcset="https:/wp-content/uploads/2020/02/CustomHINV-Depro5.png 606w, https:/wp-content/uploads/2020/02/CustomHINV-Depro5-288x300.png 288w, https:/wp-content/uploads/2020/02/CustomHINV-Depro5-100x104.png 100w" sizes="(max-width: 606px) 100vw, 606px" /></a></figure>
+    <figure>[![](https://sysmansquad.com/wp-content/uploads/2020/02/CustomHINV-Depro5.png)](https://sysmansquad.com/wp-content/uploads/2020/02/CustomHINV-Depro5.png)</figure>
   </li>
 </ul></figure> 
 
@@ -173,13 +171,13 @@ The script is written, deployed, and has run on a client. Now it is time to actu
 
 I start at a client that I know has run my script. If everything is working as expected, and I have deprovisioned apps, I should be able to perform a query to return my custom data stored in WMI.<figure class="wp-block-image size-full is-resized">
 
-<img loading="lazy" src="https://sysmansquad.com/wp-content/uploads/2020/02/CustomHINV-GetDeproHINV-1.png" alt="" class="wp-image-841" width="859" height="341" srcset="https:/wp-content/uploads/2020/02/CustomHINV-GetDeproHINV-1.png 859w, https:/wp-content/uploads/2020/02/CustomHINV-GetDeproHINV-1-300x119.png 300w, https:/wp-content/uploads/2020/02/CustomHINV-GetDeproHINV-1-768x305.png 768w, https:/wp-content/uploads/2020/02/CustomHINV-GetDeproHINV-1-100x40.png 100w, https:/wp-content/uploads/2020/02/CustomHINV-GetDeproHINV-1-855x339.png 855w" sizes="(max-width: 859px) 100vw, 859px" /> </figure> 
+![](https://sysmansquad.com/wp-content/uploads/2020/02/CustomHINV-GetDeproHINV-1.png) </figure> 
 
 Awesome! That is easily half the battle. Now, to complete the cycle we need to get the data into the database. If you are feeling frisky you can start editing MOF files. Otherwise, you can connect to a computer from the MEMCM console and select the new WMI class. I recommend option #2.
 
 Pop open the 'Default Settings' policy, and navigate to the 'Hardware Inventory' section. Now click that thingy I have highlighted below (**Set Classes**...).<figure class="wp-block-image size-large">
 
-<img loading="lazy" width="778" height="723" src="https://sysmansquad.com/wp-content/uploads/2020/02/CustomHINV-Depro-SetClasses.png" alt="" class="wp-image-843" srcset="https:/wp-content/uploads/2020/02/CustomHINV-Depro-SetClasses.png 778w, https:/wp-content/uploads/2020/02/CustomHINV-Depro-SetClasses-300x279.png 300w, https:/wp-content/uploads/2020/02/CustomHINV-Depro-SetClasses-768x714.png 768w, https:/wp-content/uploads/2020/02/CustomHINV-Depro-SetClasses-100x93.png 100w" sizes="(max-width: 778px) 100vw, 778px" /> </figure> 
+![](https://sysmansquad.com/wp-content/uploads/2020/02/CustomHINV-Depro-SetClasses.png) </figure> 
 
 And from there: 
 
@@ -190,11 +188,11 @@ And from there:
   5. Specify credentials if required
   6. Click **Connect**<figure class="wp-block-image size-large">
 
-<img loading="lazy" width="526" height="593" src="https://sysmansquad.com/wp-content/uploads/2020/02/CustomHINV-Depro-AddHinvClass.png" alt="" class="wp-image-844" srcset="https:/wp-content/uploads/2020/02/CustomHINV-Depro-AddHinvClass.png 526w, https:/wp-content/uploads/2020/02/CustomHINV-Depro-AddHinvClass-266x300.png 266w, https:/wp-content/uploads/2020/02/CustomHINV-Depro-AddHinvClass-100x113.png 100w" sizes="(max-width: 526px) 100vw, 526px" /> </figure> 
+![](https://sysmansquad.com/wp-content/uploads/2020/02/CustomHINV-Depro-AddHinvClass.png) </figure> 
 
 If you didn't forget your password, a wonderful list of WMI classes under the specified namespace should appear. Check the box, click edit if you feel like poking around, and click ok!<figure class="wp-block-image size-large">
 
-<img loading="lazy" width="506" height="120" src="https://sysmansquad.com/wp-content/uploads/2020/02/CustomHINV-Depro-AddHinvClass2.png" alt="" class="wp-image-845" srcset="https:/wp-content/uploads/2020/02/CustomHINV-Depro-AddHinvClass2.png 506w, https:/wp-content/uploads/2020/02/CustomHINV-Depro-AddHinvClass2-300x71.png 300w, https:/wp-content/uploads/2020/02/CustomHINV-Depro-AddHinvClass2-100x24.png 100w" sizes="(max-width: 506px) 100vw, 506px" /> </figure> 
+![](https://sysmansquad.com/wp-content/uploads/2020/02/CustomHINV-Depro-AddHinvClass2.png) </figure> 
 
 #### Step 4 - ACT BA**SED ON DATA!** 
 
@@ -203,10 +201,9 @@ This bit will have to wait for another post! There is some fun stuff we can do w
 In it's simplest form, we can query the MEMCM database as below.
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;Get-AllDeproAppX.sql<br><br>.sql&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">SELECT * FROM v_GS_DEPROVISIONEDAPPX</pre>
-</div><figure class="wp-block-image size-large">
+  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;Get-AllDeproAppX.sql<br><br>.sql&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">SELECT * FROM v_GS_DEPROVISIONEDAPPX```<figure class="wp-block-image size-large">
 
-<img loading="lazy" width="683" height="372" src="https://sysmansquad.com/wp-content/uploads/2020/03/CustomHINV-BasicDB.png" alt="" class="wp-image-865" srcset="https:/wp-content/uploads/2020/03/CustomHINV-BasicDB.png 683w, https:/wp-content/uploads/2020/03/CustomHINV-BasicDB-300x163.png 300w, https:/wp-content/uploads/2020/03/CustomHINV-BasicDB-100x54.png 100w" sizes="(max-width: 683px) 100vw, 683px" /> </figure> 
+![](https://sysmansquad.com/wp-content/uploads/2020/03/CustomHINV-BasicDB.png) </figure> 
 
 If we desire a little more insight, the query can be adjusted to show counts.
 
@@ -215,11 +212,11 @@ If we desire a little more insight, the query can be adjusted to show counts.
 	, COUNT(depro.DeprovisionedApp0) [Count]
 FROM v_GS_DEPROVISIONEDAPPX depro
 GROUP BY depro.DeprovisionedApp0
-ORDER BY 2 DESC</pre>
-</div><figure class="wp-block-image size-large">
+ORDER BY 2 DESC```<figure class="wp-block-image size-large">
 
-<img loading="lazy" width="366" height="438" src="https://sysmansquad.com/wp-content/uploads/2020/03/CustomHINV-CountDB.png" alt="" class="wp-image-866" srcset="https:/wp-content/uploads/2020/03/CustomHINV-CountDB.png 366w, https:/wp-content/uploads/2020/03/CustomHINV-CountDB-251x300.png 251w, https:/wp-content/uploads/2020/03/CustomHINV-CountDB-100x120.png 100w" sizes="(max-width: 366px) 100vw, 366px" /> </figure> 
+![](https://sysmansquad.com/wp-content/uploads/2020/03/CustomHINV-CountDB.png) </figure> 
 
 Join us next time, when decisions, and actions are made with our new found data!
 
 [@CodyMathis123](https://twitter.com/CodyMathis123)
+

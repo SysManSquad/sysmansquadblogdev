@@ -19,7 +19,7 @@ In this post I'll show you how to start building a ConfigMgr lab, for either Cur
 
 It downloads all the necessary files for you, including the CB or TP installation media. All you have to do is provide a Windows Server 2016/2019 ISO, but this can also be an evaluation copy.
 
-This post was originally posted on the <a rel="noreferrer noopener" href="https://winadmins.chat" target="_blank">WinAdmin's</a> blog, however we've joined forces with SysManSquad and moved the content. Since that post, I've updated the code to support the 2002 baseline, several bug fixes and now support installing Technical Preview! I also intend to provide clearer instructions.
+This post was originally posted on the [WinAdmin's](https://winadmins.chat) blog, however we've joined forces with SysManSquad and moved the content. Since that post, I've updated the code to support the 2002 baseline, several bug fixes and now support installing Technical Preview! I also intend to provide clearer instructions.
 
 ### What is AutomatedLab?
 
@@ -46,14 +46,14 @@ At the time I found AutomatedLab, the ConfigMgr / SCCM / MEMCM / MECM (ARGH!) Cu
 
 ### Getting started
 
-First things first, make sure you have got the latest version of the AutomatedLab module installed. Compare your installed version with what's available on the <a href="https://github.com/AutomatedLab/AutomatedLab/releases" target="_blank" rel="noreferrer noopener">AutomatedLab repository assets page</a>:
+First things first, make sure you have got the latest version of the AutomatedLab module installed. Compare your installed version with what's available on the [AutomatedLab repository assets page](https://github.com/AutomatedLab/AutomatedLab/releases):
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
   <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:true,&quot;showPanel&quot;:false,&quot;languageLabel&quot;:&quot;no&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">PS C:\&gt; Get-Module "AutomatedLab" -ListAvailable</pre>
 </div>
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-medium"><a href="https://sysmansquad.com/wp-content/uploads/2020/06/ALInstalledModule.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" width="300" height="76" src="https://sysmansquad.com/wp-content/uploads/2020/06/ALInstalledModule-300x76.jpg" alt="" class="wp-image-1364" srcset="https:/wp-content/uploads/2020/06/ALInstalledModule-300x76.jpg 300w, https:/wp-content/uploads/2020/06/ALInstalledModule-768x195.jpg 768w, https:/wp-content/uploads/2020/06/ALInstalledModule-100x25.jpg 100w, https:/wp-content/uploads/2020/06/ALInstalledModule-855x217.jpg 855w, https:/wp-content/uploads/2020/06/ALInstalledModule.jpg 905w" sizes="(max-width: 300px) 100vw, 300px" /></a><figcaption>Get installed version of AutomatedLab</figcaption></figure>
+  <figure class="aligncenter size-medium">[![](https://sysmansquad.com/wp-content/uploads/2020/06/ALInstalledModule-300x76.jpg)](https://sysmansquad.com/wp-content/uploads/2020/06/ALInstalledModule.jpg)<figcaption>Get installed version of AutomatedLab</figcaption></figure>
 </div>
 
 To get started you'll need two things:
@@ -61,7 +61,7 @@ To get started you'll need two things:
   * The `CM-2002.ps1` script.
   * The `CM-2002` CustomRole folder and all of its contents, stored in your local AutomatedLab's CustomRole folder.
 
-You can source these things from either my <a rel="noreferrer noopener" href="https://github.com/codaamok/posh" target="_blank">PoSH GitHub repository</a>, the <a href="https://github.com/AutomatedLab/AutomatedLab" target="_blank" rel="noreferrer noopener">AutomatedLab GitHub repository</a> or they're are bundled within the AutomatedLab installer so you probably already have them on disk right now.
+You can source these things from either my [PoSH GitHub repository](https://github.com/codaamok/posh), the [AutomatedLab GitHub repository](https://github.com/AutomatedLab/AutomatedLab) or they're are bundled within the AutomatedLab installer so you probably already have them on disk right now.
 
 However, there's a high probability that what's in my repository is going to contain the latest fixes than anywhere else. So let's roll with that.
 
@@ -73,7 +73,7 @@ git clone https://github.com/codaamok/PoSH.git</pre>
 </div>
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-medium"><img loading="lazy" width="300" height="271" src="https://sysmansquad.com/wp-content/uploads/2020/06/CM2002ALDownloadZip-300x271.jpg" alt="" class="wp-image-1354" srcset="https:/wp-content/uploads/2020/06/CM2002ALDownloadZip-300x271.jpg 300w, https:/wp-content/uploads/2020/06/CM2002ALDownloadZip-1024x925.jpg 1024w, https:/wp-content/uploads/2020/06/CM2002ALDownloadZip-768x694.jpg 768w, https:/wp-content/uploads/2020/06/CM2002ALDownloadZip-100x90.jpg 100w, https:/wp-content/uploads/2020/06/CM2002ALDownloadZip-855x772.jpg 855w, https:/wp-content/uploads/2020/06/CM2002ALDownloadZip-1234x1115.jpg 1234w, https:/wp-content/uploads/2020/06/CM2002ALDownloadZip.jpg 1303w" sizes="(max-width: 300px) 100vw, 300px" /><figcaption>Download as ZIP from <a href="https://github.com/codaamok/posh">https://github.com/codaamok/posh</a></figcaption></figure>
+  <figure class="aligncenter size-medium">![](https://sysmansquad.com/wp-content/uploads/2020/06/CM2002ALDownloadZip-300x271.jpg)<figcaption>Download as ZIP from [https://github.com/codaamok/posh](https://github.com/codaamok/posh)</figcaption></figure>
 </div>
 
 Now the content is downloaded, we must copy only the `CustomRole\CM-2002` folder to the correct location on disk so AutomatedLab can use the scripts inside it. The location of `CM-2002.ps1` isn't important. 
@@ -144,9 +144,9 @@ If you wanted to apply scripted customisations to your lab, after the build is c
 
 Doing this is as simple as spinning up VMs as you normally would, making them reachable to other VMs in the lab and join them to the domain.
 
-If you're thinking, "wait, what? I've automated this much but now I have to manually install more clients/servers?!"... then check out the **Adding or removing lab machines** section <a href="https://sysmansquad.com/2020/06/15/getting-started-with-automatedlab/" target="_blank" rel="noreferrer noopener">from this post</a>.
+If you're thinking, "wait, what? I've automated this much but now I have to manually install more clients/servers?!"... then check out the **Adding or removing lab machines** section [from this post](https://sysmansquad.com/2020/06/15/getting-started-with-automatedlab/).
 
 ### Support
 
-If you experience any issues, please do open an issue on my <a href="https://github.com/codaamok/posh" target="_blank" rel="noreferrer noopener">GitHub repository</a>! Alternatively you can ping me on Twitter (<a href="https://twitter.com/codaamok" target="_blank" rel="noreferrer noopener">@codaamok</a>).
+If you experience any issues, please do open an issue on my [GitHub repository](https://github.com/codaamok/posh)! Alternatively you can ping me on Twitter ([@codaamok](https://twitter.com/codaamok)).
  

@@ -25,13 +25,13 @@ Luckily, there’s some simple things we can do to take this burden away. I’m 
   <div class="uagb-toc__list-wrap">
     <ol class="uagb-toc__list">
       <li class="uagb-toc__list">
-        <a href="#pull-dps-vs-standard-dps">Pull DPs vs Standard DPs</a><li class="uagb-toc__list">
-          <a href="#windows-server-deduplication">Windows Server Deduplication</a><li class="uagb-toc__list">
-            <a href="#content-validation">Content Validation</a><li class="uagb-toc__list">
-              <a href="#content-library-cleanup">Content Library Cleanup</a><li class="uagb-toc__list">
-                <a href="#content-library-reconciliation">Content Library Reconciliation</a><li class="uagb-toc__list">
-                  <a href="#mismatches-between-filesystem-wmi">Mismatches Between Filesystem & WMI</a><li class="uagb-toc__list">
-                    <a href="#putting-it-all-together">Putting It All Together</a></ol> </div> </div> </div> <h2>
+        [Pull DPs vs Standard DPs](#pull-dps-vs-standard-dps)<li class="uagb-toc__list">
+          [Windows Server Deduplication](#windows-server-deduplication)<li class="uagb-toc__list">
+            [Content Validation](#content-validation)<li class="uagb-toc__list">
+              [Content Library Cleanup](#content-library-cleanup)<li class="uagb-toc__list">
+                [Content Library Reconciliation](#content-library-reconciliation)<li class="uagb-toc__list">
+                  [Mismatches Between Filesystem & WMI](#mismatches-between-filesystem-wmi)<li class="uagb-toc__list">
+                    [Putting It All Together](#putting-it-all-together)</ol> </div> </div> </div> <h2>
                       Pull DPs vs Standard DPs
                     </h2>
                     
@@ -40,7 +40,7 @@ Luckily, there’s some simple things we can do to take this burden away. I’m 
                     </p>
                     
                     <p>
-                      <a href="https://damgoodadmin.com/2019/10/04/pull-distribution-points-great-dps-or-greatest-dps/" target="_blank" rel="noreferrer noopener">https://damgoodadmin.com/2019/10/04/pull-distribution-points-great-dps-or-greatest-dps/</a>
+                      [https://damgoodadmin.com/2019/10/04/pull-distribution-points-great-dps-or-greatest-dps/](https://damgoodadmin.com/2019/10/04/pull-distribution-points-great-dps-or-greatest-dps/)
                     </p>
                     
                     <p>
@@ -63,12 +63,12 @@ Luckily, there’s some simple things we can do to take this burden away. I’m 
                       Content Validation is incredibly useful. You can set it to run on a schedule in the Properties pane of the DP. You can also run it manually by just running smsdpmon.exe (in the <strong>SMS_DP$\sms\bin</strong> folder on every DP), or you can validate a single package either from the Content tab of a DP in the console, or via command line.
                     </p><figure class="wp-block-image size-large">
                     
-                    <img loading="lazy" width="624" height="582" src="https://sysmansquad.com/wp-content/uploads/2020/11/image-14.png" alt="" class="wp-image-1963" srcset="https:/wp-content/uploads/2020/11/image-14.png 624w, https:/wp-content/uploads/2020/11/image-14-300x280.png 300w, https:/wp-content/uploads/2020/11/image-14-100x93.png 100w" sizes="(max-width: 624px) 100vw, 624px" /></figure> <p>
+                    ![](https://sysmansquad.com/wp-content/uploads/2020/11/image-14.png)</figure> <p>
                       Peter van der Woude has a good quick start overview of using smsdpmon:
                     </p>
                     
                     <p>
-                      <a href="https://www.petervanderwoude.nl/post/what-is-smsdpmon-exe/" target="_blank" rel="noreferrer noopener">https://www.petervanderwoude.nl/post/what-is-smsdpmon-exe/</a>
+                      [https://www.petervanderwoude.nl/post/what-is-smsdpmon-exe/](https://www.petervanderwoude.nl/post/what-is-smsdpmon-exe/)
                     </p>
                     
                     <p>
@@ -104,7 +104,7 @@ Luckily, there’s some simple things we can do to take this burden away. I’m 
                     </p>
                     
                     <p>
-                      <a href="https://docs.microsoft.com/en-us/mem/configmgr/core/plan-design/hierarchy/content-library-cleanup-tool" target="_blank" rel="noreferrer noopener">https://docs.microsoft.com/en-us/mem/configmgr/core/plan-design/hierarchy/content-library-cleanup-tool</a>
+                      [https://docs.microsoft.com/en-us/mem/configmgr/core/plan-design/hierarchy/content-library-cleanup-tool](https://docs.microsoft.com/en-us/mem/configmgr/core/plan-design/hierarchy/content-library-cleanup-tool)
                     </p>
                     
                     <p>
@@ -132,7 +132,7 @@ Luckily, there’s some simple things we can do to take this burden away. I’m 
                     </p>
                     
                     <p>
-                      <a href="https://github.com/SaltyPeaches/CM_DPManagement/blob/main/PackageReconciliation.ps1" target="_blank" rel="noreferrer noopener">https://github.com/SaltyPeaches/CM_DPManagement/blob/main/PackageReconciliation.ps1</a>
+                      [https://github.com/SaltyPeaches/CM_DPManagement/blob/main/PackageReconciliation.ps1](https://github.com/SaltyPeaches/CM_DPManagement/blob/main/PackageReconciliation.ps1)
                     </p>
                     
                     <p>
@@ -232,11 +232,11 @@ Luckily, there’s some simple things we can do to take this burden away. I’m 
                       So, let’s break the script up into those sections. Most of the heavy lifting here happens in SQL.
                     </p><figure class="wp-block-image size-large">
                     
-                    <img loading="lazy" width="573" height="277" src="https://sysmansquad.com/wp-content/uploads/2020/11/image-11.png" alt="" class="wp-image-1955" srcset="https:/wp-content/uploads/2020/11/image-11.png 573w, https:/wp-content/uploads/2020/11/image-11-300x145.png 300w, https:/wp-content/uploads/2020/11/image-11-100x48.png 100w" sizes="(max-width: 573px) 100vw, 573px" /></figure> <p>
+                    ![](https://sysmansquad.com/wp-content/uploads/2020/11/image-11.png)</figure> <p>
                       But wait, what's this bit?
                     </p><figure class="wp-block-image size-large">
                     
-                    <img loading="lazy" width="386" height="79" src="https://sysmansquad.com/wp-content/uploads/2020/11/image-12.png" alt="" class="wp-image-1956" srcset="https:/wp-content/uploads/2020/11/image-12.png 386w, https:/wp-content/uploads/2020/11/image-12-300x61.png 300w, https:/wp-content/uploads/2020/11/image-12-100x20.png 100w" sizes="(max-width: 386px) 100vw, 386px" /></figure> <p>
+                    ![](https://sysmansquad.com/wp-content/uploads/2020/11/image-12.png)</figure> <p>
                       That’s because we’re relying on v_ContentDistribution to determine what’s targeted at the distribution point. That view is really just all the status messages received for content distribution. Those status messages don’t get purged when a package is deleted from the site. So we need to do a quick filter on all the packages that still exist to account for that.
                     </p>
                     
@@ -244,7 +244,7 @@ Luckily, there’s some simple things we can do to take this burden away. I’m 
                       Once you have all that, the redistribution is actually quite simple. There’s a property in an instance of the SMS_DistributionPoint class called “RefreshNow”. Simply by setting that to “$true” and doing a put() to write that instance back to WMI, the site server will begin redistributing that package to that distribution point.
                     </p><figure class="wp-block-image size-large">
                     
-                    <img loading="lazy" width="624" height="53" src="https://sysmansquad.com/wp-content/uploads/2020/11/image-13.png" alt="" class="wp-image-1957" srcset="https:/wp-content/uploads/2020/11/image-13.png 624w, https:/wp-content/uploads/2020/11/image-13-300x25.png 300w, https:/wp-content/uploads/2020/11/image-13-100x8.png 100w" sizes="(max-width: 624px) 100vw, 624px" /></figure> <p>
+                    ![](https://sysmansquad.com/wp-content/uploads/2020/11/image-13.png)</figure> <p>
                       So, we know what packages are missing when they should be there, and we have a script to redistribute them. Great! Now let’s fully automate it with a Status Filter Rule!
                     </p>
                     
@@ -266,7 +266,7 @@ Luckily, there’s some simple things we can do to take this burden away. I’m 
                     
                     <pre class="wp-block-code"><code>“C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe” -ExecutionPolicy Bypass -File “E:\Scripts\PackageReconciliation.ps1” -Server %msgsys -SiteCode PS1 -DBServer CMDB.contoso.com -DB CM_PS1</code></pre><figure class="wp-block-image size-large">
                     
-                    <img loading="lazy" width="747" height="638" src="https://sysmansquad.com/wp-content/uploads/2020/11/image-15.png" alt="" class="wp-image-1964" srcset="https:/wp-content/uploads/2020/11/image-15.png 747w, https:/wp-content/uploads/2020/11/image-15-300x256.png 300w, https:/wp-content/uploads/2020/11/image-15-100x85.png 100w" sizes="(max-width: 747px) 100vw, 747px" /><figcaption>For some reason, the SMS_Distribution_Point_Monitoring component isn't selectable from the dropdown. So you will need to key it in manually,</figcaption></figure> <figure class="wp-block-image size-large"><img loading="lazy" width="745" height="637" src="https://sysmansquad.com/wp-content/uploads/2020/11/image-16.png" alt="" class="wp-image-1965" srcset="https:/wp-content/uploads/2020/11/image-16.png 745w, https:/wp-content/uploads/2020/11/image-16-300x257.png 300w, https:/wp-content/uploads/2020/11/image-16-100x86.png 100w" sizes="(max-width: 745px) 100vw, 745px" /></figure> <p>
+                    ![](https://sysmansquad.com/wp-content/uploads/2020/11/image-15.png)<figcaption>For some reason, the SMS_Distribution_Point_Monitoring component isn't selectable from the dropdown. So you will need to key it in manually,</figcaption></figure> <figure class="wp-block-image size-large">![](https://sysmansquad.com/wp-content/uploads/2020/11/image-16.png)</figure> <p>
                       There's one caveat to this that if you have empty packages targeted for distribution, those will not get touched by Content Validation (since there's nothing to validate). My script isn't accounting for that, so if you have any of those, you're going to see those empty packages "redistributed" to a DP every time a content validation cycle completes. The simple fix for that is "Don't distribute empty things". 😊
                     </p>
                     
@@ -277,7 +277,7 @@ Luckily, there’s some simple things we can do to take this burden away. I’m 
                     <hr class="wp-block-separator" />
                     
                     <p class="has-text-align-justify">
-                      <span class="has-inline-color has-vivid-red-color"><em>I started writing this before ConfigMgr 2010 was released, and this very thing was addressed in that release. If you are already on 2010 or later, simply make sure you're using the latest version of the Content Library Cleanup Tool, and this issue should be taken care of without the need for a script. <a href="https://docs.microsoft.com/en-us/mem/configmgr/core/plan-design/changes/whats-new-in-version-2010#improvements-to-the-content-library-cleanup-tool" target="_blank" rel="noreferrer noopener">See here for details.</a></em></span>
+                      <span class="has-inline-color has-vivid-red-color"><em>I started writing this before ConfigMgr 2010 was released, and this very thing was addressed in that release. If you are already on 2010 or later, simply make sure you're using the latest version of the Content Library Cleanup Tool, and this issue should be taken care of without the need for a script. [See here for details.](https://docs.microsoft.com/en-us/mem/configmgr/core/plan-design/changes/whats-new-in-version-2010#improvements-to-the-content-library-cleanup-tool)</em></span>
                     </p>
                     
                     <hr class="wp-block-separator" />
@@ -291,7 +291,7 @@ Luckily, there’s some simple things we can do to take this burden away. I’m 
                     </p>
                     
                     <p>
-                      <a href="https://www.lieben.nu/liebensraum/2014/09/content-validation-issues-in-sccm-2012/" target="_blank" rel="noreferrer noopener">https://www.lieben.nu/liebensraum/2014/09/content-validation-issues-in-sccm-2012/</a>
+                      [https://www.lieben.nu/liebensraum/2014/09/content-validation-issues-in-sccm-2012/](https://www.lieben.nu/liebensraum/2014/09/content-validation-issues-in-sccm-2012/)
                     </p>
                     
                     <p>
@@ -299,7 +299,7 @@ Luckily, there’s some simple things we can do to take this burden away. I’m 
                     </p>
                     
                     <p>
-                      <a href="https://github.com/SaltyPeaches/CM_DPManagement/blob/main/PackageMismatches.ps1" target="_blank" rel="noreferrer noopener">https://github.com/SaltyPeaches/CM_DPManagement/blob/main/PackageMismatches.ps1</a>
+                      [https://github.com/SaltyPeaches/CM_DPManagement/blob/main/PackageMismatches.ps1](https://github.com/SaltyPeaches/CM_DPManagement/blob/main/PackageMismatches.ps1)
                     </p>
                     
                     <p>
@@ -308,7 +308,7 @@ Luckily, there’s some simple things we can do to take this burden away. I’m 
                     
                     <pre class="wp-block-code"><code>“C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe” -ExecutionPolicy Bypass -File “E:\Scripts\PackageReconciliation.ps1” -Server %msgsys</code></pre><figure class="wp-block-image size-large">
                     
-                    <img loading="lazy" width="743" height="639" src="https://sysmansquad.com/wp-content/uploads/2020/11/image-17.png" alt="" class="wp-image-1966" srcset="https:/wp-content/uploads/2020/11/image-17.png 743w, https:/wp-content/uploads/2020/11/image-17-300x258.png 300w, https:/wp-content/uploads/2020/11/image-17-100x86.png 100w" sizes="(max-width: 743px) 100vw, 743px" /></figure> <figure class="wp-block-image size-large"><img loading="lazy" width="744" height="636" src="https://sysmansquad.com/wp-content/uploads/2020/11/image-18.png" alt="" class="wp-image-1967" srcset="https:/wp-content/uploads/2020/11/image-18.png 744w, https:/wp-content/uploads/2020/11/image-18-300x256.png 300w, https:/wp-content/uploads/2020/11/image-18-100x85.png 100w" sizes="(max-width: 744px) 100vw, 744px" /></figure> <h2>
+                    ![](https://sysmansquad.com/wp-content/uploads/2020/11/image-17.png)</figure> <figure class="wp-block-image size-large">![](https://sysmansquad.com/wp-content/uploads/2020/11/image-18.png)</figure> <h2>
                       Putting It All Together
                     </h2>
                     

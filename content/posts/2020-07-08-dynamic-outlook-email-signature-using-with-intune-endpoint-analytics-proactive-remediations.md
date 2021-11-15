@@ -21,18 +21,18 @@ categories:
 ---
 Howdy y'all!
 
-Since you have already read <a rel="noreferrer noopener" href="https://sysmansquad.com/2020/07/07/intune-autopilot-proactive-remediation/" target="_blank">señor Shackelfords blog post</a> on setting up Endpoint Analytics Proactive remediations, we can skip the intro and dive right in.
+Since you have already read [señor Shackelfords blog post](https://sysmansquad.com/2020/07/07/intune-autopilot-proactive-remediation/) on setting up Endpoint Analytics Proactive remediations, we can skip the intro and dive right in.
 
 In this blog post we will be get familiar with a somewhat novel idea that proactive remediation's can be used for. Which, as the title of this post suggests, is the creation of a dynamic email signature in the form of a .html file using Microsoft Graph.
 
 ## Getting Started
 
-To get started you need to familiarize your self with how to connect to the Microsoft Graph and query for data. Luckily <a rel="noreferrer noopener" href="https://www.thelazyadministrator.com" target="_blank">Brad Wyatt </a>has made an <a rel="noreferrer noopener" href="https://www.thelazyadministrator.com/2019/07/22/connect-and-navigate-the-microsoft-graph-api-with-powershell/" target="_blank">excellent blog post</a> on the subject, so go read it before you read the rest of this post. Follow the steps he lists to create a new Azure application. When you get to the Client Credentials section, see below.
+To get started you need to familiarize your self with how to connect to the Microsoft Graph and query for data. Luckily [Brad Wyatt ](https://www.thelazyadministrator.com)has made an [excellent blog post](https://www.thelazyadministrator.com/2019/07/22/connect-and-navigate-the-microsoft-graph-api-with-powershell/) on the subject, so go read it before you read the rest of this post. Follow the steps he lists to create a new Azure application. When you get to the Client Credentials section, see below.
 
 Welcome back. Now that we are on the same page, let's continue. The application we create in Azure needs to be granted the User.Read.All permission. don't forget to grant consent if prompted.
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-full is-resized"><a href="https://www.sysmansquad.com/?attachment_id=1446" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://www.sysmansquad.com/wp-content/uploads/2020/07/app-permissions.png" alt="" class="wp-image-1446" width="1287" height="589" srcset="https:/wp-content/uploads/2020/07/app-permissions.png 1287w, https:/wp-content/uploads/2020/07/app-permissions-300x137.png 300w, https:/wp-content/uploads/2020/07/app-permissions-1024x469.png 1024w, https:/wp-content/uploads/2020/07/app-permissions-768x351.png 768w, https:/wp-content/uploads/2020/07/app-permissions-100x46.png 100w, https:/wp-content/uploads/2020/07/app-permissions-855x391.png 855w, https:/wp-content/uploads/2020/07/app-permissions-1234x565.png 1234w" sizes="(max-width: 1287px) 100vw, 1287px" /></a></figure>
+  <figure class="aligncenter size-full is-resized">[![](https://www.sysmansquad.com/wp-content/uploads/2020/07/app-permissions.png)](https://www.sysmansquad.com/?attachment_id=1446)</figure>
 </div>
 
 <p class="has-very-light-gray-background-color has-background">
@@ -172,9 +172,9 @@ Now you just need to deploy the script package to a group, make sure its set to 
 Once the script package is on a client, the signature will appear in Outlook, though Outlook will not configure it as a default on its own. (perhaps an idea for another blog post).
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-full is-resized"><a href="https://www.sysmansquad.com/?attachment_id=1447" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://www.sysmansquad.com/wp-content/uploads/2020/07/outlook-signature.png" alt="" class="wp-image-1447" width="706" height="500" srcset="https:/wp-content/uploads/2020/07/outlook-signature.png 706w, https:/wp-content/uploads/2020/07/outlook-signature-300x212.png 300w, https:/wp-content/uploads/2020/07/outlook-signature-100x71.png 100w" sizes="(max-width: 706px) 100vw, 706px" /></a></figure>
+  <figure class="aligncenter size-full is-resized">[![](https://www.sysmansquad.com/wp-content/uploads/2020/07/outlook-signature.png)](https://www.sysmansquad.com/?attachment_id=1447)</figure>
 </div>
 
 ### Questions/Issues?
 
-If you run into any issues or have questions about anything Intune head over to the&nbsp;<a rel="noreferrer noopener" href="https://aka.ms/winadmins" target="_blank">WinAdmins discord community</a>&nbsp;and go to the `#Intune` channel, and ask Jake to help you.
+If you run into any issues or have questions about anything Intune head over to the&nbsp;[WinAdmins discord community](https://aka.ms/winadmins)&nbsp;and go to the `#Intune` channel, and ask Jake to help you.

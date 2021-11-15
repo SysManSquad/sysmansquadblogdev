@@ -18,7 +18,7 @@ categories:
 ---
 ## Purpose
 
-The following blog posts will be a companion guide to Steve and Adam’s Intune training videos found at [Intune.Training](https://intune.training/) (this covers Episode 3) and will help you get the Windows Store for Business (WSfB, also known as Microsoft Store for Business) setup in your environment. This guide assumes that you already have followed <a rel="noreferrer noopener" aria-label="Part 1 (opens in a new tab)" href="https://sysmansquad.com/2019/12/18/intune-autopilot-setup-companion-guide-part-1/" target="_blank">Part 1</a> of this series and already have a working deployment profile. By the end of this guide you will have access to the Company Portal app and other apps of your choosing. This has been a major request from several people in the [WinAdmins](https://aka.ms/winadmins) community. I strongly recommend joining if you are not already a member! 
+The following blog posts will be a companion guide to Steve and Adam’s Intune training videos found at [Intune.Training](https://intune.training/) (this covers Episode 3) and will help you get the Windows Store for Business (WSfB, also known as Microsoft Store for Business) setup in your environment. This guide assumes that you already have followed [Part 1](https://sysmansquad.com/2019/12/18/intune-autopilot-setup-companion-guide-part-1/) of this series and already have a working deployment profile. By the end of this guide you will have access to the Company Portal app and other apps of your choosing. This has been a major request from several people in the [WinAdmins](https://aka.ms/winadmins) community. I strongly recommend joining if you are not already a member! 
 
 ## Why?
 
@@ -48,7 +48,7 @@ Navigate to the&nbsp;[MEM admin center](https://devicemanagement.microsoft.com/)
  18. Hit **Sync**
  19. It should look similar to the image below<figure class="wp-block-image size-large">
 
-<img loading="lazy" width="914" height="585" src="https://sysmansquad.com/wp-content/uploads/2020/01/msedge_ZZvRDfDAxr.png" alt="" class="wp-image-696" srcset="https:/wp-content/uploads/2020/01/msedge_ZZvRDfDAxr.png 914w, https:/wp-content/uploads/2020/01/msedge_ZZvRDfDAxr-300x192.png 300w, https:/wp-content/uploads/2020/01/msedge_ZZvRDfDAxr-768x492.png 768w, https:/wp-content/uploads/2020/01/msedge_ZZvRDfDAxr-100x64.png 100w, https:/wp-content/uploads/2020/01/msedge_ZZvRDfDAxr-855x547.png 855w" sizes="(max-width: 914px) 100vw, 914px" /> </figure> 
+![](https://sysmansquad.com/wp-content/uploads/2020/01/msedge_ZZvRDfDAxr.png) </figure> 
 
 ## What about the actual applications?
 
@@ -58,7 +58,7 @@ Now that we have a working WSfB connector lets add some applications! Please not
   2. Select **Shop** for my group
   3. On the right hand side in the **Search** the store type in Company Portal
   4. Select **Company Portal** from the list of available apps  
-<img loading="lazy" width="453" height="366" class="wp-image-697" style="width: 600px;" src="https://sysmansquad.com/wp-content/uploads/2020/01/msedge_hD8ykaEhDr.png" alt="" srcset="https:/wp-content/uploads/2020/01/msedge_hD8ykaEhDr.png 453w, https:/wp-content/uploads/2020/01/msedge_hD8ykaEhDr-300x242.png 300w, https:/wp-content/uploads/2020/01/msedge_hD8ykaEhDr-100x81.png 100w" sizes="(max-width: 453px) 100vw, 453px" /> 
+![](https://sysmansquad.com/wp-content/uploads/2020/01/msedge_hD8ykaEhDr.png) 
   5. Select **Get the app**
   6. A prompt will appear letting you know the app has been purchased and added to your inventory
   7. In the search bar type in PowerBI
@@ -69,7 +69,7 @@ Now that we have a working WSfB connector lets add some applications! Please not
 
 Congrats you now have apps in your tenant!
 
-<img loading="lazy" width="498" height="243" class="wp-image-698" style="width: 500px;" src="https://sysmansquad.com/wp-content/uploads/2020/01/giphy-2.gif" alt="" /> 
+![](https://sysmansquad.com/wp-content/uploads/2020/01/giphy-2.gif) 
 
 ## Okay, so now I have some applications but how do I deploy them?
 
@@ -107,7 +107,7 @@ Who doesn't love a little extra icing on the cake? In this section I'll walk you
   5. The App type will be **Windows 10 (preview)** Located under Microsoft Edge, version 77 and later
   6. Click **App information**
   7. Give the app a name and description  
-<img loading="lazy" width="302" height="167" class="wp-image-699" style="width: 300px;" src="https://sysmansquad.com/wp-content/uploads/2020/01/msedge_uWOZP5GHSx.png" alt="" srcset="https:/wp-content/uploads/2020/01/msedge_uWOZP5GHSx.png 302w, https:/wp-content/uploads/2020/01/msedge_uWOZP5GHSx-300x166.png 300w, https:/wp-content/uploads/2020/01/msedge_uWOZP5GHSx-100x55.png 100w" sizes="(max-width: 302px) 100vw, 302px" /> 
+![](https://sysmansquad.com/wp-content/uploads/2020/01/msedge_uWOZP5GHSx.png) 
   8. Select **OK**
   9. Click **App settings**
  10. Change the Channel to **Stable**
@@ -122,4 +122,5 @@ Who doesn't love a little extra icing on the cake? In this section I'll walk you
 
 With that set you now have the new Edge! As always if you have questions or concerns please head over to the [WinAdmins][2] discord. The next post will go over Configuration Profiles and potentially PowerShell scripts!<figure class="wp-block-image size-large">
 
-<img loading="lazy" width="480" height="204" src="https://sysmansquad.com/wp-content/uploads/2020/01/giphy-1-1.gif" alt="" class="wp-image-700" /> </figure>
+![](https://sysmansquad.com/wp-content/uploads/2020/01/giphy-1-1.gif) </figure>
+

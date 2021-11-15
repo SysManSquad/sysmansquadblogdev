@@ -31,17 +31,17 @@ tags:
   <div class="uagb-toc__list-wrap">
     <ol class="uagb-toc__list">
       <li class="uagb-toc__list">
-        <a href="#install-the-module">Install the module</a><li class="uagb-toc__list">
-          <a href="#create-lp-lxp-and-fod-repositories">Create LP, LXP and FoD repositories</a><li class="uagb-toc__list">
-            <a href="#create-the-applications">Create the Applications</a><li class="uagb-toc__list">
-              <a href="#support">Support</a></ol> </div> </div> </div> <hr class="wp-block-separator" />
+        [Install the module](#install-the-module)<li class="uagb-toc__list">
+          [Create LP, LXP and FoD repositories](#create-lp-lxp-and-fod-repositories)<li class="uagb-toc__list">
+            [Create the Applications](#create-the-applications)<li class="uagb-toc__list">
+              [Support](#support)</ol> </div> </div> </div> <hr class="wp-block-separator" />
               
               <p>
-                This post complements <a rel="noreferrer noopener" href="https://sysmansquad.com/2020/06/02/language-packs,-language-experience-packs,-language-interface-packs-what?!" target="_blank">my other post</a>, where I walk-through the differences of LP, LIP, LXP and FoD.
+                This post complements [my other post](https://sysmansquad.com/2020/06/02/language-packs,-language-experience-packs,-language-interface-packs-what?!), where I walk-through the differences of LP, LIP, LXP and FoD.
               </p>
               
               <p>
-                Here I will show you how to use a PowerShell module I wrote, <a href="https://github.com/codaamok/PSCMWin10Language" target="_blank" rel="noreferrer noopener">PSCMWin10Languages</a>, to create Microsoft Endpoint Manager Configuration Manager Applications for each language you want to deploy via the Software Center.
+                Here I will show you how to use a PowerShell module I wrote, [PSCMWin10Languages](https://github.com/codaamok/PSCMWin10Language), to create Microsoft Endpoint Manager Configuration Manager Applications for each language you want to deploy via the Software Center.
               </p>
               
               <p>
@@ -53,7 +53,7 @@ tags:
               </h2>
               
               <p>
-                The module can be found on <a href="https://github.com/codaamok/PSCMWin10Language" target="_blank" rel="noreferrer noopener">GitHub</a> or the <a rel="noreferrer noopener" href="https://www.powershellgallery.com/packages/PSCMWin10Language/0.0.1" target="_blank">PowerShell Gallery</a>. You can install it like so:
+                The module can be found on [GitHub](https://github.com/codaamok/PSCMWin10Language) or the [PowerShell Gallery](https://www.powershellgallery.com/packages/PSCMWin10Language/0.0.1). You can install it like so:
               </p>
               
               <div class="wp-block-codemirror-blocks-code-block code-block">
@@ -183,7 +183,7 @@ New-FoDLanguageFeaturesRepository -Language "fr-FR", "de-DE" -SourcePath "J:\" -
               </p>
               
               <div class="wp-block-image">
-                <figure class="aligncenter size-large"><a href="https://sysmansquad.com/wp-content/uploads/2020/06/LPSoftwareCenter-EndResult-2-new.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" width="1024" height="658" src="https://sysmansquad.com/wp-content/uploads/2020/06/LPSoftwareCenter-EndResult-2-new-1024x658.jpg" alt="" class="wp-image-1319" srcset="https:/wp-content/uploads/2020/06/LPSoftwareCenter-EndResult-2-new-1024x658.jpg 1024w, https:/wp-content/uploads/2020/06/LPSoftwareCenter-EndResult-2-new-300x193.jpg 300w, https:/wp-content/uploads/2020/06/LPSoftwareCenter-EndResult-2-new-768x493.jpg 768w, https:/wp-content/uploads/2020/06/LPSoftwareCenter-EndResult-2-new-1536x986.jpg 1536w, https:/wp-content/uploads/2020/06/LPSoftwareCenter-EndResult-2-new-2048x1315.jpg 2048w, https:/wp-content/uploads/2020/06/LPSoftwareCenter-EndResult-2-new-100x64.jpg 100w, https:/wp-content/uploads/2020/06/LPSoftwareCenter-EndResult-2-new-855x549.jpg 855w, https:/wp-content/uploads/2020/06/LPSoftwareCenter-EndResult-2-new-1234x792.jpg 1234w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></figure>
+                <figure class="aligncenter size-large">[![](https://sysmansquad.com/wp-content/uploads/2020/06/LPSoftwareCenter-EndResult-2-new-1024x658.jpg)](https://sysmansquad.com/wp-content/uploads/2020/06/LPSoftwareCenter-EndResult-2-new.jpg)</figure>
               </div>
               
               <p>
@@ -213,10 +213,10 @@ New-FoDLanguageFeaturesRepository -Language "fr-fr", "de-de" -SourcePath "I:\" -
 New-CMLanguagePackApplication -SiteServer "cm.contoso.com" -SiteCode "P01" -SourcePath "\\sccm.acc.local\OSD\Source\2004-Languages" -Languages "fr-fr", "de-de" -WindowsVersion @{ "Version" = "2004"; "Build" = "19041" } -GlobalConditionName "Operating System build" -CreateAppIfMissing -CreateGlobalConditionIfMissing</pre>
               </div><figure class="wp-block-image size-large">
               
-              <a href="https://sysmansquad.com/wp-content/uploads/2020/06/LPSoftwareCenter-EndResult-3-new.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" width="1024" height="658" src="https://sysmansquad.com/wp-content/uploads/2020/06/LPSoftwareCenter-EndResult-3-new-1024x658.jpg" alt="" class="wp-image-1320" srcset="https:/wp-content/uploads/2020/06/LPSoftwareCenter-EndResult-3-new-1024x658.jpg 1024w, https:/wp-content/uploads/2020/06/LPSoftwareCenter-EndResult-3-new-300x193.jpg 300w, https:/wp-content/uploads/2020/06/LPSoftwareCenter-EndResult-3-new-768x493.jpg 768w, https:/wp-content/uploads/2020/06/LPSoftwareCenter-EndResult-3-new-1536x987.jpg 1536w, https:/wp-content/uploads/2020/06/LPSoftwareCenter-EndResult-3-new-2048x1316.jpg 2048w, https:/wp-content/uploads/2020/06/LPSoftwareCenter-EndResult-3-new-100x64.jpg 100w, https:/wp-content/uploads/2020/06/LPSoftwareCenter-EndResult-3-new-855x549.jpg 855w, https:/wp-content/uploads/2020/06/LPSoftwareCenter-EndResult-3-new-1234x793.jpg 1234w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></figure> <h2>
+              [![](https://sysmansquad.com/wp-content/uploads/2020/06/LPSoftwareCenter-EndResult-3-new-1024x658.jpg)](https://sysmansquad.com/wp-content/uploads/2020/06/LPSoftwareCenter-EndResult-3-new.jpg)</figure> <h2>
                 Support
               </h2>
               
               <p>
-                If you have any issues with the module, please do open an issue on the <a href="https://github.com/codaamok/PSCMWin10Language" target="_blank" rel="noreferrer noopener">PSCMWin10Language GitHub repository</a>!
+                If you have any issues with the module, please do open an issue on the [PSCMWin10Language GitHub repository](https://github.com/codaamok/PSCMWin10Language)!
               </p>

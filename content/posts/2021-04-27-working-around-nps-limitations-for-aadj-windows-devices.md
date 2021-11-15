@@ -28,30 +28,30 @@ tags:
   <div class="uagb-toc__list-wrap">
     <ol class="uagb-toc__list">
       <li class="uagb-toc__list">
-        <a href="#introduction">Introduction</a><li class="uagb-toc__list">
-          <a href="#background">Background</a><ul class="uagb-toc__list">
+        [Introduction](#introduction)<li class="uagb-toc__list">
+          [Background](#background)<ul class="uagb-toc__list">
             <li class="uagb-toc__list">
-              <a href="#the-tldr-of-the-issue">The tl;dr of the issue</a><li class="uagb-toc__list">
+              [The tl;dr of the issue](#the-tldr-of-the-issue)<li class="uagb-toc__list">
                 <li class="uagb-toc__list">
-                  <a href="#why-is-device-based-authentication-important">Why is device based authentication important?</a><li class="uagb-toc__list">
+                  [Why is device based authentication important?](#why-is-device-based-authentication-important)<li class="uagb-toc__list">
                     <li class="uagb-toc__list">
-                      <a href="#why-not-just-hybrid-join-your-machines">Why not just hybrid join your machines?</a>
+                      [Why not just hybrid join your machines?](#why-not-just-hybrid-join-your-machines)
                     </li></ul>
                   </li>
                   <li class="uagb-toc__list">
-                    <a href="#things-i-am-assuming-you-have">Things I am assuming you have</a><li class="uagb-toc__list">
-                      <a href="#the-workaround">The workaround</a><ul class="uagb-toc__list">
+                    [Things I am assuming you have](#things-i-am-assuming-you-have)<li class="uagb-toc__list">
+                      [The workaround](#the-workaround)<ul class="uagb-toc__list">
                         <li class="uagb-toc__list">
-                          <a href="#basic-version-of-the-script">Basic version of the script</a><li class="uagb-toc__list">
+                          [Basic version of the script](#basic-version-of-the-script)<li class="uagb-toc__list">
                             <li class="uagb-toc__list">
-                              <a href="#more-advanced-version-of-the-script-that-works-with-ms-graph">More advanced version of the script that works with MS Graph</a><li class="uagb-toc__list">
+                              [More advanced version of the script that works with MS Graph](#more-advanced-version-of-the-script-that-works-with-ms-graph)<li class="uagb-toc__list">
                                 <li class="uagb-toc__list">
-                                  <a href="#expected-changes-for-readers">Expected changes for readers</a>
+                                  [Expected changes for readers](#expected-changes-for-readers)
                                 </li></ul>
                               </li></ul>
                             </li>
                             <li class="uagb-toc__list">
-                              <a href="#closing-thoughts">Closing thoughts</a>
+                              [Closing thoughts](#closing-thoughts)
                             </li></ul>
                           </li></ul></ol> </div> </div> </div> 
                           <h2>
@@ -67,7 +67,7 @@ tags:
                           </h2>
                           
                           <p>
-                            NPS does not play nice when it comes to AADJ device authentication. There is a fantastic writeup on this issue <a href="https://docs.microsoft.com/en-us/answers/questions/57999/device-certificate-scep-based-authentication-again.html" target="_blank" rel="noreferrer noopener">here</a>.
+                            NPS does not play nice when it comes to AADJ device authentication. There is a fantastic writeup on this issue [here](https://docs.microsoft.com/en-us/answers/questions/57999/device-certificate-scep-based-authentication-again.html).
                           </p>
                           
                           <h5>
@@ -91,7 +91,7 @@ tags:
                           </h5>
                           
                           <div class="wp-block-image">
-                            <figure class="aligncenter size-large is-resized"><img loading="lazy" src="https://sysmansquad.com/wp-content/uploads/2021/04/haadj.gif" alt="" class="wp-image-2569" width="428" height="259" /><figcaption>More great gifs like this on the <a href="https://aka.ms/winadmins" target="_blank" rel="noreferrer noopener">Windows Admins</a> Discord server.</figcaption></figure>
+                            <figure class="aligncenter size-large is-resized">![](https://sysmansquad.com/wp-content/uploads/2021/04/haadj.gif)<figcaption>More great gifs like this on the [Windows Admins](https://aka.ms/winadmins) Discord server.</figcaption></figure>
                           </div>
                           
                           <h2>
@@ -220,12 +220,12 @@ if ($nameMap) {
                             <pre><code>.\New-DummyADComputer.ps1 -deviceName "device-name-here" -nameMap</code></pre>
                           </div><figure class="wp-block-image size-large">
                           
-                          <img loading="lazy" width="1010" height="53" src="https://sysmansquad.com/wp-content/uploads/2021/04/image-8.png" alt="" class="wp-image-2641" srcset="https:/wp-content/uploads/2021/04/image-8.png 1010w, https:/wp-content/uploads/2021/04/image-8-300x16.png 300w, https:/wp-content/uploads/2021/04/image-8-768x40.png 768w, https:/wp-content/uploads/2021/04/image-8-100x5.png 100w, https:/wp-content/uploads/2021/04/image-8-855x45.png 855w" sizes="(max-width: 1010px) 100vw, 1010px" /></figure> <p>
+                          ![](https://sysmansquad.com/wp-content/uploads/2021/04/image-8.png)</figure> <p>
                             After using the script for a test device, you should see the computer object in your AD.
                           </p>
                           
                           <div class="wp-block-image">
-                            <figure class="aligncenter size-large"><img loading="lazy" width="520" height="583" src="https://sysmansquad.com/wp-content/uploads/2021/04/image-9.png" alt="" class="wp-image-2642" srcset="https:/wp-content/uploads/2021/04/image-9.png 520w, https:/wp-content/uploads/2021/04/image-9-268x300.png 268w, https:/wp-content/uploads/2021/04/image-9-100x112.png 100w" sizes="(max-width: 520px) 100vw, 520px" /></figure>
+                            <figure class="aligncenter size-large">![](https://sysmansquad.com/wp-content/uploads/2021/04/image-9.png)</figure>
                           </div>
                           
                           <p>
@@ -351,7 +351,7 @@ foreach ($DummyDevice in $DummyDevices) {
                           </div>
                           
                           <div class="wp-block-image">
-                            <figure class="aligncenter size-large is-resized"><img loading="lazy" src="https://sysmansquad.com/wp-content/uploads/2021/04/image-3-1024x71.png" alt="" class="wp-image-2693" width="1015" height="70" srcset="https:/wp-content/uploads/2021/04/image-3-1024x71.png 1024w, https:/wp-content/uploads/2021/04/image-3-300x21.png 300w, https:/wp-content/uploads/2021/04/image-3-768x53.png 768w, https:/wp-content/uploads/2021/04/image-3-1536x106.png 1536w, https:/wp-content/uploads/2021/04/image-3-100x7.png 100w, https:/wp-content/uploads/2021/04/image-3-855x59.png 855w, https:/wp-content/uploads/2021/04/image-3-1234x85.png 1234w, https:/wp-content/uploads/2021/04/image-3.png 1597w" sizes="(max-width: 1015px) 100vw, 1015px" /></figure>
+                            <figure class="aligncenter size-large is-resized">![](https://sysmansquad.com/wp-content/uploads/2021/04/image-3-1024x71.png)</figure>
                           </div>
                           
                           <p>
@@ -359,7 +359,7 @@ foreach ($DummyDevice in $DummyDevices) {
                           </p>
                           
                           <div class="wp-block-image">
-                            <figure class="aligncenter size-large"><img loading="lazy" width="380" height="83" src="https://sysmansquad.com/wp-content/uploads/2021/04/image-15.png" alt="" class="wp-image-2694" srcset="https:/wp-content/uploads/2021/04/image-15.png 380w, https:/wp-content/uploads/2021/04/image-15-300x66.png 300w, https:/wp-content/uploads/2021/04/image-15-100x22.png 100w" sizes="(max-width: 380px) 100vw, 380px" /></figure>
+                            <figure class="aligncenter size-large">![](https://sysmansquad.com/wp-content/uploads/2021/04/image-15.png)</figure>
                           </div>
                           
                           <p>
@@ -404,7 +404,7 @@ foreach ($DummyDevice in $DummyDevices) {
                           </p>
                           
                           <p>
-                            I'm not sure why Microsoft hasn't considered this or even followed up to the <a href="https://docs.microsoft.com/en-us/answers/questions/57999/device-certificate-scep-based-authentication-again.html" target="_blank" rel="noreferrer noopener">linked post above</a>. In an ideal world, Microsoft might create some sort of connector for on-prem. NPS to check AAD, as well as the local AD, for devices during authentications.
+                            I'm not sure why Microsoft hasn't considered this or even followed up to the [linked post above](https://docs.microsoft.com/en-us/answers/questions/57999/device-certificate-scep-based-authentication-again.html). In an ideal world, Microsoft might create some sort of connector for on-prem. NPS to check AAD, as well as the local AD, for devices during authentications.
                           </p>
                           
                           <p>

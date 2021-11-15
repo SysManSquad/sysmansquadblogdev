@@ -16,7 +16,7 @@ One set of issues to solve are the uninstallation and upgrades for related Offic
 
 The next challenge was how to capture the Outlook plug-in, Visio, and Project reinstalls. The task sequence sets boolean variables to capture the presence of each software. My customer has a webservice that can be called to inject these computer resource records into remediation deployment collections, but it’s not accessible to internet-based computers.
 
-I found <a href="https://www.reddit.com/r/SCCM/comments/b19gzw/how_we_used_to_do_it_collecting_client_data_via/" target="_blank" rel="noreferrer noopener">this</a> generic status message article on Reddit and worked through the examples. A way to piggyback off SCCM client communication back to the infrastructure appealed to me. Could it somehow solve my problem with the application reinstalls?
+I found [this](https://www.reddit.com/r/SCCM/comments/b19gzw/how_we_used_to_do_it_collecting_client_data_via/) generic status message article on Reddit and worked through the examples. A way to piggyback off SCCM client communication back to the infrastructure appealed to me. Could it somehow solve my problem with the application reinstalls?
 
 The author explains how to return a generic information status message, with information of your choice in one of the insertion string fields. I created an action in my task sequence to return a string value of **projectInstalled** if 32-bit Project was installed. I use the Project boolean task sequence variable set earlier in the task sequence as a condition for the action.
 
@@ -30,7 +30,7 @@ If the 32-bit Project condition evaluates true the generic status message is sen
   </tr>
 </table></figure> 
 
-(A quick aside: I used a task sequence command line action to run this script. The preferred method is to run a PowerShell script; old dog, new tricks, and all that jazz. Adam Gross has re-written the above code as a robust PowerShell script. The script is available <a href="https://github.com/RonaldMontgomery/SysManSquad/blob/master/New-CustomStatusMessage" target="_blank" rel="noreferrer noopener">here</a>.)
+(A quick aside: I used a task sequence command line action to run this script. The preferred method is to run a PowerShell script; old dog, new tricks, and all that jazz. Adam Gross has re-written the above code as a robust PowerShell script. The script is available [here](https://github.com/RonaldMontgomery/SysManSquad/blob/master/New-CustomStatusMessage).)
 
 I created similar task sequence actions for 32-bit Visio and the Outlook plug-ins. These actions are executed at the start of the task sequence, when there is the best chance the client will successfully return this information. We originally had this after the Microsoft 365 Apps install reboot and the messages weren’t always successfully sent – the computer was on VPN and didn’t switch to communicating with the CMG, an issue we’re still trying to understand.
 
@@ -38,7 +38,7 @@ When querying status messages on the CAS I saw the generic status messages retur
 
 There are creative ways to use this information. We can programmatically query for these generic status messages, or use Microsoft Flow or a Status Filter Rule, and then call the internal webservice to inject the resource records in the corresponding 64-bit deployment collections. For now, we’ve stayed simple and built remediation collections from the generic status messages.
 
-<a href="https://social.technet.microsoft.com/Forums/en-US/0822d4d9-3033-4344-8cff-c72d89a0db20/how-to-create-collection-based-on-status-message?forum=configmgrgeneral" target="_blank" rel="noreferrer noopener">This</a> Technet forum thread gives the collection query syntax. The WQL query for the 64-bit Project deployment collection is below. Messsage ID **39997** is the generic information status message ID. The first insertion string value of **MsgType_Office365Upgrade** was chosen to separate these messages from future deployment messages.<figure class="wp-block-table">
+[This](https://social.technet.microsoft.com/Forums/en-US/0822d4d9-3033-4344-8cff-c72d89a0db20/how-to-create-collection-based-on-status-message?forum=configmgrgeneral) Technet forum thread gives the collection query syntax. The WQL query for the 64-bit Project deployment collection is below. Messsage ID **39997** is the generic information status message ID. The first insertion string value of **MsgType_Office365Upgrade** was chosen to separate these messages from future deployment messages.<figure class="wp-block-table">
 
 <table>
   <tr>

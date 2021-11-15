@@ -19,7 +19,7 @@ categories:
   - Windows
 
 ---
-Welcome back! We're now going to move on to the actual effort it takes to build your lab. As you recall we got pretty far last time in documenting the beginnings of our network. For this lab I'll be using <a rel="noreferrer noopener" aria-label="VMWare Workstation (opens in a new tab)" href="https://www.vmware.com/products/workstation-pro.html" target="_blank">VMWare Workstation</a>, but you can accomplish this with <a rel="noreferrer noopener" aria-label="Microsoft Hyper-V (opens in a new tab)" href="https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/" target="_blank">Microsoft Hyper-V</a>, <a href="https://www.virtualbox.org/" target="_blank" rel="noreferrer noopener" aria-label="Oracle VirtualBox (opens in a new tab)">Oracle VirtualBox</a>, the free tier of <a href="https://www.vmware.com/products/vsphere.html" target="_blank" rel="noreferrer noopener" aria-label="VMWare's ESX (opens in a new tab)">VMWare's ESX</a>, or <a rel="noreferrer noopener" aria-label="XCP-NG (opens in a new tab)" href="https://xcp-ng.org/" target="_blank">XCP-NG</a>.
+Welcome back! We're now going to move on to the actual effort it takes to build your lab. As you recall we got pretty far last time in documenting the beginnings of our network. For this lab I'll be using [VMWare Workstation](https://www.vmware.com/products/workstation-pro.html), but you can accomplish this with [Microsoft Hyper-V](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/), [Oracle VirtualBox](https://www.virtualbox.org/), the free tier of [VMWare's ESX](https://www.vmware.com/products/vsphere.html), or [XCP-NG](https://xcp-ng.org/).
 
 If you haven't read the previous post, please have a look [here](https://sysmansquad.com/2019/12/17/net-101-create-a-basic-lab-network-design/) as each post builds upon the last.
 
@@ -35,28 +35,28 @@ I'm not going to cover a lot of the implementation details of any particular hyp
   <div class="uagb-toc__list-wrap">
     <ol class="uagb-toc__list">
       <li class="uagb-toc__list">
-        <a href="#a-note-about-pinging">A Note About Pinging</a><li class="uagb-toc__list">
-          <a href="#documentation">Documentation</a><li class="uagb-toc__list">
-            <a href="#the-admin-workstation">The Admin Workstation</a><li class="uagb-toc__list">
-              <a href="#the-default-gateway">The Default Gateway</a><li class="uagb-toc__list">
-                <a href="#the-dns-server">The DNS Server</a><ul class="uagb-toc__list">
+        [A Note About Pinging](#a-note-about-pinging)<li class="uagb-toc__list">
+          [Documentation](#documentation)<li class="uagb-toc__list">
+            [The Admin Workstation](#the-admin-workstation)<li class="uagb-toc__list">
+              [The Default Gateway](#the-default-gateway)<li class="uagb-toc__list">
+                [The DNS Server](#the-dns-server)<ul class="uagb-toc__list">
                   <li class="uagb-toc__list">
-                    <a href="#initial-configuration">Initial Configuration</a><li class="uagb-toc__list">
+                    [Initial Configuration](#initial-configuration)<li class="uagb-toc__list">
                       <li class="uagb-toc__list">
-                        <a href="#installing-configuring-dns-server-role">Installing & Configuring DNS server role</a>
+                        [Installing & Configuring DNS server role](#installing-configuring-dns-server-role)
                       </li></ul>
                     </li>
                     <li class="uagb-toc__list">
-                      <a href="#the-dhcp-server">The DHCP Server</a><ul class="uagb-toc__list">
+                      [The DHCP Server](#the-dhcp-server)<ul class="uagb-toc__list">
                         <li class="uagb-toc__list">
-                          <a href="#initial-config">Initial Config</a><li class="uagb-toc__list">
+                          [Initial Config](#initial-config)<li class="uagb-toc__list">
                             <li class="uagb-toc__list">
-                              <a href="#installing-configuring-the-dhcp-role">Installing & Configuring the DHCP role</a>
+                              [Installing & Configuring the DHCP role](#installing-configuring-the-dhcp-role)
                             </li></ul>
                           </li></ul>
                         </li>
                         <li class="uagb-toc__list">
-                          <a href="#conclusion-testing">Conclusion & Testing</a>
+                          [Conclusion & Testing](#conclusion-testing)
                         </li>
                       </ul>
                     </li></ul></ol> </div> </div> </div> 
@@ -176,7 +176,7 @@ I'm not going to cover a lot of the implementation details of any particular hyp
                     </p>
                     
                     <p>
-                      Install a Windows 10 VM to use as your admin workstation. Let's say that you're using an evaluation copy from the <a href="https://www.microsoft.com/en-us/evalcenter/evaluate-windows-10-enterprise">evaluation center</a>, which will function for 90 days. Place it on the lab network, and if you'd like to RDP to it, give it an adapter on the parent network as well.
+                      Install a Windows 10 VM to use as your admin workstation. Let's say that you're using an evaluation copy from the [evaluation center](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-10-enterprise), which will function for 90 days. Place it on the lab network, and if you'd like to RDP to it, give it an adapter on the parent network as well.
                     </p>
                     
                     <p class="has-background has-very-light-gray-background-color">
@@ -212,7 +212,7 @@ I'm not going to cover a lot of the implementation details of any particular hyp
                     </h2>
                     
                     <p>
-                      We touched on what this is and what it does last time, so you know that this will serve as the default gateway for the network. It is also the firewall and IPv4 NAT appliance. Grab the latest <a rel="noreferrer noopener" aria-label="PFSense  (opens in a new tab)" href="https://www.pfsense.org/download/" target="_blank">PFSense </a>ISO and install a VM with ~2048MB RAM and two ethernet interfaces. The first will be the parent network, in this case your home or business network, the second will be the in-lab network. Consult the pfsense documentation for installing and setting the IP addresses you've chosen for the in-lab interface. The parent network interface should be set to DHCP.
+                      We touched on what this is and what it does last time, so you know that this will serve as the default gateway for the network. It is also the firewall and IPv4 NAT appliance. Grab the latest [PFSense ](https://www.pfsense.org/download/)ISO and install a VM with ~2048MB RAM and two ethernet interfaces. The first will be the parent network, in this case your home or business network, the second will be the in-lab network. Consult the pfsense documentation for installing and setting the IP addresses you've chosen for the in-lab interface. The parent network interface should be set to DHCP.
                     </p>
                     
                     <p>
@@ -417,7 +417,7 @@ Add-DnsServerResourceRecord -ZoneName $ZoneName -Passthru -AAAA -Name 'lab-dhcp'
 </code></pre>
                     
                     <p class="has-background has-very-light-gray-background-color">
-                      What is the difference between an 'A' record and an 'AAAA' record? At the simplest level, they are both a type of DNS record that specify a normal mapping from a DNS name to an IP address. A records contain IPv4 addresses, and AAAA records contain IPv6 addresses. You can have multiple A or AAAA records that point to more than one IP address, and the DNS server will round-robin rotate through them. This gives a free amount of load balancing but it isn't appropriate if you're trying to balance a heavily used service by utilization. For more information and to see some more detailed and pedantic information on the types of DNS records there are, see <a href="https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4">this IANA reference page.</a>
+                      What is the difference between an 'A' record and an 'AAAA' record? At the simplest level, they are both a type of DNS record that specify a normal mapping from a DNS name to an IP address. A records contain IPv4 addresses, and AAAA records contain IPv6 addresses. You can have multiple A or AAAA records that point to more than one IP address, and the DNS server will round-robin rotate through them. This gives a free amount of load balancing but it isn't appropriate if you're trying to balance a heavily used service by utilization. For more information and to see some more detailed and pedantic information on the types of DNS records there are, see [this IANA reference page.](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4)
                     </p>
                     
                     <p>
@@ -568,3 +568,4 @@ Add-DhcpServerv6ExclusionRange @V6ExclusionRange
                     <p>
                       Next article we'll cover layering in identity management in the form of Active Directory.
                     </p>
+

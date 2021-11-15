@@ -12,17 +12,17 @@ categories:
   - Windows
 
 ---
-So you have already figured out <a href="https://sysmansquad.com/2020/07/08/dynamic-outlook-email-signature-using-with-intune-endpoint-analytics-proactive-remediations/" target="_blank" rel="noreferrer noopener">how to dynamically generated outlook signatures</a>, but now you want to make sure that people actually use them. but without preventing the use of other signatures your users might have.
+So you have already figured out [how to dynamically generated outlook signatures](https://sysmansquad.com/2020/07/08/dynamic-outlook-email-signature-using-with-intune-endpoint-analytics-proactive-remediations/), but now you want to make sure that people actually use them. but without preventing the use of other signatures your users might have.
 
 Well it just so happens that I have a solution for you!<figure class="wp-block-image size-full is-resized">
 
-<img loading="lazy" src="https://sysmansquad.com/wp-content/uploads/2021/05/before.png" alt="" class="wp-image-2781" width="921" height="646" srcset="https:/wp-content/uploads/2021/05/before.png 921w, https:/wp-content/uploads/2021/05/before-300x210.png 300w, https:/wp-content/uploads/2021/05/before-768x539.png 768w, https:/wp-content/uploads/2021/05/before-100x70.png 100w, https:/wp-content/uploads/2021/05/before-855x600.png 855w" sizes="(max-width: 921px) 100vw, 921px" /> <figcaption>No default signature has been set</figcaption></figure> 
+![](https://sysmansquad.com/wp-content/uploads/2021/05/before.png) <figcaption>No default signature has been set</figcaption></figure> 
 
-To do all this, we create a new <a href="https://sysmansquad.com/2020/07/07/intune-autopilot-proactive-remediation/" target="_blank" rel="noreferrer noopener">Proactive Remediation in Intune</a>.
+To do all this, we create a new [Proactive Remediation in Intune](https://sysmansquad.com/2020/07/07/intune-autopilot-proactive-remediation/).
 
 Add the detection and remediations scripts from below, and set it to run as the user.<figure class="wp-block-image size-large">
 
-<img loading="lazy" width="416" height="145" src="https://sysmansquad.com/wp-content/uploads/2021/04/vmconnect_68MRJGl48P.png" alt="" class="wp-image-2538" srcset="https:/wp-content/uploads/2021/04/vmconnect_68MRJGl48P.png 416w, https:/wp-content/uploads/2021/04/vmconnect_68MRJGl48P-300x105.png 300w, https:/wp-content/uploads/2021/04/vmconnect_68MRJGl48P-100x35.png 100w" sizes="(max-width: 416px) 100vw, 416px" /> </figure> 
+![](https://sysmansquad.com/wp-content/uploads/2021/04/vmconnect_68MRJGl48P.png) </figure> 
 
 This solution takes care of picking the default outlook profile. but keep in mind that this has only been tested on Office 365/microsoft 365 apps for business. so I have no idea if it works on the legacy versions.
 
@@ -107,4 +107,4 @@ catch {
 
 There is one caveat, this change will only take effect when outlook is restarted.<figure class="wp-block-image size-large is-resized is-style-default">
 
-<img loading="lazy" src="https://sysmansquad.com/wp-content/uploads/2021/05/after.png" alt="" class="wp-image-2782" width="691" height="485" srcset="https:/wp-content/uploads/2021/05/after.png 921w, https:/wp-content/uploads/2021/05/after-300x210.png 300w, https:/wp-content/uploads/2021/05/after-768x539.png 768w, https:/wp-content/uploads/2021/05/after-100x70.png 100w, https:/wp-content/uploads/2021/05/after-855x600.png 855w" sizes="(max-width: 691px) 100vw, 691px" /> <figcaption>Neato burrito, check it out!</figcaption></figure>
+![](https://sysmansquad.com/wp-content/uploads/2021/05/after.png) <figcaption>Neato burrito, check it out!</figcaption></figure>

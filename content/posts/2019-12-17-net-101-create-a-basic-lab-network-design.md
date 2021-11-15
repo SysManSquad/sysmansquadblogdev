@@ -229,10 +229,10 @@ Hey, so now we have an idea of our network definition. We know what it is, what 
 
 Well that was simple. But also maybe we should do this in a visual way as well. Being able to visualize your network can help you find problems later. Even though our network is basic, let's document it as well as we can.<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2019/12/Lab-Network-3.png) </figure> 
+<img loading="lazy" width="792" height="352" src="https://sysmansquad.com/wp-content/uploads/2019/12/Lab-Network-3.png" alt="" class="wp-image-637" srcset="https:/wp-content/uploads/2019/12/Lab-Network-3.png 792w, https:/wp-content/uploads/2019/12/Lab-Network-3-300x133.png 300w, https:/wp-content/uploads/2019/12/Lab-Network-3-768x341.png 768w, https:/wp-content/uploads/2019/12/Lab-Network-3-100x44.png 100w" sizes="(max-width: 792px) 100vw, 792px" /> </figure> 
 
 <p class="has-text-align-center">
-  <strong><em>[Here are the source files for this drawing.](https://github.com/SysManSquad/BlogFiles/tree/master/aaron/net-101)</em></strong>
+  <strong>[Here are the source files for this drawing.](https://github.com/SysManSquad/BlogFiles/tree/master/aaron/net-101)</em></strong>
 </p>
 
 Pretty neat huh? While you may at some point get to a level where you have some tool that generates these diagrams for you, I wouldn't count on it being soon. Some networks are so big that one human simply can't track every change to the topology or other critical information, but this lab network isn't one of them. 
@@ -242,7 +242,6 @@ I didn't just come up with this diagram design on my own, I have to thank the fo
 You may also notice that I've included some interface names here, em0 and em1. This is because I happen to know that the software appliance we'll use to create our gateway/firewall device names its interfaces this way.
 
 In our next installment we'll cover the general process of creating your lab.
-
 
 
 

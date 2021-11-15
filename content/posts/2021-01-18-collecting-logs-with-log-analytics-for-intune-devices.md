@@ -19,11 +19,11 @@ categories:
 ---
 ## Why do I need logs?
 
-The purpose of this guide is to configure the collection of Logs in an Intune environment. By default the log analytics you enable in Intune does not give you much information beyond auditing basic things. With this approach we can record any desired log for all of our machines. There is a companion video for this setup <a href="https://youtu.be/Uw3GjMnSXbI" target="_blank" rel="noreferrer noopener">https://youtu.be/Uw3GjMnSXbI</a>.
+The purpose of this guide is to configure the collection of Logs in an Intune environment. By default the log analytics you enable in Intune does not give you much information beyond auditing basic things. With this approach we can record any desired log for all of our machines. There is a companion video for this setup [https://youtu.be/Uw3GjMnSXbI](https://youtu.be/Uw3GjMnSXbI).
 
 ## Enabling Log Analytics
 
-  1. Navigate to <a href="https://endpoint.microsoft.com/#home" target="_blank" rel="noreferrer noopener">endpoint.microsoft.com</a>
+  1. Navigate to [endpoint.microsoft.com](https://endpoint.microsoft.com/#home)
   2. Select **Reports**
   3. Select **Diagnostic Settings**
   4. Select **Add Diagnostic setting**
@@ -42,24 +42,24 @@ Now that we have the log analytics workspace configured we can configure the Mic
   4. Select **Data**  
     You can now add any event log you wish to collect. Begin typing a log you wish to collect and it should auto populate. If the log you wish to use does not appear you can type in the full log path and it will be added. I've included an example of a few logs below, please bare in mind that if the log is not enabled by default you will still need to enable that log separately. <figure class="wp-block-image size-large">
 
-<img loading="lazy" width="611" height="343" src="https://sysmansquad.com/wp-content/uploads/2021/01/image.png" alt="" class="wp-image-2143" srcset="https:/wp-content/uploads/2021/01/image.png 611w, https:/wp-content/uploads/2021/01/image-300x168.png 300w, https:/wp-content/uploads/2021/01/image-100x56.png 100w" sizes="(max-width: 611px) 100vw, 611px" /> </figure> 
+![](https://sysmansquad.com/wp-content/uploads/2021/01/image.png) </figure> 
 
   1. Navigate back to your log analytics workspace
   2. Select **Agents management**
   3. Copy down the **Workspace ID** and **Primary Key**
   4. Select **Download Windows Agent (64bit)** 
   5. Create a folder and put the **MMA-Setup-AMD64.exe** inside of it
-  6. Open command prompt and run **MMA-Setup-AMD64.exe /C** in the directory your install exists<img loading="lazy" width="236" height="36" class="wp-image-2203" style="width: 500px;" src="https://sysmansquad.com/wp-content/uploads/2021/01/Discord_KkLVtr1Ip4.png" alt="" srcset="https:/wp-content/uploads/2021/01/Discord_KkLVtr1Ip4.png 236w, https:/wp-content/uploads/2021/01/Discord_KkLVtr1Ip4-100x15.png 100w" sizes="(max-width: 236px) 100vw, 236px" />
+  6. Open command prompt and run **MMA-Setup-AMD64.exe /C** in the directory your install exists![](https://sysmansquad.com/wp-content/uploads/2021/01/Discord_KkLVtr1Ip4.png)
   7. Extract the contents to your desired folder
   8. Download the repo located [Github-IntuneContentPrep][2]
   9. Extract and run the **IntuneWinAppUtil.exe**
  10. Specify the **source folder**
  11. Specify the **setup file** (Setup.exe)
- 12. Specify an **output folder**<img loading="lazy" width="960" height="480" class="wp-image-2202" style="width: 800px;" src="https://sysmansquad.com/wp-content/uploads/2021/01/SQQldCGPu6.png" alt="" srcset="https:/wp-content/uploads/2021/01/SQQldCGPu6.png 960w, https:/wp-content/uploads/2021/01/SQQldCGPu6-300x150.png 300w, https:/wp-content/uploads/2021/01/SQQldCGPu6-768x384.png 768w, https:/wp-content/uploads/2021/01/SQQldCGPu6-100x50.png 100w, https:/wp-content/uploads/2021/01/SQQldCGPu6-855x428.png 855w" sizes="(max-width: 960px) 100vw, 960px" />
+ 12. Specify an **output folder**![](https://sysmansquad.com/wp-content/uploads/2021/01/SQQldCGPu6.png)
 
 ## Creating the MMA app deployment
 
-  1. Navigate to <a href="https://endpoint.microsoft.com/#home" target="_blank" rel="noreferrer noopener">endpoint.microsoft.com</a>
+  1. Navigate to [endpoint.microsoft.com](https://endpoint.microsoft.com/#home)
   2. Select **Apps**
   3. Select **Windows**
   4. Select **Add**
@@ -92,7 +92,7 @@ Now that we have the log analytics workspace configured we can configure the Mic
 
 Once the clients receive the agent you should be able to check for a heartbeat immediately in log analytics. I'll show two quick queries we can run as an example.
 
-  1. Navigate to <a href="https://portal.azure.com/" target="_blank" rel="noreferrer noopener">portal.azure.com</a>
+  1. Navigate to [portal.azure.com](https://portal.azure.com/)
   2. Navigate to your log analytics workspace
   3. Select Logs
   4. In the query section type the following and select **Run**: 

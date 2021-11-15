@@ -31,11 +31,11 @@ tags:
   <div class="uagb-toc__list-wrap">
     <ol class="uagb-toc__list">
       <li class="uagb-toc__list">
-        <a href="#update-2021-02-16">Update 2021-02-16</a><li class="uagb-toc__list">
-          <a href="#1-start-menu-search-does-not-work">1) Start menu search does not work</a><li class="uagb-toc__list">
-            <a href="#2-the-installlanguage-issue">2) The "InstallLanguage" issue</a><li class="uagb-toc__list">
-              <a href="#3-not-enough-translation">3) Not enough translation</a><li class="uagb-toc__list">
-                <a href="#update-2020-07-29">Update 2020-07-29</a></ol> </div> </div> </div> <hr class="wp-block-separator" />
+        [Update 2021-02-16](#update-2021-02-16)<li class="uagb-toc__list">
+          [1) Start menu search does not work](#1-start-menu-search-does-not-work)<li class="uagb-toc__list">
+            [2) The "InstallLanguage" issue](#2-the-installlanguage-issue)<li class="uagb-toc__list">
+              [3) Not enough translation](#3-not-enough-translation)<li class="uagb-toc__list">
+                [Update 2020-07-29](#update-2020-07-29)</ol> </div> </div> </div> <hr class="wp-block-separator" />
                 
                 <p>
                   For a while I have been curious on how to do Windows OSD with multiple languages "the proper way" using Configuration Manager. Whenever I have approached the subject I have always felt overwhelmed.
@@ -58,7 +58,7 @@ tags:
                   </h4>
                   
                   <p>
-                    I've written a new post <a href="https://sysmansquad.com/2021/02/16/multilingual-windows-10-20h2-osd-with-configmgr/" target="_blank" rel="noreferrer noopener">Multilingual Windows 10 20H2 OSD with ConfigMgr</a> which walks you through the detail on how to do this with Windows 10 2004 and onwards.
+                    I've written a new post [Multilingual Windows 10 20H2 OSD with ConfigMgr](https://sysmansquad.com/2021/02/16/multilingual-windows-10-20h2-osd-with-configmgr/) which walks you through the detail on how to do this with Windows 10 2004 and onwards.
                   </p>
                   
                   <p>
@@ -129,7 +129,7 @@ tags:
                 </p>
                 
                 <div class="wp-block-image">
-                  <figure class="aligncenter size-large"><a href="https://sysmansquad.com/wp-content/uploads/2020/06/languagepackdownloadmsdn-scaled.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" width="1024" height="266" src="https://sysmansquad.com/wp-content/uploads/2020/06/languagepackdownloadmsdn-1024x266.jpg" alt="" class="wp-image-1178" srcset="https:/wp-content/uploads/2020/06/languagepackdownloadmsdn-1024x266.jpg 1024w, https:/wp-content/uploads/2020/06/languagepackdownloadmsdn-300x78.jpg 300w, https:/wp-content/uploads/2020/06/languagepackdownloadmsdn-768x200.jpg 768w, https:/wp-content/uploads/2020/06/languagepackdownloadmsdn-1536x399.jpg 1536w, https:/wp-content/uploads/2020/06/languagepackdownloadmsdn-2048x532.jpg 2048w, https:/wp-content/uploads/2020/06/languagepackdownloadmsdn-100x26.jpg 100w, https:/wp-content/uploads/2020/06/languagepackdownloadmsdn-855x222.jpg 855w, https:/wp-content/uploads/2020/06/languagepackdownloadmsdn-1234x321.jpg 1234w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></figure>
+                  <figure class="aligncenter size-large">[![](https://sysmansquad.com/wp-content/uploads/2020/06/languagepackdownloadmsdn-1024x266.jpg)](https://sysmansquad.com/wp-content/uploads/2020/06/languagepackdownloadmsdn-scaled.jpg)</figure>
                 </div>
                 
                 <p>
@@ -138,7 +138,7 @@ tags:
                 
                 <ul>
                   <li>
-                    <a href="https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/available-language-packs-for-windows#language-packs">https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/available-language-packs-for-windows#language-packs</a>
+                    [https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/available-language-packs-for-windows#language-packs](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/available-language-packs-for-windows#language-packs)
                   </li>
                 </ul>
                 
@@ -155,7 +155,7 @@ tags:
                 </div>
                 
                 <div class="wp-block-image">
-                  <figure class="aligncenter size-medium"><a href="https://sysmansquad.com/wp-content/uploads/2020/06/installLPtasksequenceexample.png" target="_blank" rel="noopener noreferrer"><img loading="lazy" width="300" height="252" src="https://sysmansquad.com/wp-content/uploads/2020/06/installLPtasksequenceexample-300x252.png" alt="" class="wp-image-1185" srcset="https:/wp-content/uploads/2020/06/installLPtasksequenceexample-300x252.png 300w, https:/wp-content/uploads/2020/06/installLPtasksequenceexample-768x646.png 768w, https:/wp-content/uploads/2020/06/installLPtasksequenceexample-100x84.png 100w, https:/wp-content/uploads/2020/06/installLPtasksequenceexample-855x719.png 855w, https:/wp-content/uploads/2020/06/installLPtasksequenceexample.png 951w" sizes="(max-width: 300px) 100vw, 300px" /></a><figcaption>Example step to install LP using dism.exe</figcaption></figure>
+                  <figure class="aligncenter size-medium">[![](https://sysmansquad.com/wp-content/uploads/2020/06/installLPtasksequenceexample-300x252.png)](https://sysmansquad.com/wp-content/uploads/2020/06/installLPtasksequenceexample.png)<figcaption>Example step to install LP using dism.exe</figcaption></figure>
                 </div>
                 
                 <p>
@@ -163,7 +163,7 @@ tags:
                 </p>
                 
                 <div class="wp-block-image">
-                  <figure class="aligncenter size-medium"><a href="https://sysmansquad.com/wp-content/uploads/2020/06/applywindowssettingstasksequencetexample-2-2.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" width="300" height="252" src="https://sysmansquad.com/wp-content/uploads/2020/06/applywindowssettingstasksequencetexample-2-2-300x252.jpg" alt="" class="wp-image-2291" srcset="https:/wp-content/uploads/2020/06/applywindowssettingstasksequencetexample-2-2-300x252.jpg 300w, https:/wp-content/uploads/2020/06/applywindowssettingstasksequencetexample-2-2-768x646.jpg 768w, https:/wp-content/uploads/2020/06/applywindowssettingstasksequencetexample-2-2-100x84.jpg 100w, https:/wp-content/uploads/2020/06/applywindowssettingstasksequencetexample-2-2-855x719.jpg 855w, https:/wp-content/uploads/2020/06/applywindowssettingstasksequencetexample-2-2.jpg 951w" sizes="(max-width: 300px) 100vw, 300px" /></a><figcaption>Example Apply Windows Settings step to adjust locale after LP install</figcaption></figure>
+                  <figure class="aligncenter size-medium">[![](https://sysmansquad.com/wp-content/uploads/2020/06/applywindowssettingstasksequencetexample-2-2-300x252.jpg)](https://sysmansquad.com/wp-content/uploads/2020/06/applywindowssettingstasksequencetexample-2-2.jpg)<figcaption>Example Apply Windows Settings step to adjust locale after LP install</figcaption></figure>
                 </div>
                 
                 <p>
@@ -172,7 +172,7 @@ tags:
                 
                 <ul>
                   <li>
-                    Use the new-ish&nbsp;<a href="https://docs.microsoft.com/en-us/mem/configmgr/osd/understand/task-sequence-steps#BKMK_ApplyWindowsSettings" target="_blank" rel="noreferrer noopener">OSDWindowsSettings* task sequence variables</a>. These set what you would otherwise select from the dropdown settings in the <code>Apply Windows settings</code> step.
+                    Use the new-ish&nbsp;[OSDWindowsSettings* task sequence variables](https://docs.microsoft.com/en-us/mem/configmgr/osd/understand/task-sequence-steps#BKMK_ApplyWindowsSettings). These set what you would otherwise select from the dropdown settings in the <code>Apply Windows settings</code> step.
                   </li>
                 </ul>
                 
@@ -199,7 +199,7 @@ tags:
                 </p>
                 
                 <div class="wp-block-image is-style-default">
-                  <figure class="aligncenter size-medium"><a href="https://sysmansquad.com/wp-content/uploads/2020/06/StoryBoard-LanguagePackUserExperience.png" target="_blank" rel="noopener noreferrer"><img loading="lazy" width="46" height="300" src="https://sysmansquad.com/wp-content/uploads/2020/06/StoryBoard-LanguagePackUserExperience-46x300.png" alt="" class="wp-image-1188" title="" /></a><figcaption>Click me</figcaption></figure>
+                  <figure class="aligncenter size-medium">[![](https://sysmansquad.com/wp-content/uploads/2020/06/StoryBoard-LanguagePackUserExperience-46x300.png)](https://sysmansquad.com/wp-content/uploads/2020/06/StoryBoard-LanguagePackUserExperience.png)<figcaption>Click me</figcaption></figure>
                 </div>
                 
                 <p>
@@ -215,7 +215,7 @@ tags:
                 </p>
                 
                 <p>
-                  It is a <a href="https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/add-language-packs-to-windows#considerations" target="_blank" rel="noreferrer noopener">known documented fact</a> that if you install anything that is language specific, such as a LP, then the latest cumulative update will want to reinstall again.
+                  It is a [known documented fact](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/add-language-packs-to-windows#considerations) that if you install anything that is language specific, such as a LP, then the latest cumulative update will want to reinstall again.
                 </p>
                 
                 <p>
@@ -223,7 +223,7 @@ tags:
                 </p>
                 
                 <p>
-                  <a rel="noreferrer noopener" href="https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/features-on-demand-v2--capabilities" target="_blank">The order of install matters</a>. First add LPs, FoDs and then apps in that order. If you install a cumulative update before any of those, then the update will want reinstalling.
+                  [The order of install matters](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/features-on-demand-v2--capabilities). First add LPs, FoDs and then apps in that order. If you install a cumulative update before any of those, then the update will want reinstalling.
                 </p>
                 
                 <h4>
@@ -236,7 +236,7 @@ tags:
                 
                 <ul>
                   <li>
-                    <a href="https://www.youtube.com/watch?v=ZhL0AO8Cnig&ab_channel=MicrosoftIgnite" target="_blank" rel="noreferrer noopener">Solving&nbsp;Windows&nbsp;10&nbsp;feature&nbsp;updates&nbsp;in&nbsp;a&nbsp;multilingual&nbsp;deployment</a> - Sudhagar Thirumoolan (<a href="https://twitter.com/sudhagart?lang=en" target="_blank" rel="noreferrer noopener">@sudhagart</a>)
+                    [Solving&nbsp;Windows&nbsp;10&nbsp;feature&nbsp;updates&nbsp;in&nbsp;a&nbsp;multilingual&nbsp;deployment](https://www.youtube.com/watch?v=ZhL0AO8Cnig&ab_channel=MicrosoftIgnite) - Sudhagar Thirumoolan ([@sudhagart](https://twitter.com/sudhagart?lang=en))
                   </li>
                 </ul>
                 
@@ -253,7 +253,7 @@ tags:
                 </p>
                 
                 <p>
-                  After we've built a system like this, if we attempt to feature update it using en-us media <code>setupact.log</code> and <a href="https://docs.microsoft.com/en-us/windows/deployment/upgrade/setupdiag" target="_blank" rel="noreferrer noopener">SetupDiag.exe</a> will both tell you:
+                  After we've built a system like this, if we attempt to feature update it using en-us media <code>setupact.log</code> and [SetupDiag.exe](https://docs.microsoft.com/en-us/windows/deployment/upgrade/setupdiag) will both tell you:
                 </p>
                 
                 <pre class="wp-block-code"><code>Target language en-US is not compatible with the host language</code></pre>
@@ -294,7 +294,7 @@ tags:
                 </p>
                 
                 <p>
-                  A good example of this is <a rel="noreferrer noopener" href="https://twitter.com/manelrodero/status/1261359938481410048" target="_blank">this Twitter thread I had with Manel Rodero</a>. Manel needs Windows 10 with Catalan language. The only Spanish options as far as base / primary languages go are es-mk (Mexico) or es-es (Spain).
+                  A good example of this is [this Twitter thread I had with Manel Rodero](https://twitter.com/manelrodero/status/1261359938481410048). Manel needs Windows 10 with Catalan language. The only Spanish options as far as base / primary languages go are es-mk (Mexico) or es-es (Spain).
                 </p>
                 
                 <p>
@@ -346,7 +346,7 @@ tags:
                 </p>
                 
                 <div class="wp-block-image">
-                  <figure class="aligncenter size-medium"><a href="https://sysmansquad.com/wp-content/uploads/2020/06/feedbackhubexample.png" target="_blank" rel="noopener noreferrer"><img loading="lazy" width="300" height="233" src="https://sysmansquad.com/wp-content/uploads/2020/06/feedbackhubexample-300x233.png" alt="" class="wp-image-1190" srcset="https:/wp-content/uploads/2020/06/feedbackhubexample-300x233.png 300w, https:/wp-content/uploads/2020/06/feedbackhubexample-1024x796.png 1024w, https:/wp-content/uploads/2020/06/feedbackhubexample-768x597.png 768w, https:/wp-content/uploads/2020/06/feedbackhubexample-100x78.png 100w, https:/wp-content/uploads/2020/06/feedbackhubexample-855x664.png 855w, https:/wp-content/uploads/2020/06/feedbackhubexample.png 1202w" sizes="(max-width: 300px) 100vw, 300px" /></a><figcaption>Feedback hub where users can submit translation feedback to Microsoft, which Microsoft can quickly patch and deliver via the store</figcaption></figure>
+                  <figure class="aligncenter size-medium">[![](https://sysmansquad.com/wp-content/uploads/2020/06/feedbackhubexample-300x233.png)](https://sysmansquad.com/wp-content/uploads/2020/06/feedbackhubexample.png)<figcaption>Feedback hub where users can submit translation feedback to Microsoft, which Microsoft can quickly patch and deliver via the store</figcaption></figure>
                 </div>
                 
                 <p>
@@ -359,7 +359,7 @@ tags:
                 
                 <ul>
                   <li>
-                    <a href="https://techcommunity.microsoft.com/t5/premier-field-engineering/windows-10-multilanguage-deployment-with-memcm/ba-p/1347144" target="_blank" rel="noreferrer noopener">Windows&nbsp;10&nbsp;Multilanguage&nbsp;Deployment&nbsp;with&nbsp;MEMCM</a>
+                    [Windows&nbsp;10&nbsp;Multilanguage&nbsp;Deployment&nbsp;with&nbsp;MEMCM](https://techcommunity.microsoft.com/t5/premier-field-engineering/windows-10-multilanguage-deployment-with-memcm/ba-p/1347144)
                   </li>
                 </ul>
                 
@@ -376,11 +376,11 @@ tags:
                 </p>
                 
                 <p>
-                  The post suggests there's PowerShell cmdlets you can use instead to do the same as the <code>control.exe</code> method but on a per-user basis instead. <a href="https://docs.microsoft.com/en-gb/powershell/module/internationalcmdlets" target="_blank" rel="noreferrer noopener">You can find them here</a>.
+                  The post suggests there's PowerShell cmdlets you can use instead to do the same as the <code>control.exe</code> method but on a per-user basis instead. [You can find them here](https://docs.microsoft.com/en-gb/powershell/module/internationalcmdlets).
                 </p>
                 
                 <p>
-                  If you're interested in pursuing the LXP and <code>control.exe</code> method then it might useful for you to know all the <a rel="noreferrer noopener" href="https://docs.microsoft.com/en-gb/windows/win32/intl/table-of-geographical-locations" target="_blank">Geo IDs</a> and <a rel="noreferrer noopener" href="https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/available-language-packs-for-windows#language-packs" target="_blank">language / region IDs</a> too, which sadly were also not mentioned in the blog. These are needed for modifying the XML.
+                  If you're interested in pursuing the LXP and <code>control.exe</code> method then it might useful for you to know all the [Geo IDs](https://docs.microsoft.com/en-gb/windows/win32/intl/table-of-geographical-locations) and [language / region IDs](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/available-language-packs-for-windows#language-packs) too, which sadly were also not mentioned in the blog. These are needed for modifying the XML.
                 </p>
                 
                 <p>
@@ -404,7 +404,7 @@ tags:
                 </p>
                 
                 <div class="wp-block-image is-style-default">
-                  <figure class="aligncenter size-medium"><a href="https://sysmansquad.com/wp-content/uploads/2020/06/StoryBoard-LanguageExperiencePackUserExperience-beforestoreupdates-1.png" target="_blank" rel="noopener noreferrer"><img loading="lazy" width="41" height="300" src="https://sysmansquad.com/wp-content/uploads/2020/06/StoryBoard-LanguageExperiencePackUserExperience-beforestoreupdates-1-41x300.png" alt="" class="wp-image-1194" srcset="https:/wp-content/uploads/2020/06/StoryBoard-LanguageExperiencePackUserExperience-beforestoreupdates-1-41x300.png 41w, https:/wp-content/uploads/2020/06/StoryBoard-LanguageExperiencePackUserExperience-beforestoreupdates-1-768x5646.png 768w, https:/wp-content/uploads/2020/06/StoryBoard-LanguageExperiencePackUserExperience-beforestoreupdates-1-209x1536.png 209w, https:/wp-content/uploads/2020/06/StoryBoard-LanguageExperiencePackUserExperience-beforestoreupdates-1-279x2048.png 279w, https:/wp-content/uploads/2020/06/StoryBoard-LanguageExperiencePackUserExperience-beforestoreupdates-1-100x735.png 100w, https:/wp-content/uploads/2020/06/StoryBoard-LanguageExperiencePackUserExperience-beforestoreupdates-1-855x6286.png 855w, https:/wp-content/uploads/2020/06/StoryBoard-LanguageExperiencePackUserExperience-beforestoreupdates-1.png 1186w" sizes="(max-width: 41px) 100vw, 41px" /></a><figcaption>Click me</figcaption></figure>
+                  <figure class="aligncenter size-medium">[![](https://sysmansquad.com/wp-content/uploads/2020/06/StoryBoard-LanguageExperiencePackUserExperience-beforestoreupdates-1-41x300.png)](https://sysmansquad.com/wp-content/uploads/2020/06/StoryBoard-LanguageExperiencePackUserExperience-beforestoreupdates-1.png)<figcaption>Click me</figcaption></figure>
                 </div>
                 
                 <p>
@@ -437,7 +437,7 @@ tags:
                 </p>
                 
                 <div class="wp-block-image">
-                  <figure class="aligncenter size-medium"><a href="https://sysmansquad.com/wp-content/uploads/2020/06/StoryBoard-LanguageExperiencePackUserExperience-afterstoreupdates.png" target="_blank" rel="noopener noreferrer"><img loading="lazy" width="41" height="300" src="https://sysmansquad.com/wp-content/uploads/2020/06/StoryBoard-LanguageExperiencePackUserExperience-afterstoreupdates-41x300.png" alt="" class="wp-image-1197" srcset="https:/wp-content/uploads/2020/06/StoryBoard-LanguageExperiencePackUserExperience-afterstoreupdates-41x300.png 41w, https:/wp-content/uploads/2020/06/StoryBoard-LanguageExperiencePackUserExperience-afterstoreupdates-768x5646.png 768w, https:/wp-content/uploads/2020/06/StoryBoard-LanguageExperiencePackUserExperience-afterstoreupdates-209x1536.png 209w, https:/wp-content/uploads/2020/06/StoryBoard-LanguageExperiencePackUserExperience-afterstoreupdates-279x2048.png 279w, https:/wp-content/uploads/2020/06/StoryBoard-LanguageExperiencePackUserExperience-afterstoreupdates-100x735.png 100w, https:/wp-content/uploads/2020/06/StoryBoard-LanguageExperiencePackUserExperience-afterstoreupdates-855x6286.png 855w, https:/wp-content/uploads/2020/06/StoryBoard-LanguageExperiencePackUserExperience-afterstoreupdates.png 1186w" sizes="(max-width: 41px) 100vw, 41px" /></a><figcaption>Click me</figcaption></figure>
+                  <figure class="aligncenter size-medium">[![](https://sysmansquad.com/wp-content/uploads/2020/06/StoryBoard-LanguageExperiencePackUserExperience-afterstoreupdates-41x300.png)](https://sysmansquad.com/wp-content/uploads/2020/06/StoryBoard-LanguageExperiencePackUserExperience-afterstoreupdates.png)<figcaption>Click me</figcaption></figure>
                 </div>
                 
                 <ul>
@@ -491,7 +491,7 @@ tags:
                 </p>
                 
                 <div class="wp-block-image">
-                  <figure class="aligncenter size-medium"><a href="https://sysmansquad.com/wp-content/uploads/2020/06/StoryBoard-LanguagePackAndLanguageExperiencePackUserExperience.png" target="_blank" rel="noopener noreferrer"><img loading="lazy" width="41" height="300" src="https://sysmansquad.com/wp-content/uploads/2020/06/StoryBoard-LanguagePackAndLanguageExperiencePackUserExperience-41x300.png" alt="" class="wp-image-1198" srcset="https:/wp-content/uploads/2020/06/StoryBoard-LanguagePackAndLanguageExperiencePackUserExperience-41x300.png 41w, https:/wp-content/uploads/2020/06/StoryBoard-LanguagePackAndLanguageExperiencePackUserExperience-140x1024.png 140w, https:/wp-content/uploads/2020/06/StoryBoard-LanguagePackAndLanguageExperiencePackUserExperience-768x5619.png 768w, https:/wp-content/uploads/2020/06/StoryBoard-LanguagePackAndLanguageExperiencePackUserExperience-210x1536.png 210w, https:/wp-content/uploads/2020/06/StoryBoard-LanguagePackAndLanguageExperiencePackUserExperience-280x2048.png 280w, https:/wp-content/uploads/2020/06/StoryBoard-LanguagePackAndLanguageExperiencePackUserExperience-100x732.png 100w, https:/wp-content/uploads/2020/06/StoryBoard-LanguagePackAndLanguageExperiencePackUserExperience-855x6255.png 855w, https:/wp-content/uploads/2020/06/StoryBoard-LanguagePackAndLanguageExperiencePackUserExperience.png 1186w" sizes="(max-width: 41px) 100vw, 41px" /></a><figcaption>Click me</figcaption></figure>
+                  <figure class="aligncenter size-medium">[![](https://sysmansquad.com/wp-content/uploads/2020/06/StoryBoard-LanguagePackAndLanguageExperiencePackUserExperience-41x300.png)](https://sysmansquad.com/wp-content/uploads/2020/06/StoryBoard-LanguagePackAndLanguageExperiencePackUserExperience.png)<figcaption>Click me</figcaption></figure>
                 </div>
                 
                 <p>
@@ -504,33 +504,33 @@ tags:
                 
                 <ul class="blocks-gallery-grid">
                   <li class="blocks-gallery-item">
-                    <figure><a href="https://sysmansquad.com/wp-content/uploads/2020/06/finalts-1.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" width="1024" height="861" src="https://sysmansquad.com/wp-content/uploads/2020/06/finalts-1-1024x861.jpg" alt="" data-id="1199" data-full-url="https://sysmansquad.com/wp-content/uploads/2020/06/finalts-1.jpg" data-link="https://sysmansquad.com/?attachment_id=1199" class="wp-image-1199" srcset="https:/wp-content/uploads/2020/06/finalts-1-1024x861.jpg 1024w, https:/wp-content/uploads/2020/06/finalts-1-300x252.jpg 300w, https:/wp-content/uploads/2020/06/finalts-1-768x646.jpg 768w, https:/wp-content/uploads/2020/06/finalts-1-1536x1292.jpg 1536w, https:/wp-content/uploads/2020/06/finalts-1-100x84.jpg 100w, https:/wp-content/uploads/2020/06/finalts-1-855x719.jpg 855w, https:/wp-content/uploads/2020/06/finalts-1-1234x1038.jpg 1234w, https:/wp-content/uploads/2020/06/finalts-1.jpg 1665w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></figure>
+                    <figure>[![](https://sysmansquad.com/wp-content/uploads/2020/06/finalts-1-1024x861.jpg)](https://sysmansquad.com/wp-content/uploads/2020/06/finalts-1.jpg)</figure>
                   </li>
                   <li class="blocks-gallery-item">
-                    <figure><a href="https://sysmansquad.com/wp-content/uploads/2020/06/finalts-2.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" width="1024" height="861" src="https://sysmansquad.com/wp-content/uploads/2020/06/finalts-2-1024x861.jpg" alt="" data-id="1200" data-full-url="https://sysmansquad.com/wp-content/uploads/2020/06/finalts-2.jpg" data-link="https://sysmansquad.com/?attachment_id=1200" class="wp-image-1200" srcset="https:/wp-content/uploads/2020/06/finalts-2-1024x861.jpg 1024w, https:/wp-content/uploads/2020/06/finalts-2-300x252.jpg 300w, https:/wp-content/uploads/2020/06/finalts-2-768x645.jpg 768w, https:/wp-content/uploads/2020/06/finalts-2-1536x1291.jpg 1536w, https:/wp-content/uploads/2020/06/finalts-2-100x84.jpg 100w, https:/wp-content/uploads/2020/06/finalts-2-855x718.jpg 855w, https:/wp-content/uploads/2020/06/finalts-2-1234x1037.jpg 1234w, https:/wp-content/uploads/2020/06/finalts-2.jpg 1666w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></figure>
+                    <figure>[![](https://sysmansquad.com/wp-content/uploads/2020/06/finalts-2-1024x861.jpg)](https://sysmansquad.com/wp-content/uploads/2020/06/finalts-2.jpg)</figure>
                   </li>
                   <li class="blocks-gallery-item">
-                    <figure><a href="https://sysmansquad.com/wp-content/uploads/2020/06/finalts-3.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" width="1024" height="862" src="https://sysmansquad.com/wp-content/uploads/2020/06/finalts-3-1024x862.jpg" alt="" data-id="1201" data-full-url="https://sysmansquad.com/wp-content/uploads/2020/06/finalts-3.jpg" data-link="https://sysmansquad.com/?attachment_id=1201" class="wp-image-1201" srcset="https:/wp-content/uploads/2020/06/finalts-3-1024x862.jpg 1024w, https:/wp-content/uploads/2020/06/finalts-3-300x252.jpg 300w, https:/wp-content/uploads/2020/06/finalts-3-768x646.jpg 768w, https:/wp-content/uploads/2020/06/finalts-3-1536x1293.jpg 1536w, https:/wp-content/uploads/2020/06/finalts-3-100x84.jpg 100w, https:/wp-content/uploads/2020/06/finalts-3-855x720.jpg 855w, https:/wp-content/uploads/2020/06/finalts-3-1234x1038.jpg 1234w, https:/wp-content/uploads/2020/06/finalts-3.jpg 1666w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></figure>
+                    <figure>[![](https://sysmansquad.com/wp-content/uploads/2020/06/finalts-3-1024x862.jpg)](https://sysmansquad.com/wp-content/uploads/2020/06/finalts-3.jpg)</figure>
                   </li>
                   <li class="blocks-gallery-item">
-                    <figure><a href="https://sysmansquad.com/wp-content/uploads/2020/06/finalts-4.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" width="1024" height="861" src="https://sysmansquad.com/wp-content/uploads/2020/06/finalts-4-1024x861.jpg" alt="" data-id="1202" data-full-url="https://sysmansquad.com/wp-content/uploads/2020/06/finalts-4.jpg" data-link="https://sysmansquad.com/?attachment_id=1202" class="wp-image-1202" srcset="https:/wp-content/uploads/2020/06/finalts-4-1024x861.jpg 1024w, https:/wp-content/uploads/2020/06/finalts-4-300x252.jpg 300w, https:/wp-content/uploads/2020/06/finalts-4-768x645.jpg 768w, https:/wp-content/uploads/2020/06/finalts-4-1536x1291.jpg 1536w, https:/wp-content/uploads/2020/06/finalts-4-100x84.jpg 100w, https:/wp-content/uploads/2020/06/finalts-4-855x718.jpg 855w, https:/wp-content/uploads/2020/06/finalts-4-1234x1037.jpg 1234w, https:/wp-content/uploads/2020/06/finalts-4.jpg 1666w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></figure>
+                    <figure>[![](https://sysmansquad.com/wp-content/uploads/2020/06/finalts-4-1024x861.jpg)](https://sysmansquad.com/wp-content/uploads/2020/06/finalts-4.jpg)</figure>
                   </li>
                   <li class="blocks-gallery-item">
-                    <figure><a href="https://sysmansquad.com/wp-content/uploads/2020/06/finalts-5.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" width="1024" height="861" src="https://sysmansquad.com/wp-content/uploads/2020/06/finalts-5-1024x861.jpg" alt="" data-id="1203" data-full-url="https://sysmansquad.com/wp-content/uploads/2020/06/finalts-5.jpg" data-link="https://sysmansquad.com/?attachment_id=1203" class="wp-image-1203" srcset="https:/wp-content/uploads/2020/06/finalts-5-1024x861.jpg 1024w, https:/wp-content/uploads/2020/06/finalts-5-300x252.jpg 300w, https:/wp-content/uploads/2020/06/finalts-5-768x646.jpg 768w, https:/wp-content/uploads/2020/06/finalts-5-1536x1292.jpg 1536w, https:/wp-content/uploads/2020/06/finalts-5-100x84.jpg 100w, https:/wp-content/uploads/2020/06/finalts-5-855x719.jpg 855w, https:/wp-content/uploads/2020/06/finalts-5-1234x1038.jpg 1234w, https:/wp-content/uploads/2020/06/finalts-5.jpg 1665w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></figure>
+                    <figure>[![](https://sysmansquad.com/wp-content/uploads/2020/06/finalts-5-1024x861.jpg)](https://sysmansquad.com/wp-content/uploads/2020/06/finalts-5.jpg)</figure>
                   </li>
                   <li class="blocks-gallery-item">
-                    <figure><a href="https://sysmansquad.com/wp-content/uploads/2020/06/finalts-6.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" width="951" height="800" src="https://sysmansquad.com/wp-content/uploads/2020/06/finalts-6.jpg" alt="" data-id="1204" data-full-url="https://sysmansquad.com/wp-content/uploads/2020/06/finalts-6.jpg" data-link="https://sysmansquad.com/?attachment_id=1204" class="wp-image-1204" srcset="https:/wp-content/uploads/2020/06/finalts-6.jpg 951w, https:/wp-content/uploads/2020/06/finalts-6-300x252.jpg 300w, https:/wp-content/uploads/2020/06/finalts-6-768x646.jpg 768w, https:/wp-content/uploads/2020/06/finalts-6-100x84.jpg 100w, https:/wp-content/uploads/2020/06/finalts-6-855x719.jpg 855w" sizes="(max-width: 951px) 100vw, 951px" /></a></figure>
+                    <figure>[![](https://sysmansquad.com/wp-content/uploads/2020/06/finalts-6.jpg)](https://sysmansquad.com/wp-content/uploads/2020/06/finalts-6.jpg)</figure>
                   </li>
                   <li class="blocks-gallery-item">
-                    <figure><a href="https://sysmansquad.com/wp-content/uploads/2020/06/finalts-7.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" width="951" height="800" src="https://sysmansquad.com/wp-content/uploads/2020/06/finalts-7.jpg" alt="" data-id="1205" data-full-url="https://sysmansquad.com/wp-content/uploads/2020/06/finalts-7.jpg" data-link="https://sysmansquad.com/?attachment_id=1205" class="wp-image-1205" srcset="https:/wp-content/uploads/2020/06/finalts-7.jpg 951w, https:/wp-content/uploads/2020/06/finalts-7-300x252.jpg 300w, https:/wp-content/uploads/2020/06/finalts-7-768x646.jpg 768w, https:/wp-content/uploads/2020/06/finalts-7-100x84.jpg 100w, https:/wp-content/uploads/2020/06/finalts-7-855x719.jpg 855w" sizes="(max-width: 951px) 100vw, 951px" /></a></figure>
+                    <figure>[![](https://sysmansquad.com/wp-content/uploads/2020/06/finalts-7.jpg)](https://sysmansquad.com/wp-content/uploads/2020/06/finalts-7.jpg)</figure>
                   </li>
                   <li class="blocks-gallery-item">
-                    <figure><a href="https://sysmansquad.com/wp-content/uploads/2020/06/finalts-8.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" width="1024" height="861" src="https://sysmansquad.com/wp-content/uploads/2020/06/finalts-8-1024x861.jpg" alt="" data-id="1206" data-full-url="https://sysmansquad.com/wp-content/uploads/2020/06/finalts-8.jpg" data-link="https://sysmansquad.com/?attachment_id=1206" class="wp-image-1206" srcset="https:/wp-content/uploads/2020/06/finalts-8-1024x861.jpg 1024w, https:/wp-content/uploads/2020/06/finalts-8-300x252.jpg 300w, https:/wp-content/uploads/2020/06/finalts-8-768x646.jpg 768w, https:/wp-content/uploads/2020/06/finalts-8-1536x1292.jpg 1536w, https:/wp-content/uploads/2020/06/finalts-8-100x84.jpg 100w, https:/wp-content/uploads/2020/06/finalts-8-855x719.jpg 855w, https:/wp-content/uploads/2020/06/finalts-8-1234x1038.jpg 1234w, https:/wp-content/uploads/2020/06/finalts-8.jpg 1665w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></figure>
+                    <figure>[![](https://sysmansquad.com/wp-content/uploads/2020/06/finalts-8-1024x861.jpg)](https://sysmansquad.com/wp-content/uploads/2020/06/finalts-8.jpg)</figure>
                   </li>
                 </ul></figure> 
                 
                 <p>
-                  Make sure that you set the local options of the <code>Apply Windows Settings</code> step to match that of the install media (en-us in this case). Equally the same is true if you use any of the <a href="https://docs.microsoft.com/en-us/mem/configmgr/osd/understand/task-sequence-steps#BKMK_ApplyWindowsSettings" target="_blank" rel="noreferrer noopener">OSDWindowsSetings* task sequence variables</a>.
+                  Make sure that you set the local options of the <code>Apply Windows Settings</code> step to match that of the install media (en-us in this case). Equally the same is true if you use any of the [OSDWindowsSetings* task sequence variables](https://docs.microsoft.com/en-us/mem/configmgr/osd/understand/task-sequence-steps#BKMK_ApplyWindowsSettings).
                 </p>
                 
                 <p>
@@ -546,7 +546,7 @@ tags:
                 </p>
                 
                 <p>
-                  Something like <a href="https://twitter.com/seguraosd" target="_blank" rel="noreferrer noopener">David Segura</a>'s fantastic <a href="https://osdbuilder.osdeploy.com/" target="_blank" rel="noreferrer noopener">OSDBuilder</a> is a great example of a community tool for servicing WIMs offline. His posts on building a <a href="https://osdbuilder.osdeploy.com/docs/advanced/multilang-baseline" target="_blank" rel="noreferrer noopener">Windows 10 MultiLang baseline with OSDBuilder</a> highlights the importance of not applying updates to your WIM before you install the LPs or LXPs. I recommend using the RTM version of any Windows 10 you're looking to service.
+                  Something like [David Segura](https://twitter.com/seguraosd)'s fantastic [OSDBuilder](https://osdbuilder.osdeploy.com/) is a great example of a community tool for servicing WIMs offline. His posts on building a [Windows 10 MultiLang baseline with OSDBuilder](https://osdbuilder.osdeploy.com/docs/advanced/multilang-baseline) highlights the importance of not applying updates to your WIM before you install the LPs or LXPs. I recommend using the RTM version of any Windows 10 you're looking to service.
                 </p>
                 
                 <hr class="wp-block-separator" />
@@ -564,7 +564,7 @@ tags:
                   </p>
                   
                   <div class="wp-block-image">
-                    <figure class="aligncenter size-large"><a href="https://sysmansquad.com/wp-content/uploads/2020/06/2020-07-29_21-37-56.jpg"><img loading="lazy" width="1024" height="870" src="https://sysmansquad.com/wp-content/uploads/2020/06/2020-07-29_21-37-56-1024x870.jpg" alt="" class="wp-image-1487" srcset="https:/wp-content/uploads/2020/06/2020-07-29_21-37-56-1024x870.jpg 1024w, https:/wp-content/uploads/2020/06/2020-07-29_21-37-56-300x255.jpg 300w, https:/wp-content/uploads/2020/06/2020-07-29_21-37-56-768x653.jpg 768w, https:/wp-content/uploads/2020/06/2020-07-29_21-37-56-100x85.jpg 100w, https:/wp-content/uploads/2020/06/2020-07-29_21-37-56-855x727.jpg 855w, https:/wp-content/uploads/2020/06/2020-07-29_21-37-56.jpg 1026w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></figure>
+                    <figure class="aligncenter size-large">[![](https://sysmansquad.com/wp-content/uploads/2020/06/2020-07-29_21-37-56-1024x870.jpg)](https://sysmansquad.com/wp-content/uploads/2020/06/2020-07-29_21-37-56.jpg)</figure>
                   </div>
                   
                   <p>
@@ -584,7 +584,7 @@ tags:
                   </p>
                   
                   <p>
-                    Failing that, maybe you would be happy with force installing Store updates at the end of OSD using this tidbit <a href="https://www.reddit.com/r/PowerShell/comments/94ikpc/any_way_to_update_windows_store_apps_via/" target="_blank" rel="noreferrer noopener">I found on Reddit</a>:
+                    Failing that, maybe you would be happy with force installing Store updates at the end of OSD using this tidbit [I found on Reddit](https://www.reddit.com/r/PowerShell/comments/94ikpc/any_way_to_update_windows_store_apps_via/):
                   </p>
                   
                   <div class="wp-block-codemirror-blocks-code-block code-block">
@@ -610,7 +610,7 @@ tags:
                 </p>
                 
                 <p>
-                  <a href="https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/features-on-demand-language-fod" target="_blank" rel="noreferrer noopener">Following the order of installation advice</a>, remember FoDs must be installed after a LP.
+                  [Following the order of installation advice](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/features-on-demand-language-fod), remember FoDs must be installed after a LP.
                 </p>
                 
                 <p>
@@ -618,7 +618,7 @@ tags:
                 </p>
                 
                 <div class="wp-block-image">
-                  <figure class="aligncenter size-large"><a href="https://sysmansquad.com/wp-content/uploads/2020/06/foddownloadmsdn-1-scaled.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" width="1024" height="294" src="https://sysmansquad.com/wp-content/uploads/2020/06/foddownloadmsdn-1-1024x294.jpg" alt="" class="wp-image-1208" srcset="https:/wp-content/uploads/2020/06/foddownloadmsdn-1-1024x294.jpg 1024w, https:/wp-content/uploads/2020/06/foddownloadmsdn-1-300x86.jpg 300w, https:/wp-content/uploads/2020/06/foddownloadmsdn-1-768x221.jpg 768w, https:/wp-content/uploads/2020/06/foddownloadmsdn-1-1536x441.jpg 1536w, https:/wp-content/uploads/2020/06/foddownloadmsdn-1-2048x589.jpg 2048w, https:/wp-content/uploads/2020/06/foddownloadmsdn-1-100x29.jpg 100w, https:/wp-content/uploads/2020/06/foddownloadmsdn-1-855x246.jpg 855w, https:/wp-content/uploads/2020/06/foddownloadmsdn-1-1234x355.jpg 1234w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></figure>
+                  <figure class="aligncenter size-large">[![](https://sysmansquad.com/wp-content/uploads/2020/06/foddownloadmsdn-1-1024x294.jpg)](https://sysmansquad.com/wp-content/uploads/2020/06/foddownloadmsdn-1-scaled.jpg)</figure>
                 </div>
                 
                 <p>
@@ -626,7 +626,7 @@ tags:
                 </p>
                 
                 <p>
-                  It's worth pointing out that Microsoft don't offer FoDs for every language and weirdly provide a spreadsheet detailing which FoDs you should use for your desired target language. <a href="https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/features-on-demand-language-fod" target="_blank" rel="noreferrer noopener">Here's the link to the page</a> which links to the spreadsheet, and <a href="https://download.microsoft.com/download/7/6/0/7600F9DC-C296-4CF8-B92A-2D85BAFBD5D2/Windows-10-1809-FOD-to-LP-Mapping-Table.xlsx" target="_blank" rel="noreferrer noopener">here's the direct link to the spreadsheet</a> which works at the time of writing this.
+                  It's worth pointing out that Microsoft don't offer FoDs for every language and weirdly provide a spreadsheet detailing which FoDs you should use for your desired target language. [Here's the link to the page](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/features-on-demand-language-fod) which links to the spreadsheet, and [here's the direct link to the spreadsheet](https://download.microsoft.com/download/7/6/0/7600F9DC-C296-4CF8-B92A-2D85BAFBD5D2/Windows-10-1809-FOD-to-LP-Mapping-Table.xlsx) which works at the time of writing this.
                 </p>
                 
                 <p>
@@ -646,7 +646,7 @@ tags:
                 </p>
                 
                 <div class="wp-block-image">
-                  <figure class="aligncenter size-large"><a href="https://sysmansquad.com/wp-content/uploads/2020/06/fodsondisk.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" width="1024" height="272" src="https://sysmansquad.com/wp-content/uploads/2020/06/fodsondisk-1024x272.jpg" alt="" class="wp-image-1209" srcset="https:/wp-content/uploads/2020/06/fodsondisk-1024x272.jpg 1024w, https:/wp-content/uploads/2020/06/fodsondisk-300x80.jpg 300w, https:/wp-content/uploads/2020/06/fodsondisk-768x204.jpg 768w, https:/wp-content/uploads/2020/06/fodsondisk-1536x408.jpg 1536w, https:/wp-content/uploads/2020/06/fodsondisk-2048x544.jpg 2048w, https:/wp-content/uploads/2020/06/fodsondisk-100x27.jpg 100w, https:/wp-content/uploads/2020/06/fodsondisk-855x227.jpg 855w, https:/wp-content/uploads/2020/06/fodsondisk-1234x328.jpg 1234w" sizes="(max-width: 1024px) 100vw, 1024px" /></a><figcaption>Showing satellite and non-satellite FoD differences on disk</figcaption></figure>
+                  <figure class="aligncenter size-large">[![](https://sysmansquad.com/wp-content/uploads/2020/06/fodsondisk-1024x272.jpg)](https://sysmansquad.com/wp-content/uploads/2020/06/fodsondisk.jpg)<figcaption>Showing satellite and non-satellite FoD differences on disk</figcaption></figure>
                 </div>
                 
                 <p>
@@ -684,11 +684,11 @@ tags:
                 </p>
                 
                 <p>
-                  To help with that, I wrote some functions included in the <a rel="noreferrer noopener" href="https://github.com/codaamok/PSCMWin10Language" target="_blank">PSCMWin10Language</a> module.
+                  To help with that, I wrote some functions included in the [PSCMWin10Language](https://github.com/codaamok/PSCMWin10Language) module.
                 </p>
                 
                 <p>
-                  For more information on how to use these functions to build out LP, LXP and FoD repositories, <a href="https://sysmansquad.com/2020/06/08/deploy-languages-via-software-center-with-pscmwin10language/" target="_blank" rel="noreferrer noopener">check out this blog post I also wrote</a>.
+                  For more information on how to use these functions to build out LP, LXP and FoD repositories, [check out this blog post I also wrote](https://sysmansquad.com/2020/06/08/deploy-languages-via-software-center-with-pscmwin10language/).
                 </p>
                 
                 <ul>
@@ -722,7 +722,7 @@ tags:
                 </p>
                 
                 <div class="wp-block-image">
-                  <figure class="aligncenter size-medium"><a href="https://sysmansquad.com/wp-content/uploads/2020/06/finalts-fodstep.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" width="300" height="252" src="https://sysmansquad.com/wp-content/uploads/2020/06/finalts-fodstep-300x252.jpg" alt="" class="wp-image-1214" srcset="https:/wp-content/uploads/2020/06/finalts-fodstep-300x252.jpg 300w, https:/wp-content/uploads/2020/06/finalts-fodstep-1024x862.jpg 1024w, https:/wp-content/uploads/2020/06/finalts-fodstep-768x646.jpg 768w, https:/wp-content/uploads/2020/06/finalts-fodstep-1536x1293.jpg 1536w, https:/wp-content/uploads/2020/06/finalts-fodstep-100x84.jpg 100w, https:/wp-content/uploads/2020/06/finalts-fodstep-855x720.jpg 855w, https:/wp-content/uploads/2020/06/finalts-fodstep-1234x1039.jpg 1234w, https:/wp-content/uploads/2020/06/finalts-fodstep.jpg 1667w" sizes="(max-width: 300px) 100vw, 300px" /></a><figcaption>Example step to install FoD</figcaption></figure>
+                  <figure class="aligncenter size-medium">[![](https://sysmansquad.com/wp-content/uploads/2020/06/finalts-fodstep-300x252.jpg)](https://sysmansquad.com/wp-content/uploads/2020/06/finalts-fodstep.jpg)<figcaption>Example step to install FoD</figcaption></figure>
                 </div>
                 
                 <h2>
@@ -738,7 +738,7 @@ tags:
                 </p>
                 
                 <p>
-                  <a href="https://sysmansquad.com/2020/06/08/deploy-languages-via-software-center-with-pscmwin10language/" target="_blank" rel="noreferrer noopener">Check out this blog post I wrote</a>, where I show you how to use my PowerShell module <a rel="noreferrer noopener" href="https://github.com/codaamok/PSCMWin10Language" target="_blank">PSCMWin10Language</a> to create LP, LXP and FoD repositories and create ConfigMgr Applications using those repositories to deploy via the Software Center.
+                  [Check out this blog post I wrote](https://sysmansquad.com/2020/06/08/deploy-languages-via-software-center-with-pscmwin10language/), where I show you how to use my PowerShell module [PSCMWin10Language](https://github.com/codaamok/PSCMWin10Language) to create LP, LXP and FoD repositories and create ConfigMgr Applications using those repositories to deploy via the Software Center.
                 </p>
                 
                 <h2>
@@ -751,7 +751,7 @@ tags:
                 
                 <ul>
                   <li>
-                    <a href="https://www.youtube.com/watch?v=ZhL0AO8Cnig&ab_channel=MicrosoftIgnite" target="_blank" rel="noreferrer noopener">Solving&nbsp;Windows&nbsp;10&nbsp;feature&nbsp;updates&nbsp;in&nbsp;a&nbsp;multilingual&nbsp;deployment</a> - Sudhagar Thirumoolan (<a href="https://twitter.com/sudhagart?lang=en" target="_blank" rel="noreferrer noopener">@sudhagart</a>)
+                    [Solving&nbsp;Windows&nbsp;10&nbsp;feature&nbsp;updates&nbsp;in&nbsp;a&nbsp;multilingual&nbsp;deployment](https://www.youtube.com/watch?v=ZhL0AO8Cnig&ab_channel=MicrosoftIgnite) - Sudhagar Thirumoolan ([@sudhagart](https://twitter.com/sudhagart?lang=en))
                   </li>
                 </ul>
                 
@@ -760,7 +760,7 @@ tags:
                 </p>
                 
                 <p>
-                  Timing is perfect because Michael Niehaus (former Principal Program Manager at Microsoft) <a href="https://oofhours.com/2020/06/01/new-in-windows-10-2004-better-language-handling/" target="_blank" rel="noreferrer noopener">just posted an excellent blog</a> which discusses these new 2004 changes in more detail.
+                  Timing is perfect because Michael Niehaus (former Principal Program Manager at Microsoft) [just posted an excellent blog](https://oofhours.com/2020/06/01/new-in-windows-10-2004-better-language-handling/) which discusses these new 2004 changes in more detail.
                 </p>
                 
                 <p>
@@ -792,5 +792,5 @@ tags:
                 </p>
                 
                 <p>
-                  If you have any questions about any of this, don't hesitate to comment or ping me on Twitter (<a href="https://twitter.com/codaamok" target="_blank" rel="noreferrer noopener">@codaamok</a>). Thanks for reading if you made it this far!
+                  If you have any questions about any of this, don't hesitate to comment or ping me on Twitter ([@codaamok](https://twitter.com/codaamok)). Thanks for reading if you made it this far!
                 </p>

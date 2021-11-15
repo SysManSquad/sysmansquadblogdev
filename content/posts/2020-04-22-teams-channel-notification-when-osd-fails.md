@@ -193,7 +193,7 @@ Edit the task sequence for OSD.
 
 Our TS is set up with logic and a section to run if the task sequence encounters an error. This is where we will put the OSD Failure notification script.
 
-_For more information on how to set up Error Handling in OSD Task Sequence, see [Jörgen Nilsson's](https://ccmexec.com/author/jonil/) post about it here: <a href="https://ccmexec.com/2016/12/error-handling-in-ts-without-mdt-using-osdbackground/" target="_blank" rel="noreferrer noopener" aria-label="https://ccmexec.com/2016/12/error-handling-in-ts-without-mdt-using-osdbackground/ (opens in a new tab)">https://ccmexec.com/2016/12/error-handling-in-ts-without-mdt-using-osdbackground/</a>_<figure class="wp-block-image">
+_For more information on how to set up Error Handling in OSD Task Sequence, see [Jörgen Nilsson's](https://ccmexec.com/author/jonil/) post about it here: [https://ccmexec.com/2016/12/error-handling-in-ts-without-mdt-using-osdbackground/](https://ccmexec.com/2016/12/error-handling-in-ts-without-mdt-using-osdbackground/)_<figure class="wp-block-image">
 
 ![](https://lh5.googleusercontent.com/GRx_3DUP7m-LKvPLhxOqfdS0hI94Nii31qrJyXmyH9pXxGHmPs_VNZzm8Yr42YOA_6e5TUhhJHLQ3xLT7t4psCGvJsE7qLSRZRBRweEpNZ0QHuCh8t1OIcx80lDYpH8NR82AM4E) </figure> 
 
@@ -214,3 +214,4 @@ If you want to try emulating a failure, create a **Run Command Line** task somew
 So now, if your task sequence runs into an error, you will now get a lovely message straight into your Teams channel: <figure class="wp-block-image">
 
 ![](https://lh3.googleusercontent.com/BoKEAscaxddhdwbdL99Ks2fPQLO1TojP-vK3LtEddTJWWCHkG7rOapin1BhIkxOtFOT3B_eDY-vU6rFjo6bEBnMEpzzS2H7PbRnb4d9l7vIcbq1QQiUyHleq3K1KlYERHzcWyBk) </figure>
+

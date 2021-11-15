@@ -37,13 +37,13 @@ Our customer will be moving to Azure later so we will probably revisit this as A
   <div class="uagb-toc__list-wrap">
     <ol class="uagb-toc__list">
       <li class="uagb-toc__list">
-        <a href="#create-our-app-registration">Create our App Registration</a><li class="uagb-toc__list">
-          <a href="#using-our-app-auth-certificate">Using our App Auth Certificate</a><li class="uagb-toc__list">
-            <a href="#assembling-our-update-script">Assembling our Update Script</a><li class="uagb-toc__list">
-              <a href="#scheduling-the-script">Scheduling the Script</a><li class="uagb-toc__list">
-                <a href="#conclusion">Conclusion</a><ul class="uagb-toc__list">
+        [Create our App Registration](#create-our-app-registration)<li class="uagb-toc__list">
+          [Using our App Auth Certificate](#using-our-app-auth-certificate)<li class="uagb-toc__list">
+            [Assembling our Update Script](#assembling-our-update-script)<li class="uagb-toc__list">
+              [Scheduling the Script](#scheduling-the-script)<li class="uagb-toc__list">
+                [Conclusion](#conclusion)<ul class="uagb-toc__list">
                   <li class="uagb-toc__list">
-                    <a href="#where-to-find-me">Where to find me</a>
+                    [Where to find me](#where-to-find-me)
                   </li>
                 </ul></ol> </div> </div> </div> 
                 
@@ -86,7 +86,7 @@ Our customer will be moving to Azure later so we will probably revisit this as A
                 </h2>
                 
                 <p>
-                  First, we need to create an App to use for authentication, so that a user or administrator doesn't have to log in every time to run this. Just like my last post, where we created an app registration to <a rel="noreferrer noopener" href="https://sysmansquad.com/2020/11/23/find-microsoft-accounts/#setting-up-your-app-registration" target="_blank">Find Microsoft Accounts on your company domain</a>, we need to register an App for our script to authenticate and be granted permissions.
+                  First, we need to create an App to use for authentication, so that a user or administrator doesn't have to log in every time to run this. Just like my last post, where we created an app registration to [Find Microsoft Accounts on your company domain](https://sysmansquad.com/2020/11/23/find-microsoft-accounts/#setting-up-your-app-registration), we need to register an App for our script to authenticate and be granted permissions.
                 </p>
                 
                 <p>
@@ -100,7 +100,7 @@ Our customer will be moving to Azure later so we will probably revisit this as A
                   <li>
                     add API Permissions to <strong>ReadWrite </strong>all <strong>MailboxSettings</strong><ul>
                       <li>
-                        in my example, I am requesting ReadWrite to all, but you should be able to <a href="https://docs.microsoft.com/en-us/graph/auth-limit-mailbox-access" target="_blank" rel="noreferrer noopener">scope it to specific users</a> for a more secure implementation
+                        in my example, I am requesting ReadWrite to all, but you should be able to [scope it to specific users](https://docs.microsoft.com/en-us/graph/auth-limit-mailbox-access) for a more secure implementation
                       </li>
                     </ul>
                   </li>
@@ -128,7 +128,7 @@ Our customer will be moving to Azure later so we will probably revisit this as A
                 </ul>
                 
                 <p>
-                  This is a long list of tasks, and for more details and a more GUI-based walkthrough, I recommend you check out <a rel="noreferrer noopener" href="https://laurakokkarinen.com/authenticating-to-office-365-apis-with-a-certificate-step-by-step/#creating-the-certificate" target="_blank">this post</a>. For the ease of my setup (and to keep this a reasonable length) I included a script below to set everything up.
+                  This is a long list of tasks, and for more details and a more GUI-based walkthrough, I recommend you check out [this post](https://laurakokkarinen.com/authenticating-to-office-365-apis-with-a-certificate-step-by-step/#creating-the-certificate). For the ease of my setup (and to keep this a reasonable length) I included a script below to set everything up.
                 </p>
                 
                 <p>
@@ -207,12 +207,12 @@ Write-Host -ForeGroundColor Cyan "Copied to ClipBoard"
                   To use the App auth Certificate is fairly simple, and the script above outputs the command to use. For my app it came out to the <strong>Connect-mgGraph</strong> command shown below.
                 </p><figure class="wp-block-image size-large" id="AppAuthExampleImage">
                 
-                <img loading="lazy" width="792" height="390" src="https://sysmansquad.com/wp-content/uploads/2020/12/image-8.png" alt="" class="wp-image-2055" srcset="https:/wp-content/uploads/2020/12/image-8.png 792w, https:/wp-content/uploads/2020/12/image-8-300x148.png 300w, https:/wp-content/uploads/2020/12/image-8-768x378.png 768w, https:/wp-content/uploads/2020/12/image-8-100x49.png 100w" sizes="(max-width: 792px) 100vw, 792px" /><figcaption>Sample <strong>Connect-mgGraph</strong> command shown above<br />Connected with Certificate based, AppOnly login. </figcaption></figure> <p>
+                ![](https://sysmansquad.com/wp-content/uploads/2020/12/image-8.png)<figcaption>Sample <strong>Connect-mgGraph</strong> command shown above<br />Connected with Certificate based, AppOnly login. </figcaption></figure> <p>
                   You can use the <strong>Get-mgContext</strong> to verify you are connected <strong>AppOnly</strong>/non-interactive login, as well as the <strong>app name </strong>and your <strong>permissions scopes</strong>.
                 </p>
                 
                 <p>
-                  For a comparison, here is a screenshot of what this looks like connected as my Global Admin during the app registration - <a rel="noreferrer noopener nofollow" href="https://i.imgur.com/cEi2DNy.png" target="_blank">Screenshot</a>
+                  For a comparison, here is a screenshot of what this looks like connected as my Global Admin during the app registration - [Screenshot](https://i.imgur.com/cEi2DNy.png)
                 </p>
                 
                 <h2>
@@ -220,15 +220,15 @@ Write-Host -ForeGroundColor Cyan "Copied to ClipBoard"
                 </h2>
                 
                 <p>
-                  Now that we can authenticate to the Graph API, we need to make a script to update the Out-of-office messages, which are part of the <a href="https://docs.microsoft.com/en-us/graph/api/user-get-mailboxsettings?view=graph-rest-1.0&tabs=http" target="_blank" rel="noreferrer noopener">MailboxSettings</a> resource.
+                  Now that we can authenticate to the Graph API, we need to make a script to update the Out-of-office messages, which are part of the [MailboxSettings](https://docs.microsoft.com/en-us/graph/api/user-get-mailboxsettings?view=graph-rest-1.0&tabs=http) resource.
                 </p>
                 
                 <p>
-                  Using those variables from the previous app we created above, it provided out several variables we will need in the top of the script below. You can see them in the <a href="#AppAuthExampleImage">previous screenshot</a>. Pull those variables into Lines 3-6 below.
+                  Using those variables from the previous app we created above, it provided out several variables we will need in the top of the script below. You can see them in the [previous screenshot](#AppAuthExampleImage). Pull those variables into Lines 3-6 below.
                 </p>
                 
                 <p>
-                  We can select our User to update the Automatic Out-of-office responses on, and even setup a Teams WebHook notification for failures or errors, like they did for this post <a rel="noreferrer noopener" href="https://sysmansquad.com/2020/04/22/teams-channel-notification-when-osd-fails/#step-1" target="_blank">Teams Channel Notification when OSD Fails</a>. Just update <code>$WebHookURL</code> on line 12 with your WebHookURL and set the user you want to maintain on line 9.
+                  We can select our User to update the Automatic Out-of-office responses on, and even setup a Teams WebHook notification for failures or errors, like they did for this post [Teams Channel Notification when OSD Fails](https://sysmansquad.com/2020/04/22/teams-channel-notification-when-osd-fails/#step-1). Just update <code>$WebHookURL</code> on line 12 with your WebHookURL and set the user you want to maintain on line 9.
                 </p>
                 
                 <p>
@@ -341,15 +341,15 @@ catch {
                   Since my schedule was 5PM to 8AM Monday-Friday, I made a scheduled task and set it up to run Weekly - Monday-Friday at 9AM.
                 </p><figure class="wp-block-image size-large">
                 
-                <img loading="lazy" width="629" height="173" src="https://sysmansquad.com/wp-content/uploads/2020/12/image-12.png" alt="" class="wp-image-2066" srcset="https:/wp-content/uploads/2020/12/image-12.png 629w, https:/wp-content/uploads/2020/12/image-12-300x83.png 300w, https:/wp-content/uploads/2020/12/image-12-100x28.png 100w" sizes="(max-width: 629px) 100vw, 629px" /></figure> <p>
+                ![](https://sysmansquad.com/wp-content/uploads/2020/12/image-12.png)</figure> <p>
                   In my testing, since it was only accessing the Current User's profile, and did not need access to other networked resources, you can skip storing the password to increase security.
                 </p><figure class="wp-block-image size-large">
                 
-                <img loading="lazy" width="625" height="404" src="https://sysmansquad.com/wp-content/uploads/2020/12/image-9.png" alt="" class="wp-image-2063" srcset="https:/wp-content/uploads/2020/12/image-9.png 625w, https:/wp-content/uploads/2020/12/image-9-300x194.png 300w, https:/wp-content/uploads/2020/12/image-9-100x65.png 100w" sizes="(max-width: 625px) 100vw, 625px" /></figure> <p>
+                ![](https://sysmansquad.com/wp-content/uploads/2020/12/image-9.png)</figure> <p>
                   For the program to run, we just need to specify to run the file with powershell.exe. On my system, it was trying to default opening the .ps1 in notepad, so I switched to directly running powershell.exe to bypass that.
                 </p><figure class="wp-block-image size-large">
                 
-                <img loading="lazy" width="711" height="129" src="https://sysmansquad.com/wp-content/uploads/2020/12/image-13.png" alt="" class="wp-image-2067" srcset="https:/wp-content/uploads/2020/12/image-13.png 711w, https:/wp-content/uploads/2020/12/image-13-300x54.png 300w, https:/wp-content/uploads/2020/12/image-13-100x18.png 100w" sizes="(max-width: 711px) 100vw, 711px" /></figure> <h2>
+                ![](https://sysmansquad.com/wp-content/uploads/2020/12/image-13.png)</figure> <h2>
                   Conclusion
                 </h2>
                 
@@ -389,5 +389,5 @@ catch {
                 </h4>
                 
                 <p>
-                  If you have questions, are having problems, or just want to chat over something, you can leave a comment below or reach me on the <a href="https://discord.com/invite/winadmins" target="_blank" rel="noreferrer noopener">WinAdmins Discord</a> at <a href="https://discordapp.com/users/264652399824601088">@PsychoData</a>
+                  If you have questions, are having problems, or just want to chat over something, you can leave a comment below or reach me on the [WinAdmins Discord](https://discord.com/invite/winadmins) at [@PsychoData](https://discordapp.com/users/264652399824601088)
                 </p>

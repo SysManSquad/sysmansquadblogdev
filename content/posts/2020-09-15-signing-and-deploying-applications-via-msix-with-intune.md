@@ -18,7 +18,7 @@ tags:
 
 ### Why would I want to use MSIX and what is it?
 
-<a href="https://docs.microsoft.com/en-us/windows/msix/overview#:~:text=MSIX%20is%20a%20Windows%20app,WPF%2C%20and%20Windows%20Forms%20apps." target="_blank" rel="noreferrer noopener">MSIX is a Windows app package format that provides a modern packaging experience to all Windows apps. The MSIX package format preserves the functionality of existing app packages and/or install files in addition to enabling new, modern packaging and deployment features to Win32, WPF, and Windows Forms apps.</a>
+[MSIX is a Windows app package format that provides a modern packaging experience to all Windows apps. The MSIX package format preserves the functionality of existing app packages and/or install files in addition to enabling new, modern packaging and deployment features to Win32, WPF, and Windows Forms apps.](https://docs.microsoft.com/en-us/windows/msix/overview#:~:text=MSIX%20is%20a%20Windows%20app,WPF%2C%20and%20Windows%20Forms%20apps.)
 
 Do you have a bloated application? Maybe one or two that are so old it doesn't even have any install parameters? Maybe you have a massive application that is a pain to deploy?
 
@@ -26,7 +26,7 @@ Well MSIX might be for you! Wrapping your app with MSIX sounds fine and dandy ho
 
 ### Prerequisites
 
-<a rel="noreferrer noopener" href="https://sysmansquad.com/2020/01/27/intune-autopilot-setup-companion-guide-part-2-windows-store-for-business/" target="_blank">Microsoft Store for Business configured</a>  
+[Microsoft Store for Business configured](https://sysmansquad.com/2020/01/27/intune-autopilot-setup-companion-guide-part-2-windows-store-for-business/)  
 -The first person to sign in to Microsoft Store for Business must be a Global Admin of the Azure Active Directory (AD) tenant. Once the Global Admin has signed in, they can give permissions to others employees.  
   
 A machine that can run Hyper-V
@@ -34,17 +34,17 @@ A machine that can run Hyper-V
 ### Getting your certificate and deploying it
 
 The reason we need to get a certificate is to make the app a trusted one. Once we have this in place the app will go from Untrusted to Trusted like the picture below  
-<img loading="lazy" width="976" height="894" class="wp-image-1717" style="width: 500px;" src="https://sysmansquad.com/wp-content/uploads/2020/09/vmconnect_1eSsb6FTKd.png" alt="" srcset="https:/wp-content/uploads/2020/09/vmconnect_1eSsb6FTKd.png 976w, https:/wp-content/uploads/2020/09/vmconnect_1eSsb6FTKd-300x275.png 300w, https:/wp-content/uploads/2020/09/vmconnect_1eSsb6FTKd-768x703.png 768w, https:/wp-content/uploads/2020/09/vmconnect_1eSsb6FTKd-100x92.png 100w, https:/wp-content/uploads/2020/09/vmconnect_1eSsb6FTKd-855x783.png 855w" sizes="(max-width: 976px) 100vw, 976px" /> 
+![](https://sysmansquad.com/wp-content/uploads/2020/09/vmconnect_1eSsb6FTKd.png) 
 
-  1. Log in to <a href="https://businessstore.microsoft.com/en-us/store?signin=" target="_blank" rel="noreferrer noopener">Microsoft Store for Business</a>
+  1. Log in to [Microsoft Store for Business](https://businessstore.microsoft.com/en-us/store?signin=)
   2. Select **Manage**
   3. Select **Settings**
   4. Select **Devices**
-  5. Select **Download** on Download your organization's root certificate file for use with Device Guard<img loading="lazy" width="1091" height="183" class="wp-image-1718" style="width: 500px;" src="https://sysmansquad.com/wp-content/uploads/2020/09/msedge_5t3OJ6orOw.png" alt="" srcset="https:/wp-content/uploads/2020/09/msedge_5t3OJ6orOw.png 1091w, https:/wp-content/uploads/2020/09/msedge_5t3OJ6orOw-300x50.png 300w, https:/wp-content/uploads/2020/09/msedge_5t3OJ6orOw-1024x172.png 1024w, https:/wp-content/uploads/2020/09/msedge_5t3OJ6orOw-768x129.png 768w, https:/wp-content/uploads/2020/09/msedge_5t3OJ6orOw-100x17.png 100w, https:/wp-content/uploads/2020/09/msedge_5t3OJ6orOw-855x143.png 855w" sizes="(max-width: 1091px) 100vw, 1091px" /> 
+  5. Select **Download** on Download your organization's root certificate file for use with Device Guard![](https://sysmansquad.com/wp-content/uploads/2020/09/msedge_5t3OJ6orOw.png) 
 
 You will need to deploy this certificate to any machine that you want to install the app on so let's create the Intune Configuration Profile for it
 
-  1. Log in to <a href="https://devicemanagement.microsoft.com/" target="_blank" rel="noreferrer noopener">Device Management</a>
+  1. Log in to [Device Management](https://devicemanagement.microsoft.com/)
   2. Select **Devices**
   3. Select **Configuration Profiles**
   4. Select **Create Profile**
@@ -91,7 +91,7 @@ This will start the creation process of your image. It will take some time to do
 
 ### Adding your MSIX to Intune
 
-  1. Log in to <a href="https://devicemanagement.microsoft.com/" target="_blank" rel="noreferrer noopener">Device Management</a>
+  1. Log in to [Device Management](https://devicemanagement.microsoft.com/)
   2. Select **Apps**
   3. Select **Windows**
   4. Select **Add**
@@ -106,4 +106,4 @@ This will start the creation process of your image. It will take some time to do
 
 Congrats! You have a deployed app now! I strongly recommend rebooting the machine after the certificate is deployed and then attempting the installation but you should be all set!<figure class="wp-block-image size-large">
 
-<img loading="lazy" width="498" height="243" src="https://sysmansquad.com/wp-content/uploads/2020/01/giphy-2.gif" alt="" class="wp-image-698" /> </figure>
+![](https://sysmansquad.com/wp-content/uploads/2020/01/giphy-2.gif) </figure>

@@ -31,51 +31,51 @@ tags:
   <div class="uagb-toc__list-wrap">
     <ol class="uagb-toc__list">
       <li class="uagb-toc__list">
-        <a href="#what-is-automatedlab">What is AutomatedLab?</a><li class="uagb-toc__list">
-          <a href="#support">Support</a><li class="uagb-toc__list">
-            <a href="#prerequisites">Prerequisites</a><ul class="uagb-toc__list">
+        [What is AutomatedLab?](#what-is-automatedlab)<li class="uagb-toc__list">
+          [Support](#support)<li class="uagb-toc__list">
+            [Prerequisites](#prerequisites)<ul class="uagb-toc__list">
               <li class="uagb-toc__list">
-                <a href="#telemetry">Telemetry</a><li class="uagb-toc__list">
+                [Telemetry](#telemetry)<li class="uagb-toc__list">
                   <li class="uagb-toc__list">
-                    <a href="#security-warning">Security warning</a><ul class="uagb-toc__list">
+                    [Security warning](#security-warning)<ul class="uagb-toc__list">
                       <li class="uagb-toc__list">
-                        <a href="#enabling-winrm-credssp">Enabling WinRM CredSSP</a><li class="uagb-toc__list">
+                        [Enabling WinRM CredSSP](#enabling-winrm-credssp)<li class="uagb-toc__list">
                           <li class="uagb-toc__list">
-                            <a href="#enters-a-wildcard-in-your-systems-trustedhosts-file">Enters a wildcard in your system's TrustedHosts file</a><li class="uagb-toc__list">
+                            [Enters a wildcard in your system's TrustedHosts file](#enters-a-wildcard-in-your-systems-trustedhosts-file)<li class="uagb-toc__list">
                               <li class="uagb-toc__list">
-                                <a href="#allow-credential-delegation-via-local-group-policy-settings">Allow credential delegation via local group policy settings</a><li class="uagb-toc__list">
+                                [Allow credential delegation via local group policy settings](#allow-credential-delegation-via-local-group-policy-settings)<li class="uagb-toc__list">
                                   <li class="uagb-toc__list">
-                                    <a href="#relaxes-a-setting-for-credssp-patch-cve-2019-0886">Relaxes a setting for CredSSP patch CVE-2019-0886</a>
+                                    [Relaxes a setting for CredSSP patch CVE-2019-0886](#relaxes-a-setting-for-credssp-patch-cve-2019-0886)
                                   </li></ul>
                                 </li></ul>
                               </li>
                               <li class="uagb-toc__list">
-                                <a href="#installing-automatedlab">Installing AutomatedLab</a><ul class="uagb-toc__list">
+                                [Installing AutomatedLab](#installing-automatedlab)<ul class="uagb-toc__list">
                                   <li class="uagb-toc__list">
-                                    <a href="#folders">Folders</a><ul class="uagb-toc__list">
+                                    [Folders](#folders)<ul class="uagb-toc__list">
                                       <li class="uagb-toc__list">
-                                        <a href="#labsourcescustomroles">LabSourcesCustomRoles</a><li class="uagb-toc__list">
+                                        [LabSourcesCustomRoles](#labsourcescustomroles)<li class="uagb-toc__list">
                                           <li class="uagb-toc__list">
-                                            <a href="#labsourcesisos">LabSourcesISOs</a><li class="uagb-toc__list">
+                                            [LabSourcesISOs](#labsourcesisos)<li class="uagb-toc__list">
                                               <li class="uagb-toc__list">
-                                                <a href="#labsourcesosupdates">LabSourcesOSUpdates</a><li class="uagb-toc__list">
+                                                [LabSourcesOSUpdates](#labsourcesosupdates)<li class="uagb-toc__list">
                                                   <li class="uagb-toc__list">
-                                                    <a href="#labsourcespostinstallationactivities">LabSourcesPostInstallationActivities</a><li class="uagb-toc__list">
+                                                    [LabSourcesPostInstallationActivities](#labsourcespostinstallationactivities)<li class="uagb-toc__list">
                                                       <li class="uagb-toc__list">
-                                                        <a href="#labsourcessamplescripts">LabSourcesSampleScripts</a><li class="uagb-toc__list">
+                                                        [LabSourcesSampleScripts](#labsourcessamplescripts)<li class="uagb-toc__list">
                                                           <li class="uagb-toc__list">
-                                                            <a href="#labsourcessoftwarepackages">LabSourcesSoftwarePackages</a><li class="uagb-toc__list">
+                                                            [LabSourcesSoftwarePackages](#labsourcessoftwarepackages)<li class="uagb-toc__list">
                                                               <li class="uagb-toc__list">
-                                                                <a href="#labsourcestools">LabSourcesTools</a>
+                                                                [LabSourcesTools](#labsourcestools)
                                                               </li></ul>
                                                             </li></ul>
                                                           </li></ul>
                                                         </li></ul>
                                                       </li>
                                                       <li class="uagb-toc__list">
-                                                        <a href="#creating-a-simple-lab">Creating a simple lab</a><li class="uagb-toc__list">
-                                                          <a href="#adding-or-removing-lab-machines">Adding or removing lab machines</a><li class="uagb-toc__list">
-                                                            <a href="#build-a-configmgr-lab-with-automatedlab">Build a ConfigMgr lab with AutomatedLab</a>
+                                                        [Creating a simple lab](#creating-a-simple-lab)<li class="uagb-toc__list">
+                                                          [Adding or removing lab machines](#adding-or-removing-lab-machines)<li class="uagb-toc__list">
+                                                            [Build a ConfigMgr lab with AutomatedLab](#build-a-configmgr-lab-with-automatedlab)
                                                           </li></ul>
                                                         </li></ul>
                                                       </li></ul>
@@ -85,7 +85,7 @@ tags:
                                                     </h2>
                                                     
                                                     <p>
-                                                      <a href="https://github.com/automatedlab/automatedlab" target="_blank" rel="noreferrer noopener">AutomatedLab</a> is simply PowerShell module. In some ways it’s a framework because it encourages a particular workflow for managing named labs consisting of VMs with prefined applications / “roles” or custom roles.
+                                                      [AutomatedLab](https://github.com/automatedlab/automatedlab) is simply PowerShell module. In some ways it’s a framework because it encourages a particular workflow for managing named labs consisting of VMs with prefined applications / “roles” or custom roles.
                                                     </p>
                                                     
                                                     <p>
@@ -117,7 +117,7 @@ tags:
                                                     </h2>
                                                     
                                                     <p>
-                                                      Resources for AutomatedLab aren’t hard to find. I personally found everything I needed by looking at the&nbsp;<a href="https://github.com/AutomatedLab/AutomatedLab/wiki">wiki</a>&nbsp;on&nbsp;<a href="https://github.com/AutomatedLab/AutomatedLab">GitHub</a>, reviewing the documentation on their&nbsp;<a href="https://automatedlab.org/">website</a>, and checking out the&nbsp;<a href="https://github.com/AutomatedLab/AutomatedLab/tree/master/LabSources/SampleScripts">sample scripts folder</a>.
+                                                      Resources for AutomatedLab aren’t hard to find. I personally found everything I needed by looking at the&nbsp;[wiki](https://github.com/AutomatedLab/AutomatedLab/wiki)&nbsp;on&nbsp;[GitHub](https://github.com/AutomatedLab/AutomatedLab), reviewing the documentation on their&nbsp;[website](https://automatedlab.org/), and checking out the&nbsp;[sample scripts folder](https://github.com/AutomatedLab/AutomatedLab/tree/master/LabSources/SampleScripts).
                                                     </p>
                                                     
                                                     <p>
@@ -129,7 +129,7 @@ tags:
                                                     </h2>
                                                     
                                                     <p>
-                                                      As per the&nbsp;<a href="http://automatedlab.org/en/latest/#requirements">documentation</a>, at the time of writing this, the requirements are:
+                                                      As per the&nbsp;[documentation](http://automatedlab.org/en/latest/#requirements), at the time of writing this, the requirements are:
                                                     </p>
                                                     
                                                     <ul>
@@ -164,7 +164,7 @@ tags:
                                                     </h3>
                                                     
                                                     <p>
-                                                      AutomatedLab operates on an&nbsp;<strong>opt-out</strong>&nbsp;telemetry system. The&nbsp;<a href="http://automatedlab.org/en/latest/#requirements">documentation</a>&nbsp;on this heavily suggests no personal identifiable information is collected and it’s used purely for supportability and usage statistics. Snippets of json data which is sent back are included in the docs to give you insight to the amount of detail shared.
+                                                      AutomatedLab operates on an&nbsp;<strong>opt-out</strong>&nbsp;telemetry system. The&nbsp;[documentation](http://automatedlab.org/en/latest/#requirements)&nbsp;on this heavily suggests no personal identifiable information is collected and it’s used purely for supportability and usage statistics. Snippets of json data which is sent back are included in the docs to give you insight to the amount of detail shared.
                                                     </p>
                                                     
                                                     <p>
@@ -172,7 +172,7 @@ tags:
                                                     </p>
                                                     
                                                     <p>
-                                                      They even share the <a href="https://msit.powerbi.com/view?r=eyJrIjoiN2Q3ZTU5Y2QtMjUyMi00YmFhLTkxNTMtZDBmYTA3MzcyYWQxIiwidCI6IjcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0NyIsImMiOjV9&pageName=ReportSection67b5abc401bbec55e899">PowerBi dashboard of the data collected</a>.
+                                                      They even share the [PowerBi dashboard of the data collected](https://msit.powerbi.com/view?r=eyJrIjoiN2Q3ZTU5Y2QtMjUyMi00YmFhLTkxNTMtZDBmYTA3MzcyYWQxIiwidCI6IjcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0NyIsImMiOjV9&pageName=ReportSection67b5abc401bbec55e899).
                                                     </p>
                                                     
                                                     <h3>
@@ -188,7 +188,7 @@ tags:
                                                     </p>
                                                     
                                                     <div class="wp-block-image is-style-default">
-                                                      <figure class="aligncenter size-large"><img loading="lazy" width="1024" height="705" src="https://www.sysmansquad.com/wp-content/uploads/2020/04/CMAutomatedLab-5-1024x705.jpg" alt="" class="wp-image-944" srcset="https:/wp-content/uploads/2020/04/CMAutomatedLab-5-1024x705.jpg 1024w, https:/wp-content/uploads/2020/04/CMAutomatedLab-5-300x207.jpg 300w, https:/wp-content/uploads/2020/04/CMAutomatedLab-5-768x529.jpg 768w, https:/wp-content/uploads/2020/04/CMAutomatedLab-5-100x69.jpg 100w, https:/wp-content/uploads/2020/04/CMAutomatedLab-5-855x589.jpg 855w, https:/wp-content/uploads/2020/04/CMAutomatedLab-5-1234x850.jpg 1234w, https:/wp-content/uploads/2020/04/CMAutomatedLab-5.jpg 1366w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption>AutomatedLab security warning prompts</figcaption></figure>
+                                                      <figure class="aligncenter size-large">![](https://www.sysmansquad.com/wp-content/uploads/2020/04/CMAutomatedLab-5-1024x705.jpg)<figcaption>AutomatedLab security warning prompts</figcaption></figure>
                                                     </div>
                                                     
                                                     <p>
@@ -202,7 +202,7 @@ tags:
                                                     <pre class="wp-block-code"><code>Enable-WSManCredSSP -Role Client -DelegateComputer * -Force</code></pre>
                                                     
                                                     <p>
-                                                      The&nbsp;<a href="http://automatedlab.org/en/latest/Wiki/invokelabcommand/#double-hop-authentication-and-credssp">documentation</a>&nbsp;on this gives the following reason for this change:
+                                                      The&nbsp;[documentation](http://automatedlab.org/en/latest/Wiki/invokelabcommand/#double-hop-authentication-and-credssp)&nbsp;on this gives the following reason for this change:
                                                     </p>
                                                     
                                                     <p>
@@ -216,7 +216,7 @@ tags:
                                                     <pre class="wp-block-code"><code>Set-Item -Path Microsoft.WSMan.Management\WSMan::localhost\Client\TrustedHosts -Value '*' -Force</code></pre>
                                                     
                                                     <p>
-                                                      The&nbsp;<a href="https://github.com/AutomatedLab/AutomatedLab/blob/d1c5f04096c8bdef4ad29b4c495de05d25ca5a0a/AutomatedLab/AutomatedLab.psm1#L72">exception message</a>&nbsp;thrown if you choose not to accept reads:
+                                                      The&nbsp;[exception message](https://github.com/AutomatedLab/AutomatedLab/blob/d1c5f04096c8bdef4ad29b4c495de05d25ca5a0a/AutomatedLab/AutomatedLab.psm1#L72)&nbsp;thrown if you choose not to accept reads:
                                                     </p>
                                                     
                                                     <p>
@@ -243,7 +243,7 @@ tags:
                                                       <li>
                                                         Allow Delegating Fresh Credentials<ul>
                                                           <li>
-                                                            <a href="https://gpsearch.azurewebsites.net/#116">https://gpsearch.azurewebsites.net/#116</a>
+                                                            [https://gpsearch.azurewebsites.net/#116](https://gpsearch.azurewebsites.net/#116)
                                                           </li>
                                                         </ul>
                                                       </li>
@@ -251,7 +251,7 @@ tags:
                                                       <li>
                                                         Allow Delegating Fresh Credentials when NTLM only<ul>
                                                           <li>
-                                                            <a href="https://gpsearch.azurewebsites.net/#117">https://gpsearch.azurewebsites.net/#117</a>
+                                                            [https://gpsearch.azurewebsites.net/#117](https://gpsearch.azurewebsites.net/#117)
                                                           </li>
                                                         </ul>
                                                       </li>
@@ -259,7 +259,7 @@ tags:
                                                       <li>
                                                         Allow Delegating Saved Credentials<ul>
                                                           <li>
-                                                            <a href="https://gpsearch.azurewebsites.net/#118">https://gpsearch.azurewebsites.net/#118</a>
+                                                            [https://gpsearch.azurewebsites.net/#118](https://gpsearch.azurewebsites.net/#118)
                                                           </li>
                                                         </ul>
                                                       </li>
@@ -267,7 +267,7 @@ tags:
                                                       <li>
                                                         Allow Delegating Saved Credentials when NTLM only<ul>
                                                           <li>
-                                                            <a href="https://gpsearch.azurewebsites.net/#119">https://gpsearch.azurewebsites.net/#119</a>
+                                                            [https://gpsearch.azurewebsites.net/#119](https://gpsearch.azurewebsites.net/#119)
                                                           </li>
                                                         </ul>
                                                       </li>
@@ -282,7 +282,7 @@ tags:
                                                     </h4>
                                                     
                                                     <p>
-                                                      The setting it changes for CVE-2018-0886 /&nbsp;<a href="https://support.microsoft.com/en-us/help/4093492/credssp-updates-for-cve-2018-0886-march-13-2018">KB4093492</a>&nbsp;is&nbsp;<code>&lt;strong>AllowEncryptionOracle&lt;/strong></code>&nbsp;=&nbsp;<strong><code>2</code></strong>:
+                                                      The setting it changes for CVE-2018-0886 /&nbsp;[KB4093492](https://support.microsoft.com/en-us/help/4093492/credssp-updates-for-cve-2018-0886-march-13-2018)&nbsp;is&nbsp;<code>&lt;strong>AllowEncryptionOracle&lt;/strong></code>&nbsp;=&nbsp;<strong><code>2</code></strong>:
                                                     </p>
                                                     
                                                     <pre class="wp-block-code"><code>New-Item -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\CredSSP\Parameters -Force | Out-Null
@@ -302,16 +302,16 @@ Set-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\
                                                     
                                                     <ul>
                                                       <li>
-                                                        <a href="https://blogs.technet.microsoft.com/ashleymcglone/2016/08/30/powershell-remoting-kerberos-double-hop-solved-securely/">PowerShell Remoting Kerberos Double Hop Solved Securely</a>
+                                                        [PowerShell Remoting Kerberos Double Hop Solved Securely](https://blogs.technet.microsoft.com/ashleymcglone/2016/08/30/powershell-remoting-kerberos-double-hop-solved-securely/)
                                                       </li>
                                                       <li>
-                                                        <a href="https://blogs.technet.microsoft.com/askds/2008/06/13/understanding-kerberos-double-hop/">Understanding Kerberos Double Hop</a>
+                                                        [Understanding Kerberos Double Hop](https://blogs.technet.microsoft.com/askds/2008/06/13/understanding-kerberos-double-hop/)
                                                       </li>
                                                       <li>
-                                                        <a href="https://blogs.technet.microsoft.com/askds/2008/03/06/kerberos-for-the-busy-admin/">Kerberos for the Busy Admin</a>
+                                                        [Kerberos for the Busy Admin](https://blogs.technet.microsoft.com/askds/2008/03/06/kerberos-for-the-busy-admin/)
                                                       </li>
                                                       <li>
-                                                        <a href="https://www.powershellmagazine.com/2014/03/06/accidental-sabotage-beware-of-credssp/">Accidental Sabotage: Beware of CredSSP</a>
+                                                        [Accidental Sabotage: Beware of CredSSP](https://www.powershellmagazine.com/2014/03/06/accidental-sabotage-beware-of-credssp/)
                                                       </li>
                                                     </ul>
                                                     
@@ -324,7 +324,7 @@ Set-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\
                                                     </p>
                                                     
                                                     <p>
-                                                      I’m not going to reinvent the wheel. The&nbsp;<a href="https://automatedlab.org/en/latest/Wiki/Basic/install/">Installation docs</a>&nbsp;are good enough!
+                                                      I’m not going to reinvent the wheel. The&nbsp;[Installation docs](https://automatedlab.org/en/latest/Wiki/Basic/install/)&nbsp;are good enough!
                                                     </p>
                                                     
                                                     <h3>
@@ -336,7 +336,7 @@ Set-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\
                                                     </p>
                                                     
                                                     <p>
-                                                      LabSources is not the directory where VMs are stored. It’s where installation media / sources and scripts are kept. By default, VMs are stored in in a directory named AutomatedLab-VMs but this is also configurable on a per lab basis using&nbsp;<a href="http://automatedlab.org/en/latest/AutomatedLabDefinition/en-us/New-LabDefinition/#-vmpath">-VmPath</a>&nbsp;parameter.
+                                                      LabSources is not the directory where VMs are stored. It’s where installation media / sources and scripts are kept. By default, VMs are stored in in a directory named AutomatedLab-VMs but this is also configurable on a per lab basis using&nbsp;[-VmPath](http://automatedlab.org/en/latest/AutomatedLabDefinition/en-us/New-LabDefinition/#-vmpath)&nbsp;parameter.
                                                     </p>
                                                     
                                                     <p>
@@ -344,7 +344,7 @@ Set-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\
                                                     </p>
                                                     
                                                     <div class="wp-block-image">
-                                                      <figure class="aligncenter size-large"><a href="https://www.sysmansquad.com/wp-content/uploads/2020/04/AutomatedLab-1.jpg" target="_blank" rel="noopener noreferrer"><img loading="lazy" width="1024" height="576" src="https://www.sysmansquad.com/wp-content/uploads/2020/04/AutomatedLab-1-1024x576.jpg" alt="" class="wp-image-945" srcset="https:/wp-content/uploads/2020/04/AutomatedLab-1-1024x576.jpg 1024w, https:/wp-content/uploads/2020/04/AutomatedLab-1-300x169.jpg 300w, https:/wp-content/uploads/2020/04/AutomatedLab-1-768x432.jpg 768w, https:/wp-content/uploads/2020/04/AutomatedLab-1-100x56.jpg 100w, https:/wp-content/uploads/2020/04/AutomatedLab-1-855x481.jpg 855w, https:/wp-content/uploads/2020/04/AutomatedLab-1-1234x694.jpg 1234w, https:/wp-content/uploads/2020/04/AutomatedLab-1.jpg 1366w" sizes="(max-width: 1024px) 100vw, 1024px" /></a><figcaption>AutomatedLab LabSources folder contents</figcaption></figure>
+                                                      <figure class="aligncenter size-large">[![](https://www.sysmansquad.com/wp-content/uploads/2020/04/AutomatedLab-1-1024x576.jpg)](https://www.sysmansquad.com/wp-content/uploads/2020/04/AutomatedLab-1.jpg)<figcaption>AutomatedLab LabSources folder contents</figcaption></figure>
                                                     </div>
                                                     
                                                     <p>
@@ -356,7 +356,7 @@ Set-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\
                                                     </h4>
                                                     
                                                     <p>
-                                                      AutomatedLab has a concept of “roles” that are installed after a VM OS is installed.&nbsp;<a href="http://automatedlab.org/en/latest/Wiki/roles/">Here are a list</a>&nbsp;of predefined / “built in” roles. Associating a role with a VM will install applications such as Exchange, Active Directory, SharePoint, SQL, lots of good stuff and more. You associate a role with a VM using the&nbsp;<code>&lt;strong>-Roles&lt;/strong></code>&nbsp;parameter with the&nbsp;<code>&lt;strong>Add-LabMachineDefinition&lt;/strong></code>&nbsp;command.
+                                                      AutomatedLab has a concept of “roles” that are installed after a VM OS is installed.&nbsp;[Here are a list](http://automatedlab.org/en/latest/Wiki/roles/)&nbsp;of predefined / “built in” roles. Associating a role with a VM will install applications such as Exchange, Active Directory, SharePoint, SQL, lots of good stuff and more. You associate a role with a VM using the&nbsp;<code>&lt;strong>-Roles&lt;/strong></code>&nbsp;parameter with the&nbsp;<code>&lt;strong>Add-LabMachineDefinition&lt;/strong></code>&nbsp;command.
                                                     </p>
                                                     
                                                     <p>
@@ -419,7 +419,7 @@ Set-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\
                                                       Before you save the below script and execute it, ensure you have a Windows Server 2019 ISO saved in your LabSources\ISOs folder.
                                                     </p>
                                                     
-                                                    <a href="https://gist.github.com/codaamok/ed8cef3cad671ddee05a984e48d05f5f">https://gist.github.com/codaamok/ed8cef3cad671ddee05a984e48d05f5f</a> <p>
+                                                    [https://gist.github.com/codaamok/ed8cef3cad671ddee05a984e48d05f5f](https://gist.github.com/codaamok/ed8cef3cad671ddee05a984e48d05f5f) <p>
                                                       The above will create:
                                                     </p>
                                                     
@@ -465,7 +465,7 @@ Set-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\
                                                     </p>
                                                     
                                                     <p>
-                                                      It seems more appropriate functionality to add machines to an existing lab or domain created from AutomatedLab is incoming in&nbsp;<a href="https://github.com/AutomatedLab/AutomatedLab/milestone/5">version 6 of AutomatedLab</a>!
+                                                      It seems more appropriate functionality to add machines to an existing lab or domain created from AutomatedLab is incoming in&nbsp;[version 6 of AutomatedLab](https://github.com/AutomatedLab/AutomatedLab/milestone/5)!
                                                     </p>
                                                     
                                                     <h2>
@@ -473,5 +473,5 @@ Set-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\
                                                     </h2>
                                                     
                                                     <p>
-                                                      <a href="https://sysmansquad.com/2020/06/15/build-a-configrmgr-lab-with-automatedlab/" target="_blank" rel="noreferrer noopener">Check out this post to build a ConfIgMgr lab using AutomatedLab</a>!
+                                                      [Check out this post to build a ConfIgMgr lab using AutomatedLab](https://sysmansquad.com/2020/06/15/build-a-configrmgr-lab-with-automatedlab/)!
                                                     </p>

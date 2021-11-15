@@ -20,7 +20,7 @@ categories:
 
 Hello!
 
-Today I’d like to share with you a new solution I’ve developed to allow me to use the free <a rel="noreferrer noopener" href="https://msendpointmgr.com/modern-driver-management/" target="_blank">Modern Driver Management solution from the team at MSEndpointMgr</a> at my work. My goal is to use the process developed by them for managing drivers in a task sequence and convert it to use the ConfigMgr Administration Service since my company won't allow me to install their third-party web service. It will also move most of the functionality into task sequence steps to make it easier for admins to debug and make changes to the process. Links to my solution are provided below.
+Today I’d like to share with you a new solution I’ve developed to allow me to use the free [Modern Driver Management solution from the team at MSEndpointMgr](https://msendpointmgr.com/modern-driver-management/) at my work. My goal is to use the process developed by them for managing drivers in a task sequence and convert it to use the ConfigMgr Administration Service since my company won't allow me to install their third-party web service. It will also move most of the functionality into task sequence steps to make it easier for admins to debug and make changes to the process. Links to my solution are provided below.
 
 Here is a quick summary of their existing solution:
 
@@ -104,7 +104,7 @@ The rest of the script is simply filtering which driver package is the most suit
 </div>
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-full"><a href="https://www.sysmansquad.com/?attachment_id=1055"><img loading="lazy" width="1156" height="652" src="https://www.sysmansquad.com/wp-content/uploads/2020/05/GetPackageIDLog.png" alt="" class="wp-image-1055" srcset="https:/wp-content/uploads/2020/05/GetPackageIDLog.png 1156w, https:/wp-content/uploads/2020/05/GetPackageIDLog-300x169.png 300w, https:/wp-content/uploads/2020/05/GetPackageIDLog-1024x578.png 1024w, https:/wp-content/uploads/2020/05/GetPackageIDLog-768x433.png 768w, https:/wp-content/uploads/2020/05/GetPackageIDLog-100x56.png 100w, https:/wp-content/uploads/2020/05/GetPackageIDLog-855x482.png 855w" sizes="(max-width: 1156px) 100vw, 1156px" /></a><figcaption>Log file in CMTrace format for your troubleshooting needs</figcaption></figure>
+  <figure class="aligncenter size-full">[![](https://www.sysmansquad.com/wp-content/uploads/2020/05/GetPackageIDLog.png)](https://www.sysmansquad.com/?attachment_id=1055)<figcaption>Log file in CMTrace format for your troubleshooting needs</figcaption></figure>
 </div>
 
 The script is hosted on [GitHub](https://github.com/CharlesNRU/mdm-adminservice) and I invite you to send me pull requests if you believe you can improve the script. I do not have that many different PC models to test and I might have missed something.
@@ -115,11 +115,11 @@ The goal of this task sequence is to identify the manufacturer, model and SKU of
 
 Then, with those values, we call the Invoke-GetPackageIDFromAdminService to get the PackageID of the driver package we need.<figure class="wp-block-image size-large">
 
-<img loading="lazy" width="1024" height="759" src="https://www.sysmansquad.com/wp-content/uploads/2020/05/QueryAdminServiceTS-1-1024x759.png" alt="" class="wp-image-1049" srcset="https:/wp-content/uploads/2020/05/QueryAdminServiceTS-1-1024x759.png 1024w, https:/wp-content/uploads/2020/05/QueryAdminServiceTS-1-300x222.png 300w, https:/wp-content/uploads/2020/05/QueryAdminServiceTS-1-768x570.png 768w, https:/wp-content/uploads/2020/05/QueryAdminServiceTS-1-100x74.png 100w, https:/wp-content/uploads/2020/05/QueryAdminServiceTS-1-855x634.png 855w, https:/wp-content/uploads/2020/05/QueryAdminServiceTS-1-1234x915.png 1234w, https:/wp-content/uploads/2020/05/QueryAdminServiceTS-1.png 1409w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> 
+![](https://www.sysmansquad.com/wp-content/uploads/2020/05/QueryAdminServiceTS-1-1024x759.png) </figure> 
 
 Keep in mind that you will need to set the appropriate credentials to use to query the AdminService, see here: <figure class="wp-block-image size-large">
 
-<img loading="lazy" width="1024" height="518" src="https://www.sysmansquad.com/wp-content/uploads/2020/05/QueryAdminServiceTS_Parameters-1-1024x518.png" alt="" class="wp-image-1051" srcset="https:/wp-content/uploads/2020/05/QueryAdminServiceTS_Parameters-1-1024x518.png 1024w, https:/wp-content/uploads/2020/05/QueryAdminServiceTS_Parameters-1-300x152.png 300w, https:/wp-content/uploads/2020/05/QueryAdminServiceTS_Parameters-1-768x389.png 768w, https:/wp-content/uploads/2020/05/QueryAdminServiceTS_Parameters-1-100x51.png 100w, https:/wp-content/uploads/2020/05/QueryAdminServiceTS_Parameters-1-855x433.png 855w, https:/wp-content/uploads/2020/05/QueryAdminServiceTS_Parameters-1-1234x624.png 1234w, https:/wp-content/uploads/2020/05/QueryAdminServiceTS_Parameters-1.png 1441w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> 
+![](https://www.sysmansquad.com/wp-content/uploads/2020/05/QueryAdminServiceTS_Parameters-1-1024x518.png) </figure> 
 
 The user account needed in this step only needs "Read" permission on Packages in configuration manager. That's it.
 
@@ -146,7 +146,7 @@ I created an “Apply Driver Package” task sequence which uses the previous ta
       * In-place upgrade
       * Precache only<figure class="wp-block-image size-large">
 
-<img loading="lazy" width="1024" height="984" src="https://www.sysmansquad.com/wp-content/uploads/2020/05/ApplyDrivers_TS-1-1024x984.png" alt="" class="wp-image-1054" srcset="https:/wp-content/uploads/2020/05/ApplyDrivers_TS-1-1024x984.png 1024w, https:/wp-content/uploads/2020/05/ApplyDrivers_TS-1-300x288.png 300w, https:/wp-content/uploads/2020/05/ApplyDrivers_TS-1-768x738.png 768w, https:/wp-content/uploads/2020/05/ApplyDrivers_TS-1-100x96.png 100w, https:/wp-content/uploads/2020/05/ApplyDrivers_TS-1-855x822.png 855w, https:/wp-content/uploads/2020/05/ApplyDrivers_TS-1-1234x1186.png 1234w, https:/wp-content/uploads/2020/05/ApplyDrivers_TS-1.png 1474w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> 
+![](https://www.sysmansquad.com/wp-content/uploads/2020/05/ApplyDrivers_TS-1-1024x984.png) </figure> 
 
 You can reuse this task sequence in multiple other task sequences simply by defining some key variables.
 
@@ -161,7 +161,7 @@ In this section, I'll simply show you how you can reuse the same task sequence i
   * Applying 1809 64-bit
   * Drivers should be cached in C:\Win10Drivers_1809<figure class="wp-block-image size-large">
 
-<img loading="lazy" width="1024" height="258" src="https://www.sysmansquad.com/wp-content/uploads/2020/05/Example1-1024x258.png" alt="" class="wp-image-1066" srcset="https:/wp-content/uploads/2020/05/Example1-1024x258.png 1024w, https:/wp-content/uploads/2020/05/Example1-300x76.png 300w, https:/wp-content/uploads/2020/05/Example1-768x194.png 768w, https:/wp-content/uploads/2020/05/Example1-100x25.png 100w, https:/wp-content/uploads/2020/05/Example1-855x216.png 855w, https:/wp-content/uploads/2020/05/Example1-1234x311.png 1234w, https:/wp-content/uploads/2020/05/Example1.png 1343w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> 
+![](https://www.sysmansquad.com/wp-content/uploads/2020/05/Example1-1024x258.png) </figure> 
 
 There is no need to specify the "DriverPackageOSArch" in this case because the default value is x64. If you were deploying a 32-bit OS image, you would need to specify that too.
 
@@ -170,7 +170,7 @@ There is no need to specify the "DriverPackageOSArch" in this case because the d
   * Stage the 1909 drivers before the in-place upgrade
   * Don't cache the drivers in a custom location<figure class="wp-block-image size-large is-resized">
 
-<img loading="lazy" src="https://www.sysmansquad.com/wp-content/uploads/2020/05/image-2.png" alt="" class="wp-image-1069" width="337" height="214" srcset="https:/wp-content/uploads/2020/05/image-2.png 631w, https:/wp-content/uploads/2020/05/image-2-300x191.png 300w, https:/wp-content/uploads/2020/05/image-2-100x64.png 100w" sizes="(max-width: 337px) 100vw, 337px" /> </figure> 
+![](https://www.sysmansquad.com/wp-content/uploads/2020/05/image-2.png) </figure> 
 
 Setting the "DriverDeploymentType" to OSUpgrade will assign the TS variable "OSDUpgradeStagedContent" to the location of the downloaded drivers. 
 
@@ -183,7 +183,7 @@ For more information, see [here](https://deploymentresearch.com/improving-the-co
   * Update the current drivers on system
   * Don't cache the drivers in a custom location<figure class="wp-block-image size-large is-resized">
 
-<img loading="lazy" src="https://www.sysmansquad.com/wp-content/uploads/2020/05/image-3.png" alt="" class="wp-image-1070" width="273" height="67" srcset="https:/wp-content/uploads/2020/05/image-3.png 454w, https:/wp-content/uploads/2020/05/image-3-300x74.png 300w, https:/wp-content/uploads/2020/05/image-3-100x25.png 100w" sizes="(max-width: 273px) 100vw, 273px" /> </figure> 
+![](https://www.sysmansquad.com/wp-content/uploads/2020/05/image-3.png) </figure> 
 
 The default behavior of the "Apply Driver Package" TS is to perform a driver refresh when run in Full OS.
 
@@ -192,7 +192,7 @@ The default behavior of the "Apply Driver Package" TS is to perform a driver ref
   * Cache the drivers in the location C:\Drivers\1909
   * Precache Windows 10 1909 drivers only, don't install the drivers<figure class="wp-block-image size-large is-resized">
 
-<img loading="lazy" src="https://www.sysmansquad.com/wp-content/uploads/2020/05/image-4.png" alt="" class="wp-image-1071" width="283" height="67" srcset="https:/wp-content/uploads/2020/05/image-4.png 549w, https:/wp-content/uploads/2020/05/image-4-300x71.png 300w, https:/wp-content/uploads/2020/05/image-4-100x24.png 100w" sizes="(max-width: 283px) 100vw, 283px" /> </figure> 
+![](https://www.sysmansquad.com/wp-content/uploads/2020/05/image-4.png) </figure> 
 
 ### Next steps
 
@@ -203,3 +203,4 @@ I will also be working on a similar task sequence for BIOS packages.
 Task Sequences exports and the script to query the AdminService is on my [GitHub repository](https://github.com/CharlesNRU/mdm-adminservice).
 
 Thank you - Charles.
+

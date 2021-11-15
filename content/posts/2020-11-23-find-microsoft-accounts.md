@@ -32,29 +32,29 @@ The other day I was helping someone over in the [WinAdmins Discord](https://aka.
   <div class="uagb-toc__list-wrap">
     <ol class="uagb-toc__list">
       <li class="uagb-toc__list">
-        <a href="#update-on-prevention">Update on Prevention:</a><ul class="uagb-toc__list">
+        [Update on Prevention:](#update-on-prevention)<ul class="uagb-toc__list">
           <li class="uagb-toc__list">
-            <a href="#preventing-new-registration">Preventing new registration</a><li class="uagb-toc__list">
+            [Preventing new registration](#preventing-new-registration)<li class="uagb-toc__list">
               <li class="uagb-toc__list">
-                <a href="#what-the-blocking-looks-like">What the blocking looks like</a>
+                [What the blocking looks like](#what-the-blocking-looks-like)
               </li></ul>
             </li>
             <li class="uagb-toc__list">
-              <a href="#identifying-the-problem">Identifying the Problem</a><li class="uagb-toc__list">
-                <a href="#designing-a-solution">Designing a Solution</a><li class="uagb-toc__list">
-                  <a href="#setting-up-your-app-registration">Setting up your App Registration</a><li class="uagb-toc__list">
-                    <a href="#constructing-our-app-authorization-url">Constructing our App Authorization URL</a><ul class="uagb-toc__list">
+              [Identifying the Problem](#identifying-the-problem)<li class="uagb-toc__list">
+                [Designing a Solution](#designing-a-solution)<li class="uagb-toc__list">
+                  [Setting up your App Registration](#setting-up-your-app-registration)<li class="uagb-toc__list">
+                    [Constructing our App Authorization URL](#constructing-our-app-authorization-url)<ul class="uagb-toc__list">
                       <li class="uagb-toc__list">
-                        <a href="#valid-microsoft-account">Valid Microsoft Account</a><li class="uagb-toc__list">
+                        [Valid Microsoft Account](#valid-microsoft-account)<li class="uagb-toc__list">
                           <li class="uagb-toc__list">
-                            <a href="#no-valid-microsoft-account">No Valid Microsoft Account</a>
+                            [No Valid Microsoft Account](#no-valid-microsoft-account)
                           </li></ul>
                         </li></ul>
                       </li>
                       <li class="uagb-toc__list">
-                        <a href="#scripting-the-verification-process">Scripting the verification Process</a><li class="uagb-toc__list">
-                          <a href="#user-consent-prompt">User Consent Prompt</a><li class="uagb-toc__list">
-                            <a href="#wrap-up">Wrap up</a>
+                        [Scripting the verification Process](#scripting-the-verification-process)<li class="uagb-toc__list">
+                          [User Consent Prompt](#user-consent-prompt)<li class="uagb-toc__list">
+                            [Wrap up](#wrap-up)
                           </li></ul>
                         </li></ul></ol> </div> </div> </div> 
                         <div class="wp-block-group">
@@ -65,7 +65,7 @@ The other day I was helping someone over in the [WinAdmins Discord](https://aka.
                             
                             <blockquote class="wp-block-quote">
                               <p>
-                                Microsoft has introduced some changes that at least seem to prevent <em>NEW </em>Microsoft Accounts on Company Domains. I added more details in the <a href="#preventing">Preventing</a> section if you want to read more about this. If you just want to find the accounts, jump to <a href="#identifying-the-problem">Identifying the Problem</a>.
+                                Microsoft has introduced some changes that at least seem to prevent <em>NEW </em>Microsoft Accounts on Company Domains. I added more details in the [Preventing](#preventing) section if you want to read more about this. If you just want to find the accounts, jump to [Identifying the Problem](#identifying-the-problem).
                               </p>
                             </blockquote>
                           </div>
@@ -91,13 +91,13 @@ The other day I was helping someone over in the [WinAdmins Discord](https://aka.
                           <div class="wp-block-jetpack-slideshow_container swiper-container">
                             <ul class="wp-block-jetpack-slideshow_swiper-wrapper swiper-wrapper">
                               <li class="wp-block-jetpack-slideshow_slide swiper-slide">
-                                <figure><img loading="lazy" width="489" height="437" alt="" class="wp-block-jetpack-slideshow_image wp-image-2978" data-id="2978" src="https://sysmansquad.com/wp-content/uploads/2021/09/image-2.png" srcset="https:/wp-content/uploads/2021/09/image-2.png 489w, https:/wp-content/uploads/2021/09/image-2-300x268.png 300w, https:/wp-content/uploads/2021/09/image-2-100x89.png 100w" sizes="(max-width: 489px) 100vw, 489px" /><figcaption class="wp-block-jetpack-slideshow_caption gallery-caption">Blocked from registering from a new Microsoft Account with Company Email</figcaption></figure>
+                                <figure>![](https://sysmansquad.com/wp-content/uploads/2021/09/image-2.png)<figcaption class="wp-block-jetpack-slideshow_caption gallery-caption">Blocked from registering from a new Microsoft Account with Company Email</figcaption></figure>
                               </li>
                               <li class="wp-block-jetpack-slideshow_slide swiper-slide">
-                                <figure><img loading="lazy" width="780" height="382" alt="" class="wp-block-jetpack-slideshow_image wp-image-2977" data-id="2977" src="https://sysmansquad.com/wp-content/uploads/2021/09/image-1.png" srcset="https:/wp-content/uploads/2021/09/image-1.png 780w, https:/wp-content/uploads/2021/09/image-1-300x147.png 300w, https:/wp-content/uploads/2021/09/image-1-768x376.png 768w, https:/wp-content/uploads/2021/09/image-1-100x49.png 100w" sizes="(max-width: 780px) 100vw, 780px" /><figcaption class="wp-block-jetpack-slideshow_caption gallery-caption">Blocked from adding the company email as an alias on a current account</figcaption></figure>
+                                <figure>![](https://sysmansquad.com/wp-content/uploads/2021/09/image-1.png)<figcaption class="wp-block-jetpack-slideshow_caption gallery-caption">Blocked from adding the company email as an alias on a current account</figcaption></figure>
                               </li>
                               <li class="wp-block-jetpack-slideshow_slide swiper-slide">
-                                <figure><img loading="lazy" width="474" height="426" alt="" class="wp-block-jetpack-slideshow_image wp-image-2979" data-id="2979" src="https://sysmansquad.com/wp-content/uploads/2020/11/zgvcQSD1.png" srcset="https:/wp-content/uploads/2020/11/zgvcQSD1.png 474w, https:/wp-content/uploads/2020/11/zgvcQSD1-300x270.png 300w, https:/wp-content/uploads/2020/11/zgvcQSD1-100x90.png 100w" sizes="(max-width: 474px) 100vw, 474px" /><figcaption class="wp-block-jetpack-slideshow_caption gallery-caption">Seems to work off Domain, not specific Email Addresses</figcaption></figure>
+                                <figure>![](https://sysmansquad.com/wp-content/uploads/2020/11/zgvcQSD1.png)<figcaption class="wp-block-jetpack-slideshow_caption gallery-caption">Seems to work off Domain, not specific Email Addresses</figcaption></figure>
                               </li>
                             </ul>
                             
@@ -117,11 +117,11 @@ The other day I was helping someone over in the [WinAdmins Discord](https://aka.
                         </p>
                         
                         <div class="wp-block-image image-shadow">
-                          <figure class="aligncenter size-large is-resized"><img loading="lazy" src="https://sysmansquad.com/wp-content/uploads/2020/11/image-1-edited.png" alt="Screenshot showing a choice between work / School account and Personal / Microsoft Account" class="wp-image-1900" width="344" height="363" srcset="https:/wp-content/uploads/2020/11/image-1-edited.png 344w, https:/wp-content/uploads/2020/11/image-1-edited-284x300.png 284w, https:/wp-content/uploads/2020/11/image-1-edited-100x106.png 100w" sizes="(max-width: 344px) 100vw, 344px" /></figure>
+                          <figure class="aligncenter size-large is-resized">![Screenshot showing a choice between work / School account and Personal / Microsoft Account](https://sysmansquad.com/wp-content/uploads/2020/11/image-1-edited.png)</figure>
                         </div>
                         
                         <p>
-                          As that link in the screenshot says, you can <a href="https://go.microsoft.com/fwlink/p/?LinkID=733247">Rename the personal Microsoft </a><a href="https://go.microsoft.com/fwlink/p/?LinkID=733247" target="_blank" rel="noreferrer noopener">account</a>, but how can you know which users have a conflicting Microsoft account?
+                          As that link in the screenshot says, you can [Rename the personal Microsoft ](https://go.microsoft.com/fwlink/p/?LinkID=733247)[account](https://go.microsoft.com/fwlink/p/?LinkID=733247), but how can you know which users have a conflicting Microsoft account?
                         </p>
                         
                         <h2>
@@ -132,8 +132,8 @@ The other day I was helping someone over in the [WinAdmins Discord](https://aka.
                           To find these conflicting Microsoft accounts, we can ... abuse... an Azure App Registrations capabilities. We create a custom application that we register to only accept Microsoft accounts, not AzureAD/Work/School accounts. – if you try to use an email for your domain that doesn’t have a Microsoft account, it will just throw back an error that no Microsoft account could be found.
                         </p><figure class="wp-block-image size-large image-shadow">
                         
-                        <img loading="lazy" width="336" height="171" src="https://sysmansquad.com/wp-content/uploads/2020/11/image-2-edited.png" alt="This screenshot shows that a microsoft Account sign in prompt will return a warning if you give it an email address with no Microsoft Account associated " class="wp-image-1901" srcset="https:/wp-content/uploads/2020/11/image-2-edited.png 336w, https:/wp-content/uploads/2020/11/image-2-edited-300x153.png 300w, https:/wp-content/uploads/2020/11/image-2-edited-100x51.png 100w" sizes="(max-width: 336px) 100vw, 336px" /></figure> <p>
-                          Even better! We can leverage this, along with <strong><a href="https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-optional-claims#:~:text=app%2Buser%20token.-,login_hint,-Login%20hint" target="_blank" rel="noreferrer noopener">login hints</a></strong>, to scale this up and make a scriptable solution to find any domain emails that have a Microsoft account conflicting with their Work account.
+                        ![This screenshot shows that a microsoft Account sign in prompt will return a warning if you give it an email address with no Microsoft Account associated ](https://sysmansquad.com/wp-content/uploads/2020/11/image-2-edited.png)</figure> <p>
+                          Even better! We can leverage this, along with <strong>[login hints](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-optional-claims#:~:text=app%2Buser%20token.-,login_hint,-Login%20hint)</strong>, to scale this up and make a scriptable solution to find any domain emails that have a Microsoft account conflicting with their Work account.
                         </p>
                         
                         <p>
@@ -145,10 +145,10 @@ The other day I was helping someone over in the [WinAdmins Discord](https://aka.
                         </h2>
                         
                         <p>
-                          To set this up, we need to head to the <a href="https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps">Azure Portal</a> and create a new <strong>app registration</strong>
+                          To set this up, we need to head to the [Azure Portal](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps) and create a new <strong>app registration</strong>
                         </p><figure class="wp-block-image size-large image-shadow">
                         
-                        <img loading="lazy" width="453" height="291" src="https://sysmansquad.com/wp-content/uploads/2020/11/image-3.png" alt="Navigate to portal.azure.com, search for App Registrations, and select New Registration" class="wp-image-1886" srcset="https:/wp-content/uploads/2020/11/image-3.png 453w, https:/wp-content/uploads/2020/11/image-3-300x193.png 300w, https:/wp-content/uploads/2020/11/image-3-100x64.png 100w" sizes="(max-width: 453px) 100vw, 453px" /></figure> <p>
+                        ![Navigate to portal.azure.com, search for App Registrations, and select New Registration](https://sysmansquad.com/wp-content/uploads/2020/11/image-3.png)</figure> <p>
                           We need a name for the consumers to see if they authorize our test application. I used: <code>ContosoMicrosoftAccountVerifier</code>
                         </p>
                         
@@ -156,7 +156,7 @@ The other day I was helping someone over in the [WinAdmins Discord](https://aka.
                           For supported account types, we cannot use the first three options because they all support tenant/company logins, but the fourth type will serve our purposes.
                         </p><figure class="wp-block-image size-large image-shadow">
                         
-                        <img loading="lazy" width="624" height="141" src="https://sysmansquad.com/wp-content/uploads/2020/11/image-4.png" alt="We cannot support account types from regular tenants, and instead only support Personal / Microsoft Accounts" class="wp-image-1887" srcset="https:/wp-content/uploads/2020/11/image-4.png 624w, https:/wp-content/uploads/2020/11/image-4-300x68.png 300w, https:/wp-content/uploads/2020/11/image-4-100x23.png 100w" sizes="(max-width: 624px) 100vw, 624px" /></figure> <p>
+                        ![We cannot support account types from regular tenants, and instead only support Personal / Microsoft Accounts](https://sysmansquad.com/wp-content/uploads/2020/11/image-4.png)</figure> <p>
                           We do not need a redirect URL for this setup.
                         </p>
                         
@@ -168,7 +168,7 @@ The other day I was helping someone over in the [WinAdmins Discord](https://aka.
                           Under <strong>API Permissions</strong>, we need to add a permission of some sort for it to request access to. The least amount of permissions was just the <strong>Profile</strong> permission.
                         </p><figure class="wp-block-image size-large image-shadow">
                         
-                        <img loading="lazy" width="495" height="149" src="https://sysmansquad.com/wp-content/uploads/2020/11/image-5.png" alt="select the minimum amount of permissions that you can. They should never be signed into anyway " class="wp-image-1888" srcset="https:/wp-content/uploads/2020/11/image-5.png 495w, https:/wp-content/uploads/2020/11/image-5-300x90.png 300w, https:/wp-content/uploads/2020/11/image-5-100x30.png 100w" sizes="(max-width: 495px) 100vw, 495px" /></figure> <p>
+                        ![select the minimum amount of permissions that you can. They should never be signed into anyway ](https://sysmansquad.com/wp-content/uploads/2020/11/image-5.png)</figure> <p>
                           Even though people should not be logging into our App, we need to setup some sort of Authentication for the App to theoretically use, even though we won't use it.
                         </p>
                         
@@ -176,7 +176,7 @@ The other day I was helping someone over in the [WinAdmins Discord](https://aka.
                           Under <strong>Certificates and Secrets</strong>, I created a New Client Secret. You do not need to save the key values
                         </p><figure class="wp-block-image size-large image-shadow">
                         
-                        <img loading="lazy" width="624" height="151" src="https://sysmansquad.com/wp-content/uploads/2020/11/image-6.png" alt="Create a Dummy client secret, for the Microsoft backend. you do not need to keep the key" class="wp-image-1889" srcset="https:/wp-content/uploads/2020/11/image-6.png 624w, https:/wp-content/uploads/2020/11/image-6-300x73.png 300w, https:/wp-content/uploads/2020/11/image-6-100x24.png 100w" sizes="(max-width: 624px) 100vw, 624px" /></figure> <div class="wp-block-group">
+                        ![Create a Dummy client secret, for the Microsoft backend. you do not need to keep the key](https://sysmansquad.com/wp-content/uploads/2020/11/image-6.png)</figure> <div class="wp-block-group">
                           <div class="wp-block-group__inner-container">
                             <h2 id="Constructing-App-Auth-URL">
                               Constructing our App Authorization URL
@@ -202,13 +202,13 @@ The other day I was helping someone over in the [WinAdmins Discord](https://aka.
                             </ul>
                             
                             <p>
-                              We get most of these from our App’s Overview page, from the API Permissions tab, and combine those with some other parameters from the <a href="https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-auth-code-flow#request-an-authorization-code" target="_blank" rel="noreferrer noopener">OAuth 2.0 code flow</a> to get a URL similar to the one below
+                              We get most of these from our App’s Overview page, from the API Permissions tab, and combine those with some other parameters from the [OAuth 2.0 code flow](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-auth-code-flow#request-an-authorization-code) to get a URL similar to the one below
                             </p>
                             
                             <div class="wp-block-group">
                               <div class="wp-block-group__inner-container">
                                 <p>
-                                  <a href="https://login.microsoftonline.com/consumers/oauth2/v2.0/authorize?client_id=bd53bb89-0cc1-4eb3-90b7-ba008b1f2a2c&scope=user.read&response_type=code&state=23424&login_hint=TinaFey@contoso.one" target="_blank" rel="noreferrer noopener nofollow">https://login.microsoftonline.com/consumers/oauth2/v2.0/authorize?<br />&nbsp; &nbsp; client_id=<strong>bd53bb89-0cc1-4eb3-90b7-ba008b1f2a2c</strong><br />&nbsp; &nbsp; &scope=user.read<br />&nbsp; &nbsp; &response_type=code<br />&nbsp; &nbsp; &state=23424<br />&nbsp; &nbsp; &login_hint=<strong>TinaFey@contoso.one</strong></a>
+                                  [https://login.microsoftonline.com/consumers/oauth2/v2.0/authorize?<br />&nbsp; &nbsp; client_id=<strong>bd53bb89-0cc1-4eb3-90b7-ba008b1f2a2c</strong><br />&nbsp; &nbsp; &scope=user.read<br />&nbsp; &nbsp; &response_type=code<br />&nbsp; &nbsp; &state=23424<br />&nbsp; &nbsp; &login_hint=<strong>TinaFey@contoso.one</strong>](https://login.microsoftonline.com/consumers/oauth2/v2.0/authorize?client_id=bd53bb89-0cc1-4eb3-90b7-ba008b1f2a2c&scope=user.read&response_type=code&state=23424&login_hint=TinaFey@contoso.one)
                                 </p>
                                 
                                 <p>
@@ -230,7 +230,7 @@ The other day I was helping someone over in the [WinAdmins Discord](https://aka.
                                   <strong>Valid Microsoft Account</strong>
                                 </h5><figure class="wp-block-image image-shadow">
                                 
-                                <img loading="lazy" width="435" height="314" src="https://sysmansquad.com/wp-content/uploads/2020/11/image-7.png" alt="Providing a Valid Microsoft Account email continues to a Password Prompt" class="wp-image-1890" srcset="https:/wp-content/uploads/2020/11/image-7.png 435w, https:/wp-content/uploads/2020/11/image-7-300x217.png 300w, https:/wp-content/uploads/2020/11/image-7-100x72.png 100w" sizes="(max-width: 435px) 100vw, 435px" /><figcaption>Note: the email address is recognized, and the prompt has switched to “Enter password”</figcaption></figure> 
+                                ![Providing a Valid Microsoft Account email continues to a Password Prompt](https://sysmansquad.com/wp-content/uploads/2020/11/image-7.png)<figcaption>Note: the email address is recognized, and the prompt has switched to “Enter password”</figcaption></figure> 
                                 
                                 <p>
                                 </p>
@@ -241,7 +241,7 @@ The other day I was helping someone over in the [WinAdmins Discord](https://aka.
                                   <strong>No Valid Microsoft Account</strong>
                                 </h5><figure class="wp-block-image image-shadow">
                                 
-                                <img loading="lazy" width="431" height="378" src="https://sysmansquad.com/wp-content/uploads/2020/11/image-8.png" alt="Providing an invalid Microsoft Account email throws a watning that the Microsoft Account does not exists" class="wp-image-1891" srcset="https:/wp-content/uploads/2020/11/image-8.png 431w, https:/wp-content/uploads/2020/11/image-8-300x263.png 300w, https:/wp-content/uploads/2020/11/image-8-100x88.png 100w" sizes="(max-width: 431px) 100vw, 431px" /><figcaption>Note: the email address is not recognized, and the prompt still shows “That Microsoft account doesn’t exist”</figcaption></figure> 
+                                ![Providing an invalid Microsoft Account email throws a watning that the Microsoft Account does not exists](https://sysmansquad.com/wp-content/uploads/2020/11/image-8.png)<figcaption>Note: the email address is not recognized, and the prompt still shows “That Microsoft account doesn’t exist”</figcaption></figure> 
                                 
                                 <p>
                                 </p>
@@ -291,7 +291,7 @@ $results
 </pre>
                             </div><figure class="wp-block-image size-large">
                             
-                            <img loading="lazy" width="435" height="324" src="https://sysmansquad.com/wp-content/uploads/2020/11/image-10.png" alt="" class="wp-image-1944" srcset="https:/wp-content/uploads/2020/11/image-10.png 435w, https:/wp-content/uploads/2020/11/image-10-300x223.png 300w, https:/wp-content/uploads/2020/11/image-10-100x74.png 100w" sizes="(max-width: 435px) 100vw, 435px" /></figure>
+                            ![](https://sysmansquad.com/wp-content/uploads/2020/11/image-10.png)</figure>
                           </div>
                         </div>
                         
@@ -305,7 +305,7 @@ $results
                               Our app doesn’t have any server code. We only need to get to the pre-login experience to confirm whether an email address has a Microsoft account associated with it. This means that users don’t need to finish logging in and authorize the app, but if they do finish logging in, they will get a consent prompt like this.
                             </p><figure class="wp-block-image image-shadow">
                             
-                            <img loading="lazy" width="422" height="486" src="https://sysmansquad.com/wp-content/uploads/2020/11/image-9.png" alt="If a user does sign into this app fully, they will be prompted to approve the permissions requested earlier" class="wp-image-1892" srcset="https:/wp-content/uploads/2020/11/image-9.png 422w, https:/wp-content/uploads/2020/11/image-9-260x300.png 260w, https:/wp-content/uploads/2020/11/image-9-100x115.png 100w" sizes="(max-width: 422px) 100vw, 422px" /><figcaption>Note: <strong>Unverified</strong> is the default state, but you can verify your tenant to show your company’s name instead. Details <a rel="noreferrer noopener" href="https://go.microsoft.com/fwlink/?linkid=2121525&clcid=0x9" target="_blank">here</a></figcaption></figure>
+                            ![If a user does sign into this app fully, they will be prompted to approve the permissions requested earlier](https://sysmansquad.com/wp-content/uploads/2020/11/image-9.png)<figcaption>Note: <strong>Unverified</strong> is the default state, but you can verify your tenant to show your company’s name instead. Details [here](https://go.microsoft.com/fwlink/?linkid=2121525&clcid=0x9)</figcaption></figure>
                           </div>
                         </div>
                         
@@ -324,10 +324,11 @@ $results
                             </p>
                             
                             <p>
-                              <a href="https://login.microsoftonline.com/consumers/oauth2/v2.0/authorize?client_id=bd53bb89-0cc1-4eb3-90b7-ba008b1f2a2c&scope=user.read&response_type=code&state=23424&login_hint=TinaFey@contoso.one" target="_blank" rel="noreferrer noopener">https://login.microsoftonline.com/consumers/oauth2/v2.0/authorize?<br />&nbsp; &nbsp; client_id=<strong>bd53bb89-0cc1-4eb3-90b7-ba008b1f2a2c</strong><br />&nbsp; &nbsp; &scope=user.read<br />&nbsp; &nbsp; &response_type=code<br />&nbsp; &nbsp; &state=23424<br /></a>
+                              [https://login.microsoftonline.com/consumers/oauth2/v2.0/authorize?<br />&nbsp; &nbsp; client_id=<strong>bd53bb89-0cc1-4eb3-90b7-ba008b1f2a2c</strong><br />&nbsp; &nbsp; &scope=user.read<br />&nbsp; &nbsp; &response_type=code<br />&nbsp; &nbsp; &state=23424<br />](https://login.microsoftonline.com/consumers/oauth2/v2.0/authorize?client_id=bd53bb89-0cc1-4eb3-90b7-ba008b1f2a2c&scope=user.read&response_type=code&state=23424&login_hint=TinaFey@contoso.one)
                             </p>
                           </div>
                         </div>
                         
                         <p>
                         </p>
+

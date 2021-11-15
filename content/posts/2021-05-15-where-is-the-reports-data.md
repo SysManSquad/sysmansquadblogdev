@@ -46,27 +46,27 @@ Well you can - and finding the information can be so easy. Read on below to see 
   <div class="uagb-toc__list-wrap">
     <ol class="uagb-toc__list">
       <li class="uagb-toc__list">
-        <a href="#introduction">Introduction</a><li class="uagb-toc__list">
-          <a href="#so-wandering-api-endpoint-hell">So, wandering API Endpoint Hell?</a><li class="uagb-toc__list">
-            <a href="#watching-how-the-portal-works">Watching how the Portal works</a><li class="uagb-toc__list">
-              <a href="#using-the-documentation">Using the Documentation</a><li class="uagb-toc__list">
-                <a href="#getting-a-token-for-your-api-calls">Getting a token for your API calls</a><li class="uagb-toc__list">
-                  <a href="#another-example-with-a-less-common-api">Another Example with a Less Common API</a><ul class="uagb-toc__list">
+        [Introduction](#introduction)<li class="uagb-toc__list">
+          [So, wandering API Endpoint Hell?](#so-wandering-api-endpoint-hell)<li class="uagb-toc__list">
+            [Watching how the Portal works](#watching-how-the-portal-works)<li class="uagb-toc__list">
+              [Using the Documentation](#using-the-documentation)<li class="uagb-toc__list">
+                [Getting a token for your API calls](#getting-a-token-for-your-api-calls)<li class="uagb-toc__list">
+                  [Another Example with a Less Common API](#another-example-with-a-less-common-api)<ul class="uagb-toc__list">
                     <li class="uagb-toc__list">
-                      <a href="#ok-so-what-api-is-it-using">OK - so what API IS it using?</a><ul class="uagb-toc__list">
+                      [OK - so what API IS it using?](#ok-so-what-api-is-it-using)<ul class="uagb-toc__list">
                         <li class="uagb-toc__list">
-                          <a href="#finding-your-token">Finding your Token</a><li class="uagb-toc__list">
+                          [Finding your Token](#finding-your-token)<li class="uagb-toc__list">
                             <li class="uagb-toc__list">
-                              <a href="#decoding-your-token">Decoding your Token</a>
+                              [Decoding your Token](#decoding-your-token)
                             </li></ul>
                           </li></ul>
                         </li>
                         <li class="uagb-toc__list">
-                          <a href="#useful-tools-microsofts-jwt-decoder">Useful Tools: Microsoft's JWT Decoder</a><li class="uagb-toc__list">
-                            <a href="#useful-tools-api-explorer-websites">Useful Tools: API Explorer websites</a><li class="uagb-toc__list">
-                              <a href="#conclusion">Conclusion</a><ul class="uagb-toc__list">
+                          [Useful Tools: Microsoft's JWT Decoder](#useful-tools-microsofts-jwt-decoder)<li class="uagb-toc__list">
+                            [Useful Tools: API Explorer websites](#useful-tools-api-explorer-websites)<li class="uagb-toc__list">
+                              [Conclusion](#conclusion)<ul class="uagb-toc__list">
                                 <li class="uagb-toc__list">
-                                  <a href="#where-to-find-me">Where to find me</a>
+                                  [Where to find me](#where-to-find-me)
                                 </li>
                               </ul>
                             </li></ul>
@@ -79,10 +79,10 @@ Well you can - and finding the information can be so easy. Read on below to see 
                               </h2>
                               
                               <p>
-                                Take for example this report on a <a href="https://endpoint.microsoft.com/#blade/Microsoft_Intune_Enrollment/UXAnalyticsMenu/proactiveRemediations" target="_blank" rel="noreferrer noopener">Proactive Remediation</a>. I used one of the built in Proactive Remediations for the example, but it could easily be one of our other <a href="https://sysmansquad.com/category/endpoint-management/proactive-remediation/" target="_blank" rel="noreferrer noopener">Proactive Remediation</a> posts, like <a href="https://sysmansquad.com/2020/07/08/dynamic-outlook-email-signature-using-with-intune-endpoint-analytics-proactive-remediations/" target="_blank" rel="noreferrer noopener">Dynamic Outlook Signatures</a>, <a href="https://sysmansquad.com/2020/07/07/intune-autopilot-proactive-remediation/" target="_blank" rel="noreferrer noopener">Building VPN Connections</a>, or <a href="https://sysmansquad.com/2020/07/27/setting-acl-using-intune-endpoint-analytics-proactive-remediations/" target="_blank" rel="noreferrer noopener">Repairing Folder permissions</a>.
+                                Take for example this report on a [Proactive Remediation](https://endpoint.microsoft.com/#blade/Microsoft_Intune_Enrollment/UXAnalyticsMenu/proactiveRemediations). I used one of the built in Proactive Remediations for the example, but it could easily be one of our other [Proactive Remediation](https://sysmansquad.com/category/endpoint-management/proactive-remediation/) posts, like [Dynamic Outlook Signatures](https://sysmansquad.com/2020/07/08/dynamic-outlook-email-signature-using-with-intune-endpoint-analytics-proactive-remediations/), [Building VPN Connections](https://sysmansquad.com/2020/07/07/intune-autopilot-proactive-remediation/), or [Repairing Folder permissions](https://sysmansquad.com/2020/07/27/setting-acl-using-intune-endpoint-analytics-proactive-remediations/).
                               </p><figure class="wp-block-image alignwide">
                               
-                              <img src="https://i.imgur.com/Zffu5T5.png" alt="" /></figure> 
+                              ![](https://i.imgur.com/Zffu5T5.png)</figure> 
                               
                               <p>
                                 This data is generally all exposed by Graph or a similar Microsoft API, it is just a matter of finding the right endpoints.
@@ -97,7 +97,7 @@ Well you can - and finding the information can be so easy. Read on below to see 
                               </h2>
                               
                               <p>
-                                You could absolutely go through the docs pages for <a href="https://docs.microsoft.com/en-us/graph/" target="_blank" rel="noreferrer noopener">Microsoft Graph</a> or other APIs and find the <a href="https://docs.microsoft.com/graph/api/intune-devices-devicehealthscriptrunsummary-get?view=graph-rest-beta" target="_blank" rel="noreferrer noopener">Get deviceHealthScriptRunSummary</a> - but the Portal is already fetching the information somehow - a lot of times you can just look at how the Portal fetches the information, and do the same thing yourself.
+                                You could absolutely go through the docs pages for [Microsoft Graph](https://docs.microsoft.com/en-us/graph/) or other APIs and find the [Get deviceHealthScriptRunSummary](https://docs.microsoft.com/graph/api/intune-devices-devicehealthscriptrunsummary-get?view=graph-rest-beta) - but the Portal is already fetching the information somehow - a lot of times you can just look at how the Portal fetches the information, and do the same thing yourself.
                               </p>
                               
                               <p>
@@ -113,7 +113,7 @@ Well you can - and finding the information can be so easy. Read on below to see 
                               </h2>
                               
                               <p>
-                                First up, let's open the <a href="https://endpoint.microsoft.com/#blade/Microsoft_Intune_Enrollment/UXAnalyticsMenu/proactiveRemediations" target="_blank" rel="noreferrer noopener">Proactive Remediations area</a> and navigate down to the <strong>Restart stopped Office C2R svc</strong>.
+                                First up, let's open the [Proactive Remediations area](https://endpoint.microsoft.com/#blade/Microsoft_Intune_Enrollment/UXAnalyticsMenu/proactiveRemediations) and navigate down to the <strong>Restart stopped Office C2R svc</strong>.
                               </p>
                               
                               <p>
@@ -157,7 +157,7 @@ Well you can - and finding the information can be so easy. Read on below to see 
                                 </li>
                               </ol><figure class="wp-block-image alignwide size-large">
                               
-                              <img loading="lazy" width="1024" height="584" src="https://sysmansquad.com/wp-content/uploads/2021/05/image-1024x584.png" alt="" class="wp-image-2744" srcset="https:/wp-content/uploads/2021/05/image-1024x584.png 1024w, https:/wp-content/uploads/2021/05/image-300x171.png 300w, https:/wp-content/uploads/2021/05/image-768x438.png 768w, https:/wp-content/uploads/2021/05/image-100x57.png 100w, https:/wp-content/uploads/2021/05/image-855x488.png 855w, https:/wp-content/uploads/2021/05/image.png 1103w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure> 
+                              ![](https://sysmansquad.com/wp-content/uploads/2021/05/image-1024x584.png)</figure> 
                               
                               <p>
                               </p>
@@ -204,14 +204,14 @@ Well you can - and finding the information can be so easy. Read on below to see 
                               </ul>
                               
                               <p>
-                                In general, the further to the right, the more specific area you are looking for. So here we are doing the action <strong>runSummary</strong> on a specific <strong>deviceHealthScripts</strong>. If you search these up, you can find the MS Graph endpoint <a href="https://docs.microsoft.com/graph/api/intune-devices-devicehealthscriptrunsummary-get?view=graph-rest-beta" target="_blank" rel="noreferrer noopener">Get deviceHealthScriptRunSummary</a>.
+                                In general, the further to the right, the more specific area you are looking for. So here we are doing the action <strong>runSummary</strong> on a specific <strong>deviceHealthScripts</strong>. If you search these up, you can find the MS Graph endpoint [Get deviceHealthScriptRunSummary](https://docs.microsoft.com/graph/api/intune-devices-devicehealthscriptrunsummary-get?view=graph-rest-beta).
                               </p>
                               
                               <p>
-                                Now, right at the top of that page, it will tell you what API Permissions you need in the <a href="https://docs.microsoft.com/graph/api/intune-devices-devicehealthscriptrunsummary-get?view=graph-rest-beta#prerequisites" target="_blank" rel="noreferrer noopener">Prerequisites section</a>. A screenshot of this node is below.
+                                Now, right at the top of that page, it will tell you what API Permissions you need in the [Prerequisites section](https://docs.microsoft.com/graph/api/intune-devices-devicehealthscriptrunsummary-get?view=graph-rest-beta#prerequisites). A screenshot of this node is below.
                               </p><figure class="wp-block-image size-large">
                               
-                              <img loading="lazy" width="749" height="370" src="https://sysmansquad.com/wp-content/uploads/2021/05/image-1.png" alt="" class="wp-image-2747" srcset="https:/wp-content/uploads/2021/05/image-1.png 749w, https:/wp-content/uploads/2021/05/image-1-300x148.png 300w, https:/wp-content/uploads/2021/05/image-1-100x49.png 100w" sizes="(max-width: 749px) 100vw, 749px" /></figure>
+                              ![](https://sysmansquad.com/wp-content/uploads/2021/05/image-1.png)</figure>
                             </div>
                           </div>
                           
@@ -226,11 +226,11 @@ Well you can - and finding the information can be so easy. Read on below to see 
                               </p>
                               
                               <p>
-                                For simple testing, it is often convenient to just use the <a href="https://developer.microsoft.com/graph/graph-explorer" target="_blank" rel="noreferrer noopener">MS Graph Explorer</a> or other <a href="#api-explorer-sites">API Explorer Sites</a> to test and workshop a query, and you can find more intro to that <a href="https://docs.microsoft.com/graph/graph-explorer/graph-explorer-overview" target="_blank" rel="noreferrer noopener">here</a>, but when you want to automate something with minimal user interaction, a quick and easy way to get a token is through <a href="https://docs.microsoft.com/azure/active-directory/develop/msal-overview" target="_blank" rel="noreferrer noopener">MSAL</a> or the Microsoft Authentication Library.
+                                For simple testing, it is often convenient to just use the [MS Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) or other [API Explorer Sites](#api-explorer-sites) to test and workshop a query, and you can find more intro to that [here](https://docs.microsoft.com/graph/graph-explorer/graph-explorer-overview), but when you want to automate something with minimal user interaction, a quick and easy way to get a token is through [MSAL](https://docs.microsoft.com/azure/active-directory/develop/msal-overview) or the Microsoft Authentication Library.
                               </p>
                               
                               <p id="using-a-token">
-                                Since PowerShell is my language of choice, I reach for <a href="https://www.powershellgallery.com/packages/MSAL.PS" target="_blank" rel="noreferrer noopener">MSAL.PS</a>.
+                                Since PowerShell is my language of choice, I reach for [MSAL.PS](https://www.powershellgallery.com/packages/MSAL.PS).
                               </p>
                               
                               <p>
@@ -267,16 +267,16 @@ Invoke-RestMethod -Headers @{Authorization = "Bearer $($Token.AccessToken)"} @Qu
                               </h2>
                               
                               <p>
-                                Let's find the <strong><a href="https://portal.azure.com/#blade/Microsoft_AAD_IAM/AuthenticationMethodsMenuBlade/UserRegistrationDetails/menuId/UserRegistrationDetails" target="_blank" rel="noreferrer noopener">Authentication Methods Registration Detail</a></strong> report data.
+                                Let's find the <strong>[Authentication Methods Registration Detail](https://portal.azure.com/#blade/Microsoft_AAD_IAM/AuthenticationMethodsMenuBlade/UserRegistrationDetails/menuId/UserRegistrationDetails)</strong> report data.
                               </p><figure class="wp-block-image alignwide size-large">
                               
-                              <img loading="lazy" width="1024" height="376" src="https://sysmansquad.com/wp-content/uploads/2021/04/image-10-1024x376.png" alt="" class="wp-image-2670" srcset="https:/wp-content/uploads/2021/04/image-10-1024x376.png 1024w, https:/wp-content/uploads/2021/04/image-10-300x110.png 300w, https:/wp-content/uploads/2021/04/image-10-768x282.png 768w, https:/wp-content/uploads/2021/04/image-10-100x37.png 100w, https:/wp-content/uploads/2021/04/image-10-855x314.png 855w, https:/wp-content/uploads/2021/04/image-10-1234x453.png 1234w, https:/wp-content/uploads/2021/04/image-10.png 1328w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure> 
+                              ![](https://sysmansquad.com/wp-content/uploads/2021/04/image-10-1024x376.png)</figure> 
                               
                               <p>
-                                We go through the same DevTools process that we outlined above in <strong><a href="#watching-the-portal-work" target="_blank" rel="noreferrer noopener">Watching How the Portal Works</a></strong>.
+                                We go through the same DevTools process that we outlined above in <strong>[Watching How the Portal Works](#watching-the-portal-work)</strong>.
                               </p><figure class="wp-block-image alignwide">
                               
-                              <img src="https://sysmansquad.com/wp-content/uploads/2021/04/image-11.png" alt="This image has an empty alt attribute; its file name is image-11.png" /></figure> 
+                              ![This image has an empty alt attribute; its file name is image-11.png](https://sysmansquad.com/wp-content/uploads/2021/04/image-11.png)</figure> 
                               
                               <p>
                                 This gives us the Query URL below.
@@ -301,28 +301,28 @@ Invoke-RestMethod -Headers @{Authorization = "Bearer $($Token.AccessToken)"} @Qu
                                   <div class="uagb-column__inner-wrap">
                                     <ul>
                                       <li>
-                                        <a href="https://docs.microsoft.com/graph/overview" target="_blank" rel="noreferrer noopener">Microsoft Graph APIs</a>
+                                        [Microsoft Graph APIs](https://docs.microsoft.com/graph/overview)
                                       </li>
                                       <li>
-                                        <a href="https://docs.microsoft.com/microsoft-365/security/defender/api-overview" target="_blank" rel="noreferrer noopener">Microsoft 365 Defender APIs</a>
+                                        [Microsoft 365 Defender APIs](https://docs.microsoft.com/microsoft-365/security/defender/api-overview)
                                       </li>
                                       <li>
-                                        <a href="https://docs.microsoft.com/rest/api/azure/" target="_blank" rel="noreferrer noopener">Azure REST APIs</a>
+                                        [Azure REST APIs](https://docs.microsoft.com/rest/api/azure/)
                                       </li>
                                       <li>
-                                        <a href="https://docs.microsoft.com/dynamics-nav/fin-graph" target="_blank" rel="noreferrer noopener">Dynamics APIs</a>
+                                        [Dynamics APIs](https://docs.microsoft.com/dynamics-nav/fin-graph)
                                       </li>
                                       <li>
-                                        <a href="https://docs.microsoft.com/en-us/mem/intune/developer/intune-graph-apis" target="_blank" rel="noreferrer noopener">Intune API</a>
+                                        [Intune API](https://docs.microsoft.com/en-us/mem/intune/developer/intune-graph-apis)
                                       </li>
                                       <li>
-                                        <a href="https://msdn.microsoft.com/office-365/office-365-management-activity-api-reference" target="_blank" rel="noreferrer noopener">Office 365 Management APIs</a>
+                                        [Office 365 Management APIs](https://msdn.microsoft.com/office-365/office-365-management-activity-api-reference)
                                       </li>
                                       <li>
-                                        <a href="https://docs.microsoft.com/azure/information-protection/develop/developers-guide" target="_blank" rel="noreferrer noopener">Azure Rights Management SDK</a>
+                                        [Azure Rights Management SDK](https://docs.microsoft.com/azure/information-protection/develop/developers-guide)
                                       </li>
                                       <li>
-                                        <a href="https://docs.microsoft.com/rest/api/storagerp/" target="_blank" rel="noreferrer noopener">Azure Storage Resource API</a>
+                                        [Azure Storage Resource API](https://docs.microsoft.com/rest/api/storagerp/)
                                       </li>
                                       <li>
                                         The list could go on for dozens of entries
@@ -339,17 +339,17 @@ Invoke-RestMethod -Headers @{Authorization = "Bearer $($Token.AccessToken)"} @Qu
                                   </div>
                                   
                                   <div class="uagb-column__inner-wrap">
-                                    <figure class="wp-block-image size-large"><img loading="lazy" width="510" height="536" src="https://sysmansquad.com/wp-content/uploads/2021/04/image-12.png" alt="" class="wp-image-2672" srcset="https:/wp-content/uploads/2021/04/image-12.png 510w, https:/wp-content/uploads/2021/04/image-12-285x300.png 285w, https:/wp-content/uploads/2021/04/image-12-100x105.png 100w" sizes="(max-width: 510px) 100vw, 510px" /></figure>
+                                    <figure class="wp-block-image size-large">![](https://sysmansquad.com/wp-content/uploads/2021/04/image-12.png)</figure>
                                   </div>
                                 </div>
                               </div></section> 
                               
                               <p>
-                                In general terms <a href="https://docs.microsoft.com/graph/overview" target="_blank" rel="noreferrer noopener">Microsoft Graph</a> is the main one and is slowly replacing some of the others to consolidate into one large API.
+                                In general terms [Microsoft Graph](https://docs.microsoft.com/graph/overview) is the main one and is slowly replacing some of the others to consolidate into one large API.
                               </p>
                               
                               <p>
-                                However, this example above references <strong>graph.windows.net</strong> - which I know means it is using the <a href="https://docs.microsoft.com/azure/active-directory/develop/active-directory-graph-api" target="_blank" rel="noreferrer noopener">Legacy Azure AD Graph</a>. Now this is currently supported, but is actually already recommending to <a href="https://go.microsoft.com/fwlink/?linkid=2132805" target="_blank" rel="noreferrer noopener">migrate to Microsoft Graph</a>. For this example, I am focusing on recreating what the Portal is actively doing, so I won't look at the Microsoft Graph equivalent here (though it looks like this might be fairly similar - <a href="https://docs.microsoft.com/graph/api/reportroot-list-credentialuserregistrationdetails" target="_blank" rel="noreferrer noopener">credentialUserRegistrationDetails</a>)
+                                However, this example above references <strong>graph.windows.net</strong> - which I know means it is using the [Legacy Azure AD Graph](https://docs.microsoft.com/azure/active-directory/develop/active-directory-graph-api). Now this is currently supported, but is actually already recommending to [migrate to Microsoft Graph](https://go.microsoft.com/fwlink/?linkid=2132805). For this example, I am focusing on recreating what the Portal is actively doing, so I won't look at the Microsoft Graph equivalent here (though it looks like this might be fairly similar - [credentialUserRegistrationDetails](https://docs.microsoft.com/graph/api/reportroot-list-credentialuserregistrationdetails))
                               </p>
                             </div>
                           </div>
@@ -377,7 +377,7 @@ Invoke-RestMethod -Headers @{Authorization = "Bearer $($Token.AccessToken)"} @Qu
                               </h4>
                               
                               <p>
-                                Now, you can get tokens lots of ways, like <a href="https://docs.microsoft.com/en-us/azure/active-directory/develop/msal-overview" target="_blank" rel="noreferrer noopener">MSAL</a>, a number of <a href="https://docs.microsoft.com/en-us/azure/active-directory/develop/authentication-flows-app-scenarios" target="_blank" rel="noreferrer noopener">assorted Authentication Flows</a>, but we're watching the portal right now, and we already logged in. If we jump back to our F12 DevTools > Network Tab - we can click on the entry we found before in <a href="#watching-the-portal-work">this section</a>, open the <strong>Headers</strong> > Scroll to the <strong>Request Headers</strong> section > <strong>Authorization</strong>
+                                Now, you can get tokens lots of ways, like [MSAL](https://docs.microsoft.com/en-us/azure/active-directory/develop/msal-overview), a number of [assorted Authentication Flows](https://docs.microsoft.com/en-us/azure/active-directory/develop/authentication-flows-app-scenarios), but we're watching the portal right now, and we already logged in. If we jump back to our F12 DevTools > Network Tab - we can click on the entry we found before in [this section](#watching-the-portal-work), open the <strong>Headers</strong> > Scroll to the <strong>Request Headers</strong> section > <strong>Authorization</strong>
                               </p>
                               
                               <p>
@@ -385,7 +385,7 @@ Invoke-RestMethod -Headers @{Authorization = "Bearer $($Token.AccessToken)"} @Qu
                               </p>
                               
                               <div class="wp-block-image">
-                                <figure class="aligncenter size-large is-resized"><img loading="lazy" src="https://sysmansquad.com/wp-content/uploads/2021/04/image-14-edited.png" alt="" class="wp-image-2675" width="516" height="386" /></figure>
+                                <figure class="aligncenter size-large is-resized">![](https://sysmansquad.com/wp-content/uploads/2021/04/image-14-edited.png)</figure>
                               </div>
                             </div>
                           </div>
@@ -400,7 +400,7 @@ Invoke-RestMethod -Headers @{Authorization = "Bearer $($Token.AccessToken)"} @Qu
                               </h4>
                               
                               <p>
-                                Now, usually when you get a token for these APIs, it is a <strong>Bearer</strong> token and a <strong>JSON Web Token</strong> or <strong>JWT</strong>. Now JWT's are an excellent and open standard you can read more about <a href="https://jwt.io/" target="_blank" rel="noreferrer noopener">here</a>, but the short version is that inside this big beautiful base64 blob are three parts.
+                                Now, usually when you get a token for these APIs, it is a <strong>Bearer</strong> token and a <strong>JSON Web Token</strong> or <strong>JWT</strong>. Now JWT's are an excellent and open standard you can read more about [here](https://jwt.io/), but the short version is that inside this big beautiful base64 blob are three parts.
                               </p>
                               
                               <ul>
@@ -416,13 +416,13 @@ Invoke-RestMethod -Headers @{Authorization = "Bearer $($Token.AccessToken)"} @Qu
                               </ul>
                               
                               <p>
-                                The <strong>Bearer</strong> at the beginning just references the type of token, but everything bolded below is one big chunk with all three parts. Well - if you want you can run it through a <a href="https://www.base64decode.org/" target="_blank" rel="noreferrer noopener">Base64Decoder</a> - but the Signature part at the end comes out looking like random high ASCII.
+                                The <strong>Bearer</strong> at the beginning just references the type of token, but everything bolded below is one big chunk with all three parts. Well - if you want you can run it through a [Base64Decoder](https://www.base64decode.org/) - but the Signature part at the end comes out looking like random high ASCII.
                               </p>
                               
                               <pre id="bearer-example" class="wp-block-preformatted">Bearer&nbsp;<strong>e01lc3NhZ2U6ICJEaWQgeW91IHRoaW5rIHRoaXMgd2FzIGdvaW5nIHRvIGhhdmUgYW4gYWN0dWFsIHJlYWwgdG9rZW4gaW4gaXQ/IEhhISAKV2VsbCBhcyBsb25nIGFzIHlvdSdyZSBoZXJlIC0gV2hhdCBpcyB5b3VyIGZhdm9yaXRlIGNvbG9yPyBPaC4uLiBobW1tLi4uIEkgd29uJ3QgcmVhbGx5IHNlZSB5b3VyIHJlc3BvbnNlIGhlcmUuIERhbW4uIFdlbGwgLSB0aGUgYmVzdCB3YXkgdG8gY2hhdCB3aXRoIG1lIGlzIHRvIGNvbWUgYnkgdGhlIFdpbkFkbWlucyBEaXNjb3JkLiBZb3UgY2FuIGdldCBhbiBpbnZpdGUgb3ZlciBoZXJlIGh0dHBzOi8vd2luYWRtaW5zLmlvL2Rpc2NvcmQgLiBDb21lIG9uIGJ5IHNvbWV0aW1lLCBhbmQgZmVlbCBmcmVlIHRvIHRhZyBtZSBhdCBAUHN5Y2hvRGF0YSBhbmQgdGVsbCBtZSB5b3VyIGZhdm9yaXRlIGNvbG9yISAKCkJldHRlciB5ZXQsIHNvbWV0aGluZyBmdW4uLi4uLiB0ZWxsIG1lIHlvdSBmb3VuZCBteSBsb3N0IHNvY2shIEl0IHdpbGwgY29uZnVzZSBldmVyeW9uZSBlbHNlIGFuZCBiZSBsb3RzIG9mIGdvb2QgZnVuISAKCldlbGwsIEknbSBhYm91dCBvdXQgb2YgdGhpbmdzIHRvIHJhbWJsZSBhYm91dC4uLiBTby4uIHVoaCBibHVyLXBsZT8gTW9udGdvbWVyeS4gVHVybnBpa2UuIFRoYXQncyBhbGwgSSBoYXZlIHNvIGhvcGUgdG8gY2hhdCBpbiBEaXNjb3JkIHNvbWUgdGltZSEiIH0KJeGIadj0TKLmjz_kgjH0byyuyGZA0CSRQDOP3tbP27tGoERHMQcyyWxv1J0ZtCDbAC7OWRQdxsf6YmcgKNmvyWCZDac2p6e2HGf9ZESfOCj6iFIQBR05FvByqudE_tPZlQgQk0wotkr3oQoxJQ</strong></pre>
                               
                               <p>
-                                However, there are services that know how to gracefully decode all the Microsoft Style bits and bobs. There is one public JWT decoder that you can paste your token into <a href="https://jwt.io/#debugger-io" target="_blank" rel="noreferrer noopener">here</a>, but Microsoft actually runs one of their own, and it will automatically identify the issuer of certain types of the tokens as well.
+                                However, there are services that know how to gracefully decode all the Microsoft Style bits and bobs. There is one public JWT decoder that you can paste your token into [here](https://jwt.io/#debugger-io), but Microsoft actually runs one of their own, and it will automatically identify the issuer of certain types of the tokens as well.
                               </p>
                             </div>
                           </div>
@@ -434,18 +434,18 @@ Invoke-RestMethod -Headers @{Authorization = "Bearer $($Token.AccessToken)"} @Qu
                               </h2>
                               
                               <p class="has-text-align-center">
-                                <a href="https://jwt.ms" target="_blank" rel="noreferrer noopener">jwt.ms</a>
+                                [jwt.ms](https://jwt.ms)
                               </p>
                               
                               <p>
-                                The tool is very simple to use. Just paste your token (from a <a href="#finding-your-token">browser session</a> or a token you <a href="#getting-a-token">fetched yourself</a>) in the top of the page, and it is decoded on the bottom half.
+                                The tool is very simple to use. Just paste your token (from a [browser session](#finding-your-token) or a token you [fetched yourself](#getting-a-token)) in the top of the page, and it is decoded on the bottom half.
                               </p>
                               
                               <p>
                                 This will also split out the different sections for you, and let you see helpful information like
                               </p><figure class="wp-block-image alignwide size-large">
                               
-                              <img loading="lazy" width="1024" height="572" src="https://sysmansquad.com/wp-content/uploads/2021/04/image-13-1024x572.png" alt="" class="wp-image-2673" srcset="https:/wp-content/uploads/2021/04/image-13-1024x572.png 1024w, https:/wp-content/uploads/2021/04/image-13-300x168.png 300w, https:/wp-content/uploads/2021/04/image-13-768x429.png 768w, https:/wp-content/uploads/2021/04/image-13-100x56.png 100w, https:/wp-content/uploads/2021/04/image-13-855x478.png 855w, https:/wp-content/uploads/2021/04/image-13.png 1026w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure> <figure class="wp-block-image size-large"><img loading="lazy" width="94" height="85" src="https://sysmansquad.com/wp-content/uploads/2021/05/image-2.png" alt="" class="wp-image-2758" /></figure> 
+                              ![](https://sysmansquad.com/wp-content/uploads/2021/04/image-13-1024x572.png)</figure> <figure class="wp-block-image size-large">![](https://sysmansquad.com/wp-content/uploads/2021/05/image-2.png)</figure> 
                               
                               <ul>
                                 <li>
@@ -497,14 +497,14 @@ Invoke-RestMethod -Headers @{Authorization = "Bearer $($Token.AccessToken)"} @Qu
                                       If you are testing, particularly if you got a token manually, your token might have expired on you. The error messages will usually help identify this, but you can pop it into the decoder to check
                                     </li>
                                     <li>
-                                      These are given in Epoch time, and for one-off I would use <a href="https://www.epochconverter.com/" target="_blank" rel="noreferrer noopener nofollow">EpochConverter.com</a> or <a href="https://www.epoch101.com/Powershell#epoch-to-date-powershell" target="_blank" rel="noreferrer noopener">in PowerShell</a>.
+                                      These are given in Epoch time, and for one-off I would use [EpochConverter.com](https://www.epochconverter.com/) or [in PowerShell](https://www.epoch101.com/Powershell#epoch-to-date-powershell).
                                     </li>
                                   </ul>
                                 </li>
                               </ul>
                               
                               <p>
-                                A lot of this information can be helpful when you are dealing with some of these <a href="#various-apis">less common APIs</a> besides common Microsoft Graph and when looking for documentation or troubleshooting.
+                                A lot of this information can be helpful when you are dealing with some of these [less common APIs](#various-apis) besides common Microsoft Graph and when looking for documentation or troubleshooting.
                               </p>
                             </div>
                           </div>
@@ -516,23 +516,23 @@ Invoke-RestMethod -Headers @{Authorization = "Bearer $($Token.AccessToken)"} @Qu
                               </h2>
                               
                               <p>
-                                Several APIs have explorer websites. Here are several below, and there are probably more, and if you know of some, come by the <a href="https://winadmins.io/discord" target="_blank" rel="noreferrer noopener">WinAdmins Discord</a>, and tag me there <a href="https://discordapp.com/users/264652399824601088" target="_blank" rel="noreferrer noopener">@PsychoData</a> or on <a href="https://twitter.com/psychodata" target="_blank" rel="noreferrer noopener">Twitter @PsychoData</a> to let me know!
+                                Several APIs have explorer websites. Here are several below, and there are probably more, and if you know of some, come by the [WinAdmins Discord](https://winadmins.io/discord), and tag me there [@PsychoData](https://discordapp.com/users/264652399824601088) or on [Twitter @PsychoData](https://twitter.com/psychodata) to let me know!
                               </p>
                               
                               <ul>
                                 <li>
-                                  <a href="https://developer.microsoft.com/en-us/graph/graph-explorer" target="_blank" rel="noreferrer noopener">Microsoft Graph Explorer</a>
+                                  [Microsoft Graph Explorer](https://developer.microsoft.com/en-us/graph/graph-explorer)
                                 </li>
                                 <li>
-                                  <a href="https://graphexplorer.azurewebsites.net/#" target="_blank" rel="noreferrer noopener">Azure Graph Explorer</a>
+                                  [Azure Graph Explorer](https://graphexplorer.azurewebsites.net/#)
                                 </li>
                                 <li>
-                                  <a href="https://resources.azure.com/" target="_blank" rel="noreferrer noopener">Azure Resource Explorer</a>
+                                  [Azure Resource Explorer](https://resources.azure.com/)
                                 </li>
                               </ul>
                               
                               <p>
-                                You can search for more API and other resources here on this community listing of various <a href="https://msportals.io/" target="_blank" rel="noreferrer noopener">MS Portals</a> - here are a couple searches that may be useful - <a href="https://msportals.io/?search=explorer" target="_blank" rel="noreferrer noopener">Explorer Sites</a> - <a href="https://msportals.io/?search=playground" target="_blank" rel="noreferrer noopener">Playground sites</a>.
+                                You can search for more API and other resources here on this community listing of various [MS Portals](https://msportals.io/) - here are a couple searches that may be useful - [Explorer Sites](https://msportals.io/?search=explorer) - [Playground sites](https://msportals.io/?search=playground).
                               </p>
                             </div>
                           </div>
@@ -549,12 +549,12 @@ Invoke-RestMethod -Headers @{Authorization = "Bearer $($Token.AccessToken)"} @Qu
                               
                               <ul>
                                 <li>
-                                  <a href="#watching-the-portal-work">Watch how the Portal is fetching information</a><ul>
+                                  [Watch how the Portal is fetching information](#watching-the-portal-work)<ul>
                                     <li>
-                                      <a href="#finding-your-token">See the tokens that the browser used</a> to fetch the data and
+                                      [See the tokens that the browser used](#finding-your-token) to fetch the data and
                                     </li>
                                     <li>
-                                      <a href="#decoding-your-token">decode the data in them</a>
+                                      [decode the data in them](#decoding-your-token)
                                     </li>
                                   </ul>
                                 </li>
@@ -562,19 +562,19 @@ Invoke-RestMethod -Headers @{Authorization = "Bearer $($Token.AccessToken)"} @Qu
                                 <li>
                                   Find what APIs & Scopes you need for these reports<ul>
                                     <li>
-                                      <a href="http://using-the-documentation">using the</a><a href="#using-the-documentation"> </a><a href="http://using-the-documentation">documentation</a>
+                                      [using the](http://using-the-documentation)[ ](#using-the-documentation)[documentation](http://using-the-documentation)
                                     </li>
                                     <li>
-                                      using the <a href="#decoding-your-token">browser tools</a>
+                                      using the [browser tools](#decoding-your-token)
                                     </li>
                                   </ul>
                                 </li>
                                 
                                 <li>
-                                  Authenticate to APIs and <a href="#getting-a-token">get your own Bearer tokens</a>
+                                  Authenticate to APIs and [get your own Bearer tokens](#getting-a-token)
                                 </li>
                                 <li>
-                                  Using a token <a href="#using-a-token">in a script</a> to expand your capabilities
+                                  Using a token [in a script](#using-a-token) to expand your capabilities
                                 </li>
                               </ul>
                               
@@ -593,14 +593,14 @@ Invoke-RestMethod -Headers @{Authorization = "Bearer $($Token.AccessToken)"} @Qu
                               <div class="wp-block-columns are-vertically-aligned-center">
                                 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.66%">
                                   <p>
-                                    If you have questions, are having problems, or just want to chat over something, you can leave a comment below or reach me on the&nbsp;<a href="https://discord.com/invite/winadmins" target="_blank" rel="noreferrer noopener">WinAdmins Discord</a>&nbsp;at&nbsp;<a href="https://discordapp.com/users/264652399824601088">@PsychoData</a>
+                                    If you have questions, are having problems, or just want to chat over something, you can leave a comment below or reach me on the&nbsp;[WinAdmins Discord](https://discord.com/invite/winadmins)&nbsp;at&nbsp;[@PsychoData](https://discordapp.com/users/264652399824601088)
                                   </p>
                                 </div>
                                 
                                 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:33.33%">
                                   <div class="wp-block-buttons">
                                     <div class="wp-block-button is-style-fill">
-                                      <a class="wp-block-button__link" href="https://discord.com/invite/winadmins" target="_blank" rel="noreferrer noopener">WinAdmins Discord</a>
+                                      [WinAdmins Discord](https://discord.com/invite/winadmins)
                                     </div>
                                   </div>
                                 </div>

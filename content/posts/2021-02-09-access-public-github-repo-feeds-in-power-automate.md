@@ -32,42 +32,42 @@ Have you ever wanted to get a simple notification when there is a new Release fo
   <div class="uagb-toc__list-wrap">
     <ol class="uagb-toc__list">
       <li class="uagb-toc__list">
-        <a href="#introduction">Introduction</a><li class="uagb-toc__list">
-          <a href="#github-supports-atom-feeds">GitHub supports Atom Feeds</a><ul class="uagb-toc__list">
+        [Introduction](#introduction)<li class="uagb-toc__list">
+          [GitHub supports Atom Feeds](#github-supports-atom-feeds)<ul class="uagb-toc__list">
             <li class="uagb-toc__list">
-              <a href="#sample-urls">Sample URLs</a>
+              [Sample URLs](#sample-urls)
             </li>
           </ul>
         </li>
         
         <li class="uagb-toc__list">
-          <a href="#discovering-testing-rssatom-feeds">Discovering & Testing RSS/Atom feeds</a><li class="uagb-toc__list">
-            <a href="#connecting-the-connectors">Connecting the Connectors</a><li class="uagb-toc__list">
-              <a href="#install-instructions">Install Instructions</a><li class="uagb-toc__list">
-                <a href="#conclusion">Conclusion</a>
+          [Discovering & Testing RSS/Atom feeds](#discovering-testing-rssatom-feeds)<li class="uagb-toc__list">
+            [Connecting the Connectors](#connecting-the-connectors)<li class="uagb-toc__list">
+              [Install Instructions](#install-instructions)<li class="uagb-toc__list">
+                [Conclusion](#conclusion)
               </li></ul></ol> </div> </div> </div> 
               <h2>
                 Introduction
               </h2>
               
               <p>
-                In my <a href="https://sysmansquad.com/2020/12/30/automating-changing-out-of-business-hours-responses/" target="_blank" rel="noreferrer noopener">previous post</a>, we did some automation with client-side scripts and Microsoft Graph to update Outlook Auto-Responses on a schedule. Today we will be going in a different direction for something with almost no code in it at all - Power Automate.
+                In my [previous post](https://sysmansquad.com/2020/12/30/automating-changing-out-of-business-hours-responses/), we did some automation with client-side scripts and Microsoft Graph to update Outlook Auto-Responses on a schedule. Today we will be going in a different direction for something with almost no code in it at all - Power Automate.
               </p>
               
               <p>
-                <a href="https://flow.microsoft.com" target="_blank" rel="noreferrer noopener">Power Automate</a> is an excellent tool that can monitor for changes, run actions on a schedule, process events, or just run a multi-step process when you hit a button. It does all of this with you having to write no, or minimal, code by using <strong>Service Connectors</strong> and abstracting out <strong>Events</strong> and <strong>Actions</strong> that you might need to take. This post assumes that you are somewhat familiar with Power Automate, for an introduction to Power Automate, check out this <a href="https://docs.microsoft.com/en-us/power-automate/getting-started" target="_blank" rel="noreferrer noopener">Microsoft Docs Article</a>, or this <a href="https://go.microsoft.com/fwlink/p/?linkid=2018566" target="_blank" rel="noreferrer noopener">Microsoft Learn Course</a> on Automate.
+                [Power Automate](https://flow.microsoft.com) is an excellent tool that can monitor for changes, run actions on a schedule, process events, or just run a multi-step process when you hit a button. It does all of this with you having to write no, or minimal, code by using <strong>Service Connectors</strong> and abstracting out <strong>Events</strong> and <strong>Actions</strong> that you might need to take. This post assumes that you are somewhat familiar with Power Automate, for an introduction to Power Automate, check out this [Microsoft Docs Article](https://docs.microsoft.com/en-us/power-automate/getting-started), or this [Microsoft Learn Course](https://go.microsoft.com/fwlink/p/?linkid=2018566) on Automate.
               </p>
               
               <p>
-                There are hundreds of <a href="https://flow.microsoft.com/connectors/" target="_blank" rel="noreferrer noopener">supported app and service connectors</a> including <a href="https://flow.microsoft.com/connectors/shared_twitter/twitter/" target="_blank" rel="noreferrer noopener">Twitter</a>, <a href="https://flow.microsoft.com/connectors/shared_office365/office-365-outlook/" target="_blank" rel="noreferrer noopener">Office 365 Outlook</a>, and the connector that seems like it would help us most for this goal: <a href="https://flow.microsoft.com/connectors/shared_github/github/" target="_blank" rel="noreferrer noopener">GitHub</a>.
+                There are hundreds of [supported app and service connectors](https://flow.microsoft.com/connectors/) including [Twitter](https://flow.microsoft.com/connectors/shared_twitter/twitter/), [Office 365 Outlook](https://flow.microsoft.com/connectors/shared_office365/office-365-outlook/), and the connector that seems like it would help us most for this goal: [GitHub](https://flow.microsoft.com/connectors/shared_github/github/).
               </p>
               
               <div class="wp-block-image">
-                <figure class="aligncenter is-resized"><img loading="lazy" src="https://i.imgur.com/8AsDn9T.png" alt="" width="465" height="181" /><figcaption>Available triggers for GitHub are based on Issues or Pull Requests</figcaption></figure>
+                <figure class="aligncenter is-resized">![](https://i.imgur.com/8AsDn9T.png)<figcaption>Available triggers for GitHub are based on Issues or Pull Requests</figcaption></figure>
               </div>
               
               <p>
-                However, when you look at the GitHub connector, it only supports a few <strong>triggers</strong> related to <strong>Issues </strong>and <strong>Pull Requests</strong>, and if we check the GitHub Connector <a href="https://docs.microsoft.com/en-us/connectors/github/#triggers" target="_blank" rel="noreferrer noopener">triggers documentation</a>, then even those would require an API key. Since these are public repos, instead of repos we own, we won't have any way to get a API key anyway.
+                However, when you look at the GitHub connector, it only supports a few <strong>triggers</strong> related to <strong>Issues </strong>and <strong>Pull Requests</strong>, and if we check the GitHub Connector [triggers documentation](https://docs.microsoft.com/en-us/connectors/github/#triggers), then even those would require an API key. Since these are public repos, instead of repos we own, we won't have any way to get a API key anyway.
               </p>
               
               <p>
@@ -83,7 +83,7 @@ Have you ever wanted to get a simple notification when there is a new Release fo
                   <div class="wp-block-group">
                     <div class="wp-block-group__inner-container">
                       <p>
-                        After some searching around, I found that GitHub support <a href="http://www.atomenabled.org/" target="_blank" rel="noreferrer noopener">Atom Feeds</a> by appending <code>.atom</code> to certain URLs.
+                        After some searching around, I found that GitHub support [Atom Feeds](http://www.atomenabled.org/) by appending <code>.atom</code> to certain URLs.
                       </p>
                       
                       <p>
@@ -99,19 +99,19 @@ Have you ever wanted to get a simple notification when there is a new Release fo
                       </h4>
                       
                       <p>
-                        <strong>Releases · PowerShell<br /></strong>HTML - <a href="https://github.com/PowerShell/PowerShell/releases" target="_blank" rel="noreferrer noopener">https://github.com/PowerShell/PowerShell/releases</a><br />ATOM - <a href="https://github.com/PowerShell/PowerShell/releases.atom" target="_blank" rel="noreferrer noopener nofollow">https://github.com/PowerShell/PowerShell/releases.atom</a>
+                        <strong>Releases · PowerShell<br /></strong>HTML - [https://github.com/PowerShell/PowerShell/releases](https://github.com/PowerShell/PowerShell/releases)<br />ATOM - [https://github.com/PowerShell/PowerShell/releases.atom](https://github.com/PowerShell/PowerShell/releases.atom)
                       </p>
                       
                       <p>
-                        <strong>Tags · PowerShell</strong><br />HTML - <a href="https://github.com/PowerShell/PowerShell/tags" target="_blank" rel="noreferrer noopener">https://github.com/PowerShell/PowerShell/tags</a><br />ATOM - <a href="https://github.com/PowerShell/PowerShell/tags.atom" target="_blank" rel="noreferrer noopener nofollow">https://github.com/PowerShell/PowerShell/tags.atom</a>
+                        <strong>Tags · PowerShell</strong><br />HTML - [https://github.com/PowerShell/PowerShell/tags](https://github.com/PowerShell/PowerShell/tags)<br />ATOM - [https://github.com/PowerShell/PowerShell/tags.atom](https://github.com/PowerShell/PowerShell/tags.atom)
                       </p>
                       
                       <p>
-                        <strong>Releases · Pester</strong><br />HTML - <a href="https://github.com/pester/Pester/releases" target="_blank" rel="noreferrer noopener">https://github.com/pester/Pester/releases</a><br />ATOM - <a href="https://github.com/pester/Pester/releases.atom" target="_blank" rel="noreferrer noopener">https://github</a><a href="https://github.com/pester/Pester/releases.atom" target="_blank" rel="noreferrer noopener nofollow">.com/pester/Pester/releases.atom</a>
+                        <strong>Releases · Pester</strong><br />HTML - [https://github.com/pester/Pester/releases](https://github.com/pester/Pester/releases)<br />ATOM - [https://github](https://github.com/pester/Pester/releases.atom)[.com/pester/Pester/releases.atom](https://github.com/pester/Pester/releases.atom)
                       </p>
                       
                       <p>
-                        <strong>Commits · win-acme · Master Branch<br /></strong>HTML - <a href="https://github.com/pester/Pester/releases" target="_blank" rel="noreferrer noopener">https://</a><a href="https://github.com/win-acme/win-acme/commits/master" target="_blank" rel="noreferrer noopener">github.com/win-acme/win-acme/commits/master</a><br />ATOM - <a href="https://github.com/win-acme/win-acme/commits/master.atom" target="_blank" rel="noreferrer noopener nofollow"></a><a href="https://github.com/win-acme/win-acme/commits/master.atom" target="_blank" rel="noreferrer noopener">https://github.com/win-acme/win-acme/commits/master.atom</a>
+                        <strong>Commits · win-acme · Master Branch<br /></strong>HTML - [https://](https://github.com/pester/Pester/releases)[github.com/win-acme/win-acme/commits/master](https://github.com/win-acme/win-acme/commits/master)<br />ATOM - [](https://github.com/win-acme/win-acme/commits/master.atom)[https://github.com/win-acme/win-acme/commits/master.atom](https://github.com/win-acme/win-acme/commits/master.atom)
                       </p>
                     </div>
                   </div>
@@ -127,25 +127,25 @@ Have you ever wanted to get a simple notification when there is a new Release fo
                       </h2>
                       
                       <p>
-                        If you are still having a hard time finding the URL, I found this <a href="https://microsoftedge.microsoft.com/addons/detail/get-rss-feed-url/pgbelohmepchkohpdldadopkblkgbjom">Edge Extension</a> to discover Atom URLs for the current page, and a <a href="https://chrome.google.com/webstore/detail/get-rss-feed-url/kfghpdldaipanmkhfpdcjglncmilendn">Chrome Version</a> as well.
+                        If you are still having a hard time finding the URL, I found this [Edge Extension](https://microsoftedge.microsoft.com/addons/detail/get-rss-feed-url/pgbelohmepchkohpdldadopkblkgbjom) to discover Atom URLs for the current page, and a [Chrome Version](https://chrome.google.com/webstore/detail/get-rss-feed-url/kfghpdldaipanmkhfpdcjglncmilendn) as well.
                       </p>
                     </div>
                   </div><figure class="wp-block-image alignwide size-large">
                   
-                  <img loading="lazy" width="1024" height="413" src="https://sysmansquad.com/wp-content/uploads/2021/02/image-1024x413.png" alt="" class="wp-image-2257" srcset="https:/wp-content/uploads/2021/02/image-1024x413.png 1024w, https:/wp-content/uploads/2021/02/image-300x121.png 300w, https:/wp-content/uploads/2021/02/image-768x310.png 768w, https:/wp-content/uploads/2021/02/image-100x40.png 100w, https:/wp-content/uploads/2021/02/image-855x345.png 855w, https:/wp-content/uploads/2021/02/image-1234x497.png 1234w, https:/wp-content/uploads/2021/02/image.png 1367w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure> 
+                  ![](https://sysmansquad.com/wp-content/uploads/2021/02/image-1024x413.png)</figure> 
                   
                   <p>
-                    To test what the content of the feeds was, I used <a href="https://rssatom.com/" target="_blank" rel="noreferrer noopener">rssatom.com</a> to check I had a valid Atom or RSS feed URL that worked publicly.
+                    To test what the content of the feeds was, I used [rssatom.com](https://rssatom.com/) to check I had a valid Atom or RSS feed URL that worked publicly.
                   </p>
                   
                   <p>
                     Now, armed with these feed URLs, we have... no connector for Atom Feeds directly... damn... we were so close...
                   </p><figure class="wp-block-image">
                   
-                  <img src="https://media1.tenor.com/images/0d40c691a9a6ac353f1afcfdab3a3758/tenor.gif?itemid=12784504" alt="" /></figure> 
+                  ![](https://media1.tenor.com/images/0d40c691a9a6ac353f1afcfdab3a3758/tenor.gif?itemid=12784504)</figure> 
                   
                   <p>
-                    But! Atom Feeds are mostly compatible with RSS Feeds. Compatible enough that we can actually use the <a href="https://flow.microsoft.com/connectors/shared_rss/rss/" target="_blank" rel="noreferrer noopener">RSS Feed connector</a> to receive the feeds and throw our events! We just won't be able to access all of the fields.
+                    But! Atom Feeds are mostly compatible with RSS Feeds. Compatible enough that we can actually use the [RSS Feed connector](https://flow.microsoft.com/connectors/shared_rss/rss/) to receive the feeds and throw our events! We just won't be able to access all of the fields.
                   </p>
                 </div>
               </div>
@@ -189,22 +189,22 @@ Have you ever wanted to get a simple notification when there is a new Release fo
                   </ul>
                   
                   <p>
-                    Here is a full listing and link to the <a href="https://docs.microsoft.com/connectors/rss/" target="_blank" rel="noreferrer noopener">RSS Feed Connector documentation</a>
+                    Here is a full listing and link to the [RSS Feed Connector documentation](https://docs.microsoft.com/connectors/rss/)
                   </p><figure class="wp-block-image size-large">
                   
-                  <img loading="lazy" width="303" height="429" src="https://sysmansquad.com/wp-content/uploads/2021/02/image-5.png" alt="" class="wp-image-2266" srcset="https:/wp-content/uploads/2021/02/image-5.png 303w, https:/wp-content/uploads/2021/02/image-5-212x300.png 212w, https:/wp-content/uploads/2021/02/image-5-100x142.png 100w" sizes="(max-width: 303px) 100vw, 303px" /></figure> 
+                  ![](https://sysmansquad.com/wp-content/uploads/2021/02/image-5.png)</figure> 
                   
                   <p>
                     So from here, we can use the <strong>RSS Feed trigger</strong>, build some variables, and send it to the <strong>Teams Connector</strong>. From this, I refined the formatting a bit, and ended up with this.
                   </p><figure class="wp-block-image size-large">
                   
-                  <img loading="lazy" width="960" height="778" src="https://sysmansquad.com/wp-content/uploads/2021/02/image-2.png" alt="" class="wp-image-2261" srcset="https:/wp-content/uploads/2021/02/image-2.png 960w, https:/wp-content/uploads/2021/02/image-2-300x243.png 300w, https:/wp-content/uploads/2021/02/image-2-768x622.png 768w, https:/wp-content/uploads/2021/02/image-2-100x81.png 100w, https:/wp-content/uploads/2021/02/image-2-855x693.png 855w" sizes="(max-width: 960px) 100vw, 960px" /></figure> 
+                  ![](https://sysmansquad.com/wp-content/uploads/2021/02/image-2.png)</figure> 
                   
                   <p>
                     This sends through notifications to Teams that look like this:
                   </p><figure class="wp-block-image">
                   
-                  <img src="https://i.imgur.com/VQ5lvlQ.png" alt="" /></figure>
+                  ![](https://i.imgur.com/VQ5lvlQ.png)</figure>
                 </div>
               </div>
               
@@ -213,11 +213,11 @@ Have you ever wanted to get a simple notification when there is a new Release fo
               </h2>
               
               <p>
-                You can <a href="https://github.com/SysManSquad/BlogFiles/tree/master/PsychoData/GitHub_to_Teams_Notifications" target="_blank" rel="noreferrer noopener">download this here</a> to import this into your own environment and start getting your own notifications from Public Repos.
+                You can [download this here](https://github.com/SysManSquad/BlogFiles/tree/master/PsychoData/GitHub_to_Teams_Notifications) to import this into your own environment and start getting your own notifications from Public Repos.
               </p>
               
               <p>
-                You can also use this as a guide to set up alerts on any other RSS feeds or most Atom feeds as well. Since this is already in Power Automate, you could also use hundreds of different connectors to connect to other services like Azure <a href="https://flow.microsoft.com/connectors/shared_azureautomation/azure-automation/" target="_blank" rel="noreferrer noopener">Automation</a>, <a href="https://flow.microsoft.com/connectors/shared_visualstudioteamservices/azure-devops/" target="_blank" rel="noreferrer noopener">DevOps</a>, <a href="https://flow.microsoft.com/connectors/shared_azureblob/azure-blob-storage/" target="_blank" rel="noreferrer noopener">Blob Storage</a>, <a href="https://flow.microsoft.com/connectors/shared_ftp/ftp/" target="_blank" rel="noreferrer noopener">FTP</a>, <a href="https://flow.microsoft.com/connectors/shared_slack/slack/" target="_blank" rel="noreferrer noopener">Slack</a>, <a href="https://flow.microsoft.com/connectors/shared_todoist/todoist/" target="_blank" rel="noreferrer noopener">Todoist</a>, or even invoke a <a href="https://docs.microsoft.com/connectors/webcontents/#get-web-resource" target="_blank" rel="noreferrer noopener">Web API</a>.
+                You can also use this as a guide to set up alerts on any other RSS feeds or most Atom feeds as well. Since this is already in Power Automate, you could also use hundreds of different connectors to connect to other services like Azure [Automation](https://flow.microsoft.com/connectors/shared_azureautomation/azure-automation/), [DevOps](https://flow.microsoft.com/connectors/shared_visualstudioteamservices/azure-devops/), [Blob Storage](https://flow.microsoft.com/connectors/shared_azureblob/azure-blob-storage/), [FTP](https://flow.microsoft.com/connectors/shared_ftp/ftp/), [Slack](https://flow.microsoft.com/connectors/shared_slack/slack/), [Todoist](https://flow.microsoft.com/connectors/shared_todoist/todoist/), or even invoke a [Web API](https://docs.microsoft.com/connectors/webcontents/#get-web-resource).
               </p>
               
               <h2 id="build-your-own">
@@ -228,12 +228,12 @@ Have you ever wanted to get a simple notification when there is a new Release fo
                 In this post, we found a way to work around some limitations of the GitHub Connector, made a Power Automate flow that can be easily duplicated to subscribe to many feeds, and used Power Automate to post notifications to Teams Channels.
               </p><figure class="wp-block-image">
               
-              <img src="https://uploads-ssl.webflow.com/5d2b950d9ea87fc61f0c1f3e/5daa2dfbe9a275421795e33d_ezgif.com-optimize%20(12).gif" alt="Image result for so much win jim halpert" /></figure> <p>
-                <strong>What kind of workflows would you like to automate</strong>? Let me know what kind of things you are doing with <strong>Power Platform</strong> on the <a href="#contact">Discord below</a>. For some ideas of automations you might be able to use, go <a href="https://us.flow.microsoft.com/en-us/templates/">Browse Power Automate Templates</a>, <a href="https://flow.microsoft.com/connectors/" target="_blank" rel="noreferrer noopener">Search Connectors</a>, or check out the Power Automate <a href="https://go.microsoft.com/fwlink/?LinkID=787467" target="_blank" rel="noreferrer noopener">Community</a>.
+              ![Image result for so much win jim halpert](https://uploads-ssl.webflow.com/5d2b950d9ea87fc61f0c1f3e/5daa2dfbe9a275421795e33d_ezgif.com-optimize%20(12).gif)</figure> <p>
+                <strong>What kind of workflows would you like to automate</strong>? Let me know what kind of things you are doing with <strong>Power Platform</strong> on the [Discord below](#contact). For some ideas of automations you might be able to use, go [Browse Power Automate Templates](https://us.flow.microsoft.com/en-us/templates/), [Search Connectors](https://flow.microsoft.com/connectors/), or check out the Power Automate [Community](https://go.microsoft.com/fwlink/?LinkID=787467).
               </p>
               
               <p id="contact">
-                If you have questions, are having problems, or just want to chat over something, for the best response you can reach me and several other IT Pros on the <a href="https://discord.com/invite/winadmins" target="_blank" rel="noreferrer noopener">WinAdmins Discord</a> as <a href="https://discordapp.com/users/264652399824601088">@PsychoData</a> or you can reach me on <a href="https://twitter.com/psychodata" target="_blank" rel="noreferrer noopener">Twitter</a>.
+                If you have questions, are having problems, or just want to chat over something, for the best response you can reach me and several other IT Pros on the [WinAdmins Discord](https://discord.com/invite/winadmins) as [@PsychoData](https://discordapp.com/users/264652399824601088) or you can reach me on [Twitter](https://twitter.com/psychodata).
               </p>
               
               <p>

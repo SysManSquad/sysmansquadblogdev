@@ -30,7 +30,7 @@ I needed to provide more information to the script as a parameter regarding the 
 **_Why do you need the release date of the BIOS?_**  
 Good question! The original solution by the Nickolaj Andersen and Maurice Daly of [MSEndPointMgr](https://msendpointmgr.com/modern-bios-management/) uses the BIOS release date for Lenovo systems to determine if the BIOS package is an update or not. Now why exactly? I'm guessing Lenovo was not very good at keeping some sort of standard naming or versioning for their BIOS versions.<figure class="wp-block-image size-large">
 
-<img loading="lazy" width="1024" height="584" src="https://www.sysmansquad.com/wp-content/uploads/2020/06/image-2-1024x584.png" alt="" class="wp-image-1340" srcset="https:/wp-content/uploads/2020/06/image-2-1024x584.png 1024w, https:/wp-content/uploads/2020/06/image-2-300x171.png 300w, https:/wp-content/uploads/2020/06/image-2-768x438.png 768w, https:/wp-content/uploads/2020/06/image-2-100x57.png 100w, https:/wp-content/uploads/2020/06/image-2-855x488.png 855w, https:/wp-content/uploads/2020/06/image-2.png 1067w" sizes="(max-width: 1024px) 100vw, 1024px" /> <figcaption>Example of a Lenovo BIOS package created with the Driver Automation Tool</figcaption></figure> 
+![](https://www.sysmansquad.com/wp-content/uploads/2020/06/image-2-1024x584.png) <figcaption>Example of a Lenovo BIOS package created with the Driver Automation Tool</figcaption></figure> 
 
 #### BIOS filtering
 
@@ -125,7 +125,7 @@ If($Manufacturer -ne "Lenovo"){
 }</pre>
 </div><figure class="wp-block-image size-large">
 
-<img loading="lazy" width="1024" height="545" src="https://www.sysmansquad.com/wp-content/uploads/2020/06/image-6-1024x545.png" alt="" class="wp-image-1344" srcset="https:/wp-content/uploads/2020/06/image-6-1024x545.png 1024w, https:/wp-content/uploads/2020/06/image-6-300x160.png 300w, https:/wp-content/uploads/2020/06/image-6-768x409.png 768w, https:/wp-content/uploads/2020/06/image-6-1536x818.png 1536w, https:/wp-content/uploads/2020/06/image-6-100x53.png 100w, https:/wp-content/uploads/2020/06/image-6-855x455.png 855w, https:/wp-content/uploads/2020/06/image-6-1234x657.png 1234w, https:/wp-content/uploads/2020/06/image-6.png 1542w" sizes="(max-width: 1024px) 100vw, 1024px" /> <figcaption>Example of the log file created when querying for a BIOS package</figcaption></figure> 
+![](https://www.sysmansquad.com/wp-content/uploads/2020/06/image-6-1024x545.png) <figcaption>Example of the log file created when querying for a BIOS package</figcaption></figure> 
 
 With these enhancements done on the script, we are now ready to use a task sequence to dynamically apply BIOS packages.
 
@@ -135,17 +135,17 @@ With these enhancements done on the script, we are now ready to use a task seque
 
 We need to provide the current BIOS version and release date to the script in the task sequence.<figure class="wp-block-image size-large">
 
-<img loading="lazy" width="1024" height="743" src="https://www.sysmansquad.com/wp-content/uploads/2020/06/image-7-1024x743.png" alt="" class="wp-image-1381" srcset="https:/wp-content/uploads/2020/06/image-7-1024x743.png 1024w, https:/wp-content/uploads/2020/06/image-7-300x218.png 300w, https:/wp-content/uploads/2020/06/image-7-768x557.png 768w, https:/wp-content/uploads/2020/06/image-7-100x73.png 100w, https:/wp-content/uploads/2020/06/image-7-855x620.png 855w, https:/wp-content/uploads/2020/06/image-7-1234x895.png 1234w, https:/wp-content/uploads/2020/06/image-7.png 1427w" sizes="(max-width: 1024px) 100vw, 1024px" /> <figcaption>New TS variables used for BIOS packages</figcaption></figure> 
+![](https://www.sysmansquad.com/wp-content/uploads/2020/06/image-7-1024x743.png) <figcaption>New TS variables used for BIOS packages</figcaption></figure> 
 
 Then we pass this information as a parameter to the Invoke-GetPackageIDFromAdminService script.<figure class="wp-block-image size-large">
 
-<img loading="lazy" width="1024" height="655" src="https://www.sysmansquad.com/wp-content/uploads/2020/06/image-8-1024x655.png" alt="" class="wp-image-1382" srcset="https:/wp-content/uploads/2020/06/image-8-1024x655.png 1024w, https:/wp-content/uploads/2020/06/image-8-300x192.png 300w, https:/wp-content/uploads/2020/06/image-8-768x491.png 768w, https:/wp-content/uploads/2020/06/image-8-100x64.png 100w, https:/wp-content/uploads/2020/06/image-8-855x547.png 855w, https:/wp-content/uploads/2020/06/image-8-1234x789.png 1234w, https:/wp-content/uploads/2020/06/image-8.png 1331w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> 
+![](https://www.sysmansquad.com/wp-content/uploads/2020/06/image-8-1024x655.png) </figure> 
 
 #### Create the "Apply BIOS package" task sequence
 
 The task sequence is similar to the one I had created for drivers. For applying the actual BIOS update, I've reused the scripts by the guys at [MSEndpointMgr](https://msendpointmgr.com/).<figure class="wp-block-image size-large">
 
-<img loading="lazy" width="1024" height="820" src="https://www.sysmansquad.com/wp-content/uploads/2020/06/image-5-1024x820.png" alt="" class="wp-image-1343" srcset="https:/wp-content/uploads/2020/06/image-5-1024x820.png 1024w, https:/wp-content/uploads/2020/06/image-5-300x240.png 300w, https:/wp-content/uploads/2020/06/image-5-768x615.png 768w, https:/wp-content/uploads/2020/06/image-5-100x80.png 100w, https:/wp-content/uploads/2020/06/image-5-855x685.png 855w, https:/wp-content/uploads/2020/06/image-5-1234x989.png 1234w, https:/wp-content/uploads/2020/06/image-5.png 1514w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> 
+![](https://www.sysmansquad.com/wp-content/uploads/2020/06/image-5-1024x820.png) </figure> 
 
 #### Regarding HP BIOS updates
 
@@ -167,3 +167,4 @@ I also did not like the fact that the HP BIOS utility writes a log file in whate
 As always, feel free to contact me if you have any suggestions for improvements.
 
 Thank you.
+

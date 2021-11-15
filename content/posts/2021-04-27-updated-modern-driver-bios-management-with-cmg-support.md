@@ -28,53 +28,53 @@ tags:
   <div class="uagb-toc__list-wrap">
     <ol class="uagb-toc__list">
       <li class="uagb-toc__list">
-        <a href="#notable-improvements">Notable improvements</a><li class="uagb-toc__list">
-          <a href="#prerequisites-to-use-the-solution-over-cmg">Prerequisites to use the solution over CMG</a><ul class="uagb-toc__list">
+        [Notable improvements](#notable-improvements)<li class="uagb-toc__list">
+          [Prerequisites to use the solution over CMG](#prerequisites-to-use-the-solution-over-cmg)<ul class="uagb-toc__list">
             <li class="uagb-toc__list">
-              <a href="#a-working-cmg">A working CMG</a><li class="uagb-toc__list">
+              [A working CMG](#a-working-cmg)<li class="uagb-toc__list">
                 <li class="uagb-toc__list">
-                  <a href="#additional-configuration-to-use-the-adminservice-over-cmg">Additional configuration to use the AdminService over CMG</a>
+                  [Additional configuration to use the AdminService over CMG](#additional-configuration-to-use-the-adminservice-over-cmg)
                 </li></ul>
               </li>
               <li class="uagb-toc__list">
-                <a href="#how-to-query-the-adminservice-over-cmg">How to query the AdminService over CMG?</a><ul class="uagb-toc__list">
+                [How to query the AdminService over CMG?](#how-to-query-the-adminservice-over-cmg)<ul class="uagb-toc__list">
                   <li class="uagb-toc__list">
-                    <a href="#using-the-msalps-module">Using the MSAL.PS module</a>
+                    [Using the MSAL.PS module](#using-the-msalps-module)
                   </li>
                 </ul>
               </li></ul>
             </li>
             
             <li class="uagb-toc__list">
-              <a href="#improvements-to-invoke-getpackageidfromadminservice">Improvements to Invoke-GetPackageIDFromAdminService</a><ul class="uagb-toc__list">
+              [Improvements to Invoke-GetPackageIDFromAdminService](#improvements-to-invoke-getpackageidfromadminservice)<ul class="uagb-toc__list">
                 <li class="uagb-toc__list">
-                  <a href="#1-new-parameters-and-parametersets">1) New parameters and ParameterSets</a><li class="uagb-toc__list">
+                  [1) New parameters and ParameterSets](#1-new-parameters-and-parametersets)<li class="uagb-toc__list">
                     <li class="uagb-toc__list">
-                      <a href="#2-verify-install-and-import-the-msalps-module">2) Verify, Install and Import the MSAL.PS module</a><li class="uagb-toc__list">
+                      [2) Verify, Install and Import the MSAL.PS module](#2-verify-install-and-import-the-msalps-module)<li class="uagb-toc__list">
                         <li class="uagb-toc__list">
-                          <a href="#3-querying-the-adminservice">3) Querying the AdminService</a>
+                          [3) Querying the AdminService](#3-querying-the-adminservice)
                         </li></ul>
                       </li></ul>
                     </li></ul>
                   </li>
                   <li class="uagb-toc__list">
-                    <a href="#improvements-to-the-task-sequence">Improvements to the task sequence</a><ul class="uagb-toc__list">
+                    [Improvements to the task sequence](#improvements-to-the-task-sequence)<ul class="uagb-toc__list">
                       <li class="uagb-toc__list">
-                        <a href="#1-is-the-client-on-internet">1) Is the client on Internet?</a><li class="uagb-toc__list">
+                        [1) Is the client on Internet?](#1-is-the-client-on-internet)<li class="uagb-toc__list">
                           <li class="uagb-toc__list">
-                            <a href="#2-additional-parameters-for-internet-clients">2) Additional Parameters for Internet clients</a><li class="uagb-toc__list">
+                            [2) Additional Parameters for Internet clients](#2-additional-parameters-for-internet-clients)<li class="uagb-toc__list">
                               <li class="uagb-toc__list">
-                                <a href="#3-running-the-script-with-the-right-parameters">3) Running the script with the right parameters</a>
+                                [3) Running the script with the right parameters](#3-running-the-script-with-the-right-parameters)
                               </li></ul>
                             </li></ul>
                           </li></ul>
                         </li></ul>
                       </li>
                       <li class="uagb-toc__list">
-                        <a href="#the-end-result">The end result</a><li class="uagb-toc__list">
-                          <a href="#how-do-i-set-this-up-in-my-environment">How do I set this up in my environment?</a><ul class="uagb-toc__list">
+                        [The end result](#the-end-result)<li class="uagb-toc__list">
+                          [How do I set this up in my environment?](#how-do-i-set-this-up-in-my-environment)<ul class="uagb-toc__list">
                             <li class="uagb-toc__list">
-                              <a href="#what-if-i-have-multiple-cmgs">What if I have multiple CMGs?</a>
+                              [What if I have multiple CMGs?](#what-if-i-have-multiple-cmgs)
                             </li>
                           </ul>
                         </li></ul>
@@ -86,8 +86,8 @@ tags:
             </li>
             
             <li class="uagb-toc__list">
-              <a href="#a-note-on-the-task-sequence-size">A note on the task sequence size</a><li class="uagb-toc__list">
-                <a href="#links">Links</a>
+              [A note on the task sequence size](#a-note-on-the-task-sequence-size)<li class="uagb-toc__list">
+                [Links](#links)
               </li></ul>
             </li>
           </ul>
@@ -108,7 +108,7 @@ You can read the original blog posts here:
 <div class="wp-block-embed__wrapper">
   <div class="x-embed x-is-rich x-is-systems-management-squad">
     <blockquote class="wp-embedded-content" data-secret="jzpz03RRKW">
-      <a href="https://sysmansquad.com/2020/05/15/modern-driver-management-with-the-administration-service/">Modern Driver Management with the Administration Service</a>
+      [Modern Driver Management with the Administration Service](https://sysmansquad.com/2020/05/15/modern-driver-management-with-the-administration-service/)
     </blockquote>
   </div>
 </div></figure> 
@@ -118,7 +118,7 @@ You can read the original blog posts here:
 <div class="wp-block-embed__wrapper">
   <div class="x-embed x-is-rich x-is-systems-management-squad">
     <blockquote class="wp-embedded-content" data-secret="11ToJaBiRO">
-      <a href="https://sysmansquad.com/2020/06/18/modern-bios-management-with-the-administration-service/">Modern BIOS Management with the Administration Service</a>
+      [Modern BIOS Management with the Administration Service](https://sysmansquad.com/2020/06/18/modern-bios-management-with-the-administration-service/)
     </blockquote>
   </div>
 </div></figure> 
@@ -160,7 +160,7 @@ There are 2 things I had to do differently in the Authentication section:
   * Add a platform and select “Mobile and desktop applications” and check the box for : <https://login.microsoftonline.com/common/oauth2/nativeclient>
   * Select “Yes” to Allow public client flows<figure class="wp-block-image size-large">
 
-<img loading="lazy" width="624" height="513" src="https://sysmansquad.com/wp-content/uploads/2021/04/image.png" alt="" class="wp-image-2553" srcset="https:/wp-content/uploads/2021/04/image.png 624w, https:/wp-content/uploads/2021/04/image-300x247.png 300w, https:/wp-content/uploads/2021/04/image-100x82.png 100w" sizes="(max-width: 624px) 100vw, 624px" /> </figure> 
+![](https://sysmansquad.com/wp-content/uploads/2021/04/image.png) </figure> 
 
 ## How to query the AdminService over CMG?
 
@@ -168,7 +168,7 @@ I started my research by reading the blog post from Sandy Zeng here: <https://ms
 
 Also, at the same time, when I was looking at my application registration in the Azure Portal I saw this notification:<figure class="wp-block-image size-large">
 
-<img loading="lazy" width="624" height="65" src="https://sysmansquad.com/wp-content/uploads/2021/04/image-1.png" alt="" class="wp-image-2554" srcset="https:/wp-content/uploads/2021/04/image-1.png 624w, https:/wp-content/uploads/2021/04/image-1-300x31.png 300w, https:/wp-content/uploads/2021/04/image-1-100x10.png 100w" sizes="(max-width: 624px) 100vw, 624px" /> </figure> 
+![](https://sysmansquad.com/wp-content/uploads/2021/04/image-1.png) </figure> 
 
 After inspecting Sandy’s script, I confirmed that it was using Azure Active Directory Authentication Library (ADAL), so I wanted to make my solution work with MSAL instead of ADAL.
 
@@ -180,15 +180,15 @@ With the help of that module, I was easily able to get an access token that is n
 
 Here is a sample script I used to test retrieving an access token with the MSAL.PS module:<figure class="wp-block-image size-large">
 
-<img loading="lazy" width="624" height="76" src="https://sysmansquad.com/wp-content/uploads/2021/04/image-2.png" alt="" class="wp-image-2555" srcset="https:/wp-content/uploads/2021/04/image-2.png 624w, https:/wp-content/uploads/2021/04/image-2-300x37.png 300w, https:/wp-content/uploads/2021/04/image-2-100x12.png 100w" sizes="(max-width: 624px) 100vw, 624px" /> </figure> 
+![](https://sysmansquad.com/wp-content/uploads/2021/04/image-2.png) </figure> 
 
 And here is what the result looks like:<figure class="wp-block-image size-large">
 
-<img loading="lazy" width="1024" height="873" src="https://sysmansquad.com/wp-content/uploads/2021/04/getmsaltoken-1-1024x873.png" alt="" class="wp-image-2685" srcset="https:/wp-content/uploads/2021/04/getmsaltoken-1-1024x873.png 1024w, https:/wp-content/uploads/2021/04/getmsaltoken-1-300x256.png 300w, https:/wp-content/uploads/2021/04/getmsaltoken-1-768x655.png 768w, https:/wp-content/uploads/2021/04/getmsaltoken-1-1536x1310.png 1536w, https:/wp-content/uploads/2021/04/getmsaltoken-1-100x85.png 100w, https:/wp-content/uploads/2021/04/getmsaltoken-1-855x729.png 855w, https:/wp-content/uploads/2021/04/getmsaltoken-1-1234x1053.png 1234w, https:/wp-content/uploads/2021/04/getmsaltoken-1.png 1591w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> 
+![](https://sysmansquad.com/wp-content/uploads/2021/04/getmsaltoken-1-1024x873.png) </figure> 
 
 Now that I have an access token, I can easily query the AdminService over CMG. I reused the same part of the code used by Sandy to do this:<figure class="wp-block-image size-large">
 
-<img loading="lazy" width="624" height="280" src="https://sysmansquad.com/wp-content/uploads/2021/04/image-4.png" alt="" class="wp-image-2557" srcset="https:/wp-content/uploads/2021/04/image-4.png 624w, https:/wp-content/uploads/2021/04/image-4-300x135.png 300w, https:/wp-content/uploads/2021/04/image-4-100x45.png 100w" sizes="(max-width: 624px) 100vw, 624px" /> </figure> 
+![](https://sysmansquad.com/wp-content/uploads/2021/04/image-4.png) </figure> 
 
 In the example above, I was successfully able to retrieve information for 36 packages from the AdminService over CMG.
 
@@ -305,10 +305,10 @@ You are right, by default PowerShell Gallery does not work in WinPE. To solve th
   <li>
     Add PowerShell Gallery support to your boot image:<ul>
       <li>
-        See this post by David Segura on how it can be achieved: <a href="https://www.osdeploy.com/blog/2021/winpe-powershell-gallery">https://www.osdeploy.com/blog/2021/winpe-powershell-gallery</a>
+        See this post by David Segura on how it can be achieved: [https://www.osdeploy.com/blog/2021/winpe-powershell-gallery](https://www.osdeploy.com/blog/2021/winpe-powershell-gallery)
       </li>
       <li>
-        The easiest way to add PowerShellGallery support to your boot image is to use a <a href="https://osdcloud.osdeploy.com/concepts/universal-winpe">Universal WinPE</a> that can be created with the OSD PowerShell module. Use this as a base for your boot image in Configuration Manager and you will be able to install modules from PSGallery directly in WinPE.
+        The easiest way to add PowerShellGallery support to your boot image is to use a [Universal WinPE](https://osdcloud.osdeploy.com/concepts/universal-winpe) that can be created with the OSD PowerShell module. Use this as a base for your boot image in Configuration Manager and you will be able to install modules from PSGallery directly in WinPE.
       </li>
     </ul>
   </li>
@@ -321,7 +321,7 @@ You are right, by default PowerShell Gallery does not work in WinPE. To solve th
 <div class="wp-block-columns">
   <div class="wp-block-column" style="flex-basis:100%">
     <div class="wp-block-media-text alignwide has-media-on-the-right is-stacked-on-mobile">
-      <figure class="wp-block-media-text__media"><img loading="lazy" width="1024" height="514" src="https://sysmansquad.com/wp-content/uploads/2021/04/image-5-1024x514.png" alt="" class="wp-image-2607 size-full" srcset="https:/wp-content/uploads/2021/04/image-5-1024x514.png 1024w, https:/wp-content/uploads/2021/04/image-5-300x150.png 300w, https:/wp-content/uploads/2021/04/image-5-768x385.png 768w, https:/wp-content/uploads/2021/04/image-5-100x50.png 100w, https:/wp-content/uploads/2021/04/image-5-855x429.png 855w, https:/wp-content/uploads/2021/04/image-5-1234x619.png 1234w, https:/wp-content/uploads/2021/04/image-5.png 1248w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+      <figure class="wp-block-media-text__media">![](https://sysmansquad.com/wp-content/uploads/2021/04/image-5-1024x514.png)</figure>
       
       <div class="wp-block-media-text__content">
         <p>
@@ -337,7 +337,7 @@ You are right, by default PowerShell Gallery does not work in WinPE. To solve th
     <div class="wp-block-columns">
       <div class="wp-block-column" style="flex-basis:100%">
         <div class="wp-block-media-text alignwide has-media-on-the-right is-stacked-on-mobile">
-          <figure class="wp-block-media-text__media"><img loading="lazy" width="1024" height="667" src="https://sysmansquad.com/wp-content/uploads/2021/04/manuallyinstallmsal_step-1024x667.png" alt="" class="wp-image-2601 size-full" srcset="https:/wp-content/uploads/2021/04/manuallyinstallmsal_step-1024x667.png 1024w, https:/wp-content/uploads/2021/04/manuallyinstallmsal_step-300x195.png 300w, https:/wp-content/uploads/2021/04/manuallyinstallmsal_step-768x500.png 768w, https:/wp-content/uploads/2021/04/manuallyinstallmsal_step-100x65.png 100w, https:/wp-content/uploads/2021/04/manuallyinstallmsal_step-855x557.png 855w, https:/wp-content/uploads/2021/04/manuallyinstallmsal_step-1234x804.png 1234w, https:/wp-content/uploads/2021/04/manuallyinstallmsal_step.png 1248w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+          <figure class="wp-block-media-text__media">![](https://sysmansquad.com/wp-content/uploads/2021/04/manuallyinstallmsal_step-1024x667.png)</figure>
           
           <div class="wp-block-media-text__content">
             <p>
@@ -386,7 +386,7 @@ We need to determine if the device running the task sequence is on Internet or o
 
 First, we try using the _SMSTSIsClientOnInternet task sequence variable:<figure class="wp-block-image size-large">
 
-<img loading="lazy" width="624" height="338" src="https://sysmansquad.com/wp-content/uploads/2021/04/image-6.png" alt="" class="wp-image-2612" srcset="https:/wp-content/uploads/2021/04/image-6.png 624w, https:/wp-content/uploads/2021/04/image-6-300x163.png 300w, https:/wp-content/uploads/2021/04/image-6-100x54.png 100w" sizes="(max-width: 624px) 100vw, 624px" /> </figure> 
+![](https://sysmansquad.com/wp-content/uploads/2021/04/image-6.png) </figure> 
 
 Note: In my limited testing, I found that if a task sequence does not reference any package, this variable may not be set.
 
@@ -396,7 +396,7 @@ If the “ClientIsOnInternet” is still not set after this step and device is n
   <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:false,&quot;styleActiveLine&quot;:false,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;showPanel&quot;:false,&quot;fileName&quot;:&quot;shell.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">Get-CimInstance -ClassName "ClientInfo" -Namespace "Root\CCM" | Select-Object -ExpandProperty InInternet</pre>
 </div><figure class="wp-block-image size-large">
 
-<img loading="lazy" width="1024" height="613" src="https://sysmansquad.com/wp-content/uploads/2021/04/clientinfo-1024x613.png" alt="" class="wp-image-2615" srcset="https:/wp-content/uploads/2021/04/clientinfo-1024x613.png 1024w, https:/wp-content/uploads/2021/04/clientinfo-300x180.png 300w, https:/wp-content/uploads/2021/04/clientinfo-768x460.png 768w, https:/wp-content/uploads/2021/04/clientinfo-100x60.png 100w, https:/wp-content/uploads/2021/04/clientinfo-855x512.png 855w, https:/wp-content/uploads/2021/04/clientinfo-1234x739.png 1234w, https:/wp-content/uploads/2021/04/clientinfo.png 1248w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> 
+![](https://sysmansquad.com/wp-content/uploads/2021/04/clientinfo-1024x613.png) </figure> 
 
 ### 2) Additional Parameters for Internet clients
 
@@ -412,7 +412,7 @@ Here you fill out your environment-specific information. The additional paramete
   * ClientId: The Client ID of the application registration that you created to interact with the AdminService. See [additional configuration to use the AdminService over CMG](https://sysmansquad.com/wp-admin/post.php?post=2552&action=edit#additional-configuration-to-use-the-adminservice-over-cmg) for details.
   * ApplicationIdUri: The application ID Uri for your application registration. The default value of "https://ConfigMgrService" will probably be OK for most people.<figure class="wp-block-image size-large">
 
-<img loading="lazy" width="1024" height="503" src="https://sysmansquad.com/wp-content/uploads/2021/04/setparam-1024x503.png" alt="" class="wp-image-2620" srcset="https:/wp-content/uploads/2021/04/setparam-1024x503.png 1024w, https:/wp-content/uploads/2021/04/setparam-300x147.png 300w, https:/wp-content/uploads/2021/04/setparam-768x377.png 768w, https:/wp-content/uploads/2021/04/setparam-100x49.png 100w, https:/wp-content/uploads/2021/04/setparam-855x420.png 855w, https:/wp-content/uploads/2021/04/setparam-1234x606.png 1234w, https:/wp-content/uploads/2021/04/setparam.png 1248w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> 
+![](https://sysmansquad.com/wp-content/uploads/2021/04/setparam-1024x503.png) </figure> 
 
 ### 3) Running the script with the right parameters
 
@@ -420,11 +420,11 @@ Depending on the value of the “ClientIsOnInternet” variable, we run the scri
 
 If the client is determined to be intranet, use the intranet parameters:<figure class="wp-block-image size-large">
 
-<img loading="lazy" width="1024" height="357" src="https://sysmansquad.com/wp-content/uploads/2021/04/invoke-intranet-1024x357.png" alt="" class="wp-image-2632" srcset="https:/wp-content/uploads/2021/04/invoke-intranet-1024x357.png 1024w, https:/wp-content/uploads/2021/04/invoke-intranet-300x105.png 300w, https:/wp-content/uploads/2021/04/invoke-intranet-768x268.png 768w, https:/wp-content/uploads/2021/04/invoke-intranet-100x35.png 100w, https:/wp-content/uploads/2021/04/invoke-intranet-855x298.png 855w, https:/wp-content/uploads/2021/04/invoke-intranet-1234x430.png 1234w, https:/wp-content/uploads/2021/04/invoke-intranet.png 1248w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> 
+![](https://sysmansquad.com/wp-content/uploads/2021/04/invoke-intranet-1024x357.png) </figure> 
 
 If the client is on Internet, use the internet parameters:<figure class="wp-block-image size-large">
 
-<img loading="lazy" width="1024" height="262" src="https://sysmansquad.com/wp-content/uploads/2021/04/invoke-internet-1024x262.png" alt="" class="wp-image-2633" srcset="https:/wp-content/uploads/2021/04/invoke-internet-1024x262.png 1024w, https:/wp-content/uploads/2021/04/invoke-internet-300x77.png 300w, https:/wp-content/uploads/2021/04/invoke-internet-768x196.png 768w, https:/wp-content/uploads/2021/04/invoke-internet-100x26.png 100w, https:/wp-content/uploads/2021/04/invoke-internet-855x219.png 855w, https:/wp-content/uploads/2021/04/invoke-internet-1234x315.png 1234w, https:/wp-content/uploads/2021/04/invoke-internet.png 1248w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> 
+![](https://sysmansquad.com/wp-content/uploads/2021/04/invoke-internet-1024x262.png) </figure> 
 
 ## The end result
 
@@ -432,7 +432,7 @@ You can now use the Modern Driver Management and Modern BIOS Management solution
 
 If you are on Current Branch 2010 or later, you can use a boot media to run bare metal deployment on the Internet and still use the Modern Driver/BIOS Management solution.<figure class="wp-block-image size-large">
 
-<img loading="lazy" width="921" height="1024" src="https://sysmansquad.com/wp-content/uploads/2021/04/log-921x1024.png" alt="" class="wp-image-2635" srcset="https:/wp-content/uploads/2021/04/log-921x1024.png 921w, https:/wp-content/uploads/2021/04/log-270x300.png 270w, https:/wp-content/uploads/2021/04/log-768x854.png 768w, https:/wp-content/uploads/2021/04/log-100x111.png 100w, https:/wp-content/uploads/2021/04/log-855x950.png 855w, https:/wp-content/uploads/2021/04/log.png 1149w" sizes="(max-width: 921px) 100vw, 921px" /> </figure> 
+![](https://sysmansquad.com/wp-content/uploads/2021/04/log-921x1024.png) </figure> 
 
 ## How do I set this up in my environment?
 
@@ -440,7 +440,7 @@ If you are on Current Branch 2010 or later, you can use a boot media to run bare
   2. Import the task sequences in your environment
   3. Configure the parameters correctly in the “Query AdminService for PackageID” task sequence:<figure class="wp-block-image size-large">
 
-<img loading="lazy" width="1024" height="503" src="https://sysmansquad.com/wp-content/uploads/2021/04/setparam-1024x503.png" alt="" class="wp-image-2620" srcset="https:/wp-content/uploads/2021/04/setparam-1024x503.png 1024w, https:/wp-content/uploads/2021/04/setparam-300x147.png 300w, https:/wp-content/uploads/2021/04/setparam-768x377.png 768w, https:/wp-content/uploads/2021/04/setparam-100x49.png 100w, https:/wp-content/uploads/2021/04/setparam-855x420.png 855w, https:/wp-content/uploads/2021/04/setparam-1234x606.png 1234w, https:/wp-content/uploads/2021/04/setparam.png 1248w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> 
+![](https://sysmansquad.com/wp-content/uploads/2021/04/setparam-1024x503.png) </figure> 
 
 <ol start="4">
   <li>
@@ -463,14 +463,15 @@ Now you have support for multiple CMGs 🙂
 
 Currently, the scripts used in this solution are added directly in the task sequence instead of referencing a package containing the scripts. As you can see below, the task sequence size can be somewhat big:<figure class="wp-block-image size-large">
 
-<img loading="lazy" width="1024" height="193" src="https://sysmansquad.com/wp-content/uploads/2021/04/tasksequencesize-1024x193.png" alt="" class="wp-image-2645" srcset="https:/wp-content/uploads/2021/04/tasksequencesize-1024x193.png 1024w, https:/wp-content/uploads/2021/04/tasksequencesize-300x57.png 300w, https:/wp-content/uploads/2021/04/tasksequencesize-768x145.png 768w, https:/wp-content/uploads/2021/04/tasksequencesize-100x19.png 100w, https:/wp-content/uploads/2021/04/tasksequencesize-855x162.png 855w, https:/wp-content/uploads/2021/04/tasksequencesize.png 1122w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> 
+![](https://sysmansquad.com/wp-content/uploads/2021/04/tasksequencesize-1024x193.png) </figure> 
 
 If you are concerned about the total size of the task sequence, you could store the scripts in a package instead and this would greatly reduce the size of the task sequence.
 
-Reference regarding task sequence size: <a href="https://docs.microsoft.com/en-us/mem/configmgr/osd/deploy-use/manage-task-sequences-to-automate-tasks#reduce-the-size-of-task-sequence-policy" target="_blank" rel="noreferrer noopener">https://docs.microsoft.com/en-us/mem/configmgr/osd/deploy-use/manage-task-sequences-to-automate-tasks#reduce-the-size-of-task-sequence-policy</a>
+Reference regarding task sequence size: [https://docs.microsoft.com/en-us/mem/configmgr/osd/deploy-use/manage-task-sequences-to-automate-tasks#reduce-the-size-of-task-sequence-policy](https://docs.microsoft.com/en-us/mem/configmgr/osd/deploy-use/manage-task-sequences-to-automate-tasks#reduce-the-size-of-task-sequence-policy)
 
 ## Links
 
 [Task Sequence Exports](https://github.com/CharlesNRU/mdm-adminservice/raw/master/MDM-TS.zip)
 
 [MDM-AdminService GitHub repository](https://github.com/CharlesNRU/mdm-adminservice)
+

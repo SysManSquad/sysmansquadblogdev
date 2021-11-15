@@ -16,7 +16,7 @@ categories:
   - Windows
 
 ---
-Namaste y'all! In todays Siri dictated blog post, I will show you how you can configure access control lists (ACL) for a directory using <a aria-label="undefined (opens in a new tab)" href="https://docs.microsoft.com/en-us/mem/analytics/proactive-remediations" target="_blank" rel="noreferrer noopener">Intune Proactive remediations</a>.
+Namaste y'all! In todays Siri dictated blog post, I will show you how you can configure access control lists (ACL) for a directory using [Intune Proactive remediations](https://docs.microsoft.com/en-us/mem/analytics/proactive-remediations).
 
 The issue I was facing was that regular users do not have modify permissions to the public desktop on their corporate devices, meaning that the user is unable to remove annoying shortcuts that would get placed there by the various apps they install. While this is hardly a high priority task to solve. I believe that the user experience should be taken into account and amended if possible.
 
@@ -85,4 +85,4 @@ Obviously, this example are pretty simplistic, but it can give you an idea how P
 
 ### Questions/Issues?
 
-If you run into any issues or have questions about anything Intune related head over to the&nbsp;<a rel="noreferrer noopener" href="https://aka.ms/winadmins" target="_blank">WinAdmins discord community</a>&nbsp;and go to the&nbsp;`#Intune`&nbsp;channel.
+If you run into any issues or have questions about anything Intune related head over to the&nbsp;[WinAdmins discord community](https://aka.ms/winadmins)&nbsp;and go to the&nbsp;`#Intune`&nbsp;channel.

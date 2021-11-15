@@ -37,7 +37,7 @@ Microsoft details the 'trigger' for these apps not being reinstalled in the docs
 
 <blockquote class="wp-block-quote">
   <p>
-    <a href="https://docs.microsoft.com/en-us/windows/application-management/remove-provisioned-apps-during-update">https://docs.microsoft.com/en-us/windows/application-management/remove-provisioned-apps-during-update</a>
+    [https://docs.microsoft.com/en-us/windows/application-management/remove-provisioned-apps-during-update](https://docs.microsoft.com/en-us/windows/application-management/remove-provisioned-apps-during-update)
   </p>
 </blockquote>
 
@@ -103,7 +103,7 @@ First, we can identify apps that have been deprovisioned with the below function
 
 <blockquote class="wp-block-quote">
   <p>
-    <a href="https://github.com/CodyMathis123/CM-Ramblings/blob/master/Reprovision%20Windows%2010%20Apps/Get-DeprovisionedAppX.ps1">https://github.com/CodyMathis123/CM-Ramblings/blob/master/Reprovision%20Windows%2010%20Apps/Get-DeprovisionedAppX.ps1</a>
+    [https://github.com/CodyMathis123/CM-Ramblings/blob/master/Reprovision%20Windows%2010%20Apps/Get-DeprovisionedAppX.ps1](https://github.com/CodyMathis123/CM-Ramblings/blob/master/Reprovision%20Windows%2010%20Apps/Get-DeprovisionedAppX.ps1)
   </p>
   
   <cite>Get-DeprovisionedAppX</cite>
@@ -168,7 +168,7 @@ We have our targets, now lets blow them away! The below function 'reprovisions' 
 
 <blockquote class="wp-block-quote">
   <p>
-    <a href="https://github.com/CodyMathis123/CM-Ramblings/blob/master/Reprovision%20Windows%2010%20Apps/Reprovision-AppX.ps1">https://github.com/CodyMathis123/CM-Ramblings/blob/master/Reprovision%20Windows%2010%20Apps/Reprovision-AppX.ps1</a>
+    [https://github.com/CodyMathis123/CM-Ramblings/blob/master/Reprovision%20Windows%2010%20Apps/Reprovision-AppX.ps1](https://github.com/CodyMathis123/CM-Ramblings/blob/master/Reprovision%20Windows%2010%20Apps/Reprovision-AppX.ps1)
   </p>
   
   <cite>Reprovision-AppX</cite>
@@ -187,7 +187,7 @@ That's pretty cool!
 **[CmdletBinding(SupportsShouldProcess)]** - At the top of the function this snippet allows the implementation of WhatIf support. To finish the implementation we have to use **$PSCmdlet.ShouldProcess** where it is fitting. This function has it at line 37, just before the action happens. 
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large is-resized"><img loading="lazy" src="https://sysmansquad.com/wp-content/uploads/2019/12/Reprovision-AppX-1024x435.png" alt="" class="wp-image-581" width="1005" height="427" srcset="https:/wp-content/uploads/2019/12/Reprovision-AppX-1024x435.png 1024w, https:/wp-content/uploads/2019/12/Reprovision-AppX-300x127.png 300w, https:/wp-content/uploads/2019/12/Reprovision-AppX-768x326.png 768w, https:/wp-content/uploads/2019/12/Reprovision-AppX-100x42.png 100w, https:/wp-content/uploads/2019/12/Reprovision-AppX-855x363.png 855w, https:/wp-content/uploads/2019/12/Reprovision-AppX.png 1123w" sizes="(max-width: 1005px) 100vw, 1005px" /><figcaption>Function use examples</figcaption></figure>
+  <figure class="aligncenter size-large is-resized">![](https://sysmansquad.com/wp-content/uploads/2019/12/Reprovision-AppX-1024x435.png)<figcaption>Function use examples</figcaption></figure>
 </div>
 
 #### Last step
@@ -201,3 +201,5 @@ In this post I've outlined the mechanism that ensures a deprovisioned AppX Packa
 I hope this helps someone get their environment back in working order by restoring the Windows Store! Or maybe just Solitaire... Let them play cards guys. 
 
 [@CodyMathis123](https://twitter.com/CodyMathis123)
+
+

@@ -27,11 +27,11 @@ While MSIX is generally marketed as a replacement for MSI for developers, there 
 So what does this have to do with certificates?  
 The MSIX packaging format has a strict signing requirement. While you can always buy a code signing certificate, you can use a free DGSSv2 certificate from Microsoft.
 
-If you want to know how MSIX apps are setup and deployed, check out <a rel="noreferrer noopener" href="https://sysmansquad.com/2020/09/15/signing-and-deploying-applications-via-msix-with-intune/" target="_blank">Jake's blog post on MSIX</a>.
+If you want to know how MSIX apps are setup and deployed, check out [Jake's blog post on MSIX](https://sysmansquad.com/2020/09/15/signing-and-deploying-applications-via-msix-with-intune/).
 
 ## Registering the AzureAD app
 
-First we need to setup an AzureAd Application, <a rel="noreferrer noopener" href="https://docs.microsoft.com/en-us/windows/msix/package/signing-package-device-guard-signing" target="_blank">this is mostly covered in the official docs</a> but it's not very user friendly and when this post was written (31.10.2020), it was missing a crucial step.
+First we need to setup an AzureAd Application, [this is mostly covered in the official docs](https://docs.microsoft.com/en-us/windows/msix/package/signing-package-device-guard-signing) but it's not very user friendly and when this post was written (31.10.2020), it was missing a crucial step.
 
 For those of you who have done this sort of thing before, here is the quick overview:
 
@@ -44,12 +44,12 @@ For those of you who have never done this before, here are the detailed steps wi
 
 Sign into Azure AD and register a new application.<figure class="wp-block-image size-large">
 
-<img loading="lazy" width="1024" height="573" src="https://sysmansquad.com/wp-content/uploads/2020/10/1-app-registration-1024x573.png" alt="" class="wp-image-1864" srcset="https:/wp-content/uploads/2020/10/1-app-registration-1024x573.png 1024w, https:/wp-content/uploads/2020/10/1-app-registration-300x168.png 300w, https:/wp-content/uploads/2020/10/1-app-registration-768x430.png 768w, https:/wp-content/uploads/2020/10/1-app-registration-100x56.png 100w, https:/wp-content/uploads/2020/10/1-app-registration-855x478.png 855w, https:/wp-content/uploads/2020/10/1-app-registration-1234x690.png 1234w, https:/wp-content/uploads/2020/10/1-app-registration.png 1452w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> 
+![](https://sysmansquad.com/wp-content/uploads/2020/10/1-app-registration-1024x573.png) </figure> 
 
 Give it a descriptive name.  
 Under Redirect URI, select "Public client (mobile & desktop)", and set https://dgss.microsoft.com as the URI.<figure class="wp-block-image size-large">
 
-<img loading="lazy" width="927" height="749" src="https://sysmansquad.com/wp-content/uploads/2020/10/2-replyurl.png" alt="" class="wp-image-1865" srcset="https:/wp-content/uploads/2020/10/2-replyurl.png 927w, https:/wp-content/uploads/2020/10/2-replyurl-300x242.png 300w, https:/wp-content/uploads/2020/10/2-replyurl-768x621.png 768w, https:/wp-content/uploads/2020/10/2-replyurl-100x81.png 100w, https:/wp-content/uploads/2020/10/2-replyurl-855x691.png 855w" sizes="(max-width: 927px) 100vw, 927px" /> </figure> 
+![](https://sysmansquad.com/wp-content/uploads/2020/10/2-replyurl.png) </figure> 
 
 Once the app has been created, click on **API permissions**.  
 **Add permissions**.  
@@ -57,24 +57,24 @@ Click on **APIs my organization uses**.
 Search for "windows store".  
 And click on it.<figure class="wp-block-image size-large">
 
-<img loading="lazy" width="1024" height="342" src="https://sysmansquad.com/wp-content/uploads/2020/10/3-api-permissions-1024x342.png" alt="" class="wp-image-1866" srcset="https:/wp-content/uploads/2020/10/3-api-permissions-1024x342.png 1024w, https:/wp-content/uploads/2020/10/3-api-permissions-300x100.png 300w, https:/wp-content/uploads/2020/10/3-api-permissions-768x256.png 768w, https:/wp-content/uploads/2020/10/3-api-permissions-1536x513.png 1536w, https:/wp-content/uploads/2020/10/3-api-permissions-100x33.png 100w, https:/wp-content/uploads/2020/10/3-api-permissions-855x285.png 855w, https:/wp-content/uploads/2020/10/3-api-permissions-1234x412.png 1234w, https:/wp-content/uploads/2020/10/3-api-permissions.png 1699w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> 
+![](https://sysmansquad.com/wp-content/uploads/2020/10/3-api-permissions-1024x342.png) </figure> 
 
 Click on **Delegated permissions**.  
 And select **user_impresonation**.<figure class="wp-block-image size-large">
 
-<img loading="lazy" width="665" height="788" src="https://sysmansquad.com/wp-content/uploads/2020/10/4-delegate-access.png" alt="" class="wp-image-1867" srcset="https:/wp-content/uploads/2020/10/4-delegate-access.png 665w, https:/wp-content/uploads/2020/10/4-delegate-access-253x300.png 253w, https:/wp-content/uploads/2020/10/4-delegate-access-100x118.png 100w" sizes="(max-width: 665px) 100vw, 665px" /> </figure> 
+![](https://sysmansquad.com/wp-content/uploads/2020/10/4-delegate-access.png) </figure> 
 
 Click on **Grant consent for...** otherwise the app will not work.<figure class="wp-block-image size-large">
 
-<img loading="lazy" width="1024" height="494" src="https://sysmansquad.com/wp-content/uploads/2020/10/5-consent-1024x494.png" alt="" class="wp-image-1868" srcset="https:/wp-content/uploads/2020/10/5-consent-1024x494.png 1024w, https:/wp-content/uploads/2020/10/5-consent-300x145.png 300w, https:/wp-content/uploads/2020/10/5-consent-768x370.png 768w, https:/wp-content/uploads/2020/10/5-consent-100x48.png 100w, https:/wp-content/uploads/2020/10/5-consent-855x412.png 855w, https:/wp-content/uploads/2020/10/5-consent.png 1218w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> 
+![](https://sysmansquad.com/wp-content/uploads/2020/10/5-consent-1024x494.png) </figure> 
 
 Now head back to the application overview and copy the GUID that's next to **Application (client) ID**, this is used in a script that is featured in this blog post.<figure class="wp-block-image size-large">
 
-<img loading="lazy" width="967" height="524" src="https://sysmansquad.com/wp-content/uploads/2020/10/6-appid.png" alt="" class="wp-image-1869" srcset="https:/wp-content/uploads/2020/10/6-appid.png 967w, https:/wp-content/uploads/2020/10/6-appid-300x163.png 300w, https:/wp-content/uploads/2020/10/6-appid-768x416.png 768w, https:/wp-content/uploads/2020/10/6-appid-100x54.png 100w, https:/wp-content/uploads/2020/10/6-appid-855x463.png 855w" sizes="(max-width: 967px) 100vw, 967px" /> </figure> 
+![](https://sysmansquad.com/wp-content/uploads/2020/10/6-appid.png) </figure> 
 
 ## Get-DGSSv2RootCert
 
-Since for most people, downloading the root certificate is a one time operation, I elected to run this this in a <a href="https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-sandbox/windows-sandbox-overview" target="_blank" rel="noreferrer noopener">windows sandbox</a>. but that is 100% optional.
+Since for most people, downloading the root certificate is a one time operation, I elected to run this this in a [windows sandbox](https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-sandbox/windows-sandbox-overview). but that is 100% optional.
 
 Paste the application GUID into the $AppID variable and you should be ready to go.
 

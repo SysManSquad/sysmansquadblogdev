@@ -26,32 +26,32 @@ tags:
   <div class="uagb-toc__list-wrap">
     <ol class="uagb-toc__list">
       <li class="uagb-toc__list">
-        <a href="#introduction">Introduction</a><li class="uagb-toc__list">
-          <a href="#installing">Installing</a><li class="uagb-toc__list">
-            <a href="#examples">Examples</a><ul class="uagb-toc__list">
+        [Introduction](#introduction)<li class="uagb-toc__list">
+          [Installing](#installing)<li class="uagb-toc__list">
+            [Examples](#examples)<ul class="uagb-toc__list">
               <li class="uagb-toc__list">
-                <a href="#comparing-distributed-content-objects-between-two-distribution-points-or-distribution-point-groups">Comparing distributed content objects between two distribution points or distribution point groups</a><li class="uagb-toc__list">
+                [Comparing distributed content objects between two distribution points or distribution point groups](#comparing-distributed-content-objects-between-two-distribution-points-or-distribution-point-groups)<li class="uagb-toc__list">
                   <li class="uagb-toc__list">
-                    <a href="#finding-content-objects-in-distribution-failed-state-and-initiating-redistribution-en-masse">Finding content objects in "distribution failed" state and initiating redistribution en masse</a><li class="uagb-toc__list">
+                    [Finding content objects in "distribution failed" state and initiating redistribution en masse](#finding-content-objects-in-distribution-failed-state-and-initiating-redistribution-en-masse)<li class="uagb-toc__list">
                       <li class="uagb-toc__list">
-                        <a href="#finding-objects-in-your-environment-with-some-arbitrary-id">Finding objects in your environment with some arbitrary ID</a><li class="uagb-toc__list">
+                        [Finding objects in your environment with some arbitrary ID](#finding-objects-in-your-environment-with-some-arbitrary-id)<li class="uagb-toc__list">
                           <li class="uagb-toc__list">
-                            <a href="#migrating-a-distribution-point-to-another">Migrating a distribution point to another</a><ul class="uagb-toc__list">
+                            [Migrating a distribution point to another](#migrating-a-distribution-point-to-another)<ul class="uagb-toc__list">
                               <li class="uagb-toc__list">
-                                <a href="#1-begin-by-exporting-your-oldsource-distribution-points-content-using-export-dpcontent">1. Begin by exporting your old/source distribution point's content using Export-DPContent.</a><li class="uagb-toc__list">
+                                [1. Begin by exporting your old/source distribution point's content using Export-DPContent.](#1-begin-by-exporting-your-oldsource-distribution-points-content-using-export-dpcontent)<li class="uagb-toc__list">
                                   <li class="uagb-toc__list">
-                                    <a href="#2-configure-your-newtarget-distribution-point-to-allow-prestaged-content-using-set-dpallowprestagedcontent">2. Configure your new/target distribution point to allow prestaged content using Set-DPAllowPrestagedContent.</a><li class="uagb-toc__list">
+                                    [2. Configure your new/target distribution point to allow prestaged content using Set-DPAllowPrestagedContent.](#2-configure-your-newtarget-distribution-point-to-allow-prestaged-content-using-set-dpallowprestagedcontent)<li class="uagb-toc__list">
                                       <li class="uagb-toc__list">
-                                        <a href="#3-distribute-the-exported-content-from-step-1-using-start-dpcontentdistribution-using-its-folder-parameter">3. Distribute the exported content from step 1 using Start-DPContentDistribution using its -Folder parameter.</a><li class="uagb-toc__list">
+                                        [3. Distribute the exported content from step 1 using Start-DPContentDistribution using its -Folder parameter.](#3-distribute-the-exported-content-from-step-1-using-start-dpcontentdistribution-using-its-folder-parameter)<li class="uagb-toc__list">
                                           <li class="uagb-toc__list">
-                                            <a href="#4-log-on-locally-or-enter-a-powershell-session-to-your-newtarget-distribution-point-and-import-pscmcontentmgmt-to-run-import-dpcontent">4. Log on locally or enter a PowerShell session to your new/target distribution point and import PSCMContentMgmt to run Import-DPContent.</a><li class="uagb-toc__list">
+                                            [4. Log on locally or enter a PowerShell session to your new/target distribution point and import PSCMContentMgmt to run Import-DPContent.](#4-log-on-locally-or-enter-a-powershell-session-to-your-newtarget-distribution-point-and-import-pscmcontentmgmt-to-run-import-dpcontent)<li class="uagb-toc__list">
                                               <li class="uagb-toc__list">
-                                                <a href="#5-unconfigure-your-newtarget-distribution-point-to-only-allow-prestaged-content">5. Unconfigure your new/target distribution point to only allow prestaged content.</a>
+                                                [5. Unconfigure your new/target distribution point to only allow prestaged content.](#5-unconfigure-your-newtarget-distribution-point-to-only-allow-prestaged-content)
                                               </li></ul>
                                             </li></ul>
                                           </li>
                                           <li class="uagb-toc__list">
-                                            <a href="#getting-help">Getting help</a>
+                                            [Getting help](#getting-help)
                                           </li></ul>
                                         </li></ul></ol> </div> </div> </div> 
                                         <h2>
@@ -59,7 +59,7 @@ tags:
                                         </h2>
                                         
                                         <p>
-                                          I recently wrote <a href="https://github.com/codaamok/PSCMContentMgmt" target="_blank" rel="noreferrer noopener">PSCMContentMgmt</a> which provides a simple and effective workflow for managing your MEMCM distribution points. Here are some of the things you can do with it:
+                                          I recently wrote [PSCMContentMgmt](https://github.com/codaamok/PSCMContentMgmt) which provides a simple and effective workflow for managing your MEMCM distribution points. Here are some of the things you can do with it:
                                         </p>
                                         
                                         <ul>
@@ -107,60 +107,60 @@ tags:
                                         </ul>
                                         
                                         <p>
-                                          At the time of writing this, here are a list of functions in PSCMContentMgmt (be sure to check out the docs on the <a href="https://github.com/codaamok/PSCMContentMgmt" target="_blank" rel="noreferrer noopener">GitHub repository</a> in case there are changes):
+                                          At the time of writing this, here are a list of functions in PSCMContentMgmt (be sure to check out the docs on the [GitHub repository](https://github.com/codaamok/PSCMContentMgmt) in case there are changes):
                                         </p>
                                         
                                         <ul>
                                           <li>
-                                            <a href="https://github.com/codaamok/PSCMContentMgmt/blob/master/docs/Find-CMOBject.md">Find-CMObject</a>
+                                            [Find-CMObject](https://github.com/codaamok/PSCMContentMgmt/blob/master/docs/Find-CMOBject.md)
                                           </li>
                                           <li>
-                                            <a href="https://github.com/codaamok/PSCMContentMgmt/blob/master/docs/Compare-DPContent.md">Compare-DPContent</a>
+                                            [Compare-DPContent](https://github.com/codaamok/PSCMContentMgmt/blob/master/docs/Compare-DPContent.md)
                                           </li>
                                           <li>
-                                            <a href="https://github.com/codaamok/PSCMContentMgmt/blob/master/docs/Compare-DPGroupContent.md">Compare-DPGroupContent</a>
+                                            [Compare-DPGroupContent](https://github.com/codaamok/PSCMContentMgmt/blob/master/docs/Compare-DPGroupContent.md)
                                           </li>
                                           <li>
-                                            <a href="https://github.com/codaamok/PSCMContentMgmt/blob/master/docs/Export-DPContent.md">Export-DPContent</a>
+                                            [Export-DPContent](https://github.com/codaamok/PSCMContentMgmt/blob/master/docs/Export-DPContent.md)
                                           </li>
                                           <li>
-                                            <a href="https://github.com/codaamok/PSCMContentMgmt/blob/master/docs/Get-DP.md">Get-DP</a>
+                                            [Get-DP](https://github.com/codaamok/PSCMContentMgmt/blob/master/docs/Get-DP.md)
                                           </li>
                                           <li>
-                                            <a href="https://github.com/codaamok/PSCMContentMgmt/blob/master/docs/Get-DPContent.md">Get-DPContent</a>
+                                            [Get-DPContent](https://github.com/codaamok/PSCMContentMgmt/blob/master/docs/Get-DPContent.md)
                                           </li>
                                           <li>
-                                            <a href="https://github.com/codaamok/PSCMContentMgmt/blob/master/docs/Get-DPDistributionStatus.md">Get-DPDistributionStatus</a>
+                                            [Get-DPDistributionStatus](https://github.com/codaamok/PSCMContentMgmt/blob/master/docs/Get-DPDistributionStatus.md)
                                           </li>
                                           <li>
-                                            <a href="https://github.com/codaamok/PSCMContentMgmt/blob/master/docs/Get-DPGroup.md">Get-DPGroup</a>
+                                            [Get-DPGroup](https://github.com/codaamok/PSCMContentMgmt/blob/master/docs/Get-DPGroup.md)
                                           </li>
                                           <li>
-                                            <a href="https://github.com/codaamok/PSCMContentMgmt/blob/master/docs/Get-DPGroupContent.md">Get-DPGroupContent</a>
+                                            [Get-DPGroupContent](https://github.com/codaamok/PSCMContentMgmt/blob/master/docs/Get-DPGroupContent.md)
                                           </li>
                                           <li>
-                                            <a href="https://github.com/codaamok/PSCMContentMgmt/blob/master/docs/Import-DPContent.md">Import-DPContent</a>
+                                            [Import-DPContent](https://github.com/codaamok/PSCMContentMgmt/blob/master/docs/Import-DPContent.md)
                                           </li>
                                           <li>
-                                            <a href="https://github.com/codaamok/PSCMContentMgmt/blob/master/docs/Invoke-DPContentLibraryCleanup.md">Invoke-DPContentLibraryCleanup</a>
+                                            [Invoke-DPContentLibraryCleanup](https://github.com/codaamok/PSCMContentMgmt/blob/master/docs/Invoke-DPContentLibraryCleanup.md)
                                           </li>
                                           <li>
-                                            <a href="https://github.com/codaamok/PSCMContentMgmt/blob/master/docs/Remove-DPContent.md">Remove-DPContent</a>
+                                            [Remove-DPContent](https://github.com/codaamok/PSCMContentMgmt/blob/master/docs/Remove-DPContent.md)
                                           </li>
                                           <li>
-                                            <a href="https://github.com/codaamok/PSCMContentMgmt/blob/master/docs/Remove-DPGroupContent.md">Remove-DPGroupContent</a>
+                                            [Remove-DPGroupContent](https://github.com/codaamok/PSCMContentMgmt/blob/master/docs/Remove-DPGroupContent.md)
                                           </li>
                                           <li>
-                                            <a href="https://github.com/codaamok/PSCMContentMgmt/blob/master/docs/Set-DPAllowPrestagedContent.md">Set-DPAllowPrestagedContent</a>
+                                            [Set-DPAllowPrestagedContent](https://github.com/codaamok/PSCMContentMgmt/blob/master/docs/Set-DPAllowPrestagedContent.md)
                                           </li>
                                           <li>
-                                            <a href="https://github.com/codaamok/PSCMContentMgmt/blob/master/docs/Start-DPContentDistribution.md">Start-DPContentDistribution</a>
+                                            [Start-DPContentDistribution](https://github.com/codaamok/PSCMContentMgmt/blob/master/docs/Start-DPContentDistribution.md)
                                           </li>
                                           <li>
-                                            <a href="https://github.com/codaamok/PSCMContentMgmt/blob/master/docs/Start-DPContentRedistribution.md">Start-DPContentRedistribution</a>
+                                            [Start-DPContentRedistribution](https://github.com/codaamok/PSCMContentMgmt/blob/master/docs/Start-DPContentRedistribution.md)
                                           </li>
                                           <li>
-                                            <a href="https://github.com/codaamok/PSCMContentMgmt/blob/master/docs/Start-DPGroupContentDistribution.md">Start-DPGroupContentDistribution</a>
+                                            [Start-DPGroupContentDistribution](https://github.com/codaamok/PSCMContentMgmt/blob/master/docs/Start-DPGroupContentDistribution.md)
                                           </li>
                                         </ul>
                                         
@@ -384,7 +384,7 @@ Count Name                      Group
                                         </p>
                                         
                                         <p>
-                                          This requirement was what originally inspired me to write the module. A couple of years ago I came across <a href="http://synack87.blogspot.com/2017/03/distribution-point-migration-tool-kit.html">this post</a> by someone with the handle SYN_ACK_87. The code offered on TechNet helped me hugely at the time for what I needed, but I felt like adding extra bits. I rolled my own and here we are.
+                                          This requirement was what originally inspired me to write the module. A couple of years ago I came across [this post](http://synack87.blogspot.com/2017/03/distribution-point-migration-tool-kit.html) by someone with the handle SYN_ACK_87. The code offered on TechNet helped me hugely at the time for what I needed, but I felt like adding extra bits. I rolled my own and here we are.
                                         </p>
                                         
                                         <p>
@@ -476,7 +476,7 @@ Count Name                      Group
                                         </p>
                                         
                                         <p>
-                                          I encourage you to read the documentation on the <a href="https://github.com/codaamok/PSCMContentMgmt" target="_blank" rel="noreferrer noopener">GitHub repository page</a> and the <code>Get-Help</code> material. I wrote several "About" help topics , filling all functions with examples and detailed descriptions for parameters.
+                                          I encourage you to read the documentation on the [GitHub repository page](https://github.com/codaamok/PSCMContentMgmt) and the <code>Get-Help</code> material. I wrote several "About" help topics , filling all functions with examples and detailed descriptions for parameters.
                                         </p>
                                         
                                         <p>
@@ -509,13 +509,13 @@ Count Name                      Group
                                         
                                         <ul>
                                           <li>
-                                            If you think you're experiencing, or have found, a bug in PSCMContentMgmt, please open an issue on its <a href="https://github.com/codaamok/PSCMContentMgmt" target="_blank" rel="noreferrer noopener">GitHub repository</a>.
+                                            If you think you're experiencing, or have found, a bug in PSCMContentMgmt, please open an issue on its [GitHub repository](https://github.com/codaamok/PSCMContentMgmt).
                                           </li>
                                           <li>
-                                            Ping me on Twitter <a href="https://twitter.com/codaamok" target="_blank" rel="noreferrer noopener">@codaamok</a>.
+                                            Ping me on Twitter [@codaamok](https://twitter.com/codaamok).
                                           </li>
                                           <li>
-                                            Come to the <a href="https://winadmins.io/" target="_blank" rel="noreferrer noopener">WinAdmins Discord</a> and bug me there, my handle is @acc.
+                                            Come to the [WinAdmins Discord](https://winadmins.io/) and bug me there, my handle is @acc.
                                           </li>
                                         </ul>
                                         

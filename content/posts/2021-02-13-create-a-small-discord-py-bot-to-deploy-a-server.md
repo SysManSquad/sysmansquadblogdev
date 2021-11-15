@@ -13,7 +13,7 @@ categories:
   - Scripting
 
 ---
-I volunteer to help run <a href="https://southwestccdc.com/" target="_blank" rel="noreferrer noopener nofollow">Southwest CCDC</a> every year, and had a need to deploy all of the communication infrastructure in a hurry. With Covid Times™ upon us, we needed to move a competition that usually has at least one round in person to all-virtual. Discord was the obvious choice for how to do that successfully - it is targeted to communities of people, and has moderation tools. My discord server needed to have a few things:
+I volunteer to help run [Southwest CCDC](https://southwestccdc.com/) every year, and had a need to deploy all of the communication infrastructure in a hurry. With Covid Times™ upon us, we needed to move a competition that usually has at least one round in person to all-virtual. Discord was the obvious choice for how to do that successfully - it is targeted to communities of people, and has moderation tools. My discord server needed to have a few things:
 
   * A few general channels for normal Discord business - announcements, general chatter, help requests etc.
   * Private channels for each competing team
@@ -23,11 +23,11 @@ Given that the smallest round will usually have 8 teams and the largest round va
 
 ## Creating a Discord bot
 
-While my preferred language is PowerShell, sometimes there's no point re-inventing the wheel and it's worth it to get your hands dirty in a second language. In this case the best/most well supported option seemed to be python, in the form of <a href="https://discordpy.readthedocs.io/en/latest/index.html" target="_blank" rel="noreferrer noopener">Discord.py</a>. 
+While my preferred language is PowerShell, sometimes there's no point re-inventing the wheel and it's worth it to get your hands dirty in a second language. In this case the best/most well supported option seemed to be python, in the form of [Discord.py](https://discordpy.readthedocs.io/en/latest/index.html). 
 
-The first step is to head to Discord's <a href="https://discord.com/developers/applications" target="_blank" rel="noreferrer noopener">developer portal</a> and create an application. Here's where you set the icon your bot will use, along with its name also a few extra bits.
+The first step is to head to Discord's [developer portal](https://discord.com/developers/applications) and create an application. Here's where you set the icon your bot will use, along with its name also a few extra bits.
 
-Creating an application is not enough to give your bot a presence on a server, so you also need to move down to the Bot tab, and also add an icon and username there. While you're there you'll have to turn on the 'Server Members Intent' toggle. This is for <a href="https://discordpy.readthedocs.io/en/latest/intents.html" target="_blank" rel="noreferrer noopener">Reasons</a>. The short story is that Discord feels that bots shouldn't be able to read the members list merely by expressing that intent in code. Other intents don't need this, and can be requested in your bot code.
+Creating an application is not enough to give your bot a presence on a server, so you also need to move down to the Bot tab, and also add an icon and username there. While you're there you'll have to turn on the 'Server Members Intent' toggle. This is for [Reasons](https://discordpy.readthedocs.io/en/latest/intents.html). The short story is that Discord feels that bots shouldn't be able to read the members list merely by expressing that intent in code. Other intents don't need this, and can be requested in your bot code.
 
 I did my development on an empty test server, so I switched to the OAuth2 tab, and selected the 'bot' scope, set the 'Administrator' permission, and copied/pasted the URL provided to a new tab to authorize my bot to join the test server. Yes, administrator is a dangerous permission to grant for a bot, but given that it's my code, I am fine with it in this case. Also some role-managing stuff didn't work particularly well without it.
 
@@ -37,7 +37,7 @@ Discord.py has a few [examples](https://github.com/Rapptz/discord.py/tree/master
 
 ### Python Setup
 
-Because I have been exposed to Python before, I was already aware that python projects should make use of <a href="https://docs.python.org/3/tutorial/venv.html" target="_blank" rel="noreferrer noopener">virtual environments</a>. I created a folder for my code, initialized <a href="https://www.atlassian.com/git/tutorials" target="_blank" rel="noreferrer noopener">git</a> in the folder to help me keep track of code revisions and began to write.
+Because I have been exposed to Python before, I was already aware that python projects should make use of [virtual environments](https://docs.python.org/3/tutorial/venv.html). I created a folder for my code, initialized [git](https://www.atlassian.com/git/tutorials) in the folder to help me keep track of code revisions and began to write.
 
 I created my virtual environment as a sub-folder. I couldn't possibly say whether it's good practice, but it worked. The virtual environment was in a subfolder called 'venv' so I added it to my `.gitignore` file. You may find [pyenv](https://github.com/pyenv/pyenv) useful.
 
@@ -111,7 +111,7 @@ async def on_message(message):
         await client.close()</pre>
 </div>
 
-CCDC games are run by <a href="https://www.nationalccdc.org/index.php/competition/competitors/rules" target="_blank" rel="noreferrer noopener">several teams</a>. Given the audience of this Discord server and it's purpose, I have to code for 5 separate roles.
+CCDC games are run by [several teams](https://www.nationalccdc.org/index.php/competition/competitors/rules). Given the audience of this Discord server and it's purpose, I have to code for 5 separate roles.
 
   * Gold team - organizers of the competition
   * Black team - infrastructure for the game, including the game machines themselves
@@ -121,7 +121,7 @@ CCDC games are run by <a href="https://www.nationalccdc.org/index.php/competitio
 
 I originally had all of this bundled up in one command. It was _really_ fun to issue one command and watch an entire discord server populate, but like all good things - it got too complicated and debugging turned into a pain. 
 
-This next stanza sets up the non-competition roles, along with what color they should appear as, whether the role members should be listed apart from all other server members ('_hoisted_') , server-wide <a href="https://discordapi.com/permissions.html" target="_blank" rel="noreferrer noopener">permissions</a>, etc. 
+This next stanza sets up the non-competition roles, along with what color they should appear as, whether the role members should be listed apart from all other server members ('_hoisted_') , server-wide [permissions](https://discordapi.com/permissions.html), etc. 
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
   <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;python&quot;,&quot;mime&quot;:&quot;text/x-python&quot;,&quot;theme&quot;:&quot;monokai&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;init.py&quot;,&quot;firstLineNumber&quot;:&quot;24&quot;,&quot;language&quot;:&quot;Python&quot;,&quot;modeName&quot;:&quot;python&quot;}">    if message.content.startswith('!staffroles'):
@@ -276,10 +276,11 @@ client.run(TOKEN)
 
 ## Conclusion
 
-It has been an interesting experience building this bot, and as simple as it is, I'm very proud of it. I look forward to extending or replacing it with a proper PowerShell bot, perhaps <a href="https://github.com/poshbotio/PoshBot" target="_blank" rel="noreferrer noopener">PoshBot</a>. I deeply hate the experience of trying to debug python, especially in the context of a bot like this. 
+It has been an interesting experience building this bot, and as simple as it is, I'm very proud of it. I look forward to extending or replacing it with a proper PowerShell bot, perhaps [PoshBot](https://github.com/poshbotio/PoshBot). I deeply hate the experience of trying to debug python, especially in the context of a bot like this. 
 
 I hope it's been instructive to you. 
 
 I want to thank my friend [George](https://twitter.com/duplico) for both his expertise and patience as I struggled through some of the nastier parts of getting used to Python.
 
 I also want to thank the fine folks at [Pixabay](https://pixabay.com/vectors/eagle-snake-kill-bird-wings-claws-46636/) for this beautiful header image that expresses my feelings about python.
+

@@ -15,7 +15,7 @@ In this post I want to share with you a list of tips and tools that I feel have 
 
 The title suggests this is only for IT professionals. However I can't see why power users can't appreciate what's here too.
 
-You may already have different tools that achieve similar, or better, functionality, so drop a comment below or tweet your tip on Twitter using the hashtag <a rel="noreferrer noopener" href="#EveryDayITPro" target="_blank">#EveryDayITPro</a>.
+You may already have different tools that achieve similar, or better, functionality, so drop a comment below or tweet your tip on Twitter using the hashtag [#EveryDayITPro](#EveryDayITPro).
 
 For each of the below I will link to the resource, offer a brief description on the tool and whether it's free or not. I'll also explain some key features which I believe are most useful.<div class="wp-block-uagb-table-of-contents uagb-toc\_\_align-left uagb-toc\_\_columns-1 uagb-block-0112b80b " data-scroll= "1" data-offset= "30" data-delay= "800" > 
 
@@ -29,21 +29,21 @@ For each of the below I will link to the resource, offer a brief description on 
   <div class="uagb-toc__list-wrap">
     <ol class="uagb-toc__list">
       <li class="uagb-toc__list">
-        <a href="#ditto">Ditto</a><li class="uagb-toc__list">
-          <a href="#powertoys">PowerToys</a><li class="uagb-toc__list">
-            <a href="#everything">Everything</a><li class="uagb-toc__list">
-              <a href="#snagit">SnagIt</a><li class="uagb-toc__list">
-                <a href="#altdrag">AltDrag</a><li class="uagb-toc__list">
-                  <a href="#chocolatey">Chocolatey</a><li class="uagb-toc__list">
-                    <a href="#zoomit">ZoomIt</a><li class="uagb-toc__list">
-                      <a href="#powershell-profile">PowerShell profile</a><li class="uagb-toc__list">
-                        <a href="#freedom">Freedom</a><li class="uagb-toc__list">
-                          <a href="#twitter-inoreader">Twitter + Inoreader</a></ol> </div> </div> </div> <h3>
+        [Ditto](#ditto)<li class="uagb-toc__list">
+          [PowerToys](#powertoys)<li class="uagb-toc__list">
+            [Everything](#everything)<li class="uagb-toc__list">
+              [SnagIt](#snagit)<li class="uagb-toc__list">
+                [AltDrag](#altdrag)<li class="uagb-toc__list">
+                  [Chocolatey](#chocolatey)<li class="uagb-toc__list">
+                    [ZoomIt](#zoomit)<li class="uagb-toc__list">
+                      [PowerShell profile](#powershell-profile)<li class="uagb-toc__list">
+                        [Freedom](#freedom)<li class="uagb-toc__list">
+                          [Twitter + Inoreader](#twitter-inoreader)</ol> </div> </div> </div> <h3>
                             Ditto
                           </h3>
                           
                           <p>
-                            <a href="https://ditto-cp.sourceforge.io/" target="_blank" rel="noreferrer noopener">Ditto</a> is an extension to the Windows Clipboard. You copy something to the Clipboard and Ditto takes what you copied and stores it in a database to retrieve at a later time.
+                            [Ditto](https://ditto-cp.sourceforge.io/) is an extension to the Windows Clipboard. You copy something to the Clipboard and Ditto takes what you copied and stores it in a database to retrieve at a later time.
                           </p>
                           
                           <p>
@@ -51,7 +51,7 @@ For each of the below I will link to the resource, offer a brief description on 
                           </p>
                           
                           <p>
-                            Since Windows 10 1809, a clipboard history is introduced natively in to Windows by pressing <code>WIN</code> + <code>V</code>. It may require you to <a href="https://support.microsoft.com/en-gb/help/4028529/windows-10-clipboard" target="_blank" rel="noreferrer noopener">enable it first in the settings</a>.
+                            Since Windows 10 1809, a clipboard history is introduced natively in to Windows by pressing <code>WIN</code> + <code>V</code>. It may require you to [enable it first in the settings](https://support.microsoft.com/en-gb/help/4028529/windows-10-clipboard).
                           </p>
                           
                           <p>
@@ -85,10 +85,10 @@ For each of the below I will link to the resource, offer a brief description on 
                           
                           <blockquote class="wp-block-quote">
                             <p>
-                              <a href="https://github.com/microsoft/PowerToys" target="_blank" rel="noreferrer noopener">Microsoft PowerToys</a> is a set of utilities for power users to tune and streamline their Windows experience for greater productivity. Inspired by the&nbsp;<a href="https://en.wikipedia.org/wiki/Microsoft_PowerToys">Windows 95 era PowerToys project</a>, this reboot provides power users with ways to squeeze more efficiency out of the Windows 10 shell and customize it for individual workflows. A great overview of the Windows 95 PowerToys can be found&nbsp;<a href="https://socket3.wordpress.com/2016/10/22/using-windows-95-powertoys/">here</a>.
+                              [Microsoft PowerToys](https://github.com/microsoft/PowerToys) is a set of utilities for power users to tune and streamline their Windows experience for greater productivity. Inspired by the&nbsp;[Windows 95 era PowerToys project](https://en.wikipedia.org/wiki/Microsoft_PowerToys), this reboot provides power users with ways to squeeze more efficiency out of the Windows 10 shell and customize it for individual workflows. A great overview of the Windows 95 PowerToys can be found&nbsp;[here](https://socket3.wordpress.com/2016/10/22/using-windows-95-powertoys/).
                             </p>
                             
-                            <cite><a href="https://github.com/microsoft/PowerToys">https://github.com/microsoft/PowerToys</a></cite>
+                            <cite>[https://github.com/microsoft/PowerToys](https://github.com/microsoft/PowerToys)</cite>
                           </blockquote>
                           
                           <p>
@@ -96,7 +96,7 @@ For each of the below I will link to the resource, offer a brief description on 
                           </p>
                           
                           <p>
-                            For me, two features of PowerToys I can no longer live without are <a rel="noreferrer noopener" href="https://github.com/microsoft/PowerToys/wiki/FancyZones-Overview" target="_blank">FancyZones</a> and <a rel="noreferrer noopener" href="https://github.com/microsoft/PowerToys/wiki/PowerToys-Run-Overview" target="_blank">PowerToys Run</a>.
+                            For me, two features of PowerToys I can no longer live without are [FancyZones](https://github.com/microsoft/PowerToys/wiki/FancyZones-Overview) and [PowerToys Run](https://github.com/microsoft/PowerToys/wiki/PowerToys-Run-Overview).
                           </p>
                           
                           <p>
@@ -104,7 +104,7 @@ For each of the below I will link to the resource, offer a brief description on 
                           </p>
                           
                           <p>
-                            The team writing the modern PowerToys are rapidly adding new features so be sure to <a rel="noreferrer noopener" href="https://github.com/microsoft/PowerToys" target="_blank">check out the GitHub page</a> for the latest news.
+                            The team writing the modern PowerToys are rapidly adding new features so be sure to [check out the GitHub page](https://github.com/microsoft/PowerToys) for the latest news.
                           </p>
                           
                           <p>
@@ -140,7 +140,7 @@ For each of the below I will link to the resource, offer a brief description on 
                           </h3>
                           
                           <p>
-                            No exaggeration, <a href="https://www.voidtools.com/" target="_blank" rel="noreferrer noopener">Everything</a> locates files and folders by name <strong>instantly</strong>.
+                            No exaggeration, [Everything](https://www.voidtools.com/) locates files and folders by name <strong>instantly</strong>.
                           </p>
                           
                           <p>
@@ -160,7 +160,7 @@ For each of the below I will link to the resource, offer a brief description on 
                           </p>
                           
                           <p>
-                            A scenario which I'm hugely grateful for of Everything for is searching SharePoint. We host our documentation on our internal SharePoint Online. Instead of using SharePoint's clunky search facility, I <a rel="noreferrer noopener" href="https://support.microsoft.com/en-us/office/sync-sharepoint-files-and-folders-87a96948-4dd7-43e4-aca1-53f3e18bea9b" target="_blank">sync the library to my machine</a> and reap the benefits of using Everything's.
+                            A scenario which I'm hugely grateful for of Everything for is searching SharePoint. We host our documentation on our internal SharePoint Online. Instead of using SharePoint's clunky search facility, I [sync the library to my machine](https://support.microsoft.com/en-us/office/sync-sharepoint-files-and-folders-87a96948-4dd7-43e4-aca1-53f3e18bea9b) and reap the benefits of using Everything's.
                           </p>
                           
                           <h3>
@@ -168,7 +168,7 @@ For each of the below I will link to the resource, offer a brief description on 
                           </h3>
                           
                           <p>
-                            <a rel="noreferrer noopener" href="https://www.techsmith.com/screen-capture.html" target="_blank">SnagIt</a> is effectively Windows' native utility Snipping Tool, except it's also on steroids.
+                            [SnagIt](https://www.techsmith.com/screen-capture.html) is effectively Windows' native utility Snipping Tool, except it's also on steroids.
                           </p>
                           
                           <p>
@@ -200,7 +200,7 @@ For each of the below I will link to the resource, offer a brief description on 
                           </p>
                           
                           <p>
-                            Some real popular <a href="https://alternativeto.net/software/snagit/" target="_blank" rel="noreferrer noopener">alternatives</a>, which are free, are <a href="https://getsharex.com/" target="_blank" rel="noreferrer noopener">ShareX </a>and <a href="https://getgreenshot.org/" target="_blank" rel="noreferrer noopener">Greenshot</a>.
+                            Some real popular [alternatives](https://alternativeto.net/software/snagit/), which are free, are [ShareX ](https://getsharex.com/)and [Greenshot](https://getgreenshot.org/).
                           </p>
                           
                           <h3>
@@ -208,7 +208,7 @@ For each of the below I will link to the resource, offer a brief description on 
                           </h3>
                           
                           <p>
-                            <a href="https://stefansundin.github.io/altdrag/" target="_blank" rel="noreferrer noopener">AltDrag</a> gives you the ability to move and resize windows in a new way.
+                            [AltDrag](https://stefansundin.github.io/altdrag/) gives you the ability to move and resize windows in a new way.
                           </p>
                           
                           <p>
@@ -224,11 +224,11 @@ For each of the below I will link to the resource, offer a brief description on 
                           </p>
                           
                           <p>
-                            If you use a system which has scaling / DPI to be configured anything other than 100%, this won't work. <a rel="noreferrer noopener" href="https://github.com/stefansundin/altdrag/issues/118" target="_blank">Here's an open issue that will better describe what you will experience</a>.
+                            If you use a system which has scaling / DPI to be configured anything other than 100%, this won't work. [Here's an open issue that will better describe what you will experience](https://github.com/stefansundin/altdrag/issues/118).
                           </p>
                           
                           <p>
-                            It seems the original author is unable to commit on the project right now. However, the good news is that the <a rel="noreferrer noopener" href="https://github.com/stefansundin/altdrag/issues/118" target="_blank">PowerToys team at Microsoft are planning to bring this feature to PowerToys</a>!
+                            It seems the original author is unable to commit on the project right now. However, the good news is that the [PowerToys team at Microsoft are planning to bring this feature to PowerToys](https://github.com/stefansundin/altdrag/issues/118)!
                           </p>
                           
                           <h3>
@@ -236,7 +236,7 @@ For each of the below I will link to the resource, offer a brief description on 
                           </h3>
                           
                           <p>
-                            <a href="https://chocolatey.org/" target="_blank" rel="noreferrer noopener">Chocolatey</a> is a sweet, sweet repository of packages which helps you automate installation of software.
+                            [Chocolatey](https://chocolatey.org/) is a sweet, sweet repository of packages which helps you automate installation of software.
                           </p>
                           
                           <p>
@@ -248,7 +248,7 @@ For each of the below I will link to the resource, offer a brief description on 
                           </p>
                           
                           <p>
-                            I keep <a rel="noreferrer noopener" href="https://github.com/codaamok/codaamok/blob/master/codaamok/Public/Install-Choco.ps1" target="_blank">Install-Choco</a> in my profile module and maintain <a rel="noreferrer noopener" href="https://github.com/codaamok/codaamok/blob/master/codaamok/Public/Get-MyChocoPackages.ps1" target="_blank">Get-MyChocoPackages</a> so I can easily pass that to <code>choco install</code> in an elevated PowerShell console. I grab a coffee, come back, wait a little while longer, and all my preferred utilities are installed.
+                            I keep [Install-Choco](https://github.com/codaamok/codaamok/blob/master/codaamok/Public/Install-Choco.ps1) in my profile module and maintain [Get-MyChocoPackages](https://github.com/codaamok/codaamok/blob/master/codaamok/Public/Get-MyChocoPackages.ps1) so I can easily pass that to <code>choco install</code> in an elevated PowerShell console. I grab a coffee, come back, wait a little while longer, and all my preferred utilities are installed.
                           </p>
                           
                           <h3>
@@ -256,7 +256,7 @@ For each of the below I will link to the resource, offer a brief description on 
                           </h3>
                           
                           <p>
-                            <a rel="noreferrer noopener" href="https://docs.microsoft.com/en-us/sysinternals/downloads/zoomit" target="_blank">ZoomIt</a> is part of the <a rel="noreferrer noopener" href="https://docs.microsoft.com/en-us/sysinternals/" target="_blank">Windows Sysinternals suite</a>.
+                            [ZoomIt](https://docs.microsoft.com/en-us/sysinternals/downloads/zoomit) is part of the [Windows Sysinternals suite](https://docs.microsoft.com/en-us/sysinternals/).
                           </p>
                           
                           <p>
@@ -268,7 +268,7 @@ For each of the below I will link to the resource, offer a brief description on 
                               ZoomIt is a screen zoom and annotation tool for technical presentations that include application demonstrations. ZoomIt runs unobtrusively in the tray and activates with customizable hotkeys to zoom in on an area of the screen, move around while zoomed, and draw on the zoomed image. I wrote ZoomIt to fit my specific needs and use it in all my presentations.
                             </p>
                             
-                            <cite><a href="https://docs.microsoft.com/en-us/sysinternals/downloads/zoomit">https://docs.microsoft.com/en-us/sysinternals/downloads/zoomit</a></cite>
+                            <cite>[https://docs.microsoft.com/en-us/sysinternals/downloads/zoomit](https://docs.microsoft.com/en-us/sysinternals/downloads/zoomit)</cite>
                           </blockquote>
                           
                           <p>
@@ -300,11 +300,11 @@ For each of the below I will link to the resource, offer a brief description on 
                               A PowerShell profile is a script that runs when PowerShell starts. You can use the profile as a logon script to customize the environment. You can add commands, aliases, functions, variables, snap-ins, modules, and PowerShell drives. You can also add other session-specific elements to your profile so they are available in every session without having to import or re-create them.
                             </p>
                             
-                            <cite>about_Profiles - <a href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7">Microsoft docs</a></cite>
+                            <cite>about_Profiles - [Microsoft docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7)</cite>
                           </blockquote>
                           
                           <p>
-                            If you work across multiple machines, or want to keep it backed up, you could store it a Gist. This is what Steve Lee, Principal Software Engineer Manager at Microsoft, <a rel="noreferrer noopener" href="https://gist.github.com/SteveL-MSFT/a208d2bd924691bae7ec7904cab0bd8e" target="_blank">does with his PowerShell profile</a>.
+                            If you work across multiple machines, or want to keep it backed up, you could store it a Gist. This is what Steve Lee, Principal Software Engineer Manager at Microsoft, [does with his PowerShell profile](https://gist.github.com/SteveL-MSFT/a208d2bd924691bae7ec7904cab0bd8e).
                           </p>
                           
                           <p>
@@ -316,7 +316,7 @@ For each of the below I will link to the resource, offer a brief description on 
                           </p>
                           
                           <p>
-                            However It eventually got a bit out of control. It grew to roughly 2.5k lines long with dozens of functions. I recently shifted <a href="https://github.com/codaamok/codaamok" target="_blank" rel="noreferrer noopener">all my functions to a module</a> and <a href="https://github.com/codaamok/PoSH/blob/master/profile.ps1" target="_blank" rel="noreferrer noopener">now my actual profile</a> contains very little. It's mostly just a custom prompt and a couple of functions dedicated to update/import my "profile module" which I keep in the <a href="https://powershellgallery.com" target="_blank" rel="noreferrer noopener">PowerShell Gallery</a>.
+                            However It eventually got a bit out of control. It grew to roughly 2.5k lines long with dozens of functions. I recently shifted [all my functions to a module](https://github.com/codaamok/codaamok) and [now my actual profile](https://github.com/codaamok/PoSH/blob/master/profile.ps1) contains very little. It's mostly just a custom prompt and a couple of functions dedicated to update/import my "profile module" which I keep in the [PowerShell Gallery](https://powershellgallery.com).
                           </p>
                           
                           <h3>
@@ -328,7 +328,7 @@ For each of the below I will link to the resource, offer a brief description on 
                           </p>
                           
                           <p>
-                            <a rel="noreferrer noopener" href="https://freedom.to" target="_blank">Freeodom.to</a> is an app for all platforms which enables you to create scheduled or ad-hoc sessions for blocking apps and sites across all your devices.
+                            [Freeodom.to](https://freedom.to) is an app for all platforms which enables you to create scheduled or ad-hoc sessions for blocking apps and sites across all your devices.
                           </p>
                           
                           <p>
@@ -376,7 +376,7 @@ For each of the below I will link to the resource, offer a brief description on 
                           </p>
                           
                           <p>
-                            If you're interested in more learning about the impact of what the Internet and social media is having on us, I strongly recommend you follow <a href="https://twitter.com/joshduffney?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank" rel="noreferrer noopener">Josh Duffney</a>, <a href="https://duffney.io/" target="_blank" rel="noreferrer noopener">check out his blog</a>, and <a href="https://twitter.com/codaamok/status/1298133570905673728" target="_blank" rel="noreferrer noopener">look at this thread</a> which lists more resources for further reading.
+                            If you're interested in more learning about the impact of what the Internet and social media is having on us, I strongly recommend you follow [Josh Duffney](https://twitter.com/joshduffney?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor), [check out his blog](https://duffney.io/), and [look at this thread](https://twitter.com/codaamok/status/1298133570905673728) which lists more resources for further reading.
                           </p>
                           
                           <h3>
@@ -388,7 +388,7 @@ For each of the below I will link to the resource, offer a brief description on 
                           </p>
                           
                           <p>
-                            <a href="https://www.inoreader.com" target="_blank" rel="noreferrer noopener">Inoreader</a> is just an RSS feed reader. Yes, that's right, you're still here in 2020 and I just said I use an RSS feed reader.
+                            [Inoreader](https://www.inoreader.com) is just an RSS feed reader. Yes, that's right, you're still here in 2020 and I just said I use an RSS feed reader.
                           </p>
                           
                           <p>

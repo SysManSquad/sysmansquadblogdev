@@ -65,11 +65,11 @@ Then we have two separate deployments for Visio and Project. Despite trying to a
 
 Using the built-in Office 365 configuration builder, we generated config files for each deployment. Apart from Visio and Project, the config was the same with varying <ExcludeApp ID="" /> sections.<figure class="wp-block-image size-large">
 
-<img loading="lazy" width="555" height="301" src="https://www.sysmansquad.com/wp-content/uploads/2020/02/image-11.png" alt="" class="wp-image-794" srcset="https:/wp-content/uploads/2020/02/image-11.png 555w, https:/wp-content/uploads/2020/02/image-11-300x163.png 300w, https:/wp-content/uploads/2020/02/image-11-100x54.png 100w" sizes="(max-width: 555px) 100vw, 555px" /> </figure> 
+![](https://www.sysmansquad.com/wp-content/uploads/2020/02/image-11.png) </figure> 
 
 Visio and Project XML look like this:<figure class="wp-block-image size-large">
 
-<img loading="lazy" width="782" height="444" src="https://www.sysmansquad.com/wp-content/uploads/2020/02/image-9.png" alt="" class="wp-image-792" srcset="https:/wp-content/uploads/2020/02/image-9.png 782w, https:/wp-content/uploads/2020/02/image-9-300x170.png 300w, https:/wp-content/uploads/2020/02/image-9-768x436.png 768w, https:/wp-content/uploads/2020/02/image-9-100x57.png 100w" sizes="(max-width: 782px) 100vw, 782px" /> </figure> 
+![](https://www.sysmansquad.com/wp-content/uploads/2020/02/image-9.png) </figure> 
 
 Initially, the detection method used for Standard Office deployment was only looking in the O365 Configuration Registry `HKLM:\SOFTWARE\Microsoft\Office\ClickToRun\Configuration` for "`VersionToReport`" being Greater Than or Equal to 16.x.x.x.
 
@@ -87,7 +87,7 @@ So, in order to make each deployment unique, the detection methods had to be adj
 And        
 LocalMachine\SOFTWARE\Microsoft\Office\ClickToRun\Configuration\O365ProPlusRetail.ExcludedApps Equals access,groove,onenote.  </code></pre><figure class="wp-block-image size-large">
     
-    <a href="https://www.sysmansquad.com/wp-content/uploads/2020/02/image.png"><img loading="lazy" width="515" height="539" src="https://www.sysmansquad.com/wp-content/uploads/2020/02/image.png" alt="" class="wp-image-783" srcset="https:/wp-content/uploads/2020/02/image.png 515w, https:/wp-content/uploads/2020/02/image-287x300.png 287w, https:/wp-content/uploads/2020/02/image-100x105.png 100w" sizes="(max-width: 515px) 100vw, 515px" /></a></figure>
+    [![](https://www.sysmansquad.com/wp-content/uploads/2020/02/image.png)](https://www.sysmansquad.com/wp-content/uploads/2020/02/image.png)</figure>
   </div>
 </div>
 
@@ -101,7 +101,7 @@ LocalMachine\SOFTWARE\Microsoft\Office\ClickToRun\Configuration\O365ProPlusRetai
 And        
 LocalMachine\SOFTWARE\Microsoft\Office\ClickToRun\Configuration\O365ProPlusRetail.ExcludedApps Equals access,groove,lync,onedrive,onenote,outlook,publisher,teams.  </code></pre><figure class="wp-block-image size-large">
     
-    <a href="https://www.sysmansquad.com/wp-content/uploads/2020/02/image-1.png"><img loading="lazy" width="512" height="538" src="https://www.sysmansquad.com/wp-content/uploads/2020/02/image-1.png" alt="" class="wp-image-784" srcset="https:/wp-content/uploads/2020/02/image-1.png 512w, https:/wp-content/uploads/2020/02/image-1-286x300.png 286w, https:/wp-content/uploads/2020/02/image-1-100x105.png 100w" sizes="(max-width: 512px) 100vw, 512px" /></a></figure>
+    [![](https://www.sysmansquad.com/wp-content/uploads/2020/02/image-1.png)](https://www.sysmansquad.com/wp-content/uploads/2020/02/image-1.png)</figure>
   </div>
 </div>
 
@@ -115,7 +115,7 @@ LocalMachine\SOFTWARE\Microsoft\Office\ClickToRun\Configuration\O365ProPlusRetai
 And        
 LocalMachine\SOFTWARE\Microsoft\Office\ClickToRun\Configuration\O365ProPlusRetail.ExcludedApps Equals groove,onenote.  </code></pre><figure class="wp-block-image size-large">
     
-    <a href="https://www.sysmansquad.com/wp-content/uploads/2020/02/image-2.png"><img loading="lazy" width="514" height="537" src="https://www.sysmansquad.com/wp-content/uploads/2020/02/image-2.png" alt="" class="wp-image-785" srcset="https:/wp-content/uploads/2020/02/image-2.png 514w, https:/wp-content/uploads/2020/02/image-2-287x300.png 287w, https:/wp-content/uploads/2020/02/image-2-100x104.png 100w" sizes="(max-width: 514px) 100vw, 514px" /></a></figure>
+    [![](https://www.sysmansquad.com/wp-content/uploads/2020/02/image-2.png)](https://www.sysmansquad.com/wp-content/uploads/2020/02/image-2.png)</figure>
   </div>
 </div>
 
@@ -133,7 +133,7 @@ This time we have to look in the registry value: `ProductReleaseIds` if it **con
 And
 LocalMachine\SOFTWARE\Microsoft\Office\ClickToRun\Configuration\ProductReleaseIds Contains ProjectProRetail.</code></pre><figure class="wp-block-image size-large">
     
-    <a href="https://www.sysmansquad.com/wp-content/uploads/2020/02/image-4.png"><img loading="lazy" width="513" height="537" src="https://www.sysmansquad.com/wp-content/uploads/2020/02/image-4.png" alt="" class="wp-image-787" srcset="https:/wp-content/uploads/2020/02/image-4.png 513w, https:/wp-content/uploads/2020/02/image-4-287x300.png 287w, https:/wp-content/uploads/2020/02/image-4-100x105.png 100w" sizes="(max-width: 513px) 100vw, 513px" /></a></figure>
+    [![](https://www.sysmansquad.com/wp-content/uploads/2020/02/image-4.png)](https://www.sysmansquad.com/wp-content/uploads/2020/02/image-4.png)</figure>
   </div>
 </div>
 
@@ -147,7 +147,7 @@ LocalMachine\SOFTWARE\Microsoft\Office\ClickToRun\Configuration\ProductReleaseId
 And
 LocalMachine\SOFTWARE\Microsoft\Office\ClickToRun\Configuration\ProductReleaseIds Contains ProjectProRetail.</code></pre><figure class="wp-block-image size-large">
     
-    <a href="https://www.sysmansquad.com/wp-content/uploads/2020/02/image-5.png"><img loading="lazy" width="512" height="537" src="https://www.sysmansquad.com/wp-content/uploads/2020/02/image-5.png" alt="" class="wp-image-788" srcset="https:/wp-content/uploads/2020/02/image-5.png 512w, https:/wp-content/uploads/2020/02/image-5-286x300.png 286w, https:/wp-content/uploads/2020/02/image-5-100x105.png 100w" sizes="(max-width: 512px) 100vw, 512px" /></a></figure>
+    [![](https://www.sysmansquad.com/wp-content/uploads/2020/02/image-5.png)](https://www.sysmansquad.com/wp-content/uploads/2020/02/image-5.png)</figure>
   </div>
 </div>
 

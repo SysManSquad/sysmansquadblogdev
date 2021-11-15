@@ -50,7 +50,7 @@ Notice the `<strong>-ArgumentList "--processStart Teams.exe"</strong>` on the Te
 
 ## Creating the Executable
 
-That takes care of the script portion of this blog post. Next, we need to encapsulate this PowerShell script in an EXE. For this, I used a module in PSGallery called <a href="https://www.powershellgallery.com/packages/ps2exe/1.0.4" target="_blank" rel="noreferrer noopener">PS2EXE</a>. This module is so simple to use, it's almost criminal.
+That takes care of the script portion of this blog post. Next, we need to encapsulate this PowerShell script in an EXE. For this, I used a module in PSGallery called [PS2EXE](https://www.powershellgallery.com/packages/ps2exe/1.0.4). This module is so simple to use, it's almost criminal.
 
 It is literally a simple as:
 
@@ -76,12 +76,12 @@ Whichever way you decide to package up your EXE and PS1 for install, just make s
 
 If you implement this as I have described, when a user runs this, they will be presented with a PowerShell window that says:<figure class="wp-block-image size-large">
 
-<img loading="lazy" width="495" height="151" src="https://sysmansquad.com/wp-content/uploads/2021/11/ClearTeamsCache.png" alt="" class="wp-image-3049" srcset="https:/wp-content/uploads/2021/11/ClearTeamsCache.png 495w, https:/wp-content/uploads/2021/11/ClearTeamsCache-300x92.png 300w, https:/wp-content/uploads/2021/11/ClearTeamsCache-100x31.png 100w" sizes="(max-width: 495px) 100vw, 495px" /> <figcaption>Clear Teams Cache results window</figcaption></figure> 
+![](https://sysmansquad.com/wp-content/uploads/2021/11/ClearTeamsCache.png) <figcaption>Clear Teams Cache results window</figcaption></figure> 
 
 And here is the Icon I made for my application if you want it. You can also make your own fairly easily if you wish.
 
 <div class="wp-block-file">
-  <a href="https://sysmansquad.com/wp-content/uploads/2021/11/ClearTeamsCacheIcon.ico">ClearTeamsCacheIcon</a><a href="https://sysmansquad.com/wp-content/uploads/2021/11/ClearTeamsCacheIcon.ico" class="wp-block-file__button" download>Download</a>
+  [ClearTeamsCacheIcon](https://sysmansquad.com/wp-content/uploads/2021/11/ClearTeamsCacheIcon.ico)[Download](https://sysmansquad.com/wp-content/uploads/2021/11/ClearTeamsCacheIcon.ico)
 </div>
 
 That should be it. You should now have a fully functioning "program" to clear the Microsoft Teams Cache on a computer.

@@ -197,13 +197,13 @@ After joining, you will be able to use your `ad\administrator` credentials to si
 Now, log into your windows 10 workstation using the `ad\administrator` credentials. You'll be able to use the dns console to connect over to the DNS servers and look through your zones. Next, open the dhcp console and let's take a quick look at the state of the DHCP service.
 
 <div class="wp-block-image is-style-default">
-  <figure class="aligncenter size-large"><img loading="lazy" width="354" height="211" src="https://sysmansquad.com/wp-content/uploads/2020/05/image-6.png" alt="The DHCP console showing the IPv4 and IPv6 in a disabled state" class="wp-image-1111" srcset="https:/wp-content/uploads/2020/05/image-6.png 354w, https:/wp-content/uploads/2020/05/image-6-300x179.png 300w, https:/wp-content/uploads/2020/05/image-6-100x60.png 100w" sizes="(max-width: 354px) 100vw, 354px" /><figcaption>Oh dear. That doesn't look happy. </figcaption></figure>
+  <figure class="aligncenter size-large">![The DHCP console showing the IPv4 and IPv6 in a disabled state](https://sysmansquad.com/wp-content/uploads/2020/05/image-6.png)<figcaption>Oh dear. That doesn't look happy. </figcaption></figure>
 </div>
 
 Windows DHCP servers that are NOT in a domain operate normally. Windows DHCP servers that are or have become joined to a domain do not operate until they have been **authorized**. Right click on the server name and authorize the server to allow it to continue to provide DHCP service.
 
 <div class="wp-block-image is-style-default">
-  <figure class="aligncenter size-large"><img loading="lazy" width="339" height="413" src="https://sysmansquad.com/wp-content/uploads/2020/05/image-7.png" alt="" class="wp-image-1112" srcset="https:/wp-content/uploads/2020/05/image-7.png 339w, https:/wp-content/uploads/2020/05/image-7-246x300.png 246w, https:/wp-content/uploads/2020/05/image-7-100x122.png 100w" sizes="(max-width: 339px) 100vw, 339px" /><figcaption>Authorizing a DHCP server</figcaption></figure>
+  <figure class="aligncenter size-large">![](https://sysmansquad.com/wp-content/uploads/2020/05/image-7.png)<figcaption>Authorizing a DHCP server</figcaption></figure>
 </div>
 
 After you have authorized the DHCP server to continue, refreshing will show that the DHCP server is now returned to service. If you expand the IPv4 and IPv6 nodes, you'll see the scopes we created earlier through powershell. given that everything in your lab so far should have a static address at the moment, you aren't likely to see any leases. 
@@ -219,3 +219,4 @@ There are a number of security experts around that can give you a better run dow
 Now you have a workstation with all of the admin tools installed, dns and dhcp services, and a central identity server. You can look around under the Windows Administrative Tools folder on the start menu to see what else is possible. 
 
 Thanks for reading, and I hope you find it useful.
+

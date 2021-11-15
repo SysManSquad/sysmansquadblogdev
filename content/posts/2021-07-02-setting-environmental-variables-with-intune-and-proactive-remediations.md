@@ -27,11 +27,11 @@ Setting a user environmental variable using powershell is an easy task to accomp
 
 This works just fine, but won't take effect until the user either reboots or signs into the device again. Which is obviously not ideal.
 
-I spent a little time looking into this and i found out that when you change the environmental variable manually via the GUI, a <a href="https://docs.microsoft.com/en-us/windows/win32/winmsg/wm-settingchange" target="_blank" rel="noreferrer noopener">WM_SETTINGCHANGE message</a> is broadcast to the system and that refreshes them, but how you do that with powershell?
+I spent a little time looking into this and i found out that when you change the environmental variable manually via the GUI, a [WM_SETTINGCHANGE message](https://docs.microsoft.com/en-us/windows/win32/winmsg/wm-settingchange) is broadcast to the system and that refreshes them, but how you do that with powershell?
 
 ## The Solution
 
-As it turned out, my fellow sysmansquad member <a href="https://sysmansquad.com/author/gduk/" target="_blank" rel="noreferrer noopener">Grant Dickins</a> had a solution to the problem.
+As it turned out, my fellow sysmansquad member [Grant Dickins](https://sysmansquad.com/author/gduk/) had a solution to the problem.
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
   <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;Example 2.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">[System.Environment]::SetEnvironmentVariable('TEMP','c:\temp\','User')</pre>
@@ -43,11 +43,11 @@ Which both sets the variable and broadcasts the change to the rest of the system
 
 Intune has a very nice feature called Proactive Remediation that is part of endpoint analytics. and its the perfect tool for the job!
 
-If you are new to using Proactive Remediations, check out Jake Shackelford's <a href="https://sysmansquad.com/2020/07/07/intune-autopilot-proactive-remediation/" target="_blank" rel="noreferrer noopener">blog post,</a> it will get you up to speed in no time.
+If you are new to using Proactive Remediations, check out Jake Shackelford's [blog post,](https://sysmansquad.com/2020/07/07/intune-autopilot-proactive-remediation/) it will get you up to speed in no time.
 
 When you create the Proactive remediation, you need to configure it to run as the logged-on user.<figure class="wp-block-image size-large">
 
-<img loading="lazy" width="416" height="145" src="https://sysmansquad.com/wp-content/uploads/2021/04/vmconnect_68MRJGl48P.png" alt="" class="wp-image-2538" srcset="https:/wp-content/uploads/2021/04/vmconnect_68MRJGl48P.png 416w, https:/wp-content/uploads/2021/04/vmconnect_68MRJGl48P-300x105.png 300w, https:/wp-content/uploads/2021/04/vmconnect_68MRJGl48P-100x35.png 100w" sizes="(max-width: 416px) 100vw, 416px" /> </figure> 
+![](https://sysmansquad.com/wp-content/uploads/2021/04/vmconnect_68MRJGl48P.png) </figure> 
 
 ## The Script
 

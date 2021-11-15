@@ -12,9 +12,9 @@ categories:
 
 As of Windows 11, we noticed that we were getting prompted to continue connecting to a network that we'd never had a problem with before. It's already defined in group policy, so this new behavior is puzzling and annoying. The certificate in question is for the NPS/Radius server our network uses to validate credentials for the wifi. <figure class="wp-block-image size-large">
 
-<img loading="lazy" width="368" height="286" src="https://sysmansquad.com/wp-content/uploads/2021/10/image.png" alt="" class="wp-image-3019" srcset="https:/wp-content/uploads/2021/10/image.png 368w, https:/wp-content/uploads/2021/10/image-300x233.png 300w, https:/wp-content/uploads/2021/10/image-100x78.png 100w" sizes="(max-width: 368px) 100vw, 368px" /> </figure> 
+![](https://sysmansquad.com/wp-content/uploads/2021/10/image.png) </figure> 
 
-I really had no idea how to even begin googling for this problem, but while talking to some of my fellow nerds on the <a href="http://winadmins.io/" target="_blank" rel="noreferrer noopener">Winadmins</a> Discord server, tossing around some ideas on what could be causing this, looking to see whether there was a problem with the certificate, etc. While I was poking around and testing these suggestions I stumbled across the fix.
+I really had no idea how to even begin googling for this problem, but while talking to some of my fellow nerds on the [Winadmins](http://winadmins.io/) Discord server, tossing around some ideas on what could be causing this, looking to see whether there was a problem with the certificate, etc. While I was poking around and testing these suggestions I stumbled across the fix.
 
 In the group policy editor, find the defined wifi policies under Computer -> policies > windows settings > Wireless Network (802.11) Policies. Open the properties for the configuration in question. 
 

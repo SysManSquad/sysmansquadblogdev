@@ -111,7 +111,7 @@ Now that our two scripts are ready lets upload them! Navigate to the resource gr
 
   1. Select the storage account
   2. Select **Containers**  
-     ****<img loading="lazy" width="321" height="189" class="wp-image-1140" style="width: 300px;" src="https://sysmansquad.com/wp-content/uploads/2020/05/msedge_uFT7VQv2mm.png" alt="" srcset="https:/wp-content/uploads/2020/05/msedge_uFT7VQv2mm.png 321w, https:/wp-content/uploads/2020/05/msedge_uFT7VQv2mm-300x177.png 300w, https:/wp-content/uploads/2020/05/msedge_uFT7VQv2mm-100x59.png 100w" sizes="(max-width: 321px) 100vw, 321px" />
+     ****![](https://sysmansquad.com/wp-content/uploads/2020/05/msedge_uFT7VQv2mm.png)
   3. Select **+ Container**
   4. Give your Container a name
   5. Leave Public access as Private
@@ -131,9 +131,9 @@ Now that our two scripts are ready lets upload them! Navigate to the resource gr
 
   1. Login to <https://portal.azure.com/>
   2. Select a desired resource group or create a new one (Note nothing will actually get created in the group)
-  3. Select **Add**<img loading="lazy" width="213" height="52" class="wp-image-1132" style="width: 150px;" src="https://sysmansquad.com/wp-content/uploads/2020/05/msedge_MCoWS09HuE.png" alt="" srcset="https:/wp-content/uploads/2020/05/msedge_MCoWS09HuE.png 213w, https:/wp-content/uploads/2020/05/msedge_MCoWS09HuE-100x24.png 100w" sizes="(max-width: 213px) 100vw, 213px" /> 
-  4. Type in "**Windows 10**" and select **Microsoft Windows 10 + Office 365 ProPlus**<img loading="lazy" width="571" height="262" class="wp-image-1134" style="width: 500px;" src="https://sysmansquad.com/wp-content/uploads/2020/05/msedge_sl8U6dkdIm.png" alt="" srcset="https:/wp-content/uploads/2020/05/msedge_sl8U6dkdIm.png 571w, https:/wp-content/uploads/2020/05/msedge_sl8U6dkdIm-300x138.png 300w, https:/wp-content/uploads/2020/05/msedge_sl8U6dkdIm-100x46.png 100w" sizes="(max-width: 571px) 100vw, 571px" />
-  5. Select **Create**<img loading="lazy" width="778" height="205" class="wp-image-1135" style="width: 800px;" src="https://sysmansquad.com/wp-content/uploads/2020/05/msedge_CxaaJwZiAP.png" alt="" srcset="https:/wp-content/uploads/2020/05/msedge_CxaaJwZiAP.png 778w, https:/wp-content/uploads/2020/05/msedge_CxaaJwZiAP-300x79.png 300w, https:/wp-content/uploads/2020/05/msedge_CxaaJwZiAP-768x202.png 768w, https:/wp-content/uploads/2020/05/msedge_CxaaJwZiAP-100x26.png 100w" sizes="(max-width: 778px) 100vw, 778px" /> 
+  3. Select **Add**![](https://sysmansquad.com/wp-content/uploads/2020/05/msedge_MCoWS09HuE.png) 
+  4. Type in "**Windows 10**" and select **Microsoft Windows 10 + Office 365 ProPlus**![](https://sysmansquad.com/wp-content/uploads/2020/05/msedge_sl8U6dkdIm.png)
+  5. Select **Create**![](https://sysmansquad.com/wp-content/uploads/2020/05/msedge_CxaaJwZiAP.png) 
   6. Add a **Virtual Machine Name**
   7. Change **size** to desired VM (I recommend **Standard B2ms**)
   8. Add **Username, Password, Confirm Password**
@@ -145,7 +145,7 @@ Now that our two scripts are ready lets upload them! Navigate to the resource gr
  14. Select **Next : Management >** 
  15. Change Boot Diagnostics to **Off**
  16. Select **Review + Create**
- 17. Select **Download a template for automation**<img loading="lazy" width="690" height="252" class="wp-image-1137" style="width: 800px;" src="https://sysmansquad.com/wp-content/uploads/2020/05/msedge_TyKXYqsKI6.png" alt="" srcset="https:/wp-content/uploads/2020/05/msedge_TyKXYqsKI6.png 690w, https:/wp-content/uploads/2020/05/msedge_TyKXYqsKI6-300x110.png 300w, https:/wp-content/uploads/2020/05/msedge_TyKXYqsKI6-100x37.png 100w" sizes="(max-width: 690px) 100vw, 690px" /> 
+ 17. Select **Download a template for automation**![](https://sysmansquad.com/wp-content/uploads/2020/05/msedge_TyKXYqsKI6.png) 
  18. Select **Download** in the top left
 
 You should now have a template.zip with two files named parameters.json and tempalte.json you will want to extract these to a folder and open them both with a text editor. I recommend Visual Studio Code.
@@ -199,7 +199,7 @@ So what exactly does adding those URLs do? Well they download the files from the
 
 ### Lets recap
 
-I want you to take a deep breathe as you've done a lot so far.<img loading="lazy" width="533" height="300" class="wp-image-648" style="width: 500px;" src="https://sysmansquad.com/wp-content/uploads/2020/01/giphy.gif" alt="" />
+I want you to take a deep breathe as you've done a lot so far.![](https://sysmansquad.com/wp-content/uploads/2020/01/giphy.gif)
 
 You created a few resource groups, a key vault, storage account, an ARM template file, and two powershell scripts and that's awesome!
 

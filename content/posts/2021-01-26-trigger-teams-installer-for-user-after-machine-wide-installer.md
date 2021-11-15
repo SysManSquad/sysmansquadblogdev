@@ -26,17 +26,17 @@ categories:
 
 Have you or a loved one ever deployed Microsoft Teams in an enterprise environment? Did the users complain? Did project management complain? Management? You? 
 
-I'm sure **someone** was not happy about the overall user experience. In particular when the <a href="https://docs.microsoft.com/en-us/microsoftteams/msi-deployment" target="_blank" rel="noreferrer noopener nofollow">Teams Machine Wide installer</a> is finished, and detected by your application management tool of choice **it does... nothing**. The user is left with a message claiming Teams is '**Installed**' when clearly it is not. 
+I'm sure **someone** was not happy about the overall user experience. In particular when the [Teams Machine Wide installer](https://docs.microsoft.com/en-us/microsoftteams/msi-deployment) is finished, and detected by your application management tool of choice **it does... nothing**. The user is left with a message claiming Teams is '**Installed**' when clearly it is not. 
 
 To solve this we will dig in to...
 
 ### What's Going On Here? {#Whats-Up}
 
-The Teams Machine Wide installer is not what the user will 'run' on a day-to-day basis. Instead, it stages the binaries in the 'Program Files (x86)' directory, depending on OS Architecture, where each user will call the installer at a later time. By default, every user will have Teams installed in their own user profile the next time they log in once the machine-wide installer is in place. This is pretty well noted by various people on the internet and Microsoft makes a note of it in their docs <a href="https://docs.microsoft.com/en-us/microsoftteams/msi-deployment#pc-installation" target="_blank" rel="noreferrer noopener nofollow">here</a>. For some reason, Microsoft states it a bit strangely, 'Whenever a user signs into a new Windows User Profile...' But really it does not have to be a new user profile. Existing user profiles will receive Teams on their next login as well.
+The Teams Machine Wide installer is not what the user will 'run' on a day-to-day basis. Instead, it stages the binaries in the 'Program Files (x86)' directory, depending on OS Architecture, where each user will call the installer at a later time. By default, every user will have Teams installed in their own user profile the next time they log in once the machine-wide installer is in place. This is pretty well noted by various people on the internet and Microsoft makes a note of it in their docs [here](https://docs.microsoft.com/en-us/microsoftteams/msi-deployment#pc-installation). For some reason, Microsoft states it a bit strangely, 'Whenever a user signs into a new Windows User Profile...' But really it does not have to be a new user profile. Existing user profiles will receive Teams on their next login as well.
 
-Microsoft is leveraging a <a href="https://docs.microsoft.com/en-us/windows/win32/setupapi/run-and-runonce-registry-keys" target="_blank" rel="noreferrer noopener nofollow">Run Key</a> in order to execute a command line every time a user logs in. This key can be seen below.<figure class="wp-block-image size-full">
+Microsoft is leveraging a [Run Key](https://docs.microsoft.com/en-us/windows/win32/setupapi/run-and-runonce-registry-keys) in order to execute a command line every time a user logs in. This key can be seen below.<figure class="wp-block-image size-full">
 
-<img loading="lazy" width="891" height="286" src="https://sysmansquad.com/wp-content/uploads/2021/01/TeamsRunOnce.png" alt="TeamsMachineWideInstaller registry key under HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Run" class="wp-image-2210" srcset="https:/wp-content/uploads/2021/01/TeamsRunOnce.png 891w, https:/wp-content/uploads/2021/01/TeamsRunOnce-300x96.png 300w, https:/wp-content/uploads/2021/01/TeamsRunOnce-768x247.png 768w, https:/wp-content/uploads/2021/01/TeamsRunOnce-100x32.png 100w, https:/wp-content/uploads/2021/01/TeamsRunOnce-855x274.png 855w" sizes="(max-width: 891px) 100vw, 891px" /> <figcaption>%ProgramFiles%\Teams Installer\Teams.exe -checkInstall -source=default</figcaption></figure> 
+![TeamsMachineWideInstaller registry key under HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Run](https://sysmansquad.com/wp-content/uploads/2021/01/TeamsRunOnce.png) <figcaption>%ProgramFiles%\Teams Installer\Teams.exe -checkInstall -source=default</figcaption></figure> 
 
 The command which is executed is '**%ProgramFiles%\Teams Installer\Teams.exe -checkInstall -source=default**'
 
@@ -56,24 +56,24 @@ What the user expects is to click '**Install**' in the software distribution pla
 
 The Teams Machine Wide installer will finish, and the detection of the software will show '**Installed**' based on the MSI having been found. Unfortunately this is _not_ the software which the user cares about. <figure class="wp-block-image size-full">
 
-<img loading="lazy" width="1761" height="641" src="https://sysmansquad.com/wp-content/uploads/2021/01/Teams-NotFound.png" alt="" class="wp-image-2208" srcset="https:/wp-content/uploads/2021/01/Teams-NotFound.png 1761w, https:/wp-content/uploads/2021/01/Teams-NotFound-300x109.png 300w, https:/wp-content/uploads/2021/01/Teams-NotFound-1024x373.png 1024w, https:/wp-content/uploads/2021/01/Teams-NotFound-768x280.png 768w, https:/wp-content/uploads/2021/01/Teams-NotFound-1536x559.png 1536w, https:/wp-content/uploads/2021/01/Teams-NotFound-100x36.png 100w, https:/wp-content/uploads/2021/01/Teams-NotFound-855x311.png 855w, https:/wp-content/uploads/2021/01/Teams-NotFound-1234x449.png 1234w" sizes="(max-width: 1761px) 100vw, 1761px" /> </figure> 
+![](https://sysmansquad.com/wp-content/uploads/2021/01/Teams-NotFound.png) </figure> 
 
 ##### The New and Improved Experience!
 
 ... can be seen below in an excessively long GIF!<figure class="wp-block-image size-large">
 
-<img loading="lazy" width="1010" height="746" src="https://sysmansquad.com/wp-content/uploads/2021/01/0TCMvCmzxY.gif" alt="" class="wp-image-2218" /> </figure> 
+![](https://sysmansquad.com/wp-content/uploads/2021/01/0TCMvCmzxY.gif) </figure> 
 
-This result is achieved by using a **Windows Scheduled Task**. The PowerShell script that generates this task is found below at the [end of the article](#The-Script), and also on <a href="https://github.com/CodyMathis123/CM-Ramblings/blob/master/New-PostTeamsMachineWideInstallScheduledTask.ps1" target="_blank" rel="noreferrer noopener"><strong>GitHub</strong></a>.
+This result is achieved by using a **Windows Scheduled Task**. The PowerShell script that generates this task is found below at the [end of the article](#The-Script), and also on [<strong>GitHub</strong>](https://github.com/CodyMathis123/CM-Ramblings/blob/master/New-PostTeamsMachineWideInstallScheduledTask.ps1).
 
 A scheduled task can be found in Task Scheduler after the script runs as shown below.<figure class="wp-block-image size-full">
 
-<img loading="lazy" width="1010" height="746" src="https://sysmansquad.com/wp-content/uploads/2021/01/Teams-TaskRunning-1.png" alt="" class="wp-image-2230" srcset="https:/wp-content/uploads/2021/01/Teams-TaskRunning-1.png 1010w, https:/wp-content/uploads/2021/01/Teams-TaskRunning-1-300x222.png 300w, https:/wp-content/uploads/2021/01/Teams-TaskRunning-1-768x567.png 768w, https:/wp-content/uploads/2021/01/Teams-TaskRunning-1-100x74.png 100w, https:/wp-content/uploads/2021/01/Teams-TaskRunning-1-855x632.png 855w" sizes="(max-width: 1010px) 100vw, 1010px" /> </figure> 
+![](https://sysmansquad.com/wp-content/uploads/2021/01/Teams-TaskRunning-1.png) </figure> 
 
 At a high level the improved experience shown is achieved via the following workflow:
 
   * Microsoft Teams Machine Wide Installer is executed
-  * Provided <a href="#The-Script" rel="nofollow">script</a> is executed immediately after the Teams installer which creates the **scheduled task** which is set to execute as '**Users**'
+  * Provided [script](#The-Script) is executed immediately after the Teams installer which creates the **scheduled task** which is set to execute as '**Users**'
       * User is currently logged on:
           * The scheduled task will execute as the logged-on user
           * Teams.exe installer will be launched according to the parameters in the Run key discussed
@@ -132,4 +132,5 @@ if (!(Get-ScheduledTask -TaskName 'Teams User Install - Post Machine Wide Instal
 }</pre>
 </div>
 
-<a href="https://twitter.com/CodyMathis123" target="_blank" rel="noreferrer noopener">@CodyMathis123</a>
+[@CodyMathis123](https://twitter.com/CodyMathis123)
+

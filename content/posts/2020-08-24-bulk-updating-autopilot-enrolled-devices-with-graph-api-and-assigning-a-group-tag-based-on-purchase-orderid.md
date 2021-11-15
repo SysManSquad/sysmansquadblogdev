@@ -20,7 +20,7 @@ For any new machines ordered from a vendor such as Dell that get enrolled into A
 Instead assigning a Group Tag would be much more beneficial. I won't have to change the dynamic device query and won't run the risk of messing the group up. 
 
 Watch a demo of this script on Intune.Training.  
-<a href="https://youtu.be/VCR-J5pvQbo" target="_blank" rel="noreferrer noopener">https://youtu.be/VCR-J5pvQbo</a>
+[https://youtu.be/VCR-J5pvQbo](https://youtu.be/VCR-J5pvQbo)
 
 ### Requirements
 
@@ -31,7 +31,7 @@ Watch a demo of this script on Intune.Training.
 
 ### Creating a Dynamic Device Group
 
-  1. Navigate to your <a href="https://devicemanagement.microsoft.com/" target="_blank" rel="noreferrer noopener">Intune portal</a>
+  1. Navigate to your [Intune portal](https://devicemanagement.microsoft.com/)
   2. Select **Groups**
   3. Select **New Group**
   4. Group Type should be Security
@@ -47,7 +47,7 @@ Watch a demo of this script on Intune.Training.
 
 ### Registering an APP to access Graph API and Grabbing Additional Information
 
-  1. Navigate to your <a href="https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps" target="_blank" rel="noreferrer noopener">Azure Active Directory</a>
+  1. Navigate to your [Azure Active Directory](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps)
   2. Select **App registrations** 
   3. Select **New registration**
   4. Give your app a name such as Intune Graph Access
