@@ -124,7 +124,7 @@ date: 2019-12-09T20:11:54+00:00
         </div>
         
         <div class="e342-32 x-col" >
-          <span class="e342-33 x-image headshot" > <img src="https://www.sysmansquad.com/wp-content/uploads/2019/12/jordan-300x300.jpg" width="150" height="150" alt="Image" loading="lazy" /> </span> 
+          <span class="e342-33 x-image headshot" > <img src="jordan-300x300.jpg" width="150" height="150" alt="Image" loading="lazy" /> </span> 
           
           <div class="e342-34 x-text" >
             <p>
@@ -498,7 +498,7 @@ date: 2019-12-09T20:11:54+00:00
         </div>
         
         <div class="e342-122 x-col" >
-          <span class="e342-123 x-image headshot" > <img src="https://www.sysmansquad.com/wp-content/uploads/2020/02/me2019.jpg" width="320" height="320" alt="Image" loading="lazy" /> </span> 
+          <span class="e342-123 x-image headshot" > <img src="me2019.jpg" width="320" height="320" alt="Image" loading="lazy" /> </span> 
           
           <div class="e342-124 x-text" >
             <p>
@@ -664,7 +664,7 @@ date: 2019-12-09T20:11:54+00:00
         </div>
         
         <div class="e342-162 x-col" >
-          <span class="e342-163 x-image headshot" > <img src="https://www.sysmansquad.com/wp-content/uploads/2019/12/ComingSoon.png" width="400" height="400" alt="Image" loading="lazy" /> </span> 
+          <span class="e342-163 x-image headshot" > <img src="ComingSoon.png" width="400" height="400" alt="Image" loading="lazy" /> </span> 
           
           <div class="e342-164 x-text" >
             <p>
@@ -706,7 +706,7 @@ date: 2019-12-09T20:11:54+00:00
         </div>
         
         <div class="e342-172 x-col" >
-          <span class="e342-173 x-image headshot" > <img src="https://www.sysmansquad.com/wp-content/uploads/2019/12/ComingSoon.png" width="400" height="400" alt="Image" loading="lazy" /> </span> 
+          <span class="e342-173 x-image headshot" > <img src="ComingSoon.png" width="400" height="400" alt="Image" loading="lazy" /> </span> 
           
           <div class="e342-174 x-text" >
             <p>
