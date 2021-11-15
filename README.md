@@ -4,9 +4,9 @@ DNS - CloudFlare
 
 Initialize Clone all 3 repos locally
 
-https://github.com/SysManSquad/sysmansquadblogdev
-https://github.com/SysManSquad/sysmansquadblog
-https://github.com/SysManSquad/sysmansquadblog_theme
+https://github.com/SysManSquad/sysmansquadblogdev  
+https://github.com/SysManSquad/sysmansquadblog 
+https://github.com/SysManSquad/sysmansquadblog_theme 
 
 
 If you want to see your post in Hugo before submitting you'll need Hugo installed. Follow these steps.
