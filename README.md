@@ -16,4 +16,7 @@ https://gohugo.io/getting-started/installing#chocolatey-windows
 
 #This is only needed if you want to create a new empty site
 Create New hugo website
-hugo new site <PATH>
+`hugo new site <PATH>`
+
+Add Theme as a submodule
+git submodule add https://github.com/SysManSquad/sysmansquadblog_theme.git themes/sysmansquadblog_theme
