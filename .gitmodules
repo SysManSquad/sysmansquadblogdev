@@ -1,0 +1,9 @@
+[submodule "themes/sysmansquadblog_theme"]
+	path = themes/sysmansquadblog_theme
+	url = https://github.com/SysManSquad/sysmansquadblog_theme.git
+[submodule "public"]
+	path = public
+	url = https://github.com/SysManSquad/sysmansquadblog.git
+[submodule "themes/asquaredozen_theme"]
+	path = themes/asquaredozen_theme
+	url = https://github.com/AdamGrossTX/asquaredozen_theme.git
