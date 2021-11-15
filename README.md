@@ -20,3 +20,11 @@ Create New hugo website
 
 Add Theme as a submodule
 git submodule add https://github.com/SysManSquad/sysmansquadblog_theme.git themes/sysmansquadblog_theme
+
+Add Public repo as a submodule. This will make it easier to publish changes than trying to manage prod and dev branches.
+git submodule add https://github.com/SysManSquad/sysmansquadblog.git public
+
+Launch Webiste Locally
+Run this command from the root of your sysmansquaddev folder
+cd C:\GitHub\Blog\sysmansquadblogdev
+hugo server -D
