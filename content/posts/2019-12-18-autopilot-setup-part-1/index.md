@@ -3,8 +3,8 @@ title: Intune/Autopilot Setup Companion Guide Part 1
 author: Jake Shackelford
 type: post
 date: 2019-12-18T14:50:37+00:00
-url: /2019/12/18/autopilot-setup-part-1/
-featured_image: /wp-content/uploads/2019/12/image1.png
+url: 2019-12-18-autopilot-setup-part-1/
+featured_image: image1.png
 pm_content_access_group:
   - all
 uag_style_timestamp-js:
@@ -38,7 +38,7 @@ Who doesn't love trying to understand Microsoft Licensing? Here are the basic re
 
 I'm a big fan of pictures and I believe this one encapsulates the process quiet well.<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2019/12/image1.png) </figure> 
+![](image1.png) </figure> 
 
 ## Configuration
 
@@ -51,34 +51,34 @@ I'm a big fan of pictures and I believe this one encapsulates the process quiet 
 The first thing we are going to tackle is is branding.  
 Navigate to [portal.azure.com](http://portal.azure.com) and open up your Azure Active Directory resource. Company branding can be found under the Manage section on the left hand side. If you have never configured Company branding you will see a Configure option, select it. Fill in the desired fields. In our case we filled in Banner Logo, Username hint, Square logo image, and Square logo image dark theme. You will notice almost every option has a tooltip if you are curious what each option does. The below is our current configuration:<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2019/12/msedge_oSCAxoZs1L.png) </figure> 
+![](msedge_oSCAxoZs1L.png) </figure> 
 
 ### Mobility (MDM and MAM)
 
 If we look back at the left hand side of our Azure Active Directory blade you'll see Mobility (MDM and MAM) two steps above Company branding. You should see one application that being Microsoft Intune: 
 
-![](http://sysmansquad.com/wp-content/uploads/2019/12/msedge_X3St3KJPWi.png) 
+![](msedge_X3St3KJPWi.png) 
 
   
 Select Microsoft Intune all your sliders should be currently set to None. In order to get Intune and Autopilot working we need to at the very least move the MDM slider to either Some or All. If you want to test with a specific set of users/devices select Some and select a group. In our environment we have ours set to All. For the vast majority of people setting All will not cause an issue as this just tells Intune which users/devices are allowed to register a device via the MDM.  
 The MAM policy is not required but if you have any plans on ever using Azure Information Protection or BYOD (Bring your own device) in your environment you'll want to have this enabled. Again set to a specific set of users or all based on your preference.  
 The following is our completed Configuration. 
 
-![](http://sysmansquad.com/wp-content/uploads/2019/12/msedge_lisGxnkFwt.png) 
+![](msedge_lisGxnkFwt.png) 
 
 ### Device Enrollment
 
 Navigate to the [MEM admin center](http://devicemanagement.microsoft.com) and login with your azure credentials if prompted. On the left hand side select Devices under Favorites. A new blade will pop out and you'll want to select Windows. <figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2019/12/msedge_cMcDESDh8f.png) </figure> 
+![](msedge_cMcDESDh8f.png) </figure> 
 
 Next select Windows Enrollment under Windows Devices.<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2019/12/msedge_w2Q1TJO34i.png) </figure> 
+![](msedge_w2Q1TJO34i.png) </figure> 
 
 The first time you select this you will need to choose an MDM Authority. Since we are using Intune we will select the first option Intune MDM Authority. Once we have this configured we can create a Deployment Profile Located under Windows Autopilot Deployment Program.<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2019/12/msedge_RFZlECrA6L-1-1024x734.png) </figure> 
+![](msedge_RFZlECrA6L-1-1024x734.png) </figure> 
 
   1. Select + Create Profile at the top
   2. Give it a unique name and description so you won't forget what this specific profile is for 
@@ -95,7 +95,7 @@ The first time you select this you will need to choose an MDM Authority. Since w
  12. Language Region set to English
  13. Automatically configure keyboard set to NO
  14. Apply device name template set to No  
-![](http://sysmansquad.com/wp-content/uploads/2019/12/msedge_AnI5MC3O25.png) 
+![](msedge_AnI5MC3O25.png) 
  15. Select Next
  16. Assign a group that this should be applied to in my case I have a group called Intune-Prod
  17. Select Next
@@ -119,14 +119,14 @@ $apppolicies | ConvertTo-AutoPilotConfigurationJSON | Out-File "C:\AutopilotConf
 
 This will export the JSON file to your C directory. Please be aware if you have multiple policies all of them will be in the JSON file and you'll have to remove the ones you do not need otherwise you can specify which one to export via powershell. The filename must also be AutopilotConfigurationFile.json or it will not work in deployment. However at this point you should only have one profile. Once you have the JSON file you can test a deployment. In the example below you can see I have two deployment profiles:<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2019/12/powershell_jGYAn4kPSG.png) </figure> 
+![](powershell_jGYAn4kPSG.png) </figure> 
 
 To setup the deployment for testing I strongly suggest reading [Michael Niehaus's blog](https://blogs.technet.microsoft.com/mniehaus/2018/10/25/speeding-up-windows-autopilot-for-existing-devices/) on deploying via a task sequence he even includes a download for said task sequence. 
 
 ## **Congrats you have a bare bones Autopilot configuration!!!**
 
 <p class="has-large-font-size">
-  ![](http://sysmansquad.com/wp-content/uploads/2019/12/giphy.gif)
+  ![](giphy.gif)
 </p>
 
 

@@ -3,7 +3,7 @@ title: Automating Outside of Business Hours Responses
 author: Kevin Crouch
 type: post
 date: 2020-12-30T19:20:15+00:00
-url: /2020/12/30/automating-changing-out-of-business-hours-responses/
+url: 2020-12/30/automating-changing-out-of-business-hours-responses/
 categories:
   - Azure
   - Endpoint Management
@@ -207,7 +207,7 @@ Write-Host -ForeGroundColor Cyan "Copied to ClipBoard"
                   To use the App auth Certificate is fairly simple, and the script above outputs the command to use. For my app it came out to the <strong>Connect-mgGraph</strong> command shown below.
                 </p><figure class="wp-block-image size-large" id="AppAuthExampleImage">
                 
-                ![](https://sysmansquad.com/wp-content/uploads/2020/12/image-8.png)<figcaption>Sample <strong>Connect-mgGraph</strong> command shown above<br />Connected with Certificate based, AppOnly login. </figcaption></figure> <p>
+                ![](image-8.png)<figcaption>Sample <strong>Connect-mgGraph</strong> command shown above<br />Connected with Certificate based, AppOnly login. </figcaption></figure> <p>
                   You can use the <strong>Get-mgContext</strong> to verify you are connected <strong>AppOnly</strong>/non-interactive login, as well as the <strong>app name </strong>and your <strong>permissions scopes</strong>.
                 </p>
                 
@@ -341,15 +341,15 @@ catch {
                   Since my schedule was 5PM to 8AM Monday-Friday, I made a scheduled task and set it up to run Weekly - Monday-Friday at 9AM.
                 </p><figure class="wp-block-image size-large">
                 
-                ![](https://sysmansquad.com/wp-content/uploads/2020/12/image-12.png)</figure> <p>
+                ![](image-12.png)</figure> <p>
                   In my testing, since it was only accessing the Current User's profile, and did not need access to other networked resources, you can skip storing the password to increase security.
                 </p><figure class="wp-block-image size-large">
                 
-                ![](https://sysmansquad.com/wp-content/uploads/2020/12/image-9.png)</figure> <p>
+                ![](image-9.png)</figure> <p>
                   For the program to run, we just need to specify to run the file with powershell.exe. On my system, it was trying to default opening the .ps1 in notepad, so I switched to directly running powershell.exe to bypass that.
                 </p><figure class="wp-block-image size-large">
                 
-                ![](https://sysmansquad.com/wp-content/uploads/2020/12/image-13.png)</figure> <h2>
+                ![](image-13.png)</figure> <h2>
                   Conclusion
                 </h2>
                 

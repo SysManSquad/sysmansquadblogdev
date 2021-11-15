@@ -3,7 +3,7 @@ title: Inventory Deprovisioned Windows 10 Apps
 author: Cody Mathis
 type: post
 date: 2020-03-11T14:00:00+00:00
-url: /2020/03/11/inventory-deprovisioned-windows-10-apps/
+url: 2020-03/11/inventory-deprovisioned-windows-10-apps/
 categories:
   - Endpoint Management
   - How-To
@@ -143,19 +143,19 @@ There are countless sources to show you how to create a CI in MEMCM (Don't searc
 
 <ul class="blocks-gallery-grid">
   <li class="blocks-gallery-item">
-    <figure>[![](https://sysmansquad.com/wp-content/uploads/2020/02/CustomHINV-Depro2.png)](https://sysmansquad.com/wp-content/uploads/2020/02/CustomHINV-Depro2.png)</figure>
+    <figure>[![](CustomHINV-Depro2.png)](CustomHINV-Depro2.png)</figure>
   </li>
   <li class="blocks-gallery-item">
-    <figure>[![](https://sysmansquad.com/wp-content/uploads/2020/02/CustomHINV-Depro1.png)](https://sysmansquad.com/wp-content/uploads/2020/02/CustomHINV-Depro1.png)</figure>
+    <figure>[![](CustomHINV-Depro1.png)](CustomHINV-Depro1.png)</figure>
   </li>
   <li class="blocks-gallery-item">
-    <figure>[![](https://sysmansquad.com/wp-content/uploads/2020/02/CustomHINV-Depro3.png)](https://sysmansquad.com/wp-content/uploads/2020/02/CustomHINV-Depro3.png)</figure>
+    <figure>[![](CustomHINV-Depro3.png)](CustomHINV-Depro3.png)</figure>
   </li>
   <li class="blocks-gallery-item">
-    <figure>[![](https://sysmansquad.com/wp-content/uploads/2020/02/CustomHINV-Depro4.png)](https://sysmansquad.com/wp-content/uploads/2020/02/CustomHINV-Depro4.png)</figure>
+    <figure>[![](CustomHINV-Depro4.png)](CustomHINV-Depro4.png)</figure>
   </li>
   <li class="blocks-gallery-item">
-    <figure>[![](https://sysmansquad.com/wp-content/uploads/2020/02/CustomHINV-Depro5.png)](https://sysmansquad.com/wp-content/uploads/2020/02/CustomHINV-Depro5.png)</figure>
+    <figure>[![](CustomHINV-Depro5.png)](CustomHINV-Depro5.png)</figure>
   </li>
 </ul></figure> 
 
@@ -171,13 +171,13 @@ The script is written, deployed, and has run on a client. Now it is time to actu
 
 I start at a client that I know has run my script. If everything is working as expected, and I have deprovisioned apps, I should be able to perform a query to return my custom data stored in WMI.<figure class="wp-block-image size-full is-resized">
 
-![](https://sysmansquad.com/wp-content/uploads/2020/02/CustomHINV-GetDeproHINV-1.png) </figure> 
+![](CustomHINV-GetDeproHINV-1.png) </figure> 
 
 Awesome! That is easily half the battle. Now, to complete the cycle we need to get the data into the database. If you are feeling frisky you can start editing MOF files. Otherwise, you can connect to a computer from the MEMCM console and select the new WMI class. I recommend option #2.
 
 Pop open the 'Default Settings' policy, and navigate to the 'Hardware Inventory' section. Now click that thingy I have highlighted below (**Set Classes**...).<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2020/02/CustomHINV-Depro-SetClasses.png) </figure> 
+![](CustomHINV-Depro-SetClasses.png) </figure> 
 
 And from there: 
 
@@ -188,11 +188,11 @@ And from there:
   5. Specify credentials if required
   6. Click **Connect**<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2020/02/CustomHINV-Depro-AddHinvClass.png) </figure> 
+![](CustomHINV-Depro-AddHinvClass.png) </figure> 
 
 If you didn't forget your password, a wonderful list of WMI classes under the specified namespace should appear. Check the box, click edit if you feel like poking around, and click ok!<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2020/02/CustomHINV-Depro-AddHinvClass2.png) </figure> 
+![](CustomHINV-Depro-AddHinvClass2.png) </figure> 
 
 #### Step 4 - ACT BA**SED ON DATA!** 
 
@@ -203,7 +203,7 @@ In it's simplest form, we can query the MEMCM database as below.
 <div class="wp-block-codemirror-blocks-code-block code-block">
   <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;Get-AllDeproAppX.sql<br><br>.sql&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">SELECT * FROM v_GS_DEPROVISIONEDAPPX```<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2020/03/CustomHINV-BasicDB.png) </figure> 
+![](CustomHINV-BasicDB.png) </figure> 
 
 If we desire a little more insight, the query can be adjusted to show counts.
 
@@ -214,7 +214,7 @@ FROM v_GS_DEPROVISIONEDAPPX depro
 GROUP BY depro.DeprovisionedApp0
 ORDER BY 2 DESC```<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2020/03/CustomHINV-CountDB.png) </figure> 
+![](CustomHINV-CountDB.png) </figure> 
 
 Join us next time, when decisions, and actions are made with our new found data!
 

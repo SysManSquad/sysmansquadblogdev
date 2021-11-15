@@ -86,7 +86,7 @@ New-ItemProperty -LiteralPath 'HKLM:\SOFTWARE\Dell' -Name 'Autopilot-run' -Value
 
 <figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2021/09/vmconnect_YSACp0qsPD.png) </figure> 
+![](vmconnect_YSACp0qsPD.png) </figure> 
 
 ## Deploying
 

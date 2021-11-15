@@ -119,7 +119,7 @@ Directory :
 Added by tv—vyWcrosoftOffceRWeset.psI. 
 Hiding R ule 
 Key: HKLM 
-Added by New—WcrosoftOffceRu/eset.psI. " class="wp-image-2953" srcset="https:/wp-content/uploads/2021/08/image-1.png 532w, https:/wp-content/uploads/2021/08/image-1.png 300w, https:/wp-content/uploads/2021/08/image-1.png 100w" sizes="(max-width: 532px) 100vw, 532px" /></figure> 
+Added by New—WcrosoftOffceRu/eset.psI. " class="wp-image-2953" srcset="image-1.png 532w, image-1.png 300w, image-1.png 100w" sizes="(max-width: 532px) 100vw, 532px" /></figure> 
     
     <p>
       I also deleted all the Classes\CLSID\{GUID} rules because they kinda broke Windows. I didn't have time to test them all, but you should for best results.

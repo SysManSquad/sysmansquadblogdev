@@ -3,7 +3,7 @@ title: Collect Client Logs – The Fast Channel Way
 author: Cody Mathis
 type: post
 date: 2020-04-08T13:00:00+00:00
-url: /2020/04/08/collect-client-logs-the-fast-channel-way/
+url: 2020-04/08/collect-client-logs-the-fast-channel-way/
 categories:
   - Endpoint Management
   - MECM/MEMCM/SCCM
@@ -20,7 +20,7 @@ Starting in [MEMCM 2002](https://docs.microsoft.com/en-us/configmgr/core/plan-de
 
 This is a vital addition to the console. At first glance I thought... <figure class="wp-block-image size-full">
 
-![](https://sysmansquad.com/wp-content/uploads/2020/04/Bender-Neat.gif) </figure> 
+![](Bender-Neat.gif) </figure> 
 
 But then the features full value was realized!
 
@@ -30,7 +30,7 @@ But then the features full value was realized!
 
 **Solution:** <figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2020/04/image.png) </figure> 
+![](image.png) </figure> 
 
 ## I Did It!!! I Clicked the Button!
 
@@ -38,7 +38,7 @@ But where the heck are the log files?? How do I even know that anything happened
 
 Thankfully this tool uses the 'Fast Channel' within MEMCM. The action can expect to be started very quickly. Whether anything at all is even happening can be verified by checking the 'Diagnostics.log' on the client. Doesn't help us in the 'remote' scenario, but it is good to see in the proof of concept.<figure class="wp-block-image size-large">
 
-[![](https://sysmansquad.com/wp-content/uploads/2020/04/image-1-1024x158.png)](image-1.png)</figure> 
+[![](image-1-1024x158.png)](image-1.png)</figure> 
 
 What sticks out here is the MP_SinvCollFileEndpoint! Software Inventory??  
   
@@ -48,7 +48,7 @@ But, I'm sure we want to see this from the server side right? At least a glimpse
 
 It looks like the Software Inventory components of MEMCM have been reworked a bit, and are being leveraged to collect log files! <figure class="wp-block-image size-large">
 
-[![](https://sysmansquad.com/wp-content/uploads/2020/04/image-2-1024x354.png)](image-2.png)</figure> 
+[![](image-2-1024x354.png)](image-2.png)</figure> 
 
 The bgbmgr.log, and bgbserver.log files, located on the Site Server will provide some insight into what is going on as well. Feel free to enable verbose logging to really dig in, but at a base level we do see our request being processed.  
 
@@ -65,11 +65,11 @@ Resource Explorer! It has an entire new section, labeled 'Diagnostic Files.'
 
 Pop open Resource Explorer on the client which logs were requested from, and there are some new options outlined below. <figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2020/04/image-3.png) </figure> 
+![](image-3.png) </figure> 
 
 To expand on the 'where' question, we can see the 'File Path' column stating this data is being stored in the 'systemprofile' which is typically on the C: drive. That can't be where they really store all this!! <figure class="wp-block-image size-large">
 
-[![](https://sysmansquad.com/wp-content/uploads/2020/04/image-4-1024x64.png)](image-4.png)</figure> 
+[![](image-4-1024x64.png)](image-4.png)</figure> 
 
 It isn't... This is a temporary location, where the files will be accessible for you to interact with. The ACTUAL location of the file, as stored on the Site Server can be found by click the 'View File' context menu option.<figure class="wp-block-image size-large">
 
@@ -93,7 +93,7 @@ What all this is for though is to actually _view_ the log files. There is a cont
 
 From there, the sky is the limit. You now have the entire CCM\Logs directory from a remote computer that potentially never touched your domain. You can ignore the weird text message with a pixelated picture of the users screen. <figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2020/04/image-6.png) </figure> 
+![](image-6.png) </figure> 
 
 Go support those people working from home!!!
 

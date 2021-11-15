@@ -3,7 +3,7 @@ title: Downloading a Device Guard Signing Service version 2 Root Certificate for
 author: Jóhannes Geir Kristjánsson
 type: post
 date: 2020-11-02T03:54:11+00:00
-url: /2020/11/01/downloading-a-device-guard-signing-service-version-2-root-certificate-for-msix/
+url: 2020-11/01/downloading-a-device-guard-signing-service-version-2-root-certificate-for-msix/
 categories:
   - Endpoint Management
 
@@ -44,12 +44,12 @@ For those of you who have never done this before, here are the detailed steps wi
 
 Sign into Azure AD and register a new application.<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2020/10/1-app-registration-1024x573.png) </figure> 
+![](1-app-registration-1024x573.png) </figure> 
 
 Give it a descriptive name.  
 Under Redirect URI, select "Public client (mobile & desktop)", and set https://dgss.microsoft.com as the URI.<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2020/10/2-replyurl.png) </figure> 
+![](2-replyurl.png) </figure> 
 
 Once the app has been created, click on **API permissions**.  
 **Add permissions**.  
@@ -57,20 +57,20 @@ Click on **APIs my organization uses**.
 Search for "windows store".  
 And click on it.<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2020/10/3-api-permissions-1024x342.png) </figure> 
+![](3-api-permissions-1024x342.png) </figure> 
 
 Click on **Delegated permissions**.  
 And select **user_impresonation**.<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2020/10/4-delegate-access.png) </figure> 
+![](4-delegate-access.png) </figure> 
 
 Click on **Grant consent for...** otherwise the app will not work.<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2020/10/5-consent-1024x494.png) </figure> 
+![](5-consent-1024x494.png) </figure> 
 
 Now head back to the application overview and copy the GUID that's next to **Application (client) ID**, this is used in a script that is featured in this blog post.<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2020/10/6-appid.png) </figure> 
+![](6-appid.png) </figure> 
 
 ## Get-DGSSv2RootCert
 

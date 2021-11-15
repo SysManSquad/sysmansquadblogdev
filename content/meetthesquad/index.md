@@ -10,7 +10,7 @@ date: 2019-12-09T20:11:54+00:00
     <div class="e342-2 x-row" >
       <div class="x-row-inner">
         <div class="e342-3 x-col" >
-          <span class="e342-4 x-image headshot" > <img src="http://www.sysmansquad.com/wp-content/uploads/2019/12/Adam-Headshot-1-of-1.jpg" width="643" height="900" alt="Image" loading="lazy" /> </span> 
+          <span class="e342-4 x-image headshot" > <img src="Adam-Headshot-1-of-1.jpg" width="643" height="900" alt="Image" loading="lazy" /> </span> 
           
           <div class="e342-5 x-text" >
             Adam Gross
@@ -46,7 +46,7 @@ date: 2019-12-09T20:11:54+00:00
         </div>
         
         <div class="e342-13 x-col" >
-          <span class="e342-14 x-image headshot" > <img src="http://www.sysmansquad.com/wp-content/uploads/2019/12/Jake-e1576115204749.png" width="319.5" height="480" alt="Image" loading="lazy" /> </span> 
+          <span class="e342-14 x-image headshot" > <img src="Jake-e1576115204749.png" width="319.5" height="480" alt="Image" loading="lazy" /> </span> 
           
           <div class="e342-15 x-text" >
             <p>
@@ -82,7 +82,7 @@ date: 2019-12-09T20:11:54+00:00
         </div>
         
         <div class="e342-22 x-col" >
-          <span class="e342-23 x-image headshot" > <img src="http://www.sysmansquad.com/wp-content/uploads/2019/12/Nathan.jpg" width="200" height="200" alt="Image" loading="lazy" /> </span> 
+          <span class="e342-23 x-image headshot" > <img src="Nathan.jpg" width="200" height="200" alt="Image" loading="lazy" /> </span> 
           
           <div class="e342-24 x-text" >
             <p>
@@ -166,7 +166,7 @@ date: 2019-12-09T20:11:54+00:00
         </div>
         
         <div class="e342-42 x-col" >
-          <span class="e342-43 x-image headshot" > <img src="http://www.sysmansquad.com/wp-content/uploads/2019/12/72067079_10162430527020128_7935816823780409344_o-1-e1576192016673.jpg" width="450.5" height="450.5" alt="Image" loading="lazy" /> </span> 
+          <span class="e342-43 x-image headshot" > <img src="72067079_10162430527020128_7935816823780409344_o-1-e1576192016673.jpg" width="450.5" height="450.5" alt="Image" loading="lazy" /> </span> 
           
           <div class="e342-44 x-text" >
             <p>
@@ -208,7 +208,7 @@ date: 2019-12-09T20:11:54+00:00
         </div>
         
         <div class="e342-52 x-col" >
-          <span class="e342-53 x-image headshot" > <img src="https://sysmansquad.com/wp-content/uploads/2020/08/bYeHYapB_400x400-e1598629611529.jpg" width="118.5" height="118.5" alt="Image" loading="lazy" /> </span> 
+          <span class="e342-53 x-image headshot" > <img src="bYeHYapB_400x400-e1598629611529.jpg" width="118.5" height="118.5" alt="Image" loading="lazy" /> </span> 
           
           <div class="e342-54 x-text" >
             <p>
@@ -250,7 +250,7 @@ date: 2019-12-09T20:11:54+00:00
         </div>
         
         <div class="e342-62 x-col" >
-          <span class="e342-63 x-image headshot" > <img src="https://sysmansquad.com/wp-content/uploads/2020/08/andrew-e1598330419410.png" width="289.5" height="289.5" alt="Image" loading="lazy" /> </span> 
+          <span class="e342-63 x-image headshot" > <img src="andrew-e1598330419410.png" width="289.5" height="289.5" alt="Image" loading="lazy" /> </span> 
           
           <div class="e342-64 x-text" >
             Andrew Arsenault
@@ -290,7 +290,7 @@ date: 2019-12-09T20:11:54+00:00
         </div>
         
         <div class="e342-72 x-col" >
-          <span class="e342-73 x-image headshot" > <img src="https://sysmansquad.com/wp-content/uploads/2020/06/image0-scaled.jpg" width="1280" height="770.5" alt="Image" loading="lazy" /> </span> 
+          <span class="e342-73 x-image headshot" > <img src="image0-scaled.jpg" width="1280" height="770.5" alt="Image" loading="lazy" /> </span> 
           
           <div class="e342-74 x-text" >
             <p>
@@ -332,7 +332,7 @@ date: 2019-12-09T20:11:54+00:00
         </div>
         
         <div class="e342-82 x-col" >
-          <span class="e342-83 x-image headshot" > <img src="http://www.sysmansquad.com/wp-content/uploads/2019/12/image0-scaled-e1576190221765.jpg" width="137.5" height="137.5" alt="Image" loading="lazy" /> </span> 
+          <span class="e342-83 x-image headshot" > <img src="image0-scaled-e1576190221765.jpg" width="137.5" height="137.5" alt="Image" loading="lazy" /> </span> 
           
           <div class="e342-84 x-text" >
             Cody Mathis
@@ -372,7 +372,7 @@ date: 2019-12-09T20:11:54+00:00
         </div>
         
         <div class="e342-92 x-col" >
-          <span class="e342-93 x-image headshot" > <img src="https://sysmansquad.com/wp-content/uploads/2019/12/ComingSoon.png" width="400" height="400" alt="Image" loading="lazy" /> </span> 
+          <span class="e342-93 x-image headshot" > <img src="ComingSoon.png" width="400" height="400" alt="Image" loading="lazy" /> </span> 
           
           <div class="e342-94 x-text" >
             <p>
@@ -414,7 +414,7 @@ date: 2019-12-09T20:11:54+00:00
         </div>
         
         <div class="e342-102 x-col" >
-          <span class="e342-103 x-image headshot" > <img src="http://www.sysmansquad.com/wp-content/uploads/2019/12/00100lrPORTRAIT_00100_BURST20191212171745954_COVER-scaled.jpg" width="960" height="1280" alt="Image" loading="lazy" /> </span> 
+          <span class="e342-103 x-image headshot" > <img src="00100lrPORTRAIT_00100_BURST20191212171745954_COVER-scaled.jpg" width="960" height="1280" alt="Image" loading="lazy" /> </span> 
           
           <div class="e342-104 x-text" >
             <p>
@@ -456,7 +456,7 @@ date: 2019-12-09T20:11:54+00:00
         </div>
         
         <div class="e342-112 x-col" >
-          <span class="e342-113 x-image headshot" > <img src="http://www.sysmansquad.com/wp-content/uploads/2019/12/dawn.jpg" width="100" height="100" alt="Image" loading="lazy" /> </span> 
+          <span class="e342-113 x-image headshot" > <img src="dawn.jpg" width="100" height="100" alt="Image" loading="lazy" /> </span> 
           
           <div class="e342-114 x-text" >
             <p>
@@ -540,7 +540,7 @@ date: 2019-12-09T20:11:54+00:00
         </div>
         
         <div class="e342-132 x-col" >
-          <span class="e342-133 x-image headshot" > <img src="http://www.sysmansquad.com/wp-content/uploads/2019/12/jgkps-1.jpg" width="843.5" height="1191.5" alt="Image" loading="lazy" /> </span> 
+          <span class="e342-133 x-image headshot" > <img src="jgkps-1.jpg" width="843.5" height="1191.5" alt="Image" loading="lazy" /> </span> 
           
           <div class="e342-134 x-text" >
             <p>
@@ -582,7 +582,7 @@ date: 2019-12-09T20:11:54+00:00
         </div>
         
         <div class="e342-142 x-col" >
-          <span class="e342-143 x-image headshot" > <img src="https://sysmansquad.com/wp-content/uploads/2020/11/crouch.jpg" width="100" height="100" alt="Image" loading="lazy" /> </span> 
+          <span class="e342-143 x-image headshot" > <img src="crouch.jpg" width="100" height="100" alt="Image" loading="lazy" /> </span> 
           
           <div class="e342-144 x-text" >
             <p>
@@ -622,7 +622,7 @@ date: 2019-12-09T20:11:54+00:00
         </div>
         
         <div class="e342-152 x-col" >
-          <span class="e342-153 x-image headshot" > <img src="https://sysmansquad.com/wp-content/uploads/2020/08/IMG_20190524_170114-scaled-e1598629722524.jpg" width="212" height="212" alt="Image" loading="lazy" /> </span> 
+          <span class="e342-153 x-image headshot" > <img src="IMG_20190524_170114-scaled-e1598629722524.jpg" width="212" height="212" alt="Image" loading="lazy" /> </span> 
           
           <div class="e342-154 x-text" >
             <p>

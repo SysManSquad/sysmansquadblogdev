@@ -3,7 +3,7 @@ title: Removing The Built-in Teams App in Windows 11 with Intune
 author: Jóhannes Geir Kristjánsson
 type: post
 date: 2021-10-08T13:59:21+00:00
-url: /2021/10/08/removing-the-built-in-teams-app-in-windows-11-with-intune/
+url: 2021-10-08-removing-the-built-in-teams-app-in-windows-11-with-intune/
 categories:
   - Endpoint Management
   - Intune
@@ -18,7 +18,7 @@ tags:
 
 So you've started rolling out Windows 11 to your endpoints, and your users got confused and upset over the consumer teams apps that is installed? Understandably you wish to do something about this.<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2021/09/vmconnect_HKVrTs61hf.png) <figcaption>(╯°□°）╯︵ ┻━┻</figcaption></figure> 
+![](vmconnect_HKVrTs61hf.png) <figcaption>(╯°□°）╯︵ ┻━┻</figcaption></figure> 
 
 No worries mate, Intune Proactive Remediations to the rescue!
 
@@ -28,7 +28,7 @@ The code below fixes two things.
 
 It removes the chat by writing the registry key that disables it<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2021/09/vmconnect_GJk3LXz1EF.png) <figcaption>the TaskbarMn DWORD controls this</figcaption></figure> 
+![](vmconnect_GJk3LXz1EF.png) <figcaption>the TaskbarMn DWORD controls this</figcaption></figure> 
 
 Then it simply uninstalls the appx package for the consumer teams app, note that this has no effect on the regular teams app. The two are completely different.
 
@@ -103,8 +103,8 @@ catch {
 
 Go to the [Proactive Remediations blade](https://endpoint.microsoft.com/#blade/Microsoft_Intune_Enrollment/UXAnalyticsMenu/proactiveRemediations) in the Intune admin portal, create a new PR and add the detection and remediation scripts, configure the PR to run in user context and 64bit, and deploy accordingly.<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2021/09/WindowsSandboxClient_EZVCQZGC8M.png) </figure> 
+![](WindowsSandboxClient_EZVCQZGC8M.png) </figure> 
 
 Once the Remediation has run on the targeted endpoints, your users will be happier and slightly less confused.<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2021/09/j4sLKefuYe.png) <figcaption>┳━┳ ノ( ゜-゜ノ)</figcaption></figure>
+![](j4sLKefuYe.png) <figcaption>┳━┳ ノ( ゜-゜ノ)</figcaption></figure>

@@ -3,7 +3,7 @@ title: How to use modules and package providers during OSD with MECM (SCCM/MEMCM
 author: Jake Shackelford
 type: post
 date: 2019-12-12T15:53:40+00:00
-url: /2019/12/12/how-to-use-modules-and-package-providers-during-osd-with-mecm-sccm-memcm/
+url: 2019-12-12-how-to-use-modules-and-package-providers-during-osd-with-mecm-sccm-memcm
 pm_content_access_group:
   - all
 uagb_style_timestamp-js:

@@ -3,8 +3,8 @@ title: 'To Trust Or Not To Trust (UNSIGNED DRIVERS): That Is The Question'
 author: Chris Thomas
 type: post
 date: 2020-02-04T06:48:24+00:00
-url: /2020/02/04/to-trust-or-not-to-trust-unsigned-drivers-that-is-the-question/
-featured_image: /wp-content/uploads/2019/12/driver-removal-04-obs.png
+url: 2021-02-04-to-trust-or-not-to-trust-unsigned-drivers-that-is-the-question/
+featured_image: driver-removal-04-obs.png
 categories:
   - Documentation
   - Endpoint Management

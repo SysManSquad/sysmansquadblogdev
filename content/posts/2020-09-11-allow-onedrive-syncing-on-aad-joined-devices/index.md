@@ -3,7 +3,7 @@ title: Allow OneDrive Syncing on AAD joined Devices
 author: Jóhannes Geir Kristjánsson
 type: post
 date: 2020-09-11T17:23:02+00:00
-url: /2020/09/11/allow-onedrive-syncing-on-aad-joined-devices/
+url: 2020-09/11/allow-onedrive-syncing-on-aad-joined-devices/
 categories:
   - Endpoint Management
 
@@ -12,11 +12,11 @@ categories:
 
 So I was walking on the beach and noticed that OneDrive wasn't syncing anymore on my AzureAD joined laptop. I later learned that my endpoint administrator, Adam Gross, had enabled [Allow syncing only on computers joined to specific domains](https://docs.microsoft.com/en-us/onedrive/allow-syncing-only-on-specific-domains) in the OneDrive admin portal. which effectively blocked my AzureAD device 🙁<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2020/08/vmconnect_KUuNJoGAtD.png) </figure> 
+![](vmconnect_KUuNJoGAtD.png) </figure> 
 
 Which resulted in this message on my corporate device<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2020/08/Annotation-2020-08-21-200957.png) </figure> 
+![](Annotation-2020-08-21-200957.png) </figure> 
 
 Our Legacy AD joined devices were fine, but all of our Azure AD joined devices got the above error.
 

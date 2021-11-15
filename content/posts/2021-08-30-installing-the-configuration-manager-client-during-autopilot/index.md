@@ -3,7 +3,7 @@ title: Installing The Configuration Manager Client During Autopilot
 author: Jóhannes Geir Kristjánsson
 type: post
 date: 2021-08-31T03:24:39+00:00
-url: /2021/08/30/installing-the-configuration-manager-client-during-autopilot/
+url: 2021-08-30-installing-the-configuration-manager-client-during-autopilot/
 categories:
   - Endpoint Management
 
@@ -35,7 +35,7 @@ Step 1: go download the latest [Powershell application deployment toolkit](https
 
 Step 2: Add the client install files from \\SiteServer\SMS_ABC\Client to the Files directory in your Powershell Application Deployment Toolkit, you should end up with a directory that looks similar to this:<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2021/08/JlUmG62Jae.png) <figcaption>oh wow!</figcaption></figure> 
+![](JlUmG62Jae.png) <figcaption>oh wow!</figcaption></figure> 
 
 Step 3: open Deploy-Application.ps1 in your favorite powershell editor.
 
@@ -73,7 +73,7 @@ If you have a cloud management gateway, you should supply the [parameters needed
 You can get these parameters in the configuration manager admin console: \Administration\Overview\Cloud Services\Cloud Attach  
 go to the properties of your co-management settings.<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2021/08/vmconnect_repLU2tUGj-1024x940.png) </figure> 
+![](vmconnect_repLU2tUGj-1024x940.png) </figure> 
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
   <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;MECM-Client.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}"># waits for the wwahost process to terminate, which is a good indication that autopilot/ESP is over
@@ -85,7 +85,7 @@ Start-Process "C:\Windows\Temp\CCMSetup\ccmsetup.exe" -ArgumentList "/source:C:\
 
 Once you have figured this all out, place your MECM-Client.ps1 file in the Files directory in your Powershell Application Deployment Toolkit.<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2021/08/Code_daA8jyi7CL.png) <figcaption>Neato Burrito!</figcaption></figure> 
+![](Code_daA8jyi7CL.png) <figcaption>Neato Burrito!</figcaption></figure> 
 
 ## Detection
 

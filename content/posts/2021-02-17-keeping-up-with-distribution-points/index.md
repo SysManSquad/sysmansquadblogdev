@@ -3,7 +3,7 @@ title: Keeping Up with Distribution Points
 author: Brett Anderson
 type: post
 date: 2021-02-17T15:24:30+00:00
-url: /2021/02/17/keeping-up-with-distribution-points/
+url: 2021-02-17-keeping-up-with-distribution-points/
 categories:
   - Endpoint Management
   - MECM/MEMCM/SCCM
@@ -63,7 +63,7 @@ Luckily, there’s some simple things we can do to take this burden away. I’m 
                       Content Validation is incredibly useful. You can set it to run on a schedule in the Properties pane of the DP. You can also run it manually by just running smsdpmon.exe (in the <strong>SMS_DP$\sms\bin</strong> folder on every DP), or you can validate a single package either from the Content tab of a DP in the console, or via command line.
                     </p><figure class="wp-block-image size-large">
                     
-                    ![](https://sysmansquad.com/wp-content/uploads/2020/11/image-14.png)</figure> <p>
+                    ![](image-14.png)</figure> <p>
                       Peter van der Woude has a good quick start overview of using smsdpmon:
                     </p>
                     
@@ -232,11 +232,11 @@ Luckily, there’s some simple things we can do to take this burden away. I’m 
                       So, let’s break the script up into those sections. Most of the heavy lifting here happens in SQL.
                     </p><figure class="wp-block-image size-large">
                     
-                    ![](https://sysmansquad.com/wp-content/uploads/2020/11/image-11.png)</figure> <p>
+                    ![](image-11.png)</figure> <p>
                       But wait, what's this bit?
                     </p><figure class="wp-block-image size-large">
                     
-                    ![](https://sysmansquad.com/wp-content/uploads/2020/11/image-12.png)</figure> <p>
+                    ![](image-12.png)</figure> <p>
                       That’s because we’re relying on v_ContentDistribution to determine what’s targeted at the distribution point. That view is really just all the status messages received for content distribution. Those status messages don’t get purged when a package is deleted from the site. So we need to do a quick filter on all the packages that still exist to account for that.
                     </p>
                     
@@ -244,7 +244,7 @@ Luckily, there’s some simple things we can do to take this burden away. I’m 
                       Once you have all that, the redistribution is actually quite simple. There’s a property in an instance of the SMS_DistributionPoint class called “RefreshNow”. Simply by setting that to “$true” and doing a put() to write that instance back to WMI, the site server will begin redistributing that package to that distribution point.
                     </p><figure class="wp-block-image size-large">
                     
-                    ![](https://sysmansquad.com/wp-content/uploads/2020/11/image-13.png)</figure> <p>
+                    ![](image-13.png)</figure> <p>
                       So, we know what packages are missing when they should be there, and we have a script to redistribute them. Great! Now let’s fully automate it with a Status Filter Rule!
                     </p>
                     
@@ -266,7 +266,7 @@ Luckily, there’s some simple things we can do to take this burden away. I’m 
                     
                     <pre class="wp-block-code"><code>“C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe” -ExecutionPolicy Bypass -File “E:\Scripts\PackageReconciliation.ps1” -Server %msgsys -SiteCode PS1 -DBServer CMDB.contoso.com -DB CM_PS1</code></pre><figure class="wp-block-image size-large">
                     
-                    ![](https://sysmansquad.com/wp-content/uploads/2020/11/image-15.png)<figcaption>For some reason, the SMS_Distribution_Point_Monitoring component isn't selectable from the dropdown. So you will need to key it in manually,</figcaption></figure> <figure class="wp-block-image size-large">![](https://sysmansquad.com/wp-content/uploads/2020/11/image-16.png)</figure> <p>
+                    ![](image-15.png)<figcaption>For some reason, the SMS_Distribution_Point_Monitoring component isn't selectable from the dropdown. So you will need to key it in manually,</figcaption></figure> <figure class="wp-block-image size-large">![](image-16.png)</figure> <p>
                       There's one caveat to this that if you have empty packages targeted for distribution, those will not get touched by Content Validation (since there's nothing to validate). My script isn't accounting for that, so if you have any of those, you're going to see those empty packages "redistributed" to a DP every time a content validation cycle completes. The simple fix for that is "Don't distribute empty things". 😊
                     </p>
                     
@@ -308,7 +308,7 @@ Luckily, there’s some simple things we can do to take this burden away. I’m 
                     
                     <pre class="wp-block-code"><code>“C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe” -ExecutionPolicy Bypass -File “E:\Scripts\PackageReconciliation.ps1” -Server %msgsys</code></pre><figure class="wp-block-image size-large">
                     
-                    ![](https://sysmansquad.com/wp-content/uploads/2020/11/image-17.png)</figure> <figure class="wp-block-image size-large">![](https://sysmansquad.com/wp-content/uploads/2020/11/image-18.png)</figure> <h2>
+                    ![](image-17.png)</figure> <figure class="wp-block-image size-large">![](image-18.png)</figure> <h2>
                       Putting It All Together
                     </h2>
                     

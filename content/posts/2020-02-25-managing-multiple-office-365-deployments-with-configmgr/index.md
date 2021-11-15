@@ -3,8 +3,8 @@ title: Managing Multiple Office 365 Deployments with ConfigMgr
 author: Grant
 type: post
 date: 2020-02-25T17:36:48+00:00
-url: /2020/02/25/managing-multiple-office-365-deployments-with-configmgr/
-featured_image: /wp-content/uploads/2020/02/image-11.png
+url: 2021-02-25-managing-multiple-office-365-deployments-with-configmgr/
+featured_image: image-11.png
 uag_style_timestamp-js:
   - 1591659878
 categories:

@@ -3,7 +3,7 @@ title: Modern BIOS Management with the Administration Service
 author: Charles
 type: post
 date: 2020-06-18T13:00:00+00:00
-url: /2020/06/18/modern-bios-management-with-the-administration-service/
+url: 2020-06/18/modern-bios-management-with-the-administration-service/
 categories:
   - Endpoint Management
 

@@ -3,8 +3,8 @@ title: Where is the report’s data??
 author: Kevin Crouch
 type: post
 date: 2021-05-16T03:21:09+00:00
-url: /2021/05/15/where-is-the-reports-data/
-featured_image: /wp-content/uploads/2021/05/wordcloud_api_graph-3.png
+url: 2021-05-15-where-is-the-reports-data/
+featured_image: wordcloud_api_graph-3.png
 categories:
   - Azure
   - Documentation
@@ -157,7 +157,7 @@ Well you can - and finding the information can be so easy. Read on below to see 
                                 </li>
                               </ol><figure class="wp-block-image alignwide size-large">
                               
-                              ![](https://sysmansquad.com/wp-content/uploads/2021/05/image-1024x584.png)</figure> 
+                              ![](image-1024x584.png)</figure> 
                               
                               <p>
                               </p>
@@ -211,7 +211,7 @@ Well you can - and finding the information can be so easy. Read on below to see 
                                 Now, right at the top of that page, it will tell you what API Permissions you need in the [Prerequisites section](https://docs.microsoft.com/graph/api/intune-devices-devicehealthscriptrunsummary-get?view=graph-rest-beta#prerequisites). A screenshot of this node is below.
                               </p><figure class="wp-block-image size-large">
                               
-                              ![](https://sysmansquad.com/wp-content/uploads/2021/05/image-1.png)</figure>
+                              ![](image-1.png)</figure>
                             </div>
                           </div>
                           
@@ -270,13 +270,13 @@ Invoke-RestMethod -Headers @{Authorization = "Bearer $($Token.AccessToken)"} @Qu
                                 Let's find the <strong>[Authentication Methods Registration Detail](https://portal.azure.com/#blade/Microsoft_AAD_IAM/AuthenticationMethodsMenuBlade/UserRegistrationDetails/menuId/UserRegistrationDetails)</strong> report data.
                               </p><figure class="wp-block-image alignwide size-large">
                               
-                              ![](https://sysmansquad.com/wp-content/uploads/2021/04/image-10-1024x376.png)</figure> 
+                              ![](image-10-1024x376.png)</figure> 
                               
                               <p>
                                 We go through the same DevTools process that we outlined above in <strong>[Watching How the Portal Works](#watching-the-portal-work)</strong>.
                               </p><figure class="wp-block-image alignwide">
                               
-                              ![This image has an empty alt attribute; its file name is image-11.png](https://sysmansquad.com/wp-content/uploads/2021/04/image-11.png)</figure> 
+                              ![This image has an empty alt attribute; its file name is image-11.png](image-11.png)</figure> 
                               
                               <p>
                                 This gives us the Query URL below.
@@ -339,7 +339,7 @@ Invoke-RestMethod -Headers @{Authorization = "Bearer $($Token.AccessToken)"} @Qu
                                   </div>
                                   
                                   <div class="uagb-column__inner-wrap">
-                                    <figure class="wp-block-image size-large">![](https://sysmansquad.com/wp-content/uploads/2021/04/image-12.png)</figure>
+                                    <figure class="wp-block-image size-large">![](image-12.png)</figure>
                                   </div>
                                 </div>
                               </div></section> 
@@ -385,7 +385,7 @@ Invoke-RestMethod -Headers @{Authorization = "Bearer $($Token.AccessToken)"} @Qu
                               </p>
                               
                               <div class="wp-block-image">
-                                <figure class="aligncenter size-large is-resized">![](https://sysmansquad.com/wp-content/uploads/2021/04/image-14-edited.png)</figure>
+                                <figure class="aligncenter size-large is-resized">![](image-14-edited.png)</figure>
                               </div>
                             </div>
                           </div>
@@ -445,7 +445,7 @@ Invoke-RestMethod -Headers @{Authorization = "Bearer $($Token.AccessToken)"} @Qu
                                 This will also split out the different sections for you, and let you see helpful information like
                               </p><figure class="wp-block-image alignwide size-large">
                               
-                              ![](https://sysmansquad.com/wp-content/uploads/2021/04/image-13-1024x572.png)</figure> <figure class="wp-block-image size-large">![](https://sysmansquad.com/wp-content/uploads/2021/05/image-2.png)</figure> 
+                              ![](image-13-1024x572.png)</figure> <figure class="wp-block-image size-large">![](image-2.png)</figure> 
                               
                               <ul>
                                 <li>

@@ -3,7 +3,7 @@ title: Deploy languages via Software Center with PSCMWin10Language
 author: Adam Cook
 type: post
 date: 2020-06-08T15:00:00+00:00
-url: /2020/06/08/deploy-languages-via-software-center-with-pscmwin10language/
+url: 2020-06/08/deploy-languages-via-software-center-with-pscmwin10language/
 uag_style_timestamp-css:
   - 1591629999
 uag_style_timestamp-js:
@@ -183,7 +183,7 @@ New-FoDLanguageFeaturesRepository -Language "fr-FR", "de-DE" -SourcePath "J:\" -
               </p>
               
               <div class="wp-block-image">
-                <figure class="aligncenter size-large">[![](https://sysmansquad.com/wp-content/uploads/2020/06/LPSoftwareCenter-EndResult-2-new-1024x658.jpg)](https://sysmansquad.com/wp-content/uploads/2020/06/LPSoftwareCenter-EndResult-2-new.jpg)</figure>
+                <figure class="aligncenter size-large">[![](LPSoftwareCenter-EndResult-2-new-1024x658.jpg)](LPSoftwareCenter-EndResult-2-new.jpg)</figure>
               </div>
               
               <p>
@@ -213,7 +213,7 @@ New-FoDLanguageFeaturesRepository -Language "fr-fr", "de-de" -SourcePath "I:\" -
 New-CMLanguagePackApplication -SiteServer "cm.contoso.com" -SiteCode "P01" -SourcePath "\\sccm.acc.local\OSD\Source\2004-Languages" -Languages "fr-fr", "de-de" -WindowsVersion @{ "Version" = "2004"; "Build" = "19041" } -GlobalConditionName "Operating System build" -CreateAppIfMissing -CreateGlobalConditionIfMissing</pre>
               </div><figure class="wp-block-image size-large">
               
-              [![](https://sysmansquad.com/wp-content/uploads/2020/06/LPSoftwareCenter-EndResult-3-new-1024x658.jpg)](https://sysmansquad.com/wp-content/uploads/2020/06/LPSoftwareCenter-EndResult-3-new.jpg)</figure> <h2>
+              [![](LPSoftwareCenter-EndResult-3-new-1024x658.jpg)](LPSoftwareCenter-EndResult-3-new.jpg)</figure> <h2>
                 Support
               </h2>
               

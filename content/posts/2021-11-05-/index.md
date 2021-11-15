@@ -19,11 +19,11 @@ First, you need to make sure you are not already logged in.
 
 What you want to see is if you visit <https://myapps.microsoft.com> - you get a the vanilla, plain Office 365 sign on page, it should redirect you to a page like this. <figure class="wp-block-image size-full">
 
-<img loading="lazy" width="740" height="590" src="https://sysmansquad.com/wp-content/uploads/2021/11/image.png" alt="webpage URL says login.microsoft.com/common/ - not /consumer/ or a specific tenant GUID.
+<img loading="lazy" width="740" height="590" src="image.png" alt="webpage URL says login.microsoft.com/common/ - not /consumer/ or a specific tenant GUID.
 
 No Custom Company Branding on the background, logo, or anywhere else on the login page.
 
-No Usernames shown to select from. " class="wp-image-3080" srcset="https:/wp-content/uploads/2021/11/image.png 740w, https:/wp-content/uploads/2021/11/image.png 300w, https:/wp-content/uploads/2021/11/image.png 100w" sizes="(max-width: 740px) 100vw, 740px" /> </figure> 
+No Usernames shown to select from. " class="wp-image-3080" srcset="image.png 740w, image.png 300w, image.png 100w" sizes="(max-width: 740px) 100vw, 740px" /> </figure> 
 
 Note there is no Custom Company Branding on the logo, background, or the rest of the page, and the URL says /common/ and not /consumer/ or a specific Tenant GUID. 
 
@@ -46,7 +46,7 @@ The best ways I have found to test this are either a
 
 Copy-Paste `<strong>chrome://settings/siteData</strong>` into a new Chrome Tab and you should see something like this. Though if this is a normal-use browser profile you may have thousands more entries. <figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2021/11/image-1.png) </figure> 
+![](image-1.png) </figure> 
 
 You need to search for and delete each of these with the trash can on the right. Alternatively, you could hit that "Remove All" button - but that will log you out of all of your other sites, and then you might as well just be using a [new Chrome profile](#NewChromeProfile)... Once those are gone, try visiting [https://myapps.microsoft.com](https://myapps.microsoft.com/) again and see if it fills in a username option again. If it doesn't, you're good to go forward to [testing](#TestingYourSSO)!
 

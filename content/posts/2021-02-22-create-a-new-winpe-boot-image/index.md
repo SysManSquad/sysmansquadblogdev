@@ -3,7 +3,7 @@ title: Create a new WinPE boot image
 author: Adam Cook
 type: post
 date: 2021-02-22T09:51:23+00:00
-url: /2021/02/22/create-a-new-winpe-boot-image/
+url: 2021-02-22-create-a-new-winpe-boot-image/
 categories:
   - Endpoint Management
   - How-To
@@ -72,7 +72,7 @@ categories:
               </li>
             </ol><figure class="wp-block-image size-large">
             
-            ![](https://sysmansquad.com/wp-content/uploads/2021/02/createnewbootimageconfigmgr-1-1024x468.png)<figcaption>Multiple WinPE.wim files in the ADK installation directory</figcaption></figure> <ol start="3">
+            ![](createnewbootimageconfigmgr-1-1024x468.png)<figcaption>Multiple WinPE.wim files in the ADK installation directory</figcaption></figure> <ol start="3">
               <li>
                 Let's run with the most common requirement here and copy <code>amd64\en-us\winpe.wim</code> to any destination directory you need
               </li>
@@ -84,7 +84,7 @@ categories:
               </li>
             </ol><figure class="wp-block-image size-large">
             
-            [![](https://sysmansquad.com/wp-content/uploads/2021/02/createnewbootimageconfigmgr-2.png)](createnewbootimageconfigmgr-2.png)<figcaption>Add Boot Image in ConfigMgr console</figcaption></figure> <ol start="6">
+            [![](createnewbootimageconfigmgr-2.png)](createnewbootimageconfigmgr-2.png)<figcaption>Add Boot Image in ConfigMgr console</figcaption></figure> <ol start="6">
               <li>
                 Go through the wizard to browse out and select our new boot image <code>WinPE-amd64-2021-02-13.wim</code>
               </li>
@@ -97,13 +97,13 @@ categories:
               For each change you make to this boot image, ConfigMgr will always start with a fresh copy from the original - the one without the PackageID in the file name. <strong>Don't delete it</strong>!Otherwise you'll find yourself making a new one, again, when you come to update drivers or add new components later.
             </p><figure class="wp-block-image size-large">
             
-            [![](https://sysmansquad.com/wp-content/uploads/2021/02/createnewbootimageconfigmgr-3-1024x358.png)](createnewbootimageconfigmgr-3.png)<figcaption>Boot image on disk and in console after imported</figcaption></figure> <ol start="8">
+            [![](createnewbootimageconfigmgr-3-1024x358.png)](createnewbootimageconfigmgr-3.png)<figcaption>Boot image on disk and in console after imported</figcaption></figure> <ol start="8">
               <li>
                 Now you're free to do as you please with your new fresh new vanilla boot image. You'll notice adding optional components etc will increase the file size, naturally.
               </li>
             </ol><figure class="wp-block-image size-large">
             
-            [![](https://sysmansquad.com/wp-content/uploads/2021/02/createnewbootimageconfigmgr-4-1024x823.png)](createnewbootimageconfigmgr-4.png)<figcaption>Boot image with drivers and optional components added</figcaption></figure> <p>
+            [![](createnewbootimageconfigmgr-4-1024x823.png)](createnewbootimageconfigmgr-4.png)<figcaption>Boot image with drivers and optional components added</figcaption></figure> <p>
               What I want to point out here is that because we did these actions within the ConfigMgr console, i.e. add drivers and optional components, we can see exactly what those drivers and components are.
             </p>
             
@@ -125,7 +125,7 @@ categories:
               </li>
             </ol><figure class="wp-block-image size-large">
             
-            [![](https://sysmansquad.com/wp-content/uploads/2021/02/createnewbootimageconfigmgr-5-1024x582.png)](createnewbootimageconfigmgr-5.png)<figcaption>View New-WinPEWIM.ps1 as Raw</figcaption></figure> <ol start="2">
+            [![](createnewbootimageconfigmgr-5-1024x582.png)](createnewbootimageconfigmgr-5.png)<figcaption>View New-WinPEWIM.ps1 as Raw</figcaption></figure> <ol start="2">
               <li>
                 Execute the script. Customise any of the parameters to suit your needs:
               </li>

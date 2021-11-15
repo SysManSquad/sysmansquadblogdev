@@ -3,8 +3,8 @@ title: Find Microsoft Accounts on Company Domains
 author: Kevin Crouch
 type: post
 date: 2020-11-23T15:00:00+00:00
-url: /2020/11/23/find-microsoft-accounts/
-featured_image: /wp-content/uploads/2020/11/two-buttons-sideways_white.png
+url: 2020-11/23/find-microsoft-accounts/
+featured_image: two-buttons-sideways_white.png
 categories:
   - Azure
   - How-To
@@ -91,13 +91,13 @@ The other day I was helping someone over in the [WinAdmins Discord](https://aka.
                           <div class="wp-block-jetpack-slideshow_container swiper-container">
                             <ul class="wp-block-jetpack-slideshow_swiper-wrapper swiper-wrapper">
                               <li class="wp-block-jetpack-slideshow_slide swiper-slide">
-                                <figure>![](https://sysmansquad.com/wp-content/uploads/2021/09/image-2.png)<figcaption class="wp-block-jetpack-slideshow_caption gallery-caption">Blocked from registering from a new Microsoft Account with Company Email</figcaption></figure>
+                                <figure>![](image-2.png)<figcaption class="wp-block-jetpack-slideshow_caption gallery-caption">Blocked from registering from a new Microsoft Account with Company Email</figcaption></figure>
                               </li>
                               <li class="wp-block-jetpack-slideshow_slide swiper-slide">
-                                <figure>![](https://sysmansquad.com/wp-content/uploads/2021/09/image-1.png)<figcaption class="wp-block-jetpack-slideshow_caption gallery-caption">Blocked from adding the company email as an alias on a current account</figcaption></figure>
+                                <figure>![](image-1.png)<figcaption class="wp-block-jetpack-slideshow_caption gallery-caption">Blocked from adding the company email as an alias on a current account</figcaption></figure>
                               </li>
                               <li class="wp-block-jetpack-slideshow_slide swiper-slide">
-                                <figure>![](https://sysmansquad.com/wp-content/uploads/2020/11/zgvcQSD1.png)<figcaption class="wp-block-jetpack-slideshow_caption gallery-caption">Seems to work off Domain, not specific Email Addresses</figcaption></figure>
+                                <figure>![](zgvcQSD1.png)<figcaption class="wp-block-jetpack-slideshow_caption gallery-caption">Seems to work off Domain, not specific Email Addresses</figcaption></figure>
                               </li>
                             </ul>
                             
@@ -117,7 +117,7 @@ The other day I was helping someone over in the [WinAdmins Discord](https://aka.
                         </p>
                         
                         <div class="wp-block-image image-shadow">
-                          <figure class="aligncenter size-large is-resized">![Screenshot showing a choice between work / School account and Personal / Microsoft Account](https://sysmansquad.com/wp-content/uploads/2020/11/image-1-edited.png)</figure>
+                          <figure class="aligncenter size-large is-resized">![Screenshot showing a choice between work / School account and Personal / Microsoft Account](image-1-edited.png)</figure>
                         </div>
                         
                         <p>
@@ -132,7 +132,7 @@ The other day I was helping someone over in the [WinAdmins Discord](https://aka.
                           To find these conflicting Microsoft accounts, we can ... abuse... an Azure App Registrations capabilities. We create a custom application that we register to only accept Microsoft accounts, not AzureAD/Work/School accounts. – if you try to use an email for your domain that doesn’t have a Microsoft account, it will just throw back an error that no Microsoft account could be found.
                         </p><figure class="wp-block-image size-large image-shadow">
                         
-                        ![This screenshot shows that a microsoft Account sign in prompt will return a warning if you give it an email address with no Microsoft Account associated ](https://sysmansquad.com/wp-content/uploads/2020/11/image-2-edited.png)</figure> <p>
+                        ![This screenshot shows that a microsoft Account sign in prompt will return a warning if you give it an email address with no Microsoft Account associated ](image-2-edited.png)</figure> <p>
                           Even better! We can leverage this, along with <strong>[login hints](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-optional-claims#:~:text=app%2Buser%20token.-,login_hint,-Login%20hint)</strong>, to scale this up and make a scriptable solution to find any domain emails that have a Microsoft account conflicting with their Work account.
                         </p>
                         
@@ -148,7 +148,7 @@ The other day I was helping someone over in the [WinAdmins Discord](https://aka.
                           To set this up, we need to head to the [Azure Portal](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps) and create a new <strong>app registration</strong>
                         </p><figure class="wp-block-image size-large image-shadow">
                         
-                        ![Navigate to portal.azure.com, search for App Registrations, and select New Registration](https://sysmansquad.com/wp-content/uploads/2020/11/image-3.png)</figure> <p>
+                        ![Navigate to portal.azure.com, search for App Registrations, and select New Registration](image-3.png)</figure> <p>
                           We need a name for the consumers to see if they authorize our test application. I used: <code>ContosoMicrosoftAccountVerifier</code>
                         </p>
                         
@@ -156,7 +156,7 @@ The other day I was helping someone over in the [WinAdmins Discord](https://aka.
                           For supported account types, we cannot use the first three options because they all support tenant/company logins, but the fourth type will serve our purposes.
                         </p><figure class="wp-block-image size-large image-shadow">
                         
-                        ![We cannot support account types from regular tenants, and instead only support Personal / Microsoft Accounts](https://sysmansquad.com/wp-content/uploads/2020/11/image-4.png)</figure> <p>
+                        ![We cannot support account types from regular tenants, and instead only support Personal / Microsoft Accounts](image-4.png)</figure> <p>
                           We do not need a redirect URL for this setup.
                         </p>
                         
@@ -168,7 +168,7 @@ The other day I was helping someone over in the [WinAdmins Discord](https://aka.
                           Under <strong>API Permissions</strong>, we need to add a permission of some sort for it to request access to. The least amount of permissions was just the <strong>Profile</strong> permission.
                         </p><figure class="wp-block-image size-large image-shadow">
                         
-                        ![select the minimum amount of permissions that you can. They should never be signed into anyway ](https://sysmansquad.com/wp-content/uploads/2020/11/image-5.png)</figure> <p>
+                        ![select the minimum amount of permissions that you can. They should never be signed into anyway ](image-5.png)</figure> <p>
                           Even though people should not be logging into our App, we need to setup some sort of Authentication for the App to theoretically use, even though we won't use it.
                         </p>
                         
@@ -176,7 +176,7 @@ The other day I was helping someone over in the [WinAdmins Discord](https://aka.
                           Under <strong>Certificates and Secrets</strong>, I created a New Client Secret. You do not need to save the key values
                         </p><figure class="wp-block-image size-large image-shadow">
                         
-                        ![Create a Dummy client secret, for the Microsoft backend. you do not need to keep the key](https://sysmansquad.com/wp-content/uploads/2020/11/image-6.png)</figure> <div class="wp-block-group">
+                        ![Create a Dummy client secret, for the Microsoft backend. you do not need to keep the key](image-6.png)</figure> <div class="wp-block-group">
                           <div class="wp-block-group__inner-container">
                             <h2 id="Constructing-App-Auth-URL">
                               Constructing our App Authorization URL
@@ -230,7 +230,7 @@ The other day I was helping someone over in the [WinAdmins Discord](https://aka.
                                   <strong>Valid Microsoft Account</strong>
                                 </h5><figure class="wp-block-image image-shadow">
                                 
-                                ![Providing a Valid Microsoft Account email continues to a Password Prompt](https://sysmansquad.com/wp-content/uploads/2020/11/image-7.png)<figcaption>Note: the email address is recognized, and the prompt has switched to “Enter password”</figcaption></figure> 
+                                ![Providing a Valid Microsoft Account email continues to a Password Prompt](image-7.png)<figcaption>Note: the email address is recognized, and the prompt has switched to “Enter password”</figcaption></figure> 
                                 
                                 <p>
                                 </p>
@@ -241,7 +241,7 @@ The other day I was helping someone over in the [WinAdmins Discord](https://aka.
                                   <strong>No Valid Microsoft Account</strong>
                                 </h5><figure class="wp-block-image image-shadow">
                                 
-                                ![Providing an invalid Microsoft Account email throws a watning that the Microsoft Account does not exists](https://sysmansquad.com/wp-content/uploads/2020/11/image-8.png)<figcaption>Note: the email address is not recognized, and the prompt still shows “That Microsoft account doesn’t exist”</figcaption></figure> 
+                                ![Providing an invalid Microsoft Account email throws a watning that the Microsoft Account does not exists](image-8.png)<figcaption>Note: the email address is not recognized, and the prompt still shows “That Microsoft account doesn’t exist”</figcaption></figure> 
                                 
                                 <p>
                                 </p>
@@ -291,7 +291,7 @@ $results
 </pre>
                             </div><figure class="wp-block-image size-large">
                             
-                            ![](https://sysmansquad.com/wp-content/uploads/2020/11/image-10.png)</figure>
+                            ![](image-10.png)</figure>
                           </div>
                         </div>
                         
@@ -305,7 +305,7 @@ $results
                               Our app doesn’t have any server code. We only need to get to the pre-login experience to confirm whether an email address has a Microsoft account associated with it. This means that users don’t need to finish logging in and authorize the app, but if they do finish logging in, they will get a consent prompt like this.
                             </p><figure class="wp-block-image image-shadow">
                             
-                            ![If a user does sign into this app fully, they will be prompted to approve the permissions requested earlier](https://sysmansquad.com/wp-content/uploads/2020/11/image-9.png)<figcaption>Note: <strong>Unverified</strong> is the default state, but you can verify your tenant to show your company’s name instead. Details [here](https://go.microsoft.com/fwlink/?linkid=2121525&clcid=0x9)</figcaption></figure>
+                            ![If a user does sign into this app fully, they will be prompted to approve the permissions requested earlier](image-9.png)<figcaption>Note: <strong>Unverified</strong> is the default state, but you can verify your tenant to show your company’s name instead. Details [here](https://go.microsoft.com/fwlink/?linkid=2121525&clcid=0x9)</figcaption></figure>
                           </div>
                         </div>
                         

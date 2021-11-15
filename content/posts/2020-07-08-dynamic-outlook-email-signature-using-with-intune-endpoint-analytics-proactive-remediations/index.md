@@ -3,8 +3,8 @@ title: Dynamic Outlook Email Signature Using with Intune Endpoint Analytics Proa
 author: Jóhannes Geir Kristjánsson
 type: post
 date: 2020-07-09T03:09:31+00:00
-url: /2020/07/08/dynamic-outlook-email-signature-using-with-intune-endpoint-analytics-proactive-remediations/
-featured_image: /wp-content/uploads/2020/07/outlook-signature.png
+url: 2020-07/08/dynamic-outlook-email-signature-using-with-intune-endpoint-analytics-proactive-remediations/
+featured_image: outlook-signature.png
 categories:
   - Azure
   - Documentation

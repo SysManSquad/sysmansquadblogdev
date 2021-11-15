@@ -3,7 +3,7 @@ title: Manage Distribution Point Content Using PSCMContentMgmt
 author: Adam Cook
 type: post
 date: 2020-09-04T21:59:36+00:00
-url: /2020/09/04/manage-distribution-point-content-using-pscmcontentmgmt/
+url: 2020-09/04/manage-distribution-point-content-using-pscmcontentmgmt/
 categories:
   - Endpoint Management
   - MECM/MEMCM/SCCM

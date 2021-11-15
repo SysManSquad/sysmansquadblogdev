@@ -4,8 +4,8 @@ author: Aaron
 type: post
 date: 2019-12-17T06:59:18+00:00
 excerpt: Begin creating a lab environment by documenting it.
-url: /2019/12/17/net-101-create-a-basic-lab-network-design/
-featured_image: /wp-content/uploads/2019/12/Lab-Network-3.png
+url: 2019-12-17-net-101-create-a-basic-lab-network-design/
+featured_image: Lab-Network-3.png
 uagb_style_timestamp-js:
   - 1589200585
 uag_style_timestamp-js:
@@ -229,7 +229,7 @@ Hey, so now we have an idea of our network definition. We know what it is, what 
 
 Well that was simple. But also maybe we should do this in a visual way as well. Being able to visualize your network can help you find problems later. Even though our network is basic, let's document it as well as we can.<figure class="wp-block-image size-large">
 
-<img loading="lazy" width="792" height="352" src="https://sysmansquad.com/wp-content/uploads/2019/12/Lab-Network-3.png" alt="" class="wp-image-637" srcset="https:/wp-content/uploads/2019/12/Lab-Network-3.png 792w, https:/wp-content/uploads/2019/12/Lab-Network-3.png 300w, https:/wp-content/uploads/2019/12/Lab-Network-3.png 768w, https:/wp-content/uploads/2019/12/Lab-Network-3.png 100w" sizes="(max-width: 792px) 100vw, 792px" /> </figure> 
+<img loading="lazy" width="792" height="352" src="Lab-Network-3.png" alt="" class="wp-image-637" srcset="Lab-Network-3.png 792w, Lab-Network-3.png 300w, Lab-Network-3.png 768w, Lab-Network-3.png 100w" sizes="(max-width: 792px) 100vw, 792px" /> </figure> 
 
 <p class="has-text-align-center">
   <strong>[Here are the source files for this drawing.](https://github.com/SysManSquad/BlogFiles/tree/master/aaron/net-101)</em></strong>

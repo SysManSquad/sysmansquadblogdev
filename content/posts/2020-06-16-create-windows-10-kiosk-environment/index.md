@@ -3,7 +3,7 @@ title: Create Windows 10 Kiosk Environment
 author: AshMT
 type: post
 date: 2020-06-16T14:00:00+00:00
-url: /2020/06/16/create-windows-10-kiosk-environment/
+url: 2020-06/16/create-windows-10-kiosk-environment/
 categories:
   - Endpoint Management
 

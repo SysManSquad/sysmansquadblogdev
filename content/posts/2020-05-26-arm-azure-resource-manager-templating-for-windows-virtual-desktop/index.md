@@ -3,8 +3,8 @@ title: ARM (Azure Resource Manager) Templating for Windows Virtual Desktop
 author: Jake Shackelford
 type: post
 date: 2020-05-26T12:56:38+00:00
-url: /2020/05/26/arm-azure-resource-manager-templating-for-windows-virtual-desktop/
-featured_image: /wp-content/uploads/2020/05/msedge_CxaaJwZiAP.png
+url: 2020-05/26/arm-azure-resource-manager-templating-for-windows-virtual-desktop/
+featured_image: msedge_CxaaJwZiAP.png
 categories:
   - Azure
   - How-To
@@ -111,7 +111,7 @@ Now that our two scripts are ready lets upload them! Navigate to the resource gr
 
   1. Select the storage account
   2. Select **Containers**  
-     ****![](https://sysmansquad.com/wp-content/uploads/2020/05/msedge_uFT7VQv2mm.png)
+     ****![](msedge_uFT7VQv2mm.png)
   3. Select **+ Container**
   4. Give your Container a name
   5. Leave Public access as Private
@@ -131,9 +131,9 @@ Now that our two scripts are ready lets upload them! Navigate to the resource gr
 
   1. Login to <https://portal.azure.com/>
   2. Select a desired resource group or create a new one (Note nothing will actually get created in the group)
-  3. Select **Add**![](https://sysmansquad.com/wp-content/uploads/2020/05/msedge_MCoWS09HuE.png) 
-  4. Type in "**Windows 10**" and select **Microsoft Windows 10 + Office 365 ProPlus**![](https://sysmansquad.com/wp-content/uploads/2020/05/msedge_sl8U6dkdIm.png)
-  5. Select **Create**![](https://sysmansquad.com/wp-content/uploads/2020/05/msedge_CxaaJwZiAP.png) 
+  3. Select **Add**![](msedge_MCoWS09HuE.png) 
+  4. Type in "**Windows 10**" and select **Microsoft Windows 10 + Office 365 ProPlus**![](msedge_sl8U6dkdIm.png)
+  5. Select **Create**![](msedge_CxaaJwZiAP.png) 
   6. Add a **Virtual Machine Name**
   7. Change **size** to desired VM (I recommend **Standard B2ms**)
   8. Add **Username, Password, Confirm Password**
@@ -145,7 +145,7 @@ Now that our two scripts are ready lets upload them! Navigate to the resource gr
  14. Select **Next : Management >** 
  15. Change Boot Diagnostics to **Off**
  16. Select **Review + Create**
- 17. Select **Download a template for automation**![](https://sysmansquad.com/wp-content/uploads/2020/05/msedge_TyKXYqsKI6.png) 
+ 17. Select **Download a template for automation**![](msedge_TyKXYqsKI6.png) 
  18. Select **Download** in the top left
 
 You should now have a template.zip with two files named parameters.json and tempalte.json you will want to extract these to a folder and open them both with a text editor. I recommend Visual Studio Code.
@@ -199,7 +199,7 @@ So what exactly does adding those URLs do? Well they download the files from the
 
 ### Lets recap
 
-I want you to take a deep breathe as you've done a lot so far.![](https://sysmansquad.com/wp-content/uploads/2020/01/giphy.gif)
+I want you to take a deep breathe as you've done a lot so far.![](giphy.gif)
 
 You created a few resource groups, a key vault, storage account, an ARM template file, and two powershell scripts and that's awesome!
 

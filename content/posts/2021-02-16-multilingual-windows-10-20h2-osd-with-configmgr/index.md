@@ -3,7 +3,7 @@ title: Multilingual Windows 10 20H2 OSD with ConfigMgr
 author: Adam Cook
 type: post
 date: 2021-02-16T10:06:58+00:00
-url: /2021/02/16/multilingual-windows-10-20h2-osd-with-configmgr/
+url: 2021-02-16-multilingual-windows-10-20h2-osd-with-configmgr/
 categories:
   - Endpoint Management
   - MECM/MEMCM/SCCM
@@ -69,7 +69,7 @@ categories:
                       Here is the <code>dism.exe /online /get-intl</code> output after we have built a fr-fr system using en-us base install media with this "new" process in Windows 10 2004 or 20H2:
                     </p><figure class="wp-block-image size-large">
                     
-                    ![](https://sysmansquad.com/wp-content/uploads/2021/02/multilingualosdwin1020h2-14.png)<figcaption><code>dism.exe /online /get-intl</code> output in French</figcaption></figure> <p>
+                    ![](multilingualosdwin1020h2-14.png)<figcaption><code>dism.exe /online /get-intl</code> output in French</figcaption></figure> <p>
                       Here's the translation of the above output:
                     </p>
                     
@@ -111,7 +111,7 @@ categories:
                       You'll notice below I'm depending on the [OSDWindowsSettings* task sequence variables](https://docs.microsoft.com/en-us/mem/configmgr/osd/understand/task-sequence-steps#BKMK_ApplyWindowsSettings), which are picked up by collection variables. This saves from needing multiple <code>Apply Windows Settings</code> steps.
                     </p><figure class="wp-block-image size-large is-style-default">
                     
-                    [![](https://sysmansquad.com/wp-content/uploads/2021/02/multilingualosdwin1020h2-1-1-726x1024.png)](https://sysmansquad.com/wp-content/uploads/2021/02/multilingualosdwin1020h2-1-1.png)<figcaption>Windows 10 20H2 task sequence, click to enlarge</figcaption></figure> <p>
+                    [![](multilingualosdwin1020h2-1-1-726x1024.png)](multilingualosdwin1020h2-1-1.png)<figcaption>Windows 10 20H2 task sequence, click to enlarge</figcaption></figure> <p>
                       So what? That's not new! Correct, but what is new, is that previously, doing the above would have changed the system's default language and the InstallLanguage key to French. This caused a problem when admins tried to later IPU or deploy feature updates to their Windows 10 devices in the language that was of the install media they used in their task sequences (in this scenario, English en-us).
                     </p>
                     
@@ -133,7 +133,7 @@ categories:
                       The InstallLanguage issue is now no more:
                     </p><figure class="wp-block-image size-large">
                     
-                    [![](https://sysmansquad.com/wp-content/uploads/2021/02/multilingualosdwin1020h2-12.png)](https://sysmansquad.com/wp-content/uploads/2021/02/multilingualosdwin1020h2-12.png)<figcaption>HKLM:SYSTEM\CurrentControlSet\Control\Nls\Language:InstallLanguage</figcaption></figure> <p>
+                    [![](multilingualosdwin1020h2-12.png)](multilingualosdwin1020h2-12.png)<figcaption>HKLM:SYSTEM\CurrentControlSet\Control\Nls\Language:InstallLanguage</figcaption></figure> <p>
                       Above is what <code>HKLM:SYSTEM\CurrentControlSet\Control\Nls\Language</code> looks like after building a Windows 10 2004 or 20H2 system and changing the user default language to French (fr-fr - 040c), not the system default language (en-us - 0409)!
                     </p>
                     
@@ -165,7 +165,7 @@ categories:
                       To get started, install my [PSCMWin10Language](https://github.com/codaamok/PSCMWin10Language) PowerShell module from the gallery and download the following ISO:
                     </p><figure class="wp-block-image size-large">
                     
-                    [![](https://sysmansquad.com/wp-content/uploads/2021/02/multilingualosdwin1020h2-2-1024x459.png)](https://sysmansquad.com/wp-content/uploads/2021/02/multilingualosdwin1020h2-2.png)<figcaption>mu_windows_10_language_pack_version_2004_x86_arm64_x64_dvd_7729a9da.iso</figcaption></figure> <figure class="wp-block-image size-large">[![](https://sysmansquad.com/wp-content/uploads/2021/02/multilingualosdwin1020h2-15.png)](https://sysmansquad.com/wp-content/uploads/2021/02/multilingualosdwin1020h2-15.png)<figcaption>Microsoft Volume Licensing Service Center searching for language content</figcaption></figure> <div class="wp-block-columns">
+                    [![](multilingualosdwin1020h2-2-1024x459.png)](multilingualosdwin1020h2-2.png)<figcaption>mu_windows_10_language_pack_version_2004_x86_arm64_x64_dvd_7729a9da.iso</figcaption></figure> <figure class="wp-block-image size-large">[![](multilingualosdwin1020h2-15.png)](multilingualosdwin1020h2-15.png)<figcaption>Microsoft Volume Licensing Service Center searching for language content</figcaption></figure> <div class="wp-block-columns">
                       <div class="wp-block-column" style="flex-basis:100%">
                       </div>
                     </div>
@@ -206,11 +206,11 @@ categories:
                       In any case, grab the one which reads just "Language Packs" because it contains LPs and LXPs:
                     </p><figure class="wp-block-image size-large">
                     
-                    [![](https://sysmansquad.com/wp-content/uploads/2021/02/multilingualosdwin1020h2-3.png)](https://sysmansquad.com/wp-content/uploads/2021/02/multilingualosdwin1020h2-3.png)<figcaption>Language Pack and Language Experience Pack ISO</figcaption></figure> <p>
+                    [![](multilingualosdwin1020h2-3.png)](multilingualosdwin1020h2-3.png)<figcaption>Language Pack and Language Experience Pack ISO</figcaption></figure> <p>
                       You'll also want to download the FoD ISO. You'll only want Part 1, Part 2 contains retail demo stuff.
                     </p><figure class="wp-block-image size-large">
                     
-                    [![](https://sysmansquad.com/wp-content/uploads/2021/02/multilingualosdwin1020h2-4-1024x685.png)](https://sysmansquad.com/wp-content/uploads/2021/02/multilingualosdwin1020h2-4.png)<figcaption>Features on Demand ISO</figcaption></figure> <p>
+                    [![](multilingualosdwin1020h2-4-1024x685.png)](multilingualosdwin1020h2-4.png)<figcaption>Features on Demand ISO</figcaption></figure> <p>
                       Now you have the ISOs downloaded and mounted, let's use the PSCMWin10Language PowerShell module to create our folder structure for each language, ready to create Packages with in ConfigMgr.
                     </p>
                     
@@ -227,15 +227,15 @@ New-FoDLanguageFeaturesRepository -Language "fr-FR", "de-DE" -SourcePath "E:\" -
                     </div>
                     
                     <div class="wp-block-image">
-                      <figure class="aligncenter size-large is-resized">[![](https://sysmansquad.com/wp-content/uploads/2021/02/multilingualosdwin1020h2-5-1007x1024.png)](https://sysmansquad.com/wp-content/uploads/2021/02/multilingualosdwin1020h2-5.png)<figcaption>New-LPRepository<br /><em>(click to enlarge)</em></figcaption></figure>
+                      <figure class="aligncenter size-large is-resized">[![](multilingualosdwin1020h2-5-1007x1024.png)](multilingualosdwin1020h2-5.png)<figcaption>New-LPRepository<br /><em>(click to enlarge)</em></figcaption></figure>
                     </div>
                     
                     <div class="wp-block-image">
-                      <figure class="aligncenter size-large is-resized">[![](https://sysmansquad.com/wp-content/uploads/2021/02/multilingualosdwin1020h2-6-1007x1024.png)](https://sysmansquad.com/wp-content/uploads/2021/02/multilingualosdwin1020h2-6.png)<figcaption>New-LXPRepository<br /><em>(click to enlarge)</em></figcaption></figure>
+                      <figure class="aligncenter size-large is-resized">[![](multilingualosdwin1020h2-6-1007x1024.png)](multilingualosdwin1020h2-6.png)<figcaption>New-LXPRepository<br /><em>(click to enlarge)</em></figcaption></figure>
                     </div>
                     
                     <div class="wp-block-image">
-                      <figure class="aligncenter size-large is-resized">[![](https://sysmansquad.com/wp-content/uploads/2021/02/multilingualosdwin1020h2-7-1007x1024.png)](https://sysmansquad.com/wp-content/uploads/2021/02/multilingualosdwin1020h2-7.png)<figcaption>New-FoDLanguageFeaturesRepository<br /><em>(click to enlarge)</em></figcaption></figure>
+                      <figure class="aligncenter size-large is-resized">[![](multilingualosdwin1020h2-7-1007x1024.png)](multilingualosdwin1020h2-7.png)<figcaption>New-FoDLanguageFeaturesRepository<br /><em>(click to enlarge)</em></figcaption></figure>
                     </div>
                     
                     <p>
@@ -246,7 +246,7 @@ New-FoDLanguageFeaturesRepository -Language "fr-FR", "de-DE" -SourcePath "E:\" -
                       <strong>Note:</strong> PSCMWin10Language will not create these Packages for you.
                     </p><figure class="wp-block-image size-large">
                     
-                    [![](https://sysmansquad.com/wp-content/uploads/2021/02/multilingualosdwin1020h2-8-1024x497.png)](https://sysmansquad.com/wp-content/uploads/2021/02/multilingualosdwin1020h2-8.png)<figcaption>Packages for Windows 10 2004 LP, LXP and FoD</figcaption></figure> <p>
+                    [![](multilingualosdwin1020h2-8-1024x497.png)](multilingualosdwin1020h2-8.png)<figcaption>Packages for Windows 10 2004 LP, LXP and FoD</figcaption></figure> <p>
                       One last thing we want to take care of are your collections. In the task sequence we'll be using the [OSDWindowsSettings* task sequence variables](https://docs.microsoft.com/en-us/mem/configmgr/osd/understand/task-sequence-steps#BKMK_ApplyWindowsSettings) so we don't have lots of <code>Apply Windows Settings</code> steps.
                     </p>
                     
@@ -255,7 +255,7 @@ New-FoDLanguageFeaturesRepository -Language "fr-FR", "de-DE" -SourcePath "E:\" -
                     </p>
                     
                     <div class="wp-block-image">
-                      <figure class="aligncenter size-large is-resized">[![](https://sysmansquad.com/wp-content/uploads/2021/02/multilingualosdwin1020h2-9.png)](https://sysmansquad.com/wp-content/uploads/2021/02/multilingualosdwin1020h2-9.png)<figcaption>Windows 10 French OSD collection with collection variables</figcaption></figure>
+                      <figure class="aligncenter size-large is-resized">[![](multilingualosdwin1020h2-9.png)](multilingualosdwin1020h2-9.png)<figcaption>Windows 10 French OSD collection with collection variables</figcaption></figure>
                     </div>
                     
                     <p>
@@ -278,15 +278,15 @@ New-FoDLanguageFeaturesRepository -Language "fr-FR", "de-DE" -SourcePath "E:\" -
                       This task sequence contains just enough to not only build a quick VM to demonstrate what I've discussing, but also it should be enough in order for you to glean the insight you need. Or to perhaps incorporate it into your own existing task sequence.
                     </p><figure class="wp-block-image size-large">
                     
-                    ![](https://sysmansquad.com/wp-content/uploads/2021/02/multilingualosdwin1020h2-10.png)<figcaption>Import SysManSquadMultilingualWindows10TaskSequence-20200213.zip</figcaption></figure> <p>
+                    ![](multilingualosdwin1020h2-10.png)<figcaption>Import SysManSquadMultilingualWindows10TaskSequence-20200213.zip</figcaption></figure> <p>
                       You will need to set the option to <strong>ignore dependencies</strong>, simply because the PackageID references in the task sequence would not resolve in your environment.
                     </p><figure class="wp-block-image size-large">
                     
-                    ![](https://sysmansquad.com/wp-content/uploads/2021/02/multilingualosdwin1020h2-11.png)<figcaption>Set the <strong>Action</strong> to <strong>Ignore Depedency</strong></figcaption></figure> <p>
+                    ![](multilingualosdwin1020h2-11.png)<figcaption>Set the <strong>Action</strong> to <strong>Ignore Depedency</strong></figcaption></figure> <p>
                       Once imported, you will see that beyond the initial few steps of formatting the drive and applying the OS image, there's nothing more complicated than the 3 steps for each language you want in your task sequence: installing the LP, LXP and FoD language content.
                     </p><figure class="wp-block-image size-large">
                     
-                    ![](https://sysmansquad.com/wp-content/uploads/2021/02/multilingualosdwin1020h2-13.png)<figcaption>Steps in the task sequence which install the language content for fr-FR and de-DE</figcaption></figure> <p>
+                    ![](multilingualosdwin1020h2-13.png)<figcaption>Steps in the task sequence which install the language content for fr-FR and de-DE</figcaption></figure> <p>
                       It's these steps you will have to update to use the Packages you made in the previous section, from your environment.
                     </p>
                     

@@ -3,7 +3,7 @@ title: Setting Environmental Variables with Intune and proactive remediations
 author: Jóhannes Geir Kristjánsson
 type: post
 date: 2021-07-02T05:24:25+00:00
-url: /2021/07/02/setting-environmental-variables-with-intune-and-proactive-remediations/
+url: 2021-07-02-setting-environmental-variables-with-intune-and-proactive-remediations/
 categories:
   - Endpoint Management
   - How-To
@@ -47,7 +47,7 @@ If you are new to using Proactive Remediations, check out Jake Shackelford's [bl
 
 When you create the Proactive remediation, you need to configure it to run as the logged-on user.<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2021/04/vmconnect_68MRJGl48P.png) </figure> 
+![](vmconnect_68MRJGl48P.png) </figure> 
 
 ## The Script
 

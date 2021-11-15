@@ -3,7 +3,7 @@ title: Getting Reboot History and Optimizing Legacy Functions
 author: Nic Wendlowsky
 type: post
 date: 2020-08-28T14:00:00+00:00
-url: /2020/08/28/getting-reboot-history-and-optimizing-legacy-functions/
+url: 2020-08/28/getting-reboot-history-and-optimizing-legacy-functions/
 categories:
   - Endpoint Management
   - MECM/MEMCM/SCCM

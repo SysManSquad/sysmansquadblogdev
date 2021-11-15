@@ -3,7 +3,7 @@ title: Enrolling and Autopiloting New and Pre-existing Devices into Intune with 
 author: Andrew Arsenault
 type: post
 date: 2020-08-25T15:45:46+00:00
-url: /2020/08/25/enrolling-and-autopiloting-new-and-pre-existing-devices-into-intune-with-configmgr-edu/
+url: 2020-08/25/enrolling-and-autopiloting-new-and-pre-existing-devices-into-intune-with-configmgr-edu/
 categories:
   - Endpoint Management
 
@@ -18,7 +18,7 @@ First off we will prepare the Autopilot Profile and download the config JSON
 
 In MEMAC, navigate to the "Windows Autopilot deployment profiles" blade, and create a new Autopilot profile, call this whatever you want. The only basic setting we are worried about is the "Convert all targeted devices to Autopilot", set this to Yes. Next we will set the OOBE settings to the following (Note: the "Enter a name" option can be whatever you want to name your devices, this is important as we will use this to target the Autopilot profile post image): <figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2020/08/image.png) </figure> 
+![](image.png) </figure> 
 
 For now we will not assign this to a group, this comes later.
 
@@ -43,11 +43,11 @@ Now, create a new task sequence and select the option for "Deploy Windows Autopi
 
 Once the TS is created it should look something like this:<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2020/08/image-1.png) </figure> 
+![](image-1.png) </figure> 
 
 We are going to make some small changes to this task sequence, when completed, it should look like this:<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2020/08/image-3.png) <figcaption>The final reboot step reboots to the currently installed operation system </figcaption></figure> 
+![](image-3.png) <figcaption>The final reboot step reboots to the currently installed operation system </figcaption></figure> 
 
 The step we added "Autopilot for existing devices config file" is a "Run Command Line" and will copy the config JSON from the package we created earlier and place it in the C:\Windows\Provisioning\Autopilot\ folder. It should look something like this:<figure class="wp-block-image size-large">
 
@@ -69,26 +69,26 @@ Once this group is created, navigate to the Deployment Profiles blade that we li
 
 Congrats! Most of the setup is complete at this point, we only have to deploy the new Task Sequence and run it! Back in ConfigMgr deploy your Provisioning TS to "All Unknown Computers" or to a collection if you want to convert already managed machines (there is an easier way to do this that I may blog about later) and PXE boot your device, run the task sequence! After some time (usually 20 min or so) you should be presented with the following screen:<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2020/08/image-4-1024x767.png) <figcaption>Choose any options for all of these screens as they will be handled by AutoPilot going forward</figcaption></figure> 
+![](image-4-1024x767.png) <figcaption>Choose any options for all of these screens as they will be handled by AutoPilot going forward</figcaption></figure> 
 
 After selecting your defaults, the final screen you should see is your Org login screen.<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2020/08/ap-1024x773.jpg) </figure> 
+![](ap-1024x773.jpg) </figure> 
 
 After another couple of minutes of setup, the provisioning process begins! At this point it will apply any settings that were configured as a part of that Autopilot Profile we set up earlier. 
 
 If you check MEMAC at this stage you should see your newly created device but it won't be named properly yet, and is missing some info.<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2020/08/image-5-1024x29.png) </figure> 
+![](image-5-1024x29.png) </figure> 
 
 At this point the machine still isn't completely converted, that comes a little later, for now, let the device provision and send you to your desktop.
 
 Once we are at the desktop, take a look in MEMAC, TA-DA!<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2020/08/image-7-1024x24.png) </figure> 
+![](image-7-1024x24.png) </figure> 
 
 The new device is named according to our AP config file, and is now managed by Intune. If we check the Autopiloted Devices blade we see the following:<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2020/08/complete-1.png) </figure> 
+![](complete-1.png) </figure> 
 
 Your device is now Autopiloted and managed by Intune! You can now reset this device and it will come up with the settings configured in the AP Config JSON.

@@ -3,7 +3,7 @@ title: Updated Modern Driver/BIOS Management with CMG Support
 author: Charles
 type: post
 date: 2021-04-28T03:04:02+00:00
-url: /2021/04/27/updated-modern-driver-bios-management-with-cmg-support/
+url: 2021-04-27-updated-modern-driver-bios-management-with-cmg-support/
 categories:
   - Endpoint Management
   - MECM/MEMCM/SCCM
@@ -160,7 +160,7 @@ There are 2 things I had to do differently in the Authentication section:
   * Add a platform and select “Mobile and desktop applications” and check the box for : <https://login.microsoftonline.com/common/oauth2/nativeclient>
   * Select “Yes” to Allow public client flows<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2021/04/image.png) </figure> 
+![](image.png) </figure> 
 
 ## How to query the AdminService over CMG?
 
@@ -168,7 +168,7 @@ I started my research by reading the blog post from Sandy Zeng here: <https://ms
 
 Also, at the same time, when I was looking at my application registration in the Azure Portal I saw this notification:<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2021/04/image-1.png) </figure> 
+![](image-1.png) </figure> 
 
 After inspecting Sandy’s script, I confirmed that it was using Azure Active Directory Authentication Library (ADAL), so I wanted to make my solution work with MSAL instead of ADAL.
 
@@ -180,15 +180,15 @@ With the help of that module, I was easily able to get an access token that is n
 
 Here is a sample script I used to test retrieving an access token with the MSAL.PS module:<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2021/04/image-2.png) </figure> 
+![](image-2.png) </figure> 
 
 And here is what the result looks like:<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2021/04/getmsaltoken-1-1024x873.png) </figure> 
+![](getmsaltoken-1-1024x873.png) </figure> 
 
 Now that I have an access token, I can easily query the AdminService over CMG. I reused the same part of the code used by Sandy to do this:<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2021/04/image-4.png) </figure> 
+![](image-4.png) </figure> 
 
 In the example above, I was successfully able to retrieve information for 36 packages from the AdminService over CMG.
 
@@ -321,7 +321,7 @@ You are right, by default PowerShell Gallery does not work in WinPE. To solve th
 <div class="wp-block-columns">
   <div class="wp-block-column" style="flex-basis:100%">
     <div class="wp-block-media-text alignwide has-media-on-the-right is-stacked-on-mobile">
-      <figure class="wp-block-media-text__media">![](https://sysmansquad.com/wp-content/uploads/2021/04/image-5-1024x514.png)</figure>
+      <figure class="wp-block-media-text__media">![](image-5-1024x514.png)</figure>
       
       <div class="wp-block-media-text__content">
         <p>
@@ -337,7 +337,7 @@ You are right, by default PowerShell Gallery does not work in WinPE. To solve th
     <div class="wp-block-columns">
       <div class="wp-block-column" style="flex-basis:100%">
         <div class="wp-block-media-text alignwide has-media-on-the-right is-stacked-on-mobile">
-          <figure class="wp-block-media-text__media">![](https://sysmansquad.com/wp-content/uploads/2021/04/manuallyinstallmsal_step-1024x667.png)</figure>
+          <figure class="wp-block-media-text__media">![](manuallyinstallmsal_step-1024x667.png)</figure>
           
           <div class="wp-block-media-text__content">
             <p>
@@ -386,7 +386,7 @@ We need to determine if the device running the task sequence is on Internet or o
 
 First, we try using the _SMSTSIsClientOnInternet task sequence variable:<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2021/04/image-6.png) </figure> 
+![](image-6.png) </figure> 
 
 Note: In my limited testing, I found that if a task sequence does not reference any package, this variable may not be set.
 
@@ -396,7 +396,7 @@ If the “ClientIsOnInternet” is still not set after this step and device is n
   <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:false,&quot;styleActiveLine&quot;:false,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;showPanel&quot;:false,&quot;fileName&quot;:&quot;shell.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">Get-CimInstance -ClassName "ClientInfo" -Namespace "Root\CCM" | Select-Object -ExpandProperty InInternet</pre>
 </div><figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2021/04/clientinfo-1024x613.png) </figure> 
+![](clientinfo-1024x613.png) </figure> 
 
 ### 2) Additional Parameters for Internet clients
 
@@ -412,7 +412,7 @@ Here you fill out your environment-specific information. The additional paramete
   * ClientId: The Client ID of the application registration that you created to interact with the AdminService. See [additional configuration to use the AdminService over CMG](https://sysmansquad.com/wp-admin/post.php?post=2552&action=edit#additional-configuration-to-use-the-adminservice-over-cmg) for details.
   * ApplicationIdUri: The application ID Uri for your application registration. The default value of "https://ConfigMgrService" will probably be OK for most people.<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2021/04/setparam-1024x503.png) </figure> 
+![](setparam-1024x503.png) </figure> 
 
 ### 3) Running the script with the right parameters
 
@@ -420,11 +420,11 @@ Depending on the value of the “ClientIsOnInternet” variable, we run the scri
 
 If the client is determined to be intranet, use the intranet parameters:<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2021/04/invoke-intranet-1024x357.png) </figure> 
+![](invoke-intranet-1024x357.png) </figure> 
 
 If the client is on Internet, use the internet parameters:<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2021/04/invoke-internet-1024x262.png) </figure> 
+![](invoke-internet-1024x262.png) </figure> 
 
 ## The end result
 
@@ -432,7 +432,7 @@ You can now use the Modern Driver Management and Modern BIOS Management solution
 
 If you are on Current Branch 2010 or later, you can use a boot media to run bare metal deployment on the Internet and still use the Modern Driver/BIOS Management solution.<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2021/04/log-921x1024.png) </figure> 
+![](log-921x1024.png) </figure> 
 
 ## How do I set this up in my environment?
 
@@ -440,7 +440,7 @@ If you are on Current Branch 2010 or later, you can use a boot media to run bare
   2. Import the task sequences in your environment
   3. Configure the parameters correctly in the “Query AdminService for PackageID” task sequence:<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2021/04/setparam-1024x503.png) </figure> 
+![](setparam-1024x503.png) </figure> 
 
 <ol start="4">
   <li>
@@ -463,7 +463,7 @@ Now you have support for multiple CMGs 🙂
 
 Currently, the scripts used in this solution are added directly in the task sequence instead of referencing a package containing the scripts. As you can see below, the task sequence size can be somewhat big:<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2021/04/tasksequencesize-1024x193.png) </figure> 
+![](tasksequencesize-1024x193.png) </figure> 
 
 If you are concerned about the total size of the task sequence, you could store the scripts in a package instead and this would greatly reduce the size of the task sequence.
 

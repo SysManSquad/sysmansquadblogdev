@@ -3,7 +3,7 @@ title: 'Creating an Ubuntu 20.04 cloud template & cloud-init configuration in Xe
 author: Aaron
 type: post
 date: 2021-07-07T14:46:22+00:00
-url: /2021/07/07/creating-an-ubuntu-20-04-cloud-template-cloud-init-configuration-in-xen-orchestra/
+url: 2021-07-07-creating-an-ubuntu-20-04-cloud-template-cloud-init-configuration-in-xen-orchestra/
 categories:
   - Documentation
   - How-To

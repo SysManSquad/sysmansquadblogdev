@@ -3,8 +3,8 @@ title: Intune/Autopilot Setup Companion Guide Part 2 – Windows Store for Busin
 author: Jake Shackelford
 type: post
 date: 2020-01-27T19:15:59+00:00
-url: /2020/01/27/intune-autopilot-setup-companion-guide-part-2-windows-store-for-business/
-featured_image: /wp-content/uploads/2020/01/msedge_Iausbx4qxD.png
+url: 2021-01-27-intune-autopilot-setup-companion-guide-part-2-windows-store-for-business/
+featured_image: msedge_Iausbx4qxD.png
 uag_style_timestamp-js:
   - 1591700215
 categories:
@@ -48,7 +48,7 @@ Navigate to the&nbsp;[MEM admin center](https://devicemanagement.microsoft.com/)
  18. Hit **Sync**
  19. It should look similar to the image below<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2020/01/msedge_ZZvRDfDAxr.png) </figure> 
+![](msedge_ZZvRDfDAxr.png) </figure> 
 
 ## What about the actual applications?
 
@@ -58,7 +58,7 @@ Now that we have a working WSfB connector lets add some applications! Please not
   2. Select **Shop** for my group
   3. On the right hand side in the **Search** the store type in Company Portal
   4. Select **Company Portal** from the list of available apps  
-![](https://sysmansquad.com/wp-content/uploads/2020/01/msedge_hD8ykaEhDr.png) 
+![](msedge_hD8ykaEhDr.png) 
   5. Select **Get the app**
   6. A prompt will appear letting you know the app has been purchased and added to your inventory
   7. In the search bar type in PowerBI
@@ -69,7 +69,7 @@ Now that we have a working WSfB connector lets add some applications! Please not
 
 Congrats you now have apps in your tenant!
 
-![](https://sysmansquad.com/wp-content/uploads/2020/01/giphy-2.gif) 
+![](giphy-2.gif) 
 
 ## Okay, so now I have some applications but how do I deploy them?
 
@@ -107,7 +107,7 @@ Who doesn't love a little extra icing on the cake? In this section I'll walk you
   5. The App type will be **Windows 10 (preview)** Located under Microsoft Edge, version 77 and later
   6. Click **App information**
   7. Give the app a name and description  
-![](https://sysmansquad.com/wp-content/uploads/2020/01/msedge_uWOZP5GHSx.png) 
+![](msedge_uWOZP5GHSx.png) 
   8. Select **OK**
   9. Click **App settings**
  10. Change the Channel to **Stable**
@@ -122,5 +122,5 @@ Who doesn't love a little extra icing on the cake? In this section I'll walk you
 
 With that set you now have the new Edge! As always if you have questions or concerns please head over to the [WinAdmins][2] discord. The next post will go over Configuration Profiles and potentially PowerShell scripts!<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2020/01/giphy-1-1.gif) </figure>
+![](giphy-1-1.gif) </figure>
 

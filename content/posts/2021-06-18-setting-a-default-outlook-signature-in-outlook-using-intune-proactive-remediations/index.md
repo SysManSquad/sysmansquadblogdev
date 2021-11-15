@@ -3,7 +3,7 @@ title: Setting A Default Outlook Signature in Outlook using Intune Proactive Rem
 author: Jóhannes Geir Kristjánsson
 type: post
 date: 2021-06-18T12:37:50+00:00
-url: /2021/06/18/setting-a-default-outlook-signature-in-outlook-using-intune-proactive-remediations/
+url: 2021-06-18-setting-a-default-outlook-signature-in-outlook-using-intune-proactive-remediations/
 categories:
   - Endpoint Management
   - Intune
@@ -16,13 +16,13 @@ So you have already figured out [how to dynamically generated outlook signatures
 
 Well it just so happens that I have a solution for you!<figure class="wp-block-image size-full is-resized">
 
-![](https://sysmansquad.com/wp-content/uploads/2021/05/before.png) <figcaption>No default signature has been set</figcaption></figure> 
+![](before.png) <figcaption>No default signature has been set</figcaption></figure> 
 
 To do all this, we create a new [Proactive Remediation in Intune](https://sysmansquad.com/2020/07/07/intune-autopilot-proactive-remediation/).
 
 Add the detection and remediations scripts from below, and set it to run as the user.<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2021/04/vmconnect_68MRJGl48P.png) </figure> 
+![](vmconnect_68MRJGl48P.png) </figure> 
 
 This solution takes care of picking the default outlook profile. but keep in mind that this has only been tested on Office 365/microsoft 365 apps for business. so I have no idea if it works on the legacy versions.
 
@@ -107,4 +107,4 @@ catch {
 
 There is one caveat, this change will only take effect when outlook is restarted.<figure class="wp-block-image size-large is-resized is-style-default">
 
-![](https://sysmansquad.com/wp-content/uploads/2021/05/after.png) <figcaption>Neato burrito, check it out!</figcaption></figure>
+![](after.png) <figcaption>Neato burrito, check it out!</figcaption></figure>

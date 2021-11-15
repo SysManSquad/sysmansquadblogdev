@@ -3,7 +3,7 @@ title: Language Packs, Language Experience Packs, Language Interface Packs… wh
 author: Adam Cook
 type: post
 date: 2020-06-08T15:00:00+00:00
-url: /2020/06/08/language-packs-language-experience-packs-language-interface-packs-what/
+url: 2020-06/08/language-packs-language-experience-packs-language-interface-packs-what/
 uag_style_timestamp-css:
   - 1591367339
 uag_style_timestamp-js:
@@ -129,7 +129,7 @@ tags:
                 </p>
                 
                 <div class="wp-block-image">
-                  <figure class="aligncenter size-large">[![](https://sysmansquad.com/wp-content/uploads/2020/06/languagepackdownloadmsdn-1024x266.jpg)](https://sysmansquad.com/wp-content/uploads/2020/06/languagepackdownloadmsdn-scaled.jpg)</figure>
+                  <figure class="aligncenter size-large">[![](languagepackdownloadmsdn-1024x266.jpg)](languagepackdownloadmsdn-scaled.jpg)</figure>
                 </div>
                 
                 <p>
@@ -155,7 +155,7 @@ tags:
                 </div>
                 
                 <div class="wp-block-image">
-                  <figure class="aligncenter size-medium">[![](https://sysmansquad.com/wp-content/uploads/2020/06/installLPtasksequenceexample.png)](https://sysmansquad.com/wp-content/uploads/2020/06/installLPtasksequenceexample.png)<figcaption>Example step to install LP using dism.exe</figcaption></figure>
+                  <figure class="aligncenter size-medium">[![](installLPtasksequenceexample.png)](installLPtasksequenceexample.png)<figcaption>Example step to install LP using dism.exe</figcaption></figure>
                 </div>
                 
                 <p>
@@ -163,7 +163,7 @@ tags:
                 </p>
                 
                 <div class="wp-block-image">
-                  <figure class="aligncenter size-medium">[![](https://sysmansquad.com/wp-content/uploads/2020/06/applywindowssettingstasksequencetexample-2-2.jpg)](https://sysmansquad.com/wp-content/uploads/2020/06/applywindowssettingstasksequencetexample-2-2.jpg)<figcaption>Example Apply Windows Settings step to adjust locale after LP install</figcaption></figure>
+                  <figure class="aligncenter size-medium">[![](applywindowssettingstasksequencetexample-2-2.jpg)](applywindowssettingstasksequencetexample-2-2.jpg)<figcaption>Example Apply Windows Settings step to adjust locale after LP install</figcaption></figure>
                 </div>
                 
                 <p>
@@ -199,7 +199,7 @@ tags:
                 </p>
                 
                 <div class="wp-block-image is-style-default">
-                  <figure class="aligncenter size-medium">[![](https://sysmansquad.com/wp-content/uploads/2020/06/StoryBoard-LanguagePackUserExperience.png)](https://sysmansquad.com/wp-content/uploads/2020/06/StoryBoard-LanguagePackUserExperience.png)<figcaption>Click me</figcaption></figure>
+                  <figure class="aligncenter size-medium">[![](StoryBoard-LanguagePackUserExperience.png)](StoryBoard-LanguagePackUserExperience.png)<figcaption>Click me</figcaption></figure>
                 </div>
                 
                 <p>
@@ -346,7 +346,7 @@ tags:
                 </p>
                 
                 <div class="wp-block-image">
-                  <figure class="aligncenter size-medium">[![](https://sysmansquad.com/wp-content/uploads/2020/06/feedbackhubexample.png)](https://sysmansquad.com/wp-content/uploads/2020/06/feedbackhubexample.png)<figcaption>Feedback hub where users can submit translation feedback to Microsoft, which Microsoft can quickly patch and deliver via the store</figcaption></figure>
+                  <figure class="aligncenter size-medium">[![](feedbackhubexample.png)](feedbackhubexample.png)<figcaption>Feedback hub where users can submit translation feedback to Microsoft, which Microsoft can quickly patch and deliver via the store</figcaption></figure>
                 </div>
                 
                 <p>
@@ -404,7 +404,7 @@ tags:
                 </p>
                 
                 <div class="wp-block-image is-style-default">
-                  <figure class="aligncenter size-medium">[![](https://sysmansquad.com/wp-content/uploads/2020/06/StoryBoard-LanguageExperiencePackUserExperience-beforestoreupdates-1.png)](https://sysmansquad.com/wp-content/uploads/2020/06/StoryBoard-LanguageExperiencePackUserExperience-beforestoreupdates-1.png)<figcaption>Click me</figcaption></figure>
+                  <figure class="aligncenter size-medium">[![](StoryBoard-LanguageExperiencePackUserExperience-beforestoreupdates-1.png)](StoryBoard-LanguageExperiencePackUserExperience-beforestoreupdates-1.png)<figcaption>Click me</figcaption></figure>
                 </div>
                 
                 <p>
@@ -437,7 +437,7 @@ tags:
                 </p>
                 
                 <div class="wp-block-image">
-                  <figure class="aligncenter size-medium">[![](https://sysmansquad.com/wp-content/uploads/2020/06/StoryBoard-LanguageExperiencePackUserExperience-afterstoreupdates.png)](https://sysmansquad.com/wp-content/uploads/2020/06/StoryBoard-LanguageExperiencePackUserExperience-afterstoreupdates.png)<figcaption>Click me</figcaption></figure>
+                  <figure class="aligncenter size-medium">[![](StoryBoard-LanguageExperiencePackUserExperience-afterstoreupdates.png)](StoryBoard-LanguageExperiencePackUserExperience-afterstoreupdates.png)<figcaption>Click me</figcaption></figure>
                 </div>
                 
                 <ul>
@@ -491,7 +491,7 @@ tags:
                 </p>
                 
                 <div class="wp-block-image">
-                  <figure class="aligncenter size-medium">[![](https://sysmansquad.com/wp-content/uploads/2020/06/StoryBoard-LanguagePackAndLanguageExperiencePackUserExperience.png)](https://sysmansquad.com/wp-content/uploads/2020/06/StoryBoard-LanguagePackAndLanguageExperiencePackUserExperience.png)<figcaption>Click me</figcaption></figure>
+                  <figure class="aligncenter size-medium">[![](StoryBoard-LanguagePackAndLanguageExperiencePackUserExperience.png)](StoryBoard-LanguagePackAndLanguageExperiencePackUserExperience.png)<figcaption>Click me</figcaption></figure>
                 </div>
                 
                 <p>
@@ -504,28 +504,28 @@ tags:
                 
                 <ul class="blocks-gallery-grid">
                   <li class="blocks-gallery-item">
-                    <figure>[![](https://sysmansquad.com/wp-content/uploads/2020/06/finalts-1-1024x861.jpg)](https://sysmansquad.com/wp-content/uploads/2020/06/finalts-1.jpg)</figure>
+                    <figure>[![](finalts-1-1024x861.jpg)](finalts-1.jpg)</figure>
                   </li>
                   <li class="blocks-gallery-item">
-                    <figure>[![](https://sysmansquad.com/wp-content/uploads/2020/06/finalts-2-1024x861.jpg)](https://sysmansquad.com/wp-content/uploads/2020/06/finalts-2.jpg)</figure>
+                    <figure>[![](finalts-2-1024x861.jpg)](finalts-2.jpg)</figure>
                   </li>
                   <li class="blocks-gallery-item">
-                    <figure>[![](https://sysmansquad.com/wp-content/uploads/2020/06/finalts-3-1024x862.jpg)](https://sysmansquad.com/wp-content/uploads/2020/06/finalts-3.jpg)</figure>
+                    <figure>[![](finalts-3-1024x862.jpg)](finalts-3.jpg)</figure>
                   </li>
                   <li class="blocks-gallery-item">
-                    <figure>[![](https://sysmansquad.com/wp-content/uploads/2020/06/finalts-4-1024x861.jpg)](https://sysmansquad.com/wp-content/uploads/2020/06/finalts-4.jpg)</figure>
+                    <figure>[![](finalts-4-1024x861.jpg)](finalts-4.jpg)</figure>
                   </li>
                   <li class="blocks-gallery-item">
-                    <figure>[![](https://sysmansquad.com/wp-content/uploads/2020/06/finalts-5-1024x861.jpg)](https://sysmansquad.com/wp-content/uploads/2020/06/finalts-5.jpg)</figure>
+                    <figure>[![](finalts-5-1024x861.jpg)](finalts-5.jpg)</figure>
                   </li>
                   <li class="blocks-gallery-item">
-                    <figure>[![](https://sysmansquad.com/wp-content/uploads/2020/06/finalts-6.jpg)](https://sysmansquad.com/wp-content/uploads/2020/06/finalts-6.jpg)</figure>
+                    <figure>[![](finalts-6.jpg)](finalts-6.jpg)</figure>
                   </li>
                   <li class="blocks-gallery-item">
-                    <figure>[![](https://sysmansquad.com/wp-content/uploads/2020/06/finalts-7.jpg)](https://sysmansquad.com/wp-content/uploads/2020/06/finalts-7.jpg)</figure>
+                    <figure>[![](finalts-7.jpg)](finalts-7.jpg)</figure>
                   </li>
                   <li class="blocks-gallery-item">
-                    <figure>[![](https://sysmansquad.com/wp-content/uploads/2020/06/finalts-8-1024x861.jpg)](https://sysmansquad.com/wp-content/uploads/2020/06/finalts-8.jpg)</figure>
+                    <figure>[![](finalts-8-1024x861.jpg)](finalts-8.jpg)</figure>
                   </li>
                 </ul></figure> 
                 
@@ -564,7 +564,7 @@ tags:
                   </p>
                   
                   <div class="wp-block-image">
-                    <figure class="aligncenter size-large">[![](https://sysmansquad.com/wp-content/uploads/2020/06/2020-07-29_21-37-56-1024x870.jpg)](https://sysmansquad.com/wp-content/uploads/2020/06/2020-07-29_21-37-56.jpg)</figure>
+                    <figure class="aligncenter size-large">[![](2020-07-29_21-37-56-1024x870.jpg)](2020-07-29_21-37-56.jpg)</figure>
                   </div>
                   
                   <p>
@@ -618,7 +618,7 @@ tags:
                 </p>
                 
                 <div class="wp-block-image">
-                  <figure class="aligncenter size-large">[![](https://sysmansquad.com/wp-content/uploads/2020/06/foddownloadmsdn-1-1024x294.jpg)](https://sysmansquad.com/wp-content/uploads/2020/06/foddownloadmsdn-1-scaled.jpg)</figure>
+                  <figure class="aligncenter size-large">[![](foddownloadmsdn-1-1024x294.jpg)](foddownloadmsdn-1-scaled.jpg)</figure>
                 </div>
                 
                 <p>
@@ -646,7 +646,7 @@ tags:
                 </p>
                 
                 <div class="wp-block-image">
-                  <figure class="aligncenter size-large">[![](https://sysmansquad.com/wp-content/uploads/2020/06/fodsondisk-1024x272.jpg)](https://sysmansquad.com/wp-content/uploads/2020/06/fodsondisk.jpg)<figcaption>Showing satellite and non-satellite FoD differences on disk</figcaption></figure>
+                  <figure class="aligncenter size-large">[![](fodsondisk-1024x272.jpg)](fodsondisk.jpg)<figcaption>Showing satellite and non-satellite FoD differences on disk</figcaption></figure>
                 </div>
                 
                 <p>
@@ -722,7 +722,7 @@ tags:
                 </p>
                 
                 <div class="wp-block-image">
-                  <figure class="aligncenter size-medium">[![](https://sysmansquad.com/wp-content/uploads/2020/06/finalts-fodstep.jpg)](https://sysmansquad.com/wp-content/uploads/2020/06/finalts-fodstep.jpg)<figcaption>Example step to install FoD</figcaption></figure>
+                  <figure class="aligncenter size-medium">[![](finalts-fodstep.jpg)](finalts-fodstep.jpg)<figcaption>Example step to install FoD</figcaption></figure>
                 </div>
                 
                 <h2>

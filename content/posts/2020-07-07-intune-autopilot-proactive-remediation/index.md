@@ -3,8 +3,8 @@ title: Intune/Autopilot Proactive Remediation
 author: Jake Shackelford
 type: post
 date: 2020-07-07T16:24:57+00:00
-url: /2020/07/07/intune-autopilot-proactive-remediation/
-featured_image: /wp-content/uploads/2020/06/msedge_OGHmAQhYGe.png
+url: 2020-07/07/intune-autopilot-proactive-remediation/
+featured_image: msedge_OGHmAQhYGe.png
 categories:
   - Documentation
   - Endpoint Management
@@ -23,7 +23,7 @@ tags:
 
 Proactive remediations are a pair of scripts used to detect and remediate a problem on a machine. The first script runs a query on your endpoints that returns an exit code of success or failure. We call this first script the detection script. On a successful exit code it is reported as "Without issue" in the Intune portal and nothing else is executed. On a failed exit code the second script is run which is called a remediation script. This script will "fix" in theory whatever you detected in your first script so the next time the detection script is run it returns successful. In the event the Intune portal reports a "Failed" status you have some detection or remediation logic failing. We will go over examples of both detection and remediation scripts to help alleviate that.<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2020/06/msedge_OGHmAQhYGe-1024x448.png) <figcaption>Example of a proactive remediation graph in the Intune Portal</figcaption></figure> 
+![](msedge_OGHmAQhYGe-1024x448.png) <figcaption>Example of a proactive remediation graph in the Intune Portal</figcaption></figure> 
 
 If you're familiar with SCCM/MECM/MEMCM/SMS or whatever acronym you want to give Configuration Manager, proactive remediation is in essence the equivalent of configuration items and baselines. 
 
@@ -82,10 +82,10 @@ The above remediation script, just like the detection script, is a try-catch. Yo
   4. Copy your Detection and Remediation scripts and add them to the respective field
   5. Some scripts may need to be run using the "Run this script using the logged on credentials" option, or "Run script in 64 bit PowerShell", depending on how your detection and remediation works. In our example, neither need to be enabled.  
   
-![](https://sysmansquad.com/wp-content/uploads/2020/06/msedge_Pm7pXyDNrT.png) 
+![](msedge_Pm7pXyDNrT.png) 
   6. Select **Next**
   7. Select your assignment group 
-  8. By default it will schedule to run daily, you can edit this to be Once, Hourly, or Daily![](https://sysmansquad.com/wp-content/uploads/2020/06/msedge_dZOZmuqnCB.png)
+  8. By default it will schedule to run daily, you can edit this to be Once, Hourly, or Daily![](msedge_dZOZmuqnCB.png)
   9. Select **Next**
  10. Review your settings and then hit **Create**
 
@@ -99,7 +99,7 @@ In the event you have failures, you can see why they failed by doing the followi
   2. Select **Device Status**
   3. Select **Columns** 
   4. Turn on all the options and hit **Apply**. This will show you the output of the scripts which should include the error code and exception message thanks to our try-catch in the detection and remediation scripts  
-![](https://sysmansquad.com/wp-content/uploads/2020/06/msedge_UJCXFijoRN.png) 
+![](msedge_UJCXFijoRN.png) 
   5. Check the respective field for where the error occurred and you should be able to diagnose why the failure happened
 
 ### Other issues?

@@ -3,8 +3,8 @@ title: Bulk Updating Autopilot enrolled devices with Graph API and assigning a G
 author: Jake Shackelford
 type: post
 date: 2020-08-24T14:31:46+00:00
-url: /2020/08/24/bulk-updating-autopilot-enrolled-devices-with-graph-api-and-assigning-a-group-tag-based-on-purchase-orderid/
-featured_image: /wp-content/uploads/2020/08/msedge_qxJ7I3fI72.png
+url: 2020-08/24/bulk-updating-autopilot-enrolled-devices-with-graph-api-and-assigning-a-group-tag-based-on-purchase-orderid/
+featured_image: msedge_qxJ7I3fI72.png
 categories:
   - Endpoint Management
   - Graph

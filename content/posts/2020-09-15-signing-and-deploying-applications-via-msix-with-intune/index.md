@@ -3,8 +3,8 @@ title: Signing and Deploying Applications via MSIX with Intune
 author: Jake Shackelford
 type: post
 date: 2020-09-15T17:22:10+00:00
-url: /2020/09/15/signing-and-deploying-applications-via-msix-with-intune/
-featured_image: /wp-content/uploads/2020/09/vmconnect_1eSsb6FTKd.png
+url: 2020-09/15/signing-and-deploying-applications-via-msix-with-intune/
+featured_image: vmconnect_1eSsb6FTKd.png
 categories:
   - Endpoint Management
 tags:
@@ -34,13 +34,13 @@ A machine that can run Hyper-V
 ### Getting your certificate and deploying it
 
 The reason we need to get a certificate is to make the app a trusted one. Once we have this in place the app will go from Untrusted to Trusted like the picture below  
-![](https://sysmansquad.com/wp-content/uploads/2020/09/vmconnect_1eSsb6FTKd.png) 
+![](vmconnect_1eSsb6FTKd.png) 
 
   1. Log in to [Microsoft Store for Business](https://businessstore.microsoft.com/en-us/store?signin=)
   2. Select **Manage**
   3. Select **Settings**
   4. Select **Devices**
-  5. Select **Download** on Download your organization's root certificate file for use with Device Guard![](https://sysmansquad.com/wp-content/uploads/2020/09/msedge_5t3OJ6orOw.png) 
+  5. Select **Download** on Download your organization's root certificate file for use with Device Guard![](msedge_5t3OJ6orOw.png) 
 
 You will need to deploy this certificate to any machine that you want to install the app on so let's create the Intune Configuration Profile for it
 
@@ -106,4 +106,4 @@ This will start the creation process of your image. It will take some time to do
 
 Congrats! You have a deployed app now! I strongly recommend rebooting the machine after the certificate is deployed and then attempting the installation but you should be all set!<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2020/01/giphy-2.gif) </figure>
+![](giphy-2.gif) </figure>

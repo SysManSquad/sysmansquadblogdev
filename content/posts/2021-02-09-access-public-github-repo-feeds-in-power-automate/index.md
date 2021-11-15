@@ -3,8 +3,8 @@ title: Access Public GitHub Repo Feeds in Power Automate
 author: Kevin Crouch
 type: post
 date: 2021-02-09T13:26:41+00:00
-url: /2021/02/09/access-public-github-repo-feeds-in-power-automate/
-featured_image: /wp-content/uploads/2021/02/Github-RSS-Flow-4.png
+url: 2021-02-09-access-public-github-repo-feeds-in-power-automate/
+featured_image: Github-RSS-Flow-4.png
 categories:
   - Documentation
   - General
@@ -132,7 +132,7 @@ Have you ever wanted to get a simple notification when there is a new Release fo
                     </div>
                   </div><figure class="wp-block-image alignwide size-large">
                   
-                  ![](https://sysmansquad.com/wp-content/uploads/2021/02/image-1024x413.png)</figure> 
+                  ![](image-1024x413.png)</figure> 
                   
                   <p>
                     To test what the content of the feeds was, I used [rssatom.com](https://rssatom.com/) to check I had a valid Atom or RSS feed URL that worked publicly.
@@ -192,13 +192,13 @@ Have you ever wanted to get a simple notification when there is a new Release fo
                     Here is a full listing and link to the [RSS Feed Connector documentation](https://docs.microsoft.com/connectors/rss/)
                   </p><figure class="wp-block-image size-large">
                   
-                  ![](https://sysmansquad.com/wp-content/uploads/2021/02/image-5.png)</figure> 
+                  ![](image-5.png)</figure> 
                   
                   <p>
                     So from here, we can use the <strong>RSS Feed trigger</strong>, build some variables, and send it to the <strong>Teams Connector</strong>. From this, I refined the formatting a bit, and ended up with this.
                   </p><figure class="wp-block-image size-large">
                   
-                  ![](https://sysmansquad.com/wp-content/uploads/2021/02/image-2.png)</figure> 
+                  ![](image-2.png)</figure> 
                   
                   <p>
                     This sends through notifications to Teams that look like this:

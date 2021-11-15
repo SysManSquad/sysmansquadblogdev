@@ -3,8 +3,8 @@ title: Modern Driver Management with the Administration Service
 author: Charles
 type: post
 date: 2020-05-15T14:39:20+00:00
-url: /2020/05/15/modern-driver-management-with-the-administration-service/
-featured_image: /wp-content/uploads/2020/05/GetPackageIDLog.png
+url: 2020-05/15/modern-driver-management-with-the-administration-service/
+featured_image: GetPackageIDLog.png
 uag_style_timestamp-js:
   - 1591636419
 categories:

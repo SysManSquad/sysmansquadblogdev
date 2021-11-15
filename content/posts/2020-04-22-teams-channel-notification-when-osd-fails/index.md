@@ -3,7 +3,7 @@ title: Teams Channel Notification when OSD Fails
 author: Grant
 type: post
 date: 2020-04-22T13:00:00+00:00
-url: /2020/04/22/teams-channel-notification-when-osd-fails/
+url: 2020-04/22/teams-channel-notification-when-osd-fails/
 categories:
   - Endpoint Management
   - How-To

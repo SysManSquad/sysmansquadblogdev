@@ -3,7 +3,7 @@ title: Use Azure Policy to configure Boot Diagnostics Settings
 author: Kevin Crouch
 type: post
 date: 2021-07-12T17:42:11+00:00
-url: /2021/07/12/use-azure-policy-to-configure-boot-diagnostics-settings/
+url: 2021-07-12-use-azure-policy-to-configure-boot-diagnostics-settings/
 categories:
   - Endpoint Management
 tags:

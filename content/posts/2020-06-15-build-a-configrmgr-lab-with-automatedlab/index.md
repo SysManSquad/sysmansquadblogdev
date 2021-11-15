@@ -3,7 +3,7 @@ title: Build a ConfigrMgr lab with AutomatedLab
 author: Adam Cook
 type: post
 date: 2020-06-15T06:00:00+00:00
-url: /2020/06/15/build-a-configrmgr-lab-with-automatedlab/
+url: 2020-06/15/build-a-configrmgr-lab-with-automatedlab/
 uag_style_timestamp-js:
   - 1592283825
 categories:
@@ -53,7 +53,7 @@ First things first, make sure you have got the latest version of the AutomatedLa
 </div>
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-medium">[![](https://sysmansquad.com/wp-content/uploads/2020/06/ALInstalledModule.jpg)](https://sysmansquad.com/wp-content/uploads/2020/06/ALInstalledModule.jpg)<figcaption>Get installed version of AutomatedLab</figcaption></figure>
+  <figure class="aligncenter size-medium">[![](ALInstalledModule.jpg)](ALInstalledModule.jpg)<figcaption>Get installed version of AutomatedLab</figcaption></figure>
 </div>
 
 To get started you'll need two things:
@@ -73,7 +73,7 @@ git clone https://github.com/codaamok/PoSH.git</pre>
 </div>
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-medium">![](https://sysmansquad.com/wp-content/uploads/2020/06/CM2002ALDownloadZip.jpg)<figcaption>Download as ZIP from [https://github.com/codaamok/posh](https://github.com/codaamok/posh)</figcaption></figure>
+  <figure class="aligncenter size-medium">![](CM2002ALDownloadZip.jpg)<figcaption>Download as ZIP from [https://github.com/codaamok/posh](https://github.com/codaamok/posh)</figcaption></figure>
 </div>
 
 Now the content is downloaded, we must copy only the `CustomRole\CM-2002` folder to the correct location on disk so AutomatedLab can use the scripts inside it. The location of `CM-2002.ps1` isn't important. 

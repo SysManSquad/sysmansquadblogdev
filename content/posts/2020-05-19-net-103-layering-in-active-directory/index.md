@@ -4,8 +4,8 @@ author: Aaron
 type: post
 date: 2020-05-19T14:00:00+00:00
 excerpt: "In previous articles, we've built the basic services you need without getting too far in the weeds. Now we're going to layer in a central identity service."
-url: /2020/05/19/net-103-layering-in-active-directory/
-featured_image: /wp-content/uploads/2020/05/Canada_Goose_Branta_Canadensis.jpg
+url: 2020-05/19/net-103-layering-in-active-directory/
+featured_image: Canada_Goose_Branta_Canadensis.jpg
 categories:
   - How-To
   - Powershell
@@ -197,13 +197,13 @@ After joining, you will be able to use your `ad\administrator` credentials to si
 Now, log into your windows 10 workstation using the `ad\administrator` credentials. You'll be able to use the dns console to connect over to the DNS servers and look through your zones. Next, open the dhcp console and let's take a quick look at the state of the DHCP service.
 
 <div class="wp-block-image is-style-default">
-  <figure class="aligncenter size-large">![The DHCP console showing the IPv4 and IPv6 in a disabled state](https://sysmansquad.com/wp-content/uploads/2020/05/image-6.png)<figcaption>Oh dear. That doesn't look happy. </figcaption></figure>
+  <figure class="aligncenter size-large">![The DHCP console showing the IPv4 and IPv6 in a disabled state](image-6.png)<figcaption>Oh dear. That doesn't look happy. </figcaption></figure>
 </div>
 
 Windows DHCP servers that are NOT in a domain operate normally. Windows DHCP servers that are or have become joined to a domain do not operate until they have been **authorized**. Right click on the server name and authorize the server to allow it to continue to provide DHCP service.
 
 <div class="wp-block-image is-style-default">
-  <figure class="aligncenter size-large">![](https://sysmansquad.com/wp-content/uploads/2020/05/image-7.png)<figcaption>Authorizing a DHCP server</figcaption></figure>
+  <figure class="aligncenter size-large">![](image-7.png)<figcaption>Authorizing a DHCP server</figcaption></figure>
 </div>
 
 After you have authorized the DHCP server to continue, refreshing will show that the DHCP server is now returned to service. If you expand the IPv4 and IPv6 nodes, you'll see the scopes we created earlier through powershell. given that everything in your lab so far should have a static address at the moment, you aren't likely to see any leases. 

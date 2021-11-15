@@ -4,8 +4,8 @@ author: Cody Mathis
 type: post
 date: 2021-01-26T12:30:17+00:00
 excerpt: Automatically launch Microsoft Teams for the user after a Teams Machine Wide Installer is completed. Improved user experience
-url: /2021/01/26/trigger-teams-installer-for-user-after-machine-wide-installer/
-featured_image: /wp-content/uploads/2021/01/Teams-NotFound.png
+url: 2021-01-26-trigger-teams-installer-for-user-after-machine-wide-installer/
+featured_image: Teams-NotFound.png
 categories:
   - Endpoint Management
   - Intune
@@ -36,7 +36,7 @@ The Teams Machine Wide installer is not what the user will 'run' on a day-to-day
 
 Microsoft is leveraging a [Run Key](https://docs.microsoft.com/en-us/windows/win32/setupapi/run-and-runonce-registry-keys) in order to execute a command line every time a user logs in. This key can be seen below.<figure class="wp-block-image size-full">
 
-![TeamsMachineWideInstaller registry key under HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Run](https://sysmansquad.com/wp-content/uploads/2021/01/TeamsRunOnce.png) <figcaption>%ProgramFiles%\Teams Installer\Teams.exe -checkInstall -source=default</figcaption></figure> 
+![TeamsMachineWideInstaller registry key under HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Run](TeamsRunOnce.png) <figcaption>%ProgramFiles%\Teams Installer\Teams.exe -checkInstall -source=default</figcaption></figure> 
 
 The command which is executed is '**%ProgramFiles%\Teams Installer\Teams.exe -checkInstall -source=default**'
 
@@ -56,19 +56,19 @@ What the user expects is to click '**Install**' in the software distribution pla
 
 The Teams Machine Wide installer will finish, and the detection of the software will show '**Installed**' based on the MSI having been found. Unfortunately this is _not_ the software which the user cares about. <figure class="wp-block-image size-full">
 
-![](https://sysmansquad.com/wp-content/uploads/2021/01/Teams-NotFound.png) </figure> 
+![](Teams-NotFound.png) </figure> 
 
 ##### The New and Improved Experience!
 
 ... can be seen below in an excessively long GIF!<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2021/01/0TCMvCmzxY.gif) </figure> 
+![](0TCMvCmzxY.gif) </figure> 
 
 This result is achieved by using a **Windows Scheduled Task**. The PowerShell script that generates this task is found below at the [end of the article](#The-Script), and also on [<strong>GitHub</strong>](https://github.com/CodyMathis123/CM-Ramblings/blob/master/New-PostTeamsMachineWideInstallScheduledTask.ps1).
 
 A scheduled task can be found in Task Scheduler after the script runs as shown below.<figure class="wp-block-image size-full">
 
-![](https://sysmansquad.com/wp-content/uploads/2021/01/Teams-TaskRunning-1.png) </figure> 
+![](Teams-TaskRunning-1.png) </figure> 
 
 At a high level the improved experience shown is achieved via the following workflow:
 

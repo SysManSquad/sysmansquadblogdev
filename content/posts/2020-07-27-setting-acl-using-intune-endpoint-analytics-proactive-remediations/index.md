@@ -3,7 +3,7 @@ title: Setting ACL using Intune Endpoint Analytics Proactive Remediations
 author: Jóhannes Geir Kristjánsson
 type: post
 date: 2020-07-27T14:56:26+00:00
-url: /2020/07/27/setting-acl-using-intune-endpoint-analytics-proactive-remediations/
+url: 2020-07/27/setting-acl-using-intune-endpoint-analytics-proactive-remediations/
 categories:
   - Endpoint Management
   - How-To

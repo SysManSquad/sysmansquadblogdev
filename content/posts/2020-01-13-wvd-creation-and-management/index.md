@@ -3,8 +3,8 @@ title: 'Windows Virtual Desktop: Creation and Management'
 author: Jake Shackelford
 type: post
 date: 2020-01-13T06:33:53+00:00
-url: /2020/01/13/wvd-creation-and-management/
-featured_image: /wp-content/uploads/2019/12/image-1.png
+url: 2021-01-13-wvd-creation-and-management/
+featured_image: image-1.png
 uag_style_timestamp-js:
   - 1591720982
 categories:
@@ -37,7 +37,7 @@ You will also need [Marcel Meurer's tool](https://blog.itprocloud.de/Windows-Vir
 ## Creating Resource Groups {#2-creating-resource-groups}
 
   1. Login to the Azure portal <https://portal.azure.com/> 
-  2. Click the **Create a resource** button![](https://sysmansquad.com/wp-content/uploads/2019/12/image-1.png)
+  2. Click the **Create a resource** button![](image-1.png)
   3. Search for Resource group
   4. Create a Resource group called DOMAIN-Master-VMs or whatever you'd like your golden images to be based off (YES WVD is essentially build and capture/reference image)
   5. Create a second Resource group and give it whatever name you'd like. EX. I'm going to deploy AutoCAD so I'll name it DOMAIN-AutoCAD-HostPool
@@ -84,7 +84,7 @@ Add-RdsAccount -DeploymentUrl "https://rdbroker.wvd.microsoft.com"
 New-RdsRoleAssignment -TenantName $TenantName -RoleDefinitionName "RDS Owner" -ApplicationId $ApplicationID</pre>
 </div><figure class="wp-block-image size-large is-resized">
 
-![](https://sysmansquad.com/wp-content/uploads/2019/12/powershell_rJBQfXUtgx.png) <figcaption>Successful execution</figcaption></figure> 
+![](powershell_rJBQfXUtgx.png) <figcaption>Successful execution</figcaption></figure> 
 
 ### Setting up Marcel's tool and creating a network share {#6-setting-up-marcels-tool-and-creating-a-network-share}
 
@@ -102,7 +102,7 @@ You will need to download 4 items at this point:
   2. Inside of your Configuration folder create a WVD folder
   3. Right click the WVD folder and select Share
   4. Give Everyone Read Access
-  5. Move the 3 files we downloaded and renamed earlier into this folder; it should look like the following![](https://sysmansquad.com/wp-content/uploads/2019/12/mstsc_n4qL8uv5Vs.png)
+  5. Move the 3 files we downloaded and renamed earlier into this folder; it should look like the following![](mstsc_n4qL8uv5Vs.png)
   6. Next install Marcel's tool. You can leave all the options to default
 
 ### Launching the tool {#7-launching-the-tool}
@@ -123,7 +123,7 @@ I hate to use the word master VMs as it really boils down to a golden image or t
   1. Navigate to the Master-VMs resource group we created earlier
   2. Create a new resource by selecting the Add button
   3. Search for Microsoft Windows 10 + Office 365 ProPlus (you do the + Office 365 ProPlus because the non-office version isn't the latest release of windows) and make sure you're selecting the latest version&nbsp;
-  4. Click Create![](https://sysmansquad.com/wp-content/uploads/2019/12/GetImage.png)
+  4. Click Create![](GetImage.png)
   5. For Virtual Machine name change it to whatever your preference in my case i'll be calling it AutoCAD after the program that I'll be installing
   6. You can leave the Size default I typically select B2Ms as I like to penny pinch (Please note this server won't cost you anything other than the storage of the drive when we are done with it)
   7. Scroll down and set an administrator account. This is a local admin account
@@ -185,7 +185,7 @@ Now that we have a VM that's ready to go let's create a template of it! Using th
 
 ### Creating a host pool
 
-![](https://sysmansquad.com/wp-content/uploads/2020/01/giphy.gif)  
+![](giphy.gif)  
 Now that we have a template image, we are ready to create the host pool! 
 
   1. Navigate to your Tenant name on the left-hand side
@@ -196,7 +196,7 @@ Now that we have a template image, we are ready to create the host pool!
   6. Expand your Resource Groups 
   7. Right click the image that we created earlier 
   8. Select Create a session host from image
-  9. Your screen at this point should look like this:![](https://sysmansquad.com/wp-content/uploads/2020/01/mstsc_dJ47TcxRQX.png)
+  9. Your screen at this point should look like this:![](mstsc_dJ47TcxRQX.png)
  10. First we can apply a VM Name. You'll notice at the end we have ###, this will auto number the VM based on the Count to the right so if I have a count of two it will create two VMs in the host pool called WVD-PROD-001 and WVD-PROD-002
  11. We will select our Image 
  12. Select the host pool we created at the beginning of these steps
@@ -222,7 +222,7 @@ Now that we have a template image, we are ready to create the host pool!
 ### Assigning Groups and Access
 
 Now that we have a host-pool we can start assigning access to them. On the resource we created earlier under our tenant in the WVD Admin application you should be able to see the session hosts that we just made. You'll also notice that a tab called Host Pool opens up.  
-![](https://sysmansquad.com/wp-content/uploads/2020/01/mstsc_8jOwEORRJs.png) 
+![](mstsc_8jOwEORRJs.png) 
 
 From here we can change several things; the two important ones being the Max Session Limit and Load Balancer Type. Max Session limit should be pretty straight forward, how many sessions can each VM in the Session host accept. Load Balancer Type gives you three options:
 
@@ -244,7 +244,7 @@ In this scenario we will create an application group as a Desktop group is very 
   2. Right click and select Add Application Group
   3. Give the group a name (EX AutoCAD)
   4. Right click the newly created group and select Add Remote Application
-  5. Give it a name as well (EX Revit):![](https://sysmansquad.com/wp-content/uploads/2020/01/mstsc_uuyZLfch9A.png)
+  5. Give it a name as well (EX Revit):![](mstsc_uuyZLfch9A.png)
   6. I personally set CLI settings to DoNotAllow because I'm not passing any Azure CLI commands to these VMs (More info can be found [HERE](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest))
   7. File Path will be the path to the EXE that you should have copied down earlier when installing your applications, you can also set Icon Path to this as well
   8. If you want the app to appear in a folder you can give it a folder name, but I personally do not
@@ -252,7 +252,7 @@ In this scenario we will create an application group as a Desktop group is very 
  10. Select Save Changes
 
 We are almost there! Take a minute to breathe or grab a drink!  
-![](https://sysmansquad.com/wp-content/uploads/2020/01/giphy-1.gif) 
+![](giphy-1.gif) 
 
 Next, we are going to assign access to the application group we made. Currently in WVD we have to do manual assignments... it does not support groups but will in the future.
 

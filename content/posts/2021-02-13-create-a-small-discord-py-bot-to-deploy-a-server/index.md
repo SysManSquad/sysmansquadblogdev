@@ -4,8 +4,8 @@ author: Aaron
 type: post
 date: 2021-02-14T04:10:39+00:00
 excerpt: Building a discord.py bot to deploy a discord server for a competition.
-url: /2021/02/13/create-a-small-discord-py-bot-to-deploy-a-server/
-featured_image: /wp-content/uploads/2021/02/eagle-46636_1280.png
+url: 2021-02-13-create-a-small-discord-py-bot-to-deploy-a-server/
+featured_image: eagle-46636_1280.png
 categories:
   - General
   - How-To

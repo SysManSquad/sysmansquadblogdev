@@ -3,8 +3,8 @@ title: Reprovision Windows 10 Apps… Wait, What?
 author: Cody Mathis
 type: post
 date: 2020-01-06T13:54:48+00:00
-url: /2020/01/06/reprovision-windows-10-apps-wait-what/
-featured_image: /wp-content/uploads/2019/12/Reprovision-AppX.png
+url: 2021-01-06-reprovision-windows-10-apps-wait-what/
+featured_image: Reprovision-AppX.png
 uag_style_timestamp-js:
   - 1592256595
 categories:
@@ -187,7 +187,7 @@ That's pretty cool!
 **[CmdletBinding(SupportsShouldProcess)]** - At the top of the function this snippet allows the implementation of WhatIf support. To finish the implementation we have to use **$PSCmdlet.ShouldProcess** where it is fitting. This function has it at line 37, just before the action happens. 
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large is-resized">![](https://sysmansquad.com/wp-content/uploads/2019/12/Reprovision-AppX-1024x435.png)<figcaption>Function use examples</figcaption></figure>
+  <figure class="aligncenter size-large is-resized">![](Reprovision-AppX-1024x435.png)<figcaption>Function use examples</figcaption></figure>
 </div>
 
 #### Last step

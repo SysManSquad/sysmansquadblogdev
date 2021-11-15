@@ -3,8 +3,8 @@ title: VPN Boundary Type and Understanding Its Options
 author: Nic Wendlowsky
 type: post
 date: 2020-09-14T12:34:34+00:00
-url: /2020/09/14/vpn-boundary-type-and-understanding-its-options/
-featured_image: /wp-content/uploads/2020/08/Snag_2a0b39b.png
+url: 2020-09/14/vpn-boundary-type-and-understanding-its-options/
+featured_image: Snag_2a0b39b.png
 categories:
   - Endpoint Management
   - MECM/MEMCM/SCCM
@@ -17,11 +17,11 @@ Like many, I was _very_ excited that the new [Configuration Manager 2006](https:
 
 In the Admin Console, navigate to the Administration Node and open up Hierarchy Configuration and right-click on Boundaries<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2020/09/image-2.png) </figure> 
+![](image-2.png) </figure> 
 
 Select the new VPN option in the Type drop-down<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2020/09/image-3.png) </figure> 
+![](image-3.png) </figure> 
 
 ## Exploring the VPN Type Options
 

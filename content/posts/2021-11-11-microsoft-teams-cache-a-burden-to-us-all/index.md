@@ -3,7 +3,7 @@ title: Microsoft Teams Cache, a burden to us all
 author: BeholdenCypress
 type: post
 date: 2021-11-12T02:10:08+00:00
-url: /2021/11/11/microsoft-teams-cache-a-burden-to-us-all/
+url: 2021-11-11-microsoft-teams-cache-a-burden-to-us-all/
 categories:
   - Endpoint Management
 tags:
@@ -76,12 +76,12 @@ Whichever way you decide to package up your EXE and PS1 for install, just make s
 
 If you implement this as I have described, when a user runs this, they will be presented with a PowerShell window that says:<figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2021/11/ClearTeamsCache.png) <figcaption>Clear Teams Cache results window</figcaption></figure> 
+![](ClearTeamsCache.png) <figcaption>Clear Teams Cache results window</figcaption></figure> 
 
 And here is the Icon I made for my application if you want it. You can also make your own fairly easily if you wish.
 
 <div class="wp-block-file">
-  [ClearTeamsCacheIcon](https://sysmansquad.com/wp-content/uploads/2021/11/ClearTeamsCacheIcon.ico)[Download](https://sysmansquad.com/wp-content/uploads/2021/11/ClearTeamsCacheIcon.ico)
+  [ClearTeamsCacheIcon](ClearTeamsCacheIcon.ico)[Download](ClearTeamsCacheIcon.ico)
 </div>
 
 That should be it. You should now have a fully functioning "program" to clear the Microsoft Teams Cache on a computer.

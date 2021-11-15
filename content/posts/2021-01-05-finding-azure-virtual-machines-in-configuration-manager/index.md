@@ -3,8 +3,8 @@ title: Finding Azure Virtual Machines in Configuration Manager
 author: Nic Wendlowsky
 type: post
 date: 2021-01-06T05:04:40+00:00
-url: /2021/01/05/finding-azure-virtual-machines-in-configuration-manager/
-featured_image: /wp-content/uploads/2020/12/image-14.png
+url: 2021-01-05-finding-azure-virtual-machines-in-configuration-manager/
+featured_image: image-14.png
 categories:
   - Azure
   - Endpoint Management
@@ -95,15 +95,15 @@ A request came in from my System Admin group to push certain policies only to VM
                       And test on an Azure VM to make sure it works
                     </p><figure class="wp-block-image size-large is-resized">
                     
-                    ![](https://sysmansquad.com/wp-content/uploads/2020/12/image-14-1024x332.png)</figure> <p>
+                    ![](image-14-1024x332.png)</figure> <p>
                       Success!<br />Now let's make sure it works on a non-Azure VM
                     </p><figure class="wp-block-image size-large is-resized">
                     
-                    ![](https://sysmansquad.com/wp-content/uploads/2020/12/Snag_233efd31-1024x321.png)</figure> <p>
+                    ![](Snag_233efd31-1024x321.png)</figure> <p>
                       Yikes. Ok, now to handle that error message. We could try adding <code>-Erroraction silentlycontinue</code>
                     </p><figure class="wp-block-image size-large is-resized">
                     
-                    ![](https://sysmansquad.com/wp-content/uploads/2020/12/Snag_234114b7-1024x276.png)</figure> <p>
+                    ![](Snag_234114b7-1024x276.png)</figure> <p>
                       Dang, still isn't suppressing that exception.<br />Looking up the documentation for [Invoke-WebRequest](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1#example-7--catch-non-success-messages-from-invoke-webrequest), Microsoft states
                     </p>
                     
@@ -121,11 +121,11 @@ A request came in from my System Admin group to push certain policies only to VM
                       Ok, let's try adding the Try/Catch
                     </p><figure class="wp-block-image size-large is-resized">
                     
-                    ![](https://sysmansquad.com/wp-content/uploads/2020/12/Snag_23486006-1024x241.png)</figure> <p>
+                    ![](Snag_23486006-1024x241.png)</figure> <p>
                       Wait, where's the output??<br />It looks as though, since the metadata "URI" doesn't exist on non-Azure VMs, there's no response even sent back to the <code>$Response</code> variable. <br /><br />To fix this, we can forcibly set <code>Invoke-Webrequest</code> to use Boolean instead, since all we're looking for is a True/False output
                     </p><figure class="wp-block-image size-large is-resized">
                     
-                    ![](https://sysmansquad.com/wp-content/uploads/2020/12/Snag_234d2101-1024x262.png)</figure> <p>
+                    ![](Snag_234d2101-1024x262.png)</figure> <p>
                       Great! Here's the finished function
                     </p>
                     
@@ -153,7 +153,7 @@ A request came in from my System Admin group to push certain policies only to VM
                       In your ConfigMgr Admin Console, navigate to <code>\Assets and Compliance\Overview\Compliance Settings\Configuration Items</code> and Create a new Configuration Item
                     </p><figure class="wp-block-image size-large is-resized">
                     
-                    ![](https://sysmansquad.com/wp-content/uploads/2020/12/Snag_2366eb5c-968x1024.png)</figure> <ol>
+                    ![](Snag_2366eb5c-968x1024.png)</figure> <ol>
                       <li>
                         Setting Type: <code>Script</code>
                       </li>
@@ -165,7 +165,7 @@ A request came in from my System Admin group to push certain policies only to VM
                       </li>
                     </ol><figure class="wp-block-image size-large">
                     
-                    ![](https://sysmansquad.com/wp-content/uploads/2020/12/Snag_23698fff.png)</figure> <ol>
+                    ![](Snag_23698fff.png)</figure> <ol>
                       <li>
                         Values: <code>true</code>
                       </li>
@@ -186,7 +186,7 @@ A request came in from my System Admin group to push certain policies only to VM
                       In the console, move down to the Configuration Baseline section and create a new Baseline, adding the Configuration Item we previously created
                     </p><figure class="wp-block-image size-large is-resized">
                     
-                    ![](https://sysmansquad.com/wp-content/uploads/2020/12/image-15.png)</figure> <h2>
+                    ![](image-15.png)</figure> <h2>
                       Deploy Baseline
                     </h2>
                     
@@ -194,7 +194,7 @@ A request came in from my System Admin group to push certain policies only to VM
                       Now you can Deploy your newly created Baseline to whichever devices you wish. For this example, we're deploying to the <em>All Systems</em> collection and we're only going to run the baseline evaluation once per device, but there's no real harm in having it run every month or so (the data we're looking at is static and shouldn't vary at all).
                     </p><figure class="wp-block-image size-large is-resized">
                     
-                    ![](https://sysmansquad.com/wp-content/uploads/2020/12/image-17-1024x640.png)</figure> <h1>
+                    ![](image-17-1024x640.png)</figure> <h1>
                       Create Collections
                     </h1>
                     
@@ -202,11 +202,11 @@ A request came in from my System Admin group to push certain policies only to VM
                       The only real "required" collection to make is based on Compliant devices with the Baseline we deployed. To do that, click the Baseline, then the Deployments tab at the bottom, and right-click the <strong>Deployment</strong> > <strong>Create New Collection</strong> > <strong>Compliant</strong>, and follow the on-screen prompts to finish the Collection
                     </p><figure class="wp-block-image size-large is-resized">
                     
-                    ![](https://sysmansquad.com/wp-content/uploads/2020/12/image-18.png)</figure> <p>
+                    ![](image-18.png)</figure> <p>
                       I named my Collection "<em>All Systems_Azure</em>"
                     </p><figure class="wp-block-image size-large is-resized">
                     
-                    ![](https://sysmansquad.com/wp-content/uploads/2020/12/image-19.png)</figure> <p>
+                    ![](image-19.png)</figure> <p>
                       and now you can create collections based on this collection, for example:
                     </p>
                     

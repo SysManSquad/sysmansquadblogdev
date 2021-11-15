@@ -3,7 +3,7 @@ title: Working around NPS limitations for AADJ Windows devices
 author: Andrew Blackburn
 type: post
 date: 2021-04-28T03:10:47+00:00
-url: /2021/04/27/working-around-nps-limitations-for-aadj-windows-devices/
+url: 2021-04-27-working-around-nps-limitations-for-aadj-windows-devices/
 categories:
   - Endpoint Management
   - Intune
@@ -91,7 +91,7 @@ tags:
                           </h5>
                           
                           <div class="wp-block-image">
-                            <figure class="aligncenter size-large is-resized">![](https://sysmansquad.com/wp-content/uploads/2021/04/haadj.gif)<figcaption>More great gifs like this on the [Windows Admins](https://aka.ms/winadmins) Discord server.</figcaption></figure>
+                            <figure class="aligncenter size-large is-resized">![](haadj.gif)<figcaption>More great gifs like this on the [Windows Admins](https://aka.ms/winadmins) Discord server.</figcaption></figure>
                           </div>
                           
                           <h2>
@@ -220,12 +220,12 @@ if ($nameMap) {
                             <pre><code>.\New-DummyADComputer.ps1 -deviceName "device-name-here" -nameMap</code></pre>
                           </div><figure class="wp-block-image size-large">
                           
-                          ![](https://sysmansquad.com/wp-content/uploads/2021/04/image-8.png)</figure> <p>
+                          ![](image-8.png)</figure> <p>
                             After using the script for a test device, you should see the computer object in your AD.
                           </p>
                           
                           <div class="wp-block-image">
-                            <figure class="aligncenter size-large">![](https://sysmansquad.com/wp-content/uploads/2021/04/image-9.png)</figure>
+                            <figure class="aligncenter size-large">![](image-9.png)</figure>
                           </div>
                           
                           <p>
@@ -351,7 +351,7 @@ foreach ($DummyDevice in $DummyDevices) {
                           </div>
                           
                           <div class="wp-block-image">
-                            <figure class="aligncenter size-large is-resized">![](https://sysmansquad.com/wp-content/uploads/2021/04/image-3-1024x71.png)</figure>
+                            <figure class="aligncenter size-large is-resized">![](image-3-1024x71.png)</figure>
                           </div>
                           
                           <p>
@@ -359,7 +359,7 @@ foreach ($DummyDevice in $DummyDevices) {
                           </p>
                           
                           <div class="wp-block-image">
-                            <figure class="aligncenter size-large">![](https://sysmansquad.com/wp-content/uploads/2021/04/image-15.png)</figure>
+                            <figure class="aligncenter size-large">![](image-15.png)</figure>
                           </div>
                           
                           <p>

@@ -3,7 +3,7 @@ title: Sharing Google Meet Links With Students Safely Can Be Confusing For I.T. 
 author: Chris Thomas
 type: post
 date: 2020-04-26T20:26:23+00:00
-url: /2020/04/26/sharing-google-meet-links-with-students-safely-can-be-confusing-for-i-t-pros-let-alone-teachers/
+url: 2020-04/26/sharing-google-meet-links-with-students-safely-can-be-confusing-for-i-t-pros-let-alone-teachers/
 categories:
   - Documentation
   - How-To

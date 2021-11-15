@@ -3,7 +3,7 @@ title: Mapping Network Drives on Intune Devices
 author: Jake Shackelford
 type: post
 date: 2020-12-16T19:04:49+00:00
-url: /2020/12/16/mapping-network-drives-on-intune-devices/
+url: 2020-12/16/mapping-network-drives-on-intune-devices/
 categories:
   - Endpoint Management
   - How-To
@@ -72,4 +72,4 @@ stop-Transcript
 
 Once you have deployed the script to the selected group, you can sync Intune policies through Company Portal. Remember it can take up to 8 hours for this to appear. You should see a scheduled Task named `<strong>IntuneDriveMapping</strong>` and the triggers should look like the below.<figure class="wp-block-image size-large is-resized">
 
-![](https://sysmansquad.com/wp-content/uploads/2020/12/MicrosoftTeams-image-2-1024x439.png) </figure>
+![](MicrosoftTeams-image-2-1024x439.png) </figure>

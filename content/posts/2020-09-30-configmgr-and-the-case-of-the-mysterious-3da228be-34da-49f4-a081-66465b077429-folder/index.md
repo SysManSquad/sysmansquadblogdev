@@ -3,8 +3,8 @@ title: 'ConfigMgr and The Case of the Mysterious {3DA228BE-34DA-49f4-A081-66465B
 author: Adam Gross
 type: post
 date: 2020-09-30T05:50:17+00:00
-url: /2020/09/30/configmgr-and-the-case-of-the-mysterious-3da228be-34da-49f4-a081-66465b077429-folder/
-featured_image: /wp-content/uploads/2020/09/image-5.png
+url: 2020-09/30/configmgr-and-the-case-of-the-mysterious-3da228be-34da-49f4-a081-66465b077429-folder/
+featured_image: image-5.png
 categories:
   - Endpoint Management
   - How-To

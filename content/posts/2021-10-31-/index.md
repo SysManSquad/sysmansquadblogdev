@@ -22,7 +22,7 @@ In my personal case, I was hoping to find a way to Un-Sync a library from CLI or
 OneDrive.exe has almost no documentation that I could find for any command line features, and when I asked Microsoft, they told me that the feature I asked for documentation about didn't exist. 
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large">![](https://sysmansquad.com/wp-content/uploads/2021/09/image.png)</figure>
+  <figure class="aligncenter size-large">![](image.png)</figure>
 </div>
 
 Well, that's..... not remotely useful.... and sort of inaccurate. 

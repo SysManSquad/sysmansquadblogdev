@@ -3,7 +3,7 @@ title: Give your ADR a little boost with Status Filter Rules and PowerShell
 author: Michael De Bona
 type: post
 date: 2020-12-08T09:16:43+00:00
-url: /2020/12/08/give-your-adr-a-little-boost-with-status-filter-rules-and-powershell/
+url: 2020-12/08/give-your-adr-a-little-boost-with-status-filter-rules-and-powershell/
 categories:
   - MECM/MEMCM/SCCM
   - Powershell

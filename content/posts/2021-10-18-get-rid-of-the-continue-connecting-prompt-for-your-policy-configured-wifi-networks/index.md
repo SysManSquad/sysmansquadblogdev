@@ -3,7 +3,7 @@ title: Get rid of the “Continue connecting?” prompt for your policy-configur
 author: Aaron
 type: post
 date: 2021-10-18T19:05:26+00:00
-url: /2021/10/18/get-rid-of-the-continue-connecting-prompt-for-your-policy-configured-wifi-networks/
+url: 2021-10-18-get-rid-of-the-continue-connecting-prompt-for-your-policy-configured-wifi-networks/
 categories:
   - Endpoint Management
 
@@ -12,7 +12,7 @@ categories:
 
 As of Windows 11, we noticed that we were getting prompted to continue connecting to a network that we'd never had a problem with before. It's already defined in group policy, so this new behavior is puzzling and annoying. The certificate in question is for the NPS/Radius server our network uses to validate credentials for the wifi. <figure class="wp-block-image size-large">
 
-![](https://sysmansquad.com/wp-content/uploads/2021/10/image.png) </figure> 
+![](image.png) </figure> 
 
 I really had no idea how to even begin googling for this problem, but while talking to some of my fellow nerds on the [Winadmins](http://winadmins.io/) Discord server, tossing around some ideas on what could be causing this, looking to see whether there was a problem with the certificate, etc. While I was poking around and testing these suggestions I stumbled across the fix.
 
