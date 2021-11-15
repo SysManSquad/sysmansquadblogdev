@@ -33,13 +33,13 @@ I did my development on an empty test server, so I switched to the OAuth2 tab, a
 
 ## Writing the code
 
-Discord.py has a few [examples][1] you can start from. 
+Discord.py has a few [examples](https://github.com/Rapptz/discord.py/tree/master/examples) you can start from. 
 
 ### Python Setup
 
 Because I have been exposed to Python before, I was already aware that python projects should make use of <a href="https://docs.python.org/3/tutorial/venv.html" target="_blank" rel="noreferrer noopener">virtual environments</a>. I created a folder for my code, initialized <a href="https://www.atlassian.com/git/tutorials" target="_blank" rel="noreferrer noopener">git</a> in the folder to help me keep track of code revisions and began to write.
 
-I created my virtual environment as a sub-folder. I couldn't possibly say whether it's good practice, but it worked. The virtual environment was in a subfolder called 'venv' so I added it to my `.gitignore` file. You may find [pyenv][2] useful.
+I created my virtual environment as a sub-folder. I couldn't possibly say whether it's good practice, but it worked. The virtual environment was in a subfolder called 'venv' so I added it to my `.gitignore` file. You may find [pyenv](https://github.com/pyenv/pyenv) useful.
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
   <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;monokai&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;.gitignore&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">venv/
@@ -280,11 +280,6 @@ It has been an interesting experience building this bot, and as simple as it is,
 
 I hope it's been instructive to you. 
 
-I want to thank my friend [George][3] for both his expertise and patience as I struggled through some of the nastier parts of getting used to Python.
+I want to thank my friend [George](https://twitter.com/duplico) for both his expertise and patience as I struggled through some of the nastier parts of getting used to Python.
 
-I also want to thank the fine folks at [Pixabay][4] for this beautiful header image that expresses my feelings about python.
-
- [1]: https://github.com/Rapptz/discord.py/tree/master/examples
- [2]: https://github.com/pyenv/pyenv
- [3]: https://twitter.com/duplico
- [4]: https://pixabay.com/vectors/eagle-snake-kill-bird-wings-claws-46636/
+I also want to thank the fine folks at [Pixabay](https://pixabay.com/vectors/eagle-snake-kill-bird-wings-claws-46636/) for this beautiful header image that expresses my feelings about python.

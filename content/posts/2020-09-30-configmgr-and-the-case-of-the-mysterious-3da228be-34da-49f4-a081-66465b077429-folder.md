@@ -83,7 +83,7 @@ I should mention, I am not concerned about a small number of folders, even a few
   CAUTION - This script can wipe out folders if used incorrectly. Proceed with great care and test before running it.
 </p>
 
-[PowershellScripts/CleanupFoldersWithRoboCopy.ps1 at master · AdamGrossTX/PowershellScripts (github.com)][1]
+[PowershellScripts/CleanupFoldersWithRoboCopy.ps1 at master · AdamGrossTX/PowershellScripts (github.com)](https://github.com/AdamGrossTX/PowershellScripts/blob/master/ConfigMgr/Troubleshooting/CleanupFoldersWithRoboCopy.ps1)
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
   <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;<a href=\&quot;https://github.com/AdamGrossTX/PowershellScripts/commit/58b32c71fb3755430754d476b2324c365061245b\&quot;>CleanupFoldersWithRoboCopy.ps1</a>&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">[cmdletbinding()]
@@ -128,5 +128,3 @@ This was a very interesting challenge that let me learn several new things.
   * The ConfigMgr client has a storied history and still holds many secrets 🙂
 
 Special thanks to the some of folks over at the <a href="http://aka.ms/WinAdmins" target="_blank" rel="noreferrer noopener">WinAdmins Discord </a>server who helped me validate my findings and the ConfigMgr team taking a look at the issue so quickly.
-
- [1]: https://github.com/AdamGrossTX/PowershellScripts/blob/master/ConfigMgr/Troubleshooting/CleanupFoldersWithRoboCopy.ps1

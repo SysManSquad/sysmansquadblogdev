@@ -69,6 +69,4 @@ Import-PackageProvider -Name "Nuget" -Verbose</pre>
 
 Add another Run PowerShell script to your task sequence and reference your script with the newly added Import commands and you should be good to go! Don't forget to update your distribution point for the package you created!
 
-If anyone is interested in the actual SnipeIT script feel free to come to the [WinAdmins][1] discord and send me a message!
-
- [1]: https://aka.ms/winadmins
+If anyone is interested in the actual SnipeIT script feel free to come to the [WinAdmins](https://aka.ms/winadmins) discord and send me a message!

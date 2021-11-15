@@ -89,7 +89,7 @@ $Params = @{
 } </pre>
 </div>
 
-Now we need to replace `Get-WMIObject` with `Get-WinEvent` and compare the outputs. Referencing good ol' [Dr. Scripto's blog on the FilterHashtable param][1], we replace the WMI splat and the `$Events` line with:
+Now we need to replace `Get-WMIObject` with `Get-WinEvent` and compare the outputs. Referencing good ol' [Dr. Scripto's blog on the FilterHashtable param](https://devblogs.microsoft.com/scripting/use-filterhashtable-to-filter-event-log-with-powershell/), we replace the WMI splat and the `$Events` line with:
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
   <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;tomorrow-night-bright&quot;,&quot;lineNumbers&quot;:false,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:false,&quot;readOnly&quot;:false,&quot;showPanel&quot;:false,&quot;fileName&quot;:&quot;shell.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">$Params = @{ 
@@ -195,6 +195,4 @@ $ShutdownDetail | Select -First 1 | ForEach-Object {
 All of that leads to the finished product, which I've put in a gist on GitHub.  
 Enjoy!
 
-<https://gist.github.com/hkystar35/12b5f54401edfb9077346da7fe938e4e>
-
- [1]: https://devblogs.microsoft.com/scripting/use-filterhashtable-to-filter-event-log-with-powershell/
+[https://gist.github.com/hkystar35/12b5f54401edfb9077346da7fe938e4e](https://gist.github.com/hkystar35/12b5f54401edfb9077346da7fe938e4e)

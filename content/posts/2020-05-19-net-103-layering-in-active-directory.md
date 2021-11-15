@@ -21,7 +21,7 @@ categories:
   </div>
 </div>
 
-In [previous articles][1], we've built the basic services you need without getting too far in the weeds. Now we're going to layer in a central identity service.
+In [previous articles](https://www.sysmansquad.com/2020/01/23/net-102-build-your-lab/), we've built the basic services you need without getting too far in the weeds. Now we're going to layer in a central identity service.
 
 It's also hopefully going to be a lot shorter than previous articles, though I can't make any promises - these things tend to all start small, then balloon rapidly.
 
@@ -219,5 +219,3 @@ There are a number of security experts around that can give you a better run dow
 Now you have a workstation with all of the admin tools installed, dns and dhcp services, and a central identity server. You can look around under the Windows Administrative Tools folder on the start menu to see what else is possible. 
 
 Thanks for reading, and I hope you find it useful.
-
- [1]: https://www.sysmansquad.com/2020/01/23/net-102-build-your-lab/

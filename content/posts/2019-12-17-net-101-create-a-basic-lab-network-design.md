@@ -32,9 +32,9 @@ You will need one of these options available to you:
   * At least one pc with 2 network adapters, several spare PCs laying around & a network switch
   * A computer with virtualization software and enough ram to run several virtual machines
 
-We'll assume that what you're building is a private network that will use a NAT gateway & firewall to allow your traffic out onto the larger network or internet. This is the most common scenario at most companies, and it's a good place to build on before you learn more advanced concepts. If you don't have a good grounding in TCP/IP and networking in general, I suggest that you read this book before continuing: [Networking Concepts][1].
+We'll assume that what you're building is a private network that will use a NAT gateway & firewall to allow your traffic out onto the larger network or internet. This is the most common scenario at most companies, and it's a good place to build on before you learn more advanced concepts. If you don't have a good grounding in TCP/IP and networking in general, I suggest that you read this book before continuing: [Networking Concepts](https://docs.netgate.com/pfsense/en/latest/book/network/index.html).
 
-All addresses in this article will use [CIDR notation][2].
+All addresses in this article will use [CIDR notation](https://docs.netgate.com/pfsense/en/latest/book/network/understanding-cidr-subnet-mask-notation.html).
 
 ## Methodology
 
@@ -56,7 +56,7 @@ You will want to start by deciding what address range to use. Here is a short li
 
 If you are creating this lab at home, you will most likely have a 192.168.X.X IPv4 address. I'm assuming that you're creating this lab at home, so we'll pick a sane default that's unlikely to be used by your home router.
 
-You will begin by selecting a **/24** address space. A **/24** subnet is sometimes called a class "C" network, but is not exactly the same for historical reasons. We will use a large private address space, and carve out a smaller section to be our first subnet. An example of this address space is **10.248.100.0/24**. Our example code and scripts will assume you are using this address space, but you should pick a different one so that you have to put in more work, which will help you understand better what's going on. I'll place a link to a subnet calculator here to help you understand where the values I'm using are coming from. [10.248.100.0/24][3] It is also possible to work out this calculation manually if you are better at binary math than I am.
+You will begin by selecting a **/24** address space. A **/24** subnet is sometimes called a class "C" network, but is not exactly the same for historical reasons. We will use a large private address space, and carve out a smaller section to be our first subnet. An example of this address space is **10.248.100.0/24**. Our example code and scripts will assume you are using this address space, but you should pick a different one so that you have to put in more work, which will help you understand better what's going on. I'll place a link to a subnet calculator here to help you understand where the values I'm using are coming from. [10.248.100.0/24](https://www.calculator.net/ip-subnet-calculator.html?cclass=c&csubnet=24&cip=10.248.100.0&ctype=ipv4&printit=0&x=62&y=26) It is also possible to work out this calculation manually if you are better at binary math than I am.
 
 It's important to note that the very first address in your subnet (in our case 10.248.100.0) is the Network Number and is unusable by any device. The very last number in the network ( 10.248.100.255 ) is the broadcast address, and it too is unusable for normal purposes. We won't go into great detail about what is special about them for now.
 
@@ -66,7 +66,7 @@ It's important to note that the very first address in your subnet (in our case 1
   <em>Unfortunately, my experience doesn't yet include IPv6. I'll make a best-effort here but maybe don't count anything in this article referencing IPv6 as well-researched or authoritative yet. </em>
 </p>
 
-I recommend this article for some light reading regarding IPv6 addressing: [TCP/IP Fundamentals for Windows, Chapter 3][4]. You may also find this series of articles useful: [Infoblox IPv6 Blogs][5].
+I recommend this article for some light reading regarding IPv6 addressing: [TCP/IP Fundamentals for Windows, Chapter 3](https://docs.microsoft.com/en-us/previous-versions/tn-archive/bb726995(v=technet.10)#ipv6-addressing). You may also find this series of articles useful: [Infoblox IPv6 Blogs](https://blogs.infoblox.com/category/ipv6-coe/).
 
 Some important differences from IPv4:
 
@@ -75,7 +75,7 @@ Some important differences from IPv4:
   * Loopback - IPv4 was 127.0.0.1. IPv6 is '::1'
   * Choosing a subnet smaller that a /64 is almost entirely unsupported, even though that is a huge amount of wasted address space.
 
-For IPv6, you can use [SimpleDNS][6], who were kind enough to provide a site to generate a private address range. I'm going to use the following network number and provide as much background material as I can, because this is not an area I understand well. The key take-away from what I'm reading on this is that the subnet mask functionality is integrated into the IPv6 address without being a separately tracked number. You will also notice that there is no number-only representation of an IPv6 address, it is written either in binary or in hexadecimal notation. I've made use of this [IPv6 subnet calculator][7].
+For IPv6, you can use [SimpleDNS](https://simpledns.com/private-ipv6), who were kind enough to provide a site to generate a private address range. I'm going to use the following network number and provide as much background material as I can, because this is not an area I understand well. The key take-away from what I'm reading on this is that the subnet mask functionality is integrated into the IPv6 address without being a separately tracked number. You will also notice that there is no number-only representation of an IPv6 address, it is written either in binary or in hexadecimal notation. I've made use of this [IPv6 subnet calculator](https://www.calculator.net/ip-subnet-calculator.html?c6subnet=120&c6ip=fdda%3Af6d4%3Af5a2%3Af1e6%3A%3A0000&ctype=ipv6&printit=0&x=47&y=20#ipv6).
 
   * The network identifier for this network is: **fdda:f6d4:f5a2:f1e6:0000:0000:0000:0000** 
   * Which can also be written as: **fdda:f6d4:f5a2:f1e6::/64** 
@@ -92,7 +92,7 @@ Once you have selected an address space, your first task will be deciding what a
 
 **IPv4**: It is customary but not an absolute rule that network equipment addresses be located at the beginning or end of the address range. There is nothing whatsoever that prevents you from picking an arbitrary address in the middle and confusing anyone who needs to figure out your network. All that is required is that the gateway interface be a valid address inside the subnet that is not already used by something else. Please do not pick an address in the middle of your subnet for your gateway.
 
-**IPv6**: It looks like the lowest address within the subnet (the one with all zeros as the [interface identifier][8]) is a [Subnet Router Anycast Address][9]. This means that it is always owned by a router. The routers all seem to respond to messages directed to this address after a randomized timeout. The practical effect of this, is that it is a reserved address. Therefore in our example, **fdda:f6d4:f5a2:f1e6::00/64** is a reserved address that is always used by one of the available routers in the subnet.
+**IPv6**: It looks like the lowest address within the subnet (the one with all zeros as the [interface identifier](https://blogs.infoblox.com/ipv6-coe/ipv6-back-to-basics-interface-ids/)) is a [Subnet Router Anycast Address](https://into6.com.au/2014/03/30/subnet-router-anycast-addresses-what-are-they-how-do-they-work/). This means that it is always owned by a router. The routers all seem to respond to messages directed to this address after a randomized timeout. The practical effect of this, is that it is a reserved address. Therefore in our example, **fdda:f6d4:f5a2:f1e6::00/64** is a reserved address that is always used by one of the available routers in the subnet.
 
 It also seems that in IPv6, you need to think of IPv6 addresses as identifiers for interfaces, not hosts. In other words, it is perfectly likely that a machine may have a large number of interfaces, and so the thinking has shifted to the assumption that it will, and so the terminology has shifted as well. Even with this change, an interface may have more than one IPv6 address assigned, just like you were able to do with IPv4 addresses. The interface identifier is the part of the address that changes to distinguish an interface from another one inside the same subnet.
 
@@ -135,7 +135,7 @@ _!! Remember - this is the same number of addresses, but written in hex. Even th
 
 An embarrassingly large number of systems problems can be traced back to DNS.
 
-Generally speaking, you should use a DNS name that you own. In our example lab, we'll want to pick something that's reserved and not valid on the general internet so we can know for sure that any answer we get will be from our actual DNS server. We can find out what names are not allowed to be registered by searching for 'reserved DNS names' or just reading [RFC 2606][10]. For our lab DNS name we will use '**lab.text**'.  
+Generally speaking, you should use a DNS name that you own. In our example lab, we'll want to pick something that's reserved and not valid on the general internet so we can know for sure that any answer we get will be from our actual DNS server. We can find out what names are not allowed to be registered by searching for 'reserved DNS names' or just reading [RFC 2606](https://tools.ietf.org/html/rfc2606#section-2). For our lab DNS name we will use '**lab.text**'.  
 We will write this in our documentation as '**lab.test.**' - note the trailing dot. This is important because the trailing dot signifies that this is the end of the DNS domain. This is important for some DNS records and also because we are using an uncommon top-level domain.
 
 IPv4: Our DNS server will live at **10.248.100.2/24**.  
@@ -237,22 +237,8 @@ Well that was simple. But also maybe we should do this in a visual way as well. 
 
 Pretty neat huh? While you may at some point get to a level where you have some tool that generates these diagrams for you, I wouldn't count on it being soon. Some networks are so big that one human simply can't track every change to the topology or other critical information, but this lab network isn't one of them. 
 
-I didn't just come up with this diagram design on my own, I have to thank the folks at Packet Pushers for the advice on how to do it well. [How to Draw Clear L3 Logical Network Diagrams][11]. I also don't use visio as it's extremely expensive and not better than [Draw.io][12]. If you prefer a downloadable app instead of a website, have a look over here at their [github releases][13] page. 
+I didn't just come up with this diagram design on my own, I have to thank the folks at Packet Pushers for the advice on how to do it well. [How to Draw Clear L3 Logical Network Diagrams](https://packetpushers.net/how-to-draw-clear-l3-logical-network-diagrams/). I also don't use visio as it's extremely expensive and not better than [Draw.io](https://www.draw.io/). If you prefer a downloadable app instead of a website, have a look over here at their [github releases](https://github.com/jgraph/drawio-desktop/releases) page. 
 
 You may also notice that I've included some interface names here, em0 and em1. This is because I happen to know that the software appliance we'll use to create our gateway/firewall device names its interfaces this way.
 
 In our next installment we'll cover the general process of creating your lab.
-
- [1]: https://docs.netgate.com/pfsense/en/latest/book/network/index.html
- [2]: https://docs.netgate.com/pfsense/en/latest/book/network/understanding-cidr-subnet-mask-notation.html
- [3]: https://www.calculator.net/ip-subnet-calculator.html?cclass=c&csubnet=24&cip=10.248.100.0&ctype=ipv4&printit=0&x=62&y=26
- [4]: https://docs.microsoft.com/en-us/previous-versions/tn-archive/bb726995(v=technet.10)#ipv6-addressing
- [5]: https://blogs.infoblox.com/category/ipv6-coe/
- [6]: https://simpledns.com/private-ipv6
- [7]: https://www.calculator.net/ip-subnet-calculator.html?c6subnet=120&c6ip=fdda%3Af6d4%3Af5a2%3Af1e6%3A%3A0000&ctype=ipv6&printit=0&x=47&y=20#ipv6
- [8]: https://blogs.infoblox.com/ipv6-coe/ipv6-back-to-basics-interface-ids/
- [9]: https://into6.com.au/2014/03/30/subnet-router-anycast-addresses-what-are-they-how-do-they-work/
- [10]: https://tools.ietf.org/html/rfc2606#section-2
- [11]: https://packetpushers.net/how-to-draw-clear-l3-logical-network-diagrams/
- [12]: https://www.draw.io/
- [13]: https://github.com/jgraph/drawio-desktop/releases

@@ -16,7 +16,7 @@ tags:
   - xen-orchestra
 
 ---
-I had a need in my home lab to quickly deploy a bunch of thin clones of Ubuntu's cloud image. I chose to use the cloud images Ubuntu [provides][1] instead of building a custom template.
+I had a need in my home lab to quickly deploy a bunch of thin clones of Ubuntu's cloud image. I chose to use the cloud images Ubuntu [provides](https://cloud-images.ubuntu.com/) instead of building a custom template.
 
 Xen Orchestra has had support for cloud-init [since 2015][2]. 
 
@@ -96,6 +96,6 @@ ca-certs:
 
 This approach is fast, but doesn't properly install the xcp-ng guest tools. You'll probably want those if you want XCP-NG or Xen-Orchestra to be able to dive into each guest VM and display a useful level of detail about the guest. You can do a normal install from an iso, install some packages and run "cloud-init clean", then immediately shut down the VM. This will force cloud init to run the same way it would if this were a fresh machine - generating host keys, naming the machine and applying any other config you pass in.
 
- [1]: https://cloud-images.ubuntu.com/
+
  [2]: https://xen-orchestra.com/blog/cloudinit-support-for-xenserver/
  [3]: https://cloud-images.ubuntu.com/focal/current/focal-server-cloudimg-amd64.ova

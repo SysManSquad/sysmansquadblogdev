@@ -23,7 +23,7 @@ How would you like this lovely notification appearing within MS Teams every time
 
 Well, now you can! <figure class="wp-block-image">
 
-![Oh how sexy!][1] </figure> 
+![Oh how sexy!](https://lh3.googleusercontent.com/BoKEAscaxddhdwbdL99Ks2fPQLO1TojP-vK3LtEddTJWWCHkG7rOapin1BhIkxOtFOT3B_eDY-vU6rFjo6bEBnMEpzzS2H7PbRnb4d9l7vIcbq1QQiUyHleq3K1KlYERHzcWyBk) </figure> 
 
 ## Step 1 - Configure Teams {#step-1}
 
@@ -35,19 +35,19 @@ Well, now you can! <figure class="wp-block-image">
   * Select a channel, or create a new channel specific for these notifications (This is best practice so normal channels are not spammed)
   * Click the **...** Next to the channel name and choose Connectors<figure class="wp-block-image">
 
-![][2] </figure> 
+![](https://lh3.googleusercontent.com/IDmdOWv7kS2rHVKHZWxkRq_k4Jk6EYKwwJZzu9M9OWDkcM9uIWFsskyUlDP6XGKK_5OES_bpHyWOd3AJVdicjZnKGe97-2PhCVWkCpusBJjaFn5Ej_rg2Gt3i4AM4JkYCoc4eE4) </figure> 
 
   * Click Add / Configure <figure class="wp-block-image">
 
-![][3] </figure> 
+![](https://lh6.googleusercontent.com/PQNNHfPzcDuCgYGJVAFlhynNeAIzMS11W75ak6v6udvTDjUGfjDjZCFuUGiDJOsh1FD3xgQXx5vKpwx9uQ-Q5ra-rN65nKcfMVVpCPSNoWhPJZXz_uY6IPZeYG2kuXezvfpEieA) </figure> 
 
   * Give your Connector an appropriate name and custom image. <figure class="wp-block-image">
 
-![][4] </figure> 
+![](https://lh6.googleusercontent.com/JNlowFdme9yLmJs6kIMjYZaLw1hJ4Y_W5GYiQC55gc-0k8R6hPjaCv8Ia7Si73rU3bnoxRFE_OtwJgnTiZy0sXcQGWNQzyH-MlGYksJsj0SGaAOUHjxL6aV1rHDglSOtwaSti2w) </figure> 
 
   * It will then generate a unique API code for you to use later. Copy this URI and keep it safe! <figure class="wp-block-image">
 
-![][5] </figure> 
+![](https://lh3.googleusercontent.com/fHuRMMRmCLr-gwHGqwT3UCVd76Y_UtjuZ6yhlsaRQCE83X9WFYqYwSk30AN8694sDkDvkuBRLX1OTnbqdX3YMFRfMq51CIgIFx2VrfOLOwy7XSoetUG-qlChyZXtQGAPysivMcw) </figure> 
 
 ## Step 2 - PowerShell Script {#step-2}
 
@@ -178,11 +178,11 @@ This modification of the PowerShell script means you can just copy/paste the JSO
   * In Config Manager Console, create a new Package.
   * Give it a **Name**, **Description**, and specify the **source share**<figure class="wp-block-image">
 
-![][6] </figure> 
+![](https://lh5.googleusercontent.com/ogV4YKLMOxUoa9EcZ3ZZcvs7FBWrFC6FTkct_kvD7slFw2nJjZUqMk9U7w3dFPRGk1j3vK6Q9MC5M_hLVJxgWV38bdLzhaR1N59gZ3rty8szV9nWxo84y3uRLXwk4ONaLtiYOhk) </figure>
 
   * Select **Do not create a program**<figure class="wp-block-image">
 
-![][7] </figure> 
+![](https://lh3.googleusercontent.com/fnKUiM0o1crWIn8rhzNcpvVJHEeLzJT-M6EelVNqcTDdwkvwYNTwHl_igoC2hoHQPRKLj9XK0JfKjTk7jQiyD-IT4z6qtcruWZujQ_pBYFwZE3S3oeleF24RFG9qOV2mVpLXmis) </figure>
 
   * Complete the wizard.
   * Distribute the Package contents.
@@ -193,15 +193,15 @@ Edit the task sequence for OSD.
 
 Our TS is set up with logic and a section to run if the task sequence encounters an error. This is where we will put the OSD Failure notification script.
 
-_For more information on how to set up Error Handling in OSD Task Sequence, see [Jörgen Nilsson][8]'s post about it here: <a href="https://ccmexec.com/2016/12/error-handling-in-ts-without-mdt-using-osdbackground/" target="_blank" rel="noreferrer noopener" aria-label="https://ccmexec.com/2016/12/error-handling-in-ts-without-mdt-using-osdbackground/ (opens in a new tab)">https://ccmexec.com/2016/12/error-handling-in-ts-without-mdt-using-osdbackground/</a>_<figure class="wp-block-image">
+_For more information on how to set up Error Handling in OSD Task Sequence, see [Jörgen Nilsson's](https://ccmexec.com/author/jonil/) post about it here: <a href="https://ccmexec.com/2016/12/error-handling-in-ts-without-mdt-using-osdbackground/" target="_blank" rel="noreferrer noopener" aria-label="https://ccmexec.com/2016/12/error-handling-in-ts-without-mdt-using-osdbackground/ (opens in a new tab)">https://ccmexec.com/2016/12/error-handling-in-ts-without-mdt-using-osdbackground/</a>_<figure class="wp-block-image">
 
-![][9] </figure> 
+![](https://lh5.googleusercontent.com/GRx_3DUP7m-LKvPLhxOqfdS0hI94Nii31qrJyXmyH9pXxGHmPs_VNZzm8Yr42YOA_6e5TUhhJHLQ3xLT7t4psCGvJsE7qLSRZRBRweEpNZ0QHuCh8t1OIcx80lDYpH8NR82AM4E) </figure> 
 
   * After the Gather step, we want to add a Run PowerShell Script task.
   * Select the package with our Script.
   * Change the PowerShell execution policy to Bypass<figure class="wp-block-image">
 
-![][10] </figure> 
+![](https://lh4.googleusercontent.com/j3haF1BmaCbjBJWnwwRFZ0mjRn_yfDGlUsgb1R2MBiRMDj8Bbc4meoRpeh0ekaruaa_yqiZdD-MZF_ZDFjKaPoXu9Ny5VWJTS6B9q8s4tWXuRPz1lEi84YbKyCK60Lip_ZLOxMA) </figure> 
 
   * Click OK and that's it set up!
 
@@ -209,20 +209,8 @@ If you want to try emulating a failure, create a **Run Command Line** task somew
 
 <pre class="wp-block-preformatted">cmd /c exit 8008135  </pre><figure class="wp-block-image">
 
-![][11] </figure> 
+![](https://lh5.googleusercontent.com/48_DvgDPw7zontS5B_1_x7XLGKptLobBqnS3wf9nGkywHwxKzYYoME70O7J6KFSTOqh8T5bkf4xR3_tZ89z1Sl2enGMYJoB8o-_uSvIi0znFDRDtcW9aPk_ro7kYnDC1k3JIMTU) </figure> 
 
 So now, if your task sequence runs into an error, you will now get a lovely message straight into your Teams channel: <figure class="wp-block-image">
 
-![][1] </figure>
-
- [1]: https://lh3.googleusercontent.com/BoKEAscaxddhdwbdL99Ks2fPQLO1TojP-vK3LtEddTJWWCHkG7rOapin1BhIkxOtFOT3B_eDY-vU6rFjo6bEBnMEpzzS2H7PbRnb4d9l7vIcbq1QQiUyHleq3K1KlYERHzcWyBk
- [2]: https://lh3.googleusercontent.com/IDmdOWv7kS2rHVKHZWxkRq_k4Jk6EYKwwJZzu9M9OWDkcM9uIWFsskyUlDP6XGKK_5OES_bpHyWOd3AJVdicjZnKGe97-2PhCVWkCpusBJjaFn5Ej_rg2Gt3i4AM4JkYCoc4eE4
- [3]: https://lh6.googleusercontent.com/PQNNHfPzcDuCgYGJVAFlhynNeAIzMS11W75ak6v6udvTDjUGfjDjZCFuUGiDJOsh1FD3xgQXx5vKpwx9uQ-Q5ra-rN65nKcfMVVpCPSNoWhPJZXz_uY6IPZeYG2kuXezvfpEieA
- [4]: https://lh6.googleusercontent.com/JNlowFdme9yLmJs6kIMjYZaLw1hJ4Y_W5GYiQC55gc-0k8R6hPjaCv8Ia7Si73rU3bnoxRFE_OtwJgnTiZy0sXcQGWNQzyH-MlGYksJsj0SGaAOUHjxL6aV1rHDglSOtwaSti2w
- [5]: https://lh3.googleusercontent.com/fHuRMMRmCLr-gwHGqwT3UCVd76Y_UtjuZ6yhlsaRQCE83X9WFYqYwSk30AN8694sDkDvkuBRLX1OTnbqdX3YMFRfMq51CIgIFx2VrfOLOwy7XSoetUG-qlChyZXtQGAPysivMcw
- [6]: https://lh5.googleusercontent.com/ogV4YKLMOxUoa9EcZ3ZZcvs7FBWrFC6FTkct_kvD7slFw2nJjZUqMk9U7w3dFPRGk1j3vK6Q9MC5M_hLVJxgWV38bdLzhaR1N59gZ3rty8szV9nWxo84y3uRLXwk4ONaLtiYOhk
- [7]: https://lh3.googleusercontent.com/fnKUiM0o1crWIn8rhzNcpvVJHEeLzJT-M6EelVNqcTDdwkvwYNTwHl_igoC2hoHQPRKLj9XK0JfKjTk7jQiyD-IT4z6qtcruWZujQ_pBYFwZE3S3oeleF24RFG9qOV2mVpLXmis
- [8]: https://ccmexec.com/author/jonil/
- [9]: https://lh5.googleusercontent.com/GRx_3DUP7m-LKvPLhxOqfdS0hI94Nii31qrJyXmyH9pXxGHmPs_VNZzm8Yr42YOA_6e5TUhhJHLQ3xLT7t4psCGvJsE7qLSRZRBRweEpNZ0QHuCh8t1OIcx80lDYpH8NR82AM4E
- [10]: https://lh4.googleusercontent.com/j3haF1BmaCbjBJWnwwRFZ0mjRn_yfDGlUsgb1R2MBiRMDj8Bbc4meoRpeh0ekaruaa_yqiZdD-MZF_ZDFjKaPoXu9Ny5VWJTS6B9q8s4tWXuRPz1lEi84YbKyCK60Lip_ZLOxMA
- [11]: https://lh5.googleusercontent.com/48_DvgDPw7zontS5B_1_x7XLGKptLobBqnS3wf9nGkywHwxKzYYoME70O7J6KFSTOqh8T5bkf4xR3_tZ89z1Sl2enGMYJoB8o-_uSvIi0znFDRDtcW9aPk_ro7kYnDC1k3JIMTU
+![](https://lh3.googleusercontent.com/BoKEAscaxddhdwbdL99Ks2fPQLO1TojP-vK3LtEddTJWWCHkG7rOapin1BhIkxOtFOT3B_eDY-vU6rFjo6bEBnMEpzzS2H7PbRnb4d9l7vIcbq1QQiUyHleq3K1KlYERHzcWyBk) </figure>

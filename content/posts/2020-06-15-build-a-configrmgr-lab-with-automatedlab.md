@@ -23,22 +23,22 @@ This post was originally posted on the <a rel="noreferrer noopener" href="https:
 
 ### What is AutomatedLab?
 
-[AutomatedLab][1] is a PowerShell module for building lab environments with simple PowerShell code! The module can be found on [GitHub][2] and more documentation also on their [website][3].
+[AutomatedLab](https://github.com/automatedlab/automatedlab) is a PowerShell module for building lab environments with simple PowerShell code! The module can be found on [GitHub](https://github.com/AutomatedLab/AutomatedLab) and more documentation also on their [website](https://automatedlab.org).
 
 The benefit of using AutomatedLab is the simplicity it offers to build and throw away environments of varying complexity. Also, it offers a huge range of functions to customise your lab to how you want it. 
 
 Generally you create your build script, set it to run, come back some time later and your lab is complete exactly how you want it. That's exactly what I've done with this ConfigMgr CustomRole: run the script, leave it alone and come back to a fully functioning and independent environment.
 
-If you're curious and want an introduction to AutomatedLab, [check out this post I wrote][4]. However it's not strictly necessary to follow along right now with this post if you have no prior understanding.
+If you're curious and want an introduction to AutomatedLab, [check out this post I wrote](https://sysmansquad.com/2020/06/15/getting-started-with-automatedlab/). However it's not strictly necessary to follow along right now with this post if you have no prior understanding.
 
 ### Yet another ConfigMgr lab solution
 
 In my quest for finding an automated way to build out a ConfigMgr lab, I found several excellent options:
 
-  * [PSNewCMENV][5] - @onpremcloudguy
-  * [CMHyperHydrate][6] - @AdamGrossTX
-  * [CMBuild][7] - @skatterbrainzz
-  * [ViaMonstra Hydration Kit][8] - @jarwidmark
+  * [PSNewCMENV](https://github.com/onpremcloudguy/PSNewCMENV) - @onpremcloudguy
+  * [CMHyperHydrate](https://github.com/AdamGrossTX/CMHyperHydrate) - @AdamGrossTX
+  * [CMBuild](https://github.com/Skatterbrainz/CMBuild) - @skatterbrainzz
+  * [ViaMonstra Hydration Kit](https://deploymentresearch.com/hydration-kit-for-windows-server-2016-and-configmgr-current-technical-preview-branch/) - @jarwidmark
 
 I was mainly interested in something that was hands off and had opportunities for me to contribute to. With that I felt AutomatedLab was exactly what I wanted.
 
@@ -149,12 +149,4 @@ If you're thinking, "wait, what? I've automated this much but now I have to manu
 ### Support
 
 If you experience any issues, please do open an issue on my <a href="https://github.com/codaamok/posh" target="_blank" rel="noreferrer noopener">GitHub repository</a>! Alternatively you can ping me on Twitter (<a href="https://twitter.com/codaamok" target="_blank" rel="noreferrer noopener">@codaamok</a>).
-
- [1]: https://github.com/automatedlab/automatedlab
- [2]: https://github.com/AutomatedLab/AutomatedLab
- [3]: https://automatedlab.org
- [4]: https://sysmansquad.com/2020/06/15/getting-started-with-automatedlab/
- [5]: https://github.com/onpremcloudguy/PSNewCMENV
- [6]: https://github.com/AdamGrossTX/CMHyperHydrate
- [7]: https://github.com/Skatterbrainz/CMBuild
- [8]: https://deploymentresearch.com/hydration-kit-for-windows-server-2016-and-configmgr-current-technical-preview-branch/
+ 

@@ -19,9 +19,9 @@ categories:
   - Windows
 
 ---
-Welcome back! We're now going to move on to the actual effort it takes to build your lab. As you recall we got pretty far last time in documenting the beginnings of our network. For this lab I'll be using <a rel="noreferrer noopener" aria-label="VMWare Workstation (opens in a new tab)" href="https://www.vmware.com/products/workstation-pro.html" target="_blank">VMWare Workstation</a>, but you can accomplish this with <a rel="noreferrer noopener" aria-label="Microsoft Hyper-V (opens in a new tab)" href="https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/" target="_blank">Microsoft Hyper-V</a>, <a href="https://www.virtualbox.org/" target="_blank" rel="noreferrer noopener" aria-label="Oracle VirtualBox (opens in a new tab)">Oracle VirtualBox</a>, the free tier of <a href="https://www.vmware.com/products/vsphere.html" target="_blank" rel="noreferrer noopener" aria-label="VMWare's ESX (opens in a new tab)">VMWare's ESX</a>, or <a rel="noreferrer noopener" aria-label="XCP-NG (opens in a new tab)" href="https://xcp-ng.org/" target="_blank">XCP-NG</a>. 
+Welcome back! We're now going to move on to the actual effort it takes to build your lab. As you recall we got pretty far last time in documenting the beginnings of our network. For this lab I'll be using <a rel="noreferrer noopener" aria-label="VMWare Workstation (opens in a new tab)" href="https://www.vmware.com/products/workstation-pro.html" target="_blank">VMWare Workstation</a>, but you can accomplish this with <a rel="noreferrer noopener" aria-label="Microsoft Hyper-V (opens in a new tab)" href="https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/" target="_blank">Microsoft Hyper-V</a>, <a href="https://www.virtualbox.org/" target="_blank" rel="noreferrer noopener" aria-label="Oracle VirtualBox (opens in a new tab)">Oracle VirtualBox</a>, the free tier of <a href="https://www.vmware.com/products/vsphere.html" target="_blank" rel="noreferrer noopener" aria-label="VMWare's ESX (opens in a new tab)">VMWare's ESX</a>, or <a rel="noreferrer noopener" aria-label="XCP-NG (opens in a new tab)" href="https://xcp-ng.org/" target="_blank">XCP-NG</a>.
 
-If you haven't read the previous post, please have a look [here][1] as each post builds upon the last.
+If you haven't read the previous post, please have a look [here](https://sysmansquad.com/2019/12/17/net-101-create-a-basic-lab-network-design/) as each post builds upon the last.
 
 I'm not going to cover a lot of the implementation details of any particular hypervisor other than as a general concept. You can view manuals for most hypervisors and find a ton of tutorials for how to create a VM. <div class="wp-block-uagb-table-of-contents uagb-toc\_\_align-left uagb-toc\_\_columns-1 uagb-block-91527d6f-69b6-422b-8f77-675c11eec1eb " data-scroll= "1" data-offset= "30" data-delay= "800" > 
 
@@ -568,5 +568,3 @@ Add-DhcpServerv6ExclusionRange @V6ExclusionRange
                     <p>
                       Next article we'll cover layering in identity management in the form of Active Directory.
                     </p>
-
- [1]: https://sysmansquad.com/2019/12/17/net-101-create-a-basic-lab-network-design/

@@ -18,7 +18,7 @@ tags:
   - PowerShell
 
 ---
-The other day I was helping someone over in the [WinAdmins Discord][1]. Their users kept getting confused about what their passwords were, and it was causing a lot of HelpDesk tickets. Let's find out what users have Microsoft accounts on the company domain so we can help move those accounts elsewhere to streamline the user experience.
+The other day I was helping someone over in the [WinAdmins Discord](https://aka.ms/WinAdmins). Their users kept getting confused about what their passwords were, and it was causing a lot of HelpDesk tickets. Let's find out what users have Microsoft accounts on the company domain so we can help move those accounts elsewhere to streamline the user experience.
 
 <!--more--><div class="wp-block-uagb-table-of-contents uagb-toc\_\_align-left uagb-toc\_\_columns-1 uagb-block-a47e5e16 " data-scroll= "1" data-offset= "30" data-delay= "800" > 
 
@@ -331,5 +331,3 @@ $results
                         
                         <p>
                         </p>
-
- [1]: https://aka.ms/WinAdmins

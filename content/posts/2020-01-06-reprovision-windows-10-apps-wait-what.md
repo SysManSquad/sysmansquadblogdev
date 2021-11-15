@@ -200,6 +200,4 @@ In this post I've outlined the mechanism that ensures a deprovisioned AppX Packa
 
 I hope this helps someone get their environment back in working order by restoring the Windows Store! Or maybe just Solitaire... Let them play cards guys. 
 
-[@CodyMathis123][1]
-
- [1]: https://twitter.com/CodyMathis123
+[@CodyMathis123](https://twitter.com/CodyMathis123)

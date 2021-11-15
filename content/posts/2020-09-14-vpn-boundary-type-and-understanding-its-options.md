@@ -27,7 +27,7 @@ Select the new VPN option in the Type drop-down<figure class="wp-block-image siz
 
 #### Types Defined
 
-From the [Define boundaries - Configuration Manager | Microsoft Docs][1], these are the type options:
+From the [Define boundaries - Configuration Manager | Microsoft Docs](https://docs.microsoft.com/en-us/mem/configmgr/core/servers/deploy/configure/boundaries#vpn), these are the type options:
 
   * **Auto detect VPN**: Configuration Manager detects any VPN solution that uses the point-to-point tunneling protocol (PPTP). If it doesn't detect your VPN, use one of the other options. The boundary value in the console list will be&nbsp;Auto:On.
   * **Connection name**: Specify the name of the VPN connection on the device. It's the name of the network adapter in Windows for the VPN connection. Configuration Manager matches the first 250 characters of the string, but doesn't support wildcard characters or partial strings. The boundary value in the console list will be&nbsp;Name:<name>, where&nbsp;<name>&nbsp;is the connection name that you specify.  
@@ -195,5 +195,5 @@ And now my VPN Boundary Group looks like this and devices are where they need to
 
 <img loading="lazy" src="https://www.sysmansquad.com/wp-content/uploads/2020/08/Snag_2a0b39b.png" alt="BG" class="wp-image-1596" width="668" height="208" srcset="https:/wp-content/uploads/2020/08/Snag_2a0b39b.png 668w, https:/wp-content/uploads/2020/08/Snag_2a0b39b-300x93.png 300w, https:/wp-content/uploads/2020/08/Snag_2a0b39b-100x31.png 100w" sizes="(max-width: 668px) 100vw, 668px" /> </figure>
 
- [1]: https://docs.microsoft.com/en-us/mem/configmgr/core/servers/deploy/configure/boundaries#vpn
+
  [2]: https://www.sysmansquad.com/?attachment_id=1747

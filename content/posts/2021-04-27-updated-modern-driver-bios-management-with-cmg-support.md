@@ -143,17 +143,17 @@ You can read the original blog posts here:
 
 There are multiple blog articles and guides online to help you set up your CMG. Here are some links that helped me:
 
-  * [Official documentation/guidance from Microsoft][1]
-  * [CMG Guide from System Center Dudes][2]
-  * [CMG Guide from Prajwal Desai][3]
+  * [Official documentation/guidance from Microsoft](https://docs.microsoft.com/en-us/mem/configmgr/core/clients/manage/cmg/setup-cloud-management-gateway)
+  * [CMG Guide from System Center Dudes](https://systemcenterdudes.com/setup-and-configure-sccm-cloud-management-gateway-1806/)
+  * [CMG Guide from Prajwal Desai](https://www.prajwaldesai.com/setup-sccm-cloud-management-gateway/)
 
-Personally, for my lab, I used the [Let's Encrypt Cloud Management Gateway][4] blog post by Nathan Ziehnert to set up my CMG.
+Personally, for my lab, I used the [Let's Encrypt Cloud Management Gateway](https://z-nerd.com/blog/2019/05/20-lets-encrypt-cloud-management-gateway/) blog post by Nathan Ziehnert to set up my CMG.
 
 ### Additional configuration to use the AdminService over CMG
 
 There is some additional configuration that is needed to be able to query the AdminService over the cloud management gateway.
 
-Once again, another one of Nathan’s blog post helped me: [Securing Access to the ConfigMgr AdminService Over Cloud Management Gateway][5]
+Once again, another one of Nathan’s blog post helped me: [Securing Access to the ConfigMgr AdminService Over Cloud Management Gateway](https://z-nerd.com/blog/2019/12/03-adminservice-over-cmg/)
 
 There are 2 things I had to do differently in the Authentication section:
 
@@ -172,7 +172,7 @@ Also, at the same time, when I was looking at my application registration in the
 
 After inspecting Sandy’s script, I confirmed that it was using Azure Active Directory Authentication Library (ADAL), so I wanted to make my solution work with MSAL instead of ADAL.
 
-After doing some research, I found the perfect PowerShell module to help me: [MSAL.PS][6]
+After doing some research, I found the perfect PowerShell module to help me: [MSAL.PS](https://github.com/AzureAD/MSAL.PS/)
 
 With the help of that module, I was easily able to get an access token that is needed to query the AdminService over CMG.
 
@@ -198,7 +198,7 @@ Now that I knew what information I needed to use to query the AdminService over 
 
 ### 1) New parameters and ParameterSets
 
-Depending on if the client is on the internet or not, my script would require a different set of parameters. This was the perfect opportunity to use [parameter sets][7].
+Depending on if the client is on the internet or not, my script would require a different set of parameters. This was the perfect opportunity to use [parameter sets](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_parameter_sets?view=powershell-7.1).
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
   <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:false,&quot;styleActiveLine&quot;:false,&quot;lineWrapping&quot;:false,&quot;readOnly&quot;:false,&quot;showPanel&quot;:false,&quot;fileName&quot;:&quot;shell.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">[parameter(Mandatory = $true, ParameterSetName = "Intranet")]
@@ -241,7 +241,7 @@ Depending on if the client is on the internet or not, my script would require a 
 
 I wrote a function to handle installing & importing the MSAL.PS.
 
-The tricky part here is that the MSAL.PS module requires us to accept the license agreement before we can install the module. There is a parameter **-AcceptLicense** for the Install-Module function but it is only available in the [PowerShellGet module][8] version 2 or higher.
+The tricky part here is that the MSAL.PS module requires us to accept the license agreement before we can install the module. There is a parameter **-AcceptLicense** for the Install-Module function but it is only available in the [PowerShellGet module](https://docs.microsoft.com/en-us/powershell/module/powershellget) version 2 or higher.
 
 This function checks for the availability of the MSAL.PS module and if it’s not there it will check for the prerequisites to install before it can import the module.
 
@@ -409,7 +409,7 @@ Here you fill out your environment-specific information. The additional paramete
 </div>
 
   * TenantId: Your Azure AD Tenant ID
-  * ClientId: The Client ID of the application registration that you created to interact with the AdminService. See [additional configuration to use the AdminService over CMG][9] for details.
+  * ClientId: The Client ID of the application registration that you created to interact with the AdminService. See [additional configuration to use the AdminService over CMG](https://sysmansquad.com/wp-admin/post.php?post=2552&action=edit#additional-configuration-to-use-the-adminservice-over-cmg) for details.
   * ApplicationIdUri: The application ID Uri for your application registration. The default value of "https://ConfigMgrService" will probably be OK for most people.<figure class="wp-block-image size-large">
 
 <img loading="lazy" width="1024" height="503" src="https://sysmansquad.com/wp-content/uploads/2021/04/setparam-1024x503.png" alt="" class="wp-image-2620" srcset="https:/wp-content/uploads/2021/04/setparam-1024x503.png 1024w, https:/wp-content/uploads/2021/04/setparam-300x147.png 300w, https:/wp-content/uploads/2021/04/setparam-768x377.png 768w, https:/wp-content/uploads/2021/04/setparam-100x49.png 100w, https:/wp-content/uploads/2021/04/setparam-855x420.png 855w, https:/wp-content/uploads/2021/04/setparam-1234x606.png 1234w, https:/wp-content/uploads/2021/04/setparam.png 1248w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> 
@@ -436,7 +436,7 @@ If you are on Current Branch 2010 or later, you can use a boot media to run bare
 
 ## How do I set this up in my environment?
 
-  1. Download the task sequences [here][10].
+  1. Download the task sequences [here](https://github.com/CharlesNRU/mdm-adminservice/raw/master/MDM-TS.zip).
   2. Import the task sequences in your environment
   3. Configure the parameters correctly in the “Query AdminService for PackageID” task sequence:<figure class="wp-block-image size-large">
 
@@ -471,18 +471,6 @@ Reference regarding task sequence size: <a href="https://docs.microsoft.com/en-u
 
 ## Links
 
-[Task Sequence Exports][10]
+[Task Sequence Exports](https://github.com/CharlesNRU/mdm-adminservice/raw/master/MDM-TS.zip)
 
-[MDM-AdminService GitHub repository][11]
-
- [1]: https://docs.microsoft.com/en-us/mem/configmgr/core/clients/manage/cmg/setup-cloud-management-gateway
- [2]: https://systemcenterdudes.com/setup-and-configure-sccm-cloud-management-gateway-1806/
- [3]: https://www.prajwaldesai.com/setup-sccm-cloud-management-gateway/
- [4]: https://z-nerd.com/blog/2019/05/20-lets-encrypt-cloud-management-gateway/
- [5]: https://z-nerd.com/blog/2019/12/03-adminservice-over-cmg/
- [6]: https://github.com/AzureAD/MSAL.PS/
- [7]: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_parameter_sets?view=powershell-7.1
- [8]: https://docs.microsoft.com/en-us/powershell/module/powershellget
- [9]: https://sysmansquad.com/wp-admin/post.php?post=2552&action=edit#additional-configuration-to-use-the-adminservice-over-cmg
- [10]: https://github.com/CharlesNRU/mdm-adminservice/raw/master/MDM-TS.zip
- [11]: https://github.com/CharlesNRU/mdm-adminservice
+[MDM-AdminService GitHub repository](https://github.com/CharlesNRU/mdm-adminservice)

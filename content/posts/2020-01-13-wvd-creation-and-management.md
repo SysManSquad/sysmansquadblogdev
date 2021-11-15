@@ -92,10 +92,10 @@ Earlier I mentioned I will be going over the method with Azure AD DS. I currentl
 
 You will need to download 4 items at this point:
 
-  1. [Marcel's tool][1] 
-  2. [ITPC-WVD-Image-Processing.ps1][2]
-  3. [Microsoft.RDInfra.RDAgent.msi][3]&nbsp;
-  4. [Microsoft.RDInfra.RDAgentBootLoader.msi][4] 
+  1. [Marcel's tool](https://blog.itprocloud.de/assets/files/WVDAdmin.msi)
+  2. [ITPC-WVD-Image-Processing.ps1](https://blog.itprocloud.de/assets/files/AutoUpdate/Scripts/ITPC-WVD-Image-Processing.ps1.txt)
+  3. [Microsoft.RDInfra.RDAgent.msi](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RWrmXv)
+  4. [Microsoft.RDInfra.RDAgentBootLoader.msi](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RWrxrH)
   5. Rename 2-4 to match the link text since they will be named incorrectly when you download them.
 
   1. Navigate to C:\ and create a folder called Configuration
@@ -216,8 +216,8 @@ Now that we have a template image, we are ready to create the host pool!
 
 \*** Note that if you are using forced tunneling in your environment that your activation will fail. See the following links for more details:
 
-  * [Forced Tunneling][5]
-  * [Failed KMS Activation][6]
+  * [Forced Tunneling](https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-forced-tunneling-rm)
+  * [Failed KMS Activation](https://docs.microsoft.com/en-us/azure/virtual-machines/troubleshooting/custom-routes-enable-kms-activation)
 
 ### Assigning Groups and Access
 
@@ -245,10 +245,10 @@ In this scenario we will create an application group as a Desktop group is very 
   3. Give the group a name (EX AutoCAD)
   4. Right click the newly created group and select Add Remote Application
   5. Give it a name as well (EX Revit):<img loading="lazy" width="554" height="464" class="wp-image-651" style="width: 500px;" src="https://sysmansquad.com/wp-content/uploads/2020/01/mstsc_uuyZLfch9A.png" alt="" srcset="https:/wp-content/uploads/2020/01/mstsc_uuyZLfch9A.png 554w, https:/wp-content/uploads/2020/01/mstsc_uuyZLfch9A-300x251.png 300w, https:/wp-content/uploads/2020/01/mstsc_uuyZLfch9A-100x84.png 100w" sizes="(max-width: 554px) 100vw, 554px" />
-  6. I personally set CLI settings to DoNotAllow because I'm not passing any Azure CLI commands to these VMs (More info can be found [HERE][7])
+  6. I personally set CLI settings to DoNotAllow because I'm not passing any Azure CLI commands to these VMs (More info can be found [HERE](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest))
   7. File Path will be the path to the EXE that you should have copied down earlier when installing your applications, you can also set Icon Path to this as well
   8. If you want the app to appear in a folder you can give it a folder name, but I personally do not
-  9. Friendly name is the name the app will appear as in the web feed or remote desktop application 
+  9. Friendly name is the name the app will appear as in the web feed or remote desktop application
  10. Select Save Changes
 
 We are almost there! Take a minute to breathe or grab a drink!  
@@ -266,18 +266,7 @@ Next, we are going to assign access to the application group we made. Currently 
 
 To access these apps you can use one of the following:
 
-[Remote Desktop Client  
-][8] [Remote Desktop Web client][9] 
+[Remote Desktop Client](http://aka.ms/wvd/clients/windows)
+[Remote Desktop Web client](https://rdweb.wvd.microsoft.com/webclient/index.html)
 
-I strongly recommend using the Remote Desktop Client option as the second just loads the app in a webpage. Once downloaded and installed you can subscribe with the user you granted access to and you should see the applications that were granted. If you double click on the app you will be prompted to sign in (Currently SSO only works with ADFS this will change in the future). The first sign in will be a little slower as it's creating a profile for the user in the background. This can be alleviated with solutions such as [FSLogix][10] which is very easy to setup. In any event we are done and you're now the proud owner of a WVD environment.
-
- [1]: https://blog.itprocloud.de/assets/files/WVDAdmin.msi
- [2]: https://blog.itprocloud.de/assets/files/AutoUpdate/Scripts/ITPC-WVD-Image-Processing.ps1.txt
- [3]: https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RWrmXv
- [4]: https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RWrxrH
- [5]: https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-forced-tunneling-rm
- [6]: https://docs.microsoft.com/en-us/azure/virtual-machines/troubleshooting/custom-routes-enable-kms-activation
- [7]: https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest
- [8]: http://aka.ms/wvd/clients/windows
- [9]: https://rdweb.wvd.microsoft.com/webclient/index.html
- [10]: https://docs.microsoft.com/en-us/fslogix/overview
+I strongly recommend using the Remote Desktop Client option as the second just loads the app in a webpage. Once downloaded and installed you can subscribe with the user you granted access to and you should see the applications that were granted. If you double click on the app you will be prompted to sign in (Currently SSO only works with ADFS this will change in the future). The first sign in will be a little slower as it's creating a profile for the user in the background. This can be alleviated with solutions such as [FSLogix](https://docs.microsoft.com/en-us/fslogix/overview) which is very easy to setup. In any event we are done and you're now the proud owner of a WVD environment.

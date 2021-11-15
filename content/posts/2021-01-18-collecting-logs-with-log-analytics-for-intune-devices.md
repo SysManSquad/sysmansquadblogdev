@@ -36,7 +36,7 @@ Now that we have the log analytics workspace configured we can configure the Mic
 
 ## Configuring the Microsoft Monitoring Agent 
 
-  1. Navigate to [portal.azure.com][1]
+  1. Navigate to [portal.azure.com](https://portal.azure.com/)
   2. Navigate to your log analytics workspace
   3. Select **Advanced Settings**
   4. Select **Data**  
@@ -107,5 +107,4 @@ This will bring up the last 10 log events that were registered in log analytics,
 
 At this point you have everything configured and are only limited to your querying knowledge!
 
- [1]: https://portal.azure.com/
  [2]: https://github.com/Microsoft/Microsoft-Win32-Content-Prep-Tool

@@ -17,10 +17,10 @@ categories:
 ---
 ### Outline
 
-  * [The Problem: Teams Machine Wide Installer finishes… Then… Nothing?][1]
-  * [What's Going On Here?][2]
-  * [The Solution: Improve the User Experience][3]
-  * [Just Give Me The Script - I'll Figure Out the Rest][4]
+  * [The Problem: Teams Machine Wide Installer finishes… Then… Nothing?](#The-Problem)
+  * [What's Going On Here?](#Whats-Up)
+  * [The Solution: Improve the User Experience](#The-Solution)
+  * [Just Give Me The Script - I'll Figure Out the Rest](#The-Script)
 
 ### The Problem: Teams Machine Wide Installer finishes... Then... Nothing? {#The-Problem}
 
@@ -64,7 +64,7 @@ The Teams Machine Wide installer will finish, and the detection of the software 
 
 <img loading="lazy" width="1010" height="746" src="https://sysmansquad.com/wp-content/uploads/2021/01/0TCMvCmzxY.gif" alt="" class="wp-image-2218" /> </figure> 
 
-This result is achieved by using a **Windows Scheduled Task**. The PowerShell script that generates this task is found below at the [end of the article][4], and also on <a href="https://github.com/CodyMathis123/CM-Ramblings/blob/master/New-PostTeamsMachineWideInstallScheduledTask.ps1" target="_blank" rel="noreferrer noopener"><strong>GitHub</strong></a>.
+This result is achieved by using a **Windows Scheduled Task**. The PowerShell script that generates this task is found below at the [end of the article](#The-Script), and also on <a href="https://github.com/CodyMathis123/CM-Ramblings/blob/master/New-PostTeamsMachineWideInstallScheduledTask.ps1" target="_blank" rel="noreferrer noopener"><strong>GitHub</strong></a>.
 
 A scheduled task can be found in Task Scheduler after the script runs as shown below.<figure class="wp-block-image size-full">
 
@@ -133,8 +133,3 @@ if (!(Get-ScheduledTask -TaskName 'Teams User Install - Post Machine Wide Instal
 </div>
 
 <a href="https://twitter.com/CodyMathis123" target="_blank" rel="noreferrer noopener">@CodyMathis123</a>
-
- [1]: #The-Problem
- [2]: #Whats-Up
- [3]: #The-Solution
- [4]: #The-Script

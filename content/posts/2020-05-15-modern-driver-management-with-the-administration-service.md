@@ -16,7 +16,7 @@ categories:
   - Task Sequence
 
 ---
-**2021-04-27 update: The solution now works over CMG. Please see this [post][1] for details**.
+**2021-04-27 update: The solution now works over CMG. Please see this [post](https://sysmansquad.com/2021/04/27/updated-modern-driver-bios-management-with-cmg-support/) for details**.
 
 Hello!
 
@@ -56,15 +56,15 @@ Here is a quick summary of their existing solution:
 
 The Administration Service (AdminService for short) is a REST API for the SMS_Provider that is accessible via HTTPS. It's a web service developed and maintained by the product team.
 
-If you want to know more, check out the official documentation [here][2].
+If you want to know more, check out the official documentation [here](https://docs.microsoft.com/en-us/mem/configmgr/develop/adminservice/overview).
 
 #### Great, but how do I use this service?
 
 Since I had no idea where to start initially to get some data back from the AdminService, I found some good blog articles and videos to guide me. Here is what helped me out the most:
 
-  * [A video about the Administration Service][3] by Steven Rachui
-  * [A collection of blog posts on the AdminService][4] by Adam Gross
-  * [Working with the AdminService – Reading Data][5] by Nathan Ziehnert
+  * [A video about the Administration Service](https://www.youtube.com/watch?v=7oLL5F-L6As) by Steven Rachui
+  * [A collection of blog posts on the AdminService](https://www.asquaredozen.com/2019/02/12/the-system-center-configuration-manager-adminservice-guide/) by Adam Gross
+  * [Working with the AdminService – Reading Data](https://z-nerd.com/blog/2019/12/05-working-with-adminservice-and-odata/) by Nathan Ziehnert
 
 ### Step 1 - Replace the web service
 
@@ -107,7 +107,7 @@ The rest of the script is simply filtering which driver package is the most suit
   <figure class="aligncenter size-full"><a href="https://www.sysmansquad.com/?attachment_id=1055"><img loading="lazy" width="1156" height="652" src="https://www.sysmansquad.com/wp-content/uploads/2020/05/GetPackageIDLog.png" alt="" class="wp-image-1055" srcset="https:/wp-content/uploads/2020/05/GetPackageIDLog.png 1156w, https:/wp-content/uploads/2020/05/GetPackageIDLog-300x169.png 300w, https:/wp-content/uploads/2020/05/GetPackageIDLog-1024x578.png 1024w, https:/wp-content/uploads/2020/05/GetPackageIDLog-768x433.png 768w, https:/wp-content/uploads/2020/05/GetPackageIDLog-100x56.png 100w, https:/wp-content/uploads/2020/05/GetPackageIDLog-855x482.png 855w" sizes="(max-width: 1156px) 100vw, 1156px" /></a><figcaption>Log file in CMTrace format for your troubleshooting needs</figcaption></figure>
 </div>
 
-The script is hosted on [GitHub][6] and I invite you to send me pull requests if you believe you can improve the script. I do not have that many different PC models to test and I might have missed something.
+The script is hosted on [GitHub](https://github.com/CharlesNRU/mdm-adminservice) and I invite you to send me pull requests if you believe you can improve the script. I do not have that many different PC models to test and I might have missed something.
 
 #### Task Sequence to query the AdminService
 
@@ -150,7 +150,7 @@ I created an “Apply Driver Package” task sequence which uses the previous ta
 
 You can reuse this task sequence in multiple other task sequences simply by defining some key variables.
 
-I've exported the task sequences for you to [download here][7].
+I've exported the task sequences for you to [download here](https://github.com/CharlesNRU/mdm-adminservice/raw/master/MDM-TS.zip).
 
 ### Examples
 
@@ -176,7 +176,7 @@ Setting the "DriverDeploymentType" to OSUpgrade will assign the TS variable "OSD
 
 The content will be used by the upgrade step to apply the new drivers.
 
-For more information, see [here][8].
+For more information, see [here](https://deploymentresearch.com/improving-the-configmgr-inplace-upgrade-task-sequence/).
 
 #### Example 3 - Driver refresh
 
@@ -200,15 +200,6 @@ I'm looking for feedback and suggestions to improve this solution.
 
 I will also be working on a similar task sequence for BIOS packages.
 
-Task Sequences exports and the script to query the AdminService is on my [GitHub repository][6].
+Task Sequences exports and the script to query the AdminService is on my [GitHub repository](https://github.com/CharlesNRU/mdm-adminservice).
 
 Thank you - Charles.
-
- [1]: https://sysmansquad.com/2021/04/27/updated-modern-driver-bios-management-with-cmg-support/
- [2]: https://docs.microsoft.com/en-us/mem/configmgr/develop/adminservice/overview
- [3]: https://www.youtube.com/watch?v=7oLL5F-L6As
- [4]: https://www.asquaredozen.com/2019/02/12/the-system-center-configuration-manager-adminservice-guide/
- [5]: https://z-nerd.com/blog/2019/12/05-working-with-adminservice-and-odata/
- [6]: https://github.com/CharlesNRU/mdm-adminservice
- [7]: https://github.com/CharlesNRU/mdm-adminservice/raw/master/MDM-TS.zip
- [8]: https://deploymentresearch.com/improving-the-configmgr-inplace-upgrade-task-sequence/

@@ -31,7 +31,7 @@ The Following assumes you have a basic idea of how to create a win32 application
 
 ## Lets build Script!
 
-Step 1: go download the latest [Powershell application deployment toolkit][1]
+Step 1: go download the latest [Powershell application deployment toolkit](https://psappdeploytoolkit.com/)
 
 Step 2: Add the client install files from \\SiteServer\SMS_ABC\Client to the Files directory in your Powershell Application Deployment Toolkit, you should end up with a directory that looks similar to this:<figure class="wp-block-image size-large">
 
@@ -129,5 +129,5 @@ Now all you need to do is deploy this application as a required app for your aut
 
 Now you have everything you need to create and deploy the Configuration Manager Client during autopilot. I have been using this in production for some time, with no issues. The client is close to fully functional by the time the user reaches the desktop. (though obviously it will need to go through a few policy refresh cycles to get all targeted polices)
 
- [1]: https://psappdeploytoolkit.com/
+
  [2]: https://github.com/SysBehr/BehrNecessities/tree/master/Autopilot/ConfigMgr%20Client

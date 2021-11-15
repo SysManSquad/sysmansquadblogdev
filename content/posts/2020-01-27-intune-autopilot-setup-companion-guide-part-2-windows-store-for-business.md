@@ -18,7 +18,7 @@ categories:
 ---
 ## Purpose
 
-The following blog posts will be a companion guide to Steve and Adam’s Intune training videos found at [Intune.Training][1] (this covers Episode 3) and will help you get the Windows Store for Business (WSfB, also known as Microsoft Store for Business) setup in your environment. This guide assumes that you already have followed <a rel="noreferrer noopener" aria-label="Part 1 (opens in a new tab)" href="https://sysmansquad.com/2019/12/18/intune-autopilot-setup-companion-guide-part-1/" target="_blank">Part 1</a> of this series and already have a working deployment profile. By the end of this guide you will have access to the Company Portal app and other apps of your choosing. This has been a major request from several people in the [WinAdmins][2] community. I strongly recommend joining if you are not already a member! 
+The following blog posts will be a companion guide to Steve and Adam’s Intune training videos found at [Intune.Training](https://intune.training/) (this covers Episode 3) and will help you get the Windows Store for Business (WSfB, also known as Microsoft Store for Business) setup in your environment. This guide assumes that you already have followed <a rel="noreferrer noopener" aria-label="Part 1 (opens in a new tab)" href="https://sysmansquad.com/2019/12/18/intune-autopilot-setup-companion-guide-part-1/" target="_blank">Part 1</a> of this series and already have a working deployment profile. By the end of this guide you will have access to the Company Portal app and other apps of your choosing. This has been a major request from several people in the [WinAdmins](https://aka.ms/winadmins) community. I strongly recommend joining if you are not already a member! 
 
 ## Why?
 
@@ -26,17 +26,17 @@ Why do you need the WSfB? You need the WSfB in order to deploy the company porta
 
 ## Enabling Windows Store for Business
 
-Navigate to the&nbsp;[MEM admin center][3]&nbsp;and login with your azure credentials if prompted. 
+Navigate to the&nbsp;[MEM admin center](https://devicemanagement.microsoft.com/) and login with your azure credentials if prompted.
 
   1. Select **Tenant Administration** on the left hand side
   2. Select **Connectors and tokens**
   3. The **Microsoft Store for Business** should be up by default
   4. Slide the slider to **Enable**
   5. Select **Open the business store**
-  6. You will be brought to [Business Store][4]
+  6. You will be brought to [Business Store](https://businessstore.microsoft.com/)
   7. Select **Sign in** in the upper right hand corner
   8. Select **Manage** at the top
-  9. Select **Settings** on the left 
+  9. Select **Settings** on the left
  10. Select **Distribute**
  11. Scroll down to the Tool selection and select **Active** on the Microsoft Intune tool
  12. On the same page you can change the Private Store name if desired (You will not be able to do this until you have completed step 14)
@@ -73,7 +73,7 @@ Congrats you now have apps in your tenant!
 
 ## Okay, so now I have some applications but how do I deploy them?
 
-Navigating back to the [MEM admin center][3] you will see **Apps** listed on the left hand side. I'm going to walk you through getting those apps we just added deployed to users as well as some options.
+Navigating back to the [MEM admin center](https://devicemanagement.microsoft.com/) you will see **Apps** listed on the left hand side. I'm going to walk you through getting those apps we just added deployed to users as well as some options.
 
   1. Select **Apps** on the left hand side
   2. Select **Windows**
@@ -100,7 +100,7 @@ Well that was pretty easy wasn't it? Now that we have the company portal deploye
 
 Who doesn't love a little extra icing on the cake? In this section I'll walk you through how to deploy the latest stable version of Edge. I highly recommend it! Please bear in mind this will replace the existing Microsoft Edge, and by replace I mean it will do a bunch of fancy redirects in the background. 
 
-  1. Navigate to [MEM admin center][3]
+  1. Navigate to [MEM admin center](https://devicemanagement.microsoft.com/)
   2. Select **Apps** on the left hand side
   3. Select **Windows**
   4. Select **Add**
@@ -123,8 +123,3 @@ Who doesn't love a little extra icing on the cake? In this section I'll walk you
 With that set you now have the new Edge! As always if you have questions or concerns please head over to the [WinAdmins][2] discord. The next post will go over Configuration Profiles and potentially PowerShell scripts!<figure class="wp-block-image size-large">
 
 <img loading="lazy" width="480" height="204" src="https://sysmansquad.com/wp-content/uploads/2020/01/giphy-1-1.gif" alt="" class="wp-image-700" /> </figure>
-
- [1]: https://intune.training/
- [2]: https://aka.ms/winadmins
- [3]: http://devicemanagement.microsoft.com/
- [4]: https://businessstore.microsoft.com/

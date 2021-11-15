@@ -18,7 +18,7 @@ tags:
   - Windows 10
 
 ---
-In my [previous post][1] I've shown that we can revert the deprovisioning of Windows 10 apps. This is awesome news for anyone that has removed the Windows Store. I have been unable to find any other way of restoring the Windows Store once it has been deprovisioned, so this is an awesome time saver. Instead of reimaging devices that do not have the store we can simply 'reprovision' the store, and perform a feature update! But... who knows the existing impact of deprovisioned apps in their environment? Opinions have changed over time regarding what should be removed (if anything at all!)
+In my [previous post](https://sysmansquad.com/2020/01/06/reprovision-windows-10-apps-wait-what/) I've shown that we can revert the deprovisioning of Windows 10 apps. This is awesome news for anyone that has removed the Windows Store. I have been unable to find any other way of restoring the Windows Store once it has been deprovisioned, so this is an awesome time saver. Instead of reimaging devices that do not have the store we can simply 'reprovision' the store, and perform a feature update! But... who knows the existing impact of deprovisioned apps in their environment? Opinions have changed over time regarding what should be removed (if anything at all!)
 
 #### Identify sins of the past
 
@@ -64,7 +64,7 @@ Thankfully the power of MEMCM can save us from our mistakes! Custom hardware inv
   <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;Depro.reg&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Deprovisioned"</pre>
 </div>
 
-But it is stored as a set of registry keys instead of properties on a registry key. Depending on the structure of data in the registry it may be possible to use [RegKeyToMof][2] to generate a MOF file. With this being a set of indeterminate registry keys I've decided to use a script instead.
+But it is stored as a set of registry keys instead of properties on a registry key. Depending on the structure of data in the registry it may be possible to use [RegKeyToMof](https://gallery.technet.microsoft.com/RegKeyToMof-28e84c28) to generate a MOF file. With this being a set of indeterminate registry keys I've decided to use a script instead.
 
 Scripts for custom hardware inventory typically follow this workflow. At least... mine do
 
@@ -164,7 +164,7 @@ There are countless sources to show you how to create a CI in MEMCM (Don't searc
 Some 'good to knows' for doing custom hardware inventory in this fashion are below.
 
   1. Make sure it returns compliant... Having 'non-compliant' in your reporting data, or your control panel applet because of a poorly written script is silly!
-  2. Do NOT include a 'timestamp' as part of your custom inventory unless you absolutely have to. (See [this post][3] for an explanation)
+  2. Do NOT include a 'timestamp' as part of your custom inventory unless you absolutely have to. (See [this post](https://sccmf12twice.com/2019/08/hinvchangelog-the-600gb-db-backlog/) for an explanation)
   3. Put some thought to the schedule. Some types of inventory may require a more frequent gather. Compare your need for data with your hardware inventory cycle, as well as the expected rate of change of the data.
 
 #### Step 3 - Add new WMI class to hardware inventory
@@ -222,9 +222,4 @@ ORDER BY 2 DESC</pre>
 
 Join us next time, when decisions, and actions are made with our new found data!
 
-[@CodyMathis123][4]
-
- [1]: https://sysmansquad.com/2020/01/06/reprovision-windows-10-apps-wait-what/
- [2]: https://gallery.technet.microsoft.com/RegKeyToMof-28e84c28
- [3]: https://sccmf12twice.com/2019/08/hinvchangelog-the-600gb-db-backlog/
- [4]: https://twitter.com/CodyMathis123
+[@CodyMathis123](https://twitter.com/CodyMathis123)

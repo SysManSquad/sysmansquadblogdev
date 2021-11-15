@@ -16,7 +16,7 @@ categories:
 ---
 ## Purpose
 
-The following blog posts will be a companion guide to Steve and Adam's Intune training videos found at [intune.training][1] (this covers Episode 1 and 2) and will help you get Autopilot going in your environment. This guide assumes that you already have office 365 and azure configured. By the end of this guide you will have a working bare bones Autopilot configuration. This has been a major request from several people in the [WinAdmins][2] community. I strongly recommend joining if you are not already a member!
+The following blog posts will be a companion guide to Steve and Adam's Intune training videos found at [intune.training](https://intune.training) (this covers Episode 1 and 2) and will help you get Autopilot going in your environment. This guide assumes that you already have office 365 and azure configured. By the end of this guide you will have a working bare bones Autopilot configuration. This has been a major request from several people in the [WinAdmins](https://aka.ms/winadmins) community. I strongly recommend joining if you are not already a member!
 
 ## Why?
 
@@ -49,7 +49,7 @@ I'm a big fan of pictures and I believe this one encapsulates the process quiet 
 ### Company Branding
 
 The first thing we are going to tackle is is branding.  
-Navigate to [portal.azure.com][3] and open up your Azure Active Directory resource. Company branding can be found under the Manage section on the left hand side. If you have never configured Company branding you will see a Configure option, select it. Fill in the desired fields. In our case we filled in Banner Logo, Username hint, Square logo image, and Square logo image dark theme. You will notice almost every option has a tooltip if you are curious what each option does. The below is our current configuration:<figure class="wp-block-image size-large">
+Navigate to [portal.azure.com](http://portal.azure.com) and open up your Azure Active Directory resource. Company branding can be found under the Manage section on the left hand side. If you have never configured Company branding you will see a Configure option, select it. Fill in the desired fields. In our case we filled in Banner Logo, Username hint, Square logo image, and Square logo image dark theme. You will notice almost every option has a tooltip if you are curious what each option does. The below is our current configuration:<figure class="wp-block-image size-large">
 
 <img loading="lazy" width="686" height="830" src="https://sysmansquad.com/wp-content/uploads/2019/12/msedge_oSCAxoZs1L.png" alt="" class="wp-image-170" srcset="https:/wp-content/uploads/2019/12/msedge_oSCAxoZs1L.png 686w, https:/wp-content/uploads/2019/12/msedge_oSCAxoZs1L-248x300.png 248w" sizes="(max-width: 686px) 100vw, 686px" /> </figure> 
 
@@ -68,7 +68,7 @@ The following is our completed Configuration.
 
 ### Device Enrollment
 
-Navigate to the [MEM admin center][4] and login with your azure credentials if prompted. On the left hand side select Devices under Favorites. A new blade will pop out and you'll want to select Windows. <figure class="wp-block-image size-large">
+Navigate to the [MEM admin center](http://devicemanagement.microsoft.com) and login with your azure credentials if prompted. On the left hand side select Devices under Favorites. A new blade will pop out and you'll want to select Windows. <figure class="wp-block-image size-large">
 
 <img loading="lazy" width="473" height="450" src="https://sysmansquad.com/wp-content/uploads/2019/12/msedge_cMcDESDh8f.png" alt="" class="wp-image-175" srcset="https:/wp-content/uploads/2019/12/msedge_cMcDESDh8f.png 473w, https:/wp-content/uploads/2019/12/msedge_cMcDESDh8f-300x285.png 300w" sizes="(max-width: 473px) 100vw, 473px" /> </figure> 
 
@@ -86,7 +86,7 @@ The first time you select this you will need to choose an MDM Authority. Since w
   4. Select Next  
     Intune will have several options already pre-configured. Depending on how you'd like your Autopilot configured I'd recommend hovering over the info icon for each step, however I will go over my current selections. 
   5. In this case it's going to be a standard User-Driven deployment 
-  6. Azure AD Joined (If you're worried about not being able to access on-prem resources IE files and printers I will have a blog post up at some point on how to setup hybrid key trust otherwise visit [Adam and Steve's video][5] on how to set it up)
+  6. Azure AD Joined (If you're worried about not being able to access on-prem resources IE files and printers I will have a blog post up at some point on how to setup hybrid key trust otherwise visit [Adam and Steve's video](https://www.youtube.com/watch?v=GfYOyFMc8vA&t=2769s) on how to set it up)
   7. MS License Terms set to Hide
   8. Privacy settings set to Hide
   9. Hide change account options set to Hide
@@ -121,7 +121,7 @@ This will export the JSON file to your C directory. Please be aware if you have 
 
 <img loading="lazy" width="843" height="234" src="https://sysmansquad.com/wp-content/uploads/2019/12/powershell_jGYAn4kPSG.png" alt="" class="wp-image-504" srcset="https:/wp-content/uploads/2019/12/powershell_jGYAn4kPSG.png 843w, https:/wp-content/uploads/2019/12/powershell_jGYAn4kPSG-300x83.png 300w, https:/wp-content/uploads/2019/12/powershell_jGYAn4kPSG-768x213.png 768w, https:/wp-content/uploads/2019/12/powershell_jGYAn4kPSG-100x28.png 100w" sizes="(max-width: 843px) 100vw, 843px" /> </figure> 
 
-To setup the deployment for testing I strongly suggest reading [Michael Niehaus's blog][6] on deploying via a task sequence he even includes a download for said task sequence. 
+To setup the deployment for testing I strongly suggest reading [Michael Niehaus's blog](https://blogs.technet.microsoft.com/mniehaus/2018/10/25/speeding-up-windows-autopilot-for-existing-devices/) on deploying via a task sequence he even includes a download for said task sequence. 
 
 ## **Congrats you have a bare bones Autopilot configuration!!!**
 
@@ -129,9 +129,7 @@ To setup the deployment for testing I strongly suggest reading [Michael Niehaus'
   <img loading="lazy" width="480" height="455" class="wp-image-184" style="width: 350px;" src="http://sysmansquad.com/wp-content/uploads/2019/12/giphy.gif" alt="" />
 </p>
 
- [1]: https://intune.training
- [2]: https://aka.ms/winadmins
- [3]: http://portal.azure.com
- [4]: http://devicemanagement.microsoft.com
- [5]: https://www.youtube.com/watch?v=GfYOyFMc8vA&t=2769s
- [6]: https://blogs.technet.microsoft.com/mniehaus/2018/10/25/speeding-up-windows-autopilot-for-existing-devices/
+
+
+
+ 

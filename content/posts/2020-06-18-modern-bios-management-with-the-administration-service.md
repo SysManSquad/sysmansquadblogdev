@@ -8,9 +8,9 @@ categories:
   - Endpoint Management
 
 ---
-**2021-04-27 update: The solution now works over CMG. Please see this [post][1] for details.**
+**2021-04-27 update: The solution now works over CMG. Please see this [post](https://sysmansquad.com/2021/04/27/updated-modern-driver-bios-management-with-cmg-support/) for details.**
 
-If you haven't seen my first blog post about [modern driver management][2], the quick summary is that the solution uses packages created with the [Driver Automation Tool][2] and the [administration service][3] to retrieve information on these packages and identify the most suitable driver package to apply in a task sequence.
+If you haven't seen my first blog post about [modern driver management](https://www.sysmansquad.com/2020/05/15/modern-driver-management-with-the-administration-service/), the quick summary is that the solution uses packages created with the [Driver Automation Tool][2] and the [administration service](https://docs.microsoft.com/en-us/mem/configmgr/develop/adminservice/overview) to retrieve information on these packages and identify the most suitable driver package to apply in a task sequence.
 
 In this second part, I'll be discussing the changes and improvements done to the existing solution to also dynamically retrieve and filter and apply BIOS updates.
 
@@ -28,7 +28,7 @@ I needed to provide more information to the script as a parameter regarding the 
   * CurrentBIOSReleaseDate
 
 **_Why do you need the release date of the BIOS?_**  
-Good question! The original solution by the Nickolaj Andersen and Maurice Daly of [MSEndPointMgr][4] uses the BIOS release date for Lenovo systems to determine if the BIOS package is an update or not. Now why exactly? I'm guessing Lenovo was not very good at keeping some sort of standard naming or versioning for their BIOS versions.<figure class="wp-block-image size-large">
+Good question! The original solution by the Nickolaj Andersen and Maurice Daly of [MSEndPointMgr](https://msendpointmgr.com/modern-bios-management/) uses the BIOS release date for Lenovo systems to determine if the BIOS package is an update or not. Now why exactly? I'm guessing Lenovo was not very good at keeping some sort of standard naming or versioning for their BIOS versions.<figure class="wp-block-image size-large">
 
 <img loading="lazy" width="1024" height="584" src="https://www.sysmansquad.com/wp-content/uploads/2020/06/image-2-1024x584.png" alt="" class="wp-image-1340" srcset="https:/wp-content/uploads/2020/06/image-2-1024x584.png 1024w, https:/wp-content/uploads/2020/06/image-2-300x171.png 300w, https:/wp-content/uploads/2020/06/image-2-768x438.png 768w, https:/wp-content/uploads/2020/06/image-2-100x57.png 100w, https:/wp-content/uploads/2020/06/image-2-855x488.png 855w, https:/wp-content/uploads/2020/06/image-2.png 1067w" sizes="(max-width: 1024px) 100vw, 1024px" /> <figcaption>Example of a Lenovo BIOS package created with the Driver Automation Tool</figcaption></figure> 
 
@@ -36,7 +36,7 @@ Good question! The original solution by the Nickolaj Andersen and Maurice Daly o
 
 Now that we have the current BIOS version and release date, we need to evaluate and filter out older BIOS package versions. We only want the script to return a package ID if the package is actually an upgrade for the device.
 
-For this part, I had to dig into the [Invoke-CMDownloadBIOSPackage.ps1][5] script and in the script of the [Driver Automation Tool][6] to see how they were filtering and extracting version information for the different vendors. I ended up with the following code to compare BIOS versions.
+For this part, I had to dig into the [Invoke-CMDownloadBIOSPackage.ps1](https://github.com/MSEndpointMgr/ConfigMgr/blob/master/Operating%20System%20Deployment/BIOS/Invoke-CMDownloadBIOSPackage.ps1) script and in the script of the [Driver Automation Tool](https://github.com/maurice-daly/DriverAutomationTool/blob/master/Content/DriverAutomationTool.ps1) to see how they were filtering and extracting version information for the different vendors. I ended up with the following code to compare BIOS versions.
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
   <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:false,&quot;readOnly&quot;:false,&quot;languageLabel&quot;:&quot;language&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">Add-TextToCMLog $LogFile  "Filtering package results to only BIOS packages that would be an upgrade to the current BIOS." $component 1
@@ -143,7 +143,7 @@ Then we pass this information as a parameter to the Invoke-GetPackageIDFromAdmin
 
 #### Create the "Apply BIOS package" task sequence
 
-The task sequence is similar to the one I had created for drivers. For applying the actual BIOS update, I've reused the scripts by the guys at [MSEndpointMgr][7].<figure class="wp-block-image size-large">
+The task sequence is similar to the one I had created for drivers. For applying the actual BIOS update, I've reused the scripts by the guys at [MSEndpointMgr](https://msendpointmgr.com/).<figure class="wp-block-image size-large">
 
 <img loading="lazy" width="1024" height="820" src="https://www.sysmansquad.com/wp-content/uploads/2020/06/image-5-1024x820.png" alt="" class="wp-image-1343" srcset="https:/wp-content/uploads/2020/06/image-5-1024x820.png 1024w, https:/wp-content/uploads/2020/06/image-5-300x240.png 300w, https:/wp-content/uploads/2020/06/image-5-768x615.png 768w, https:/wp-content/uploads/2020/06/image-5-100x80.png 100w, https:/wp-content/uploads/2020/06/image-5-855x685.png 855w, https:/wp-content/uploads/2020/06/image-5-1234x989.png 1234w, https:/wp-content/uploads/2020/06/image-5.png 1514w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> 
 
@@ -154,27 +154,16 @@ If your HP devices have a BIOS password set (I hope you do), then you'll need to
   * PasswordBinFilename: Name of the .bin file to use when applying BIOS update
   * PasswordBinPackageID: PackageID of the package containing the .bin file.
 
-I had to modify the original [Invoke-HPBIOSUpdate][8] script to add a new parameter to specify the path to the .bin file because the original script would expect the .bin file to be in the same folder as the script.
+I had to modify the original [Invoke-HPBIOSUpdate](https://github.com/MSEndpointMgr/ConfigMgr/blob/master/Operating%20System%20Deployment/BIOS/Invoke-HPBIOSUpdate.ps1) script to add a new parameter to specify the path to the .bin file because the original script would expect the .bin file to be in the same folder as the script.
 
 I also did not like the fact that the HP BIOS utility writes a log file in whatever directory it's located in with no options to specify a different log path, so I added a step to move the log file to _SMSTSLogPath.
 
 ### Download
 
-[Direct link to the task sequences][9]
+[Direct link to the task sequences](https://github.com/CharlesNRU/mdm-adminservice/raw/master/MDM-TS.zip)
 
-[Link to the github repository][10]
+[Link to the github repository](https://github.com/CharlesNRU/mdm-adminservice/raw/master/MDM-TS.zip)
 
 As always, feel free to contact me if you have any suggestions for improvements.
 
 Thank you.
-
- [1]: https://sysmansquad.com/2021/04/27/updated-modern-driver-bios-management-with-cmg-support/
- [2]: https://www.sysmansquad.com/2020/05/15/modern-driver-management-with-the-administration-service/
- [3]: https://docs.microsoft.com/en-us/mem/configmgr/develop/adminservice/overview
- [4]: https://msendpointmgr.com/modern-bios-management/
- [5]: https://github.com/MSEndpointMgr/ConfigMgr/blob/master/Operating%20System%20Deployment/BIOS/Invoke-CMDownloadBIOSPackage.ps1
- [6]: https://github.com/maurice-daly/DriverAutomationTool/blob/master/Content/DriverAutomationTool.ps1
- [7]: https://msendpointmgr.com/
- [8]: https://github.com/MSEndpointMgr/ConfigMgr/blob/master/Operating%20System%20Deployment/BIOS/Invoke-HPBIOSUpdate.ps1
- [9]: https://github.com/CharlesNRU/mdm-adminservice/raw/master/MDM-TS.zip
- [10]: https://github.com/CharlesNRU/mdm-adminservice
