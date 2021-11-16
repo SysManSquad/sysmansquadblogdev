@@ -42,10 +42,7 @@ With this Azure Policy you can automatically enable Boot Diagnostics and apply a
               </li></ul></ol> </div> </div> </div> 
               <div class="wp-block-group">
                 <div class="wp-block-group__inner-container">
-                  <h2 class="has-large-font-size">
-                    <span style="color:#ba0c49" class="has-inline-color">1.</span> Overview
-                  </h2>
-                  
+                  ## 1. Overview
                   <p>
                     Our process will have several major parts
                   </p>
@@ -75,9 +72,8 @@ With this Azure Policy you can automatically enable Boot Diagnostics and apply a
                 </div>
               </div>
               
-              <h2 class="has-large-font-size">
-                <span style="color:#ba0c49" class="has-inline-color">2.</span> Create a Custom Policy Definition
-              </h2>
+              ## 2.Create a Custom Policy Definition
+              
               
               <p>
                 First we will need to Create a Custom Definition. To start with head to Portal.Azure.com > [Azure Policy | Definitions](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyMenuBlade/Definitions).
@@ -173,9 +169,7 @@ With this Azure Policy you can automatically enable Boot Diagnostics and apply a
 ```
               
               
-              <h2 class="has-large-font-size">
-                <span style="color:#ba0c49" class="has-inline-color">3.</span> Assign Policy to Resources
-              </h2>
+              ## 3. Assign Policy to Resources
               
               <p>
                 Next you can select a Resource Group or entire Subscription to apply to.
@@ -189,17 +183,17 @@ With this Azure Policy you can automatically enable Boot Diagnostics and apply a
                 For the parameter, you need to fill in the URL to a Azure Blob storage service.
               </p>
               
-              <h3>
-                Get your Blob Storage Endpoint
-              </h3>
+              
+### Get your Blob Storage Endpoint
+              
               
               <p>
                 My example is [https://YourBlobStorage.blob.core.windows.net](https://YourBlobStorage.blob.core.windows.net) , but you can find the endpoint for your Storage Account by opening your [Storage Accounts](https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Storage%2FStorageAccounts) > Select or Create Relevant Storage account > Settings > Endpoints
               </p><figure class="wp-block-image size-large">
               
-              ![](https://i.imgur.com/XIQQYC4.png)</figure> <h2 class="has-large-font-size">
-                <span style="color:#ba0c49" class="has-inline-color">4.</span> Create Remediation Task
-              </h2>
+              ![](https://i.imgur.com/XIQQYC4.png)</figure>
+              
+              ## 4. Create Remediation Task
               
               <p>
                 Part of the assignment process will give you the option to create the Remediation Task.
@@ -213,9 +207,9 @@ With this Azure Policy you can automatically enable Boot Diagnostics and apply a
                 Without the Remediation Task, the Policy will just Report Compliance or failure, but you can always start with no Remediation and then add it back later.
               </p><figure class="wp-block-image size-large">
               
-              ![](https://i.imgur.com/4Ndafmo.png)</figure> <h2 class="has-large-font-size">
-                <span style="color:#ba0c49" class="has-inline-color">5.</span> Be Patient and Enjoy
-              </h2>
+              ![](https://i.imgur.com/4Ndafmo.png)</figure> 
+              
+              ## 5. Be Patient and Enjoy
               
               <p>
                 In my experience, the policy will take around 15-45 minutes to evaluate, depending on the amount of resources it is checking over.
@@ -233,9 +227,9 @@ With this Azure Policy you can automatically enable Boot Diagnostics and apply a
                 To see the details, use the three-dots menu on the right to View remediation task
               </p><figure class="wp-block-image size-large">
               
-              ![](https://i.imgur.com/qESeb98.png)</figure> <h2 class="has-large-font-size">
-                <span style="color:#ba0c49" class="has-inline-color">6.</span> Optional: Export to GitHub
-              </h2>
+              ![](https://i.imgur.com/qESeb98.png)</figure> 
+              
+              ## 6. Optional: Export to GitHub
               
               <p>
                 Modifying the Azure Policies can be a highly iterative process, so being able to reference or revert to previous versions can be an **enormous** benefit.

@@ -54,49 +54,49 @@ tags:
                               [Closing thoughts](#closing-thoughts)
                             </li></ul>
                           </li></ul></ol> </div> </div> </div> 
-                          <h2>
-                            Introduction
-                          </h2>
+                          
+## Introduction
+                          
                           
                           <p>
                             In this post, I'll show you a workaround to get device based wireless authentication working for AADJ Windows devices via NPS. Keep in mind this is a workaround and your mileage may vary.
                           </p>
                           
-                          <h2>
-                            Background
-                          </h2>
+                          
+## Background
+                          
                           
                           <p>
                             NPS does not play nice when it comes to AADJ device authentication. There is a fantastic writeup on this issue [here](https://docs.microsoft.com/en-us/answers/questions/57999/device-certificate-scep-based-authentication-again.html).
                           </p>
                           
-                          <h5>
-                            **The tl;dr of the issue**
-                          </h5>
+                          
+##### **The tl;dr of the issue**
+                          
                           
                           <p>
                             Device based authentication works when there is a computer object in your on-prem. directory that backs up NPS's authentication checks. If the devices are AADJ only (not hybrid), then there is no computer object in the on-prem. directory. NPS sees the device as unknown and authentication fails.
                           </p>
                           
-                          <h5>
-                            **Why is device based authentication important?**
-                          </h5>
+                          
+##### **Why is device based authentication important?**
+                          
                           
                           <p>
                             Ideally, there should be a connection to the network at the login screen. This isn't a big deal if you're 1:1 because of cached credentials. If you're not 1:1, e.g. shared devices, you will need a network connection at the login screen to ensure the first time login for a user works.
                           </p>
                           
-                          <h5>
-                            **Why not just hybrid join your machines?**
-                          </h5>
+                          
+##### **Why not just hybrid join your machines?**
+                          
                           
                           <div class="wp-block-image">
                             <figure class="aligncenter size-large is-resized">![](haadj.gif)<figcaption>More great gifs like this on the [Windows Admins](https://aka.ms/winadmins) Discord server.</figcaption></figure>
                           </div>
                           
-                          <h2>
-                            Things I am assuming you have
-                          </h2>
+                          
+## Things I am assuming you have
+                          
                           
                           <ul>
                             <li>
@@ -122,9 +122,9 @@ tags:
                             </li>
                           </ul>
                           
-                          <h2>
-                            The workaround
-                          </h2>
+                          
+## The workaround
+                          
                           
                           <p>
                             There are several workarounds discussed in the post I linked above. For me, the easiest method is creating "dummy" computer objects in Active Directory that match the AADJ devices. Once NPS sees the AADJ device in your local AD, authentication works.
@@ -134,9 +134,9 @@ tags:
                             I settled on using PowerShell for this workaround. Although tedious, you could do your initial testing via ADUC and the attribute editor.
                           </p>
                           
-                          <h5>
-                            Basic version of the script
-                          </h5>
+                          
+##### Basic version of the script
+                          
                           
                           <p>
                             This basic version of the script lets you create one device at a time (useful for testing):
@@ -232,9 +232,9 @@ if ($nameMap) {
                             Now, you should be able to perform successful device based 802.1X authentication on your test device. 👍
                           </p>
                           
-                          <h5>
-                            More advanced version of the script that works with MS Graph
-                          </h5>
+                          
+##### More advanced version of the script that works with MS Graph
+                          
                           
                           <p>
                             For my use case, I needed something that I could run on a schedule and forget about. This more advanced version of the script pulls down all of the Autopilot devices from MS Graph using the 'WindowsAutopilotIntune' module. It then uses the 'ActiveDirectory' module to create/prepare matching computer objects in AD.
@@ -367,9 +367,9 @@ foreach ($DummyDevice in $DummyDevices) {
                             Now, you should be able to perform successful device based 802.1X authentication on your devices. 👍
                           </p>
                           
-                          <h5>
-                            Expected changes for readers
-                          </h5>
+                          
+##### Expected changes for readers
+                          
                           
                           <p>
                             I would expect you need to make changes to the script based off of your needs. Here are a few things I think will vary between readers:
@@ -396,9 +396,9 @@ foreach ($DummyDevice in $DummyDevices) {
                             </li>
                           </ul>
                           
-                          <h2>
-                            Closing thoughts
-                          </h2>
+                          
+## Closing thoughts
+                          
                           
                           <p>
                             It took me several tries to nail this down and I would expect this on your end too. Analyzing NPS logs to see what I was missing was the most helpful troubleshooting step on my end.

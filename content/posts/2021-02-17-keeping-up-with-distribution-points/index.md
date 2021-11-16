@@ -31,9 +31,9 @@ Luckily, there’s some simple things we can do to take this burden away. I’m 
               [Content Library Cleanup](#content-library-cleanup)<li class="uagb-toc__list">
                 [Content Library Reconciliation](#content-library-reconciliation)<li class="uagb-toc__list">
                   [Mismatches Between Filesystem & WMI](#mismatches-between-filesystem-wmi)<li class="uagb-toc__list">
-                    [Putting It All Together](#putting-it-all-together)</ol> </div> </div> </div> <h2>
-                      Pull DPs vs Standard DPs
-                    </h2>
+                    [Putting It All Together](#putting-it-all-together)</ol> </div> </div> </div> 
+## Pull DPs vs Standard DPs
+                    
                     
                     <p>
                       I’m not going to reinvent the wheel on going over the differences between standard DPs and pull DPs. Suffice it to say that there are significant benefits to considering pull DPs, particularly if you’re working in a larger environment. For a good write up on this, see Bryan Dam’s blog:
@@ -47,17 +47,17 @@ Luckily, there’s some simple things we can do to take this burden away. I’m 
                       For our purposes here, the difference doesn’t matter much. It’s more down to processing overhead and transfer rates. But both standard and pull DPs present the same challenges when it comes to content management.
                     </p>
                     
-                    <h2>
-                      Windows Server Deduplication
-                    </h2>
+                    
+## Windows Server Deduplication
+                    
                     
                     <p>
                       This one is a bit more important, as it does directly affect content on the DP. Bryan Dam has a good summary of the benefits of enabling dedupe in that same post linked above. It not only saves disk space in general, but also preps you for BranchCache by ensuring all the content hashes BranchCache needs are already calculated up front (rather than needing to calculate them on the fly), saving more disk space and processing overhead.
                     </p>
                     
-                    <h2>
-                      Content Validation
-                    </h2>
+                    
+## Content Validation
+                    
                     
                     <p>
                       Content Validation is incredibly useful. You can set it to run on a schedule in the Properties pane of the DP. You can also run it manually by just running smsdpmon.exe (in the **SMS_DP$\sms\bin** folder on every DP), or you can validate a single package either from the Content tab of a DP in the console, or via command line.
@@ -95,9 +95,9 @@ Luckily, there’s some simple things we can do to take this burden away. I’m 
                       The best part of Content Validation is that it kicks back status messages for everything (validation cycle started, package validation success/failure, validation cycle completed, validation cycle failed, etc.). This makes it really easy to use as a trigger for automation, which I’ll show in a bit. But first, we need to look at . . .
                     </p>
                     
-                    <h2>
-                      Content Library Cleanup
-                    </h2>
+                    
+## Content Library Cleanup
+                    
                     
                     <p>
                       The Content Library Cleanup Tool does just that: It cleans up the content library on a distribution point of any content which is not associated with any packages. You’ll find it in **CD.Latest\SMSSETUP\TOOLS\ContentLibraryCleanup** on your site server. It’s pretty well documented:
@@ -123,9 +123,9 @@ Luckily, there’s some simple things we can do to take this burden away. I’m 
                       If you *do* run this from the DP, note that it will need to be with a service account which has Full Admin rights within ConfigMgr. So take that into consideration when deciding how to automate this.
                     </p>
                     
-                    <h2>
-                      Content Library Reconciliation
-                    </h2>
+                    
+## Content Library Reconciliation
+                    
                     
                     <p>
                       This is where we need to do some custom scripting. If you just want the script, you can get it on my github here:
@@ -270,15 +270,15 @@ Luckily, there’s some simple things we can do to take this burden away. I’m 
                       There's one caveat to this that if you have empty packages targeted for distribution, those will not get touched by Content Validation (since there's nothing to validate). My script isn't accounting for that, so if you have any of those, you're going to see those empty packages "redistributed" to a DP every time a content validation cycle completes. The simple fix for that is "Don't distribute empty things". 😊
                     </p>
                     
-                    <h2>
-                      Mismatches Between Filesystem & WMI
-                    </h2>
+                    
+## Mismatches Between Filesystem & WMI
+                    
                     
                     <hr class="wp-block-separator" />
                     
-                    <p class="has-text-align-justify">
+                    
                       <span class="has-inline-color has-vivid-red-color">*I started writing this before ConfigMgr 2010 was released, and this very thing was addressed in that release. If you are already on 2010 or later, simply make sure you're using the latest version of the Content Library Cleanup Tool, and this issue should be taken care of without the need for a script. [See here for details.](https://docs.microsoft.com/en-us/mem/configmgr/core/plan-design/changes/whats-new-in-version-2010#improvements-to-the-content-library-cleanup-tool)*</span>
-                    </p>
+                    
                     
                     <hr class="wp-block-separator" />
                     
@@ -308,9 +308,9 @@ Luckily, there’s some simple things we can do to take this burden away. I’m 
                     
                     `“C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe” -ExecutionPolicy Bypass -File “E:\Scripts\PackageReconciliation.ps1” -Server %msgsys`<figure class="wp-block-image size-large">
                     
-                    ![](image-17.png)</figure> <figure class="wp-block-image size-large">![](image-18.png)</figure> <h2>
-                      Putting It All Together
-                    </h2>
+                    ![](image-17.png)</figure> <figure class="wp-block-image size-large">![](image-18.png)</figure> 
+## Putting It All Together
+                    
                     
                     <p>
                       Once you have the two scripts in place to be triggered by Status Filter rules, the rest really just comes down to scheduling. In terms of order of operations here, you’re going to want to do the content library cleanup before content validation (i.e., clean things up, validate what’s left, then reconcile). Generally what I do is set is content library cleanup to run as a scheduled task late on Friday nights (local to the timezone of the DP), then Content Validation to run the following morning. That way you end up with an entire weekend for any package reconciliation to happen before people start coming back into the office. But your mileage may vary, and every environment is different. So work out a schedule that fits your needs. 😊

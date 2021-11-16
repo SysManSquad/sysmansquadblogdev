@@ -47,9 +47,7 @@ Remove-Variable Params,count
 
 
 <div class="wp-block-uagb-inline-notice uagb-inline_notice__outer-wrap uagb-inline_notice__align-left uagb-block-1f687e7f">
-  <h5 class="uagb-notice-title">
-    Note: Get-EventLog InstanceID
-  </h5>
+##### Note: Get-EventLog InstanceID
   
   <div class="uagb-notice-text">
     <p>

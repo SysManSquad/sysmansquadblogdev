@@ -54,9 +54,9 @@ tags:
                                             [Getting help](#getting-help)
                                           </li></ul>
                                         </li></ul></ol> </div> </div> </div> 
-                                        <h2>
-                                          Introduction
-                                        </h2>
+                                        
+## Introduction
+                                        
                                         
                                         <p>
                                           I recently wrote [PSCMContentMgmt](https://github.com/codaamok/PSCMContentMgmt) which provides a simple and effective workflow for managing your MEMCM distribution points. Here are some of the things you can do with it:
@@ -164,9 +164,9 @@ tags:
                                           </li>
                                         </ul>
                                         
-                                        <h2>
-                                          Installing
-                                        </h2>
+                                        
+## Installing
+                                        
                                         
                                         <p>
                                           Install the module from the PowerShell gallery and import it to your session:
@@ -216,17 +216,17 @@ PS C:\> Import-Module PSCMContentMgmt
                                           If the reason why the module could not set these variables itself is not known, or there's no viable workaround for you, then you can set<code>$CMSiteServer</code>or<code>$CMSiteCode</code>yourself. Alternatively you can use the<code>-SiteServer</code>and<code>-SiteCode</code>parameters on an ad-hoc basis.
                                         </p>
                                         
-                                        <h2>
-                                          Examples
-                                        </h2>
+                                        
+## Examples
+                                        
                                         
                                         <p>
                                           I'll walk you through some key examples which I think most people will benefit from.
                                         </p>
                                         
-                                        <h4>
-                                          **Comparing distributed content objects between two distribution points or distribution point groups**
-                                        </h4>
+                                        
+#### **Comparing distributed content objects between two distribution points or distribution point groups**
+                                        
                                         
                                         
 ```powershell
@@ -279,9 +279,9 @@ Success   17007034 Application
 ```
                                         
                                         
-                                        <h4>
-                                          **Finding content objects in "distribution failed" state and initiating redistribution en masse**
-                                        </h4>
+                                        
+#### **Finding content objects in "distribution failed" state and initiating redistribution en masse**
+                                        
                                         
                                         <p>
                                           This is the most practical function I like about PSCMContentMgmt. It is not uncommon for me to experience distribution failures in my environments and I wanted a way to quickly have a visual on those, and take action.
@@ -316,9 +316,9 @@ PS C:\> Get-DPDistributionStatus -DistributionPoint "dp1.contoso.com" -Distribut
                                           If you didn't want to redistribute, you could pipe to <code>Remove-DPContent</code> instead.
                                         </p>
                                         
-                                        <h4>
-                                          **Finding objects in your environment with some arbitrary ID**
-                                        </h4>
+                                        
+#### **Finding objects in your environment with some arbitrary ID**
+                                        
                                         
                                         <p>
                                           This is my favourite function. Do you ever look through log files, see some random ID that you know represents some object in console and just want to know what object that is?
@@ -387,9 +387,9 @@ PS C:\> Find-CMObject -ID "ACC00048"
                                           It searches for Applications by PackageID as a last resort if no match has been found yet by loading every Application's PackageID property which is a lazy property in WMI. This can be time consuming, depending on how many Applications you have in your site, hence why it is last in the list.
                                         </p>
                                         
-                                        <h4>
-                                          **Migrating a distribution point to another**
-                                        </h4>
+                                        
+#### **Migrating a distribution point to another**
+                                        
                                         
                                         <p>
                                           Do you need to stand up a new distribution point beside an existing one, but don't want to send content across the WAN?
@@ -407,9 +407,9 @@ PS C:\> Find-CMObject -ID "ACC00048"
                                           However if for whatever reason you can't or don't want to use the pull distribution point method, then this is for you.
                                         </p>
                                         
-                                        <h6>
-                                          1. Begin by exporting your old/source distribution point's content using <code>Export-DPContent</code>.
-                                        </h6>
+                                        
+###### 1. Begin by exporting your old/source distribution point's content using <code>Export-DPContent</code>.
+                                        
                                         
                                         <p>
                                           Preferably this server will be on the same LAN as the distribution point you intend to import the .pkgx files to.
@@ -425,9 +425,9 @@ PS C:\> Get-DPContent -DistributionPoint "OldDP.contoso.com" | Export-DPContent 
 ```
                                         
                                         
-                                        <h6>
-                                          2. Configure your new/target distribution point to allow prestaged content using <code>Set-DPAllowPrestagedContent</code>.
-                                        </h6>
+                                        
+###### 2. Configure your new/target distribution point to allow prestaged content using <code>Set-DPAllowPrestagedContent</code>.
+                                        
                                         
                                         <p>
                                           This will ensure when we use <code>Start-DPContentDistribution</code> in the next step that the content will not inadvertently transfer across an undesired route.
@@ -439,9 +439,9 @@ PS C:\> Set-DPAllowPrestagedContent -DistributionPoint "NewDP.contoso.com"
 ```
                                         
                                         
-                                        <h6>
-                                          3. Distribute the exported content from step 1 using <code>Start-DPContentDistribution</code> using its <code>-Folder</code> parameter.
-                                        </h6>
+                                        
+###### 3. Distribute the exported content from step 1 using <code>Start-DPContentDistribution</code> using its <code>-Folder</code> parameter.
+                                        
                                         
                                         <p>
                                           This will walk through all .pkgx files in the given folder, identifying each object by the particular naming convention of the .pkgx files generated by <code>Export-DPContent</code>, and distribute each of the objects they represent in console to your new/target distribution point.
@@ -457,9 +457,9 @@ Start-DPContentDistribution -Folder "E:\exported" -DistributionPoint "NewDP.cont
 ```
                                         
                                         
-                                        <h6>
-                                          4. Log on locally or enter a PowerShell session to your new/target distribution point and import PSCMContentMgmt to run <code>Import-DPContent</code>.
-                                        </h6>
+                                        
+###### 4. Log on locally or enter a PowerShell session to your new/target distribution point and import PSCMContentMgmt to run <code>Import-DPContent</code>.
+                                        
                                         
                                         <p>
                                           This step must be executed locally to your new/target distribution point. This is because <code>Import-DPContent</code> simply invokes ExtractContent.exe.
@@ -479,9 +479,9 @@ PS C:\> Import-DPContent -Folder "\\OldDP.contoso.com\e$\exported"
 ```
                                         
                                         
-                                        <h6>
-                                          5. Unconfigure your new/target distribution point to only allow prestaged content.
-                                        </h6>
+                                        
+###### 5. Unconfigure your new/target distribution point to only allow prestaged content.
+                                        
                                         
                                         
 ```powershell
@@ -489,9 +489,9 @@ PS C:\> Set-DPAllowPrestagedContent -DistributionPoint "NewDP.contoso.com" -Stat
 ```
                                         
                                         
-                                        <h2>
-                                          Getting help
-                                        </h2>
+                                        
+## Getting help
+                                        
                                         
                                         <p>
                                           If you're seeing or hearing things, I recommend you drink more rum.

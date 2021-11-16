@@ -91,9 +91,9 @@ Snapshot the VM - "Pre-Office" (I snapshot here in case I make a mistake with th
     
     `.\setup.exe /configure .\M365Apps-AVD-Base.xml`
     
-    <h4>
-      Create Access Ruleset
-    </h4>
+    
+#### Create Access Ruleset
+    
     
     <p>
       Run:
@@ -125,9 +125,9 @@ Added by New—WcrosoftOffceRu/eset.psI. " class="wp-image-2953" srcset="image-1
       I also deleted all the Classes\CLSID\{GUID} rules because they kinda broke Windows. I didn't have time to test them all, but you should for best results.
     </p>
     
-    <h4>
-      Publisher Ruleset
-    </h4>
+    
+#### Publisher Ruleset
+    
     
     <p>
       Run:
@@ -158,9 +158,9 @@ Added by New—WcrosoftOffceRu/eset.psI. " class="wp-image-2953" srcset="image-1
 
 <div class="wp-block-group">
   <div class="wp-block-group__inner-container">
-    <h4>
-      Visio Ruleset
-    </h4>
+    
+#### Visio Ruleset
+    
     
     <p>
       Install Office with Visio
@@ -197,9 +197,9 @@ Added by New—WcrosoftOffceRu/eset.psI. " class="wp-image-2953" srcset="image-1
 
 <div class="wp-block-group">
   <div class="wp-block-group__inner-container">
-    <h4>
-      Project Ruleset
-    </h4>
+    
+#### Project Ruleset
+    
     
     <p>
       Install Office with Project

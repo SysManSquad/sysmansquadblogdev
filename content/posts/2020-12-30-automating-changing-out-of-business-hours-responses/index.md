@@ -81,9 +81,9 @@ Our customer will be moving to Azure later so we will probably revisit this as A
                   </li>
                 </ul>
                 
-                <h2>
-                  Create our App Registration
-                </h2>
+                
+## Create our App Registration
+                
                 
                 <p>
                   First, we need to create an App to use for authentication, so that a user or administrator doesn't have to log in every time to run this. Just like my last post, where we created an app registration to [Find Microsoft Accounts on your company domain](https://sysmansquad.com/2020/11/23/find-microsoft-accounts/#setting-up-your-app-registration), we need to register an App for our script to authenticate and be granted permissions.
@@ -201,9 +201,8 @@ Write-Host -ForeGroundColor Cyan "Copied to ClipBoard"
 ```
                 
                 
-                <h2 id="Using-auth-cert">
-                  Using our App Auth Certificate
-                </h2>
+                ## Using our App Auth Certificate
+                
                 
                 <p>
                   To use the App auth Certificate is fairly simple, and the script above outputs the command to use. For my app it came out to the **Connect-mgGraph** command shown below.
@@ -217,9 +216,9 @@ Write-Host -ForeGroundColor Cyan "Copied to ClipBoard"
                   For a comparison, here is a screenshot of what this looks like connected as my Global Admin during the app registration - [Screenshot](https://i.imgur.com/cEi2DNy.png)
                 </p>
                 
-                <h2>
-                  Assembling our Update Script
-                </h2>
+                
+## Assembling our Update Script
+                
                 
                 <p>
                   Now that we can authenticate to the Graph API, we need to make a script to update the Out-of-office messages, which are part of the [MailboxSettings](https://docs.microsoft.com/en-us/graph/api/user-get-mailboxsettings?view=graph-rest-1.0&tabs=http) resource.
@@ -333,9 +332,9 @@ catch {
 ```
                 
                 
-                <h2>
-                  Scheduling the Script
-                </h2>
+                
+## Scheduling the Script
+                
                 
                 <p>
                   Since this script is scheduling the out-of-office messages, but not setting them directly, it can run any time after the previous out-of-office scheduled time has finished.
@@ -353,9 +352,9 @@ catch {
                   For the program to run, we just need to specify to run the file with powershell.exe. On my system, it was trying to default opening the .ps1 in notepad, so I switched to directly running powershell.exe to bypass that.
                 </p><figure class="wp-block-image size-large">
                 
-                ![](image-13.png)</figure> <h2>
-                  Conclusion
-                </h2>
+                ![](image-13.png)</figure> 
+## Conclusion
+                
                 
                 <p>
                   With this setup, we have an automated flow to update the Out-Of-Office replies outside of business hours. To recap, we have:
@@ -388,9 +387,9 @@ catch {
                   Next time, maybe we can go over some of the serverless options that we could run this on if we have an active subscription, like Azure Functions, or possibly Power Automate.
                 </p>
                 
-                <h4>
-                  Where to find me
-                </h4>
+                
+#### Where to find me
+                
                 
                 <p>
                   If you have questions, are having problems, or just want to chat over something, you can leave a comment below or reach me on the [WinAdmins Discord](https://discord.com/invite/winadmins) at [@PsychoData](https://discordapp.com/users/264652399824601088)

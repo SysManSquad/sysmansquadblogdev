@@ -68,9 +68,9 @@ ca-certs:
 
 
 <div class="wp-block-uagb-inline-notice uagb-inline_notice__outer-wrap uagb-inline_notice__align-left uagb-block-738d57a5">
-  <h4 class="uagb-notice-title">
-    Network config
-  </h4>
+  
+#### Network config
+  
   
   <div class="uagb-notice-text">
     <p>

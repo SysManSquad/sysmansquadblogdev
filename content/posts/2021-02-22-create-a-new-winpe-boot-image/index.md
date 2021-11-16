@@ -30,9 +30,9 @@ categories:
               </li>
             </ul></ol> </div> </div> </div> 
             
-            <h2>
-              Introduction
-            </h2>
+            
+## Introduction
+            
             
             <p>
               In this post I'll show you how you can create a new boot image in ConfigMgr.
@@ -59,9 +59,9 @@ categories:
               Generally, it's better to not modify the default boot images that come out of the box with ConfigMgr. But if you've modified them, don't sweat it, at least you'll have this post to help you create a fresh one in future if need.
             </p>
             
-            <h2>
-              The "GUI" way
-            </h2>
+            
+## The "GUI" way
+            
             
             <ol>
               <li>
@@ -111,9 +111,9 @@ categories:
               When we come to do this using PowerShell, our new boot image will contain all the same drivers and optional components, however when we right click and go to Properties like I demonstrated in the screenshots above, you won't actually see anything in the **Drivers** or **Optional Components** tabs.
             </p>
             
-            <h2>
-              Using PowerShell
-            </h2>
+            
+## Using PowerShell
+            
             
             <p>
               This was inspired by Michael Niehaus's script but I added some improvements.
@@ -153,9 +153,9 @@ categories:
             </div>
             
             <div class="uagb-section__inner-wrap">
-              <h4>
-                Update
-              </h4>
+              
+#### Update
+              
               
               <p>
                 Adam Gross has a script on his GitHub where you can import a new WinPE boot image to your ConfigMgr site while still being able to get those juicy tabs / metadata fields populated!

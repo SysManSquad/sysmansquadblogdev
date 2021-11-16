@@ -37,9 +37,9 @@ This post is geared toward users of [MSEndpointMgr's OSD FrontEnd](https://msend
                   [Get distribution status of a Package](#get-distribution-status-of-a-package)
                 </li></ul>
               </li></ul></ol> </div> </div> </div> 
-              <h2>
-                Brief Background
-              </h2>
+              
+## Brief Background
+              
               
               <p>
                 At my current org, I moved us from a basic Task Sequence to using OSD FrontEnd as a way to allow for more customization of the image with less post-image configuration. We don't have set "profiles" for certain roles, so having a nice dynamic list of Applications to install was a big plus.
@@ -53,9 +53,9 @@ This post is geared toward users of [MSEndpointMgr's OSD FrontEnd](https://msend
                 At first, this was great until we started ordering new models (and in some cases, pulling old, dusty machines from closets to use as loaners) and my Techs were blocked by the Pre-Flight check failing.
               </p>
               
-              <h2>
-                Script Goals
-              </h2>
+              
+## Script Goals
+              
               
               <p>
                 We also use the [Driver Auotmation Tool](https://msendpointmgr.com/driver-automation-tool/) for maintaining updated driver Packages (Note: *not Driver Packs*) which provides a standardized naming convention and Package properties to use for a nice automation script.
@@ -69,9 +69,9 @@ This post is geared toward users of [MSEndpointMgr's OSD FrontEnd](https://msend
                 I submitted an [issue on Github](https://github.com/MSEndpointMgr/ConfigMgrOSDFrontEnd/issues/4), but until then, let's get to the workaround and also automate the task.
               </p>
               
-              <h3>
-                Outline
-              </h3>
+              
+### Outline
+              
               
               <p>
                 It definitely helps to outline a list of goals to accomplish for any complex, lengthy, or specialized script in order to keep organized and avoid too many tangents.
@@ -126,14 +126,14 @@ This post is geared toward users of [MSEndpointMgr's OSD FrontEnd](https://msend
                 It's a lengthy list, so I'll try my best to keep this post short.<br />*Narrator: He didn't.*
               </p>
               
-              <h2>
-                Getting Started
-              </h2>
               
-              <h3>
-                Get list of ConfigMgr Packages
-              </h3>
+## Getting Started
               
-              <h3>
-                Get distribution status of a Package
-              </h3>
+              
+              
+### Get list of ConfigMgr Packages
+              
+              
+              
+### Get distribution status of a Package
+              

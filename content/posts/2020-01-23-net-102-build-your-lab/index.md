@@ -15,55 +15,16 @@ Welcome back! We're now going to move on to the actual effort it takes to build 
 
 If you haven't read the previous post, please have a look [here](https://sysmansquad.com/2019/12/17/net-101-create-a-basic-lab-network-design/) as each post builds upon the last.
 
-I'm not going to cover a lot of the implementation details of any particular hypervisor other than as a general concept. You can view manuals for most hypervisors and find a ton of tutorials for how to create a VM. <div class="wp-block-uagb-table-of-contents uagb-toc\_\_align-left uagb-toc\_\_columns-1 uagb-block-91527d6f-69b6-422b-8f77-675c11eec1eb " data-scroll= "1" data-offset= "30" data-delay= "800" > 
-
-<div class="uagb-toc__wrap">
-  <div class="uagb-toc__title-wrap">
-    <div class="uagb-toc__title">
-      Table Of Contents
-    </div>
-  </div>
-  
-  <div class="uagb-toc__list-wrap">
-    <ol class="uagb-toc__list">
-      <li class="uagb-toc__list">
-        [A Note About Pinging](#a-note-about-pinging)<li class="uagb-toc__list">
-          [Documentation](#documentation)<li class="uagb-toc__list">
-            [The Admin Workstation](#the-admin-workstation)<li class="uagb-toc__list">
-              [The Default Gateway](#the-default-gateway)<li class="uagb-toc__list">
-                [The DNS Server](#the-dns-server)<ul class="uagb-toc__list">
-                  <li class="uagb-toc__list">
-                    [Initial Configuration](#initial-configuration)<li class="uagb-toc__list">
-                      <li class="uagb-toc__list">
-                        [Installing & Configuring DNS server role](#installing-configuring-dns-server-role)
-                      </li></ul>
-                    </li>
-                    <li class="uagb-toc__list">
-                      [The DHCP Server](#the-dhcp-server)<ul class="uagb-toc__list">
-                        <li class="uagb-toc__list">
-                          [Initial Config](#initial-config)<li class="uagb-toc__list">
-                            <li class="uagb-toc__list">
-                              [Installing & Configuring the DHCP role](#installing-configuring-the-dhcp-role)
-                            </li></ul>
-                          </li></ul>
-                        </li>
-                        <li class="uagb-toc__list">
-                          [Conclusion & Testing](#conclusion-testing)
-                        </li>
-                      </ul>
-                    </li></ul></ol> </div> </div> </div> 
+I'm not going to cover a lot of the implementation details of any particular hypervisor other than as a general concept. You can view manuals for most hypervisors and find a ton of tutorials for how to create a VM.
                     
-                    <h2 id="0-a-note-about-pinging">
-                      A Note About Pinging
-                    </h2>
+## A Note About Pinging
                     
                     <p>
                       You might find yourself wanting to ping things to verify that you have your IP settings correct. In this article, the only thing you'll be able to ping is the default gateway. By default the Windows Firewall rules consider any network they're on as a 'public' network for purposes of the firewall. Just leave all that alone for now, and we'll make some changes later. For now, just ping the gateway
                     </p>
                     
-                    <h2 id="1-documentation">
-                      Documentation
-                    </h2>
+                    ## Documentation
+                    
                     
                     <p>
                       In a previous revision of the last article I made 2 mistakes : I picked 'my.example' as our DNS name. Windows DNS rejects this name as not allowed, for it's own reasons. The error message was pretty useless if I'm honest, but it doesn't really matter. We're going to proceed with "lab.test" instead. Since we haven't actually implemented anything yet, now is the time to fix the mistake.
@@ -76,92 +37,26 @@ I'm not going to cover a lot of the implementation details of any particular hyp
                     <p>
                       It's time to upgrade our documentation.
                     </p><figure class="wp-block-table is-style-stripes">
+|Item|Value|
+|------|-------|
+| Subnet ID | IPv4: **10.248.100.0/24** |
+|           | IPv6: **fdda:f6d4:f5a2:f1e6::/64** |
+| Default Gateway | IPv4: **10.248.100.1/24** |
+|                 | IPv6: **fdda:f6d4:f5a2:f1e6::1/64** |
+| DNS Server | Hostname: **lab-dns** |
+|            | IPv4: **10.248.100.2/24** |
+|            | IPv6: **fdda:f6d4:f5a2:f1e6::2/64** |
+| DNS Domain | **lab.test.** |
+| DHCP Server | Hostname: **lab-dhcp** |
+|             | IPv4:**10.248.100.3/24** |
+|             | IPv6:**fdda:f6d4:f5a2:f1e6::3/64** |
+| DHCP Range | **10.248.100.[50-99]/24** |
+|            | **fdda:f6d4:f5a2:f1e6::[32-*]/64** |
+| VLAN ID | **77** |
+                    </figure> 
                     
-                    <table class="">
-                      <tr>
-                        <td>
-                          **Item**
-                        </td>
-                        
-                        <td>
-                          **Value**
-                        </td>
-                      </tr>
-                      
-                      <tr>
-                        <td>
-                          Subnet ID
-                        </td>
-                        
-                        <td>
-                          IPv4: **10.248.100.0/24**<br />IPv6: **fdda:f6d4:f5a2:f1e6::/64**
-                        </td>
-                      </tr>
-                      
-                      <tr>
-                        <td>
-                          Default Gateway
-                        </td>
-                        
-                        <td>
-                          IPv4: **10.248.100.1/24**<br />IPv6: **fdda:f6d4:f5a2:f1e6::1/64**
-                        </td>
-                      </tr>
-                      
-                      <tr>
-                        <td>
-                          DNS Server
-                        </td>
-                        
-                        <td>
-                          Hostname: **lab-dns**<br />IPv4: **10.248.100.2/24**<br />IPv6: **fdda:f6d4:f5a2:f1e6::2/64**
-                        </td>
-                      </tr>
-                      
-                      <tr>
-                        <td>
-                          DNS Domain
-                        </td>
-                        
-                        <td>
-                          **lab.test.**
-                        </td>
-                      </tr>
-                      
-                      <tr>
-                        <td>
-                          DHCP Server
-                        </td>
-                        
-                        <td>
-                          Hostname: **lab-dhcp**<br />IPv4: **10.248.100.3/24**<br />IPv6:**fdda:f6d4:f5a2:f1e6::3/64**
-                        </td>
-                      </tr>
-                      
-                      <tr>
-                        <td>
-                          DHCP Range
-                        </td>
-                        
-                        <td>
-                          **10.248.100.[50-99]/24**<br />**fdda:f6d4:f5a2:f1e6::[32-*]/**64
-                        </td>
-                      </tr>
-                      
-                      <tr>
-                        <td>
-                          VLAN ID
-                        </td>
-                        
-                        <td>
-                          **77**
-                        </td>
-                      </tr>
-                    </table></figure> 
+                    ## The Admin Workstation
                     
-                    <h2 id="2-the-admin-workstation">
-                      The Admin Workstation
-                    </h2>
                     
                     <p>
                       You're going to need a machine to use to work from inside your lab network and reach the management address of your gateway/firewall.
@@ -199,9 +94,8 @@ I'm not going to cover a lot of the implementation details of any particular hyp
                       After setting your addresses, if you open a terminal (either **cmd** or **PowerShell**) and run <code>ipconfig</code>, you will see that you have 2 IPv6 addresses and 1 IPv4 address on the listing. One of these IPv6 addresses is the one you set, the other is called a link-local address. Please consult the links to documentation on IPv6 address types from the last article if you'd like to know why.
                     </p>
                     
-                    <h2 id="3-the-default-gateway">
-                      The Default Gateway
-                    </h2>
+                    ## The Default Gateway
+                    
                     
                     <p>
                       We touched on what this is and what it does last time, so you know that this will serve as the default gateway for the network. It is also the firewall and IPv4 NAT appliance. Grab the latest [PFSense ](https://www.pfsense.org/download/)ISO and install a VM with ~2048MB RAM and two ethernet interfaces. The first will be the parent network, in this case your home or business network, the second will be the in-lab network. Consult the pfsense documentation for installing and setting the IP addresses you've chosen for the in-lab interface. The parent network interface should be set to DHCP.
@@ -211,9 +105,8 @@ I'm not going to cover a lot of the implementation details of any particular hyp
                       For now the only setting you need to set on the gateway is it's IPv4 and IPv6 addresses, aside from setting a new default password for the admin account.
                     </p>
                     
-                    <h2 id="4-the-dns-server">
-                      The DNS Server
-                    </h2>
+                    ## The DNS Server
+                    
                     
                     <p>
                       For fun, we're going to use a Windows Core install for this machine. Why a core install? Because there are no buttons to push. It is all command line on the server itself, and the configuration is done either via shell commands, PowerShell, or Remote Management Tools.
@@ -235,9 +128,8 @@ I'm not going to cover a lot of the implementation details of any particular hyp
                       Now that you have a good login for this machine, you'll be sitting at a command window. You'll do the initial configuration by running the command <code>sconfig</code>
                     </p>
                     
-                    <h3 id="5-initial-configuration">
-                      Initial Configuration
-                    </h3>
+                    ### Initial Configuration
+                    
                     
                     <p>
                       Run the <code>sconfig</code> command and choose option 2 to set the hostname or "Computer Name" of this machine. We didn't cover what the hostnames are for these machines when we were creating our documentation, so we're going to set them and add them to the documentation now. I'm going to name the DNS server "**lab-dns**", so it's FQDN (Fully Qualified Domain Name) is "lab-dns.lab.test". Set the computer name to your chosen short name and we'll cover the rest a bit later. When you've set the computer name, you'll be prompted to restart. You don't need to do this quite yet.
@@ -322,9 +214,8 @@ New-NetIPAddress @IPv6Arguments
                       Whew. That's a lot to read. If you're not familiar with powershell, the lines beginning with '#' are comments. They are there to give you an idea of what's happening even if you don't understand the code.
                     </p>
                     
-                    <h3 id="6-installing-amp-configuring-dns-server-role">
-                      Installing & Configuring DNS server role
-                    </h3>
+                    ### Installing & Configuring DNS server role
+                    
                     
                     <p>
                       Once again in powershell:
@@ -424,13 +315,11 @@ Add-DnsServerResourceRecord -ZoneName $ZoneName -Passthru -AAAA -Name 'lab-dhcp'
                       Neat. Now we have a functioning DNS server. You can close your connection to the DNS server now.
                     </p>
                     
-                    <h2 id="7-the-dhcp-server">
-                      The DHCP Server
-                    </h2>
+                    ## The DHCP Server
                     
-                    <h3 id="8-initial-config">
-                      Initial Config
-                    </h3>
+                    
+                    ### Initial Config
+                    
                     
                     <p>
                       By now you've installed a Windows Server OS at least once, so create a vm with ~2048MB ram and a minimum 60gb disk space. You'll also want a core install on this machine.
@@ -480,9 +369,8 @@ $IPv6Arguments =@{
 New-NetIPAddress @IPv6Arguments
 </code></pre>
                     
-                    <h3 id="9-installing--amp-configuring-the-dhcp-role">
-                      Installing & Configuring the DHCP role
-                    </h3>
+                    ### Installing & Configuring the DHCP role
+                    
                     
                     <p>
                       In powershell on the DHCP server:
@@ -549,9 +437,8 @@ Add-DhcpServerv6ExclusionRange @V6ExclusionRange
 
 # We're not setting a router address - IPv6 includes an automatic address all routers listen on. Also router advertisements are a thing.</code></pre>
                     
-                    <h2 id="10-conclusion-amp-testing">
-                      Conclusion & Testing
-                    </h2>
+                    ## Conclusion & Testing
+                    
                     
                     <p>
                       At this point, install some workstation class OS on a new vm and see whether you get a usable workstation out of the box without configuring any IP addressing. Try resolving some DNS names and see if they resolve properly. Be sure and check both A and AAAA records, as well as browsing the internet. At this point your workstation should be fully functional.

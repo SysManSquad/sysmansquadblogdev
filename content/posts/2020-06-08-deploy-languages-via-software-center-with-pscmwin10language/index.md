@@ -44,9 +44,8 @@ tags:
                 These Applications are not for OSD. It changes the language only for the user who installs the Application via the Software Center. They will not work for OSD via task sequence.
               </p>
               
-              <h2>
-                Install the module
-              </h2>
+              ## Install the module
+              
               
               <p>
                 The module can be found on [GitHub](https://github.com/codaamok/PSCMWin10Language) or the [PowerShell Gallery](https://www.powershellgallery.com/packages/PSCMWin10Language/0.0.1). You can install it like so:
@@ -69,9 +68,8 @@ Get-Command -Module "PSCMWin10Language"
 ```
               
               
-              <h2>
-                Create LP, LXP and FoD repositories
-              </h2>
+              ## Create LP, LXP and FoD repositories
+              
               
               <p>
                 We need to form the source folders for each of our Applications (in other words, for each language we want to support). The source folders will contain the needed LP, LXP and FoD files for each language - a mix of .cab and .appx files.
@@ -145,9 +143,8 @@ New-FoDLanguageFeaturesRepository -Language "fr-FR", "de-DE" -SourcePath "J:\" -
 ```
               
               
-              <h2>
-                Create the Applications
-              </h2>
+              ## Create the Applications
+              
               
               <p>
                 With the LP, LXP and FoD repositories set up, we're now ready to create our ConfigMgr Application(s)
@@ -221,9 +218,9 @@ New-CMLanguagePackApplication -SiteServer "cm.contoso.com" -SiteCode "P01" -Sour
 ```
               <figure class="wp-block-image size-large">
               
-              [![](LPSoftwareCenter-EndResult-3-new-1024x658.jpg)](LPSoftwareCenter-EndResult-3-new.jpg)</figure> <h2>
-                Support
-              </h2>
+              [![](LPSoftwareCenter-EndResult-3-new-1024x658.jpg)](LPSoftwareCenter-EndResult-3-new.jpg)</figure> 
+## Support
+              
               
               <p>
                 If you have any issues with the module, please do open an issue on the [PSCMWin10Language GitHub repository](https://github.com/codaamok/PSCMWin10Language)!

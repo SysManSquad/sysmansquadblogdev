@@ -46,9 +46,9 @@ Have you ever wanted to get a simple notification when there is a new Release fo
               [Install Instructions](#install-instructions)<li class="uagb-toc__list">
                 [Conclusion](#conclusion)
               </li></ul></ol> </div> </div> </div> 
-              <h2>
-                Introduction
-              </h2>
+              
+## Introduction
+              
               
               <p>
                 In my [previous post](https://sysmansquad.com/2020/12/30/automating-changing-out-of-business-hours-responses/), we did some automation with client-side scripts and Microsoft Graph to update Outlook Auto-Responses on a schedule. Today we will be going in a different direction for something with almost no code in it at all - Power Automate.
@@ -76,9 +76,8 @@ Have you ever wanted to get a simple notification when there is a new Release fo
               
               <div class="wp-block-group">
                 <div class="wp-block-group__inner-container">
-                  <h2 id="github-atom-feeds">
-                    GitHub supports Atom Feeds
-                  </h2>
+                  ## GitHub supports Atom Feeds
+                  
                   
                   <div class="wp-block-group">
                     <div class="wp-block-group__inner-container">
@@ -94,9 +93,9 @@ Have you ever wanted to get a simple notification when there is a new Release fo
                   
                   <div class="wp-block-group">
                     <div class="wp-block-group__inner-container">
-                      <h4 id="sample-urls">
-                        Sample URLs
-                      </h4>
+                      
+#### Sample URLs
+                      
                       
                       <p>
                         **Releases · PowerShell<br />**HTML - [https://github.com/PowerShell/PowerShell/releases](https://github.com/PowerShell/PowerShell/releases)<br />ATOM - [https://github.com/PowerShell/PowerShell/releases.atom](https://github.com/PowerShell/PowerShell/releases.atom)
@@ -122,9 +121,8 @@ Have you ever wanted to get a simple notification when there is a new Release fo
                 <div class="wp-block-group__inner-container">
                   <div class="wp-block-group alignwide">
                     <div class="wp-block-group__inner-container">
-                      <h2 class="alignwide has-text-align-center">
-                        Discovering & Testing RSS/Atom feeds
-                      </h2>
+                      ## Discovering & Testing RSS/Atom feeds
+                      
                       
                       <p>
                         If you are still having a hard time finding the URL, I found this [Edge Extension](https://microsoftedge.microsoft.com/addons/detail/get-rss-feed-url/pgbelohmepchkohpdldadopkblkgbjom) to discover Atom URLs for the current page, and a [Chrome Version](https://chrome.google.com/webstore/detail/get-rss-feed-url/kfghpdldaipanmkhfpdcjglncmilendn) as well.
@@ -152,9 +150,8 @@ Have you ever wanted to get a simple notification when there is a new Release fo
               
               <div class="wp-block-group">
                 <div class="wp-block-group__inner-container">
-                  <h2 id="connecting-the-connectors">
-                    Connecting the Connectors
-                  </h2>
+                  ## Connecting the Connectors
+                  
                   
                   <p>
                     The useful fields available to us are below:
@@ -208,9 +205,8 @@ Have you ever wanted to get a simple notification when there is a new Release fo
                 </div>
               </div>
               
-              <h2 id="install">
-                Install Instructions
-              </h2>
+              ## Install Instructions
+              
               
               <p>
                 You can [download this here](https://github.com/SysManSquad/BlogFiles/tree/master/PsychoData/GitHub_to_Teams_Notifications) to import this into your own environment and start getting your own notifications from Public Repos.
@@ -220,9 +216,8 @@ Have you ever wanted to get a simple notification when there is a new Release fo
                 You can also use this as a guide to set up alerts on any other RSS feeds or most Atom feeds as well. Since this is already in Power Automate, you could also use hundreds of different connectors to connect to other services like Azure [Automation](https://flow.microsoft.com/connectors/shared_azureautomation/azure-automation/), [DevOps](https://flow.microsoft.com/connectors/shared_visualstudioteamservices/azure-devops/), [Blob Storage](https://flow.microsoft.com/connectors/shared_azureblob/azure-blob-storage/), [FTP](https://flow.microsoft.com/connectors/shared_ftp/ftp/), [Slack](https://flow.microsoft.com/connectors/shared_slack/slack/), [Todoist](https://flow.microsoft.com/connectors/shared_todoist/todoist/), or even invoke a [Web API](https://docs.microsoft.com/connectors/webcontents/#get-web-resource).
               </p>
               
-              <h2 id="build-your-own">
-                Conclusion
-              </h2>
+              ## Conclusion
+              
               
               <p>
                 In this post, we found a way to work around some limitations of the GitHub Connector, made a Power Automate flow that can be easily duplicated to subscribe to many feeds, and used Power Automate to post notifications to Teams Channels.

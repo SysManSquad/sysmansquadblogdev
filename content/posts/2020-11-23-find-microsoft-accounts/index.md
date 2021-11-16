@@ -59,9 +59,9 @@ The other day I was helping someone over in the [WinAdmins Discord](https://aka.
                         </li></ul></ol> </div> </div> </div> 
                         <div class="wp-block-group">
                           <div class="wp-block-group__inner-container">
-                            <h2>
-                              Update on Prevention:
-                            </h2>
+                            
+## Update on Prevention:
+                            
                             
                             <blockquote class="wp-block-quote">
                               <p>
@@ -71,17 +71,16 @@ The other day I was helping someone over in the [WinAdmins Discord](https://aka.
                           </div>
                         </div>
                         
-                        <h3 id="preventing">
-                          Preventing new registration
-                        </h3>
+                        ### Preventing new registration
+                        
                         
                         <p>
                           Microsoft has introduced some changes that at least seem to prevent *NEW *Microsoft Accounts on Company Domains. I haven't been able to find any specific announcement about this feature/capability, but supposedly all you need to do is have the relevant domain in your Office 365 Domains as Managed.
                         </p>
                         
-                        <h3>
-                          What the blocking looks like
-                        </h3>
+                        
+### What the blocking looks like
+                        
                         
                         <p>
                           So far, it seems that the blocking will prevent them from Registering a new account with a validated work email domain, or from adding that email as an alias.
@@ -108,9 +107,9 @@ The other day I was helping someone over in the [WinAdmins Discord](https://aka.
                           </div>
                         </div>
                         
-                        <h2>
-                          Identifying the Problem
-                        </h2>
+                        
+## Identifying the Problem
+                        
                         
                         <p>
                           This prompt is the main source of the user’s confusion; the email address is the same for the user’s Work/School account and a Microsoft account. When an app supports signing in with both a Work/School and Personal account, it prompts the user for which type of account they want to use. Most users don't know what the difference is, or where the Microsoft account came from.
@@ -124,9 +123,9 @@ The other day I was helping someone over in the [WinAdmins Discord](https://aka.
                           As that link in the screenshot says, you can [Rename the personal Microsoft ](https://go.microsoft.com/fwlink/p/?LinkID=733247)[account](https://go.microsoft.com/fwlink/p/?LinkID=733247), but how can you know which users have a conflicting Microsoft account?
                         </p>
                         
-                        <h2>
-                          Designing a Solution
-                        </h2>
+                        
+## Designing a Solution
+                        
                         
                         <p>
                           To find these conflicting Microsoft accounts, we can ... abuse... an Azure App Registrations capabilities. We create a custom application that we register to only accept Microsoft accounts, not AzureAD/Work/School accounts. – if you try to use an email for your domain that doesn’t have a Microsoft account, it will just throw back an error that no Microsoft account could be found.
@@ -140,9 +139,8 @@ The other day I was helping someone over in the [WinAdmins Discord](https://aka.
                           At this time, I don’t know of a way to prevent Microsoft accounts on the company domain, or automatically move them - but we can at least find the conflicts. This will allow the Help Desk to contact the end-user and help them relocate the personal account.
                         </p>
                         
-                        <h2 id="Creating-App-Registration">
-                          Setting up your App Registration
-                        </h2>
+                        ## Setting up your App Registration
+                        
                         
                         <p>
                           To set this up, we need to head to the [Azure Portal](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps) and create a new **app registration**
@@ -178,9 +176,8 @@ The other day I was helping someone over in the [WinAdmins Discord](https://aka.
                         
                         ![Create a Dummy client secret, for the Microsoft backend. you do not need to keep the key](image-6.png)</figure> <div class="wp-block-group">
                           <div class="wp-block-group__inner-container">
-                            <h2 id="Constructing-App-Auth-URL">
-                              Constructing our App Authorization URL
-                            </h2>
+                            ## Constructing our App Authorization URL
+                            
                             
                             <p>
                               Next, we need to gather the information for our authentication URL.
@@ -226,9 +223,9 @@ The other day I was helping someone over in the [WinAdmins Discord](https://aka.
                           <div class="wp-block-group__inner-container">
                             <div class="wp-block-columns">
                               <div class="wp-block-column">
-                                <h5>
-                                  **Valid Microsoft Account**
-                                </h5><figure class="wp-block-image image-shadow">
+                                
+##### **Valid Microsoft Account**
+                                <figure class="wp-block-image image-shadow">
                                 
                                 ![Providing a Valid Microsoft Account email continues to a Password Prompt](image-7.png)<figcaption>Note: the email address is recognized, and the prompt has switched to “Enter password”</figcaption></figure> 
                                 
@@ -237,9 +234,9 @@ The other day I was helping someone over in the [WinAdmins Discord](https://aka.
                               </div>
                               
                               <div class="wp-block-column">
-                                <h5>
-                                  **No Valid Microsoft Account**
-                                </h5><figure class="wp-block-image image-shadow">
+                                
+##### **No Valid Microsoft Account**
+                                <figure class="wp-block-image image-shadow">
                                 
                                 ![Providing an invalid Microsoft Account email throws a watning that the Microsoft Account does not exists](image-8.png)<figcaption>Note: the email address is not recognized, and the prompt still shows “That Microsoft account doesn’t exist”</figcaption></figure> 
                                 
@@ -257,9 +254,8 @@ The other day I was helping someone over in the [WinAdmins Discord](https://aka.
                         
                         <div class="wp-block-group">
                           <div class="wp-block-group__inner-container">
-                            <h2 id="Scripting-the-process">
-                              Scripting the verification Process
-                            </h2>
+                            ## Scripting the verification Process
+                            
                             
                             <p>
                               Below is a quick script I made to build a list of all the company emails and iterate through checking them.
@@ -299,9 +295,8 @@ $results
                         
                         <div class="wp-block-group">
                           <div class="wp-block-group__inner-container">
-                            <h2 id="Sample-User-Consent-Prompt">
-                              User Consent Prompt
-                            </h2>
+                            ## User Consent Prompt
+                            
                             
                             <p>
                               Our app doesn’t have any server code. We only need to get to the pre-login experience to confirm whether an email address has a Microsoft account associated with it. This means that users don’t need to finish logging in and authorize the app, but if they do finish logging in, they will get a consent prompt like this.
@@ -313,9 +308,9 @@ $results
                         
                         <div class="wp-block-group">
                           <div class="wp-block-group__inner-container">
-                            <h2>
-                              Wrap up
-                            </h2>
+                            
+## Wrap up
+                            
                             
                             <p>
                               With this app we made, we can verify whether any email address has a Microsoft account associated with it with an automated method that we can script against.

@@ -12,9 +12,8 @@ date: 2019-12-09T06:00:01+00:00
         <div class="e311-4 x-text x-text-headline" >
           <div class="x-text-content">
             <div class="x-text-content-text">
-              <h2 class="x-text-content-text-primary">
-                Our core values
-              </h2>
+              ## Our core values
+              
             </div>
           </div>
         </div>
@@ -28,9 +27,8 @@ date: 2019-12-09T06:00:01+00:00
             <span class="x-graphic" aria-hidden="true" > <i class="x-icon x-graphic-child x-graphic-icon x-graphic-primary" aria-hidden="true" data-x-icon-s="&#xf19d;" ></i> </span> 
             
             <div class="x-text-content-text">
-              <h3 class="x-text-content-text-primary">
-                We Foster Education
-              </h3>
+              ## We Foster Education
+              
             </div>
           </div>
         </div>
@@ -50,9 +48,8 @@ date: 2019-12-09T06:00:01+00:00
             <span class="x-graphic" aria-hidden="true" > <i class="x-icon x-graphic-child x-graphic-icon x-graphic-primary" aria-hidden="true" data-x-icon-s="&#xf091;" ></i> </span> 
             
             <div class="x-text-content-text">
-              <h3 class="x-text-content-text-primary">
-                We Pursue Excellence
-              </h3>
+              ## We Pursue Excellence
+              
             </div>
           </div>
         </div>
@@ -72,9 +69,8 @@ date: 2019-12-09T06:00:01+00:00
             <span class="x-graphic" aria-hidden="true" > <i class="x-icon x-graphic-child x-graphic-icon x-graphic-primary" aria-hidden="true" data-x-icon-o="&#xf2b5;" ></i> </span> 
             
             <div class="x-text-content-text">
-              <h3 class="x-text-content-text-primary">
-                We Practice Mentorship
-              </h3>
+              ### We Practice Mentorship
+              
             </div>
           </div>
         </div>
@@ -94,9 +90,8 @@ date: 2019-12-09T06:00:01+00:00
             <span class="x-graphic" aria-hidden="true" > <i class="x-icon x-graphic-child x-graphic-icon x-graphic-primary" aria-hidden="true" data-x-icon-s="&#xf1fc;" ></i> </span> 
             
             <div class="x-text-content-text">
-              <h3 class="x-text-content-text-primary">
-                We Create Fun
-              </h3>
+              ### We Create Fun
+              
             </div>
           </div>
         </div>
@@ -116,9 +111,8 @@ date: 2019-12-09T06:00:01+00:00
         <div class="e311-24 x-text x-text-headline" >
           <div class="x-text-content">
             <div class="x-text-content-text">
-              <h2 class="x-text-content-text-primary">
-                Some Backstory
-              </h2>
+              ## Some Backstory
+              
             </div>
           </div>
         </div>

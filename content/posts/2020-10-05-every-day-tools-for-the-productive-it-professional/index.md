@@ -38,9 +38,9 @@ For each of the below I will link to the resource, offer a brief description on 
                     [ZoomIt](#zoomit)<li class="uagb-toc__list">
                       [PowerShell profile](#powershell-profile)<li class="uagb-toc__list">
                         [Freedom](#freedom)<li class="uagb-toc__list">
-                          [Twitter + Inoreader](#twitter-inoreader)</ol> </div> </div> </div> <h3>
-                            Ditto
-                          </h3>
+                          [Twitter + Inoreader](#twitter-inoreader)</ol> </div> </div> </div> 
+### Ditto
+                          
                           
                           <p>
                             [Ditto](https://ditto-cp.sourceforge.io/) is an extension to the Windows Clipboard. You copy something to the Clipboard and Ditto takes what you copied and stores it in a database to retrieve at a later time.
@@ -79,9 +79,9 @@ For each of the below I will link to the resource, offer a brief description on 
                             </li>
                           </ul>
                           
-                          <h3>
-                            PowerToys
-                          </h3>
+                          
+### PowerToys
+                          
                           
                           <blockquote class="wp-block-quote">
                             <p>
@@ -135,9 +135,9 @@ For each of the below I will link to the resource, offer a brief description on 
                             </li>
                           </ul>
                           
-                          <h3>
-                            Everything
-                          </h3>
+                          
+### Everything
+                          
                           
                           <p>
                             No exaggeration, [Everything](https://www.voidtools.com/) locates files and folders by name **instantly**.
@@ -163,9 +163,9 @@ For each of the below I will link to the resource, offer a brief description on 
                             A scenario which I'm hugely grateful for of Everything for is searching SharePoint. We host our documentation on our internal SharePoint Online. Instead of using SharePoint's clunky search facility, I [sync the library to my machine](https://support.microsoft.com/en-us/office/sync-sharepoint-files-and-folders-87a96948-4dd7-43e4-aca1-53f3e18bea9b) and reap the benefits of using Everything's.
                           </p>
                           
-                          <h3>
-                            SnagIt
-                          </h3>
+                          
+### SnagIt
+                          
                           
                           <p>
                             [SnagIt](https://www.techsmith.com/screen-capture.html) is effectively Windows' native utility Snipping Tool, except it's also on steroids.
@@ -203,9 +203,9 @@ For each of the below I will link to the resource, offer a brief description on 
                             Some real popular [alternatives](https://alternativeto.net/software/snagit/), which are free, are [ShareX ](https://getsharex.com/)and [Greenshot](https://getgreenshot.org/).
                           </p>
                           
-                          <h3>
-                            AltDrag
-                          </h3>
+                          
+### AltDrag
+                          
                           
                           <p>
                             [AltDrag](https://stefansundin.github.io/altdrag/) gives you the ability to move and resize windows in a new way.
@@ -231,9 +231,9 @@ For each of the below I will link to the resource, offer a brief description on 
                             It seems the original author is unable to commit on the project right now. However, the good news is that the [PowerToys team at Microsoft are planning to bring this feature to PowerToys](https://github.com/stefansundin/altdrag/issues/118)!
                           </p>
                           
-                          <h3>
-                            Chocolatey
-                          </h3>
+                          
+### Chocolatey
+                          
                           
                           <p>
                             [Chocolatey](https://chocolatey.org/) is a sweet, sweet repository of packages which helps you automate installation of software.
@@ -251,9 +251,9 @@ For each of the below I will link to the resource, offer a brief description on 
                             I keep [Install-Choco](https://github.com/codaamok/codaamok/blob/master/codaamok/Public/Install-Choco.ps1) in my profile module and maintain [Get-MyChocoPackages](https://github.com/codaamok/codaamok/blob/master/codaamok/Public/Get-MyChocoPackages.ps1) so I can easily pass that to <code>choco install</code> in an elevated PowerShell console. I grab a coffee, come back, wait a little while longer, and all my preferred utilities are installed.
                           </p>
                           
-                          <h3>
-                            ZoomIt
-                          </h3>
+                          
+### ZoomIt
+                          
                           
                           <p>
                             [ZoomIt](https://docs.microsoft.com/en-us/sysinternals/downloads/zoomit) is part of the [Windows Sysinternals suite](https://docs.microsoft.com/en-us/sysinternals/).
@@ -283,9 +283,9 @@ For each of the below I will link to the resource, offer a brief description on 
                             Much like Chocolatey, this isn't common for me in terms of frequency of use, but is a fantastic tool if you're trying to focus the audience on a particular area on your screen while presenting - whether that's via Teams or in-person.
                           </p>
                           
-                          <h3>
-                            PowerShell profile
-                          </h3>
+                          
+### PowerShell profile
+                          
                           
                           <p>
                             If you don't already have a PowerShell profile configured on your machine, now is your chance!
@@ -319,9 +319,9 @@ For each of the below I will link to the resource, offer a brief description on 
                             However It eventually got a bit out of control. It grew to roughly 2.5k lines long with dozens of functions. I recently shifted [all my functions to a module](https://github.com/codaamok/codaamok) and [now my actual profile](https://github.com/codaamok/PoSH/blob/master/profile.ps1) contains very little. It's mostly just a custom prompt and a couple of functions dedicated to update/import my "profile module" which I keep in the [PowerShell Gallery](https://powershellgallery.com).
                           </p>
                           
-                          <h3>
-                            Freedom
-                          </h3>
+                          
+### Freedom
+                          
                           
                           <p>
                             I could list an abundance of tools which will boost your productivity but what's the point if we're allowing distractions?
@@ -379,9 +379,9 @@ For each of the below I will link to the resource, offer a brief description on 
                             If you're interested in more learning about the impact of what the Internet and social media is having on us, I strongly recommend you follow [Josh Duffney](https://twitter.com/joshduffney?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor), [check out his blog](https://duffney.io/), and [look at this thread](https://twitter.com/codaamok/status/1298133570905673728) which lists more resources for further reading.
                           </p>
                           
-                          <h3>
-                            Twitter + Inoreader
-                          </h3>
+                          
+### Twitter + Inoreader
+                          
                           
                           <p>
                             This nicely follows on from my previous point of recommending Freedom.

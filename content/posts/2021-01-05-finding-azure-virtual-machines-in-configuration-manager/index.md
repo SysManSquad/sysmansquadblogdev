@@ -43,9 +43,9 @@ A request came in from my System Admin group to push certain policies only to VM
                     <li class="uagb-toc__list">
                       [Create Collections](#create-collections)
                     </li></ul></ol> </div> </div> </div> 
-                    <h1>
-                      Azure Metadata Service
-                    </h1>
+                    
+# Azure Metadata Service
+                    
                     
                     <p>
                       Officially, the Azure Metadata Service is:
@@ -57,9 +57,9 @@ A request came in from my System Admin group to push certain policies only to VM
                       Basically, it's an internal API using APIPA addressing to ensure that it can only be accessed while logged into the OS (or using <code>Invoke-Command</code>). It allows us to get information about the guest OS. For our purposes today, we only care if it exists and won't be utilizing the actual data, but you can use this as a starting point for whatever's useful for you.
                     </p>
                     
-                    <h1>
-                      Detection Script
-                    </h1>
+                    
+# Detection Script
+                    
                     
                     <p>
                       First, let's convert the Azure Metadata Service documentation Curl command from bash/shell:
@@ -149,13 +149,13 @@ FUNCTION Test-IsAzureVM {
 ```
                     
                     
-                    <h1>
-                      Create Configuration Baseline
-                    </h1>
                     
-                    <h2>
-                      Configuration Item
-                    </h2>
+# Create Configuration Baseline
+                    
+                    
+                    
+## Configuration Item
+                    
                     
                     <p>
                       In your ConfigMgr Admin Console, navigate to <code>\Assets and Compliance\Overview\Compliance Settings\Configuration Items</code> and Create a new Configuration Item
@@ -186,25 +186,25 @@ FUNCTION Test-IsAzureVM {
                       </li>
                     </ol>
                     
-                    <h2>
-                      Configuration Baseline
-                    </h2>
+                    
+## Configuration Baseline
+                    
                     
                     <p>
                       In the console, move down to the Configuration Baseline section and create a new Baseline, adding the Configuration Item we previously created
                     </p><figure class="wp-block-image size-large is-resized">
                     
-                    ![](image-15.png)</figure> <h2>
-                      Deploy Baseline
-                    </h2>
+                    ![](image-15.png)</figure> 
+## Deploy Baseline
+                    
                     
                     <p>
                       Now you can Deploy your newly created Baseline to whichever devices you wish. For this example, we're deploying to the *All Systems* collection and we're only going to run the baseline evaluation once per device, but there's no real harm in having it run every month or so (the data we're looking at is static and shouldn't vary at all).
                     </p><figure class="wp-block-image size-large is-resized">
                     
-                    ![](image-17-1024x640.png)</figure> <h1>
-                      Create Collections
-                    </h1>
+                    ![](image-17-1024x640.png)</figure> 
+# Create Collections
+                    
                     
                     <p>
                       The only real "required" collection to make is based on Compliant devices with the Baseline we deployed. To do that, click the Baseline, then the Deployments tab at the bottom, and right-click the **Deployment** > **Create New Collection** > **Compliant**, and follow the on-screen prompts to finish the Collection

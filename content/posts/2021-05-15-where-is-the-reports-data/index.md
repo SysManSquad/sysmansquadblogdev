@@ -74,9 +74,9 @@ Well you can - and finding the information can be so easy. Read on below to see 
                           
                           <div class="wp-block-group alignwide">
                             <div class="wp-block-group__inner-container">
-                              <h2>
-                                Introduction
-                              </h2>
+                              
+## Introduction
+                              
                               
                               <p>
                                 Take for example this report on a [Proactive Remediation](https://endpoint.microsoft.com/#blade/Microsoft_Intune_Enrollment/UXAnalyticsMenu/proactiveRemediations). I used one of the built in Proactive Remediations for the example, but it could easily be one of our other [Proactive Remediation](https://sysmansquad.com/category/endpoint-management/proactive-remediation/) posts, like [Dynamic Outlook Signatures](https://sysmansquad.com/2020/07/08/dynamic-outlook-email-signature-using-with-intune-endpoint-analytics-proactive-remediations/), [Building VPN Connections](https://sysmansquad.com/2020/07/07/intune-autopilot-proactive-remediation/), or [Repairing Folder permissions](https://sysmansquad.com/2020/07/27/setting-acl-using-intune-endpoint-analytics-proactive-remediations/).
@@ -92,9 +92,8 @@ Well you can - and finding the information can be so easy. Read on below to see 
                           
                           <div class="wp-block-group">
                             <div class="wp-block-group__inner-container">
-                              <h2 id="api-endpoint-hell">
-                                So, wandering API Endpoint Hell?
-                              </h2>
+                              ## So, wandering API Endpoint Hell?
+                              
                               
                               <p>
                                 You could absolutely go through the docs pages for [Microsoft Graph](https://docs.microsoft.com/en-us/graph/) or other APIs and find the [Get deviceHealthScriptRunSummary](https://docs.microsoft.com/graph/api/intune-devices-devicehealthscriptrunsummary-get?view=graph-rest-beta) - but the Portal is already fetching the information somehow - a lot of times you can just look at how the Portal fetches the information, and do the same thing yourself.
@@ -108,9 +107,8 @@ Well you can - and finding the information can be so easy. Read on below to see 
                           
                           <div class="wp-block-group alignwide">
                             <div class="wp-block-group__inner-container">
-                              <h2 id="watching-the-portal-work">
-                                Watching how the Portal works
-                              </h2>
+                              ## Watching how the Portal works
+                              
                               
                               <p>
                                 First up, let's open the [Proactive Remediations area](https://endpoint.microsoft.com/#blade/Microsoft_Intune_Enrollment/UXAnalyticsMenu/proactiveRemediations) and navigate down to the **Restart stopped Office C2R svc**.
@@ -181,9 +179,8 @@ https://graph.microsoft.com/beta/deviceManagement/deviceHealthScripts/02a4e7e8-1
                           
                           <div class="wp-block-group alignwide">
                             <div class="wp-block-group__inner-container">
-                              <h2 id="using-the-documentation">
-                                Using the Documentation
-                              </h2>
+                              ## Using the Documentation
+                              
                               
                               <p>
                                 So, from our URL - we have three key terms to look up
@@ -221,9 +218,8 @@ https://graph.microsoft.com/beta/deviceManagement/deviceHealthScripts/02a4e7e8-1
                           
                           <div class="wp-block-group alignwide">
                             <div class="wp-block-group__inner-container">
-                              <h2 id="getting-a-token">
-                                Getting a token for your API calls
-                              </h2>
+                              ## Getting a token for your API calls
+                              
                               
                               <p>
                                 Now that we know what Permissions Scopes we need to use, we can work on setting up our access methods to use this information in a script.
@@ -268,9 +264,9 @@ Invoke-RestMethod -Headers @{Authorization = "Bearer $($Token.AccessToken)"} @Qu
                           
                           <div class="wp-block-group alignwide">
                             <div class="wp-block-group__inner-container">
-                              <h2>
-                                Another Example with a Less Common API
-                              </h2>
+                              
+## Another Example with a Less Common API
+                              
                               
                               <p>
                                 Let's find the **[Authentication Methods Registration Detail](https://portal.azure.com/#blade/Microsoft_AAD_IAM/AuthenticationMethodsMenuBlade/UserRegistrationDetails/menuId/UserRegistrationDetails)** report data.
@@ -364,9 +360,8 @@ https://graph.windows.net/myorganization/activities/authenticationMethodUserDeta
                           
                           <div class="wp-block-group">
                             <div class="wp-block-group__inner-container">
-                              <h3 id="what-api-is-it">
-                                OK - so what API *IS* it using?
-                              </h3>
+                              ### OK - so what API *IS* it using?
+                              
                               
                               <p>
                                 Well - for the more obscure APIs - this can be a bit hard to find, and so hard to look up documentation for. Sometimes, there just isn't really public documentation for it.
@@ -380,9 +375,9 @@ https://graph.windows.net/myorganization/activities/authenticationMethodUserDeta
                           
                           <div class="wp-block-group">
                             <div class="wp-block-group__inner-container">
-                              <h4 id="finding-your-token">
-                                Finding your Token
-                              </h4>
+                              
+#### Finding your Token
+                              
                               
                               <p>
                                 Now, you can get tokens lots of ways, like [MSAL](https://docs.microsoft.com/en-us/azure/active-directory/develop/msal-overview), a number of [assorted Authentication Flows](https://docs.microsoft.com/en-us/azure/active-directory/develop/authentication-flows-app-scenarios), but we're watching the portal right now, and we already logged in. If we jump back to our F12 DevTools > Network Tab - we can click on the entry we found before in [this section](#watching-the-portal-work), open the **Headers** > Scroll to the **Request Headers** section > **Authorization**
@@ -403,9 +398,9 @@ https://graph.windows.net/myorganization/activities/authenticationMethodUserDeta
                           
                           <div class="wp-block-group">
                             <div class="wp-block-group__inner-container">
-                              <h4 id="decoding-your-token">
-                                Decoding your Token
-                              </h4>
+                              
+#### Decoding your Token
+                              
                               
                               <p>
                                 Now, usually when you get a token for these APIs, it is a **Bearer** token and a **JSON Web Token** or **JWT**. Now JWT's are an excellent and open standard you can read more about [here](https://jwt.io/), but the short version is that inside this big beautiful base64 blob are three parts.
@@ -437,9 +432,8 @@ https://graph.windows.net/myorganization/activities/authenticationMethodUserDeta
                           
                           <div class="wp-block-group alignwide">
                             <div class="wp-block-group__inner-container">
-                              <h2 id="jwt-decoder">
-                                Useful Tools: Microsoft's JWT Decoder
-                              </h2>
+                              ## Useful Tools: Microsoft's JWT Decoder
+                              
                               
                               
                                 [jwt.ms](https://jwt.ms)
@@ -519,9 +513,8 @@ https://graph.windows.net/myorganization/activities/authenticationMethodUserDeta
                           
                           <div class="wp-block-group">
                             <div class="wp-block-group__inner-container">
-                              <h2 id="api-explorer-sites">
-                                Useful Tools: API Explorer websites
-                              </h2>
+                              ## Useful Tools: API Explorer websites
+                              
                               
                               <p>
                                 Several APIs have explorer websites. Here are several below, and there are probably more, and if you know of some, come by the [WinAdmins Discord](https://winadmins.io/discord), and tag me there [@PsychoData](https://discordapp.com/users/264652399824601088) or on [Twitter @PsychoData](https://twitter.com/psychodata) to let me know!
@@ -547,9 +540,9 @@ https://graph.windows.net/myorganization/activities/authenticationMethodUserDeta
                           
                           <div class="wp-block-group">
                             <div class="wp-block-group__inner-container">
-                              <h2>
-                                Conclusion
-                              </h2>
+                              
+## Conclusion
+                              
                               
                               <p>
                                 With these processes, we have talked about how you can
@@ -594,9 +587,9 @@ https://graph.windows.net/myorganization/activities/authenticationMethodUserDeta
                           
                           <div class="wp-block-group">
                             <div class="wp-block-group__inner-container">
-                              <h4>
-                                Where to find me
-                              </h4>
+                              
+#### Where to find me
+                              
                               
                               <div class="wp-block-columns are-vertically-aligned-center">
                                 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.66%">

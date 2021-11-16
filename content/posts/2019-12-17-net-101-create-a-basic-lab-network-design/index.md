@@ -59,7 +59,7 @@ It's important to note that the very first address in your subnet (in our case 1
 #### IPv6
 
 
-  *Unfortunately, my experience doesn't yet include IPv6. I'll make a best-effort here but maybe don't count anything in this article referencing IPv6 as well-researched or authoritative yet. *
+  *Unfortunately, my experience doesn't yet include IPv6. I'll make a best-effort here but maybe don't count anything in this article referencing IPv6 as well-researched or authoritative yet.*
 
 
 I recommend this article for some light reading regarding IPv6 addressing: [TCP/IP Fundamentals for Windows, Chapter 3](https://docs.microsoft.com/en-us/previous-versions/tn-archive/bb726995(v=technet.10)#ipv6-addressing). You may also find this series of articles useful: [Infoblox IPv6 Blogs](https://blogs.infoblox.com/category/ipv6-coe/).

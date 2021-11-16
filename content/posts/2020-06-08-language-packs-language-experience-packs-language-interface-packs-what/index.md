@@ -49,9 +49,9 @@ tags:
                 </div>
                 
                 <div class="uagb-section__inner-wrap">
-                  <h4>
-                    Update 2021-02-16
-                  </h4>
+                  
+#### Update 2021-02-16
+                  
                   
                   <p>
                     I've written a new post [Multilingual Windows 10 20H2 OSD with ConfigMgr](https://sysmansquad.com/2021/02/16/multilingual-windows-10-20h2-osd-with-configmgr/) which walks you through the detail on how to do this with Windows 10 2004 and onwards.
@@ -104,17 +104,17 @@ tags:
                   Throughout examples I'll assume your OS media is something like en-us, the target language is fr-fr and we're deploying Windows 10 1909.
                 </p>
                 
-                <h2>
-                  Difference between LP, LXP, LIP and FoDs
-                </h2>
+                
+## Difference between LP, LXP, LIP and FoDs
+                
                 
                 <p>
                   Language Pack (LP), Language Experience Pack (LXP), Language Interface Pack (LIP) and Features on Demand (FoD). For simplicity I'm just going to use acronyms from here on out.
                 </p>
                 
-                <h3>
-                  Language Packs
-                </h3>
+                
+### Language Packs
+                
                 
                 <p>
                   These apparently used to come as <code>lp.cab</code> files in the "good ol' days". However more recently the naming convention is something like <code>Microsoft-Windows-Client-Language-Pack_x64_fr-fr.cab</code>. These are grabbed from VLSC or MSDN / Visual Studio Subscription in an ISO.
@@ -204,9 +204,9 @@ dism.exe /Image:"%OSDTargetSystemDrive%" /ScratchDir:%OSDTargetSystemDrive%Windo
                   Looks good, right? Well, sadly not. Let's discuss the 3 drawbacks with this approach:
                 </p>
                 
-                <h4>
-                  1) Start menu search does not work
-                </h4>
+                
+#### 1) Start menu search does not work
+                
                 
                 <p>
                   You will find that the start menu search, and perhaps other things, just don't work unless you (re)install the latest cumulative update.
@@ -224,9 +224,9 @@ dism.exe /Image:"%OSDTargetSystemDrive%" /ScratchDir:%OSDTargetSystemDrive%Windo
                   [The order of install matters](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/features-on-demand-v2--capabilities). First add LPs, FoDs and then apps in that order. If you install a cumulative update before any of those, then the update will want reinstalling.
                 </p>
                 
-                <h4>
-                  2) The "InstallLanguage" issue
-                </h4>
+                
+#### 2) The "InstallLanguage" issue
+                
                 
                 <p>
                   If you're not familiar with the InstallLanguage issue, then it's well explained in the below Ignite 2019 session at around 7:45:
@@ -279,9 +279,9 @@ dism.exe /Image:"%OSDTargetSystemDrive%" /ScratchDir:%OSDTargetSystemDrive%Windo
                   Some of the above could be costly one way or another. It could mean more storage server side, more steps in your task sequence or saturated links. Take your pick. But maybe you're not happy with the options and you're convinced that there's got to be another way. Or maybe you need a little more translation than what's currently offered. In which case keep reading...
                 </p>
                 
-                <h4>
-                  3) Not enough translation
-                </h4>
+                
+#### 3) Not enough translation
+                
                 
                 <p>
                   Another problem with installing _only_ LPs is the limited translation support compared to the supposedly 110 languages available in Windows 10.
@@ -303,9 +303,9 @@ dism.exe /Image:"%OSDTargetSystemDrive%" /ScratchDir:%OSDTargetSystemDrive%Windo
                   So let's move on to LXPs, but first let's briefly mention LIPs.
                 </p>
                 
-                <h3>
-                  Language Interface Packs
-                </h3>
+                
+### Language Interface Packs
+                
                 
                 <p>
                   Not much to be said about these. Essentially all there is to it: LIPs are out, LXPs are in.
@@ -319,9 +319,9 @@ dism.exe /Image:"%OSDTargetSystemDrive%" /ScratchDir:%OSDTargetSystemDrive%Windo
                   All you do need to know is that LIPs provided partial translations to popular / common areas of the UI where LPs fell short.
                 </p>
                 
-                <h3>
-                  Language Experience Packs
-                </h3>
+                
+### Language Experience Packs
+                
                 
                 <p>
                   LXPs serve the same purpose as LIPs; they still provided partial translations where the LP fell short.
@@ -553,9 +553,9 @@ dism.exe /Image:"%OSDTargetSystemDrive%" /ScratchDir:%OSDTargetSystemDrive%Windo
                 </div>
                 
                 <div class="uagb-section__inner-wrap">
-                  <h4>
-                    Update 2020-07-29
-                  </h4>
+                  
+#### Update 2020-07-29
+                  
                   
                   <p>
                     I've been able to reproduce a reported issue where if we install en-gb (LP + LXP) over en-us (as base language) using the guidelines in this blog post. You will see strange things immediately after OSD:
@@ -601,9 +601,9 @@ Get-CimInstance -Namespace "Rootcimv2mdmdmmap" -ClassName "MDM_EnterpriseModernA
                   OK, we now have a task sequence which resolves most of the biggest issues with Windows 10 multi language OSD. What else should you be interested about? FoDs!
                 </p>
                 
-                <h3>
-                  Features on Demand
-                </h3>
+                
+### Features on Demand
+                
                 
                 <p>
                   FoDs complete the user experience for languages on Windows 10. They give users Windows 10 features such as handwriting recognition, speech recognition, fonts, OCR and text to speech (and many more) in their desired language.
@@ -725,9 +725,9 @@ Get-CimInstance -Namespace "Rootcimv2mdmdmmap" -ClassName "MDM_EnterpriseModernA
                   <figure class="aligncenter size-medium">[![](finalts-fodstep.jpg)](finalts-fodstep.jpg)<figcaption>Example step to install FoD</figcaption></figure>
                 </div>
                 
-                <h2>
-                  Make new languages available via the Software Center
-                </h2>
+                
+## Make new languages available via the Software Center
+                
                 
                 <p>
                   Take the scenario where you have a built machine already given to a user, however some time later that user (or another user) wants to change language. What are your options to change localisation after OSD?
@@ -741,9 +741,9 @@ Get-CimInstance -Namespace "Rootcimv2mdmdmmap" -ClassName "MDM_EnterpriseModernA
                   [Check out this blog post I wrote](https://sysmansquad.com/2020/06/08/deploy-languages-via-software-center-with-pscmwin10language/), where I show you how to use my PowerShell module [PSCMWin10Language](https://github.com/codaamok/PSCMWin10Language) to create LP, LXP and FoD repositories and create ConfigMgr Applications using those repositories to deploy via the Software Center.
                 </p>
                 
-                <h2>
-                  Windows 10 2004 improvements to languages
-                </h2>
+                
+## Windows 10 2004 improvements to languages
+                
                 
                 <p>
                   I keep bringing up this Ignite session but it truly was amazing.
@@ -779,9 +779,9 @@ Get-CimInstance -Namespace "Rootcimv2mdmdmmap" -ClassName "MDM_EnterpriseModernA
                   My only gripe, still, is that there's still a remark in there about pushing to use LXP instead of LP, which I still don't understand or agree with. However, nonetheless, this is a hugely welcomed improvement.
                 </p>
                 
-                <h2>
-                  Closing thoughts
-                </h2>
+                
+## Closing thoughts
+                
                 
                 <p>
                   As I've mentioned, Microsoft want us to get away from using LP and instead use LXP, but I don't see how that's possible. If the partial translation of LXPs is good enough for your users, then I totally agree with that recommendation. But I'd imagine most users might need a totally translated experience for Windows 10, in which case you still need the LP in there.

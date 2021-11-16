@@ -29,9 +29,9 @@ categories:
               [Shut up and give me the task sequence](#shut-up-and-give-me-the-task-sequence)<li class="uagb-toc__list">
                 [Trust but verify](#trust-but-verify)<li class="uagb-toc__list">
                   [Wrap up](#wrap-up)<li class="uagb-toc__list">
-                    [Further reading](#further-reading)</ol> </div> </div> </div> <h2>
-                      Introduction
-                    </h2>
+                    [Further reading](#further-reading)</ol> </div> </div> </div> 
+## Introduction
+                    
                     
                     <p>
                       In this post I'm going to share with you a task sequence for ConfigMgr / SCCM / MEMCM / MECM / MCM (this is just getting silly now) that localises Windows 10 to a language other than the default language of the OS install media.
@@ -57,9 +57,9 @@ categories:
                       Language Pack (LP), Language Experience Pack (LXP), Language Interface Pack (LIP) and Features on Demand (FoD). For simplicity I’m just going to use acronyms from here on out.
                     </p>
                     
-                    <h2>
-                      What changed?
-                    </h2>
+                    
+## What changed?
+                    
                     
                     <p>
                       Microsoft created a difference between system default language and user default language.
@@ -137,9 +137,9 @@ categories:
                       Above is what <code>HKLM:SYSTEM\CurrentControlSet\Control\Nls\Language</code> looks like after building a Windows 10 2004 or 20H2 system and changing the user default language to French (fr-fr - 040c), not the system default language (en-us - 0409)!
                     </p>
                     
-                    <h2>
-                      Prerequisites
-                    </h2>
+                    
+## Prerequisites
+                    
                     
                     <p>
                       Before we get started, [I still recommend you create LXP and FoD repositories](https://sysmansquad.com/2020/06/08/deploy-languages-via-software-center-with-pscmwin10language/).
@@ -264,9 +264,9 @@ New-FoDLanguageFeaturesRepository -Language "fr-FR", "de-DE" -SourcePath "E:\" -
                       Using the OSDWindowsSettings* collection variables so they're picked up in your task sequence is completely optional. If you you prefer, you can of course use your own conditions in your task sequence and have multiple <code>Apply Windows Settings</code> steps if you prefer, and for each of those <code>Apply Windows Settings</code> steps you would choose the language options from each dropdown.
                     </p>
                     
-                    <h2>
-                      Shut up and give me the task sequence
-                    </h2>
+                    
+## Shut up and give me the task sequence
+                    
                     
                     <p>
                       [Download Exported Task Sequence](https://github.com/SysManSquad/BlogFiles/raw/master/codaamok/Multilingual%20Windows%2010%2020H2%20OSD%20with%20ConfigMgr/SysManSquadMultilingualWindows10TaskSequence-20200213.zip)
@@ -304,9 +304,9 @@ New-FoDLanguageFeaturesRepository -Language "fr-FR", "de-DE" -SourcePath "E:\" -
                       After running the task sequence, the result on the device is that it will have a system default language of en-us, and a user default language of either fr-fr or de-de.
                     </p>
                     
-                    <h2>
-                      Trust but verify
-                    </h2>
+                    
+## Trust but verify
+                    
                     
                     <p>
                       *-shudders-*
@@ -324,17 +324,17 @@ New-FoDLanguageFeaturesRepository -Language "fr-FR", "de-DE" -SourcePath "E:\" -
                       Therefore the moment Windows 10 21H1 comes out, we should all be testing we can upgrade IPU / feature update from 2004, with no InstallLanguage issue. In theory, the InstallLanguage is literally non-existent and we can see that now from looking at the registry of a 2004/20H2 system today.
                     </p>
                     
-                    <h2>
-                      Wrap up
-                    </h2>
+                    
+## Wrap up
+                    
                     
                     <p>
                       I hope you found my content on localising Windows 10 helpful. I get a kick out of doing this for the community when I know I've helped someone. If you have any issues/questions, comment below or DM/tweet on Twitter [@codaamok](https://twitter.com/codaamok). Equally, if any of this helped, still let me know.
                     </p>
                     
-                    <h2>
-                      Further reading
-                    </h2>
+                    
+## Further reading
+                    
                     
                     <ul>
                       <li>

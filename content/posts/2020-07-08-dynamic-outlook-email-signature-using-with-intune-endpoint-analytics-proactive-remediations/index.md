@@ -98,7 +98,7 @@ The information required for these can be found in Azure AD in the app propertie
 `$clientSecret`
 
 <p class="has-very-light-gray-background-color has-background">
-  *Pro Tip: the v1.0 graph will only return a few basic attributes about the user, the beta graph returns a whole lot more. *
+  *Pro Tip: the v1.0 graph will only return a few basic attributes about the user, the beta graph returns a whole lot more.*
 </p>
 
 

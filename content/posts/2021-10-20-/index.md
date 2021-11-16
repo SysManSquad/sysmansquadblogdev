@@ -21,9 +21,9 @@ Yet Jamf does not have a built-in integration for Okta in its Cloud Identity Pro
 In comes Okta LDAP Interface.
 
 <div class="wp-block-uagb-inline-notice uagb-inline_notice__outer-wrap uagb-inline_notice__align-left uagb-block-5be48def">
-  <h4 class="uagb-notice-title">
-    Plagiarism Alert
-  </h4>
+  
+#### Plagiarism Alert
+  
   
   <div class="uagb-notice-text">
     <p>
@@ -82,9 +82,9 @@ In comes Okta LDAP Interface.
   <figure class="wp-block-media-text__media"></figure>
   
   <div class="wp-block-media-text__content">
-    <h3>
-      Create the Service Account
-    </h3>
+    
+### Create the Service Account
+    
     
     <ol>
       <li>
@@ -119,9 +119,9 @@ In comes Okta LDAP Interface.
   <figure class="wp-block-media-text__media"></figure>
   
   <div class="wp-block-media-text__content">
-    <h3>
-      Exclude Service Account from MFA
-    </h3>
+    
+### Exclude Service Account from MFA
+    
     
     <p>
       If you don't use MFA (how is that possible??), you can skip this section.
@@ -140,9 +140,9 @@ In comes Okta LDAP Interface.
   <figure class="wp-block-media-text__media"></figure>
   
   <div class="wp-block-media-text__content">
-    <h4>
-      Option 1: Exclude Service Account from Existing Policy
-    </h4>
+    
+#### Option 1: Exclude Service Account from Existing Policy
+    
     
     <ol>
       <li>
@@ -156,9 +156,9 @@ In comes Okta LDAP Interface.
   <figure class="wp-block-media-text__media"></figure>
   
   <div class="wp-block-media-text__content">
-    <h4>
-      Option 2: Create new group and policy blocking MFA
-    </h4>
+    
+#### Option 2: Create new group and policy blocking MFA
+    
     
     <ol>
       <li>
