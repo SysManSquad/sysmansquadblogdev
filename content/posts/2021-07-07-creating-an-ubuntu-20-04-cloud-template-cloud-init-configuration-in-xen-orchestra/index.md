@@ -39,8 +39,9 @@ Here is the short version of how this works:
 
 ## Example cloud-init configs:
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"user-config.yaml","language":"PowerShell","modeName":"powershell"}">#cloud-config
+
+```powershell 
+#cloud-config
 hostname: {name}
 users:
   - name: jappleseed
@@ -62,8 +63,9 @@ ca-certs:
     AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
     AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
     AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-    -----END CERTIFICATE-----</pre>
-</div>
+    -----END CERTIFICATE-----
+```
+
 
 <div class="wp-block-uagb-inline-notice uagb-inline_notice__outer-wrap uagb-inline_notice__align-left uagb-block-738d57a5">
   <h4 class="uagb-notice-title">
@@ -77,8 +79,9 @@ ca-certs:
   </div>
 </div>
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"network.yaml","language":"PowerShell","modeName":"powershell"}">#network:
+
+```powershell 
+#network:
     version: 2
     renderer: networkd
     ethernets:
@@ -89,8 +92,9 @@ ca-certs:
             gateway4: 192.168.0.1
             nameservers:
                 search: [example.com]
-                addresses: [192.168.0.1, 8.8.8.8]</pre>
-</div>
+                addresses: [192.168.0.1, 8.8.8.8]
+```
+
 
 ## Caveats
 

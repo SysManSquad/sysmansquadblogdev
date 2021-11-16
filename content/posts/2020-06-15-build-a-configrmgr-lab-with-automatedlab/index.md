@@ -46,9 +46,10 @@ At the time I found AutomatedLab, the ConfigMgr / SCCM / MEMCM / MECM (ARGH!) Cu
 
 First things first, make sure you have got the latest version of the AutomatedLab module installed. Compare your installed version with what's available on the [AutomatedLab repository assets page](https://github.com/AutomatedLab/AutomatedLab/releases):
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":true,"showPanel":false,"languageLabel":"no","language":"PowerShell","modeName":"powershell"}">PS C:\&gt; Get-Module "AutomatedLab" -ListAvailable</pre>
-</div>
+
+```powershell 
+
+
 
 <div class="wp-block-image">
   <figure class="aligncenter size-medium">[![](ALInstalledModule.jpg)](ALInstalledModule.jpg)<figcaption>Get installed version of AutomatedLab</figcaption></figure>
@@ -65,10 +66,11 @@ However, there's a high probability that what's in my repository is going to con
 
 Download using either `git` or just download ZIP from the repository's web page:
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
+
   <pre class="CodeMirror" data-setting="{"mode":"shell","mime":"text/x-sh","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":true,"showPanel":false,"languageLabel":"no","language":"Shell","modeName":"shell"}">cd C:\path\to\where\you\want\to\download
-git clone https://github.com/codaamok/PoSH.git</pre>
-</div>
+git clone https://github.com/codaamok/PoSH.git
+```
+
 
 <div class="wp-block-image">
   <figure class="aligncenter size-medium">![](CM2002ALDownloadZip.jpg)<figcaption>Download as ZIP from [https://github.com/codaamok/posh](https://github.com/codaamok/posh)</figcaption></figure>
@@ -78,9 +80,11 @@ Now the content is downloaded, we must copy only the `CustomRole\CM-2002` folder
 
 If you were to use PowerShell, the command would look like this:
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":true,"showPanel":false,"languageLabel":"no","language":"PowerShell","modeName":"powershell"}">PS C:\&gt; Copy-Item -Path "C:\path\to\where\you\downloaded\PoSH\AutomatedLab\CustomRoles\CM-2002" -Destination "C:\LabSources\CustomRoles" -Recurse -Force</pre>
-</div>
+
+```powershell 
+PS C:\&gt; Copy-Item -Path "C:\path\to\where\you\downloaded\PoSH\AutomatedLab\CustomRoles\CM-2002" -Destination "C:\LabSources\CustomRoles" -Recurse -Force
+```
+
 
 Make sure you have a Windows Server 2016 or 2019 ISO (Evaluation will be fine) in your `C:\LabSources\ISOs` directory.
 

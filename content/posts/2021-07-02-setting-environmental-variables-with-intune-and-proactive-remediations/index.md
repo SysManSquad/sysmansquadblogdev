@@ -21,9 +21,10 @@ As you may have noticed by now, there doesn't seem to be any nice built in way t
 
 Setting a user environmental variable using powershell is an easy task to accomplish, you basically just run the following:
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"example.ps1","language":"PowerShell","modeName":"powershell"}">Set-ItemProperty -Path HKCU:\Environment -Name temp -Value "c:\temp\"</pre>
-</div>
+
+```powershell 
+
+
 
 This works just fine, but won't take effect until the user either reboots or signs into the device again. Which is obviously not ideal.
 
@@ -33,9 +34,10 @@ I spent a little time looking into this and i found out that when you change the
 
 As it turned out, my fellow sysmansquad member [Grant Dickins](https://sysmansquad.com/author/gduk/) had a solution to the problem.
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Example 2.ps1","language":"PowerShell","modeName":"powershell"}">[System.Environment]::SetEnvironmentVariable('TEMP','c:\temp\','User')</pre>
-</div>
+
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Example 2.ps1","language":"PowerShell","modeName":"powershell"}">[System.Environment]::SetEnvironmentVariable('TEMP','c:\temp\','User')
+```
+
 
 Which both sets the variable and broadcasts the change to the rest of the system!
 
@@ -55,8 +57,9 @@ First up is the Detection script, pretty simple stuff, it checks if the temp and
 
 Note that if you want to use a different path, just change line 5 in both scripts.
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Detection.ps1","language":"PowerShell","modeName":"powershell"}"># Discovery
+
+```powershell 
+# Discovery
 
 # path to the directory that TEMP and TMP should point towards
 # Make sure its the same in both the remediation and discovery scripts
@@ -92,13 +95,15 @@ catch {
     $errMsg = $_.Exception.Message
     Write-Host $errMsg
     exit 1 
-}</pre>
-</div>
+}
+```
+
 
 The remediation is not much to write home about. It sets the variables and runs the code needed to refresh the system.
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Remediation.ps1","language":"PowerShell","modeName":"powershell"}"># Remediation
+
+```powershell 
+# Remediation
 
 # path to the directory that TEMP and TMP should point towards
 # Make sure its the same in both the remediation and discovery scripts
@@ -122,8 +127,9 @@ catch {
     $errMsg = $_.Exception.Message
     Write-Host $errMsg
     exit 1 
-}</pre>
-</div>
+}
+```
+
 
 ## Outro
 

@@ -54,11 +54,13 @@ To solve this, you should wrap up the script as a win32 app, deploy it as a requ
 
 Here is a dead simple example code you can use, just change the $DomainGUID to your own
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Set-AADJMachineDomainGuid.ps1","language":"PowerShell","modeName":"powershell"}">$DomainGUID = "a2936ecb-ea97-4854-a494-82a39a3195be"
+
+```powershell 
+$DomainGUID = "a2936ecb-ea97-4854-a494-82a39a3195be"
 new-item -itemtype directory -path "hklm:\Software\Policies\Microsoft\OneDrive" -force
-Set-ItemProperty -Path "hklm:\Software\Policies\Microsoft\OneDrive" -Name "AADJMachineDomainGuid" -Value $DomainGUID -Force</pre>
-</div>
+Set-ItemProperty -Path "hklm:\Software\Policies\Microsoft\OneDrive" -Name "AADJMachineDomainGuid" -Value $DomainGUID -Force
+```
+
 
 ## Final words
 

@@ -78,8 +78,9 @@ Since for most people, downloading the root certificate is a one time operation,
 
 Paste the application GUID into the $AppID variable and you should be ready to go.
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Get-DGSSv2RootCert.ps1","language":"PowerShell","modeName":"powershell"}"># This simple script is used to download the Device Guard Signing Service v2 Root Certificate
+
+```powershell 
+# This simple script is used to download the Device Guard Signing Service v2 Root Certificate
 
 
 # please add your own App ID
@@ -103,8 +104,9 @@ New-Item -Path c:\ -Name "DGCertv2" -ItemType Directory -Force
 Get-RootCertificate -PassThru -OutFile C:\DGCertv2\DGSSv2root.cer -AppId $AppID
 
 # voila! the cert appears before your eyes
-start C:\DGCertv2\</pre>
-</div>
+start C:\DGCertv2\
+```
+
 
 Congrats, you now have a Device Guard Signing Service v2 Root Certificate in your possession.
 

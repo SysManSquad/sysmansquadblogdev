@@ -88,7 +88,8 @@ The actual query to the AdminService is quite simple. I'm querying for all packa
 The rest of the script is simply filtering which driver package is the most suitable with the information provided and then it returns a PackageID. Here is a snippet of the relevant part of the script where we retrieve a list of packages from the AdminService:
 
 <div class="wp-block-codemirror-blocks-code-block alignwide code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Getting the packages from the AdminService","align":"wide","language":"PowerShell","modeName":"powershell"}">        If($PackageType -eq "DriverPackage"){
+```powershell 
+        If($PackageType -eq "DriverPackage"){
             $Filter = "startswith(Name,'Drivers - ')"
         }ElseIf($PackageType -eq "BIOSPackage"){
             $Filter = "startswith(Name,'BIOS Update - ')"
@@ -98,7 +99,8 @@ The rest of the script is simply filtering which driver package is the most suit
             "`$select" = "Name,Description,Manufacturer,Version,SourceDate,PackageID"
         }
 
-        $Packages = (Invoke-RestMethod -Method Get -Uri $WMIPackageURL -Body $Body @Global:InvokeRestMethodCredential | Select-Object -ExpandProperty value)</pre>
+        $Packages = (Invoke-RestMethod -Method Get -Uri $WMIPackageURL -Body $Body @Global:InvokeRestMethodCredential | Select-Object -ExpandProperty value)
+```
 </div>
 
 <div class="wp-block-image">

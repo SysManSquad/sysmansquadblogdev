@@ -37,7 +37,7 @@ Win+R<figure class="wp-block-image size-large is-resized">
     "AutoAdminLogon"="1"
     "ForceAutoLogon"="1"
     "DefaultUserName"="kiosk"
-    "DefaultDomainName"="&lt;place here pc hostname>"
+    "DefaultDomainName"="place here pc hostname>"
     "DefaultPassword"=""
 
 # If you need to disable Ctrl+Alt+Del

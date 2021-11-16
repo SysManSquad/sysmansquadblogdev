@@ -218,13 +218,13 @@ categories:
                       [I did write another blog post](https://sysmansquad.com/2020/06/08/deploy-languages-via-software-center-with-pscmwin10language/) which covers how to use this module in a little more detail if you need it.
                     </p>
                     
-                    <div class="wp-block-codemirror-blocks-code-block code-block">
+                    
                       <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":false,"readOnly":true,"fileName":"PowerShell","language":"PowerShell","modeName":"powershell"}">Install-Module "PSCMWin10Language" -Scope CurrentUser
 Import-Module "PSCMWin10Language"
 New-LPRepository -Language "fr-FR", "de-DE" -SourcePath "D:\x64\langpacks\" -TargetPath "G:\OSD\Windows10-1903-Languages\"
 New-LXPRepository -Language "fr-FR", "de-DE" -SourcePath "D:\LocalExperiencePack" -TargetPath "G:\OSD\Windows10-1903-Languages\"
 New-FoDLanguageFeaturesRepository -Language "fr-FR", "de-DE" -SourcePath "E:\" -TargetPath "G:\OSD\Windows10-1903-Languages\"</pre>
-                    </div>
+                    
                     
                     <div class="wp-block-image">
                       <figure class="aligncenter size-large is-resized">[![](multilingualosdwin1020h2-5-1007x1024.png)](multilingualosdwin1020h2-5.png)<figcaption>New-LPRepository<br /><em>(click to enlarge)</em></figcaption></figure>

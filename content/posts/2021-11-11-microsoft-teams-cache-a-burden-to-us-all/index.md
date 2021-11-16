@@ -20,8 +20,9 @@ This leads me to the bread and butter of this blog post. The following is a smal
 
 ## Microsoft Teams Cache Clearing Script
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"ClearTeamsCache.ps1","language":"PowerShell","modeName":"powershell"}">Write-Output "Killing Microsoft Teams process"
+
+```powershell 
+Write-Output "Killing Microsoft Teams process"
 Stop-Process -Name Teams -Force -erroraction 'silentlycontinue'
 Start-Sleep -seconds 5
 Write-Output "Killing Microsoft Outlook process"
@@ -33,8 +34,9 @@ Start-Sleep -seconds 5  #Probably not required, just makes sure all files are de
 Write-Output "Restarting Microsoft Teams and Microsoft Outlook"
 Start-Process -FilePath "$($env:LOCALAPPDATA)\Microsoft\Teams\Update.exe" -ArgumentList "--processStart Teams.exe"
 Start-Process Outlook
-</pre>
-</div>
+
+```
+
 
 If you are reading this blog post, then you are probably at least somewhat familiar with PowerShell, but nevertheless, let's just go through this cute little PowerShell script right quick
 
@@ -54,9 +56,11 @@ That takes care of the script portion of this blog post. Next, we need to encaps
 
 It is literally a simple as:
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"PS2EXE","language":"PowerShell","modeName":"powershell"}">PS2EXE "ClearTeamsCache.ps1" "ClearTeamsCache.exe"</pre>
-</div>
+
+```powershell 
+PS2EXE "ClearTeamsCache.ps1" "ClearTeamsCache.exe"
+```
+
 
 That is the simplest form you can do. There are a bunch of other switches you can do to add other information like Company Name, Version, Author, etc.
 

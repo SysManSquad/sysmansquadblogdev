@@ -90,13 +90,13 @@ tags:
                                                     
                                                     <ol>
                                                       <li>
-                                                        <code>&lt;strong>New-LabDefinition&lt;/strong></code>
+                                                        <code>strong>New-LabDefinition/strong></code>
                                                       </li>
                                                       <li>
-                                                        <code>&lt;strong>Add-LabMachineDefinition&lt;/strong></code>
+                                                        <code>strong>Add-LabMachineDefinition/strong></code>
                                                       </li>
                                                       <li>
-                                                        <code>&lt;strong>Install-Lab&lt;/strong></code>
+                                                        <code>strong>Install-Lab/strong></code>
                                                       </li>
                                                     </ol>
                                                     
@@ -160,7 +160,7 @@ tags:
                                                     </p>
                                                     
                                                     <p>
-                                                      To opt out, you either set environment variable&nbsp;<strong><code>AUTOMATEDLAB_TELEMETRY_OPTIN</code>&nbsp;</strong>to&nbsp;<code>&lt;strong>false&lt;/strong></code>,&nbsp;<strong><code>no</code>&nbsp;</strong>or&nbsp;<code>&lt;strong>0&lt;/strong></code>. Or simply use&nbsp;<code>&lt;strong>Disable-LabTelemetry&lt;/strong></code>&nbsp;after installing.
+                                                      To opt out, you either set environment variable&nbsp;<strong><code>AUTOMATEDLAB_TELEMETRY_OPTIN</code>&nbsp;</strong>to&nbsp;<code>strong>false/strong></code>,&nbsp;<strong><code>no</code>&nbsp;</strong>or&nbsp;<code>strong>0/strong></code>. Or simply use&nbsp;<code>strong>Disable-LabTelemetry/strong></code>&nbsp;after installing.
                                                     </p>
                                                     
                                                     <p>
@@ -274,7 +274,7 @@ tags:
                                                     </h4>
                                                     
                                                     <p>
-                                                      The setting it changes for CVE-2018-0886 /&nbsp;[KB4093492](https://support.microsoft.com/en-us/help/4093492/credssp-updates-for-cve-2018-0886-march-13-2018)&nbsp;is&nbsp;<code>&lt;strong>AllowEncryptionOracle&lt;/strong></code>&nbsp;=&nbsp;<strong><code>2</code></strong>:
+                                                      The setting it changes for CVE-2018-0886 /&nbsp;[KB4093492](https://support.microsoft.com/en-us/help/4093492/credssp-updates-for-cve-2018-0886-march-13-2018)&nbsp;is&nbsp;<code>strong>AllowEncryptionOracle/strong></code>&nbsp;=&nbsp;<strong><code>2</code></strong>:
                                                     </p>
                                                     
                                                     <pre class="wp-block-code"><code>New-Item -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\CredSSP\Parameters -Force | Out-Null
@@ -348,7 +348,7 @@ Set-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\
                                                     </h4>
                                                     
                                                     <p>
-                                                      AutomatedLab has a concept of “roles” that are installed after a VM OS is installed.&nbsp;[Here are a list](http://automatedlab.org/en/latest/Wiki/roles/)&nbsp;of predefined / “built in” roles. Associating a role with a VM will install applications such as Exchange, Active Directory, SharePoint, SQL, lots of good stuff and more. You associate a role with a VM using the&nbsp;<code>&lt;strong>-Roles&lt;/strong></code>&nbsp;parameter with the&nbsp;<code>&lt;strong>Add-LabMachineDefinition&lt;/strong></code>&nbsp;command.
+                                                      AutomatedLab has a concept of “roles” that are installed after a VM OS is installed.&nbsp;[Here are a list](http://automatedlab.org/en/latest/Wiki/roles/)&nbsp;of predefined / “built in” roles. Associating a role with a VM will install applications such as Exchange, Active Directory, SharePoint, SQL, lots of good stuff and more. You associate a role with a VM using the&nbsp;<code>strong>-Roles/strong></code>&nbsp;parameter with the&nbsp;<code>strong>Add-LabMachineDefinition/strong></code>&nbsp;command.
                                                     </p>
                                                     
                                                     <p>
@@ -400,7 +400,7 @@ Set-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\
                                                     </h4>
                                                     
                                                     <p>
-                                                      This folder can be copied to all VMs in a lab so if there’s files/folders you want in common, populate this folder with what you want and use the&nbsp;<code>&lt;strong>-ToolsPath&lt;/strong></code>&nbsp;parameter with the&nbsp;<code>&lt;strong>Add-LabMachineDefinition&lt;/strong></code>&nbsp;command.
+                                                      This folder can be copied to all VMs in a lab so if there’s files/folders you want in common, populate this folder with what you want and use the&nbsp;<code>strong>-ToolsPath/strong></code>&nbsp;parameter with the&nbsp;<code>strong>Add-LabMachineDefinition/strong></code>&nbsp;command.
                                                     </p>
                                                     
                                                     <h2>
@@ -423,7 +423,7 @@ Set-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\
                                                         Create a three VM lab all running Windows Server 2019 Datacenter (Desktop Experience)
                                                       </li>
                                                       <li>
-                                                        The domain will be whatever you passed for the&nbsp;<code>&lt;strong>-Domain&lt;/strong></code>&nbsp;parameter
+                                                        The domain will be whatever you passed for the&nbsp;<code>strong>-Domain/strong></code>&nbsp;parameter
                                                       </li>
                                                       <li>
                                                         All VMs will be networked only with each other using 192.168.123.0/24 address space
@@ -445,7 +445,7 @@ Set-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\
                                                     </p>
                                                     
                                                     <p>
-                                                      To delete individual VMs, use&nbsp;<strong><code>&lt;a href="http://automatedlab.org/en/latest/AutomatedLab/en-us/Remove-LabVM/">Remove-LabVM&lt;/a></code></strong>. To remove all VMs associated with a lab, use&nbsp;<strong><code>&lt;a href="http://automatedlab.org/en/latest/AutomatedLab/en-us/Remove-Lab/">Remove-Lab&lt;/a></code></strong>&nbsp;.
+                                                      To delete individual VMs, use&nbsp;<strong><code>a href="http://automatedlab.org/en/latest/AutomatedLab/en-us/Remove-LabVM/">Remove-LabVM/a></code></strong>. To remove all VMs associated with a lab, use&nbsp;<strong><code>a href="http://automatedlab.org/en/latest/AutomatedLab/en-us/Remove-Lab/">Remove-Lab/a></code></strong>&nbsp;.
                                                     </p>
                                                     
                                                     <p>
@@ -453,7 +453,7 @@ Set-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\
                                                     </p>
                                                     
                                                     <p>
-                                                      As for adding machines to an existing lab, at the time of writing this, there’s no function available within AutomatedLab to specifically add a new VM to an existing lab. It’s only achievable by modifying or creating a new AutomatedLab script with the same properties (e.g. domain, address space etc) and calling&nbsp;<code>&lt;strong>Install-Lab -NoValidation&lt;/strong></code>.
+                                                      As for adding machines to an existing lab, at the time of writing this, there’s no function available within AutomatedLab to specifically add a new VM to an existing lab. It’s only achievable by modifying or creating a new AutomatedLab script with the same properties (e.g. domain, address space etc) and calling&nbsp;<code>strong>Install-Lab -NoValidation/strong></code>.
                                                     </p>
                                                     
                                                     <p>

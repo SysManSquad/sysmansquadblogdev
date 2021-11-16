@@ -113,7 +113,7 @@ Then I added the new Boundary to my VPN Boundary Group.
 
 What happened next confused me. After forcing a few clients to update their Machine Policy, I saw VPN-connected devices drop _out_ of the VPN Boundary Group that I added my newly-created Boundary to. I double-checked my own machine:
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
+
   <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"tomorrow-night-bright","lineNumbers":false,"styleActiveLine":false,"lineWrapping":true,"readOnly":false,"languageLabel":"language","language":"PowerShell","modeName":"powershell"}">Get-CimInstance -Namespace "rootccmLocationServices" -ClassName "BoundaryGroupCache"```
 
 The output revealed that my machine was no longer in my VPN Boundary Group, and instead was merely in the fallback Default Boundary Group.  
@@ -130,7 +130,7 @@ Taking to Twitter, I posted a message...<figure class="wp-block-embed-twitter wp
       
       [August 27, 2020](https://twitter.com/robdotyork/status/1298788226606329858?ref_src=twsrc%5Etfw)
     </blockquote>
-  </div>
+  
 </div></figure> 
 
 and none other than Rob York responded, inadvertently leading me to answer my own question<figure class="wp-block-embed-twitter wp-block-embed is-type-rich is-provider-twitter">

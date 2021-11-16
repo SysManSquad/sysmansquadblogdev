@@ -26,8 +26,9 @@ Using Group Policies, this is a trivial task, but Intune has no proper built in 
 
 Relatively straight forward, the script checks if the relevant filesystem rights have been assigned, if not, it will error out and report non-compliance
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Discovery.ps1","language":"PowerShell","modeName":"powershell"}"># Discovery
+
+```powershell 
+# Discovery
 $acl = Get-Acl -Path 'C:\Users\Public\Desktop'
 $aclEveryone = $acl.Access | where { $_.IdentityReference -like "everyone" } 
 
@@ -48,15 +49,17 @@ catch {
     $errmeg = $_.exception.message
     Write-Error $errmeg
     exit 1
-}</pre>
-</div>
+}
+```
+
 
 ## Remediation
 
 Should the discovery report non-compliance, the following will execute.
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Remediation.ps1","language":"PowerShell","modeName":"powershell"}"># Remediation
+
+```powershell 
+# Remediation
 
 try {
     $acl = Get-Acl -Path 'C:\Users\Public\Desktop'
@@ -72,8 +75,9 @@ catch {
     $errMsg = $_.Exception.Message
     Write-Error $errMsg
     exit 1
-}</pre>
-</div>
+}
+```
+
 
 ## Deployment
 

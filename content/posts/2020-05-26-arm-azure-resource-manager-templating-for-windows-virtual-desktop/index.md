@@ -40,8 +40,9 @@ We are going to have to create a few **resource groups**, a **key vault**, and a
 
 We are going to open Powershell as an Admin and install the required module to connect to Azure. Then we'll create a few resource groups to store our images, our secure passwords in a keyvault, and a storage account for our powershell scripts and other items we may need. Feel free to change the names and location as you see fit (Remember to keep location the same throughout).
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"resourcecreation.ps1","language":"PowerShell","modeName":"powershell"}">Install-module azaccount -force
+
+```powershell 
+Install-module azaccount -force
 Connect-azaccount
 #Change to your desired location
 $location = "centralus"
@@ -60,12 +61,13 @@ New-AzStorageAccount -ResourceGroupName $storageaccount -Name $storagename -Loca
 #ARM template for creating a keyvault provided by Microsoft
 $templateUri = "https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/tutorials-use-key-vault/CreateKeyVault.json"
 #Creates keyvault and stores $secretvalue
-New-AzResourceGroupDeployment -ResourceGroupName $storageaccount -TemplateUri $templateUri -keyVaultName $keyVaultName -adUserId $adUserId -secretValue $secretValue</pre>
-</div>
+New-AzResourceGroupDeployment -ResourceGroupName $storageaccount -TemplateUri $templateUri -keyVaultName $keyVaultName -adUserId $adUserId -secretValue $secretValue
+```
+
 
 After the last line you should see some output, you'll want to copy the value called _keyVaultId_ for later, it should look similar to this: 
 
-<pre class="wp-block-code"><code>/subscriptions/&lt;SubscriptionID>/resourceGroups/mykeyvaultdeploymentrg/providers/Microsoft.KeyVault/vaults/&lt;KeyVaultName></code></pre>
+<pre class="wp-block-code"><code>/subscriptions/SubscriptionID>/resourceGroups/mykeyvaultdeploymentrg/providers/Microsoft.KeyVault/vaults/KeyVaultName></code></pre>
 
 ### Adding files to our storage account
 
@@ -75,17 +77,20 @@ At this point you'll want to have your powershell scripts that you want to execu
 
 Below is an example of the module install script I have. 
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"moduleinstall.ps1","language":"PowerShell","modeName":"powershell"}">Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
+
+```powershell 
+Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
 Install-Module -Name PSFTP -Force
 
-./config.ps1</pre>
-</div>
+./config.ps1
+```
+
 
 The next script is an example of my configuration script. 
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"config.ps1","language":"PowerShell","modeName":"powershell"}">Try{
+
+```powershell 
+Try{
 #DO ALL THE FANCY THINGS here like your reg changes, or whatever else.
 #You can upload the FSLogix.exe to the storage account which we will go over below
 #Start-Process -Wait -FilePath ./FSLogixAppsSetup.exe -ArgumentList "/quiet" -PassThru
@@ -102,8 +107,9 @@ finally {
 }
 #This will sysprep the machine, make sure it's the last step
 Start-Process -FilePath C:\Windows\System32\Sysprep\Sysprep.exe -ArgumentList '/generalize /oobe /quiet /quit'  -Wait 
-Stop-Computer -ComputerName localhost -Force</pre>
-</div>
+Stop-Computer -ComputerName localhost -Force
+```
+
 
 ### Using the storage account
 
@@ -158,7 +164,7 @@ Now we are going to add all the extras to this template that let us dynamically 
   2. In parameters.json change the "adminPassword" from  
     <span class="has-inline-color has-vivid-cyan-blue-color"><code>"adminPassword":&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"value":&nbsp;null&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</code></span>  
     to  
-    <span class="has-inline-color has-vivid-cyan-blue-color"><code>"adminPassword": {&lt;br>"reference": {&lt;br>"keyVault": {&lt;br>"id": "THE KEYVAULTID ID YOU COPIED EARLIER"&lt;br>},&lt;br>"secretName": "vmAdminPassword"&lt;br>}</code></span>
+    <span class="has-inline-color has-vivid-cyan-blue-color"><code>"adminPassword": {br>"reference": {br>"keyVault": {br>"id": "THE KEYVAULTID ID YOU COPIED EARLIER"br>},br>"secretName": "vmAdminPassword"br>}</code></span>
   3. Change the id to the KeyVaultID you copied earlier
   4. The rest of parameters.json can be left as is, you can override these values later in our execution script if desired
   5. Open template.json
@@ -168,8 +174,9 @@ Now we are going to add all the extras to this template that let us dynamically 
     `}`  
     add the following after (Make sure it's after the bracket)
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"template.json","language":"PowerShell","modeName":"powershell"}">        },
+
+```powershell 
+        },
         {
   "type": "Microsoft.Compute/virtualMachines/extensions",
   "apiVersion": "2019-12-01",
@@ -190,8 +197,9 @@ Now we are going to add all the extras to this template that let us dynamically 
         ],
         "commandToExecute": "powershell.exe -ExecutionPolicy Unrestricted -File moduleinstall.ps1"
       }
-  }</pre>
-</div>
+  }
+```
+
 
 You will notice under fileUris we have two URLTOCHANGELATER items on lines 17 and 18, we are going to change that to the two SAS token URLs you copied earlier. You can add more URLs with a comma for things like the FSLogix installation exe. On line 20 you will want to change the -File to match the name of your moduleinstall script.
 
@@ -209,8 +217,9 @@ Below I will be posting the script I use to make the magic happen. It will conne
 
 This can be changed to meet your preferences. You'll notice on lines 16-18 I specified a virtualMachineName, networkInferfaceName, publicIpAddressName, all three of these items have a default, and can be found in our parameters.json - however by defining them in our script I'm overwriting the default values to give us a bit more flexibility. 
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"magic.ps1","language":"PowerShell","modeName":"powershell"}">Connect-azaccount
+
+```powershell 
+Connect-azaccount
 $vmName = "TempMachine"
 $imagename = Read-Host -Prompt 'Input a unique image name'
 Do {
@@ -235,8 +244,9 @@ Set-AzVM  -ResourceGroupName $resourceGroupName -Name $vm.name -Generalized
 $image = New-AzImageConfig -Location $location -SourceVirtualMachineId $vm.Id
 New-AzImage -Image $image -ImageName $imagename -ResourceGroupName $imageLocation
 
-Get-AzResourceGroup -Name $resourceGroupName | Remove-AzResourceGroup  -Force</pre>
-</div>
+Get-AzResourceGroup -Name $resourceGroupName | Remove-AzResourceGroup  -Force
+```
+
 
 Resources:  
 <https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/template-tutorial-use-key-vault>  

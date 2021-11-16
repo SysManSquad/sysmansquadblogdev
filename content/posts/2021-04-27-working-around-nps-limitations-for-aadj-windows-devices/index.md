@@ -153,7 +153,7 @@ param(
 $orgUnit = "OU=Dummy Devices,OU=Devices,DC=yourdomain,DC=tld" 
 
 # Set the certificate path for name mapping
-$certPath = "X509:&lt;I&gt;DC=tld,DC=yourdomain,CN=your-CA&lt;S&gt;CN=" 
+$certPath = "X509:I&gt;DC=tld,DC=yourdomain,CN=your-CAS&gt;CN=" 
 
 # Prepare SAMAccountName based off of length constraints
 $SAMAccountName = if ($deviceName.Length -ge 15) {$deviceName.Substring(0,15) + "$"} else {$deviceName + "$"}
@@ -240,7 +240,7 @@ if ($nameMap) {
                             For my use case, I needed something that I could run on a schedule and forget about. This more advanced version of the script pulls down all of the Autopilot devices from MS Graph using the 'WindowsAutopilotIntune' module. It then uses the 'ActiveDirectory' module to create/prepare matching computer objects in AD.
                           </p>
                           
-                          <div class="wp-block-codemirror-blocks-code-block code-block">
+                          
                             <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"base16-dark","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Sync-DummyComputers.ps1","language":"PowerShell","modeName":"powershell"}">[CmdletBinding(DefaultParameterSetName = 'Default')]
 param(
     [Parameter(Mandatory=$True)] [String] $TenantId = "",
@@ -270,7 +270,7 @@ $AutopilotDevices = Get-AutopilotDevice | Select-Object azureActiveDirectoryDevi
 $orgUnit = "OU=Dummy Devices,OU=Devices,DC=yourdomain,DC=tld" 
 
 # Set the certificate path for name mapping
-$certPath = "X509:&lt;I&gt;DC=tld,DC=yourdomain,CN=your-CA&lt;S&gt;CN=" 
+$certPath = "X509:I&gt;DC=tld,DC=yourdomain,CN=your-CAS&gt;CN=" 
 
 # Create new Autopilot computer objects in AD while skipping already existing computer objects
 foreach ($Device in $AutopilotDevices) {
@@ -306,7 +306,7 @@ foreach ($DummyDevice in $DummyDevices) {
         #Remove -WhatIf once you are comfortrable with this workflow and have verified the remove operations are only performed in the OU you specified
     }
 }</pre>
-                          </div>
+                          
                           
                           <p>
                             Here is a play-by-play of the script:

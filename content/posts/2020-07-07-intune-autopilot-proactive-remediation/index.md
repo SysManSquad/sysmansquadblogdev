@@ -38,8 +38,9 @@ You'll notice by default we have two Script Packages that Microsoft authored. Af
 
 ### First we need to create a Detection script
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Detection.ps1","language":"PowerShell","modeName":"powershell"}">try{
+
+```powershell 
+try{
     if (Get-VpnConnection -AllUserConnection -Name "VPN" -ErrorAction Stop)
     {
         write-host "Success"
@@ -51,8 +52,9 @@ catch{
     $errMsg = $_.Exception.Message
     write-host $errMsg
     exit 1
-}</pre>
-</div>
+}
+```
+
 
 The above detection script is the generic format you should use for detection logic. You'll notice it's a simple try-catch. In this script we are checking to see if a VPN connection exists. You can make these detection scripts as robust as you'd like but for this scenario we are making it simplistic. You can copy the above and simply change Line 2 to whatever you'd like to test. I would STRONGLY encourage you to include the **-ErrorAction Stop** section as not all PowerShell cmdlets exit without throwing the cmdlet error, and this will ensure that they exit with the proper exit codes you define. On a exit code of 0 it's reported as "Without Issues" in the portal. Nothing else will happen and the detection script will run again at the scheduled time. In the event an Exit code of 1 is thrown the remediation script will run. If no exit code is thrown the detection script will report as Failed and you'll need to adjust the script. As an example on the above script if you remove the **-ErrorAction Stop** section the detection fails because Get-VPNConnection doesn't throw the correct cmdlet error which results in the exit code not being defined. 
 
@@ -60,8 +62,9 @@ If you'd like to read more on error handling and exceptions Kevin Marquette has 
 
 ### Next lets make a remediation script
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Remediation.ps1","language":"PowerShell","modeName":"powershell"}">try{
+
+```powershell 
+try{
     Add-VpnConnection -Name "VPN" -ServerAddress "VPN.Contoso.loc" -TunnelType L2TP -L2tpPsk "SecretPassword" -Force -AuthenticationMethod PAP -RememberCredential -AllUserConnection -ErrorAction Stop
     exit 0
 }
@@ -69,8 +72,9 @@ catch{
     $errMsg = $_.Exception.Message
     Write-host $errMsg
     exit 1
-}</pre>
-</div>
+}
+```
+
 
 The above remediation script, just like the detection script, is a try-catch. You'll see that I add The VPN connection and in the event of a failure it writes to the host what the error was. This is going to be important for diagnosing why your script fails if it does. This is included in both the detection and remediation scripts I've shown. Much like the detection script feel free to change Line 2 to whatever you'd like and expand upon it.
 

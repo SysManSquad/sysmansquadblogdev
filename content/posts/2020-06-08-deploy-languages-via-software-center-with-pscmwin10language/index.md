@@ -52,18 +52,18 @@ tags:
                 The module can be found on [GitHub](https://github.com/codaamok/PSCMWin10Language) or the [PowerShell Gallery](https://www.powershellgallery.com/packages/PSCMWin10Language/0.0.1). You can install it like so:
               </p>
               
-              <div class="wp-block-codemirror-blocks-code-block code-block">
+              
                 <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":true,"languageLabel":"language","language":"PowerShell","modeName":"powershell"}">Install-Module "PSCMWin10Language" -Scope CurrentUser</pre>
-              </div>
+              
               
               <p>
                 Check out what functions are given to you:
               </p>
               
-              <div class="wp-block-codemirror-blocks-code-block code-block">
+              
                 <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":true,"languageLabel":"language","language":"PowerShell","modeName":"powershell"}">Import-Module "PSCMWin10Language"
 Get-Command -Module "PSCMWin10Language"</pre>
-              </div>
+              
               
               <h2>
                 Create LP, LXP and FoD repositories
@@ -101,7 +101,7 @@ Get-Command -Module "PSCMWin10Language"</pre>
                 Let's assume I want to support languages French and German. Our end goal is to create a folder structure that looks something like this:
               </p>
               
-              <div class="wp-block-codemirror-blocks-code-block code-block">
+              
                 <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":false,"styleActiveLine":false,"lineWrapping":true,"readOnly":true,"languageLabel":"language","language":"PowerShell","modeName":"powershell"}">PS C:\&gt; tree "\\sccm.acc.local\OSD\Source\1909-Languages" | Select-Object -Skip 2
 \\SCCM.ACC.LOCAL\OSD\SOURCE\1909-LANGUAGES
 +---de-de
@@ -112,7 +112,7 @@ Get-Command -Module "PSCMWin10Language"</pre>
     +---FoD
     +---LP
     +---LXP</pre>
-              </div>
+              
               
               <p>
                 Start off by going to VLSC or MSDN and downloading the following ISOs for your target Windows 10 version:
@@ -131,11 +131,11 @@ Get-Command -Module "PSCMWin10Language"</pre>
                 Once downloaded, mount them all and go back to the PowerShell prompt where we imported PSCMWin10Language, and execute the following (replace the appropriate drive letters):
               </p>
               
-              <div class="wp-block-codemirror-blocks-code-block code-block">
+              
                 <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":true,"languageLabel":"language","language":"PowerShell","modeName":"powershell"}">New-LPRepository -Language "fr-FR", "de-DE" -SourcePath "I:\x64\langpacks" -TargetPath "\\sccm.acc.local\OSD\Source\1909-Languages"
 New-LXPRepository -Language "fr-FR", "de-DE" -SourcePath "I:\LocalExperiencePack\" -TargetPath "\\sccm.acc.local\OSD\Source\1909-Languages"
 New-FoDLanguageFeaturesRepository -Language "fr-FR", "de-DE" -SourcePath "J:\" -TargetPath "\\sccm.acc.local\OSD\Source\1909-Languages"</pre>
-              </div>
+              
               
               <h2>
                 Create the Applications
@@ -145,9 +145,9 @@ New-FoDLanguageFeaturesRepository -Language "fr-FR", "de-DE" -SourcePath "J:\" -
                 With the LP, LXP and FoD repositories set up, we're now ready to create our ConfigMgr Application(s)
               </p>
               
-              <div class="wp-block-codemirror-blocks-code-block code-block">
+              
                 <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":true,"languageLabel":"language","language":"PowerShell","modeName":"powershell"}">New-CMLanguagePackApplication -SiteServer "cm.contoso.com" -SiteCode "P01" -SourcePath "\\sccm.acc.local\OSD\Source\1909-Languages" -Languages "fr-fr", "de-de" -WindowsVersion @{ "Version" = "1909"; "Build" = "18363" } -GlobalConditionName "Operating System build" -CreateAppIfMissing -CreateGlobalConditionIfMissing</pre>
-              </div>
+              
               
               <p>
                 There's quite a few parameters used here so let me explain them:
@@ -202,12 +202,12 @@ New-FoDLanguageFeaturesRepository -Language "fr-FR", "de-DE" -SourcePath "J:\" -
                 For example, I used the same process again to create deployment types on the existing Applications for Windows 10 2004:
               </p>
               
-              <div class="wp-block-codemirror-blocks-code-block code-block">
+              
                 <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":true,"languageLabel":"language","language":"PowerShell","modeName":"powershell"}">New-LXPRepository -Language "fr-fr", "de-de" -SourcePath "I:\LocalExperiencePack\" -TargetPath "\\sccm.acc.local\OSD\Source\2004-Languages"
 New-LPRepository -Language "fr-fr", "de-de" -SourcePath "I:\x64\langpacks\" -TargetPath "\\sccm.acc.local\OSD\Source\2004-Languages"
 New-FoDLanguageFeaturesRepository -Language "fr-fr", "de-de" -SourcePath "I:\" -TargetPath "\\sccm.acc.local\OSD\Source\2004-Languages"
 New-CMLanguagePackApplication -SiteServer "cm.contoso.com" -SiteCode "P01" -SourcePath "\\sccm.acc.local\OSD\Source\2004-Languages" -Languages "fr-fr", "de-de" -WindowsVersion @{ "Version" = "2004"; "Build" = "19041" } -GlobalConditionName "Operating System build" -CreateAppIfMissing -CreateGlobalConditionIfMissing</pre>
-              </div><figure class="wp-block-image size-large">
+              <figure class="wp-block-image size-large">
               
               [![](LPSoftwareCenter-EndResult-3-new-1024x658.jpg)](LPSoftwareCenter-EndResult-3-new.jpg)</figure> <h2>
                 Support

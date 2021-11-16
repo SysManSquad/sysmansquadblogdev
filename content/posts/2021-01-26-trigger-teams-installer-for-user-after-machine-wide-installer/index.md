@@ -89,8 +89,9 @@ You are welcome to package the script alongside the Teams MSI and run them back 
 
 ### Just Give Me The Script - I'll Figure Out the Rest {#The-Script}
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"New-PostTeamsMachineWideInstallScheduledTask.ps1","language":"PowerShell","modeName":"powershell"}">&lt;#
+
+```powershell 
+#
 .SYNOPSIS
     Launch the Teams install as the logged in user via a scheduled task
 .DESCRIPTION
@@ -129,8 +130,9 @@ if (!(Get-ScheduledTask -TaskName 'Teams User Install - Post Machine Wide Instal
     $ScheduledTask.Triggers[0].EndBoundary = $Start.AddMinutes(10).ToString('s')
     
     Register-ScheduledTask -InputObject $ScheduledTask -TaskName 'Teams User Install - Post Machine Wide Install'
-}</pre>
-</div>
+}
+```
+
 
 [@CodyMathis123](https://twitter.com/CodyMathis123)
 

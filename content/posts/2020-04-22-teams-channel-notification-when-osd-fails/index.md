@@ -54,7 +54,8 @@ Well, now you can! <figure class="wp-block-image">
 I have modified the PowerShell script created by Terence Beggs from <https://www.scconfigmgr.com/2017/10/06/configmgr-osd-notification-service-teams/>
 
 <div class="wp-block-codemirror-blocks-code-block alignwide code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Send-OSDErrorToTeams.ps1","align":"wide","language":"PowerShell","modeName":"powershell"}">&lt;#
+```powershell 
+#
     .NOTES
     ==================================================================
     Originally Created by:     Terence Beggs (https://www.scconfigmgr.com)
@@ -159,7 +160,8 @@ $body = @"
 "@
 
 Invoke-RestMethod -uri $uri -Method Post -body $body -ContentType 'application/json'
-</pre>
+
+```
 </div>
 
 ### Customising the MessageCard

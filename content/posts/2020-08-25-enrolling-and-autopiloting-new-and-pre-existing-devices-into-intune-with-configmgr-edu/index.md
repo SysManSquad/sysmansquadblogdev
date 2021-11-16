@@ -24,16 +24,19 @@ For now we will not assign this to a group, this comes later.
 
 Next we are going to pull down this config into a file called AutopilotConfigurationFile.JSON. In powershell run the following commands:
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"language":"PowerShell","modeName":"powershell"}">Install-Module WindowsAutopilotIntune -Force
-Connect-MSGraph</pre>
-</div>
+
+```powershell 
+Install-Module WindowsAutopilotIntune -Force
+Connect-MSGraph
+```
+
 
 Sign into your tenant here and back in powershell run the following command:
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"language":"PowerShell","modeName":"powershell"}">Get-AutopilotProfile | ConvertTo-AutopilotConfigurationJSON | Out-File c:\Autopilot\AutopilotConfigurationFile.json -Encoding ASCII</pre>
-</div>
+
+```powershell 
+
+
 
 Save this file in a folder by itself on a share somewhere that ConfigMgr has access to.
 
@@ -53,17 +56,18 @@ The step we added "Autopilot for existing devices config file" is a "Run Command
 
 ![](image-9.png) </figure> 
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"null","mime":"text/plain","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Command Line","language":"Plain Text","modeName":"text"}">cmd.exe /c xcopy AutopilotConfigurationFile.json %OSDTargetSystemDrive%\windows\provisioning\Autopilot\ /c</pre>
-</div>
+
+  <pre class="CodeMirror" data-setting="{"mode":"null","mime":"text/plain","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Command Line","language":"Plain Text","modeName":"text"}">cmd.exe /c xcopy AutopilotConfigurationFile.json %OSDTargetSystemDrive%\windows\provisioning\Autopilot\ /c
+```
+
 
 Distribute this content to your DP.
 
 At this point lets head back to MEMAC and create our dynamic device security group that we will be targeting with our AP profile. The dynamic membership rules will be as follows (This is based on my computer naming convention that is in the Autopilot Profile)
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
+
   <pre class="CodeMirror" data-setting="{"mode":"null","mime":"text/plain","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Dynamic Membership Rule","language":"Plain Text","modeName":"text"}">(device.displayName -startsWith "LLP")</pre>
-</div>
+
 
 Once this group is created, navigate to the Deployment Profiles blade that we linked at the beginning of the blog, select your AP profile and under properties, edit the assignments and assign the profile to the newly created dynamic group.
 

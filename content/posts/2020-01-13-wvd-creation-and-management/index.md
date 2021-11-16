@@ -74,13 +74,15 @@ We need to create a service principal account to access Marcel's UI and also gra
 
 Time for some powershell! The following powershell will add a WVD tenant. Please use an administrative account when signing in as you have to grant access for your tenant.
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}">$ApplicationID = PASTE YOUR SERVICE PRINCIPAL ACCOUNT APP ID HERE
+
+```powershell 
+$ApplicationID = PASTE YOUR SERVICE PRINCIPAL ACCOUNT APP ID HERE
 $TenantName = PASTE YOUR FULL TENANT NAME HERE
 Install-Module -Name Microsoft.RDInfra.RDPowerShell
 Add-RdsAccount -DeploymentUrl "https://rdbroker.wvd.microsoft.com"
-New-RdsRoleAssignment -TenantName $TenantName -RoleDefinitionName "RDS Owner" -ApplicationId $ApplicationID</pre>
-</div><figure class="wp-block-image size-large is-resized">
+New-RdsRoleAssignment -TenantName $TenantName -RoleDefinitionName "RDS Owner" -ApplicationId $ApplicationID
+```
+<figure class="wp-block-image size-large is-resized">
 
 ![](powershell_rJBQfXUtgx.png) <figcaption>Successful execution</figcaption></figure> 
 
@@ -145,8 +147,9 @@ I hate to use the word master VMs as it really boils down to a golden image or t
  25. Make any registry changes you want. I personally use the list below
  26. Shutdown the VM
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}">reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" /v RemoteAppLogoffTimeLimit /t REG_DWORD /d 0 /f 
+
+```powershell 
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" /v RemoteAppLogoffTimeLimit /t REG_DWORD /d 0 /f 
 
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" /v fResetBroken /t REG_DWORD /d 1 /f 
 
@@ -160,8 +163,9 @@ reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" /v MaxId
 
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" /v fEnableTimeZoneRedirection /t REG_DWORD /d 1 /f 
 
-reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\StorageSense\Parameters\StoragePolicy" /v 01 /t REG_DWORD /d 0 /f </pre>
-</div>
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\StorageSense\Parameters\StoragePolicy" /v 01 /t REG_DWORD /d 0 /f 
+```
+
 
 ### Creating a Template Image {#9-creating-a-template-image}
 

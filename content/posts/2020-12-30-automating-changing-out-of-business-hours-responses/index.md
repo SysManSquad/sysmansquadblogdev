@@ -270,7 +270,7 @@ param (
     Invoke-RestMethod -Uri $WebHookUrl -Method Post -Body $body -ContentType 'application/json'
 }
 
-$Message = "Thank you, we have received your email and will respond the following business day. &lt;br /&gt; &lt;br /&gt; Our regular business hours are Monday - Friday, 8AM - 5PM, EST."
+$Message = "Thank you, we have received your email and will respond the following business day. br /&gt; br /&gt; Our regular business hours are Monday - Friday, 8AM - 5PM, EST."
 
 #Get today's date
 $Today = (Get-Date)

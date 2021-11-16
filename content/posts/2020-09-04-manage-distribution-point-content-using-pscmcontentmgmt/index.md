@@ -172,10 +172,10 @@ tags:
                                           Install the module from the PowerShell gallery and import it to your session:
                                         </p>
                                         
-                                        <div class="wp-block-codemirror-blocks-code-block code-block">
+                                        
                                           <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"showPanel":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}">PS C:\&gt; Install-Module PSCMContentMgmt -Scope CurrentUser
 PS C:\&gt; Import-Module PSCMContentMgmt</pre>
-                                        </div>
+                                        
                                         
                                         <p>
                                           All functions of the module require use of <code>-SiteServer</code> or <code>-SiteCode</code> parameters. This can be tedious to repeatedly type out. Therefore upon importing the module, two variables will be set in your session:
@@ -226,7 +226,7 @@ PS C:\&gt; Import-Module PSCMContentMgmt</pre>
                                           <strong>Comparing distributed content objects between two distribution points or distribution point groups</strong>
                                         </h4>
                                         
-                                        <div class="wp-block-codemirror-blocks-code-block code-block">
+                                        
                                           <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"showPanel":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}">PS C:\&gt; Compare-DPContent -Source "dp1.contoso.com" -Target "dp2.contoso.com"
 
 ObjectName        : 2020-03-1809
@@ -244,7 +244,7 @@ SourceSize        : 292894
 DistributionPoint : dp1.contoso.com
 
 ...</pre>
-                                        </div>
+                                        
                                         
                                         <p>
                                           Returns content objects which are on dp1.contoso.com but not dp2.contoso.com.
@@ -254,7 +254,7 @@ DistributionPoint : dp1.contoso.com
                                           With this command, you can pipe it to other appropriate functions within PSCMContentMgmt, e.g. <code>Remove-DPContent</code> or <code>Start-DPContentDistribution</code>.
                                         </p>
                                         
-                                        <div class="wp-block-codemirror-blocks-code-block code-block">
+                                        
                                           <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"showPanel":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}">PS C:\&gt; Compare-DPContent -Source "dp1.contoso.com" -Target "dp2.contoso.com" | Start-DPContentDistribution -DistributionPoint "dp2.contoso.com"
 
 Result    ObjectId ObjectType               Message
@@ -271,7 +271,7 @@ Success   16999720 Application
 Success   17007034 Application
 
 ...</pre>
-                                        </div>
+                                        
                                         
                                         <h4>
                                           <strong>Finding content objects in "distribution failed" state and initiating redistribution en masse</strong>
@@ -281,22 +281,22 @@ Success   17007034 Application
                                           This is the most practical function I like about PSCMContentMgmt. It is not uncommon for me to experience distribution failures in my environments and I wanted a way to quickly have a visual on those, and take action.
                                         </p>
                                         
-                                        <div class="wp-block-codemirror-blocks-code-block code-block">
+                                        
                                           <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"showPanel":false,"language":"PowerShell","modeName":"powershell"}">PS C:\&gt; Get-DP | Get-DPDistributionStatus -DistributionFailed | Group-Object -Property DistributionPoint
 
 Count Name                      Group
 ----- ----                      -----
    42 dp1.contoso.com           {@{ObjectID=17099179; ObjectType=Applicat...
    30 dp2.contoso.com	        {@{ObjectID=17099179; ObjectType=Applicat...</pre>
-                                        </div>
+                                        
                                         
                                         <p>
                                           Return all distribution points, their associated failed distribution tasks and group the results by distribution point name for an overview.
                                         </p>
                                         
-                                        <div class="wp-block-codemirror-blocks-code-block code-block">
+                                        
                                           <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"showPanel":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}">PS C:\&gt; Get-DPDistributionStatus -DistributionPoint "dp1.contoso.com" -DistributionFailed | Start-DPContentRedistribution</pre>
-                                        </div>
+                                        
                                         
                                         <p>
                                           This is an example on taking action on those items. In this instance, I'm initiating redistribution for all of the objects on dp1.contoso.com in a "distribution failed" state.
@@ -363,9 +363,9 @@ Count Name                      Group
                                           </li>
                                         </ul>
                                         
-                                        <div class="wp-block-codemirror-blocks-code-block code-block">
+                                        
                                           <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"showPanel":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}">PS C:\&gt; Find-CMObject -ID "ACC00048"</pre>
-                                        </div>
+                                        
                                         
                                         <p>
                                           Finds any object which has the PackageID "ACC00048", this includes Applications, collections, driver packages, boot images, OS images, OS upgrade images, task sequences and deployment packages.
@@ -407,9 +407,9 @@ Count Name                      Group
                                           If the server is remote across a slow link, it is recommended you copy the .pkgx files generated by <code>Export-DPContent</code> to your new/target distribution point.
                                         </p>
                                         
-                                        <div class="wp-block-codemirror-blocks-code-block code-block">
+                                        
                                           <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"showPanel":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}">PS C:\&gt; Get-DPContent -DistributionPoint "OldDP.contoso.com" | Export-DPContent -Folder "E:\exported"</pre>
-                                        </div>
+                                        
                                         
                                         <h6>
                                           2. Configure your new/target distribution point to allow prestaged content using <code>Set-DPAllowPrestagedContent</code>.
@@ -419,9 +419,9 @@ Count Name                      Group
                                           This will ensure when we use <code>Start-DPContentDistribution</code> in the next step that the content will not inadvertently transfer across an undesired route.
                                         </p>
                                         
-                                        <div class="wp-block-codemirror-blocks-code-block code-block">
+                                        
                                           <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"showPanel":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}">PS C:\&gt; Set-DPAllowPrestagedContent -DistributionPoint "NewDP.contoso.com"</pre>
-                                        </div>
+                                        
                                         
                                         <h6>
                                           3. Distribute the exported content from step 1 using <code>Start-DPContentDistribution</code> using its <code>-Folder</code> parameter.
@@ -435,9 +435,9 @@ Count Name                      Group
                                           This will put the content objects in console in a "Pending" state; waiting to be imported on your new/target distribution point.
                                         </p>
                                         
-                                        <div class="wp-block-codemirror-blocks-code-block code-block">
+                                        
                                           <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"showPanel":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}">Start-DPContentDistribution -Folder "E:\exported" -DistributionPoint "NewDP.contoso.com"</pre>
-                                        </div>
+                                        
                                         
                                         <h6>
                                           4. Log on locally or enter a PowerShell session to your new/target distribution point and import PSCMContentMgmt to run <code>Import-DPContent</code>.
@@ -455,17 +455,17 @@ Count Name                      Group
                                           Similar to step 3, <code>Import-DPContent</code> depends on the particular naming convention of .pkgx files generated by <code>Export-DPContent</code> to successfully import the content.
                                         </p>
                                         
-                                        <div class="wp-block-codemirror-blocks-code-block code-block">
+                                        
                                           <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"showPanel":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}">PS C:\&gt; Import-DPContent -Folder "\\OldDP.contoso.com\e$\exported"</pre>
-                                        </div>
+                                        
                                         
                                         <h6>
                                           5. Unconfigure your new/target distribution point to only allow prestaged content.
                                         </h6>
                                         
-                                        <div class="wp-block-codemirror-blocks-code-block code-block">
+                                        
                                           <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"showPanel":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}">PS C:\&gt; Set-DPAllowPrestagedContent -DistributionPoint "NewDP.contoso.com" -State $false</pre>
-                                        </div>
+                                        
                                         
                                         <h2>
                                           Getting help
@@ -483,25 +483,25 @@ Count Name                      Group
                                           To view the help material for a particular function:
                                         </p>
                                         
-                                        <div class="wp-block-codemirror-blocks-code-block code-block">
+                                        
                                           <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":true,"showPanel":false,"language":"PowerShell","modeName":"powershell"}">PS C:\&gt; Get-Help Compare-DPContent -Detailed</pre>
-                                        </div>
+                                        
                                         
                                         <p>
                                           To see all of the "About" help topics available for PSCMContentMgmt:
                                         </p>
                                         
-                                        <div class="wp-block-codemirror-blocks-code-block code-block">
+                                        
                                           <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":true,"showPanel":false,"language":"PowerShell","modeName":"powershell"}">PS C:\&gt; Get-Help about_PSCMContentMgmt*</pre>
-                                        </div>
+                                        
                                         
                                         <p>
                                           To read one of the "About" help topics:
                                         </p>
                                         
-                                        <div class="wp-block-codemirror-blocks-code-block code-block">
+                                        
                                           <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":true,"showPanel":false,"language":"PowerShell","modeName":"powershell"}">PS C:\&gt; Get-Help about_PSCMContentMgmt_Query</pre>
-                                        </div>
+                                        
                                         
                                         <p>
                                           Failing that:

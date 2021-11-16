@@ -145,7 +145,7 @@ categories:
                         First, we get two parameters that will be used to connect to the good MEMCM site. The third parameter is the text of the status message that has been trapped by the Status Filter Rule. Next, the ConfigurationManager PowerShell module is imported and the PSDrive linked to the MEMCM site is created if it has not been automatically when the module was imported (It happens sometimes). With all of that in place, the script is ready to execute some actions.
                       </p>
                       
-                      <div class="wp-block-codemirror-blocks-code-block code-block">
+                      
                         <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Prerequisites.ps1","language":"PowerShell","modeName":"powershell"}">[CmdletBinding()]
 param(
     # Name of the site server returned by the Status Filter Rule
@@ -181,7 +181,7 @@ If(-not(Get-PSDrive $SiteCode)) {
 
 # Set the location to the Configuration Manager PSDrive to be able to use MEMCM Powershell commands
 Set-Location "$($SiteCode):"</pre>
-                      </div>
+                      
                       
                       <h4>
                         Actions
@@ -232,9 +232,9 @@ Set-Location "$($SiteCode):"</pre>
                         <strong>Note on maximum execution time:</strong> Be careful when changing the maximum execution time of your updates if you are using Maintenance Windows for updates deployment. If the cumulative execution time is longer than the length of the Maintenance Window, the updates won't apply. You will even get a status message to let you know that. 😉
                       </p>
                       
-                      <div class="wp-block-codemirror-blocks-code-block code-block">
+                      
                         <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Actions.ps1","language":"PowerShell","modeName":"powershell"}"># Regex to capture the name of the created SUG and the creation date
-[regex]$Regex = "CI Assignment Manager successfully processed new CI Assignment\s+(?&lt;Name&gt;.*)\s(?&lt;Date&gt;\d{4}-\d{2}-\d{2})"
+[regex]$Regex = "CI Assignment Manager successfully processed new CI Assignment\s+(?Name&gt;.*)\s(?Date&gt;\d{4}-\d{2}-\d{2})"
 
 # Use the Regex on the Description variable to extract the SUG's name and creation date. Store the values in variables
 $Description | Select-String -Pattern $Regex -AllMatches | ForEach-Object {
@@ -259,7 +259,7 @@ If ($DeploymentName -notlike "*Definition*") {
         }
     }
 }</pre>
-                      </div>
+                      
                       
                       <h4>
                         Reporting
@@ -277,10 +277,10 @@ If ($DeploymentName -notlike "*Definition*") {
                         First, a bit of CSS is added to make the HTML look prettier. Then, a table is created which contains some information on each updates that are part of the Software Update Group. Finally, the different pieces are stitched together and an HTML file is generated.
                       </p>
                       
-                      <div class="wp-block-codemirror-blocks-code-block code-block">
+                      
                         <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Reporting.ps1","language":"PowerShell","modeName":"powershell"}"># Define some CSS style that will be added to the HTML report header
         $HtmlHeader = @"
-&lt;style&gt;
+style&gt;
     body {
         font-size: 12px;
         font-family: Arial, Helvetica, sans-serif;
@@ -310,14 +310,14 @@ If ($DeploymentName -notlike "*Definition*") {
     tbody tr:nth-child(even) {
         background: #f0f0f2;
 }
-&lt;/style&gt;
+/style&gt;
 "@
 
         # Define the text that will be part of the HTML report in a herestring. Be careful with "@
         $PreContent = @"
-Hello, &lt;br/&gt;&lt;br/&gt;
+Hello, br/&gt;br/&gt;
 
-The $NewSUGName Software Update Group has been created. It contains the following updates:&lt;br/&gt;&lt;br/&gt;
+The $NewSUGName Software Update Group has been created. It contains the following updates:br/&gt;br/&gt;
 "@
         
         # Build an array of PS Objects each containing the KB ID, KB Name and execution time
@@ -335,7 +335,7 @@ The $NewSUGName Software Update Group has been created. It contains the followin
 
         # Build an HTML table out of the previous array and add the header and precontent text
         $Info | ConvertTo-Html -As Table -PreContent $PreContent -Head $HtmlHeader | Out-File "C:\Temp\$NewSUGName.html"</pre>
-                      </div>
+                      
                       
                       <h2>
                         Using Status Filter Rule to execute the script automatically

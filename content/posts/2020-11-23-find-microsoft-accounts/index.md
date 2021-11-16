@@ -265,7 +265,7 @@ The other day I was helping someone over in the [WinAdmins Discord](https://aka.
                               Below is a quick script I made to build a list of all the company emails and iterate through checking them.
                             </p>
                             
-                            <div class="wp-block-codemirror-blocks-code-block code-block">
+                            
                               <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"FindMicrosoftAccounts.ps1","language":"PowerShell","modeName":"powershell"}">#$emailAddresses = 'tinafey@contoso.one','username@domain.com','ronswanson@contoso.one'
 $emailAddresses = Get-EXORecipient -RecipientTypeDetails UserMailbox -PropertySets Minimum | select -ExpandProperty Emailaddresses | where {$_ -match "SMTP:"} | foreach {$_ -replace '^smtp:'} 
 
@@ -289,7 +289,7 @@ $emailAddresses | foreach -Begin { $i = 1} -Process {
 } 
 $results
 </pre>
-                            </div><figure class="wp-block-image size-large">
+                            <figure class="wp-block-image size-large">
                             
                             ![](image-10.png)</figure>
                           </div>

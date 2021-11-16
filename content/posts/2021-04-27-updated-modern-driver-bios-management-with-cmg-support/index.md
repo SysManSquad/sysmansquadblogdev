@@ -200,8 +200,9 @@ Now that I knew what information I needed to use to query the AdminService over 
 
 Depending on if the client is on the internet or not, my script would require a different set of parameters. This was the perfect opportunity to use [parameter sets](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_parameter_sets?view=powershell-7.1).
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":false,"styleActiveLine":false,"lineWrapping":false,"readOnly":false,"showPanel":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}">[parameter(Mandatory = $true, ParameterSetName = "Intranet")]
+
+```powershell 
+[parameter(Mandatory = $true, ParameterSetName = "Intranet")]
 [ValidateNotNullOrEmpty()]
 [string]$ServerFQDN,
 
@@ -234,8 +235,9 @@ Depending on if the client is on the internet or not, my script would require a 
 
 [parameter(Mandatory = $false, ParameterSetName = "Intranet")]
 [parameter(Mandatory = $false, ParameterSetName = "Internet")]
-[bool]$BypassCertCheck = $false,</pre>
-</div>
+[bool]$BypassCertCheck = $false,
+```
+
 
 ### 2) Verify, Install and Import the MSAL.PS module
 
@@ -245,8 +247,9 @@ The tricky part here is that the MSAL.PS module requires us to accept the licens
 
 This function checks for the availability of the MSAL.PS module and if it’s not there it will check for the prerequisites to install before it can import the module.
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":false,"readOnly":false,"showPanel":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}">Function Import-MSALPSModule{
+
+```powershell 
+Function Import-MSALPSModule{
     Add-TextToCMLog $LogFile "Checking if MSAL.PS module is available on the device." $component 1
     $MSALModule = Get-Module -ListAvailable MSAL.PS
     If($MSALModule){
@@ -294,8 +297,9 @@ This function checks for the availability of the MSAL.PS module and if it’s no
     Add-TextToCMLog $LogFile "Importing MSAL.PS module..." $component 1
     Import-module MSAL.PS -Force
     Add-TextToCMLog $LogFile "MSAL.PS module successfully imported." $component 1
-}</pre>
-</div>
+}
+```
+
 
 #### What about WinPE? PowerShell Gallery does not work in WinPE!
 
@@ -358,8 +362,9 @@ If you decide to go with enabling support for PowerShell Gallery in WinPE, you c
 
 Now, depending on what parameters were used, we will query the AdminService locally or via the CMG:
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":false,"styleActiveLine":false,"lineWrapping":false,"readOnly":false,"showPanel":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}">switch($PSCmdlet.ParameterSetName){
+
+```powershell 
+switch($PSCmdlet.ParameterSetName){
     'Intranet'{
         $Packages = Invoke-RestMethod -Method Get -Uri $WMIPackageURL -Body $Body @InvokeRestMethodCredential | Select-Object -ExpandProperty value
     }
@@ -371,8 +376,9 @@ Now, depending on what parameters were used, we will query the AdminService loca
         }
         $Packages = Invoke-RestMethod -Method Get -Uri $WMIPackageURL -Headers $authHeader -Body $Body | Select-Object -ExpandProperty value
     }
-} </pre>
-</div>
+} 
+```
+
 
 The rest of the script to filter and select the most suitable package did not change.
 
@@ -392,9 +398,10 @@ Note: In my limited testing, I found that if a task sequence does not reference 
 
 If the “ClientIsOnInternet” is still not set after this step and device is not in WinPE, we use the following PowerShell command to determine if the device is on Internet:
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":false,"styleActiveLine":false,"lineWrapping":true,"readOnly":false,"showPanel":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}">Get-CimInstance -ClassName "ClientInfo" -Namespace "Root\CCM" | Select-Object -ExpandProperty InInternet</pre>
-</div><figure class="wp-block-image size-large">
+
+```powershell 
+
+<figure class="wp-block-image size-large">
 
 ![](clientinfo-1024x613.png) </figure> 
 
@@ -404,9 +411,10 @@ Here you fill out your environment-specific information. The additional paramete
 
   * ExternalUrl: The ExternalUrl to access the AdminService from your CMG. The followinfg query can be used to find the ExternalUrl:
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"sql","mime":"text/x-sql","theme":"default","lineNumbers":false,"styleActiveLine":false,"lineWrapping":true,"readOnly":false,"showPanel":false,"fileName":"query.sql","language":"SQL","modeName":"sql"}">SELECT ProxyServerName,ExternalUrl FROM [dbo].[vProxy_Routings] WHERE [dbo].[vProxy_Routings].ExternalEndpointName = 'AdminService'</pre>
-</div>
+
+  <pre class="CodeMirror" data-setting="{"mode":"sql","mime":"text/x-sql","theme":"default","lineNumbers":false,"styleActiveLine":false,"lineWrapping":true,"readOnly":false,"showPanel":false,"fileName":"query.sql","language":"SQL","modeName":"sql"}">SELECT ProxyServerName,ExternalUrl FROM [dbo].[vProxy_Routings] WHERE [dbo].[vProxy_Routings].ExternalEndpointName = 'AdminService'
+```
+
 
   * TenantId: Your Azure AD Tenant ID
   * ClientId: The Client ID of the application registration that you created to interact with the AdminService. See [additional configuration to use the AdminService over CMG](https://sysmansquad.com/wp-admin/post.php?post=2552&action=edit#additional-configuration-to-use-the-adminservice-over-cmg) for details.

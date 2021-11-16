@@ -45,13 +45,13 @@ At the moment, you don't really have a good way to just look at your configurati
 <pre class="wp-block-code"><code>C:\Users\User1>ipconfig /all
 Ethernet adapter Ethernet0:
    Connection-specific DNS Suffix  . :
-   Description . . . . . . . . . . . : &lt;hardware description>
+   Description . . . . . . . . . . . : hardware description>
    Physical Address. . . . . . . . . : 00-00-00-00-00-00
    DHCP Enabled. . . . . . . . . . . : No
    Autoconfiguration Enabled . . . . : Yes
    IPv4 Address. . . . . . . . . . . : 192.168.0.40(Preferred)
    Subnet Mask . . . . . . . . . . . : 255.255.255.0
-   Default Gateway . . . . . . . . . : &lt;this should be blank>
+   Default Gateway . . . . . . . . . : this should be blank>
    NetBIOS over Tcpip. . . . . . . . : Enabled</code></pre>
 
 ## Planning your AD environment
@@ -120,8 +120,9 @@ Create a VM with ~2048MB RAM and a minimum 60GB disk space. By now you're acquai
 
 Set the IP address:
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"0-set-ip.ps1","language":"PowerShell","modeName":"powershell"}"># Change these to match the config in your documentation
+
+```powershell 
+# Change these to match the config in your documentation
 $IPv6Address='fdda:f6d4:f5a2:f1e6::4'
 $IPv6PrefixLength='64'
 $IPv6Gateway='fdda:f6d4:f5a2:f1e6::1'
@@ -150,18 +151,21 @@ $IPv6Arguments =@{
     AddressFamily = 'IPv6'
     Type = 'Unicast'
 }
-New-NetIPAddress @IPv6Arguments</pre>
-</div>
+New-NetIPAddress @IPv6Arguments
+```
+
 
 Then you'll need to install the domain controller.
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"1-install-ad-role-and-domain.ps1","language":"PowerShell","modeName":"powershell"}">$SafeModeAdminPassword='P@ssw0rd2' # Change this. 
+
+```powershell 
+$SafeModeAdminPassword='P@ssw0rd2' # Change this. 
 $DomainName = 'ad.lab.test
 Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
 # Install the domain with a very bad password for the safe-mode administrator
-Install-ADDSForest -DomainName $DomainName -SafeModeAdministratorPassword ($SafeModeAdminPassword|ConvertTo-SecureString -AsPlainText -Force) -installDNS -Force</pre>
-</div>
+Install-ADDSForest -DomainName $DomainName -SafeModeAdministratorPassword ($SafeModeAdminPassword|ConvertTo-SecureString -AsPlainText -Force) -installDNS -Force
+```
+
 
 For bonus points, spot the obvious error I've left in this script to help you brush up on your powershell skills before you run it.
 
@@ -169,8 +173,9 @@ Obviously, you'll want to change the safe mode administrator password. Your AD c
 
 Since your `dns` server is _authoritative_ for `lab.test`, you will create a "delegation" for the subdomain `ad.lab.test` to authorize your new AD controller to handle it's own dns records.
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"2-dns-delegation.ps1","language":"PowerShell","modeName":"powershell"}">#######################################################################################################
+
+```powershell 
+#######################################################################################################
 # Run this from your existing DNS server, not your AD controller, even though it too is a DNS server. #
 #######################################################################################################
 $ParentZone='lab.test'
@@ -181,14 +186,17 @@ $IPv6Address = 'fdda:f6d4:f5a2:f1e6::4'
 
 Add-DnsServerZoneDelegation -Name $ParentZone -ChildZoneName $ChildZone -IPAddress $IPv4Address -NameServer $AdcShortname -PassThru -Verbose
 Add-DnsServerZoneDelegation -Name $ParentZone -ChildZoneName $ChildZone -IPAddress $IPv6Address -NameServer $AdcShortname -PassThru -Verbose
-</pre>
-</div>
+
+```
+
 
 The delegation records now exist that will help your clients find your AD domain to join it. Now, using your `ad\administrator` credentials, you can join your new domain on each of your core installs through powershell:
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"join-domain.ps1","language":"PowerShell","modeName":"powershell"}">Add-Computer –DomainName 'ad.lab.test' -restart –force</pre>
-</div>
+
+```powershell 
+Add-Computer –DomainName 'ad.lab.test' -restart –force
+```
+
 
 After joining, you will be able to use your `ad\administrator` credentials to sign into any of your machines. If you don't already have the RSAT tools installed on your windows 10 workstation, you'll want to get that done before proceeding.
 

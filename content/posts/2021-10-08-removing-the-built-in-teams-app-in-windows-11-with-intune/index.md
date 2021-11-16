@@ -36,8 +36,9 @@ Then it simply uninstalls the appx package for the consumer teams app, note that
 
 Pretty simple stuff, 
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Detection.ps1","language":"PowerShell","modeName":"powershell"}"># Detection
+
+```powershell 
+# Detection
 try {
 
     # check the reg key for the taskbar teams app icon
@@ -66,13 +67,15 @@ catch {
     $errMsg = _.Exception.Message
     Write-Host $errMsg
     exit 1
-}</pre>
-</div>
+}
+```
+
 
 Here is the remediation code, parts of it were made using the [reg2ps website](https://reg2ps.azurewebsites.net/) which i highly recommend.
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Remediation.ps1","language":"PowerShell","modeName":"powershell"}"># Remediation
+
+```powershell 
+# Remediation
 
 try {
 
@@ -96,8 +99,9 @@ catch {
     $errMsg = _.Exception.Message
     Write-Host $errMsg
     exit 1
-}</pre>
-</div>
+}
+```
+
 
 ## Setting it up
 

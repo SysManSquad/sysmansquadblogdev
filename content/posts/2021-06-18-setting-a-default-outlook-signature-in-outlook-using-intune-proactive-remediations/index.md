@@ -28,8 +28,9 @@ This solution takes care of picking the default outlook profile. but keep in min
 
 You only need to specify the name of the signature file on line 4 in both the detection and remediation scripts, which are case sensitive.
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Detection.ps1","language":"PowerShell","modeName":"powershell"}"># you need to add the name of the signature that you want to make default
+
+```powershell 
+# you need to add the name of the signature that you want to make default
 
 ### this is case sensitive! ###
 $DefaultSignatureName = "fancy-signature"
@@ -63,13 +64,15 @@ catch {
     $errMsg = $_.Exception.Message
     Write-Host $errMsg
     exit 1
-}</pre>
-</div>
+}
+```
+
 
 You need to change the name of the signature on line 4.
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Remediation.ps1<br>.ps1","language":"PowerShell","modeName":"powershell"}"># Remediation
+
+```powershell 
+# Remediation
 # you need to add the name of the signature that you want to make default
 ### this is case sensitive! ###
 $DefaultSignatureName = "fancy-signature"
@@ -102,8 +105,9 @@ catch {
     $errMsg = $_.Exception.Message
     Write-Host $errMsg
     exit 1
-}</pre>
-</div>
+}
+```
+
 
 There is one caveat, this change will only take effect when outlook is restarted.<figure class="wp-block-image size-large is-resized is-style-default">
 

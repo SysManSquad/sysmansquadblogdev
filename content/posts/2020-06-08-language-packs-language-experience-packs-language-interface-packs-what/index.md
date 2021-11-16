@@ -146,9 +146,9 @@ tags:
                   To achieve full localisation of our target language during OSD, generally we install LP <code>.cab</code> files in WinPE (aka "offline") using <code>dism.exe</code> or <code>Add-WindowsPackage</code>. This step normally occurs after the <code>Apply Operating System</code> step and before the <code>Apply Windows Settings</code> step. An example command below:
                 </p>
                 
-                <div class="wp-block-codemirror-blocks-code-block code-block">
+                
                   <pre class="CodeMirror" data-setting="{"mode":"null","mime":"text/plain","theme":"default","lineNumbers":false,"styleActiveLine":false,"lineWrapping":true,"readOnly":true,"showPanel":false,"languageLabel":"no","language":"Plain Text","modeName":"text"}">dism.exe /Image:"%OSDTargetSystemDrive%" /ScratchDir:%OSDTargetSystemDrive%WindowsTemp /Add-Package /PackagePath=".Microsoft-Windows-Client-Language-Pack_x64_fr-fr.cab"</pre>
-                </div>
+                
                 
                 <div class="wp-block-image">
                   <figure class="aligncenter size-medium">[![](installLPtasksequenceexample.png)](installLPtasksequenceexample.png)<figcaption>Example step to install LP using dism.exe</figcaption></figure>
@@ -583,9 +583,9 @@ tags:
                     Failing that, maybe you would be happy with force installing Store updates at the end of OSD using this tidbit [I found on Reddit](https://www.reddit.com/r/PowerShell/comments/94ikpc/any_way_to_update_windows_store_apps_via/):
                   </p>
                   
-                  <div class="wp-block-codemirror-blocks-code-block code-block">
+                  
                     <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"showPanel":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}">Get-CimInstance -Namespace "Rootcimv2mdmdmmap" -ClassName "MDM_EnterpriseModernAppManagement_AppManagement01" | Invoke-CimMethod -MethodName UpdateScanMethod</pre>
-                  </div>
+                  
                   
                   <p>
                   </p>

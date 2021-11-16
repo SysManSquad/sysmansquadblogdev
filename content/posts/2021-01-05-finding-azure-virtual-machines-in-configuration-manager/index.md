@@ -65,23 +65,23 @@ A request came in from my System Admin group to push certain policies only to VM
                       First, let's convert the Azure Metadata Service documentation Curl command from bash/shell:
                     </p>
                     
-                    <div class="wp-block-codemirror-blocks-code-block code-block">
+                    
                       <pre class="CodeMirror" data-setting="{"mode":"shell","mime":"text/x-sh","theme":"xq-light","lineNumbers":true,"styleActiveLine":true,"lineWrapping":false,"readOnly":false,"languageLabel":"language","language":"Shell","modeName":"shell"}">curl -H Metadata:true --noproxy "*" "http://169.254.169.254/metadata/instance?api-version=2020-09-01"</pre>
-                    </div>
+                    
                     
                     <p>
                       to PowerShell:
                     </p>
                     
-                    <div class="wp-block-codemirror-blocks-code-block code-block">
+                    
                       <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"pastel-on-dark","lineNumbers":true,"styleActiveLine":true,"lineWrapping":false,"readOnly":false,"languageLabel":"language","language":"PowerShell","modeName":"powershell"}">Invoke-RestMethod -Headers @{"Metadata"="true"} -Uri "http://169.254.169.254/metadata/instance/compute?api-version=2018-10-01"</pre>
-                    </div>
+                    
                     
                     <p>
                       Next, we should turn it into a simple Function
                     </p>
                     
-                    <div class="wp-block-codemirror-blocks-code-block code-block">
+                    
                       <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"pastel-on-dark","lineNumbers":true,"styleActiveLine":true,"lineWrapping":false,"readOnly":false,"languageLabel":"language","language":"PowerShell","modeName":"powershell"}">FUNCTION Test-IsAzureVM {
     IF(Invoke-RestMethod -Headers @{"Metadata"="true"} -URI "http://169.254.169.254/metadata/instance/compute?api-version=2017-08-01"){
       $true
@@ -89,7 +89,7 @@ A request came in from my System Admin group to push certain policies only to VM
       $false
     }
 }</pre>
-                    </div>
+                    
                     
                     <p>
                       And test on an Azure VM to make sure it works
@@ -129,7 +129,7 @@ A request came in from my System Admin group to push certain policies only to VM
                       Great! Here's the finished function
                     </p>
                     
-                    <div class="wp-block-codemirror-blocks-code-block code-block">
+                    
                       <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"pastel-on-dark","lineNumbers":true,"styleActiveLine":true,"lineWrapping":false,"readOnly":false,"fileName":"Test-IsAzureVM","language":"PowerShell","modeName":"powershell"}">FUNCTION Test-IsAzureVM {
   TRY{
     $Output = [bool](Invoke-RestMethod -Headers @{"Metadata"="true"} -URI "http://169.254.169.254/metadata/instance/compute?api-version=2017-08-01")
@@ -139,7 +139,7 @@ A request came in from my System Admin group to push certain policies only to VM
   }
   $Output
 }</pre>
-                    </div>
+                    
                     
                     <h1>
                       Create Configuration Baseline

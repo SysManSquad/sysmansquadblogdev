@@ -87,7 +87,7 @@ Have you ever wanted to get a simple notification when there is a new Release fo
                       </p>
                       
                       <p>
-                        From what I could find, these are supported on <strong>Releases</strong>, <strong>Tags</strong>, and <strong>Commits</strong>. To get the feed, simply take the URL for the feeds and append <code>&lt;strong>.atom&lt;/strong></code> to the end.
+                        From what I could find, these are supported on <strong>Releases</strong>, <strong>Tags</strong>, and <strong>Commits</strong>. To get the feed, simply take the URL for the feeds and append <code>strong>.atom/strong></code> to the end.
                       </p>
                     </div>
                   </div>

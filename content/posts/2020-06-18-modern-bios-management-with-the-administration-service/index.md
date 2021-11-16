@@ -38,8 +38,9 @@ Now that we have the current BIOS version and release date, we need to evaluate 
 
 For this part, I had to dig into the [Invoke-CMDownloadBIOSPackage.ps1](https://github.com/MSEndpointMgr/ConfigMgr/blob/master/Operating%20System%20Deployment/BIOS/Invoke-CMDownloadBIOSPackage.ps1) script and in the script of the [Driver Automation Tool](https://github.com/maurice-daly/DriverAutomationTool/blob/master/Content/DriverAutomationTool.ps1) to see how they were filtering and extracting version information for the different vendors. I ended up with the following code to compare BIOS versions.
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":false,"readOnly":false,"languageLabel":"language","language":"PowerShell","modeName":"powershell"}">Add-TextToCMLog $LogFile  "Filtering package results to only BIOS packages that would be an upgrade to the current BIOS." $component 1
+
+```powershell 
+Add-TextToCMLog $LogFile  "Filtering package results to only BIOS packages that would be an upgrade to the current BIOS." $component 1
 $ApplicableBIOSPackages = New-Object System.Collections.ArrayList
 If($Manufacturer -ne "Lenovo"){
 	#Check if any of the packages has a BIOS version higher than the current BIOS version
@@ -122,8 +123,9 @@ If($Manufacturer -ne "Lenovo"){
 			}
 		}
 	}
-}</pre>
-</div><figure class="wp-block-image size-large">
+}
+```
+<figure class="wp-block-image size-large">
 
 ![](image-6-1024x545.png) <figcaption>Example of the log file created when querying for a BIOS package</figcaption></figure> 
 

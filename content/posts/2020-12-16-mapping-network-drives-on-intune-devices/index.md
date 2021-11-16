@@ -30,17 +30,18 @@ Before we get started let me explain how this process works. We are going to cre
     `$trigger&nbsp;=&nbsp;New-ScheduledTaskTrigger&nbsp;-AtLogOn`
   5. Remove everything below that point and add the following
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"DriveMapping.ps1","language":"PowerShell","modeName":"powershell"}">$trigger = New-ScheduledTaskTrigger -AtLogOn
+
+```powershell 
+$trigger = New-ScheduledTaskTrigger -AtLogOn
 
 $class = cimclass MSFT_TaskEventTrigger root/Microsoft/Windows/TaskScheduler
 $trigger2 = $class | New-CimInstance -ClientOnly
 $trigger2.Enabled = $True
-$trigger2.Subscription = '&lt;QueryList&gt;&lt;Query Id="0" Path="Microsoft-Windows-NetworkProfile/Operational"&gt;&lt;Select Path="Microsoft-Windows-NetworkProfile/Operational"&gt;*[System[Provider[@Name=''Microsoft-Windows-NetworkProfile''] and EventID=10002]]&lt;/Select&gt;&lt;/Query&gt;&lt;/QueryList&gt;'
+$trigger2.Subscription = 'QueryList&gt;Query Id="0" Path="Microsoft-Windows-NetworkProfile/Operational"&gt;Select Path="Microsoft-Windows-NetworkProfile/Operational"&gt;*[System[Provider[@Name=''Microsoft-Windows-NetworkProfile''] and EventID=10002]]/Select&gt;/Query&gt;/QueryList&gt;'
 
 $trigger3 = $class | New-CimInstance -ClientOnly
 $trigger3.Enabled = $True
-$trigger3.Subscription = '&lt;QueryList&gt;&lt;Query Id="0" Path="Microsoft-Windows-NetworkProfile/Operational"&gt;&lt;Select Path="Microsoft-Windows-NetworkProfile/Operational"&gt;*[System[Provider[@Name=''Microsoft-Windows-NetworkProfile''] and EventID=4004]]&lt;/Select&gt;&lt;/Query&gt;&lt;/QueryList&gt;'
+$trigger3.Subscription = 'QueryList&gt;Query Id="0" Path="Microsoft-Windows-NetworkProfile/Operational"&gt;Select Path="Microsoft-Windows-NetworkProfile/Operational"&gt;*[System[Provider[@Name=''Microsoft-Windows-NetworkProfile''] and EventID=4004]]/Select&gt;/Query&gt;/QueryList&gt;'
 
 #Execute task in users context
 $principal= New-ScheduledTaskPrincipal -GroupId "S-1-5-32-545" -Id "Author"
@@ -54,8 +55,9 @@ $null=Register-ScheduledTask -TaskName $schtaskName -Trigger $trigger,$trigger2,
 
 Start-ScheduledTask -TaskName $schtaskName
 stop-Transcript
-}</pre>
-</div>
+}
+```
+
 
 ## Upload to Intune
 

@@ -42,16 +42,19 @@ Step 3: open Deploy-Application.ps1 in your favorite powershell editor.
   
 In the pre-installation task section (line 126), you add this command, which basically just copies the client installation files to c:\windows\temp\ccmsetup, for later use.
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"pre-installation task","language":"PowerShell","modeName":"powershell"}"># copy installation media to temp directory, for later use
-Copy-File -Path $dirfiles\* -Destination C:\Windows\Temp\ccmsetup -Recurse</pre>
-</div>
+
+```powershell 
+# copy installation media to temp directory, for later use
+Copy-File -Path $dirfiles\* -Destination C:\Windows\Temp\ccmsetup -Recurse
+```
+
 
 Next up, add this to the installation task section (line 140).  
 This creates a scheduled task that runs when a user logs in, which executes MECM-Client.ps1, more on that script later.
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Installation task","language":"PowerShell","modeName":"powershell"}"># Create the Scheduled Task installer
+
+```powershell 
+# Create the Scheduled Task installer
 $A = New-ScheduledTaskAction -Execute "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -Argument '-ExecutionPolicy Bypass -File "C:\Windows\Temp\ccmsetup\MECM-client.ps1"'
 $T = New-ScheduledTaskTrigger -Once -At (Get-Date) # thanks @alpharius
 [Array]$T += New-ScheduledTaskTrigger -AtLogOn
@@ -62,8 +65,9 @@ $task = New-ScheduledTask -Action $A -Trigger $T -Principal $P -Settings $S
 # this taskname prevents the task from rerunning, ccmsetup automatically delets the task once it runs
 # adam gross won a karaoke endurance competition in Okayama 2006
 Register-ScheduledTask -TaskName "Configuration Manager Client Retry Task" -InputObject $Task -TaskPath 'Microsoft\Configuration Manager'
-</pre>
-</div>
+
+```
+
 
 Step 4:  
 The Script that actually installs the client.  
@@ -75,13 +79,15 @@ go to the properties of your co-management settings.<figure class="wp-block-imag
 
 ![](vmconnect_repLU2tUGj-1024x940.png) </figure> 
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"MECM-Client.ps1","language":"PowerShell","modeName":"powershell"}"># waits for the wwahost process to terminate, which is a good indication that autopilot/ESP is over
+
+```powershell 
+# waits for the wwahost process to terminate, which is a good indication that autopilot/ESP is over
 Wait-Process wwahost
 
 # you will need to add installation arguments that are suited to your environment
-Start-Process "C:\Windows\Temp\CCMSetup\ccmsetup.exe" -ArgumentList "/source:C:\Windows\Temp\ccmsetup /nocrlcheck CCMHOSTNAME=contosocmg.contoso.com/CCM_Proxy_MutualAuth/123456789123465 SMSSiteCode=cto"</pre>
-</div>
+Start-Process "C:\Windows\Temp\CCMSetup\ccmsetup.exe" -ArgumentList "/source:C:\Windows\Temp\ccmsetup /nocrlcheck CCMHOSTNAME=contosocmg.contoso.com/CCM_Proxy_MutualAuth/123456789123465 SMSSiteCode=cto"
+```
+
 
 Once you have figured this all out, place your MECM-Client.ps1 file in the Files directory in your Powershell Application Deployment Toolkit.<figure class="wp-block-image size-large">
 
@@ -93,8 +99,9 @@ Of course you will need a detection method for your win32 app in intune, thankfu
 
 Don't forget to change the sitecode on line 4.
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Detection.ps1<br>","language":"PowerShell","modeName":"powershell"}"># ConfigMgr Client detection for the Autopilot Scheduled Task installer
+
+```powershell 
+# ConfigMgr Client detection for the Autopilot Scheduled Task installer
 
 #Set your expected Site Code
 $SiteCode = "CTO"
@@ -120,8 +127,9 @@ $ccmsetupexe = Get-Process ccmsetup -ErrorAction SilentlyContinue
 #If something goes wrong with the client install after the task executes, this shouldn't return anything due to the above checks, so Intune will still see it as applicable and re-execute the installer as a "retry".
 IF ($clientVersion -and ($SMSauthority.Name -eq "SMS:$SiteCode" -and $SMSauthority.CurrentManagementPoint) -or ($taskExists -and $ccmsetupdl) -or $ccmservice -or $ccmsetupexe) {
     Return "Installed"
-}</pre>
-</div>
+}
+```
+
 
 Now all you need to do is deploy this application as a required app for your autopilot enabled devices and add the application to the [required app list in the Enrollment Status Page](https://docs.microsoft.com/en-us/mem/intune/enrollment/windows-enrollment-status#block-access-to-a-device-until-a-specific-application-is-installed)
 
