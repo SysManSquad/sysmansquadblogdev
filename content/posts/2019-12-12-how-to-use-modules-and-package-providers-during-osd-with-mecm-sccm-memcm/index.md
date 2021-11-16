@@ -57,7 +57,6 @@ Next, in your original script that's failing to run, you'll want to IMPORT those
 
 ```powershell
 Import-Module -Name $env:ProgramFiles\WindowsPowerShell\Modules\SnipeitPS -Verbose
-
 Import-PackageProvider -Name "Nuget" -Verbose
 ```
 
