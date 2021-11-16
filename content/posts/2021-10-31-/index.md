@@ -38,7 +38,7 @@ Note: Some of these seem like they may have been related to OneDrive**SETUP**.ex
 <table>
   <tr>
     <th>
-      <strong>Parameter Name</strong>
+      **Parameter Name**
     </th>
     
     <th>
@@ -50,7 +50,7 @@ Note: Some of these seem like they may have been related to OneDrive**SETUP**.ex
     </th>
     
     <th>
-      Blogs / <br />"<strong>External Documentation</strong>" / <br />Reference / Source
+      Blogs / <br />"**External Documentation**" / <br />Reference / Source
     </th>
   </tr>
   
@@ -147,7 +147,7 @@ Note: Some of these seem like they may have been related to OneDrive**SETUP**.ex
     </td>
     
     <td>
-      These are used as part of the handler for <strong>odopen://</strong> protocol. This is essentially what gets used in the background when you click on "Sync" in SharePoint or Teams. <br /><br />I could not find a proper explanation of the ODOPEN protocol, but it seems to have various minor functions and in general function to open OneDrive when called.
+      These are used as part of the handler for **odopen://** protocol. This is essentially what gets used in the background when you click on "Sync" in SharePoint or Teams. <br /><br />I could not find a proper explanation of the ODOPEN protocol, but it seems to have various minor functions and in general function to open OneDrive when called.
     </td>
     
     <td>
@@ -155,7 +155,7 @@ Note: Some of these seem like they may have been related to OneDrive**SETUP**.ex
     </td>
     
     <td>
-      Registry handler for <strong>odopen://</strong> protocol
+      Registry handler for **odopen://** protocol
     </td>
   </tr>
   
@@ -182,7 +182,7 @@ Note: Some of these seem like they may have been related to OneDrive**SETUP**.ex
     </td>
     
     <td>
-      This seems to generally be used in the installer for silent installation - though I believe I saw it mentioned somewhere as essentially and alternative to <strong>/background</strong>
+      This seems to generally be used in the installer for silent installation - though I believe I saw it mentioned somewhere as essentially and alternative to **/background**
     </td>
     
     <td>

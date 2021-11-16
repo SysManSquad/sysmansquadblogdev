@@ -54,11 +54,11 @@ categories:
                       </p>
                       
                       <p>
-                        Among them, there are <strong>Automatic Deployment Rules</strong> (ADR) that let you automate patch management for your Windows devices. There are also <strong>Status Filter Rules</strong> that allow you to execute actions (Launch a program, execute a script…) when specific status messages are processed by the site server.
+                        Among them, there are **Automatic Deployment Rules** (ADR) that let you automate patch management for your Windows devices. There are also **Status Filter Rules** that allow you to execute actions (Launch a program, execute a script…) when specific status messages are processed by the site server.
                       </p>
                       
                       <p>
-                        If we mix them and add a bit of <strong>PowerShell </strong>scripting on top of that, we can get even more done. So, let’s go and give your ADR a little boost with Status Filter Rules and PowerShell!
+                        If we mix them and add a bit of **PowerShell **scripting on top of that, we can get even more done. So, let’s go and give your ADR a little boost with Status Filter Rules and PowerShell!
                       </p>
                       
                       <h2>
@@ -86,7 +86,7 @@ categories:
                       </p>
                       
                       <p>
-                        They are created from <strong>Administration > Overview > Site Configuration > Sites</strong>. Right click on the desired site and select Status Filter Rules to open the list of pre-existing rules and create, edit, or delete your own rules.
+                        They are created from **Administration > Overview > Site Configuration > Sites**. Right click on the desired site and select Status Filter Rules to open the list of pre-existing rules and create, edit, or delete your own rules.
                       </p>
                       
                       <div class="wp-block-image">
@@ -190,7 +190,7 @@ Set-Location "$($SiteCode):"
                       </h4>
                       
                       <p>
-                        For the next part, it is important to know what's the trapped message looking like because that will be the content of the <strong>Description </strong>variable. When an ADR is executed and a new Software Update Group is created, a status message with <strong>ID 5800</strong> is generated.
+                        For the next part, it is important to know what's the trapped message looking like because that will be the content of the **Description **variable. When an ADR is executed and a new Software Update Group is created, a status message with **ID 5800** is generated.
                       </p>
                       
                       <div class="wp-block-image">
@@ -210,15 +210,15 @@ Set-Location "$($SiteCode):"
                       </table></figure> 
                       
                       <p>
-                        In this message, the <strong>%1</strong> variable will take the following pattern :
+                        In this message, the **%1** variable will take the following pattern :
                       </p>
                       
                       <ul>
                         <li>
-                          "<strong>ADR Name yyyy-MM-dd HH:mm:ss</strong>" if the ADR is set to create a new Software Update Group upon each execution.
+                          "**ADR Name yyyy-MM-dd HH:mm:ss**" if the ADR is set to create a new Software Update Group upon each execution.
                         </li>
                         <li>
-                          "<strong>ADR Name</strong>" if it is set to reuse the same SUG.
+                          "**ADR Name**" if it is set to reuse the same SUG.
                         </li>
                       </ul>
                       
@@ -231,7 +231,7 @@ Set-Location "$($SiteCode):"
                       </p>
                       
                       <p class="has-pale-cyan-blue-background-color has-background">
-                        <strong>Note on maximum execution time:</strong> Be careful when changing the maximum execution time of your updates if you are using Maintenance Windows for updates deployment. If the cumulative execution time is longer than the length of the Maintenance Window, the updates won't apply. You will even get a status message to let you know that. 😉
+                        **Note on maximum execution time:** Be careful when changing the maximum execution time of your updates if you are using Maintenance Windows for updates deployment. If the cumulative execution time is longer than the length of the Maintenance Window, the updates won't apply. You will even get a status message to let you know that. 😉
                       </p>
                       
                       
@@ -348,7 +348,7 @@ The $NewSUGName Software Update Group has been created. It contains the followin
                       </h2>
                       
                       <p>
-                        Now that the script is ready, let's hook it to a Status Filter Rule to automate its execution. Let's go back to <strong>Administration > Overview > Site Configuration > Sites</strong> and right click on the desired site where the Status Filter Rule should be created.
+                        Now that the script is ready, let's hook it to a Status Filter Rule to automate its execution. Let's go back to **Administration > Overview > Site Configuration > Sites** and right click on the desired site where the Status Filter Rule should be created.
                       </p>
                       
                       <p>
@@ -357,18 +357,18 @@ The $NewSUGName Software Update Group has been created. It contains the followin
                       
                       <ul>
                         <li>
-                          Click the <strong>Create</strong> button and chose a name for your rule;
+                          Click the **Create** button and chose a name for your rule;
                         </li>
                         <li>
-                          Check the <strong>Message ID </strong>box and type <strong>5800 </strong>in the field next to it;
+                          Check the **Message ID **box and type **5800 **in the field next to it;
                         </li>
                         <li>
-                          Click on the <strong>Next </strong>button.
+                          Click on the **Next **button.
                         </li>
                       </ul>
                       
                       <p>
-                        That's it for the filter, we don't need anything else. On the <strong>Actions </strong>page, check the <strong>Run a program</strong> checkbox and enter the following command line (See below). Then click <strong>Next </strong>to review your Status Filter Rule and complete the wizard.
+                        That's it for the filter, we don't need anything else. On the **Actions **page, check the **Run a program** checkbox and enter the following command line (See below). Then click **Next **to review your Status Filter Rule and complete the wizard.
                       </p>
                       
                       <p>
@@ -399,7 +399,7 @@ The $NewSUGName Software Update Group has been created. It contains the followin
                       </p>
                       
                       <p>
-                        To check if anything was wrong, you can take a look at the <strong>statmgr.log</strong>. There should be a log line stating that the PowerShell process has been started with the arguments that you have set in the Status Filter Rule.
+                        To check if anything was wrong, you can take a look at the **statmgr.log**. There should be a log line stating that the PowerShell process has been started with the arguments that you have set in the Status Filter Rule.
                       </p><figure class="wp-block-image size-large">
                       
                       ![](statmgr.log_.png)</figure>

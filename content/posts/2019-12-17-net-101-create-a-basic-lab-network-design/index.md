@@ -17,9 +17,9 @@ As I go through my career, I often find that the answers I take for granted are 
 
 I've tried to include as many reference links as possible to help you learn about the concepts involved, but I cannot explain everything in one article. If you think there's a section that can use a bit more explanation, let us know, and we'll take a look as time allows.
 
-<p class="has-text-align-center">
-  <strong>Why is this a networking article on a site for sysadmins? Because all systems depend on the network. If you know how your network works, you will have an easier time of building & fixing your systems.</strong>
-</p>
+
+  **Why is this a networking article on a site for sysadmins? Because all systems depend on the network. If you know how your network works, you will have an easier time of building & fixing your systems.**
+
 
 ## Prerequisites
 
@@ -58,9 +58,9 @@ It's important to note that the very first address in your subnet (in our case 1
 
 #### IPv6
 
-<p class="has-text-align-center">
-  <em>Unfortunately, my experience doesn't yet include IPv6. I'll make a best-effort here but maybe don't count anything in this article referencing IPv6 as well-researched or authoritative yet. </em>
-</p>
+
+  *Unfortunately, my experience doesn't yet include IPv6. I'll make a best-effort here but maybe don't count anything in this article referencing IPv6 as well-researched or authoritative yet. *
+
 
 I recommend this article for some light reading regarding IPv6 addressing: [TCP/IP Fundamentals for Windows, Chapter 3](https://docs.microsoft.com/en-us/previous-versions/tn-archive/bb726995(v=technet.10)#ipv6-addressing). You may also find this series of articles useful: [Infoblox IPv6 Blogs](https://blogs.infoblox.com/category/ipv6-coe/).
 
@@ -96,9 +96,9 @@ It also seems that in IPv6, you need to think of IPv6 addresses as identifiers f
 
 For the purpose of our lab network, we're going to set our example IPv4 gateway address as **10.248.100.1/24**, and our IPv6 address as **fdda:f6d4:f5a2:f1e6::1/64** You will use these addresses any time you are asked for a default gateway.
 
-<p class="has-text-align-center">
-  <em>Real corporate networks are made of many subnets and firewalls and things of that nature but this lab will only cover having 1 internal subnet. Once you've mastered this network config, you can increase your security posture by expanding your lab to have 2 subnets, a firewall interface for both, and writing the firewall rules that allow devices on one network to talk to the other network.</em>
-</p>
+
+  *Real corporate networks are made of many subnets and firewalls and things of that nature but this lab will only cover having 1 internal subnet. Once you've mastered this network config, you can increase your security posture by expanding your lab to have 2 subnets, a firewall interface for both, and writing the firewall rules that allow devices on one network to talk to the other network.*
+
 
 #### VLANs
 
@@ -108,9 +108,9 @@ We won't talk about them a lot in this article other than suggesting you learn m
 
 You should not assume that the vlan number ties to an ip addressing scheme in any case.
 
-<p class="has-text-align-center">
-  <em>If you'd like to know more about vlan and vlan tagging, have a look at [Thomas Krenn VLAN Basics](https://www.thomas-krenn.com/en/wiki/VLAN_Basics).</em>
-</p>
+
+  *If you'd like to know more about vlan and vlan tagging, have a look at [Thomas Krenn VLAN Basics](https://www.thomas-krenn.com/en/wiki/VLAN_Basics).*
+
 
 ### Basic Networking Roles/Services
 
@@ -127,7 +127,7 @@ _!! Remember - this is the same number of addresses, but written in hex. Even th
 
 #### DNS
 
-<pre class="wp-block-verse"><em>It's not DNS.<br />There's no way it's DNS.<br />It was DNS.</em></pre>
+<pre class="wp-block-verse">*It's not DNS.<br />There's no way it's DNS.<br />It was DNS.*</pre>
 
 An embarrassingly large number of systems problems can be traced back to DNS.
 
@@ -144,11 +144,11 @@ Hey, so now we have an idea of our network definition. We know what it is, what 
 <table class="">
   <tr>
     <td>
-      <strong>Item</strong>
+      **Item**
     </td>
     
     <td>
-      <strong>Value</strong>
+      **Value**
     </td>
   </tr>
   
@@ -158,7 +158,7 @@ Hey, so now we have an idea of our network definition. We know what it is, what 
     </td>
     
     <td>
-      <strong>10.248.100.0/24</strong><br /> <strong>fdda:f6d4:f5a2:f1e6::/64</strong>
+      **10.248.100.0/24**<br /> **fdda:f6d4:f5a2:f1e6::/64**
     </td>
   </tr>
   
@@ -168,7 +168,7 @@ Hey, so now we have an idea of our network definition. We know what it is, what 
     </td>
     
     <td>
-      <strong>10.248.100.1/24</strong><br /> <strong>fdda:f6d4:f5a2:f1e6::1/64</strong>
+      **10.248.100.1/24**<br /> **fdda:f6d4:f5a2:f1e6::1/64**
     </td>
   </tr>
   
@@ -178,7 +178,7 @@ Hey, so now we have an idea of our network definition. We know what it is, what 
     </td>
     
     <td>
-      <strong>10.248.100.2/24</strong><br /> <strong>fdda:f6d4:f5a2:f1e6::2/64</strong>
+      **10.248.100.2/24**<br /> **fdda:f6d4:f5a2:f1e6::2/64**
     </td>
   </tr>
   
@@ -188,7 +188,7 @@ Hey, so now we have an idea of our network definition. We know what it is, what 
     </td>
     
     <td>
-      <strong>lab.test.</strong>
+      **lab.test.**
     </td>
   </tr>
   
@@ -198,7 +198,7 @@ Hey, so now we have an idea of our network definition. We know what it is, what 
     </td>
     
     <td>
-      <strong>10.248.100.3/24</strong><br /> <strong>fdda:f6d4:f5a2:f1e6::3/64</strong>
+      **10.248.100.3/24**<br /> **fdda:f6d4:f5a2:f1e6::3/64**
     </td>
   </tr>
   
@@ -208,7 +208,7 @@ Hey, so now we have an idea of our network definition. We know what it is, what 
     </td>
     
     <td>
-      <strong>10.248.100.[50-99]/24</strong><br /><strong>fdda:f6d4:f5a2:f1e6::[32-63]/64</strong>
+      **10.248.100.[50-99]/24**<br />**fdda:f6d4:f5a2:f1e6::[32-63]/64**
     </td>
   </tr>
   
@@ -218,7 +218,7 @@ Hey, so now we have an idea of our network definition. We know what it is, what 
     </td>
     
     <td>
-      <strong>77</strong>
+      **77**
     </td>
   </tr>
 </table></figure> 
@@ -227,9 +227,9 @@ Well that was simple. But also maybe we should do this in a visual way as well. 
 
 <img loading="lazy" width="792" height="352" src="Lab-Network-3.png" alt="" class="wp-image-637" srcset="Lab-Network-3.png 792w, Lab-Network-3.png 300w, Lab-Network-3.png 768w, Lab-Network-3.png 100w" sizes="(max-width: 792px) 100vw, 792px" /> </figure> 
 
-<p class="has-text-align-center">
-  <strong>[Here are the source files for this drawing.](https://github.com/SysManSquad/BlogFiles/tree/master/aaron/net-101)</em></strong>
-</p>
+
+  **[Here are the source files for this drawing.](https://github.com/SysManSquad/BlogFiles/tree/master/aaron/net-101)</em>**
+
 
 Pretty neat huh? While you may at some point get to a level where you have some tool that generates these diagrams for you, I wouldn't count on it being soon. Some networks are so big that one human simply can't track every change to the topology or other critical information, but this lab network isn't one of them. 
 

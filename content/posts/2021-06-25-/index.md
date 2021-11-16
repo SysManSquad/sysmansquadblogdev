@@ -58,11 +58,11 @@ This post is geared toward users of [MSEndpointMgr's OSD FrontEnd](https://msend
               </h2>
               
               <p>
-                We also use the [Driver Auotmation Tool](https://msendpointmgr.com/driver-automation-tool/) for maintaining updated driver Packages (Note: <em>not Driver Packs</em>) which provides a standardized naming convention and Package properties to use for a nice automation script.
+                We also use the [Driver Auotmation Tool](https://msendpointmgr.com/driver-automation-tool/) for maintaining updated driver Packages (Note: *not Driver Packs*) which provides a standardized naming convention and Package properties to use for a nice automation script.
               </p>
               
               <p>
-                At first, I updated the list manually when needed until I ran into an odd issue where OSD FrontEnd parses the HWmodels.txt file in a case-sensitive manner. Meaning that if the system's model is <strong>Opti<span class="has-inline-color has-vivid-red-color">P</span>lex 9010</strong> but the name in the txt file is <strong>Opti<span class="has-inline-color has-vivid-red-color">p</span>lex 9010</strong>, no match is found, thus a false positive.
+                At first, I updated the list manually when needed until I ran into an odd issue where OSD FrontEnd parses the HWmodels.txt file in a case-sensitive manner. Meaning that if the system's model is **Opti<span class="has-inline-color has-vivid-red-color">P</span>lex 9010** but the name in the txt file is **Opti<span class="has-inline-color has-vivid-red-color">p</span>lex 9010**, no match is found, thus a false positive.
               </p>
               
               <p>
@@ -123,7 +123,7 @@ This post is geared toward users of [MSEndpointMgr's OSD FrontEnd](https://msend
               </ul>
               
               <p>
-                It's a lengthy list, so I'll try my best to keep this post short.<br /><em>Narrator: He didn't.</em>
+                It's a lengthy list, so I'll try my best to keep this post short.<br />*Narrator: He didn't.*
               </p>
               
               <h2>

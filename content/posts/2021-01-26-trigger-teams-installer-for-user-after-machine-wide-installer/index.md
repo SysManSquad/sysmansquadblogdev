@@ -64,7 +64,7 @@ The Teams Machine Wide installer will finish, and the detection of the software 
 
 ![](0TCMvCmzxY.gif) </figure> 
 
-This result is achieved by using a **Windows Scheduled Task**. The PowerShell script that generates this task is found below at the [end of the article](#The-Script), and also on [<strong>GitHub</strong>](https://github.com/CodyMathis123/CM-Ramblings/blob/master/New-PostTeamsMachineWideInstallScheduledTask.ps1).
+This result is achieved by using a **Windows Scheduled Task**. The PowerShell script that generates this task is found below at the [end of the article](#The-Script), and also on [**GitHub**](https://github.com/CodyMathis123/CM-Ramblings/blob/master/New-PostTeamsMachineWideInstallScheduledTask.ps1).
 
 A scheduled task can be found in Task Scheduler after the script runs as shown below.<figure class="wp-block-image size-full">
 

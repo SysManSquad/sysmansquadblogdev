@@ -94,7 +94,7 @@ categories:
             </ol>
             
             <p>
-              For each change you make to this boot image, ConfigMgr will always start with a fresh copy from the original - the one without the PackageID in the file name. <strong>Don't delete it</strong>!Otherwise you'll find yourself making a new one, again, when you come to update drivers or add new components later.
+              For each change you make to this boot image, ConfigMgr will always start with a fresh copy from the original - the one without the PackageID in the file name. **Don't delete it**!Otherwise you'll find yourself making a new one, again, when you come to update drivers or add new components later.
             </p><figure class="wp-block-image size-large">
             
             [![](createnewbootimageconfigmgr-3-1024x358.png)](createnewbootimageconfigmgr-3.png)<figcaption>Boot image on disk and in console after imported</figcaption></figure> <ol start="8">
@@ -108,7 +108,7 @@ categories:
             </p>
             
             <p>
-              When we come to do this using PowerShell, our new boot image will contain all the same drivers and optional components, however when we right click and go to Properties like I demonstrated in the screenshots above, you won't actually see anything in the <strong>Drivers</strong> or <strong>Optional Components</strong> tabs.
+              When we come to do this using PowerShell, our new boot image will contain all the same drivers and optional components, however when we right click and go to Properties like I demonstrated in the screenshots above, you won't actually see anything in the **Drivers** or **Optional Components** tabs.
             </p>
             
             <h2>
@@ -142,7 +142,7 @@ categories:
             </div><figcaption>YouTube video on using New-WinPEWIM.ps1</figcaption></figure> 
             
             <p>
-              You'll notice that when you import this to ConfigMgr, the <strong>Drivers </strong>and <strong>Optional Components</strong> tabs will be blank. Since ConfigMgr wasn't the tool used to inject drivers or optional components, it doesn't know what it doesn't know!
+              You'll notice that when you import this to ConfigMgr, the **Drivers **and **Optional Components** tabs will be blank. Since ConfigMgr wasn't the tool used to inject drivers or optional components, it doesn't know what it doesn't know!
             </p>
             
             <p>

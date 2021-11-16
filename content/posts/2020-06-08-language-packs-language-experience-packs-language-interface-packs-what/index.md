@@ -92,7 +92,7 @@ tags:
                     What are language specific Features on Demand and do I need them?
                   </li>
                   <li>
-                    <strong>What on earth do I need to do to deploy Windows 10 as another language (completely localised for a user in their most comfortable language), without a million different ISOs on my Distribution Points and in my task sequence, and not screw with the InstallLanguage / default system language? (if you're not familiar with the "InstallLanguage" issue, you will be after you've read this)</strong>
+                    **What on earth do I need to do to deploy Windows 10 as another language (completely localised for a user in their most comfortable language), without a million different ISOs on my Distribution Points and in my task sequence, and not screw with the InstallLanguage / default system language? (if you're not familiar with the "InstallLanguage" issue, you will be after you've read this)**
                   </li>
                 </ul>
                 
@@ -174,9 +174,9 @@ dism.exe /Image:"%OSDTargetSystemDrive%" /ScratchDir:%OSDTargetSystemDrive%Windo
                   </li>
                 </ul>
                 
-                <p class="has-text-align-center">
-                  <strong>OR</strong>
-                </p>
+                
+                  **OR**
+                
                 
                 <ul>
                   <li>
@@ -370,7 +370,7 @@ dism.exe /Image:"%OSDTargetSystemDrive%" /ScratchDir:%OSDTargetSystemDrive%Windo
                 </p>
                 
                 <p>
-                  <strong>Note:</strong> this is not a dig at the author. I am hugely grateful for the community contribution. It offers excellent insight with examples. At this point I'm mostly expressing my frustration toward Microsoft for making the task seem like magic or voodoo, when it should be clear and logical.
+                  **Note:** this is not a dig at the author. I am hugely grateful for the community contribution. It offers excellent insight with examples. At this point I'm mostly expressing my frustration toward Microsoft for making the task seem like magic or voodoo, when it should be clear and logical.
                 </p>
                 
                 <p>
@@ -414,7 +414,7 @@ dism.exe /Image:"%OSDTargetSystemDrive%" /ScratchDir:%OSDTargetSystemDrive%Windo
                     Start up, logon UI and first logon experience looks completely localised as fr-fr which is nice.
                   </li>
                   <li>
-                    Some parts of the Windows UI <strong>are not</strong> localised: start menu app shortcuts, the pre-populated text in the start menu search, and the text in the calendar pane.
+                    Some parts of the Windows UI **are not** localised: start menu app shortcuts, the pre-populated text in the start menu search, and the text in the calendar pane.
                   </li>
                   <li>
                     The Windows settings UI is partially localised. It may seem not localised in the image but in other areas of the settings I did see some translations, not many though. Also, you can see that the user can change back to "English (United States)" display language if they wanted to, which is nice.
@@ -426,7 +426,7 @@ dism.exe /Image:"%OSDTargetSystemDrive%" /ScratchDir:%OSDTargetSystemDrive%Windo
                     PowerShell doesn't seem to be localised and <code>dism.exe</code> is a bit weird: some parts are English some parts are French.
                   </li>
                   <li>
-                    The Microsoft Store is not localised at all, but <strong>there are a boat load of updates...</strong>
+                    The Microsoft Store is not localised at all, but **there are a boat load of updates...**
                   </li>
                 </ul>
                 
@@ -634,11 +634,11 @@ Get-CimInstance -Namespace "Rootcimv2mdmdmmap" -ClassName "MDM_EnterpriseModernA
                 </p>
                 
                 <p>
-                  <strong>FoDs with satellite packages: </strong>come with language and architecture elements in independent packages.
+                  **FoDs with satellite packages: **come with language and architecture elements in independent packages.
                 </p>
                 
                 <p>
-                  <strong>FoDs without satellite packages:</strong> come with language and architecture elements bundled into one package.
+                  **FoDs without satellite packages:** come with language and architecture elements bundled into one package.
                 </p>
                 
                 <p>

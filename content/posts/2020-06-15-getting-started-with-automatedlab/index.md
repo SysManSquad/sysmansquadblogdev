@@ -156,11 +156,11 @@ tags:
                                                     </h3>
                                                     
                                                     <p>
-                                                      AutomatedLab operates on an<strong>opt-out</strong>telemetry system. The[documentation](http://automatedlab.org/en/latest/#requirements)on this heavily suggests no personal identifiable information is collected and it’s used purely for supportability and usage statistics. Snippets of json data which is sent back are included in the docs to give you insight to the amount of detail shared.
+                                                      AutomatedLab operates on an**opt-out**telemetry system. The[documentation](http://automatedlab.org/en/latest/#requirements)on this heavily suggests no personal identifiable information is collected and it’s used purely for supportability and usage statistics. Snippets of json data which is sent back are included in the docs to give you insight to the amount of detail shared.
                                                     </p>
                                                     
                                                     <p>
-                                                      To opt out, you either set environment variable<strong><code>AUTOMATEDLAB_TELEMETRY_OPTIN</code></strong>to<code>strong>false/strong></code>,<strong><code>no</code></strong>or<code>strong>0/strong></code>. Or simply use<code>strong>Disable-LabTelemetry/strong></code>after installing.
+                                                      To opt out, you either set environment variable**<code>AUTOMATEDLAB_TELEMETRY_OPTIN</code>**to<code>strong>false/strong></code>,**<code>no</code>**or<code>strong>0/strong></code>. Or simply use<code>strong>Disable-LabTelemetry/strong></code>after installing.
                                                     </p>
                                                     
                                                     <p>
@@ -198,7 +198,7 @@ tags:
                                                     </p>
                                                     
                                                     <p>
-                                                      <em>“Every machine deployed with AL has CredSsp enabled as a CredSsp server. This is like running “Enable-WSManCredSSP -Role Server”. Invoke-LabCommand always tries to make a connection with CredSsp. If this does not work you will see a warning and a connection without CredSsp is tried. This is definitely not a best practice for a production environment but makes life much easier in a lab. Using CredSsp you can create a remote session from a remote session which is extremely helpful when installing or setting up a lab. For example, reading an AD user account from a remote session does not work without CredSsp as reading data from Active Directory requires and authentication from the remote machine to a domain controller. Inside an AL lab the following code works out of the box.”</em>
+                                                      *“Every machine deployed with AL has CredSsp enabled as a CredSsp server. This is like running “Enable-WSManCredSSP -Role Server”. Invoke-LabCommand always tries to make a connection with CredSsp. If this does not work you will see a warning and a connection without CredSsp is tried. This is definitely not a best practice for a production environment but makes life much easier in a lab. Using CredSsp you can create a remote session from a remote session which is extremely helpful when installing or setting up a lab. For example, reading an AD user account from a remote session does not work without CredSsp as reading data from Active Directory requires and authentication from the remote machine to a domain controller. Inside an AL lab the following code works out of the box.”*
                                                     </p>
                                                     
                                                     <h4>
@@ -212,7 +212,7 @@ tags:
                                                     </p>
                                                     
                                                     <p>
-                                                      “<em>AutomatedLab requires the host to connect to any possible lab machine using NTLM.</em>.. “
+                                                      “*AutomatedLab requires the host to connect to any possible lab machine using NTLM.*.. “
                                                     </p>
                                                     
                                                     <p>
@@ -274,7 +274,7 @@ tags:
                                                     </h4>
                                                     
                                                     <p>
-                                                      The setting it changes for CVE-2018-0886 /[KB4093492](https://support.microsoft.com/en-us/help/4093492/credssp-updates-for-cve-2018-0886-march-13-2018)is<code>strong>AllowEncryptionOracle/strong></code>=<strong><code>2</code></strong>:
+                                                      The setting it changes for CVE-2018-0886 /[KB4093492](https://support.microsoft.com/en-us/help/4093492/credssp-updates-for-cve-2018-0886-march-13-2018)is<code>strong>AllowEncryptionOracle/strong></code>=**<code>2</code>**:
                                                     </p>
                                                     
                                                     <pre class="wp-block-code"><code>New-Item -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\CredSSP\Parameters -Force | Out-Null
@@ -417,7 +417,7 @@ Set-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\
                                                     
                                                     <ul>
                                                       <li>
-                                                        Create an AutomatedLab named whatever you passed for the<strong><code>-LabName</code></strong>parameter
+                                                        Create an AutomatedLab named whatever you passed for the**<code>-LabName</code>**parameter
                                                       </li>
                                                       <li>
                                                         Create a three VM lab all running Windows Server 2019 Datacenter (Desktop Experience)
@@ -441,11 +441,11 @@ Set-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\
                                                     </h2>
                                                     
                                                     <p>
-                                                      While you can delete the Hyper-V virtual machines from the VMM service and vhdx/vmcx files off disk, AutomatedLab will still think they exist. AutomatedLab keeps track of what’s where within the realm of AutomatedLab via XML files which can be found in<strong><code>C:\ProgramData\AutomatedLab\Labs</code></strong>.
+                                                      While you can delete the Hyper-V virtual machines from the VMM service and vhdx/vmcx files off disk, AutomatedLab will still think they exist. AutomatedLab keeps track of what’s where within the realm of AutomatedLab via XML files which can be found in**<code>C:\ProgramData\AutomatedLab\Labs</code>**.
                                                     </p>
                                                     
                                                     <p>
-                                                      To delete individual VMs, use<strong><code>a href="http://automatedlab.org/en/latest/AutomatedLab/en-us/Remove-LabVM/">Remove-LabVM/a></code></strong>. To remove all VMs associated with a lab, use<strong><code>a href="http://automatedlab.org/en/latest/AutomatedLab/en-us/Remove-Lab/">Remove-Lab/a></code></strong>.
+                                                      To delete individual VMs, use**<code>a href="http://automatedlab.org/en/latest/AutomatedLab/en-us/Remove-LabVM/">Remove-LabVM/a></code>**. To remove all VMs associated with a lab, use**<code>a href="http://automatedlab.org/en/latest/AutomatedLab/en-us/Remove-Lab/">Remove-Lab/a></code>**.
                                                     </p>
                                                     
                                                     <p>

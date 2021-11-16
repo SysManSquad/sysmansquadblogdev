@@ -182,7 +182,7 @@ With this Azure Policy you can automatically enable Boot Diagnostics and apply a
               </p>
               
               <p>
-                By default, the JSON policy provided will ignore any resources with the tag <strong>IgnoreBootDiagnostics </strong>, but you can also add <strong>Exclusions</strong> here, as well.
+                By default, the JSON policy provided will ignore any resources with the tag **IgnoreBootDiagnostics **, but you can also add **Exclusions** here, as well.
               </p><figure class="wp-block-image size-large">
               
               ![](https://i.imgur.com/1lJbBMM.png)</figure> <p>
@@ -222,7 +222,7 @@ With this Azure Policy you can automatically enable Boot Diagnostics and apply a
               </p>
               
               <p>
-                From there it usually takes <em>another</em> 30 minutes to multiple hours before the remediation runs. These are not the most immediate methods to apply the policy, but they can be fully automatic!
+                From there it usually takes *another* 30 minutes to multiple hours before the remediation runs. These are not the most immediate methods to apply the policy, but they can be fully automatic!
               </p>
               
               <p>
@@ -238,7 +238,7 @@ With this Azure Policy you can automatically enable Boot Diagnostics and apply a
               </h2>
               
               <p>
-                Modifying the Azure Policies can be a highly iterative process, so being able to reference or revert to previous versions can be an <strong>enormous</strong> benefit.
+                Modifying the Azure Policies can be a highly iterative process, so being able to reference or revert to previous versions can be an **enormous** benefit.
               </p>
               
               <p>
@@ -246,7 +246,7 @@ With this Azure Policy you can automatically enable Boot Diagnostics and apply a
               </p>
               
               <p>
-                Open [Azure Policy Assignments](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyMenuBlade/Assignments) > Select your assignment > <strong>View Definition</strong> button near the top > <strong>Export Definition</strong> button
+                Open [Azure Policy Assignments](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyMenuBlade/Assignments) > Select your assignment > **View Definition** button near the top > **Export Definition** button
               </p><figure class="wp-block-image size-large">
               
               ![](https://i.imgur.com/KGmXwlg.gif)</figure> <p>
@@ -258,7 +258,7 @@ With this Azure Policy you can automatically enable Boot Diagnostics and apply a
               </p>
               
               <p>
-                If you aren't familiar with [GitHub Actions](https://github.com/features/actions), the export process will create a <strong>.github/workflows/manage_azure_policy_xxxxxx.yml</strong> that will outline the Workflow and use secrets to securely connect back to Azure.
+                If you aren't familiar with [GitHub Actions](https://github.com/features/actions), the export process will create a **.github/workflows/manage_azure_policy_xxxxxx.yml** that will outline the Workflow and use secrets to securely connect back to Azure.
               </p>
               
               <p>

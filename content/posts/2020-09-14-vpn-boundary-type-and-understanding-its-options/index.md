@@ -32,7 +32,7 @@ From the [Define boundaries - Configuration Manager | Microsoft Docs](https://do
   * **Auto detect VPN**: Configuration Manager detects any VPN solution that uses the point-to-point tunneling protocol (PPTP). If it doesn't detect your VPN, use one of the other options. The boundary value in the console list will beAuto:On.
   * **Connection name**: Specify the name of the VPN connection on the device. It's the name of the network adapter in Windows for the VPN connection. Configuration Manager matches the first 250 characters of the string, but doesn't support wildcard characters or partial strings. The boundary value in the console list will beName:<name>, where<name>is the connection name that you specify.  
     For example, you run theipconfigcommand on the device, and one of the sections starts with:PPP adapter ContosoVPN:. Use the stringContosoVPNas the**Connection name**. It displays in the list asName:CONTOSOVPN.
-  * **Connection description**: Specify the description of the VPN connection. Configuration Manager matches the first 243 characters of the string, <span class="has-inline-color has-vivid-red-color"><strong>but doesn't support wildcard characters or partial strings</strong></span>. The boundary value in the console list will beDescription:<description>, where<description>is the connection description that you specify.  
+  * **Connection description**: Specify the description of the VPN connection. Configuration Manager matches the first 243 characters of the string, <span class="has-inline-color has-vivid-red-color">**but doesn't support wildcard characters or partial strings**</span>. The boundary value in the console list will beDescription:<description>, where<description>is the connection description that you specify.  
     For example, you run theipconfig /allcommand on the device, and one of the connections includes the following line:Description . . . . . . . . . . . : ContosoMainVPN. Use the stringContosoMainVPNas the**Connection description**. It displays in the list asDescription:CONTOSOMAINVPN.
 
 #### Finding the Best Fit<figure class="wp-block-table">
@@ -40,21 +40,21 @@ From the [Define boundaries - Configuration Manager | Microsoft Docs](https://do
 <table>
   <tr>
     <td>
-      <strong>Type</strong>
+      **Type**
     </td>
     
     <td>
-      <strong>Decision</strong>
+      **Decision**
     </td>
     
     <td class="has-text-align-center" data-align="center">
-      <strong>Selected</strong>
+      **Selected**
     </td>
   </tr>
   
   <tr>
     <td>
-      <strong>Auto detect VPN</strong>
+      **Auto detect VPN**
     </td>
     
     <td>
@@ -67,7 +67,7 @@ From the [Define boundaries - Configuration Manager | Microsoft Docs](https://do
   
   <tr>
     <td>
-      <strong>Connection name</strong>
+      **Connection name**
     </td>
     
     <td>
@@ -80,7 +80,7 @@ From the [Define boundaries - Configuration Manager | Microsoft Docs](https://do
   
   <tr>
     <td>
-      <strong>Connection description</strong>
+      **Connection description**
     </td>
     
     <td>
@@ -157,13 +157,13 @@ and none other than Rob York responded, inadvertently leading me to answer my ow
       1. When I opened the Admin Console, I thought, "Hey, there's a chance that there could be slight variations in the Description value among the 1k+ devices I have. Let's check the database first."
       2. I ran this query and got the results shown in my Tweet above
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"sql","mime":"text/x-sql","theme":"liquibyte","lineNumbers":false,"styleActiveLine":false,"lineWrapping":false,"readOnly":false,"languageLabel":"language","language":"SQL","modeName":"sql"}">select Distinct
+```sql
+select Distinct
 Description0
-
 FROM v_GS_NETWORK_ADAPTER
 WHERE Description0 LIKE 'PANGP Virtual Ethernet Adapter%'
-ORDER BY Description0```
+ORDER BY Description0
+```
 
 I assumed that the `Description` field populated in `win32_networkadapter` matched the `Description` field from `ipconfig/all`, but you already know that wasn't the case.<figure class="wp-block-image size-full is-resized">
 
@@ -177,14 +177,15 @@ Once I re-read Rob York's response, I realized I was looking at the wrong proper
 > 
 > <cite>Rob york</cite></figure> 
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"sql","mime":"text/x-sql","theme":"liquibyte","lineNumbers":false,"styleActiveLine":false,"lineWrapping":false,"readOnly":false,"languageLabel":"language","language":"SQL","modeName":"sql"}">select Distinct
+```sql
+select Distinct
 Name0 AS 'VPN Boundary Description'
 ,Description0 AS 'win32_networkadapter description'
 
 FROM v_GS_NETWORK_ADAPTER
 WHERE Name0 LIKE 'PANGP Virtual Ethernet Adapter%'
-ORDER BY Description0```
+ORDER BY Description0
+```
 
 This gave me more results and made me realize I needed a Boundary for each of these adapter Descriptions. Er... _Name0_<figure class="wp-block-image size-full is-resized">
 

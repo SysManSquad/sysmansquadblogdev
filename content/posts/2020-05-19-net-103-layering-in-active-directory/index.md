@@ -39,7 +39,7 @@ Pretty simple so far, we just have the bare bones of a network. New devices plac
 At the moment, you don't really have a good way to just look at your configuration other than powershell commands if you followed instructions from NET-102. This obviously isn't optimal when you just need a quick look around, or need to get something done quickly. Some things like the DNS server console might connect OK from your admin workstation, but it's likely that nothing works quite right. If anything does work at all it may be because you've got the same username and password configured across all machines in your lab. 
 
 <p style="background-color:#ffc9d6" class="has-background">
-  Warning: Before you continue, if you have given your admin workstation vm a network adapter on your real network, <strong>make sure that it has NO default gateway and NO dns servers specified</strong>. It should have a static address configuration, and look similar to the following:
+  Warning: Before you continue, if you have given your admin workstation vm a network adapter on your real network, **make sure that it has NO default gateway and NO dns servers specified**. It should have a static address configuration, and look similar to the following:
 </p>
 
 <pre class="wp-block-code"><code>C:\Users\User1>ipconfig /all
@@ -75,7 +75,7 @@ For an environment this small, it's going to be pretty simple. You merely need t
     </td>
     
     <td>
-      <strong>ad</strong>
+      **ad**
     </td>
   </tr>
   
@@ -85,7 +85,7 @@ For an environment this small, it's going to be pretty simple. You merely need t
     </td>
     
     <td>
-      <strong>ad.lab.test</strong>
+      **ad.lab.test**
     </td>
   </tr>
   
@@ -95,7 +95,7 @@ For an environment this small, it's going to be pretty simple. You merely need t
     </td>
     
     <td>
-      <strong>10.248.100.4</strong>
+      **10.248.100.4**
     </td>
   </tr>
   
@@ -105,7 +105,7 @@ For an environment this small, it's going to be pretty simple. You merely need t
     </td>
     
     <td>
-      <strong>fdda:f6d4:f5a2:f1e6::4/64</strong>
+      **fdda:f6d4:f5a2:f1e6::4/64**
     </td>
   </tr>
 </table><figcaption>AD Information</figcaption></figure> 

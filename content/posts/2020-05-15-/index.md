@@ -43,7 +43,7 @@ Now in your base Wim image..
 
 <blockquote class="wp-block-quote">
   <p>
-    <strong>1) Create the folder structure C:\Windows\BG\</strong><strong>2) Copy "background_PreLoginRed_SCCM_Build_FailedWarning.jpg" here.</strong><strong>3) Set the following: "HKLM\Software\Policies\Microsoft\Windows\Personalization\LockScreenImage", "C:\Windows\BG\background_PreLoginRed_SCCM_Build_FailedWarning.jpg", "REG_SZ"</strong>
+    **1) Create the folder structure C:\Windows\BG\****2) Copy "background_PreLoginRed_SCCM_Build_FailedWarning.jpg" here.****3) Set the following: "HKLM\Software\Policies\Microsoft\Windows\Personalization\LockScreenImage", "C:\Windows\BG\background_PreLoginRed_SCCM_Build_FailedWarning.jpg", "REG_SZ"**
   </p>
 </blockquote><figure class="wp-block-image">
 
@@ -73,7 +73,7 @@ Put this as late as you can, 1 of your last steps in the TS..
 
 <blockquote class="wp-block-quote">
   <p>
-    <strong>Step: Run Command Line</strong><strong>Name: Set Lock Screen Image</strong><strong>Command line: cmd.exe /c "cscript.exe C:\windows\BG\SetBackground.vbs"</strong>
+    **Step: Run Command Line****Name: Set Lock Screen Image****Command line: cmd.exe /c "cscript.exe C:\windows\BG\SetBackground.vbs"**
   </p>
 </blockquote><figure class="wp-block-image">
 

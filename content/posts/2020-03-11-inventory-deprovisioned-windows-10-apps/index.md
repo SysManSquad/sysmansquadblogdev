@@ -50,7 +50,7 @@ Thankfully the power of MEMCM can save us from our mistakes! Custom hardware inv
     
     <li class="schema-how-to-step" id="how-to-step-1577028462586">
       <strong class="schema-how-to-step-name">Leverage new inventory for making collections, reports, and decisions</strong> <p class="schema-how-to-step-text">
-        <strong>ACT BASED ON DATA!</strong>
+        **ACT BASED ON DATA!**
       </p>
     </li>
   </ol>

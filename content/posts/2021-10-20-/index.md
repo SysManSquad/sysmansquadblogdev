@@ -88,7 +88,7 @@ In comes Okta LDAP Interface.
     
     <ol>
       <li>
-        Navigate to <em>Directory > People</em><ol>
+        Navigate to *Directory > People*<ol>
           <li>
             Add Person<ol>
               <li>
@@ -103,7 +103,7 @@ In comes Okta LDAP Interface.
                     This way you don't have to set up an actual email account in Exchange, Google, etc.
                   </li>
                   <li>
-                    <strong>UN</strong>check the box to change password at first login
+                    **UN**check the box to change password at first login
                   </li>
                 </ol>
               </li>
@@ -128,7 +128,7 @@ In comes Okta LDAP Interface.
     </p>
     
     <p>
-      There are 2 options to accomplish the same goal here: Exclude the Service Account explicitly in your MFA Policy <em>or</em> Create a new Group and a new Policy for easier access and visibility.
+      There are 2 options to accomplish the same goal here: Exclude the Service Account explicitly in your MFA Policy *or* Create a new Group and a new Policy for easier access and visibility.
     </p>
     
     <p>

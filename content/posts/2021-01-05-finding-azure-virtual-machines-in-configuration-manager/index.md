@@ -117,7 +117,7 @@ FUNCTION Test-IsAzureVM {
                       <div class="wp-block-group__inner-container">
                         <blockquote class="wp-block-quote">
                           <p>
-                            When<code>Invoke-WebRequest</code>encounters a non-success HTTP message (404, 500, etc.), it returns no output and throws a terminating error. To catch the error and view the<strong>StatusCode</strong>you can enclose execution in a<code>try/catch</code>block.
+                            When<code>Invoke-WebRequest</code>encounters a non-success HTTP message (404, 500, etc.), it returns no output and throws a terminating error. To catch the error and view the**StatusCode**you can enclose execution in a<code>try/catch</code>block.
                           </p>
                         </blockquote>
                       </div>
@@ -169,7 +169,7 @@ FUNCTION Test-IsAzureVM {
                         Data Type: <code>Boolean</code>
                       </li>
                       <li>
-                        Script: Past the Function in the window and <span style="color:Red"><strong><em>don't forget to call the function on the last line!</em></strong></span>
+                        Script: Past the Function in the window and <span style="color:Red">***don't forget to call the function on the last line!***</span>
                       </li>
                     </ol><figure class="wp-block-image size-large">
                     
@@ -199,7 +199,7 @@ FUNCTION Test-IsAzureVM {
                     </h2>
                     
                     <p>
-                      Now you can Deploy your newly created Baseline to whichever devices you wish. For this example, we're deploying to the <em>All Systems</em> collection and we're only going to run the baseline evaluation once per device, but there's no real harm in having it run every month or so (the data we're looking at is static and shouldn't vary at all).
+                      Now you can Deploy your newly created Baseline to whichever devices you wish. For this example, we're deploying to the *All Systems* collection and we're only going to run the baseline evaluation once per device, but there's no real harm in having it run every month or so (the data we're looking at is static and shouldn't vary at all).
                     </p><figure class="wp-block-image size-large is-resized">
                     
                     ![](image-17-1024x640.png)</figure> <h1>
@@ -207,11 +207,11 @@ FUNCTION Test-IsAzureVM {
                     </h1>
                     
                     <p>
-                      The only real "required" collection to make is based on Compliant devices with the Baseline we deployed. To do that, click the Baseline, then the Deployments tab at the bottom, and right-click the <strong>Deployment</strong> > <strong>Create New Collection</strong> > <strong>Compliant</strong>, and follow the on-screen prompts to finish the Collection
+                      The only real "required" collection to make is based on Compliant devices with the Baseline we deployed. To do that, click the Baseline, then the Deployments tab at the bottom, and right-click the **Deployment** > **Create New Collection** > **Compliant**, and follow the on-screen prompts to finish the Collection
                     </p><figure class="wp-block-image size-large is-resized">
                     
                     ![](image-18.png)</figure> <p>
-                      I named my Collection "<em>All Systems_Azure</em>"
+                      I named my Collection "*All Systems_Azure*"
                     </p><figure class="wp-block-image size-large is-resized">
                     
                     ![](image-19.png)</figure> <p>
@@ -220,29 +220,29 @@ FUNCTION Test-IsAzureVM {
                     
                     <ul>
                       <li>
-                        <strong>Collection Name</strong>: <em>All Windows Workstations in Azure</em><ul>
+                        **Collection Name**: *All Windows Workstations in Azure*<ul>
                           <li>
-                            <strong>Limiting Collection</strong>: <em>All Systems_Azure</em>
+                            **Limiting Collection**: *All Systems_Azure*
                           </li>
                           <li>
-                            <strong>Include Collection</strong>: <em>All Windows Workstations</em>
+                            **Include Collection**: *All Windows Workstations*
                           </li>
                           <li>
-                            <strong>Result</strong>: Collection of Azure VMs running Windows client OS
+                            **Result**: Collection of Azure VMs running Windows client OS
                           </li>
                         </ul>
                       </li>
                       
                       <li>
-                        <strong>Collection Name</strong>: <em>All Windows Servers in Azure</em><ul>
+                        **Collection Name**: *All Windows Servers in Azure*<ul>
                           <li>
-                            <strong>Limiting Collection</strong>: <em>All Systems_Azure</em>
+                            **Limiting Collection**: *All Systems_Azure*
                           </li>
                           <li>
-                            <strong>Include Collection</strong>: <em>All Windows Servers</em>
+                            **Include Collection**: *All Windows Servers*
                           </li>
                           <li>
-                            <strong>Result</strong>: Collection of Azure VMs running Windows server OS
+                            **Result**: Collection of Azure VMs running Windows server OS
                           </li>
                         </ul>
                       </li>

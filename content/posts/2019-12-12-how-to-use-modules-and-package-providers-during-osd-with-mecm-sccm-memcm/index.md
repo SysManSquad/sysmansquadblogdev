@@ -37,7 +37,6 @@ Now please forgive me for my terrible PS skills I'm working on improving them!
 
 Create a script in the same folder you put PackageManagemet and WindowsPowerShell that looks like the following
 
-
 ```powershell
 $executingScriptDirectory = Split-Path -Path $MyInvocation.MyCommand.Definition -Parent
 
@@ -45,7 +44,6 @@ copy-item $executingScriptDirectory\PackageManagement $env:ProgramFiles -force -
 
 copy-item $executingScriptDirectory\WindowsPowershell $env:ProgramFiles -force -Recurse
 ```
-
 
 In my case, I called this script **MoveItems.ps1**
 
@@ -57,17 +55,12 @@ In your OSD task Sequence create a run PowerShell script step and reference the 
 
 Next, in your original script that's failing to run, you'll want to IMPORT those modules or packageproviders as opposed to installing them since you now have the content copied to that local machine. In my case the code looks like so: (This will look different depending on the modules you are trying to import)
 
-
 ```powershell
 Import-Module -Name $env:ProgramFiles\WindowsPowerShell\Modules\SnipeitPS -Verbose
 
 Import-PackageProvider -Name "Nuget" -Verbose
 ```
 
-
 Add another Run PowerShell script to your task sequence and reference your script with the newly added Import commands and you should be good to go! Don't forget to update your distribution point for the package you created!
 
 If anyone is interested in the actual SnipeIT script feel free to come to the [WinAdmins](https://aka.ms/winadmins) discord and send me a message!
-
-
-

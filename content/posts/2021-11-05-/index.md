@@ -44,7 +44,7 @@ The best ways I have found to test this are either a
 
 #### To clear the Cookies 
 
-Copy-Paste `<strong>chrome://settings/siteData</strong>` into a new Chrome Tab and you should see something like this. Though if this is a normal-use browser profile you may have thousands more entries. <figure class="wp-block-image size-large">
+Copy-Paste `**chrome://settings/siteData**` into a new Chrome Tab and you should see something like this. Though if this is a normal-use browser profile you may have thousands more entries. <figure class="wp-block-image size-large">
 
 ![](image-1.png) </figure> 
 

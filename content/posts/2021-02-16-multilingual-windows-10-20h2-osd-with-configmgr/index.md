@@ -87,7 +87,7 @@ categories:
                       </p>
                       
                       <p>
-                        <strong>System user interface default language: en-US<br />System locale: fr-FR</strong><br />Default time zone: GMT Standard Time<br />Active keypad (s): 040c: 0000040c<br />Keyboard Layer Driver: Not Installed.
+                        **System user interface default language: en-US<br />System locale: fr-FR**<br />Default time zone: GMT Standard Time<br />Active keypad (s): 040c: 0000040c<br />Keyboard Layer Driver: Not Installed.
                       </p>
                       
                       <p>
@@ -126,7 +126,7 @@ categories:
                     </p>
                     
                     <p>
-                      I don't know how much work the lucky people in the Windows team did behind the scenes in order to make this work, but if you think about what they've done, they've nailed it. They solved the problem by not giving us any special instructions to follow. We literally no longer need to do anything special in our builds, or arguably any different compared to the way we <strong>should</strong> have been doing in all along, and it just works.
+                      I don't know how much work the lucky people in the Windows team did behind the scenes in order to make this work, but if you think about what they've done, they've nailed it. They solved the problem by not giving us any special instructions to follow. We literally no longer need to do anything special in our builds, or arguably any different compared to the way we **should** have been doing in all along, and it just works.
                     </p>
                     
                     <p>
@@ -171,7 +171,7 @@ categories:
                     </div>
                     
                     <p>
-                      <strong>Note:</strong> yes you will be downloading content for 2004, even though we are building a 20H2 task seqeuence.
+                      **Note:** yes you will be downloading content for 2004, even though we are building a 20H2 task seqeuence.
                     </p>
                     
                     <p>
@@ -229,15 +229,15 @@ New-FoDLanguageFeaturesRepository -Language "fr-FR", "de-DE" -SourcePath "E:\" -
                     
                     
                     <div class="wp-block-image">
-                      <figure class="aligncenter size-large is-resized">[![](multilingualosdwin1020h2-5-1007x1024.png)](multilingualosdwin1020h2-5.png)<figcaption>New-LPRepository<br /><em>(click to enlarge)</em></figcaption></figure>
+                      <figure class="aligncenter size-large is-resized">[![](multilingualosdwin1020h2-5-1007x1024.png)](multilingualosdwin1020h2-5.png)<figcaption>New-LPRepository<br />*(click to enlarge)*</figcaption></figure>
                     </div>
                     
                     <div class="wp-block-image">
-                      <figure class="aligncenter size-large is-resized">[![](multilingualosdwin1020h2-6-1007x1024.png)](multilingualosdwin1020h2-6.png)<figcaption>New-LXPRepository<br /><em>(click to enlarge)</em></figcaption></figure>
+                      <figure class="aligncenter size-large is-resized">[![](multilingualosdwin1020h2-6-1007x1024.png)](multilingualosdwin1020h2-6.png)<figcaption>New-LXPRepository<br />*(click to enlarge)*</figcaption></figure>
                     </div>
                     
                     <div class="wp-block-image">
-                      <figure class="aligncenter size-large is-resized">[![](multilingualosdwin1020h2-7-1007x1024.png)](multilingualosdwin1020h2-7.png)<figcaption>New-FoDLanguageFeaturesRepository<br /><em>(click to enlarge)</em></figcaption></figure>
+                      <figure class="aligncenter size-large is-resized">[![](multilingualosdwin1020h2-7-1007x1024.png)](multilingualosdwin1020h2-7.png)<figcaption>New-FoDLanguageFeaturesRepository<br />*(click to enlarge)*</figcaption></figure>
                     </div>
                     
                     <p>
@@ -245,7 +245,7 @@ New-FoDLanguageFeaturesRepository -Language "fr-FR", "de-DE" -SourcePath "E:\" -
                     </p>
                     
                     <p>
-                      <strong>Note:</strong> PSCMWin10Language will not create these Packages for you.
+                      **Note:** PSCMWin10Language will not create these Packages for you.
                     </p><figure class="wp-block-image size-large">
                     
                     [![](multilingualosdwin1020h2-8-1024x497.png)](multilingualosdwin1020h2-8.png)<figcaption>Packages for Windows 10 2004 LP, LXP and FoD</figcaption></figure> <p>
@@ -281,10 +281,10 @@ New-FoDLanguageFeaturesRepository -Language "fr-FR", "de-DE" -SourcePath "E:\" -
                     </p><figure class="wp-block-image size-large">
                     
                     ![](multilingualosdwin1020h2-10.png)<figcaption>Import SysManSquadMultilingualWindows10TaskSequence-20200213.zip</figcaption></figure> <p>
-                      You will need to set the option to <strong>ignore dependencies</strong>, simply because the PackageID references in the task sequence would not resolve in your environment.
+                      You will need to set the option to **ignore dependencies**, simply because the PackageID references in the task sequence would not resolve in your environment.
                     </p><figure class="wp-block-image size-large">
                     
-                    ![](multilingualosdwin1020h2-11.png)<figcaption>Set the <strong>Action</strong> to <strong>Ignore Depedency</strong></figcaption></figure> <p>
+                    ![](multilingualosdwin1020h2-11.png)<figcaption>Set the **Action** to **Ignore Depedency**</figcaption></figure> <p>
                       Once imported, you will see that beyond the initial few steps of formatting the drive and applying the OS image, there's nothing more complicated than the 3 steps for each language you want in your task sequence: installing the LP, LXP and FoD language content.
                     </p><figure class="wp-block-image size-large">
                     
@@ -309,7 +309,7 @@ New-FoDLanguageFeaturesRepository -Language "fr-FR", "de-DE" -SourcePath "E:\" -
                     </h2>
                     
                     <p>
-                      <em>-shudders-</em>
+                      *-shudders-*
                     </p>
                     
                     <p>

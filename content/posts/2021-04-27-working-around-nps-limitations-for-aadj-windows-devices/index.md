@@ -71,7 +71,7 @@ tags:
                           </p>
                           
                           <h5>
-                            <strong>The tl;dr of the issue</strong>
+                            **The tl;dr of the issue**
                           </h5>
                           
                           <p>
@@ -79,7 +79,7 @@ tags:
                           </p>
                           
                           <h5>
-                            <strong>Why is device based authentication important?</strong>
+                            **Why is device based authentication important?**
                           </h5>
                           
                           <p>
@@ -87,7 +87,7 @@ tags:
                           </p>
                           
                           <h5>
-                            <strong>Why not just hybrid join your machines?</strong>
+                            **Why not just hybrid join your machines?**
                           </h5>
                           
                           <div class="wp-block-image">
@@ -102,7 +102,7 @@ tags:
                             <li>
                               Healthy PKI<ul>
                                 <li>
-                                  Certificate enrollment configured for the user <strong>and </strong>device via your MDM
+                                  Certificate enrollment configured for the user **and **device via your MDM
                                 </li>
                               </ul>
                             </li>
@@ -142,7 +142,6 @@ tags:
                             This basic version of the script lets you create one device at a time (useful for testing):
                           </p>
                           
-                          <div class="wp-block-codemirror-blocks-code-block code-block lineWrapping: false">
 ```powershell
 [CmdletBinding(DefaultParameterSetName = 'Default')]
 param(
@@ -178,7 +177,6 @@ if ($nameMap) {
     }
 }
 ```
-                          </div>
                           
                           <p>
                             There are three important things this script does:
@@ -339,7 +337,7 @@ foreach ($DummyDevice in $DummyDevices) {
                             <li>
                               Reverses the process and removes any dummy computer objects in AD that no longer exist in Autopilot<ul>
                                 <li>
-                                  <strong>This step is potentially dangerous. </strong>Because of that, I added comments in the script above (line 63) and added <em>-WhatIf</em> as further risk control.
+                                  **This step is potentially dangerous. **Because of that, I added comments in the script above (line 63) and added *-WhatIf* as further risk control.
                                 </li>
                               </ul>
                             </li>
@@ -349,10 +347,9 @@ foreach ($DummyDevice in $DummyDevices) {
                             Here is an example run command:
                           </p>
                           
-                          <div class="wp-block-jetpack-markdown">
-                            <pre><code>.\Sync-DummyComputers.ps1 -TenantId "your-tenant-id-here" -ClientId "your-app-id-here" -ClientSecret "your-app-secret-here" -NameMap
-</code></pre>
-                          </div>
+```powershell
+.\Sync-DummyComputers.ps1 -TenantId "your-tenant-id-here" -ClientId "your-app-id-here" -ClientSecret "your-app-secret-here" -NameMap
+```
                           
                           <div class="wp-block-image">
                             <figure class="aligncenter size-large is-resized">![](image-3-1024x71.png)</figure>

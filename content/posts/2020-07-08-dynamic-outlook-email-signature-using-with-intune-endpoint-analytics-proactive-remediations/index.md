@@ -36,7 +36,7 @@ Welcome back. Now that we are on the same page, let's continue. The application 
 </div>
 
 <p class="has-very-light-gray-background-color has-background">
-  <em>Note: Setting permissions properly is essential to prevent Azure applications from being exploited. Only grant the minimum rights needed for the app.</em>
+  *Note: Setting permissions properly is essential to prevent Azure applications from being exploited. Only grant the minimum rights needed for the app.*
 </p>
 
 ## Discovery
@@ -98,7 +98,7 @@ The information required for these can be found in Azure AD in the app propertie
 `$clientSecret`
 
 <p class="has-very-light-gray-background-color has-background">
-  <em>Pro Tip: the v1.0 graph will only return a few basic attributes about the user, the beta graph returns a whole lot more. </em>
+  *Pro Tip: the v1.0 graph will only return a few basic attributes about the user, the beta graph returns a whole lot more. *
 </p>
 
 

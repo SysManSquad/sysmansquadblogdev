@@ -28,7 +28,7 @@ Well, now you can! <figure class="wp-block-image">
 ## Step 1 - Configure Teams {#step-1}
 
 <p class="has-luminous-vivid-amber-background-color has-background">
-  <em>You need to make sure your O365 Administrator has enabled Incoming webhooks connectors in your O365 Tenant.</em>
+  *You need to make sure your O365 Administrator has enabled Incoming webhooks connectors in your O365 Tenant.*
 </p>
 
   * Open Teams.

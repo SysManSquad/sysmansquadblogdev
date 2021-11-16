@@ -225,7 +225,7 @@ PS C:\> Import-Module PSCMContentMgmt
                                         </p>
                                         
                                         <h4>
-                                          <strong>Comparing distributed content objects between two distribution points or distribution point groups</strong>
+                                          **Comparing distributed content objects between two distribution points or distribution point groups**
                                         </h4>
                                         
                                         
@@ -280,7 +280,7 @@ Success   17007034 Application
                                         
                                         
                                         <h4>
-                                          <strong>Finding content objects in "distribution failed" state and initiating redistribution en masse</strong>
+                                          **Finding content objects in "distribution failed" state and initiating redistribution en masse**
                                         </h4>
                                         
                                         <p>
@@ -317,7 +317,7 @@ PS C:\> Get-DPDistributionStatus -DistributionPoint "dp1.contoso.com" -Distribut
                                         </p>
                                         
                                         <h4>
-                                          <strong>Finding objects in your environment with some arbitrary ID</strong>
+                                          **Finding objects in your environment with some arbitrary ID**
                                         </h4>
                                         
                                         <p>
@@ -388,7 +388,7 @@ PS C:\> Find-CMObject -ID "ACC00048"
                                         </p>
                                         
                                         <h4>
-                                          <strong>Migrating a distribution point to another</strong>
+                                          **Migrating a distribution point to another**
                                         </h4>
                                         
                                         <p>

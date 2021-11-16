@@ -398,8 +398,9 @@ Note: In my limited testing, I found that if a task sequence does not reference 
 
 If the “ClientIsOnInternet” is still not set after this step and device is not in WinPE, we use the following PowerShell command to determine if the device is on Internet:
 
-
 ```powershell
+Get-CimInstance -ClassName "ClientInfo" -Namespace "Root\CCM" | Select-Object -ExpandProperty InInternet
+```
 
 <figure class="wp-block-image size-large">
 
@@ -409,10 +410,15 @@ If the “ClientIsOnInternet” is still not set after this step and device is n
 
 Here you fill out your environment-specific information. The additional parameters needed for CMG support are:
 
-  * ExternalUrl: The ExternalUrl to access the AdminService from your CMG. The followinfg query can be used to find the ExternalUrl:
+  * ExternalUrl: The ExternalUrl to access the AdminService from your CMG. The following query can be used to find the ExternalUrl:
 
 
-  <pre class="CodeMirror" data-setting="{"mode":"sql","mime":"text/x-sql","theme":"default","lineNumbers":false,"styleActiveLine":false,"lineWrapping":true,"readOnly":false,"showPanel":false,"fileName":"query.sql","language":"SQL","modeName":"sql"}">SELECT ProxyServerName,ExternalUrl FROM [dbo].[vProxy_Routings] WHERE [dbo].[vProxy_Routings].ExternalEndpointName = 'AdminService'
+```sql
+SELECT 
+ProxyServerName,
+ExternalUrl 
+FROM [dbo].[vProxy_Routings]
+WHERE [dbo].[vProxy_Routings].ExternalEndpointName = 'AdminService'
 ```
 
 

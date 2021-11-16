@@ -48,7 +48,7 @@ Our customer will be moving to Azure later so we will probably revisit this as A
                 </ul></ol> </div> </div> </div> 
                 
                 <p>
-                  We chose to use the <strong>out-of-office responses</strong> for our setup, because they would not need a separate server/service to run them, a running copy of Outlook to process them, and this customer did not have a current Azure Subscription to charge against for a more server-less solution like Azure Automation, Functions, or Power Automate.
+                  We chose to use the **out-of-office responses** for our setup, because they would not need a separate server/service to run them, a running copy of Outlook to process them, and this customer did not have a current Azure Subscription to charge against for a more server-less solution like Azure Automation, Functions, or Power Automate.
                 </p>
                 
                 <p>
@@ -59,7 +59,7 @@ Our customer will be moving to Azure later so we will probably revisit this as A
                   <li>
                     something to make the changes <ul>
                       <li>
-                        our script below will use <strong>Microsoft Graph</strong> to update the user's <strong>Auto-Reply</strong> settings
+                        our script below will use **Microsoft Graph** to update the user's **Auto-Reply** settings
                       </li>
                     </ul>
                   </li>
@@ -67,7 +67,7 @@ Our customer will be moving to Azure later so we will probably revisit this as A
                   <li>
                     a way for our script to log in without a user present<ul>
                       <li>
-                        we set up <strong>Certificate Authentication</strong> so that we can have this working securely, without a password or token to compromise
+                        we set up **Certificate Authentication** so that we can have this working securely, without a password or token to compromise
                       </li>
                     </ul>
                   </li>
@@ -75,7 +75,7 @@ Our customer will be moving to Azure later so we will probably revisit this as A
                   <li>
                     and an automated way to run our script<ul>
                       <li>
-                        we opted for a <strong>Scheduled Task</strong> just as a simple way to schedule the update script to run regularly and access the certificate we will use to authenticate to <strong>MS Graph</strong>
+                        we opted for a **Scheduled Task** just as a simple way to schedule the update script to run regularly and access the certificate we will use to authenticate to **MS Graph**
                       </li>
                     </ul>
                   </li>
@@ -95,10 +95,10 @@ Our customer will be moving to Azure later so we will probably revisit this as A
                 
                 <ul>
                   <li>
-                    create a <strong>single tenant</strong> app
+                    create a **single tenant** app
                   </li>
                   <li>
-                    add API Permissions to <strong>ReadWrite </strong>all <strong>MailboxSettings</strong><ul>
+                    add API Permissions to **ReadWrite **all **MailboxSettings**<ul>
                       <li>
                         in my example, I am requesting ReadWrite to all, but you should be able to [scope it to specific users](https://docs.microsoft.com/en-us/graph/auth-limit-mailbox-access) for a more secure implementation
                       </li>
@@ -106,24 +106,24 @@ Our customer will be moving to Azure later so we will probably revisit this as A
                   </li>
                   
                   <li>
-                    create a <strong>certificate</strong> for authentication
+                    create a **certificate** for authentication
                   </li>
                   <li>
-                    upload the authentication <strong>certificate</strong> to the new <strong>App</strong>
+                    upload the authentication **certificate** to the new **App**
                   </li>
                   <li>
-                    export local copies of the <strong>Public cert</strong> and <strong>PFX </strong>to C:\Temp<ul>
+                    export local copies of the **Public cert** and **PFX **to C:\Temp<ul>
                       <li>
-                        if you need to set this Script up on another machine, you will need to import the <strong>PFX</strong> into the <strong>user store</strong> on that <strong>machine</strong>
+                        if you need to set this Script up on another machine, you will need to import the **PFX** into the **user store** on that **machine**
                       </li>
                     </ul>
                   </li>
                   
                   <li>
-                    grant <strong>Admin Consent</strong> for the <strong>app permissions</strong>
+                    grant **Admin Consent** for the **app permissions**
                   </li>
                   <li>
-                    Generate our <strong>Connect-MGGraph</strong> Command to use in the out-of-office automation script
+                    Generate our **Connect-MGGraph** Command to use in the out-of-office automation script
                   </li>
                 </ul>
                 
@@ -206,10 +206,10 @@ Write-Host -ForeGroundColor Cyan "Copied to ClipBoard"
                 </h2>
                 
                 <p>
-                  To use the App auth Certificate is fairly simple, and the script above outputs the command to use. For my app it came out to the <strong>Connect-mgGraph</strong> command shown below.
+                  To use the App auth Certificate is fairly simple, and the script above outputs the command to use. For my app it came out to the **Connect-mgGraph** command shown below.
                 </p><figure class="wp-block-image size-large" id="AppAuthExampleImage">
                 
-                ![](image-8.png)<figcaption>Sample <strong>Connect-mgGraph</strong> command shown above<br />Connected with Certificate based, AppOnly login. </figcaption></figure> <p>
+                ![](image-8.png)<figcaption>Sample **Connect-mgGraph** command shown above<br />Connected with Certificate based, AppOnly login. </figcaption></figure> <p>**Connect-mgGraph****Connect-mgGraph****Connect-mgGraph****Connect-mgGraph**
                   You can use the <strong>Get-mgContext</strong> to verify you are connected <strong>AppOnly</strong>/non-interactive login, as well as the <strong>app name </strong>and your <strong>permissions scopes</strong>.
                 </p>
                 
@@ -238,7 +238,7 @@ Write-Host -ForeGroundColor Cyan "Copied to ClipBoard"
                 </p>
                 
                 <p>
-                  Next, on lines 58-75, I assemble a <strong>patch JSON</strong>, and use Invoke-GraphRequest to patch it onto our user and change the settings.
+                  Next, on lines 58-75, I assemble a **patch JSON**, and use Invoke-GraphRequest to patch it onto our user and change the settings.
                 </p>
                 
                 

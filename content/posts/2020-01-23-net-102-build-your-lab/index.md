@@ -80,11 +80,11 @@ I'm not going to cover a lot of the implementation details of any particular hyp
                     <table class="">
                       <tr>
                         <td>
-                          <strong>Item</strong>
+                          **Item**
                         </td>
                         
                         <td>
-                          <strong>Value</strong>
+                          **Value**
                         </td>
                       </tr>
                       
@@ -94,7 +94,7 @@ I'm not going to cover a lot of the implementation details of any particular hyp
                         </td>
                         
                         <td>
-                          IPv4: <strong>10.248.100.0/24</strong><br />IPv6: <strong>fdda:f6d4:f5a2:f1e6::/64</strong>
+                          IPv4: **10.248.100.0/24**<br />IPv6: **fdda:f6d4:f5a2:f1e6::/64**
                         </td>
                       </tr>
                       
@@ -104,7 +104,7 @@ I'm not going to cover a lot of the implementation details of any particular hyp
                         </td>
                         
                         <td>
-                          IPv4: <strong>10.248.100.1/24</strong><br />IPv6: <strong>fdda:f6d4:f5a2:f1e6::1/64</strong>
+                          IPv4: **10.248.100.1/24**<br />IPv6: **fdda:f6d4:f5a2:f1e6::1/64**
                         </td>
                       </tr>
                       
@@ -114,7 +114,7 @@ I'm not going to cover a lot of the implementation details of any particular hyp
                         </td>
                         
                         <td>
-                          Hostname: <strong>lab-dns</strong><br />IPv4: <strong>10.248.100.2/24</strong><br />IPv6: <strong>fdda:f6d4:f5a2:f1e6::2/64</strong>
+                          Hostname: **lab-dns**<br />IPv4: **10.248.100.2/24**<br />IPv6: **fdda:f6d4:f5a2:f1e6::2/64**
                         </td>
                       </tr>
                       
@@ -124,7 +124,7 @@ I'm not going to cover a lot of the implementation details of any particular hyp
                         </td>
                         
                         <td>
-                          <strong>lab.test.</strong>
+                          **lab.test.**
                         </td>
                       </tr>
                       
@@ -134,7 +134,7 @@ I'm not going to cover a lot of the implementation details of any particular hyp
                         </td>
                         
                         <td>
-                          Hostname: <strong>lab-dhcp</strong><br />IPv4: <strong>10.248.100.3/24</strong><br />IPv6:<strong>fdda:f6d4:f5a2:f1e6::3/64</strong>
+                          Hostname: **lab-dhcp**<br />IPv4: **10.248.100.3/24**<br />IPv6:**fdda:f6d4:f5a2:f1e6::3/64**
                         </td>
                       </tr>
                       
@@ -144,7 +144,7 @@ I'm not going to cover a lot of the implementation details of any particular hyp
                         </td>
                         
                         <td>
-                          <strong>10.248.100.[50-99]/24</strong><br /><strong>fdda:f6d4:f5a2:f1e6::[32-*]/</strong>64
+                          **10.248.100.[50-99]/24**<br />**fdda:f6d4:f5a2:f1e6::[32-*]/**64
                         </td>
                       </tr>
                       
@@ -154,7 +154,7 @@ I'm not going to cover a lot of the implementation details of any particular hyp
                         </td>
                         
                         <td>
-                          <strong>77</strong>
+                          **77**
                         </td>
                       </tr>
                     </table></figure> 
@@ -184,7 +184,7 @@ I'm not going to cover a lot of the implementation details of any particular hyp
                     </p>
                     
                     <p>
-                      If you're not sure, open the Windows Calculator, switch to the programmer view and type the number you'd like to use and you'll see a <strong>HEX</strong>adecimal, <strong>DEC</strong>imal, <strong>OCT</strong>al and <strong>BIN</strong>ary notation version of the number. It also includes a bit-toggling keypad you can use to get a better feel for how binary math works.
+                      If you're not sure, open the Windows Calculator, switch to the programmer view and type the number you'd like to use and you'll see a **HEX**adecimal, **DEC**imal, **OCT**al and **BIN**ary notation version of the number. It also includes a bit-toggling keypad you can use to get a better feel for how binary math works.
                     </p>
                     
                     <p>
@@ -192,11 +192,11 @@ I'm not going to cover a lot of the implementation details of any particular hyp
                     </p>
                     
                     <p>
-                      <strong>IPv4</strong>: <br />10.248.100.10 <br /><strong>Netmask</strong> 255.255.255.0 ( this is equivalent to /24 )<br />Fill in the <strong>Gateway</strong>, <strong>DNS server </strong>address from your network documentation you've created last time.<br /><br /><strong>IPv6</strong>: fdda:f6d4:f5a2:f1e6::a/64 <br />Fill in the <strong>subnet prefix length</strong>, <strong>default gateway</strong>, and <strong>DNS server</strong> from your documentation.<br /><br />The parent network interface will be set for DHCP.
+                      **IPv4**: <br />10.248.100.10 <br />**Netmask** 255.255.255.0 ( this is equivalent to /24 )<br />Fill in the **Gateway**, **DNS server **address from your network documentation you've created last time.<br /><br />**IPv6**: fdda:f6d4:f5a2:f1e6::a/64 <br />Fill in the **subnet prefix length**, **default gateway**, and **DNS server** from your documentation.<br /><br />The parent network interface will be set for DHCP.
                     </p>
                     
                     <p>
-                      After setting your addresses, if you open a terminal (either <strong>cmd</strong> or <strong>PowerShell</strong>) and run <code>ipconfig</code>, you will see that you have 2 IPv6 addresses and 1 IPv4 address on the listing. One of these IPv6 addresses is the one you set, the other is called a link-local address. Please consult the links to documentation on IPv6 address types from the last article if you'd like to know why.
+                      After setting your addresses, if you open a terminal (either **cmd** or **PowerShell**) and run <code>ipconfig</code>, you will see that you have 2 IPv6 addresses and 1 IPv4 address on the listing. One of these IPv6 addresses is the one you set, the other is called a link-local address. Please consult the links to documentation on IPv6 address types from the last article if you'd like to know why.
                     </p>
                     
                     <h2 id="3-the-default-gateway">
@@ -240,7 +240,7 @@ I'm not going to cover a lot of the implementation details of any particular hyp
                     </h3>
                     
                     <p>
-                      Run the <code>sconfig</code> command and choose option 2 to set the hostname or "Computer Name" of this machine. We didn't cover what the hostnames are for these machines when we were creating our documentation, so we're going to set them and add them to the documentation now. I'm going to name the DNS server "<strong>lab-dns</strong>", so it's FQDN (Fully Qualified Domain Name) is "lab-dns.lab.test". Set the computer name to your chosen short name and we'll cover the rest a bit later. When you've set the computer name, you'll be prompted to restart. You don't need to do this quite yet.
+                      Run the <code>sconfig</code> command and choose option 2 to set the hostname or "Computer Name" of this machine. We didn't cover what the hostnames are for these machines when we were creating our documentation, so we're going to set them and add them to the documentation now. I'm going to name the DNS server "**lab-dns**", so it's FQDN (Fully Qualified Domain Name) is "lab-dns.lab.test". Set the computer name to your chosen short name and we'll cover the rest a bit later. When you've set the computer name, you'll be prompted to restart. You don't need to do this quite yet.
                     </p>
                     
                     <p>
@@ -248,7 +248,7 @@ I'm not going to cover a lot of the implementation details of any particular hyp
                     </p>
                     
                     <p>
-                      You may also choose to enable remote desktop while you are in <strong>sconfig</strong>. It'll be the same command line interface you have now, but it may come in handy if you need to paste a command. You'll want to choose the recommended option to require Network Level Authentication.
+                      You may also choose to enable remote desktop while you are in **sconfig**. It'll be the same command line interface you have now, but it may come in handy if you need to paste a command. You'll want to choose the recommended option to require Network Level Authentication.
                     </p>
                     
                     <p>
@@ -256,7 +256,7 @@ I'm not going to cover a lot of the implementation details of any particular hyp
                     </p>
                     
                     <p class="has-background has-very-light-gray-background-color">
-                      NOTE: <strong>sconfig</strong> only handles IPv4 addressing. We will cover setting the IPv6 address a bit later.
+                      NOTE: **sconfig** only handles IPv4 addressing. We will cover setting the IPv6 address a bit later.
                     </p>
                     
                     <p>
@@ -264,11 +264,11 @@ I'm not going to cover a lot of the implementation details of any particular hyp
                     </p>
                     
                     <p>
-                      Now that you're restarted, log back in and run the <strong>hostname</strong> command to make sure the short computer name is correct. If you're using my settings, the hostname will be 'lab-dns'. You can also run the <strong>ipconfig</strong> command and make sure the IPv4 address is what you expected.
+                      Now that you're restarted, log back in and run the **hostname** command to make sure the short computer name is correct. If you're using my settings, the hostname will be 'lab-dns'. You can also run the **ipconfig** command and make sure the IPv4 address is what you expected.
                     </p>
                     
                     <p>
-                      You'll notice that the connection-specific DNS suffix is 'localdomain', and there will be a <strong>link-local</strong> ipv6 address present, even though you didn't set one. This is normal.
+                      You'll notice that the connection-specific DNS suffix is 'localdomain', and there will be a **link-local** ipv6 address present, even though you didn't set one. This is normal.
                     </p>
                     
                     <p>
@@ -276,11 +276,11 @@ I'm not going to cover a lot of the implementation details of any particular hyp
                     </p>
                     
                     <p>
-                      Now, we need to finish configuring our network addressing since we have a working IPv4 RDP connection. Let's open <strong>powershell</strong>. Simply type <strong>powershell</strong> at the command prompt.
+                      Now, we need to finish configuring our network addressing since we have a working IPv4 RDP connection. Let's open **powershell**. Simply type **powershell** at the command prompt.
                     </p>
                     
                     <p>
-                      Here are some commands we'll need to type to get a working IPv6 config as well as finishing out some commands <strong>sconfig</strong> couldn't handle. I would suggest pasting this code block into a notepad (or better yet, VSCode) session on your admin workstation, editing, then pasting it into a powershell session you have running over RDP.
+                      Here are some commands we'll need to type to get a working IPv6 config as well as finishing out some commands **sconfig** couldn't handle. I would suggest pasting this code block into a notepad (or better yet, VSCode) session on your admin workstation, editing, then pasting it into a powershell session you have running over RDP.
                     </p>
                     
                     <pre class="wp-block-code"><code># Change these to match the config in your documentation
@@ -413,7 +413,7 @@ Add-DnsServerResourceRecord -ZoneName $ZoneName -Passthru -AAAA -Name 'lab-dhcp'
                     </p>
                     
                     <p>
-                      So - Why did we create three zones? The first - 'lab.test' is a <strong>forward</strong> lookup zone. The ones tied to the network IDs are <strong>reverse</strong> zones. They enable you to look up an IP address and see what its hostname is. Records tying an IP address to a hostname are called <strong>PTR</strong>, or pointer records. That is why we created the reverse zones up front, then had powershell add the pointer records at the same time as the A or AAAA records by tacking on the '-CreatePtr' flag to the Add-DnsServerResourceRecord cmdlet.
+                      So - Why did we create three zones? The first - 'lab.test' is a **forward** lookup zone. The ones tied to the network IDs are **reverse** zones. They enable you to look up an IP address and see what its hostname is. Records tying an IP address to a hostname are called **PTR**, or pointer records. That is why we created the reverse zones up front, then had powershell add the pointer records at the same time as the A or AAAA records by tacking on the '-CreatePtr' flag to the Add-DnsServerResourceRecord cmdlet.
                     </p>
                     
                     <p>
@@ -437,11 +437,11 @@ Add-DnsServerResourceRecord -ZoneName $ZoneName -Passthru -AAAA -Name 'lab-dhcp'
                     </p>
                     
                     <p>
-                      I'm going to name it <strong>lab-dhcp</strong> and apply the same configuration steps for <strong>sconfig </strong>as we did for the DNS server.
+                      I'm going to name it **lab-dhcp** and apply the same configuration steps for **sconfig **as we did for the DNS server.
                     </p>
                     
                     <p>
-                      When you are in <strong>sconfig</strong>, configure the DNS server settings to use the DNS server address for your lab.
+                      When you are in **sconfig**, configure the DNS server settings to use the DNS server address for your lab.
                     </p>
                     
                     <p>

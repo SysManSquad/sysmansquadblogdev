@@ -39,7 +39,7 @@ I'm a big fan of pictures and I believe this one encapsulates the process quiet 
 ## Configuration
 
 <p class="has-normal-font-size">
-  Now before you go moving sliders and configuring things I want to stress that <strong><span style="text-decoration: underline;">you should do this in a dev environment</span></strong> to begin with. I am not responsible for you messing your production environment up!
+  Now before you go moving sliders and configuring things I want to stress that **<span style="text-decoration: underline;">you should do this in a dev environment</span>** to begin with. I am not responsible for you messing your production environment up!
 </p>
 
 ### Company Branding

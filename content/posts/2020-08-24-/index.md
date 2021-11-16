@@ -8,6 +8,3 @@ categories:
   - Endpoint Management
 
 ---
-
-  <pre class="CodeMirror" data-setting="{"mode":"null","mime":"text/plain","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"file.txt","language":"Plain Text","modeName":"text"}"></pre>
-

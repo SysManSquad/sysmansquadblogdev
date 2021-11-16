@@ -94,7 +94,7 @@ Get-Command -Module "PSCMWin10Language"
               </ul>
               
               <p>
-                <strong>Note:</strong> New-FoDLanguageFeaturesRepository only extracts "LanguageFeature" FoDs. If you want to include more FoDs than these, you'll have to arrange something yourself.
+                **Note:** New-FoDLanguageFeaturesRepository only extracts "LanguageFeature" FoDs. If you want to include more FoDs than these, you'll have to arrange something yourself.
               </p>
               
               <p>

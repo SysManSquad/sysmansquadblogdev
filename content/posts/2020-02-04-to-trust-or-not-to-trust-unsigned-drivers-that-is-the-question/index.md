@@ -26,7 +26,7 @@ This post is intended to help others who might want to better understand why the
 > 
 > _[If I wait for perfectionism, then my procrastination and paralysis will kick in.](http://www.ravishly.com/you-arent-lazy-youre-just-terrified-paralysis-and-perfectionism-mental-health)_ 
 > 
-> <cite>*<em>I reserve the right to revisit the post and replace images in the future.</em>* </cite></figure> 
+> <cite>**I reserve the right to revisit the post and replace images in the future.** </cite></figure> 
 
 ## The Error...
 
@@ -57,7 +57,7 @@ Okay ... your OSD task sequence just failed and the timer is started. You have 1
 
 <ol start="1">
   <li>
-    Open the driver package for the model of machine you're working with and search on the <strong>DriverVer</strong> you found in your <strong>setupact.log</strong> file. In my case it was <strong>8.3.1027.5567</strong>.
+    Open the driver package for the model of machine you're working with and search on the **DriverVer** you found in your **setupact.log** file. In my case it was **8.3.1027.5567**.
   </li>
 </ol>
 
@@ -141,7 +141,7 @@ Personally, I work in K-12 public education and in particular my organization cu
 <hr class="wp-block-separator" />
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large">[![](driver-delete-obs-1024x186.png)](driver-delete-obs.png)<figcaption> <em>"Why don't you just delete the drivers, Chris?"</em> </figcaption></figure>
+  <figure class="aligncenter size-large">[![](driver-delete-obs-1024x186.png)](driver-delete-obs.png)<figcaption> *"Why don't you just delete the drivers, Chris?"* </figcaption></figure>
 </div>
 
 In the words of, newly minted MVP, [Bryan Dam](https://twitter.com/bdam555) - "[If I was a better person...](https://damgoodadmin.com/2017/11/05/fully-automate-software-update-maintenance-in-cm/)" and had a _**growth mindset**_ (_my sons 5th grade teacher would be so happy to hear me parroting her words_) I would like to believe I may revisit this at some point to understand if these drivers are necessary or not. The realist inside tells me I probably won't though. In our testing it appears the devices work just fine and no drivers are reported missing in Device Manager. Good enough for now, we have tons of other work to get to. If we start receiving a spike in tickets for a particular model I can at least look at that list of disabled drivers to look for an OEM version. Sometimes that has to be enough, but I would love to get better and welcome any feedback on process improvement through email or Twitter. I hope this is helpful to someone in the future.

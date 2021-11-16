@@ -103,7 +103,7 @@ Snapshot the VM - "Pre-Office" (I snapshot here in case I make a mistake with th
     
     <ul>
       <li>
-        Open the generated Rule File (Default C:\Users\<em>USERNAME</em>\Documents\FSLogix Rule Sets\MicrosoftAccess.fxr
+        Open the generated Rule File (Default C:\Users\*USERNAME*\Documents\FSLogix Rule Sets\MicrosoftAccess.fxr
       </li>
       <li>
         Check & Delete any entries which are incorrect or aren't actually relevant to MS Access, they just have "access" in the name
@@ -137,7 +137,7 @@ Added by New—WcrosoftOffceRu/eset.psI. " class="wp-image-2953" srcset="image-1
     
     <ul>
       <li>
-        Open the generated Rule File (Default C:\Users\<em>USERNAME</em>\Documents\FSLogix Rule Sets\MicrosoftPublisher.fxr
+        Open the generated Rule File (Default C:\Users\*USERNAME*\Documents\FSLogix Rule Sets\MicrosoftPublisher.fxr
       </li>
       <li>
         Check for any entries which are incorrect.

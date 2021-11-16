@@ -28,7 +28,7 @@ But lo and behold, a golden savior appeared on the [windows admins discord](http
 
 <blockquote class="wp-block-quote">
   <p>
-    Here are instructions for how to add Azure AD Join devices to your OneDrive for Business tenant restrictions.<br />• Ensure build 19.192+ of Sync client is installed <strong>(which was released in november 13, 2019)</strong><br />• Set the GUID for policy AADJMachineDomainGuid under HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\OneDrive and apply it to the test AADJ machine. GUID can be any string.
+    Here are instructions for how to add Azure AD Join devices to your OneDrive for Business tenant restrictions.<br />• Ensure build 19.192+ of Sync client is installed **(which was released in november 13, 2019)**<br />• Set the GUID for policy AADJMachineDomainGuid under HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\OneDrive and apply it to the test AADJ machine. GUID can be any string.
   </p>
   
   <p>

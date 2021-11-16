@@ -50,7 +50,7 @@ These are the options they wanted:
 <div class="wp-block-group">
   <div class="wp-block-group__inner-container">
     <p>
-      The reason for excluding Access, as I expect with most companies, is because it's regarded best practice to never give it to users in case they create dirty little database apps, tie them into business processes, then promptly get hit by a bus. Then the business expects IT to support it... somehow. However, there are circumstances when a user or two <em>may </em>be trusted to use Access without developing some bespoke monstrosity - Though, I'd strongly recommend HR/Legal get involved to ensure whatever the user does in Access <strong>never </strong>ends up being an IT problem!
+      The reason for excluding Access, as I expect with most companies, is because it's regarded best practice to never give it to users in case they create dirty little database apps, tie them into business processes, then promptly get hit by a bus. Then the business expects IT to support it... somehow. However, there are circumstances when a user or two *may *be trusted to use Access without developing some bespoke monstrosity - Though, I'd strongly recommend HR/Legal get involved to ensure whatever the user does in Access **never **ends up being an IT problem!
     </p>
   </div>
 </div>

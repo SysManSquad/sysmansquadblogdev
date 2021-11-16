@@ -60,7 +60,7 @@ Luckily, there’s some simple things we can do to take this burden away. I’m 
                     </h2>
                     
                     <p>
-                      Content Validation is incredibly useful. You can set it to run on a schedule in the Properties pane of the DP. You can also run it manually by just running smsdpmon.exe (in the <strong>SMS_DP$\sms\bin</strong> folder on every DP), or you can validate a single package either from the Content tab of a DP in the console, or via command line.
+                      Content Validation is incredibly useful. You can set it to run on a schedule in the Properties pane of the DP. You can also run it manually by just running smsdpmon.exe (in the **SMS_DP$\sms\bin** folder on every DP), or you can validate a single package either from the Content tab of a DP in the console, or via command line.
                     </p><figure class="wp-block-image size-large">
                     
                     ![](image-14.png)</figure> <p>
@@ -88,7 +88,7 @@ Luckily, there’s some simple things we can do to take this burden away. I’m 
                     </ol>
                     
                     <p>
-                      Pretty simple, right? But be very aware of step 1: the package list that smsdpmon is checking is what is <em>currently on the distribution point</em>, not necessarily what <em>should</em> be there. If there is content you’ve sent to the distribution point, but it never arrived or maybe was removed for whatever reason, the content validation process is oblivious to that content.
+                      Pretty simple, right? But be very aware of step 1: the package list that smsdpmon is checking is what is *currently on the distribution point*, not necessarily what *should* be there. If there is content you’ve sent to the distribution point, but it never arrived or maybe was removed for whatever reason, the content validation process is oblivious to that content.
                     </p>
                     
                     <p>
@@ -100,7 +100,7 @@ Luckily, there’s some simple things we can do to take this burden away. I’m 
                     </h2>
                     
                     <p>
-                      The Content Library Cleanup Tool does just that: It cleans up the content library on a distribution point of any content which is not associated with any packages. You’ll find it in <strong>CD.Latest\SMSSETUP\TOOLS\ContentLibraryCleanup</strong> on your site server. It’s pretty well documented:
+                      The Content Library Cleanup Tool does just that: It cleans up the content library on a distribution point of any content which is not associated with any packages. You’ll find it in **CD.Latest\SMSSETUP\TOOLS\ContentLibraryCleanup** on your site server. It’s pretty well documented:
                     </p>
                     
                     <p>
@@ -108,7 +108,7 @@ Luckily, there’s some simple things we can do to take this burden away. I’m 
                     </p>
                     
                     <p>
-                      It’s pretty straightforward, and useful for keeping your distribution point content library spick and span. It’s also easy to set as a scheduled task to run regularly, with <strong>/delete /q</strong>. However, there are some considerations here:
+                      It’s pretty straightforward, and useful for keeping your distribution point content library spick and span. It’s also easy to set as a scheduled task to run regularly, with **/delete /q**. However, there are some considerations here:
                     </p>
                     
                     <p>
@@ -120,7 +120,7 @@ Luckily, there’s some simple things we can do to take this burden away. I’m 
                     </p>
                     
                     <p>
-                      If you <em>do</em> run this from the DP, note that it will need to be with a service account which has Full Admin rights within ConfigMgr. So take that into consideration when deciding how to automate this.
+                      If you *do* run this from the DP, note that it will need to be with a service account which has Full Admin rights within ConfigMgr. So take that into consideration when deciding how to automate this.
                     </p>
                     
                     <h2>
@@ -277,7 +277,7 @@ Luckily, there’s some simple things we can do to take this burden away. I’m 
                     <hr class="wp-block-separator" />
                     
                     <p class="has-text-align-justify">
-                      <span class="has-inline-color has-vivid-red-color"><em>I started writing this before ConfigMgr 2010 was released, and this very thing was addressed in that release. If you are already on 2010 or later, simply make sure you're using the latest version of the Content Library Cleanup Tool, and this issue should be taken care of without the need for a script. [See here for details.](https://docs.microsoft.com/en-us/mem/configmgr/core/plan-design/changes/whats-new-in-version-2010#improvements-to-the-content-library-cleanup-tool)</em></span>
+                      <span class="has-inline-color has-vivid-red-color">*I started writing this before ConfigMgr 2010 was released, and this very thing was addressed in that release. If you are already on 2010 or later, simply make sure you're using the latest version of the Content Library Cleanup Tool, and this issue should be taken care of without the need for a script. [See here for details.](https://docs.microsoft.com/en-us/mem/configmgr/core/plan-design/changes/whats-new-in-version-2010#improvements-to-the-content-library-cleanup-tool)*</span>
                     </p>
                     
                     <hr class="wp-block-separator" />

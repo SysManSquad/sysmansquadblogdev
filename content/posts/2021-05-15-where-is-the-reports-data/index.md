@@ -113,7 +113,7 @@ Well you can - and finding the information can be so easy. Read on below to see 
                               </h2>
                               
                               <p>
-                                First up, let's open the [Proactive Remediations area](https://endpoint.microsoft.com/#blade/Microsoft_Intune_Enrollment/UXAnalyticsMenu/proactiveRemediations) and navigate down to the <strong>Restart stopped Office C2R svc</strong>.
+                                First up, let's open the [Proactive Remediations area](https://endpoint.microsoft.com/#blade/Microsoft_Intune_Enrollment/UXAnalyticsMenu/proactiveRemediations) and navigate down to the **Restart stopped Office C2R svc**.
                               </p>
                               
                               <p>
@@ -141,7 +141,7 @@ Well you can - and finding the information can be so easy. Read on below to see 
                                       Disable Cache
                                     </li>
                                     <li>
-                                      If there are still a lot of entries, Filtering to <strong>XHR</strong> type can be useful
+                                      If there are still a lot of entries, Filtering to **XHR** type can be useful
                                     </li>
                                   </ul>
                                 </li>
@@ -208,7 +208,7 @@ https://graph.microsoft.com/beta/deviceManagement/deviceHealthScripts/02a4e7e8-1
                               </ul>
                               
                               <p>
-                                In general, the further to the right, the more specific area you are looking for. So here we are doing the action <strong>runSummary</strong> on a specific <strong>deviceHealthScripts</strong>. If you search these up, you can find the MS Graph endpoint [Get deviceHealthScriptRunSummary](https://docs.microsoft.com/graph/api/intune-devices-devicehealthscriptrunsummary-get?view=graph-rest-beta).
+                                In general, the further to the right, the more specific area you are looking for. So here we are doing the action **runSummary** on a specific **deviceHealthScripts**. If you search these up, you can find the MS Graph endpoint [Get deviceHealthScriptRunSummary](https://docs.microsoft.com/graph/api/intune-devices-devicehealthscriptrunsummary-get?view=graph-rest-beta).
                               </p>
                               
                               <p>
@@ -273,13 +273,13 @@ Invoke-RestMethod -Headers @{Authorization = "Bearer $($Token.AccessToken)"} @Qu
                               </h2>
                               
                               <p>
-                                Let's find the <strong>[Authentication Methods Registration Detail](https://portal.azure.com/#blade/Microsoft_AAD_IAM/AuthenticationMethodsMenuBlade/UserRegistrationDetails/menuId/UserRegistrationDetails)</strong> report data.
+                                Let's find the **[Authentication Methods Registration Detail](https://portal.azure.com/#blade/Microsoft_AAD_IAM/AuthenticationMethodsMenuBlade/UserRegistrationDetails/menuId/UserRegistrationDetails)** report data.
                               </p><figure class="wp-block-image alignwide size-large">
                               
                               ![](image-10-1024x376.png)</figure> 
                               
                               <p>
-                                We go through the same DevTools process that we outlined above in <strong>[Watching How the Portal Works](#watching-the-portal-work)</strong>.
+                                We go through the same DevTools process that we outlined above in **[Watching How the Portal Works](#watching-the-portal-work)**.
                               </p><figure class="wp-block-image alignwide">
                               
                               ![This image has an empty alt attribute; its file name is image-11.png](image-11.png)</figure> 
@@ -357,7 +357,7 @@ https://graph.windows.net/myorganization/activities/authenticationMethodUserDeta
                               </p>
                               
                               <p>
-                                However, this example above references <strong>graph.windows.net</strong> - which I know means it is using the [Legacy Azure AD Graph](https://docs.microsoft.com/azure/active-directory/develop/active-directory-graph-api). Now this is currently supported, but is actually already recommending to [migrate to Microsoft Graph](https://go.microsoft.com/fwlink/?linkid=2132805). For this example, I am focusing on recreating what the Portal is actively doing, so I won't look at the Microsoft Graph equivalent here (though it looks like this might be fairly similar - [credentialUserRegistrationDetails](https://docs.microsoft.com/graph/api/reportroot-list-credentialuserregistrationdetails))
+                                However, this example above references **graph.windows.net** - which I know means it is using the [Legacy Azure AD Graph](https://docs.microsoft.com/azure/active-directory/develop/active-directory-graph-api). Now this is currently supported, but is actually already recommending to [migrate to Microsoft Graph](https://go.microsoft.com/fwlink/?linkid=2132805). For this example, I am focusing on recreating what the Portal is actively doing, so I won't look at the Microsoft Graph equivalent here (though it looks like this might be fairly similar - [credentialUserRegistrationDetails](https://docs.microsoft.com/graph/api/reportroot-list-credentialuserregistrationdetails))
                               </p>
                             </div>
                           </div>
@@ -365,7 +365,7 @@ https://graph.windows.net/myorganization/activities/authenticationMethodUserDeta
                           <div class="wp-block-group">
                             <div class="wp-block-group__inner-container">
                               <h3 id="what-api-is-it">
-                                OK - so what API <em>IS</em> it using?
+                                OK - so what API *IS* it using?
                               </h3>
                               
                               <p>
@@ -373,7 +373,7 @@ https://graph.windows.net/myorganization/activities/authenticationMethodUserDeta
                               </p>
                               
                               <p>
-                                If you are stuck trying to figure out what you are using, some very useful information can be gathered from your <strong>Bearer Token</strong>. But first, we need to get one.
+                                If you are stuck trying to figure out what you are using, some very useful information can be gathered from your **Bearer Token**. But first, we need to get one.
                               </p>
                             </div>
                           </div>
@@ -385,11 +385,11 @@ https://graph.windows.net/myorganization/activities/authenticationMethodUserDeta
                               </h4>
                               
                               <p>
-                                Now, you can get tokens lots of ways, like [MSAL](https://docs.microsoft.com/en-us/azure/active-directory/develop/msal-overview), a number of [assorted Authentication Flows](https://docs.microsoft.com/en-us/azure/active-directory/develop/authentication-flows-app-scenarios), but we're watching the portal right now, and we already logged in. If we jump back to our F12 DevTools > Network Tab - we can click on the entry we found before in [this section](#watching-the-portal-work), open the <strong>Headers</strong> > Scroll to the <strong>Request Headers</strong> section > <strong>Authorization</strong>
+                                Now, you can get tokens lots of ways, like [MSAL](https://docs.microsoft.com/en-us/azure/active-directory/develop/msal-overview), a number of [assorted Authentication Flows](https://docs.microsoft.com/en-us/azure/active-directory/develop/authentication-flows-app-scenarios), but we're watching the portal right now, and we already logged in. If we jump back to our F12 DevTools > Network Tab - we can click on the entry we found before in [this section](#watching-the-portal-work), open the **Headers** > Scroll to the **Request Headers** section > **Authorization**
                               </p>
                               
                               <p>
-                                This will give you a big beautiful base64 <strong>Bearer </strong>blob, which is how the Portal authenticates for it's API calls in the background. You just have to de-crumple it into a usable state.
+                                This will give you a big beautiful base64 **Bearer **blob, which is how the Portal authenticates for it's API calls in the background. You just have to de-crumple it into a usable state.
                               </p>
                               
                               <div class="wp-block-image">
@@ -408,7 +408,7 @@ https://graph.windows.net/myorganization/activities/authenticationMethodUserDeta
                               </h4>
                               
                               <p>
-                                Now, usually when you get a token for these APIs, it is a <strong>Bearer</strong> token and a <strong>JSON Web Token</strong> or <strong>JWT</strong>. Now JWT's are an excellent and open standard you can read more about [here](https://jwt.io/), but the short version is that inside this big beautiful base64 blob are three parts.
+                                Now, usually when you get a token for these APIs, it is a **Bearer** token and a **JSON Web Token** or **JWT**. Now JWT's are an excellent and open standard you can read more about [here](https://jwt.io/), but the short version is that inside this big beautiful base64 blob are three parts.
                               </p>
                               
                               <ul>
@@ -424,10 +424,10 @@ https://graph.windows.net/myorganization/activities/authenticationMethodUserDeta
                               </ul>
                               
                               <p>
-                                The <strong>Bearer</strong> at the beginning just references the type of token, but everything bolded below is one big chunk with all three parts. Well - if you want you can run it through a [Base64Decoder](https://www.base64decode.org/) - but the Signature part at the end comes out looking like random high ASCII.
+                                The **Bearer** at the beginning just references the type of token, but everything bolded below is one big chunk with all three parts. Well - if you want you can run it through a [Base64Decoder](https://www.base64decode.org/) - but the Signature part at the end comes out looking like random high ASCII.
                               </p>
                               
-                              <pre id="bearer-example" class="wp-block-preformatted">Bearer<strong>e01lc3NhZ2U6ICJEaWQgeW91IHRoaW5rIHRoaXMgd2FzIGdvaW5nIHRvIGhhdmUgYW4gYWN0dWFsIHJlYWwgdG9rZW4gaW4gaXQ/IEhhISAKV2VsbCBhcyBsb25nIGFzIHlvdSdyZSBoZXJlIC0gV2hhdCBpcyB5b3VyIGZhdm9yaXRlIGNvbG9yPyBPaC4uLiBobW1tLi4uIEkgd29uJ3QgcmVhbGx5IHNlZSB5b3VyIHJlc3BvbnNlIGhlcmUuIERhbW4uIFdlbGwgLSB0aGUgYmVzdCB3YXkgdG8gY2hhdCB3aXRoIG1lIGlzIHRvIGNvbWUgYnkgdGhlIFdpbkFkbWlucyBEaXNjb3JkLiBZb3UgY2FuIGdldCBhbiBpbnZpdGUgb3ZlciBoZXJlIGh0dHBzOi8vd2luYWRtaW5zLmlvL2Rpc2NvcmQgLiBDb21lIG9uIGJ5IHNvbWV0aW1lLCBhbmQgZmVlbCBmcmVlIHRvIHRhZyBtZSBhdCBAUHN5Y2hvRGF0YSBhbmQgdGVsbCBtZSB5b3VyIGZhdm9yaXRlIGNvbG9yISAKCkJldHRlciB5ZXQsIHNvbWV0aGluZyBmdW4uLi4uLiB0ZWxsIG1lIHlvdSBmb3VuZCBteSBsb3N0IHNvY2shIEl0IHdpbGwgY29uZnVzZSBldmVyeW9uZSBlbHNlIGFuZCBiZSBsb3RzIG9mIGdvb2QgZnVuISAKCldlbGwsIEknbSBhYm91dCBvdXQgb2YgdGhpbmdzIHRvIHJhbWJsZSBhYm91dC4uLiBTby4uIHVoaCBibHVyLXBsZT8gTW9udGdvbWVyeS4gVHVybnBpa2UuIFRoYXQncyBhbGwgSSBoYXZlIHNvIGhvcGUgdG8gY2hhdCBpbiBEaXNjb3JkIHNvbWUgdGltZSEiIH0KJeGIadj0TKLmjz_kgjH0byyuyGZA0CSRQDOP3tbP27tGoERHMQcyyWxv1J0ZtCDbAC7OWRQdxsf6YmcgKNmvyWCZDac2p6e2HGf9ZESfOCj6iFIQBR05FvByqudE_tPZlQgQk0wotkr3oQoxJQ</strong></pre>
+                              <pre id="bearer-example" class="wp-block-preformatted">Bearer**e01lc3NhZ2U6ICJEaWQgeW91IHRoaW5rIHRoaXMgd2FzIGdvaW5nIHRvIGhhdmUgYW4gYWN0dWFsIHJlYWwgdG9rZW4gaW4gaXQ/IEhhISAKV2VsbCBhcyBsb25nIGFzIHlvdSdyZSBoZXJlIC0gV2hhdCBpcyB5b3VyIGZhdm9yaXRlIGNvbG9yPyBPaC4uLiBobW1tLi4uIEkgd29uJ3QgcmVhbGx5IHNlZSB5b3VyIHJlc3BvbnNlIGhlcmUuIERhbW4uIFdlbGwgLSB0aGUgYmVzdCB3YXkgdG8gY2hhdCB3aXRoIG1lIGlzIHRvIGNvbWUgYnkgdGhlIFdpbkFkbWlucyBEaXNjb3JkLiBZb3UgY2FuIGdldCBhbiBpbnZpdGUgb3ZlciBoZXJlIGh0dHBzOi8vd2luYWRtaW5zLmlvL2Rpc2NvcmQgLiBDb21lIG9uIGJ5IHNvbWV0aW1lLCBhbmQgZmVlbCBmcmVlIHRvIHRhZyBtZSBhdCBAUHN5Y2hvRGF0YSBhbmQgdGVsbCBtZSB5b3VyIGZhdm9yaXRlIGNvbG9yISAKCkJldHRlciB5ZXQsIHNvbWV0aGluZyBmdW4uLi4uLiB0ZWxsIG1lIHlvdSBmb3VuZCBteSBsb3N0IHNvY2shIEl0IHdpbGwgY29uZnVzZSBldmVyeW9uZSBlbHNlIGFuZCBiZSBsb3RzIG9mIGdvb2QgZnVuISAKCldlbGwsIEknbSBhYm91dCBvdXQgb2YgdGhpbmdzIHRvIHJhbWJsZSBhYm91dC4uLiBTby4uIHVoaCBibHVyLXBsZT8gTW9udGdvbWVyeS4gVHVybnBpa2UuIFRoYXQncyBhbGwgSSBoYXZlIHNvIGhvcGUgdG8gY2hhdCBpbiBEaXNjb3JkIHNvbWUgdGltZSEiIH0KJeGIadj0TKLmjz_kgjH0byyuyGZA0CSRQDOP3tbP27tGoERHMQcyyWxv1J0ZtCDbAC7OWRQdxsf6YmcgKNmvyWCZDac2p6e2HGf9ZESfOCj6iFIQBR05FvByqudE_tPZlQgQk0wotkr3oQoxJQ**</pre>
                               
                               <p>
                                 However, there are services that know how to gracefully decode all the Microsoft Style bits and bobs. There is one public JWT decoder that you can paste your token into [here](https://jwt.io/#debugger-io), but Microsoft actually runs one of their own, and it will automatically identify the issuer of certain types of the tokens as well.
@@ -441,9 +441,9 @@ https://graph.windows.net/myorganization/activities/authenticationMethodUserDeta
                                 Useful Tools: Microsoft's JWT Decoder
                               </h2>
                               
-                              <p class="has-text-align-center">
+                              
                                 [jwt.ms](https://jwt.ms)
-                              </p>
+                              
                               
                               <p>
                                 The tool is very simple to use. Just paste your token (from a [browser session](#finding-your-token) or a token you [fetched yourself](#getting-a-token)) in the top of the page, and it is decoded on the bottom half.
@@ -457,7 +457,7 @@ https://graph.windows.net/myorganization/activities/authenticationMethodUserDeta
                               
                               <ul>
                                 <li>
-                                  what scopes (<strong>scp</strong>) you have issued <ul>
+                                  what scopes (**scp**) you have issued <ul>
                                     <li>
                                       These are roughly equivalent to the permissions that you are requesting to use
                                     </li>
@@ -465,18 +465,18 @@ https://graph.windows.net/myorganization/activities/authenticationMethodUserDeta
                                 </li>
                                 
                                 <li>
-                                  from what issuer (<strong>iss</strong>) <ul>
+                                  from what issuer (**iss**) <ul>
                                     <li>
                                       This is the authority that issued a token. Most times you will see "STS" which stands for Security Token Service
                                     </li>
                                     <li>
-                                      This often relates to the tenant that is verifying you for example a issuer of https://sts.windows.net/efff978e-7235-6548-2347-09b768955994/ is issuing the token from tenant ID <strong>efff978e-7235-6548-2347-09b768955994</strong>
+                                      This often relates to the tenant that is verifying you for example a issuer of https://sts.windows.net/efff978e-7235-6548-2347-09b768955994/ is issuing the token from tenant ID **efff978e-7235-6548-2347-09b768955994**
                                     </li>
                                   </ul>
                                 </li>
                                 
                                 <li>
-                                  for what site/service or audience (<strong>aud</strong>) <ul>
+                                  for what site/service or audience (**aud**) <ul>
                                     <li>
                                       The Audience is often related closely to the API or Service that you are signing into, and is often related to the domain-portion of the Query URL you find in the DevTools Network tab.
                                     </li>
@@ -484,7 +484,7 @@ https://graph.windows.net/myorganization/activities/authenticationMethodUserDeta
                                 </li>
                                 
                                 <li>
-                                  what tenant ID you authenticated from (<strong>tid</strong>)<ul>
+                                  what tenant ID you authenticated from (**tid**)<ul>
                                     <li>
                                       This often relates to the STS mentioned above
                                     </li>
@@ -492,7 +492,7 @@ https://graph.windows.net/myorganization/activities/authenticationMethodUserDeta
                                 </li>
                                 
                                 <li>
-                                  the authentication methods for this token (<strong>amr</strong>)<ul>
+                                  the authentication methods for this token (**amr**)<ul>
                                     <li>
                                       This can sometimes be used to tell if someone has entered a password, or especially if the user's session is verified with MFA
                                     </li>
@@ -500,7 +500,7 @@ https://graph.windows.net/myorganization/activities/authenticationMethodUserDeta
                                 </li>
                                 
                                 <li>
-                                  the expiration timestamp of the token (<strong>exp</strong>)<ul>
+                                  the expiration timestamp of the token (**exp**)<ul>
                                     <li>
                                       If you are testing, particularly if you got a token manually, your token might have expired on you. The error messages will usually help identify this, but you can pop it into the decoder to check
                                     </li>

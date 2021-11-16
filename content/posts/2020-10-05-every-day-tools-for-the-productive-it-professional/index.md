@@ -140,7 +140,7 @@ For each of the below I will link to the resource, offer a brief description on 
                           </h3>
                           
                           <p>
-                            No exaggeration, [Everything](https://www.voidtools.com/) locates files and folders by name <strong>instantly</strong>.
+                            No exaggeration, [Everything](https://www.voidtools.com/) locates files and folders by name **instantly**.
                           </p>
                           
                           <p>
@@ -408,5 +408,5 @@ For each of the below I will link to the resource, offer a brief description on 
                           </p>
                           
                           <p>
-                            As well as just being an RSS feed reader with some extra fancy bits for Twitter, the rule engine is fantastic. I can subscribe to a really broad feed from a news outlet, and create rules of my own to filter out the noise by <em>filtering in </em>keywords.
+                            As well as just being an RSS feed reader with some extra fancy bits for Twitter, the rule engine is fantastic. I can subscribe to a really broad feed from a news outlet, and create rules of my own to filter out the noise by *filtering in *keywords.
                           </p>

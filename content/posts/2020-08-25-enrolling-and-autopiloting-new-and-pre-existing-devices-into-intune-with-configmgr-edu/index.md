@@ -14,7 +14,7 @@ I created a ConfigMgr PXE task sequence that with minimal intervention, will "re
 
 **Disclaimer:** This blog assumes you have a working knowledge of ConfigMgr and Endpoint Manager Admin Center (MEMAC), and have administrative rights to your Intune Tenant.
 
-First off we will prepare the Autopilot Profile and download the config JSON 
+First off we will prepare the Autopilot Profile and download the config JSON
 
 In MEMAC, navigate to the "Windows Autopilot deployment profiles" blade, and create a new Autopilot profile, call this whatever you want. The only basic setting we are worried about is the "Convert all targeted devices to Autopilot", set this to Yes. Next we will set the OOBE settings to the following (Note: the "Enter a name" option can be whatever you want to name your devices, this is important as we will use this to target the Autopilot profile post image): <figure class="wp-block-image size-large">
 
@@ -35,8 +35,8 @@ Sign into your tenant here and back in powershell run the following command:
 
 
 ```powershell
-
-
+Get-AutopilotProfile | ConvertTo-AutopilotConfigurationJSON | Out-File c:\Autopilot\AutopilotConfigurationFile.json -Encoding ASCII
+```
 
 Save this file in a folder by itself on a share somewhere that ConfigMgr has access to.
 
@@ -66,8 +66,8 @@ Distribute this content to your DP.
 
 At this point lets head back to MEMAC and create our dynamic device security group that we will be targeting with our AP profile. The dynamic membership rules will be as follows (This is based on my computer naming convention that is in the Autopilot Profile)
 
-
-  <pre class="CodeMirror" data-setting="{"mode":"null","mime":"text/plain","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Dynamic Membership Rule","language":"Plain Text","modeName":"text"}">(device.displayName -startsWith "LLP")
+```powershell
+  (device.displayName -startsWith "LLP")
 ```
 
 

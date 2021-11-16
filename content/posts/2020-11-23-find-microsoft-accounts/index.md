@@ -65,7 +65,7 @@ The other day I was helping someone over in the [WinAdmins Discord](https://aka.
                             
                             <blockquote class="wp-block-quote">
                               <p>
-                                Microsoft has introduced some changes that at least seem to prevent <em>NEW </em>Microsoft Accounts on Company Domains. I added more details in the [Preventing](#preventing) section if you want to read more about this. If you just want to find the accounts, jump to [Identifying the Problem](#identifying-the-problem).
+                                Microsoft has introduced some changes that at least seem to prevent *NEW *Microsoft Accounts on Company Domains. I added more details in the [Preventing](#preventing) section if you want to read more about this. If you just want to find the accounts, jump to [Identifying the Problem](#identifying-the-problem).
                               </p>
                             </blockquote>
                           </div>
@@ -76,7 +76,7 @@ The other day I was helping someone over in the [WinAdmins Discord](https://aka.
                         </h3>
                         
                         <p>
-                          Microsoft has introduced some changes that at least seem to prevent <em>NEW </em>Microsoft Accounts on Company Domains. I haven't been able to find any specific announcement about this feature/capability, but supposedly all you need to do is have the relevant domain in your Office 365 Domains as Managed.
+                          Microsoft has introduced some changes that at least seem to prevent *NEW *Microsoft Accounts on Company Domains. I haven't been able to find any specific announcement about this feature/capability, but supposedly all you need to do is have the relevant domain in your Office 365 Domains as Managed.
                         </p>
                         
                         <h3>
@@ -133,7 +133,7 @@ The other day I was helping someone over in the [WinAdmins Discord](https://aka.
                         </p><figure class="wp-block-image size-large image-shadow">
                         
                         ![This screenshot shows that a microsoft Account sign in prompt will return a warning if you give it an email address with no Microsoft Account associated ](image-2-edited.png)</figure> <p>
-                          Even better! We can leverage this, along with <strong>[login hints](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-optional-claims#:~:text=app%2Buser%20token.-,login_hint,-Login%20hint)</strong>, to scale this up and make a scriptable solution to find any domain emails that have a Microsoft account conflicting with their Work account.
+                          Even better! We can leverage this, along with **[login hints](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-optional-claims#:~:text=app%2Buser%20token.-,login_hint,-Login%20hint)**, to scale this up and make a scriptable solution to find any domain emails that have a Microsoft account conflicting with their Work account.
                         </p>
                         
                         <p>
@@ -145,7 +145,7 @@ The other day I was helping someone over in the [WinAdmins Discord](https://aka.
                         </h2>
                         
                         <p>
-                          To set this up, we need to head to the [Azure Portal](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps) and create a new <strong>app registration</strong>
+                          To set this up, we need to head to the [Azure Portal](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps) and create a new **app registration**
                         </p><figure class="wp-block-image size-large image-shadow">
                         
                         ![Navigate to portal.azure.com, search for App Registrations, and select New Registration](image-3.png)</figure> <p>
@@ -165,7 +165,7 @@ The other day I was helping someone over in the [WinAdmins Discord](https://aka.
                         </p>
                         
                         <p>
-                          Under <strong>API Permissions</strong>, we need to add a permission of some sort for it to request access to. The least amount of permissions was just the <strong>Profile</strong> permission.
+                          Under **API Permissions**, we need to add a permission of some sort for it to request access to. The least amount of permissions was just the **Profile** permission.
                         </p><figure class="wp-block-image size-large image-shadow">
                         
                         ![select the minimum amount of permissions that you can. They should never be signed into anyway ](image-5.png)</figure> <p>
@@ -173,7 +173,7 @@ The other day I was helping someone over in the [WinAdmins Discord](https://aka.
                         </p>
                         
                         <p>
-                          Under <strong>Certificates and Secrets</strong>, I created a New Client Secret. You do not need to save the key values
+                          Under **Certificates and Secrets**, I created a New Client Secret. You do not need to save the key values
                         </p><figure class="wp-block-image size-large image-shadow">
                         
                         ![Create a Dummy client secret, for the Microsoft backend. you do not need to keep the key](image-6.png)</figure> <div class="wp-block-group">
@@ -208,7 +208,7 @@ The other day I was helping someone over in the [WinAdmins Discord](https://aka.
                             <div class="wp-block-group">
                               <div class="wp-block-group__inner-container">
                                 <p>
-                                  [https://login.microsoftonline.com/consumers/oauth2/v2.0/authorize?<br />  client_id=<strong>bd53bb89-0cc1-4eb3-90b7-ba008b1f2a2c</strong><br />  &scope=user.read<br />  &response_type=code<br />  &state=23424<br />  &login_hint=<strong>TinaFey@contoso.one</strong>](https://login.microsoftonline.com/consumers/oauth2/v2.0/authorize?client_id=bd53bb89-0cc1-4eb3-90b7-ba008b1f2a2c&scope=user.read&response_type=code&state=23424&login_hint=TinaFey@contoso.one)
+                                  [https://login.microsoftonline.com/consumers/oauth2/v2.0/authorize?<br />  client_id=**bd53bb89-0cc1-4eb3-90b7-ba008b1f2a2c**<br />  &scope=user.read<br />  &response_type=code<br />  &state=23424<br />  &login_hint=**TinaFey@contoso.one**](https://login.microsoftonline.com/consumers/oauth2/v2.0/authorize?client_id=bd53bb89-0cc1-4eb3-90b7-ba008b1f2a2c&scope=user.read&response_type=code&state=23424&login_hint=TinaFey@contoso.one)
                                 </p>
                                 
                                 <p>
@@ -217,7 +217,7 @@ The other day I was helping someone over in the [WinAdmins Discord](https://aka.
                             </div>
                             
                             <p>
-                              You can test this URL above live for yourself, or use your own app created with the process above. Just adjust the <strong>Client_ID</strong> to match your <strong>Application ID</strong>, and adjust the <strong>login_hint</strong> to match your user
+                              You can test this URL above live for yourself, or use your own app created with the process above. Just adjust the **Client_ID** to match your **Application ID**, and adjust the **login_hint** to match your user
                             </p>
                           </div>
                         </div>
@@ -227,7 +227,7 @@ The other day I was helping someone over in the [WinAdmins Discord](https://aka.
                             <div class="wp-block-columns">
                               <div class="wp-block-column">
                                 <h5>
-                                  <strong>Valid Microsoft Account</strong>
+                                  **Valid Microsoft Account**
                                 </h5><figure class="wp-block-image image-shadow">
                                 
                                 ![Providing a Valid Microsoft Account email continues to a Password Prompt](image-7.png)<figcaption>Note: the email address is recognized, and the prompt has switched to “Enter password”</figcaption></figure> 
@@ -238,7 +238,7 @@ The other day I was helping someone over in the [WinAdmins Discord](https://aka.
                               
                               <div class="wp-block-column">
                                 <h5>
-                                  <strong>No Valid Microsoft Account</strong>
+                                  **No Valid Microsoft Account**
                                 </h5><figure class="wp-block-image image-shadow">
                                 
                                 ![Providing an invalid Microsoft Account email throws a watning that the Microsoft Account does not exists](image-8.png)<figcaption>Note: the email address is not recognized, and the prompt still shows “That Microsoft account doesn’t exist”</figcaption></figure> 
@@ -307,7 +307,7 @@ $results
                               Our app doesn’t have any server code. We only need to get to the pre-login experience to confirm whether an email address has a Microsoft account associated with it. This means that users don’t need to finish logging in and authorize the app, but if they do finish logging in, they will get a consent prompt like this.
                             </p><figure class="wp-block-image image-shadow">
                             
-                            ![If a user does sign into this app fully, they will be prompted to approve the permissions requested earlier](image-9.png)<figcaption>Note: <strong>Unverified</strong> is the default state, but you can verify your tenant to show your company’s name instead. Details [here](https://go.microsoft.com/fwlink/?linkid=2121525&clcid=0x9)</figcaption></figure>
+                            ![If a user does sign into this app fully, they will be prompted to approve the permissions requested earlier](image-9.png)<figcaption>Note: **Unverified** is the default state, but you can verify your tenant to show your company’s name instead. Details [here](https://go.microsoft.com/fwlink/?linkid=2121525&clcid=0x9)</figcaption></figure>
                           </div>
                         </div>
                         
@@ -322,11 +322,11 @@ $results
                             </p>
                             
                             <p>
-                              To test any email address manually, just remove the <strong>login_hint</strong> parameter from the URL and you can enter any email address to check it, even without their password.
+                              To test any email address manually, just remove the **login_hint** parameter from the URL and you can enter any email address to check it, even without their password.
                             </p>
                             
                             <p>
-                              [https://login.microsoftonline.com/consumers/oauth2/v2.0/authorize?<br />  client_id=<strong>bd53bb89-0cc1-4eb3-90b7-ba008b1f2a2c</strong><br />  &scope=user.read<br />  &response_type=code<br />  &state=23424<br />](https://login.microsoftonline.com/consumers/oauth2/v2.0/authorize?client_id=bd53bb89-0cc1-4eb3-90b7-ba008b1f2a2c&scope=user.read&response_type=code&state=23424&login_hint=TinaFey@contoso.one)
+                              [https://login.microsoftonline.com/consumers/oauth2/v2.0/authorize?<br />  client_id=**bd53bb89-0cc1-4eb3-90b7-ba008b1f2a2c**<br />  &scope=user.read<br />  &response_type=code<br />  &state=23424<br />](https://login.microsoftonline.com/consumers/oauth2/v2.0/authorize?client_id=bd53bb89-0cc1-4eb3-90b7-ba008b1f2a2c&scope=user.read&response_type=code&state=23424&login_hint=TinaFey@contoso.one)
                             </p>
                           </div>
                         </div>

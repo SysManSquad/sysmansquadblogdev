@@ -55,7 +55,7 @@ Have you ever wanted to get a simple notification when there is a new Release fo
               </p>
               
               <p>
-                [Power Automate](https://flow.microsoft.com) is an excellent tool that can monitor for changes, run actions on a schedule, process events, or just run a multi-step process when you hit a button. It does all of this with you having to write no, or minimal, code by using <strong>Service Connectors</strong> and abstracting out <strong>Events</strong> and <strong>Actions</strong> that you might need to take. This post assumes that you are somewhat familiar with Power Automate, for an introduction to Power Automate, check out this [Microsoft Docs Article](https://docs.microsoft.com/en-us/power-automate/getting-started), or this [Microsoft Learn Course](https://go.microsoft.com/fwlink/p/?linkid=2018566) on Automate.
+                [Power Automate](https://flow.microsoft.com) is an excellent tool that can monitor for changes, run actions on a schedule, process events, or just run a multi-step process when you hit a button. It does all of this with you having to write no, or minimal, code by using **Service Connectors** and abstracting out **Events** and **Actions** that you might need to take. This post assumes that you are somewhat familiar with Power Automate, for an introduction to Power Automate, check out this [Microsoft Docs Article](https://docs.microsoft.com/en-us/power-automate/getting-started), or this [Microsoft Learn Course](https://go.microsoft.com/fwlink/p/?linkid=2018566) on Automate.
               </p>
               
               <p>
@@ -67,7 +67,7 @@ Have you ever wanted to get a simple notification when there is a new Release fo
               </div>
               
               <p>
-                However, when you look at the GitHub connector, it only supports a few <strong>triggers</strong> related to <strong>Issues </strong>and <strong>Pull Requests</strong>, and if we check the GitHub Connector [triggers documentation](https://docs.microsoft.com/en-us/connectors/github/#triggers), then even those would require an API key. Since these are public repos, instead of repos we own, we won't have any way to get a API key anyway.
+                However, when you look at the GitHub connector, it only supports a few **triggers** related to **Issues **and **Pull Requests**, and if we check the GitHub Connector [triggers documentation](https://docs.microsoft.com/en-us/connectors/github/#triggers), then even those would require an API key. Since these are public repos, instead of repos we own, we won't have any way to get a API key anyway.
               </p>
               
               <p>
@@ -87,7 +87,7 @@ Have you ever wanted to get a simple notification when there is a new Release fo
                       </p>
                       
                       <p>
-                        From what I could find, these are supported on <strong>Releases</strong>, <strong>Tags</strong>, and <strong>Commits</strong>. To get the feed, simply take the URL for the feeds and append <code>strong>.atom/strong></code> to the end.
+                        From what I could find, these are supported on **Releases**, **Tags**, and **Commits**. To get the feed, simply take the URL for the feeds and append <code>strong>.atom/strong></code> to the end.
                       </p>
                     </div>
                   </div>
@@ -99,19 +99,19 @@ Have you ever wanted to get a simple notification when there is a new Release fo
                       </h4>
                       
                       <p>
-                        <strong>Releases · PowerShell<br /></strong>HTML - [https://github.com/PowerShell/PowerShell/releases](https://github.com/PowerShell/PowerShell/releases)<br />ATOM - [https://github.com/PowerShell/PowerShell/releases.atom](https://github.com/PowerShell/PowerShell/releases.atom)
+                        **Releases · PowerShell<br />**HTML - [https://github.com/PowerShell/PowerShell/releases](https://github.com/PowerShell/PowerShell/releases)<br />ATOM - [https://github.com/PowerShell/PowerShell/releases.atom](https://github.com/PowerShell/PowerShell/releases.atom)
                       </p>
                       
                       <p>
-                        <strong>Tags · PowerShell</strong><br />HTML - [https://github.com/PowerShell/PowerShell/tags](https://github.com/PowerShell/PowerShell/tags)<br />ATOM - [https://github.com/PowerShell/PowerShell/tags.atom](https://github.com/PowerShell/PowerShell/tags.atom)
+                        **Tags · PowerShell**<br />HTML - [https://github.com/PowerShell/PowerShell/tags](https://github.com/PowerShell/PowerShell/tags)<br />ATOM - [https://github.com/PowerShell/PowerShell/tags.atom](https://github.com/PowerShell/PowerShell/tags.atom)
                       </p>
                       
                       <p>
-                        <strong>Releases · Pester</strong><br />HTML - [https://github.com/pester/Pester/releases](https://github.com/pester/Pester/releases)<br />ATOM - [https://github](https://github.com/pester/Pester/releases.atom)[.com/pester/Pester/releases.atom](https://github.com/pester/Pester/releases.atom)
+                        **Releases · Pester**<br />HTML - [https://github.com/pester/Pester/releases](https://github.com/pester/Pester/releases)<br />ATOM - [https://github](https://github.com/pester/Pester/releases.atom)[.com/pester/Pester/releases.atom](https://github.com/pester/Pester/releases.atom)
                       </p>
                       
                       <p>
-                        <strong>Commits · win-acme · Master Branch<br /></strong>HTML - [https://](https://github.com/pester/Pester/releases)[github.com/win-acme/win-acme/commits/master](https://github.com/win-acme/win-acme/commits/master)<br />ATOM - [](https://github.com/win-acme/win-acme/commits/master.atom)[https://github.com/win-acme/win-acme/commits/master.atom](https://github.com/win-acme/win-acme/commits/master.atom)
+                        **Commits · win-acme · Master Branch<br />**HTML - [https://](https://github.com/pester/Pester/releases)[github.com/win-acme/win-acme/commits/master](https://github.com/win-acme/win-acme/commits/master)<br />ATOM - [](https://github.com/win-acme/win-acme/commits/master.atom)[https://github.com/win-acme/win-acme/commits/master.atom](https://github.com/win-acme/win-acme/commits/master.atom)
                       </p>
                     </div>
                   </div>
@@ -195,7 +195,7 @@ Have you ever wanted to get a simple notification when there is a new Release fo
                   ![](image-5.png)</figure> 
                   
                   <p>
-                    So from here, we can use the <strong>RSS Feed trigger</strong>, build some variables, and send it to the <strong>Teams Connector</strong>. From this, I refined the formatting a bit, and ended up with this.
+                    So from here, we can use the **RSS Feed trigger**, build some variables, and send it to the **Teams Connector**. From this, I refined the formatting a bit, and ended up with this.
                   </p><figure class="wp-block-image size-large">
                   
                   ![](image-2.png)</figure> 
@@ -229,7 +229,7 @@ Have you ever wanted to get a simple notification when there is a new Release fo
               </p><figure class="wp-block-image">
               
               ![Image result for so much win jim halpert](https://uploads-ssl.webflow.com/5d2b950d9ea87fc61f0c1f3e/5daa2dfbe9a275421795e33d_ezgif.com-optimize%20(12).gif)</figure> <p>
-                <strong>What kind of workflows would you like to automate</strong>? Let me know what kind of things you are doing with <strong>Power Platform</strong> on the [Discord below](#contact). For some ideas of automations you might be able to use, go [Browse Power Automate Templates](https://us.flow.microsoft.com/en-us/templates/), [Search Connectors](https://flow.microsoft.com/connectors/), or check out the Power Automate [Community](https://go.microsoft.com/fwlink/?LinkID=787467).
+                **What kind of workflows would you like to automate**? Let me know what kind of things you are doing with **Power Platform** on the [Discord below](#contact). For some ideas of automations you might be able to use, go [Browse Power Automate Templates](https://us.flow.microsoft.com/en-us/templates/), [Search Connectors](https://flow.microsoft.com/connectors/), or check out the Power Automate [Community](https://go.microsoft.com/fwlink/?LinkID=787467).
               </p>
               
               <p id="contact">
