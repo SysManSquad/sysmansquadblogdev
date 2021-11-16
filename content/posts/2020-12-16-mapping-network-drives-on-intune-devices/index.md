@@ -3,7 +3,7 @@ title: Mapping Network Drives on Intune Devices
 author: Jake Shackelford
 type: post
 date: 2020-12-16T19:04:49+00:00
-url: 2020-12/16/mapping-network-drives-on-intune-devices/
+url: /2020/12/16/mapping-network-drives-on-intune-devices/
 categories:
   - Endpoint Management
   - How-To
@@ -31,7 +31,7 @@ Before we get started let me explain how this process works. We are going to cre
   5. Remove everything below that point and add the following
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;DriveMapping.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">$trigger = New-ScheduledTaskTrigger -AtLogOn
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"DriveMapping.ps1","language":"PowerShell","modeName":"powershell"}">$trigger = New-ScheduledTaskTrigger -AtLogOn
 
 $class = cimclass MSFT_TaskEventTrigger root/Microsoft/Windows/TaskScheduler
 $trigger2 = $class | New-CimInstance -ClientOnly

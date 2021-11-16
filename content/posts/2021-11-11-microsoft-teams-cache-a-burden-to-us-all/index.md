@@ -3,7 +3,7 @@ title: Microsoft Teams Cache, a burden to us all
 author: BeholdenCypress
 type: post
 date: 2021-11-12T02:10:08+00:00
-url: 2021-11-11-microsoft-teams-cache-a-burden-to-us-all/
+url: /2021/11/11/microsoft-teams-cache-a-burden-to-us-all/
 categories:
   - Endpoint Management
 tags:
@@ -21,7 +21,7 @@ This leads me to the bread and butter of this blog post. The following is a smal
 ## Microsoft Teams Cache Clearing Script
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;ClearTeamsCache.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">Write-Output "Killing Microsoft Teams process"
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"ClearTeamsCache.ps1","language":"PowerShell","modeName":"powershell"}">Write-Output "Killing Microsoft Teams process"
 Stop-Process -Name Teams -Force -erroraction 'silentlycontinue'
 Start-Sleep -seconds 5
 Write-Output "Killing Microsoft Outlook process"
@@ -55,7 +55,7 @@ That takes care of the script portion of this blog post. Next, we need to encaps
 It is literally a simple as:
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;PS2EXE&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">PS2EXE "ClearTeamsCache.ps1" "ClearTeamsCache.exe"</pre>
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"PS2EXE","language":"PowerShell","modeName":"powershell"}">PS2EXE "ClearTeamsCache.ps1" "ClearTeamsCache.exe"</pre>
 </div>
 
 That is the simplest form you can do. There are a bunch of other switches you can do to add other information like Company Name, Version, Author, etc.

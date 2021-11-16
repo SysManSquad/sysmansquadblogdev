@@ -3,7 +3,7 @@ title: Use Azure Policy to configure Boot Diagnostics Settings
 author: Kevin Crouch
 type: post
 date: 2021-07-12T17:42:11+00:00
-url: 2021-07-12-use-azure-policy-to-configure-boot-diagnostics-settings/
+url: /2021/07/12/use-azure-policy-to-configure-boot-diagnostics-settings/
 categories:
   - Endpoint Management
 tags:
@@ -111,7 +111,7 @@ With this Azure Policy you can automatically enable Boot Diagnostics and apply a
               </p>
               
               <div class="wp-block-codemirror-blocks-code-block alignwide code-block">
-                <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;javascript&quot;,&quot;mime&quot;:&quot;application/json&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;u003ca href=u0022http://Enable_Boot_Diagnostics.jsonu0022 target=u0022_blanku0022 rel=u0022noreferrer noopeneru0022u003eEnable_Boot_Diagnostics.jsonu003c/au003e&quot;,&quot;align&quot;:&quot;wide&quot;,&quot;language&quot;:&quot;JSON&quot;,&quot;modeName&quot;:&quot;json&quot;}">{
+                <pre class="CodeMirror" data-setting="{"mode":"javascript","mime":"application/json","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"u003ca href=u0022http://Enable_Boot_Diagnostics.jsonu0022 target=u0022_blanku0022 rel=u0022noreferrer noopeneru0022u003eEnable_Boot_Diagnostics.jsonu003c/au003e","align":"wide","language":"JSON","modeName":"json"}">{
   "mode": "All",
   "policyRule": {
     "if": {

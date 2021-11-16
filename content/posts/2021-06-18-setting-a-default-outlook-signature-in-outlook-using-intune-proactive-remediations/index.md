@@ -3,7 +3,7 @@ title: Setting A Default Outlook Signature in Outlook using Intune Proactive Rem
 author: Jóhannes Geir Kristjánsson
 type: post
 date: 2021-06-18T12:37:50+00:00
-url: 2021-06-18-setting-a-default-outlook-signature-in-outlook-using-intune-proactive-remediations/
+url: /2021/06/18/setting-a-default-outlook-signature-in-outlook-using-intune-proactive-remediations/
 categories:
   - Endpoint Management
   - Intune
@@ -29,7 +29,7 @@ This solution takes care of picking the default outlook profile. but keep in min
 You only need to specify the name of the signature file on line 4 in both the detection and remediation scripts, which are case sensitive.
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;Detection.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}"># you need to add the name of the signature that you want to make default
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Detection.ps1","language":"PowerShell","modeName":"powershell"}"># you need to add the name of the signature that you want to make default
 
 ### this is case sensitive! ###
 $DefaultSignatureName = "fancy-signature"
@@ -69,7 +69,7 @@ catch {
 You need to change the name of the signature on line 4.
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;Remediation.ps1<br>.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}"># Remediation
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Remediation.ps1<br>.ps1","language":"PowerShell","modeName":"powershell"}"># Remediation
 # you need to add the name of the signature that you want to make default
 ### this is case sensitive! ###
 $DefaultSignatureName = "fancy-signature"

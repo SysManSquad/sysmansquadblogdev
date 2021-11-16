@@ -3,7 +3,7 @@ title: Every day tools for the productive IT professional
 author: Adam Cook
 type: post
 date: 2020-10-05T16:11:12+00:00
-url: 2020-10/05/every-day-tools-for-the-productive-it-professional/
+url: /2020/10/05/every-day-tools-for-the-productive-it-professional/
 featured_image: toolbox-2645700_640.jpg
 categories:
   - General

@@ -3,7 +3,7 @@ title: Collect Client Logs – The Fast Channel Way
 author: Cody Mathis
 type: post
 date: 2020-04-08T13:00:00+00:00
-url: 2020-04/08/collect-client-logs-the-fast-channel-way/
+url: /2020/04/08/collect-client-logs-the-fast-channel-way/
 categories:
   - Endpoint Management
   - MECM/MEMCM/SCCM

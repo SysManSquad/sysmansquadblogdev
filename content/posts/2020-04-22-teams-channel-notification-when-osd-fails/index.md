@@ -3,7 +3,7 @@ title: Teams Channel Notification when OSD Fails
 author: Grant
 type: post
 date: 2020-04-22T13:00:00+00:00
-url: 2020-04/22/teams-channel-notification-when-osd-fails/
+url: /2020/04/22/teams-channel-notification-when-osd-fails/
 categories:
   - Endpoint Management
   - How-To
@@ -54,7 +54,7 @@ Well, now you can! <figure class="wp-block-image">
 I have modified the PowerShell script created by Terence Beggs from <https://www.scconfigmgr.com/2017/10/06/configmgr-osd-notification-service-teams/>
 
 <div class="wp-block-codemirror-blocks-code-block alignwide code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;Send-OSDErrorToTeams.ps1&quot;,&quot;align&quot;:&quot;wide&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">&lt;#
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Send-OSDErrorToTeams.ps1","align":"wide","language":"PowerShell","modeName":"powershell"}">&lt;#
     .NOTES
     ==================================================================
     Originally Created by:     Terence Beggs (https://www.scconfigmgr.com)

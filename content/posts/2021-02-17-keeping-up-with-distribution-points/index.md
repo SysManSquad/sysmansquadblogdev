@@ -3,7 +3,7 @@ title: Keeping Up with Distribution Points
 author: Brett Anderson
 type: post
 date: 2021-02-17T15:24:30+00:00
-url: 2021-02-17-keeping-up-with-distribution-points/
+url: /2021/02/17/keeping-up-with-distribution-points/
 categories:
   - Endpoint Management
   - MECM/MEMCM/SCCM

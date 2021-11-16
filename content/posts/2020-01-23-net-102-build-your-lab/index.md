@@ -3,15 +3,7 @@ title: 'NET-102: Build your lab'
 author: Aaron
 type: post
 date: 2020-01-23T07:13:45+00:00
-url: 2021-01-23-net-102-build-your-lab/
-uagb_style_timestamp-css:
-  - 1580245497
-uagb_style_timestamp-js:
-  - 1589173991
-uag_style_timestamp-css:
-  - 1591063855
-uag_style_timestamp-js:
-  - 1591063855
+url: /2021/01/23/net-102-build-your-lab/
 categories:
   - How-To
   - Networking

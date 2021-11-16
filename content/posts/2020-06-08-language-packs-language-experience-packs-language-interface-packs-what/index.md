@@ -3,11 +3,7 @@ title: Language Packs, Language Experience Packs, Language Interface Packs… wh
 author: Adam Cook
 type: post
 date: 2020-06-08T15:00:00+00:00
-url: 2020-06/08/language-packs-language-experience-packs-language-interface-packs-what/
-uag_style_timestamp-css:
-  - 1591367339
-uag_style_timestamp-js:
-  - 1591720980
+url: /2020/06/08/language-packs-language-experience-packs-language-interface-packs-what/
 categories:
   - Endpoint Management
   - How-To
@@ -151,7 +147,7 @@ tags:
                 </p>
                 
                 <div class="wp-block-codemirror-blocks-code-block code-block">
-                  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;null&quot;,&quot;mime&quot;:&quot;text/plain&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:false,&quot;styleActiveLine&quot;:false,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:true,&quot;showPanel&quot;:false,&quot;languageLabel&quot;:&quot;no&quot;,&quot;language&quot;:&quot;Plain Text&quot;,&quot;modeName&quot;:&quot;text&quot;}">dism.exe /Image:"%OSDTargetSystemDrive%" /ScratchDir:%OSDTargetSystemDrive%WindowsTemp /Add-Package /PackagePath=".Microsoft-Windows-Client-Language-Pack_x64_fr-fr.cab"</pre>
+                  <pre class="CodeMirror" data-setting="{"mode":"null","mime":"text/plain","theme":"default","lineNumbers":false,"styleActiveLine":false,"lineWrapping":true,"readOnly":true,"showPanel":false,"languageLabel":"no","language":"Plain Text","modeName":"text"}">dism.exe /Image:"%OSDTargetSystemDrive%" /ScratchDir:%OSDTargetSystemDrive%WindowsTemp /Add-Package /PackagePath=".Microsoft-Windows-Client-Language-Pack_x64_fr-fr.cab"</pre>
                 </div>
                 
                 <div class="wp-block-image">
@@ -588,7 +584,7 @@ tags:
                   </p>
                   
                   <div class="wp-block-codemirror-blocks-code-block code-block">
-                    <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;showPanel&quot;:false,&quot;fileName&quot;:&quot;shell.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">Get-CimInstance -Namespace "Rootcimv2mdmdmmap" -ClassName "MDM_EnterpriseModernAppManagement_AppManagement01" | Invoke-CimMethod -MethodName UpdateScanMethod</pre>
+                    <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"showPanel":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}">Get-CimInstance -Namespace "Rootcimv2mdmdmmap" -ClassName "MDM_EnterpriseModernAppManagement_AppManagement01" | Invoke-CimMethod -MethodName UpdateScanMethod</pre>
                   </div>
                   
                   <p>

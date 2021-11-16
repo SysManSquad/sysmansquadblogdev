@@ -3,7 +3,7 @@ title: Working around NPS limitations for AADJ Windows devices
 author: Andrew Blackburn
 type: post
 date: 2021-04-28T03:10:47+00:00
-url: 2021-04-27-working-around-nps-limitations-for-aadj-windows-devices/
+url: /2021/04/27/working-around-nps-limitations-for-aadj-windows-devices/
 categories:
   - Endpoint Management
   - Intune
@@ -143,7 +143,7 @@ tags:
                           </p>
                           
                           <div class="wp-block-codemirror-blocks-code-block code-block lineWrapping: false">
-                            <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;base16-dark&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:true,&quot;fileName&quot;:&quot;New-DummyComputer.ps1&quot;,&quot;className&quot;:&quot;lineWrapping: false&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">[CmdletBinding(DefaultParameterSetName = 'Default')]
+                            <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"base16-dark","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":true,"fileName":"New-DummyComputer.ps1","className":"lineWrapping: false","language":"PowerShell","modeName":"powershell"}">[CmdletBinding(DefaultParameterSetName = 'Default')]
 param(
     [Parameter(Mandatory=$False)] [String] $deviceName = "",
     [Parameter(Mandatory=$False)] [Switch] $nameMap
@@ -241,7 +241,7 @@ if ($nameMap) {
                           </p>
                           
                           <div class="wp-block-codemirror-blocks-code-block code-block">
-                            <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;base16-dark&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;Sync-DummyComputers.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">[CmdletBinding(DefaultParameterSetName = 'Default')]
+                            <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"base16-dark","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Sync-DummyComputers.ps1","language":"PowerShell","modeName":"powershell"}">[CmdletBinding(DefaultParameterSetName = 'Default')]
 param(
     [Parameter(Mandatory=$True)] [String] $TenantId = "",
     [Parameter(Mandatory=$True)] [String] $ClientId = "",

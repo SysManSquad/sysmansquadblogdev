@@ -3,7 +3,7 @@ title: Updated Modern Driver/BIOS Management with CMG Support
 author: Charles
 type: post
 date: 2021-04-28T03:04:02+00:00
-url: 2021-04-27-updated-modern-driver-bios-management-with-cmg-support/
+url: /2021/04/27/updated-modern-driver-bios-management-with-cmg-support/
 categories:
   - Endpoint Management
   - MECM/MEMCM/SCCM
@@ -201,7 +201,7 @@ Now that I knew what information I needed to use to query the AdminService over 
 Depending on if the client is on the internet or not, my script would require a different set of parameters. This was the perfect opportunity to use [parameter sets](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_parameter_sets?view=powershell-7.1).
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:false,&quot;styleActiveLine&quot;:false,&quot;lineWrapping&quot;:false,&quot;readOnly&quot;:false,&quot;showPanel&quot;:false,&quot;fileName&quot;:&quot;shell.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">[parameter(Mandatory = $true, ParameterSetName = "Intranet")]
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":false,"styleActiveLine":false,"lineWrapping":false,"readOnly":false,"showPanel":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}">[parameter(Mandatory = $true, ParameterSetName = "Intranet")]
 [ValidateNotNullOrEmpty()]
 [string]$ServerFQDN,
 
@@ -246,7 +246,7 @@ The tricky part here is that the MSAL.PS module requires us to accept the licens
 This function checks for the availability of the MSAL.PS module and if it’s not there it will check for the prerequisites to install before it can import the module.
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:false,&quot;readOnly&quot;:false,&quot;showPanel&quot;:false,&quot;fileName&quot;:&quot;shell.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">Function Import-MSALPSModule{
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":false,"readOnly":false,"showPanel":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}">Function Import-MSALPSModule{
     Add-TextToCMLog $LogFile "Checking if MSAL.PS module is available on the device." $component 1
     $MSALModule = Get-Module -ListAvailable MSAL.PS
     If($MSALModule){
@@ -359,7 +359,7 @@ If you decide to go with enabling support for PowerShell Gallery in WinPE, you c
 Now, depending on what parameters were used, we will query the AdminService locally or via the CMG:
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:false,&quot;styleActiveLine&quot;:false,&quot;lineWrapping&quot;:false,&quot;readOnly&quot;:false,&quot;showPanel&quot;:false,&quot;fileName&quot;:&quot;shell.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">switch($PSCmdlet.ParameterSetName){
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":false,"styleActiveLine":false,"lineWrapping":false,"readOnly":false,"showPanel":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}">switch($PSCmdlet.ParameterSetName){
     'Intranet'{
         $Packages = Invoke-RestMethod -Method Get -Uri $WMIPackageURL -Body $Body @InvokeRestMethodCredential | Select-Object -ExpandProperty value
     }
@@ -393,7 +393,7 @@ Note: In my limited testing, I found that if a task sequence does not reference 
 If the “ClientIsOnInternet” is still not set after this step and device is not in WinPE, we use the following PowerShell command to determine if the device is on Internet:
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:false,&quot;styleActiveLine&quot;:false,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;showPanel&quot;:false,&quot;fileName&quot;:&quot;shell.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">Get-CimInstance -ClassName "ClientInfo" -Namespace "Root\CCM" | Select-Object -ExpandProperty InInternet</pre>
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":false,"styleActiveLine":false,"lineWrapping":true,"readOnly":false,"showPanel":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}">Get-CimInstance -ClassName "ClientInfo" -Namespace "Root\CCM" | Select-Object -ExpandProperty InInternet</pre>
 </div><figure class="wp-block-image size-large">
 
 ![](clientinfo-1024x613.png) </figure> 
@@ -405,7 +405,7 @@ Here you fill out your environment-specific information. The additional paramete
   * ExternalUrl: The ExternalUrl to access the AdminService from your CMG. The followinfg query can be used to find the ExternalUrl:
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;sql&quot;,&quot;mime&quot;:&quot;text/x-sql&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:false,&quot;styleActiveLine&quot;:false,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;showPanel&quot;:false,&quot;fileName&quot;:&quot;query.sql&quot;,&quot;language&quot;:&quot;SQL&quot;,&quot;modeName&quot;:&quot;sql&quot;}">SELECT ProxyServerName,ExternalUrl FROM [dbo].[vProxy_Routings] WHERE [dbo].[vProxy_Routings].ExternalEndpointName = 'AdminService'</pre>
+  <pre class="CodeMirror" data-setting="{"mode":"sql","mime":"text/x-sql","theme":"default","lineNumbers":false,"styleActiveLine":false,"lineWrapping":true,"readOnly":false,"showPanel":false,"fileName":"query.sql","language":"SQL","modeName":"sql"}">SELECT ProxyServerName,ExternalUrl FROM [dbo].[vProxy_Routings] WHERE [dbo].[vProxy_Routings].ExternalEndpointName = 'AdminService'</pre>
 </div>
 
   * TenantId: Your Azure AD Tenant ID

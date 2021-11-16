@@ -3,7 +3,7 @@ title: Setting ACL using Intune Endpoint Analytics Proactive Remediations
 author: Jóhannes Geir Kristjánsson
 type: post
 date: 2020-07-27T14:56:26+00:00
-url: 2020-07/27/setting-acl-using-intune-endpoint-analytics-proactive-remediations/
+url: /2020/07/27/setting-acl-using-intune-endpoint-analytics-proactive-remediations/
 categories:
   - Endpoint Management
   - How-To
@@ -27,7 +27,7 @@ Using Group Policies, this is a trivial task, but Intune has no proper built in 
 Relatively straight forward, the script checks if the relevant filesystem rights have been assigned, if not, it will error out and report non-compliance
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;Discovery.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}"># Discovery
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Discovery.ps1","language":"PowerShell","modeName":"powershell"}"># Discovery
 $acl = Get-Acl -Path 'C:\Users\Public\Desktop'
 $aclEveryone = $acl.Access | where { $_.IdentityReference -like "everyone" } 
 
@@ -56,7 +56,7 @@ catch {
 Should the discovery report non-compliance, the following will execute.
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;Remediation.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}"># Remediation
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Remediation.ps1","language":"PowerShell","modeName":"powershell"}"># Remediation
 
 try {
     $acl = Get-Acl -Path 'C:\Users\Public\Desktop'

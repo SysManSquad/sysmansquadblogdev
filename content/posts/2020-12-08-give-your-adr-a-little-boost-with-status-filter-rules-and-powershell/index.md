@@ -3,7 +3,7 @@ title: Give your ADR a little boost with Status Filter Rules and PowerShell
 author: Michael De Bona
 type: post
 date: 2020-12-08T09:16:43+00:00
-url: 2020-12/08/give-your-adr-a-little-boost-with-status-filter-rules-and-powershell/
+url: /2020/12/08/give-your-adr-a-little-boost-with-status-filter-rules-and-powershell/
 categories:
   - MECM/MEMCM/SCCM
   - Powershell
@@ -146,7 +146,7 @@ categories:
                       </p>
                       
                       <div class="wp-block-codemirror-blocks-code-block code-block">
-                        <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;Prerequisites.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">[CmdletBinding()]
+                        <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Prerequisites.ps1","language":"PowerShell","modeName":"powershell"}">[CmdletBinding()]
 param(
     # Name of the site server returned by the Status Filter Rule
     [Parameter(Mandatory = $true)]
@@ -233,7 +233,7 @@ Set-Location "$($SiteCode):"</pre>
                       </p>
                       
                       <div class="wp-block-codemirror-blocks-code-block code-block">
-                        <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;Actions.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}"># Regex to capture the name of the created SUG and the creation date
+                        <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Actions.ps1","language":"PowerShell","modeName":"powershell"}"># Regex to capture the name of the created SUG and the creation date
 [regex]$Regex = "CI Assignment Manager successfully processed new CI Assignment\s+(?&lt;Name&gt;.*)\s(?&lt;Date&gt;\d{4}-\d{2}-\d{2})"
 
 # Use the Regex on the Description variable to extract the SUG's name and creation date. Store the values in variables
@@ -278,7 +278,7 @@ If ($DeploymentName -notlike "*Definition*") {
                       </p>
                       
                       <div class="wp-block-codemirror-blocks-code-block code-block">
-                        <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;Reporting.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}"># Define some CSS style that will be added to the HTML report header
+                        <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Reporting.ps1","language":"PowerShell","modeName":"powershell"}"># Define some CSS style that will be added to the HTML report header
         $HtmlHeader = @"
 &lt;style&gt;
     body {

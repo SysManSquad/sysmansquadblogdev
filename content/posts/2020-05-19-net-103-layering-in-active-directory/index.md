@@ -4,7 +4,7 @@ author: Aaron
 type: post
 date: 2020-05-19T14:00:00+00:00
 excerpt: "In previous articles, we've built the basic services you need without getting too far in the weeds. Now we're going to layer in a central identity service."
-url: 2020-05/19/net-103-layering-in-active-directory/
+url: /2020/05/19/net-103-layering-in-active-directory/
 featured_image: Canada_Goose_Branta_Canadensis.jpg
 categories:
   - How-To
@@ -121,7 +121,7 @@ Create a VM with ~2048MB RAM and a minimum 60GB disk space. By now you're acquai
 Set the IP address:
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;0-set-ip.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}"># Change these to match the config in your documentation
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"0-set-ip.ps1","language":"PowerShell","modeName":"powershell"}"># Change these to match the config in your documentation
 $IPv6Address='fdda:f6d4:f5a2:f1e6::4'
 $IPv6PrefixLength='64'
 $IPv6Gateway='fdda:f6d4:f5a2:f1e6::1'
@@ -156,7 +156,7 @@ New-NetIPAddress @IPv6Arguments</pre>
 Then you'll need to install the domain controller.
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;1-install-ad-role-and-domain.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">$SafeModeAdminPassword='P@ssw0rd2' # Change this. 
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"1-install-ad-role-and-domain.ps1","language":"PowerShell","modeName":"powershell"}">$SafeModeAdminPassword='P@ssw0rd2' # Change this. 
 $DomainName = 'ad.lab.test
 Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
 # Install the domain with a very bad password for the safe-mode administrator
@@ -170,7 +170,7 @@ Obviously, you'll want to change the safe mode administrator password. Your AD c
 Since your `dns` server is _authoritative_ for `lab.test`, you will create a "delegation" for the subdomain `ad.lab.test` to authorize your new AD controller to handle it's own dns records.
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;2-dns-delegation.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">#######################################################################################################
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"2-dns-delegation.ps1","language":"PowerShell","modeName":"powershell"}">#######################################################################################################
 # Run this from your existing DNS server, not your AD controller, even though it too is a DNS server. #
 #######################################################################################################
 $ParentZone='lab.test'
@@ -187,7 +187,7 @@ Add-DnsServerZoneDelegation -Name $ParentZone -ChildZoneName $ChildZone -IPAddre
 The delegation records now exist that will help your clients find your AD domain to join it. Now, using your `ad\administrator` credentials, you can join your new domain on each of your core installs through powershell:
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;join-domain.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">Add-Computer –DomainName 'ad.lab.test' -restart –force</pre>
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"join-domain.ps1","language":"PowerShell","modeName":"powershell"}">Add-Computer –DomainName 'ad.lab.test' -restart –force</pre>
 </div>
 
 After joining, you will be able to use your `ad\administrator` credentials to sign into any of your machines. If you don't already have the RSAT tools installed on your windows 10 workstation, you'll want to get that done before proceeding.

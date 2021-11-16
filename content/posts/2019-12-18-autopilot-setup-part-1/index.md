@@ -3,12 +3,8 @@ title: Intune/Autopilot Setup Companion Guide Part 1
 author: Jake Shackelford
 type: post
 date: 2019-12-18T14:50:37+00:00
-url: 2019-12-18-autopilot-setup-part-1/
+url: /2019/12/18/autopilot-setup-part-1/
 featured_image: image1.png
-pm_content_access_group:
-  - all
-uag_style_timestamp-js:
-  - 1591684525
 categories:
   - Endpoint Management
   - Intune
@@ -106,14 +102,14 @@ The first time you select this you will need to choose an MDM Authority. Since w
 Now that we have the above complete we can actually test Autopilot! First we need to download the profile we created. To do so we will have to do a few quick powershell commands 
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">Install-Module -name WindowsAutoPilotIntune
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"language":"PowerShell","modeName":"powershell"}">Install-Module -name WindowsAutoPilotIntune
 Connect-MSGraph</pre>
 </div>
 
 You will be prompted to specify your UPN. Supply the UPN and signin. You will be prompted with a Permissions requested screen (This ties in with the Microsoft Graph). Check the Consent on behalf of my organization box and select Accept.
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">$apppolicies = Get-AutoPilotProfile
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"language":"PowerShell","modeName":"powershell"}">$apppolicies = Get-AutoPilotProfile
 $apppolicies | ConvertTo-AutoPilotConfigurationJSON | Out-File "C:\AutopilotConfigurationFile.json" -Encoding ascii</pre>
 </div>
 

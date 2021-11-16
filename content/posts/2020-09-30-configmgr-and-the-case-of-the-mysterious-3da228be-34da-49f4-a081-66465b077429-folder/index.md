@@ -3,7 +3,7 @@ title: 'ConfigMgr and The Case of the Mysterious {3DA228BE-34DA-49f4-A081-66465B
 author: Adam Gross
 type: post
 date: 2020-09-30T05:50:17+00:00
-url: 2020-09/30/configmgr-and-the-case-of-the-mysterious-3da228be-34da-49f4-a081-66465b077429-folder/
+url: /2020/09/30/configmgr-and-the-case-of-the-mysterious-3da228be-34da-49f4-a081-66465b077429-folder/
 featured_image: image-5.png
 categories:
   - Endpoint Management
@@ -28,7 +28,7 @@ This morning, I reached out the the ConfigMgr team to file a bug and already hea
 Even though this will likely be fixed in a future release, I was curious about the source still. After searching all through the registry, started checking the client install logs the log I was looking for. It confirmed that the root folder `C:\Windows\System32\{3DA228BE-34DA-49f4-A081-66465B077429}` is created as a backup folder by the ConfigMgr installer `client.msi` where it's backing up old settings/inventory data to a new `{GUID}` folder before upgrading the client, then it restores the data back, but seems to be leaving the backup folders behind. Check out this excerpt from `C:\Windows\ccmsetup\Logs`\`client.msi.log` file from one of my production workstations.
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;null&quot;,&quot;mime&quot;:&quot;text/plain&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;client.msi.log&quot;,&quot;language&quot;:&quot;Plain Text&quot;,&quot;modeName&quot;:&quot;text&quot;}">MSI (s) (CC:3C) [11:03:21:957]: Executing op: ActionStart(Name=SmsDeinstallDesktopClient,Description=This custom action uninstalls the desktop client with following steps-
+  <pre class="CodeMirror" data-setting="{"mode":"null","mime":"text/plain","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"client.msi.log","language":"Plain Text","modeName":"text"}">MSI (s) (CC:3C) [11:03:21:957]: Executing op: ActionStart(Name=SmsDeinstallDesktopClient,Description=This custom action uninstalls the desktop client with following steps-
 1. Makes sure there are no desktop client installations in progress and prevents any new instance of intallation.
 2. Checks the desktop client version and gets the installation directory.
 3. Stops remote control and other desktop components.
@@ -86,7 +86,7 @@ I should mention, I am not concerned about a small number of folders, even a few
 [PowershellScripts/CleanupFoldersWithRoboCopy.ps1 at master · AdamGrossTX/PowershellScripts (github.com)](https://github.com/AdamGrossTX/PowershellScripts/blob/master/ConfigMgr/Troubleshooting/CleanupFoldersWithRoboCopy.ps1)
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;<a href=\&quot;https://github.com/AdamGrossTX/PowershellScripts/commit/58b32c71fb3755430754d476b2324c365061245b\&quot;>CleanupFoldersWithRoboCopy.ps1</a>&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">[cmdletbinding()]
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"<a href=\"https://github.com/AdamGrossTX/PowershellScripts/commit/58b32c71fb3755430754d476b2324c365061245b\">CleanupFoldersWithRoboCopy.ps1</a>","language":"PowerShell","modeName":"powershell"}">[cmdletbinding()]
 param(
     $incoming,
     $Folder = "{3DA228BE-34DA-49f4-A081-66465B077429}",

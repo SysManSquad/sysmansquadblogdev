@@ -3,7 +3,7 @@ title: Modern BIOS Management with the Administration Service
 author: Charles
 type: post
 date: 2020-06-18T13:00:00+00:00
-url: 2020-06/18/modern-bios-management-with-the-administration-service/
+url: /2020/06/18/modern-bios-management-with-the-administration-service/
 categories:
   - Endpoint Management
 
@@ -39,7 +39,7 @@ Now that we have the current BIOS version and release date, we need to evaluate 
 For this part, I had to dig into the [Invoke-CMDownloadBIOSPackage.ps1](https://github.com/MSEndpointMgr/ConfigMgr/blob/master/Operating%20System%20Deployment/BIOS/Invoke-CMDownloadBIOSPackage.ps1) script and in the script of the [Driver Automation Tool](https://github.com/maurice-daly/DriverAutomationTool/blob/master/Content/DriverAutomationTool.ps1) to see how they were filtering and extracting version information for the different vendors. I ended up with the following code to compare BIOS versions.
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:false,&quot;readOnly&quot;:false,&quot;languageLabel&quot;:&quot;language&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">Add-TextToCMLog $LogFile  "Filtering package results to only BIOS packages that would be an upgrade to the current BIOS." $component 1
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":false,"readOnly":false,"languageLabel":"language","language":"PowerShell","modeName":"powershell"}">Add-TextToCMLog $LogFile  "Filtering package results to only BIOS packages that would be an upgrade to the current BIOS." $component 1
 $ApplicableBIOSPackages = New-Object System.Collections.ArrayList
 If($Manufacturer -ne "Lenovo"){
 	#Check if any of the packages has a BIOS version higher than the current BIOS version

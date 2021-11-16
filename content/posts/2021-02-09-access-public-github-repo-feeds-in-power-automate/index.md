@@ -3,7 +3,7 @@ title: Access Public GitHub Repo Feeds in Power Automate
 author: Kevin Crouch
 type: post
 date: 2021-02-09T13:26:41+00:00
-url: 2021-02-09-access-public-github-repo-feeds-in-power-automate/
+url: /2021/02/09/access-public-github-repo-feeds-in-power-automate/
 featured_image: Github-RSS-Flow-4.png
 categories:
   - Documentation

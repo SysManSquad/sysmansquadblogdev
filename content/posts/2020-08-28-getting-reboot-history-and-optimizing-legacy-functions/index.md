@@ -3,7 +3,7 @@ title: Getting Reboot History and Optimizing Legacy Functions
 author: Nic Wendlowsky
 type: post
 date: 2020-08-28T14:00:00+00:00
-url: 2020-08/28/getting-reboot-history-and-optimizing-legacy-functions/
+url: /2020/08/28/getting-reboot-history-and-optimizing-legacy-functions/
 categories:
   - Endpoint Management
   - MECM/MEMCM/SCCM
@@ -17,7 +17,7 @@ As I opened an old stand-by function from my stash (originally posted here: [htt
 The first thing I needed to do was identify how to get the same information in a faster manner. Since this function is using `Get-WMIObject` to search Event Logs, we already know improvements can be made with using `Get-EventLog` or `Get-WinEvent`. And we can test each with `Measure-Object` to determine the winner:
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;cobalt&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:false,&quot;lineWrapping&quot;:false,&quot;readOnly&quot;:false,&quot;showPanel&quot;:false,&quot;languageLabel&quot;:&quot;no&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">'Get-WinEvent takes {0} milliseconds to find {1} events' -f (Measure-Command -Expression {
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"cobalt","lineNumbers":true,"styleActiveLine":false,"lineWrapping":false,"readOnly":false,"showPanel":false,"languageLabel":"no","language":"PowerShell","modeName":"powershell"}">'Get-WinEvent takes {0} milliseconds to find {1} events' -f (Measure-Command -Expression {
     $Params = @{ 
       FilterHashtable = @{Logname = 'System';ID = "1074","6008","6009"}
     }   
@@ -69,7 +69,7 @@ I like the information that `Get-RebootHistory` outputs, so I want to keep the s
 Identify the main, slow command:
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;tomorrow-night-bright&quot;,&quot;lineNumbers&quot;:false,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:false,&quot;readOnly&quot;:false,&quot;showPanel&quot;:false,&quot;fileName&quot;:&quot;shell.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">Try {  
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"tomorrow-night-bright","lineNumbers":false,"styleActiveLine":true,"lineWrapping":false,"readOnly":false,"showPanel":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}">Try {  
    $d = 0 
    $Events = Get-WmiObject @Params 
    
@@ -79,7 +79,7 @@ Identify the main, slow command:
 And Since it's using splatting, we need to find the variable holding the values:
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;tomorrow-night-bright&quot;,&quot;lineNumbers&quot;:false,&quot;styleActiveLine&quot;:false,&quot;lineWrapping&quot;:false,&quot;readOnly&quot;:false,&quot;showPanel&quot;:false,&quot;fileName&quot;:&quot;shell.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}"># Arguments to be passed to our WMI call.  
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"tomorrow-night-bright","lineNumbers":false,"styleActiveLine":false,"lineWrapping":false,"readOnly":false,"showPanel":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}"># Arguments to be passed to our WMI call.  
 $Params = @{ 
    ErrorAction  = 'Stop' 
    ComputerName = $Computer 
@@ -92,7 +92,7 @@ $Params = @{
 Now we need to replace `Get-WMIObject` with `Get-WinEvent` and compare the outputs. Referencing good ol' [Dr. Scripto's blog on the FilterHashtable param](https://devblogs.microsoft.com/scripting/use-filterhashtable-to-filter-event-log-with-powershell/), we replace the WMI splat and the `$Events` line with:
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;tomorrow-night-bright&quot;,&quot;lineNumbers&quot;:false,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:false,&quot;readOnly&quot;:false,&quot;showPanel&quot;:false,&quot;fileName&quot;:&quot;shell.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">$Params = @{ 
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"tomorrow-night-bright","lineNumbers":false,"styleActiveLine":true,"lineWrapping":false,"readOnly":false,"showPanel":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}">$Params = @{ 
             ErrorAction  = 'Stop' 
             ComputerName = $Computer 
             Credential   = $Credential 
@@ -105,7 +105,7 @@ $Events = Get-WinEvent @Params</pre>
 Next we'll need to verify the integrity of this `Switch` statement
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;tomorrow-night-bright&quot;,&quot;lineNumbers&quot;:false,&quot;styleActiveLine&quot;:false,&quot;lineWrapping&quot;:false,&quot;readOnly&quot;:false,&quot;showPanel&quot;:false,&quot;fileName&quot;:&quot;shell.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}"># Record the relevant details for the shutdown event. 
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"tomorrow-night-bright","lineNumbers":false,"styleActiveLine":false,"lineWrapping":false,"readOnly":false,"showPanel":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}"># Record the relevant details for the shutdown event. 
 Switch ($Event.EventCode) {
    6009 { $BootHistory += (Get-Date(([WMI]'').ConvertToDateTime($Event.TimeGenerated)) -Format g)}
    6008 { $UnexpectedShutdowns += ('{0} {1}' -f ($Event.InsertionStrings[1], $Event.InsertionStrings[0]))}
@@ -120,7 +120,7 @@ For the `InsertionStrings` property, I just went exploring and tried this, which
 and led to the new Switch statement:
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;tomorrow-night-bright&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;showPanel&quot;:false,&quot;fileName&quot;:&quot;shell.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}"># Record the relevant details for the shutdown event. 
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"tomorrow-night-bright","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"showPanel":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}"># Record the relevant details for the shutdown event. 
 Switch ($Event.Id) {  
    6009 { $BootHistory += $Event.TimeCreated | Get-Date -Format g } 
    6008 { $UnexpectedShutdowns += ('{0} {1}' -f ($Event.Properties[1].Value, $Event.Properties[0].Value)) } 
@@ -131,7 +131,7 @@ Switch ($Event.Id) {
 Finally, we validate the `$ShutdownDetail` values:
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;tomorrow-night-bright&quot;,&quot;lineNumbers&quot;:false,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:false,&quot;readOnly&quot;:false,&quot;showPanel&quot;:false,&quot;fileName&quot;:&quot;shell.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}"># Grab details about the last clean shutdown and generate our return object. 
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"tomorrow-night-bright","lineNumbers":false,"styleActiveLine":true,"lineWrapping":false,"readOnly":false,"showPanel":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}"># Grab details about the last clean shutdown and generate our return object. 
 $ShutdownDetail | Select -First 1 | ForEach-Object {  
   New-Object -TypeName PSObject -Property @{ 
     Computer = $Computer 
@@ -152,7 +152,7 @@ $ShutdownDetail | Select -First 1 | ForEach-Object {
 Once again, there are values to modify by comparing the output of the WMI event object to the new object, but I came across one property that didn't translate well, the `LastShutdownUser` property. With WMI, the readable User Name was placed in the `$Events[0].InsertionStrings` property, but `Get-WinEvent` provides just the SID. I put together a quick CIM function to grab the User name:
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;tomorrow-night-bright&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;Get-UserFromRegistry.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">FUNCTION Get-UserFromRegistry{
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"tomorrow-night-bright","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Get-UserFromRegistry.ps1","language":"PowerShell","modeName":"powershell"}">FUNCTION Get-UserFromRegistry{
   PARAM(
     $SID
   )
@@ -174,7 +174,7 @@ Now I can call that function for the `LastShutdownUser` property and replicate t
 Additionally, we can once again replace the `InsertionStrings` and simplify the `LastShutdownUser`, `LastShutdownProcess`, `LastShutdown`, and `LastShutdownReason` since `Get-WinEvent` also provides more readily readable values:
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;tomorrow-night-bright&quot;,&quot;lineNumbers&quot;:false,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:false,&quot;readOnly&quot;:false,&quot;showPanel&quot;:false,&quot;fileName&quot;:&quot;shell.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}"># Grab details about the last clean shutdown and generate our return object. 
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"tomorrow-night-bright","lineNumbers":false,"styleActiveLine":true,"lineWrapping":false,"readOnly":false,"showPanel":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}"># Grab details about the last clean shutdown and generate our return object. 
 $ShutdownDetail | Select -First 1 | ForEach-Object {  
   New-Object -TypeName PSObject -Property @{
     Computer = $_.MachineName 

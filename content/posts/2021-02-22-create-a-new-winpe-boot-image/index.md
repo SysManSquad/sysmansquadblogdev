@@ -3,7 +3,7 @@ title: Create a new WinPE boot image
 author: Adam Cook
 type: post
 date: 2021-02-22T09:51:23+00:00
-url: 2021-02-22-create-a-new-winpe-boot-image/
+url: /2021/02/22/create-a-new-winpe-boot-image/
 categories:
   - Endpoint Management
   - How-To
@@ -132,7 +132,7 @@ categories:
             </ol>
             
             <div class="wp-block-codemirror-blocks-code-block code-block">
-              <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:true,&quot;fileName&quot;:&quot;PowerShell&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">.\New-WinPEWIM.ps1 -Platforms amd64 -OptionalComponents "WinPE-WDS-Tools", "WinPE-Scripting", "WinPE-WMI", "WinPE-SecureStartup", "WinPE-NetFx", "WinPE-PowerShell", "WinPE-StorageWMI", "WinPE-DismCmdlets" -OutputDirectory "G:\OSD\BootImages" -DriversDirectory "G:\Drivers\WINPE10.0-DRIVERS-A22-3GVJN\x64"</pre>
+              <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":true,"fileName":"PowerShell","language":"PowerShell","modeName":"powershell"}">.\New-WinPEWIM.ps1 -Platforms amd64 -OptionalComponents "WinPE-WDS-Tools", "WinPE-Scripting", "WinPE-WMI", "WinPE-SecureStartup", "WinPE-NetFx", "WinPE-PowerShell", "WinPE-StorageWMI", "WinPE-DismCmdlets" -OutputDirectory "G:\OSD\BootImages" -DriversDirectory "G:\Drivers\WINPE10.0-DRIVERS-A22-3GVJN\x64"</pre>
             </div><figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio">
             
             <div class="wp-block-embed__wrapper">

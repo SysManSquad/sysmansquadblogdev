@@ -3,7 +3,7 @@ title: Find Microsoft Accounts on Company Domains
 author: Kevin Crouch
 type: post
 date: 2020-11-23T15:00:00+00:00
-url: 2020-11/23/find-microsoft-accounts/
+url: /2020/11/23/find-microsoft-accounts/
 featured_image: two-buttons-sideways_white.png
 categories:
   - Azure
@@ -266,7 +266,7 @@ The other day I was helping someone over in the [WinAdmins Discord](https://aka.
                             </p>
                             
                             <div class="wp-block-codemirror-blocks-code-block code-block">
-                              <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;FindMicrosoftAccounts.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">#$emailAddresses = 'tinafey@contoso.one','username@domain.com','ronswanson@contoso.one'
+                              <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"FindMicrosoftAccounts.ps1","language":"PowerShell","modeName":"powershell"}">#$emailAddresses = 'tinafey@contoso.one','username@domain.com','ronswanson@contoso.one'
 $emailAddresses = Get-EXORecipient -RecipientTypeDetails UserMailbox -PropertySets Minimum | select -ExpandProperty Emailaddresses | where {$_ -match "SMTP:"} | foreach {$_ -replace '^smtp:'} 
 
 $ApplicationID  = 'bd53bb89-0cc1-4eb3-90b7-ba008b1f2a2c'

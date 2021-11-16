@@ -3,10 +3,8 @@ title: Intune/Autopilot Setup Companion Guide Part 2 – Windows Store for Busin
 author: Jake Shackelford
 type: post
 date: 2020-01-27T19:15:59+00:00
-url: 2021-01-27-intune-autopilot-setup-companion-guide-part-2-windows-store-for-business/
+url: /2021/01/27/intune-autopilot-setup-companion-guide-part-2-windows-store-for-business/
 featured_image: msedge_Iausbx4qxD.png
-uag_style_timestamp-js:
-  - 1591700215
 categories:
   - Azure
   - Documentation

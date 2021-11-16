@@ -3,7 +3,7 @@ title: Bulk Updating Autopilot enrolled devices with Graph API and assigning a G
 author: Jake Shackelford
 type: post
 date: 2020-08-24T14:31:46+00:00
-url: 2020-08/24/bulk-updating-autopilot-enrolled-devices-with-graph-api-and-assigning-a-group-tag-based-on-purchase-orderid/
+url: /2020/08/24/bulk-updating-autopilot-enrolled-devices-with-graph-api-and-assigning-a-group-tag-based-on-purchase-orderid/
 featured_image: msedge_qxJ7I3fI72.png
 categories:
   - Endpoint Management
@@ -78,7 +78,7 @@ Watch a demo of this script on Intune.Training.
 You will need to update 4 fields in the below script with information you copied earlier. Those fields being line 2,3,4, and 6 if you changed the group tag for your dynamic device query. The script will use the App we created earlier to authenticate and grab information for all devices and create an array of devices based on Purchase Order ID. that you manually enter via prompt. It then loops through that array and assigns the Group Tag to all devices . Once all group tags have been assigned it will push a refresh to your portal, bare in mind that you may have to wait an hour or so for the new group tags to show up. This is incredibly helpful for large bulk orders.
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;GroupTag.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}"># Application (client) ID, tenant Name and secret
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"GroupTag.ps1","language":"PowerShell","modeName":"powershell"}"># Application (client) ID, tenant Name and secret
 $clientid = ""
 $clientSecret = "-"
 $TenantName = ""

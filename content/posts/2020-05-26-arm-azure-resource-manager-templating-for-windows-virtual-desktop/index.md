@@ -3,7 +3,7 @@ title: ARM (Azure Resource Manager) Templating for Windows Virtual Desktop
 author: Jake Shackelford
 type: post
 date: 2020-05-26T12:56:38+00:00
-url: 2020-05/26/arm-azure-resource-manager-templating-for-windows-virtual-desktop/
+url: /2020/05/26/arm-azure-resource-manager-templating-for-windows-virtual-desktop/
 featured_image: msedge_CxaaJwZiAP.png
 categories:
   - Azure
@@ -41,7 +41,7 @@ We are going to have to create a few **resource groups**, a **key vault**, and a
 We are going to open Powershell as an Admin and install the required module to connect to Azure. Then we'll create a few resource groups to store our images, our secure passwords in a keyvault, and a storage account for our powershell scripts and other items we may need. Feel free to change the names and location as you see fit (Remember to keep location the same throughout).
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;resourcecreation.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">Install-module azaccount -force
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"resourcecreation.ps1","language":"PowerShell","modeName":"powershell"}">Install-module azaccount -force
 Connect-azaccount
 #Change to your desired location
 $location = "centralus"
@@ -76,7 +76,7 @@ At this point you'll want to have your powershell scripts that you want to execu
 Below is an example of the module install script I have. 
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;moduleinstall.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"moduleinstall.ps1","language":"PowerShell","modeName":"powershell"}">Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
 Install-Module -Name PSFTP -Force
 
 ./config.ps1</pre>
@@ -85,7 +85,7 @@ Install-Module -Name PSFTP -Force
 The next script is an example of my configuration script. 
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;config.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">Try{
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"config.ps1","language":"PowerShell","modeName":"powershell"}">Try{
 #DO ALL THE FANCY THINGS here like your reg changes, or whatever else.
 #You can upload the FSLogix.exe to the storage account which we will go over below
 #Start-Process -Wait -FilePath ./FSLogixAppsSetup.exe -ArgumentList "/quiet" -PassThru
@@ -169,7 +169,7 @@ Now we are going to add all the extras to this template that let us dynamically 
     add the following after (Make sure it's after the bracket)
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;template.json&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">        },
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"template.json","language":"PowerShell","modeName":"powershell"}">        },
         {
   "type": "Microsoft.Compute/virtualMachines/extensions",
   "apiVersion": "2019-12-01",
@@ -210,7 +210,7 @@ Below I will be posting the script I use to make the magic happen. It will conne
 This can be changed to meet your preferences. You'll notice on lines 16-18 I specified a virtualMachineName, networkInferfaceName, publicIpAddressName, all three of these items have a default, and can be found in our parameters.json - however by defining them in our script I'm overwriting the default values to give us a bit more flexibility. 
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;magic.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">Connect-azaccount
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"magic.ps1","language":"PowerShell","modeName":"powershell"}">Connect-azaccount
 $vmName = "TempMachine"
 $imagename = Read-Host -Prompt 'Input a unique image name'
 Do {

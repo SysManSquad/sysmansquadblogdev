@@ -3,7 +3,7 @@ title: Working With Internet-Optimized Task Sequences and Generic Status Message
 author: Ronald Montgomery
 type: post
 date: 2020-06-10T14:00:00+00:00
-url: 2020-06/10/working-with-internet-optimized-task-sequences-and-generic-status-messages/
+url: /2020/06/10/working-with-internet-optimized-task-sequences-and-generic-status-messages/
 categories:
   - Endpoint Management
 

@@ -3,7 +3,7 @@ title: VPN Boundary Type and Understanding Its Options
 author: Nic Wendlowsky
 type: post
 date: 2020-09-14T12:34:34+00:00
-url: 2020-09/14/vpn-boundary-type-and-understanding-its-options/
+url: /2020/09/14/vpn-boundary-type-and-understanding-its-options/
 featured_image: Snag_2a0b39b.png
 categories:
   - Endpoint Management
@@ -114,7 +114,7 @@ Then I added the new Boundary to my VPN Boundary Group.
 What happened next confused me. After forcing a few clients to update their Machine Policy, I saw VPN-connected devices drop _out_ of the VPN Boundary Group that I added my newly-created Boundary to. I double-checked my own machine:
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;tomorrow-night-bright&quot;,&quot;lineNumbers&quot;:false,&quot;styleActiveLine&quot;:false,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;languageLabel&quot;:&quot;language&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">Get-CimInstance -Namespace "rootccmLocationServices" -ClassName "BoundaryGroupCache"```
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"tomorrow-night-bright","lineNumbers":false,"styleActiveLine":false,"lineWrapping":true,"readOnly":false,"languageLabel":"language","language":"PowerShell","modeName":"powershell"}">Get-CimInstance -Namespace "rootccmLocationServices" -ClassName "BoundaryGroupCache"```
 
 The output revealed that my machine was no longer in my VPN Boundary Group, and instead was merely in the fallback Default Boundary Group.  
 But WHY?
@@ -156,7 +156,7 @@ and none other than Rob York responded, inadvertently leading me to answer my ow
       2. I ran this query and got the results shown in my Tweet above
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;sql&quot;,&quot;mime&quot;:&quot;text/x-sql&quot;,&quot;theme&quot;:&quot;liquibyte&quot;,&quot;lineNumbers&quot;:false,&quot;styleActiveLine&quot;:false,&quot;lineWrapping&quot;:false,&quot;readOnly&quot;:false,&quot;languageLabel&quot;:&quot;language&quot;,&quot;language&quot;:&quot;SQL&quot;,&quot;modeName&quot;:&quot;sql&quot;}">select Distinct
+  <pre class="CodeMirror" data-setting="{"mode":"sql","mime":"text/x-sql","theme":"liquibyte","lineNumbers":false,"styleActiveLine":false,"lineWrapping":false,"readOnly":false,"languageLabel":"language","language":"SQL","modeName":"sql"}">select Distinct
 Description0
 
 FROM v_GS_NETWORK_ADAPTER
@@ -176,7 +176,7 @@ Once I re-read Rob York's response, I realized I was looking at the wrong proper
 > <cite>Rob york</cite></figure> 
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;sql&quot;,&quot;mime&quot;:&quot;text/x-sql&quot;,&quot;theme&quot;:&quot;liquibyte&quot;,&quot;lineNumbers&quot;:false,&quot;styleActiveLine&quot;:false,&quot;lineWrapping&quot;:false,&quot;readOnly&quot;:false,&quot;languageLabel&quot;:&quot;language&quot;,&quot;language&quot;:&quot;SQL&quot;,&quot;modeName&quot;:&quot;sql&quot;}">select Distinct
+  <pre class="CodeMirror" data-setting="{"mode":"sql","mime":"text/x-sql","theme":"liquibyte","lineNumbers":false,"styleActiveLine":false,"lineWrapping":false,"readOnly":false,"languageLabel":"language","language":"SQL","modeName":"sql"}">select Distinct
 Name0 AS 'VPN Boundary Description'
 ,Description0 AS 'win32_networkadapter description'
 

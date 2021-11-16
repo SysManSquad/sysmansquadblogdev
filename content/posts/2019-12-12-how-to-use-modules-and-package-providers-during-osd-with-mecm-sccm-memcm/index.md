@@ -3,13 +3,7 @@ title: How to use modules and package providers during OSD with MECM (SCCM/MEMCM
 author: Jake Shackelford
 type: post
 date: 2019-12-12T15:53:40+00:00
-url: 2019-12-12-how-to-use-modules-and-package-providers-during-osd-with-mecm-sccm-memcm
-pm_content_access_group:
-  - all
-uagb_style_timestamp-js:
-  - 1580332074
-uag_style_timestamp-js:
-  - 1591645893
+url: /2019/12/12/how-to-use-modules-and-package-providers-during-osd-with-mecm-sccm-memcm/
 categories:
   - Powershell
   - Scripting
@@ -44,7 +38,7 @@ Now please forgive me for my terrible PS skills I'm working on improving them!
 Create a script in the same folder you put PackageManagemet and WindowsPowerShell that looks like the following
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">$executingScriptDirectory = Split-Path -Path $MyInvocation.MyCommand.Definition -Parent
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"language":"PowerShell","modeName":"powershell"}">$executingScriptDirectory = Split-Path -Path $MyInvocation.MyCommand.Definition -Parent
 
 copy-item $executingScriptDirectory\PackageManagement $env:ProgramFiles -force -Recurse
 
@@ -62,7 +56,7 @@ In your OSD task Sequence create a run PowerShell script step and reference the 
 Next, in your original script that's failing to run, you'll want to IMPORT those modules or packageproviders as opposed to installing them since you now have the content copied to that local machine. In my case the code looks like so: (This will look different depending on the modules you are trying to import)
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">Import-Module -Name $env:ProgramFiles\WindowsPowerShell\Modules\SnipeitPS -Verbose
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"language":"PowerShell","modeName":"powershell"}">Import-Module -Name $env:ProgramFiles\WindowsPowerShell\Modules\SnipeitPS -Verbose
 
 Import-PackageProvider -Name "Nuget" -Verbose</pre>
 </div>

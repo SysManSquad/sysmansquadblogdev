@@ -3,7 +3,7 @@ title: Inventory Deprovisioned Windows 10 Apps
 author: Cody Mathis
 type: post
 date: 2020-03-11T14:00:00+00:00
-url: 2020-03/11/inventory-deprovisioned-windows-10-apps/
+url: /2020/03/11/inventory-deprovisioned-windows-10-apps/
 categories:
   - Endpoint Management
   - How-To
@@ -61,7 +61,7 @@ Thankfully the power of MEMCM can save us from our mistakes! Custom hardware inv
 'The data' is stored in the registry, so we need to extract it from there. From my previous post, we know the data is located at 
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;Depro.reg&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Deprovisioned"```
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Depro.reg","language":"PowerShell","modeName":"powershell"}">"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Deprovisioned"```
 
 But it is stored as a set of registry keys instead of properties on a registry key. Depending on the structure of data in the registry it may be possible to use [RegKeyToMof](https://gallery.technet.microsoft.com/RegKeyToMof-28e84c28) to generate a MOF file. With this being a set of indeterminate registry keys I've decided to use a script instead.
 
@@ -75,7 +75,7 @@ Scripts for custom hardware inventory typically follow this workflow. At least..
   * Write out some random gibberish so that your CI can be 'Compliant'
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot; Inventory-DeprovisionedAppX.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">#region define your Hardware Inventory Class Name, and the namespace in WMI to store it
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":" Inventory-DeprovisionedAppX.ps1","language":"PowerShell","modeName":"powershell"}">#region define your Hardware Inventory Class Name, and the namespace in WMI to store it
 $HinvClassName = 'DeprovisionedAppX'
 $HinvNamespace = 'root\CustomHinv'
 #endregion define your Hardware Inventory Class Name, and the namespace in WMI to store it
@@ -201,14 +201,14 @@ This bit will have to wait for another post! There is some fun stuff we can do w
 In it's simplest form, we can query the MEMCM database as below.
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;Get-AllDeproAppX.sql<br><br>.sql&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">SELECT * FROM v_GS_DEPROVISIONEDAPPX```<figure class="wp-block-image size-large">
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Get-AllDeproAppX.sql<br><br>.sql","language":"PowerShell","modeName":"powershell"}">SELECT * FROM v_GS_DEPROVISIONEDAPPX```<figure class="wp-block-image size-large">
 
 ![](CustomHINV-BasicDB.png) </figure> 
 
 If we desire a little more insight, the query can be adjusted to show counts.
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;Get-DeproAppXCount.sql&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">SELECT depro.DeprovisionedApp0
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Get-DeproAppXCount.sql","language":"PowerShell","modeName":"powershell"}">SELECT depro.DeprovisionedApp0
 	, COUNT(depro.DeprovisionedApp0) [Count]
 FROM v_GS_DEPROVISIONEDAPPX depro
 GROUP BY depro.DeprovisionedApp0

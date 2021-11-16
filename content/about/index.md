@@ -3,8 +3,6 @@ title: About
 author: SysManSquad
 type: page
 date: 2019-12-09T06:00:01+00:00
-uagb_style_timestamp-js:
-  - 1584435190
 
 ---
 <div id="cs-content" class="cs-content"  >

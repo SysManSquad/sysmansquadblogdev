@@ -4,12 +4,8 @@ author: Aaron
 type: post
 date: 2019-12-17T06:59:18+00:00
 excerpt: Begin creating a lab environment by documenting it.
-url: 2019-12-17-net-101-create-a-basic-lab-network-design/
+url: /2019/12/17/net-101-create-a-basic-lab-network-design/
 featured_image: Lab-Network-3.png
-uagb_style_timestamp-js:
-  - 1589200585
-uag_style_timestamp-js:
-  - 1591063989
 categories:
   - Documentation
   - How-To

@@ -3,10 +3,8 @@ title: Modern Driver Management with the Administration Service
 author: Charles
 type: post
 date: 2020-05-15T14:39:20+00:00
-url: 2020-05/15/modern-driver-management-with-the-administration-service/
+url: /2020/05/15/modern-driver-management-with-the-administration-service/
 featured_image: GetPackageIDLog.png
-uag_style_timestamp-js:
-  - 1591636419
 categories:
   - Endpoint Management
   - How-To
@@ -90,7 +88,7 @@ The actual query to the AdminService is quite simple. I'm querying for all packa
 The rest of the script is simply filtering which driver package is the most suitable with the information provided and then it returns a PackageID. Here is a snippet of the relevant part of the script where we retrieve a list of packages from the AdminService:
 
 <div class="wp-block-codemirror-blocks-code-block alignwide code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;Getting the packages from the AdminService&quot;,&quot;align&quot;:&quot;wide&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">        If($PackageType -eq "DriverPackage"){
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Getting the packages from the AdminService","align":"wide","language":"PowerShell","modeName":"powershell"}">        If($PackageType -eq "DriverPackage"){
             $Filter = "startswith(Name,'Drivers - ')"
         }ElseIf($PackageType -eq "BIOSPackage"){
             $Filter = "startswith(Name,'BIOS Update - ')"

@@ -4,7 +4,7 @@ author: Aaron
 type: post
 date: 2021-02-14T04:10:39+00:00
 excerpt: Building a discord.py bot to deploy a discord server for a competition.
-url: 2021-02-13-create-a-small-discord-py-bot-to-deploy-a-server/
+url: /2021/02/13/create-a-small-discord-py-bot-to-deploy-a-server/
 featured_image: eagle-46636_1280.png
 categories:
   - General
@@ -42,14 +42,14 @@ Because I have been exposed to Python before, I was already aware that python pr
 I created my virtual environment as a sub-folder. I couldn't possibly say whether it's good practice, but it worked. The virtual environment was in a subfolder called 'venv' so I added it to my `.gitignore` file. You may find [pyenv](https://github.com/pyenv/pyenv) useful.
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;monokai&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;.gitignore&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">venv/
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"monokai","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":".gitignore","language":"PowerShell","modeName":"powershell"}">venv/
 </pre>
 </div>
 
 Having activated my virtual environment, I followed the instructions to use `pip` to add the required modules for Discord.py, and added a few of my own. I wanted to avoid storing credentials in a git repository, and the best way to do that is to hand them off to a vault of some kind. A quick google search found me a module called `keyring`. I also wanted to make sure that as I typed the token to save it, it wouldn't echo to the screen, so that led me to another module called `getpass`. Seems simple enough so far - they all seem to do what they say they will. The bot's name is MR_FLOOFY. 
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;python&quot;,&quot;mime&quot;:&quot;text/x-python&quot;,&quot;theme&quot;:&quot;monokai&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;save_key.py&quot;,&quot;language&quot;:&quot;Python&quot;,&quot;modeName&quot;:&quot;python&quot;}">import keyring
+  <pre class="CodeMirror" data-setting="{"mode":"python","mime":"text/x-python","theme":"monokai","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"save_key.py","language":"Python","modeName":"python"}">import keyring
 import getpass
 
 service_id='MR_FLOOFY'
@@ -68,7 +68,7 @@ I'm not going to describe the entire, frustrating process of learning just enoug
 The first thing one typically does in a python file is import the modules you'll need in the script. 
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;python&quot;,&quot;mime&quot;:&quot;text/x-python&quot;,&quot;theme&quot;:&quot;monokai&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;init.py&quot;,&quot;language&quot;:&quot;Python&quot;,&quot;modeName&quot;:&quot;python&quot;}">import sys
+  <pre class="CodeMirror" data-setting="{"mode":"python","mime":"text/x-python","theme":"monokai","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"init.py","language":"Python","modeName":"python"}">import sys
 import discord
 import keyring
 import logging</pre>
@@ -81,7 +81,7 @@ The `client` object is what we'll use later to make things go. The `logging` obj
 The logging settings are also very important - if you screw up and do too many things to some API endpoints, you'll get locked out of it for a period of time. Some of the endpoint limits are ridiculously low and the logging will print to the screen to let you know when you've hit one of those limits so you don't enrage yourself wondering why code that worked a few minutes ago doesn't work now.
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;python&quot;,&quot;mime&quot;:&quot;text/x-python&quot;,&quot;theme&quot;:&quot;monokai&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;init.py&quot;,&quot;firstLineNumber&quot;:&quot;5&quot;,&quot;language&quot;:&quot;Python&quot;,&quot;modeName&quot;:&quot;python&quot;}">intents = discord.Intents.default()
+  <pre class="CodeMirror" data-setting="{"mode":"python","mime":"text/x-python","theme":"monokai","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"init.py","firstLineNumber":"5","language":"Python","modeName":"python"}">intents = discord.Intents.default()
 intents.members = True
 client = discord.Client(intents=intents)
 logging.basicConfig(level=logging.INFO)
@@ -96,7 +96,7 @@ We define the event we care about, then say what should happen when that event f
 If the message meets some criteria, we do some stuff, then `return` to end processing. In this case the only one that needs to issue commands is me, so our first two conditions just check to see if the bot is talking to itself, or whether the caller is not me. Obviously the second condition would make the first condition completely irrelevant - but I'm leaving it in for this example.
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;python&quot;,&quot;mime&quot;:&quot;text/x-python&quot;,&quot;theme&quot;:&quot;monokai&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;init.py&quot;,&quot;firstLineNumber&quot;:&quot;11&quot;,&quot;language&quot;:&quot;Python&quot;,&quot;modeName&quot;:&quot;python&quot;}">@client.event
+  <pre class="CodeMirror" data-setting="{"mode":"python","mime":"text/x-python","theme":"monokai","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"init.py","firstLineNumber":"11","language":"Python","modeName":"python"}">@client.event
 async def on_message(message):
     # we do not want the bot to reply to itself
     if message.author == client.user:
@@ -124,7 +124,7 @@ I originally had all of this bundled up in one command. It was _really_ fun to i
 This next stanza sets up the non-competition roles, along with what color they should appear as, whether the role members should be listed apart from all other server members ('_hoisted_') , server-wide [permissions](https://discordapi.com/permissions.html), etc. 
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;python&quot;,&quot;mime&quot;:&quot;text/x-python&quot;,&quot;theme&quot;:&quot;monokai&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;init.py&quot;,&quot;firstLineNumber&quot;:&quot;24&quot;,&quot;language&quot;:&quot;Python&quot;,&quot;modeName&quot;:&quot;python&quot;}">    if message.content.startswith('!staffroles'):
+  <pre class="CodeMirror" data-setting="{"mode":"python","mime":"text/x-python","theme":"monokai","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"init.py","firstLineNumber":"24","language":"Python","modeName":"python"}">    if message.content.startswith('!staffroles'):
         guild = message.guild
         await guild.create_role(name="Gold Team", color=discord.Color(0xe6bc00), hoist=1, permissions=discord.Permissions(permissions=1341648705))
         await guild.create_role(name="Black Team", color=discord.Color(0x004d27), hoist=1, permissions=discord.Permissions(permissions=1341648705))
@@ -138,7 +138,7 @@ Now, we need to create a category of channels for staff using these roles, along
 We begin by getting the role objects we created earlier. We then create permission override objects we'll use when we create the channels. Following that, we create the category, get an object representing it, and create channels using the category object and the permission overrides.
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;python&quot;,&quot;mime&quot;:&quot;text/x-python&quot;,&quot;theme&quot;:&quot;monokai&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;init.py&quot;,&quot;firstLineNumber&quot;:&quot;31&quot;,&quot;language&quot;:&quot;Python&quot;,&quot;modeName&quot;:&quot;python&quot;}">    if message.content.startswith('!staffchannels'):
+  <pre class="CodeMirror" data-setting="{"mode":"python","mime":"text/x-python","theme":"monokai","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"init.py","firstLineNumber":"31","language":"Python","modeName":"python"}">    if message.content.startswith('!staffchannels'):
         guild = message.guild
 
         role_black=discord.utils.get(guild.roles, name="Black Team")
@@ -199,7 +199,7 @@ Black/Gold/White/[1 Blue team] should have r/w for text and voice, while coaches
 The coach role permissions below are not good enough, they allow the guild-wide permissions for the coach role to filter down to the teams. I'll change how those work in future versions of Mr Floofy.
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;python&quot;,&quot;mime&quot;:&quot;text/x-python&quot;,&quot;theme&quot;:&quot;monokai&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;init.py&quot;,&quot;firstLineNumber&quot;:&quot;81&quot;,&quot;language&quot;:&quot;Python&quot;,&quot;modeName&quot;:&quot;python&quot;}">    if message.content.startswith('!deployteams'):
+  <pre class="CodeMirror" data-setting="{"mode":"python","mime":"text/x-python","theme":"monokai","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"init.py","firstLineNumber":"81","language":"Python","modeName":"python"}">    if message.content.startswith('!deployteams'):
         guild = message.guild
 
         numTeams = int(message.content.split(' ')[1])
@@ -241,7 +241,7 @@ As you can see, we create a number of channels. Between the number of categories
 Lastly, as a final command to help set things up, I wanted a way to automate assigning a user to a role in a way where I could easily paste some commands and get a team in their roles from a spreadsheet, given how the list of team members would be sent to me.
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;python&quot;,&quot;mime&quot;:&quot;text/x-python&quot;,&quot;theme&quot;:&quot;monokai&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;init.py&quot;,&quot;firstLineNumber&quot;:&quot;116&quot;,&quot;language&quot;:&quot;Python&quot;,&quot;modeName&quot;:&quot;python&quot;}">    if message.content.startswith('!assign'):
+  <pre class="CodeMirror" data-setting="{"mode":"python","mime":"text/x-python","theme":"monokai","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"init.py","firstLineNumber":"116","language":"Python","modeName":"python"}">    if message.content.startswith('!assign'):
         guild = message.guild
         userid = int(message.content.split(' ')[1])
         teamid = str(message.content.split(' ')[2])
@@ -265,7 +265,7 @@ It should be noted that the roles are case-sensitive here.
 Lastly, we need an event to fire when the script has initialized and begun to run. We'll use the objects from the top of the script and tell the bot to go.
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;python&quot;,&quot;mime&quot;:&quot;text/x-python&quot;,&quot;theme&quot;:&quot;monokai&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;init.py&quot;,&quot;firstLineNumber&quot;:&quot;133&quot;,&quot;language&quot;:&quot;Python&quot;,&quot;modeName&quot;:&quot;python&quot;}">@client.event
+  <pre class="CodeMirror" data-setting="{"mode":"python","mime":"text/x-python","theme":"monokai","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"init.py","firstLineNumber":"133","language":"Python","modeName":"python"}">@client.event
 async def on_ready():
     print(client.user.id)
     print('------')

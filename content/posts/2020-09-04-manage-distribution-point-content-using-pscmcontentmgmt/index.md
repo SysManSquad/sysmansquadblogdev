@@ -3,7 +3,7 @@ title: Manage Distribution Point Content Using PSCMContentMgmt
 author: Adam Cook
 type: post
 date: 2020-09-04T21:59:36+00:00
-url: 2020-09/04/manage-distribution-point-content-using-pscmcontentmgmt/
+url: /2020/09/04/manage-distribution-point-content-using-pscmcontentmgmt/
 categories:
   - Endpoint Management
   - MECM/MEMCM/SCCM
@@ -173,7 +173,7 @@ tags:
                                         </p>
                                         
                                         <div class="wp-block-codemirror-blocks-code-block code-block">
-                                          <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;showPanel&quot;:false,&quot;fileName&quot;:&quot;shell.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">PS C:\&gt; Install-Module PSCMContentMgmt -Scope CurrentUser
+                                          <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"showPanel":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}">PS C:\&gt; Install-Module PSCMContentMgmt -Scope CurrentUser
 PS C:\&gt; Import-Module PSCMContentMgmt</pre>
                                         </div>
                                         
@@ -227,7 +227,7 @@ PS C:\&gt; Import-Module PSCMContentMgmt</pre>
                                         </h4>
                                         
                                         <div class="wp-block-codemirror-blocks-code-block code-block">
-                                          <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;showPanel&quot;:false,&quot;fileName&quot;:&quot;shell.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">PS C:\&gt; Compare-DPContent -Source "dp1.contoso.com" -Target "dp2.contoso.com"
+                                          <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"showPanel":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}">PS C:\&gt; Compare-DPContent -Source "dp1.contoso.com" -Target "dp2.contoso.com"
 
 ObjectName        : 2020-03-1809
 Description       :
@@ -255,7 +255,7 @@ DistributionPoint : dp1.contoso.com
                                         </p>
                                         
                                         <div class="wp-block-codemirror-blocks-code-block code-block">
-                                          <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;showPanel&quot;:false,&quot;fileName&quot;:&quot;shell.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">PS C:\&gt; Compare-DPContent -Source "dp1.contoso.com" -Target "dp2.contoso.com" | Start-DPContentDistribution -DistributionPoint "dp2.contoso.com"
+                                          <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"showPanel":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}">PS C:\&gt; Compare-DPContent -Source "dp1.contoso.com" -Target "dp2.contoso.com" | Start-DPContentDistribution -DistributionPoint "dp2.contoso.com"
 
 Result    ObjectId ObjectType               Message
 ------    -------- ----------               -------
@@ -282,7 +282,7 @@ Success   17007034 Application
                                         </p>
                                         
                                         <div class="wp-block-codemirror-blocks-code-block code-block">
-                                          <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;showPanel&quot;:false,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">PS C:\&gt; Get-DP | Get-DPDistributionStatus -DistributionFailed | Group-Object -Property DistributionPoint
+                                          <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"showPanel":false,"language":"PowerShell","modeName":"powershell"}">PS C:\&gt; Get-DP | Get-DPDistributionStatus -DistributionFailed | Group-Object -Property DistributionPoint
 
 Count Name                      Group
 ----- ----                      -----
@@ -295,7 +295,7 @@ Count Name                      Group
                                         </p>
                                         
                                         <div class="wp-block-codemirror-blocks-code-block code-block">
-                                          <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;showPanel&quot;:false,&quot;fileName&quot;:&quot;shell.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">PS C:\&gt; Get-DPDistributionStatus -DistributionPoint "dp1.contoso.com" -DistributionFailed | Start-DPContentRedistribution</pre>
+                                          <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"showPanel":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}">PS C:\&gt; Get-DPDistributionStatus -DistributionPoint "dp1.contoso.com" -DistributionFailed | Start-DPContentRedistribution</pre>
                                         </div>
                                         
                                         <p>
@@ -364,7 +364,7 @@ Count Name                      Group
                                         </ul>
                                         
                                         <div class="wp-block-codemirror-blocks-code-block code-block">
-                                          <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;showPanel&quot;:false,&quot;fileName&quot;:&quot;shell.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">PS C:\&gt; Find-CMObject -ID "ACC00048"</pre>
+                                          <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"showPanel":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}">PS C:\&gt; Find-CMObject -ID "ACC00048"</pre>
                                         </div>
                                         
                                         <p>
@@ -408,7 +408,7 @@ Count Name                      Group
                                         </p>
                                         
                                         <div class="wp-block-codemirror-blocks-code-block code-block">
-                                          <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;showPanel&quot;:false,&quot;fileName&quot;:&quot;shell.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">PS C:\&gt; Get-DPContent -DistributionPoint "OldDP.contoso.com" | Export-DPContent -Folder "E:\exported"</pre>
+                                          <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"showPanel":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}">PS C:\&gt; Get-DPContent -DistributionPoint "OldDP.contoso.com" | Export-DPContent -Folder "E:\exported"</pre>
                                         </div>
                                         
                                         <h6>
@@ -420,7 +420,7 @@ Count Name                      Group
                                         </p>
                                         
                                         <div class="wp-block-codemirror-blocks-code-block code-block">
-                                          <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;showPanel&quot;:false,&quot;fileName&quot;:&quot;shell.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">PS C:\&gt; Set-DPAllowPrestagedContent -DistributionPoint "NewDP.contoso.com"</pre>
+                                          <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"showPanel":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}">PS C:\&gt; Set-DPAllowPrestagedContent -DistributionPoint "NewDP.contoso.com"</pre>
                                         </div>
                                         
                                         <h6>
@@ -436,7 +436,7 @@ Count Name                      Group
                                         </p>
                                         
                                         <div class="wp-block-codemirror-blocks-code-block code-block">
-                                          <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;showPanel&quot;:false,&quot;fileName&quot;:&quot;shell.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">Start-DPContentDistribution -Folder "E:\exported" -DistributionPoint "NewDP.contoso.com"</pre>
+                                          <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"showPanel":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}">Start-DPContentDistribution -Folder "E:\exported" -DistributionPoint "NewDP.contoso.com"</pre>
                                         </div>
                                         
                                         <h6>
@@ -456,7 +456,7 @@ Count Name                      Group
                                         </p>
                                         
                                         <div class="wp-block-codemirror-blocks-code-block code-block">
-                                          <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;showPanel&quot;:false,&quot;fileName&quot;:&quot;shell.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">PS C:\&gt; Import-DPContent -Folder "\\OldDP.contoso.com\e$\exported"</pre>
+                                          <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"showPanel":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}">PS C:\&gt; Import-DPContent -Folder "\\OldDP.contoso.com\e$\exported"</pre>
                                         </div>
                                         
                                         <h6>
@@ -464,7 +464,7 @@ Count Name                      Group
                                         </h6>
                                         
                                         <div class="wp-block-codemirror-blocks-code-block code-block">
-                                          <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;showPanel&quot;:false,&quot;fileName&quot;:&quot;shell.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">PS C:\&gt; Set-DPAllowPrestagedContent -DistributionPoint "NewDP.contoso.com" -State $false</pre>
+                                          <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"showPanel":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}">PS C:\&gt; Set-DPAllowPrestagedContent -DistributionPoint "NewDP.contoso.com" -State $false</pre>
                                         </div>
                                         
                                         <h2>
@@ -484,7 +484,7 @@ Count Name                      Group
                                         </p>
                                         
                                         <div class="wp-block-codemirror-blocks-code-block code-block">
-                                          <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:true,&quot;showPanel&quot;:false,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">PS C:\&gt; Get-Help Compare-DPContent -Detailed</pre>
+                                          <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":true,"showPanel":false,"language":"PowerShell","modeName":"powershell"}">PS C:\&gt; Get-Help Compare-DPContent -Detailed</pre>
                                         </div>
                                         
                                         <p>
@@ -492,7 +492,7 @@ Count Name                      Group
                                         </p>
                                         
                                         <div class="wp-block-codemirror-blocks-code-block code-block">
-                                          <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:true,&quot;showPanel&quot;:false,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">PS C:\&gt; Get-Help about_PSCMContentMgmt*</pre>
+                                          <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":true,"showPanel":false,"language":"PowerShell","modeName":"powershell"}">PS C:\&gt; Get-Help about_PSCMContentMgmt*</pre>
                                         </div>
                                         
                                         <p>
@@ -500,7 +500,7 @@ Count Name                      Group
                                         </p>
                                         
                                         <div class="wp-block-codemirror-blocks-code-block code-block">
-                                          <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:true,&quot;showPanel&quot;:false,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">PS C:\&gt; Get-Help about_PSCMContentMgmt_Query</pre>
+                                          <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":true,"showPanel":false,"language":"PowerShell","modeName":"powershell"}">PS C:\&gt; Get-Help about_PSCMContentMgmt_Query</pre>
                                         </div>
                                         
                                         <p>

@@ -3,7 +3,7 @@ title: Removing The Built-in Teams App in Windows 11 with Intune
 author: Jóhannes Geir Kristjánsson
 type: post
 date: 2021-10-08T13:59:21+00:00
-url: 2021-10-08-removing-the-built-in-teams-app-in-windows-11-with-intune/
+url: /2021/10/08/removing-the-built-in-teams-app-in-windows-11-with-intune/
 categories:
   - Endpoint Management
   - Intune
@@ -37,7 +37,7 @@ Then it simply uninstalls the appx package for the consumer teams app, note that
 Pretty simple stuff, 
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;Detection.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}"># Detection
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Detection.ps1","language":"PowerShell","modeName":"powershell"}"># Detection
 try {
 
     # check the reg key for the taskbar teams app icon
@@ -72,7 +72,7 @@ catch {
 Here is the remediation code, parts of it were made using the [reg2ps website](https://reg2ps.azurewebsites.net/) which i highly recommend.
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;Remediation.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}"># Remediation
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Remediation.ps1","language":"PowerShell","modeName":"powershell"}"># Remediation
 
 try {
 

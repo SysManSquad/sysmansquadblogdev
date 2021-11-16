@@ -3,7 +3,7 @@ title: Where is the report’s data??
 author: Kevin Crouch
 type: post
 date: 2021-05-16T03:21:09+00:00
-url: 2021-05-15-where-is-the-reports-data/
+url: /2021/05/15/where-is-the-reports-data/
 featured_image: wordcloud_api_graph-3.png
 categories:
   - Azure
@@ -167,7 +167,7 @@ Well you can - and finding the information can be so easy. Read on below to see 
                               </p>
                               
                               <div class="wp-block-codemirror-blocks-code-block alignwide code-block">
-                                <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;webidl&quot;,&quot;mime&quot;:&quot;text/x-webidl&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;QueryURL&quot;,&quot;align&quot;:&quot;wide&quot;,&quot;language&quot;:&quot;Web IDL&quot;,&quot;modeName&quot;:&quot;webidl&quot;}">https://graph.microsoft.com/beta/deviceManagement/deviceHealthScripts/02a4e7e8-195a-4824-8044-08b3a7f2d555/runSummary</pre>
+                                <pre class="CodeMirror" data-setting="{"mode":"webidl","mime":"text/x-webidl","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"QueryURL","align":"wide","language":"Web IDL","modeName":"webidl"}">https://graph.microsoft.com/beta/deviceManagement/deviceHealthScripts/02a4e7e8-195a-4824-8044-08b3a7f2d555/runSummary</pre>
                               </div>
                             </div>
                           </div>
@@ -188,7 +188,7 @@ Well you can - and finding the information can be so easy. Read on below to see 
                               </p>
                               
                               <div class="wp-block-codemirror-blocks-code-block alignwide code-block">
-                                <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;webidl&quot;,&quot;mime&quot;:&quot;text/x-webidl&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;align&quot;:&quot;wide&quot;,&quot;language&quot;:&quot;Web IDL&quot;,&quot;modeName&quot;:&quot;webidl&quot;}">https://graph.microsoft.com/beta/deviceManagement/deviceHealthScripts/02a4e7e8-195a-4824-8044-08b3a7f2d555/runSummary</pre>
+                                <pre class="CodeMirror" data-setting="{"mode":"webidl","mime":"text/x-webidl","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"align":"wide","language":"Web IDL","modeName":"webidl"}">https://graph.microsoft.com/beta/deviceManagement/deviceHealthScripts/02a4e7e8-195a-4824-8044-08b3a7f2d555/runSummary</pre>
                               </div>
                               
                               <ul>
@@ -238,7 +238,7 @@ Well you can - and finding the information can be so easy. Read on below to see 
                               </p>
                               
                               <div class="wp-block-codemirror-blocks-code-block alignwide code-block">
-                                <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;QueryUserAuthenticationMethods.ps1&quot;,&quot;align&quot;:&quot;wide&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">Install-Module MSAL.PS
+                                <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"QueryUserAuthenticationMethods.ps1","align":"wide","language":"PowerShell","modeName":"powershell"}">Install-Module MSAL.PS
 $AuthParams =  @{
 	ClientID  = $YourAppID
     TenantID  = 'contoso.one' #Also could use the GUID form from decoding your JWT token, like '492d0e46-26b0-475c-82d0-102c962ea477' 
@@ -283,7 +283,7 @@ Invoke-RestMethod -Headers @{Authorization = "Bearer $($Token.AccessToken)"} @Qu
                               </p>
                               
                               <div class="wp-block-codemirror-blocks-code-block alignwide code-block">
-                                <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;QueryURL&quot;,&quot;align&quot;:&quot;wide&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">https://graph.windows.net/myorganization/activities/authenticationMethodUserDetails?$orderby=userPrincipalName%20asc&api-version=beta</pre>
+                                <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"QueryURL","align":"wide","language":"PowerShell","modeName":"powershell"}">https://graph.windows.net/myorganization/activities/authenticationMethodUserDetails?$orderby=userPrincipalName%20asc&api-version=beta</pre>
                               </div>
                               
                               <p>

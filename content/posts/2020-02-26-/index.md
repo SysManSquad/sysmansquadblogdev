@@ -42,7 +42,7 @@ How you accomplish this will depend on your environment. In this case I needed 3
 You'll need the converted .txt representation of the certificate for the Remediation script below. Run the below PowerShell against each .cer file, replacing the source and destination filenames each time.
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">[System.Convert]::ToBase64String($(Get-Content -Path .\mycertificate.cer -Encoding Byte)) | Out-File -FilePath .\mycertificate.txt</pre>
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"language":"PowerShell","modeName":"powershell"}">[System.Convert]::ToBase64String($(Get-Content -Path .\mycertificate.cer -Encoding Byte)) | Out-File -FilePath .\mycertificate.txt</pre>
 </div>
 
 #### 3. Create and sign the Discover script(s)
@@ -52,7 +52,7 @@ Jason's code (link to his blog post above) is much simpler than Ioan's, so I wil
 For each certificate you want included in the Compliance Setting, edit the below code, save the script, and finally sign the script with your code signing certificate. The examples and screenshots below are for our code signing certificate which we want in the Trusted Publishers certificate store.
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">$sn = '21001424eb63195fabb987e9fd0003001424eb'
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"language":"PowerShell","modeName":"powershell"}">$sn = '21001424eb63195fabb987e9fd0003001424eb'
 $storeName = "TrustedPublisher"
  
 $store = New-Object System.Security.Cryptography.X509Certificates.X509Store $storeName, LocalMachine
@@ -98,7 +98,7 @@ In a secure environment, ConfigMgr's PowerShell execution policy should be set t
 There are a couple of ways to sign PowerShell code and that is not the focus of this topic so I'm not going to go into a lot of detail. I personally highly recommend Sapien's PowerShell Studio as it signs scripts I write for me. However assuming you have the codesigning certificate (with private key) in your personal certificate store, you could use a simple PowerShell method like below to sign your scripts.
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;PowerShell<br> Set-AuthenicodeSignature <scriptfiletosign> (dir cert:currentuser\\my\\ -CodeSigningCert) PowerShell&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">Set-AuthenicodeSignature &lt;scriptfiletosign&gt; (dir cert:currentuser\my\ -CodeSigningCert)</pre>
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"PowerShell<br> Set-AuthenicodeSignature <scriptfiletosign> (dir cert:currentuser\\my\\ -CodeSigningCert) PowerShell","language":"PowerShell","modeName":"powershell"}">Set-AuthenicodeSignature &lt;scriptfiletosign&gt; (dir cert:currentuser\my\ -CodeSigningCert)</pre>
 </div>
 
 Repeat the above steps for all certificates to be included in the Compliance Setting.
@@ -108,7 +108,7 @@ Repeat the above steps for all certificates to be included in the Compliance Set
 Again, I used Jason's code; unmodified in this case. The example and screenshots are still for the code signing certificate as in step 3.
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">$storeName = "TrustedPublisher"
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"language":"PowerShell","modeName":"powershell"}">$storeName = "TrustedPublisher"
 $certString = "----Insert Base64 Encoded Certificate Here----"
  
 $store = New-Object System.Security.Cryptography.X509Certificates.X509Store $storeName, LocalMachine

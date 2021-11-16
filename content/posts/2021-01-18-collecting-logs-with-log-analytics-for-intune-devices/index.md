@@ -3,7 +3,7 @@ title: Collecting Logs with Log Analytics for Intune devices
 author: Jake Shackelford
 type: post
 date: 2021-01-18T17:38:51+00:00
-url: 2021-01-18-collecting-logs-with-log-analytics-for-intune-devices/
+url: /2021/01/18/collecting-logs-with-log-analytics-for-intune-devices/
 featured_image: image-1.png
 categories:
   - Azure

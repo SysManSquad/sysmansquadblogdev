@@ -3,7 +3,7 @@ title: Downloading a Device Guard Signing Service version 2 Root Certificate for
 author: Jóhannes Geir Kristjánsson
 type: post
 date: 2020-11-02T03:54:11+00:00
-url: 2020-11/01/downloading-a-device-guard-signing-service-version-2-root-certificate-for-msix/
+url: /2020/11/01/downloading-a-device-guard-signing-service-version-2-root-certificate-for-msix/
 categories:
   - Endpoint Management
 
@@ -79,7 +79,7 @@ Since for most people, downloading the root certificate is a one time operation,
 Paste the application GUID into the $AppID variable and you should be ready to go.
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;Get-DGSSv2RootCert.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}"># This simple script is used to download the Device Guard Signing Service v2 Root Certificate
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Get-DGSSv2RootCert.ps1","language":"PowerShell","modeName":"powershell"}"># This simple script is used to download the Device Guard Signing Service v2 Root Certificate
 
 
 # please add your own App ID

@@ -3,7 +3,7 @@ title: 'Creating an Ubuntu 20.04 cloud template & cloud-init configuration in Xe
 author: Aaron
 type: post
 date: 2021-07-07T14:46:22+00:00
-url: 2021-07-07-creating-an-ubuntu-20-04-cloud-template-cloud-init-configuration-in-xen-orchestra/
+url: /2021/07/07/creating-an-ubuntu-20-04-cloud-template-cloud-init-configuration-in-xen-orchestra/
 categories:
   - Documentation
   - How-To
@@ -40,7 +40,7 @@ Here is the short version of how this works:
 ## Example cloud-init configs:
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;user-config.yaml&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">#cloud-config
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"user-config.yaml","language":"PowerShell","modeName":"powershell"}">#cloud-config
 hostname: {name}
 users:
   - name: jappleseed
@@ -78,7 +78,7 @@ ca-certs:
 </div>
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;network.yaml&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">#network:
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"network.yaml","language":"PowerShell","modeName":"powershell"}">#network:
     version: 2
     renderer: networkd
     ethernets:

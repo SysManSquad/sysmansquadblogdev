@@ -9,5 +9,5 @@ categories:
 
 ---
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;null&quot;,&quot;mime&quot;:&quot;text/plain&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;file.txt&quot;,&quot;language&quot;:&quot;Plain Text&quot;,&quot;modeName&quot;:&quot;text&quot;}"></pre>
+  <pre class="CodeMirror" data-setting="{"mode":"null","mime":"text/plain","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"file.txt","language":"Plain Text","modeName":"text"}"></pre>
 </div>

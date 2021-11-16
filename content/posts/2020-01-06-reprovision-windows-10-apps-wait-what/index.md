@@ -3,10 +3,8 @@ title: Reprovision Windows 10 Apps… Wait, What?
 author: Cody Mathis
 type: post
 date: 2020-01-06T13:54:48+00:00
-url: 2021-01-06-reprovision-windows-10-apps-wait-what/
+url: /2021/01/06/reprovision-windows-10-apps-wait-what/
 featured_image: Reprovision-AppX.png
-uag_style_timestamp-js:
-  - 1592256595
 categories:
   - Endpoint Management
   - How-To
@@ -48,7 +46,7 @@ The gist of it is, when an app is deprovisioned a registry key will be made. If 
 First, we can identify apps that have been deprovisioned with the below function. I’ve linked to it on GitHub, and the codeblock is below. 
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:true,&quot;fileName&quot;:&quot;shell.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">function Get-DeprovisionedAppX {
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":true,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}">function Get-DeprovisionedAppX {
     &lt;#
     .SYNOPSIS
         Returns an array of apps that are deprovisioned
@@ -116,7 +114,7 @@ Nothing too crazy going on here. At the core we are grabbing all keys under the 
 We have our targets, now lets blow them away! The below function 'reprovisions' the apps by removing the registry keys for the requested apps. 
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:true,&quot;fileName&quot;:&quot;shell.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">function Reprovision-AppX {
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":true,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}">function Reprovision-AppX {
     &lt;#
     .SYNOPSIS
         'Reprovision' apps by removing the registry key that prevents app reinstall
@@ -179,7 +177,7 @@ What we have here is a glorified wrapper for **Remove-Item**. But, it does have 
 **ValueFromPipelineByPropertyName** - With this specified on the DeprovisionedApp input parameter we are able to pipe from our Get-DeprovisionedApp function, to Reprovision-App. 
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;material&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:true,&quot;fileName&quot;:&quot;shell.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">Get-DeprovisionedAppX -Filter 'Store' | Reprovision-AppX</pre>
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"material","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":true,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}">Get-DeprovisionedAppX -Filter 'Store' | Reprovision-AppX</pre>
 </div>
 
 That's pretty cool! 

@@ -3,10 +3,6 @@ title: Join The Squad
 author: SysManSquad
 type: page
 date: 2019-12-12T01:18:37+00:00
-uagb_style_timestamp-css:
-  - 1589211657
-uag_style_timestamp-css:
-  - 1591057142
 
 ---
 <section class="wp-block-uagb-columns uagb-columns\_\_wrap uagb-columns\_\_background-undefined uagb-columns\_\_stack-mobile uagb-columns\_\_valign-undefined uagb-columns__gap-10 alignundefined" id="uagb-columns-be0abf98-1442-49f4-be5c-731d47a1a9e1">

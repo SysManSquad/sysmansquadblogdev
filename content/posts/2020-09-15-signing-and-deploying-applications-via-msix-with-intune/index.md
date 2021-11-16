@@ -3,7 +3,7 @@ title: Signing and Deploying Applications via MSIX with Intune
 author: Jake Shackelford
 type: post
 date: 2020-09-15T17:22:10+00:00
-url: 2020-09/15/signing-and-deploying-applications-via-msix-with-intune/
+url: /2020/09/15/signing-and-deploying-applications-via-msix-with-intune/
 featured_image: vmconnect_1eSsb6FTKd.png
 categories:
   - Endpoint Management

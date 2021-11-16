@@ -3,7 +3,7 @@ title: Use the Task Sequence deployment type to deploy an application with sensi
 author: Michael De Bona
 type: post
 date: 2020-09-27T10:40:58+00:00
-url: 2020-09/27/use-the-task-sequence-deployment-type-to-deploy-an-application-with-sensitive-information/
+url: /2020/09/27/use-the-task-sequence-deployment-type-to-deploy-an-application-with-sensitive-information/
 categories:
   - MECM/MEMCM/SCCM
   - Task Sequence

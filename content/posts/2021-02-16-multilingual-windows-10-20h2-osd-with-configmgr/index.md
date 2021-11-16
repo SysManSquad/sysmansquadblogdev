@@ -3,7 +3,7 @@ title: Multilingual Windows 10 20H2 OSD with ConfigMgr
 author: Adam Cook
 type: post
 date: 2021-02-16T10:06:58+00:00
-url: 2021-02-16-multilingual-windows-10-20h2-osd-with-configmgr/
+url: /2021/02/16/multilingual-windows-10-20h2-osd-with-configmgr/
 categories:
   - Endpoint Management
   - MECM/MEMCM/SCCM
@@ -219,7 +219,7 @@ categories:
                     </p>
                     
                     <div class="wp-block-codemirror-blocks-code-block code-block">
-                      <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:false,&quot;readOnly&quot;:true,&quot;fileName&quot;:&quot;PowerShell&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">Install-Module "PSCMWin10Language" -Scope CurrentUser
+                      <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":false,"readOnly":true,"fileName":"PowerShell","language":"PowerShell","modeName":"powershell"}">Install-Module "PSCMWin10Language" -Scope CurrentUser
 Import-Module "PSCMWin10Language"
 New-LPRepository -Language "fr-FR", "de-DE" -SourcePath "D:\x64\langpacks\" -TargetPath "G:\OSD\Windows10-1903-Languages\"
 New-LXPRepository -Language "fr-FR", "de-DE" -SourcePath "D:\LocalExperiencePack" -TargetPath "G:\OSD\Windows10-1903-Languages\"

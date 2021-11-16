@@ -3,7 +3,7 @@ title: Allow OneDrive Syncing on AAD joined Devices
 author: Jóhannes Geir Kristjánsson
 type: post
 date: 2020-09-11T17:23:02+00:00
-url: 2020-09/11/allow-onedrive-syncing-on-aad-joined-devices/
+url: /2020/09/11/allow-onedrive-syncing-on-aad-joined-devices/
 categories:
   - Endpoint Management
 
@@ -55,7 +55,7 @@ To solve this, you should wrap up the script as a win32 app, deploy it as a requ
 Here is a dead simple example code you can use, just change the $DomainGUID to your own
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;Set-AADJMachineDomainGuid.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">$DomainGUID = "a2936ecb-ea97-4854-a494-82a39a3195be"
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Set-AADJMachineDomainGuid.ps1","language":"PowerShell","modeName":"powershell"}">$DomainGUID = "a2936ecb-ea97-4854-a494-82a39a3195be"
 new-item -itemtype directory -path "hklm:\Software\Policies\Microsoft\OneDrive" -force
 Set-ItemProperty -Path "hklm:\Software\Policies\Microsoft\OneDrive" -Name "AADJMachineDomainGuid" -Value $DomainGUID -Force</pre>
 </div>

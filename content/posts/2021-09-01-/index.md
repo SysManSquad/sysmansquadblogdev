@@ -113,7 +113,7 @@ Snapshot the VM - "Pre-Office" (I snapshot here in case I make a mistake with th
     <img loading="lazy" width="532" height="188" src="image-1.png" alt="Filter Rules: 
 Hiding Rule 
 Directory: 
-A dded by New &quot;crosoftOffceRWeset.ps I. 
+A dded by New "crosoftOffceRWeset.ps I. 
 Hiding Rule 
 Directory : 
 Added by tv—vyWcrosoftOffceRWeset.psI. 

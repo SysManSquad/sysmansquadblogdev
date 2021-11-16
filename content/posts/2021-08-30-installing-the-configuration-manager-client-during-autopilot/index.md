@@ -3,7 +3,7 @@ title: Installing The Configuration Manager Client During Autopilot
 author: Jóhannes Geir Kristjánsson
 type: post
 date: 2021-08-31T03:24:39+00:00
-url: 2021-08-30-installing-the-configuration-manager-client-during-autopilot/
+url: /2021/08/30/installing-the-configuration-manager-client-during-autopilot/
 categories:
   - Endpoint Management
 
@@ -43,7 +43,7 @@ Step 3: open Deploy-Application.ps1 in your favorite powershell editor.
 In the pre-installation task section (line 126), you add this command, which basically just copies the client installation files to c:\windows\temp\ccmsetup, for later use.
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;pre-installation task&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}"># copy installation media to temp directory, for later use
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"pre-installation task","language":"PowerShell","modeName":"powershell"}"># copy installation media to temp directory, for later use
 Copy-File -Path $dirfiles\* -Destination C:\Windows\Temp\ccmsetup -Recurse</pre>
 </div>
 
@@ -51,7 +51,7 @@ Next up, add this to the installation task section (line 140).
 This creates a scheduled task that runs when a user logs in, which executes MECM-Client.ps1, more on that script later.
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;Installation task&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}"># Create the Scheduled Task installer
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Installation task","language":"PowerShell","modeName":"powershell"}"># Create the Scheduled Task installer
 $A = New-ScheduledTaskAction -Execute "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -Argument '-ExecutionPolicy Bypass -File "C:\Windows\Temp\ccmsetup\MECM-client.ps1"'
 $T = New-ScheduledTaskTrigger -Once -At (Get-Date) # thanks @alpharius
 [Array]$T += New-ScheduledTaskTrigger -AtLogOn
@@ -76,7 +76,7 @@ go to the properties of your co-management settings.<figure class="wp-block-imag
 ![](vmconnect_repLU2tUGj-1024x940.png) </figure> 
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;MECM-Client.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}"># waits for the wwahost process to terminate, which is a good indication that autopilot/ESP is over
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"MECM-Client.ps1","language":"PowerShell","modeName":"powershell"}"># waits for the wwahost process to terminate, which is a good indication that autopilot/ESP is over
 Wait-Process wwahost
 
 # you will need to add installation arguments that are suited to your environment
@@ -94,7 +94,7 @@ Of course you will need a detection method for your win32 app in intune, thankfu
 Don't forget to change the sitecode on line 4.
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;Detection.ps1<br>&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}"># ConfigMgr Client detection for the Autopilot Scheduled Task installer
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Detection.ps1<br>","language":"PowerShell","modeName":"powershell"}"># ConfigMgr Client detection for the Autopilot Scheduled Task installer
 
 #Set your expected Site Code
 $SiteCode = "CTO"

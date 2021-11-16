@@ -3,7 +3,7 @@ title: Intune/Autopilot Proactive Remediation
 author: Jake Shackelford
 type: post
 date: 2020-07-07T16:24:57+00:00
-url: 2020-07/07/intune-autopilot-proactive-remediation/
+url: /2020/07/07/intune-autopilot-proactive-remediation/
 featured_image: msedge_OGHmAQhYGe.png
 categories:
   - Documentation
@@ -39,7 +39,7 @@ You'll notice by default we have two Script Packages that Microsoft authored. Af
 ### First we need to create a Detection script
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;Detection.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">try{
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Detection.ps1","language":"PowerShell","modeName":"powershell"}">try{
     if (Get-VpnConnection -AllUserConnection -Name "VPN" -ErrorAction Stop)
     {
         write-host "Success"
@@ -61,7 +61,7 @@ If you'd like to read more on error handling and exceptions Kevin Marquette has 
 ### Next lets make a remediation script
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;Remediation.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">try{
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Remediation.ps1","language":"PowerShell","modeName":"powershell"}">try{
     Add-VpnConnection -Name "VPN" -ServerAddress "VPN.Contoso.loc" -TunnelType L2TP -L2tpPsk "SecretPassword" -Force -AuthenticationMethod PAP -RememberCredential -AllUserConnection -ErrorAction Stop
     exit 0
 }

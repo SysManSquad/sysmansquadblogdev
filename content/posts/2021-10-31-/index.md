@@ -398,13 +398,13 @@ With a little bit of comparison and fiddling around, it seems that removing the 
 One of the raw lines in that file looks like this
 
 <div class="wp-block-codemirror-blocks-code-block alignwide code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;OneDrive_Business1_config.ini&quot;,&quot;align&quot;:&quot;wide&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">libraryScope = 0 c1b8b28878084aa3aa4692b15d1fa0d6 5 "MySite" "ODB" 2 "https://m365x114093-my.sharepoint.com/personal/admin_m365x114093_onmicrosoft_com" "243a00ed-631c-4e2a-b264-642efff51d7d" 57809bec75a14692936eb7a5c3620a2d 9db72cb2c1ad4f6b8da47c30b6a4c90e c7e03f010f30405087b91ae67c84cbf0 1630910205 "C:\Users\User\OneDrive - Contoso" 1 02ef40a0-4989-461f-ba82-fa75a3e5548c - 1407374883731881 2789232661 00000000-0000-0000-0000-000000000000</pre>
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"OneDrive_Business1_config.ini","align":"wide","language":"PowerShell","modeName":"powershell"}">libraryScope = 0 c1b8b28878084aa3aa4692b15d1fa0d6 5 "MySite" "ODB" 2 "https://m365x114093-my.sharepoint.com/personal/admin_m365x114093_onmicrosoft_com" "243a00ed-631c-4e2a-b264-642efff51d7d" 57809bec75a14692936eb7a5c3620a2d 9db72cb2c1ad4f6b8da47c30b6a4c90e c7e03f010f30405087b91ae67c84cbf0 1630910205 "C:\Users\User\OneDrive - Contoso" 1 02ef40a0-4989-461f-ba82-fa75a3e5548c - 1407374883731881 2789232661 00000000-0000-0000-0000-000000000000</pre>
 </div>
 
 If I break that up into what parameters those seem to be, and comment them
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;OneDrive_Business1_config.ini&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">libraryScope = 
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"OneDrive_Business1_config.ini","language":"PowerShell","modeName":"powershell"}">libraryScope = 
 0 
 c1b8b28878084aa3aa4692b15d1fa0d6 
 5 
@@ -438,12 +438,12 @@ One frustrating this is that this leaves any locally-synced files present on the
 I wrapped up parsing this config file, and clearing it off the disk space, into a command in the Module OneDrive-Client, available on the [PSGallery](https://www.powershellgallery.com/packages/Onedrive-client) and [GitHub](https://github.com/PsychoData/Onedrive-Client). Here are a couple examples of it's use. 
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;Remove-ODSyncedSite-BySiteID.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">Install-Module -Name OneDrive-Client    
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Remove-ODSyncedSite-BySiteID.ps1","language":"PowerShell","modeName":"powershell"}">Install-Module -Name OneDrive-Client    
 Get-ODClients | Get-ODSyncedLibraryConfig  | where {$_.SiteID -eq "f496b4697f1d4b968542d065c7dd261b"} | Remove-ODSyncedItemConfig</pre>
 </div>
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;Remove-ODSyncedSite-BySiteAndChannelName.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">Install-Module -Name OneDrive-Client    
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Remove-ODSyncedSite-BySiteAndChannelName.ps1","language":"PowerShell","modeName":"powershell"}">Install-Module -Name OneDrive-Client    
  Get-ODClients | Get-ODSyncedLibraryConfig  | where {$_.SiteName -like "OldTeam"} | select -expandProperty SyncedFolders | where {$_.FolderName -eq 'OldDeadChannel'} | Remove-ODSyncedItemConfig</pre>
 </div>
 

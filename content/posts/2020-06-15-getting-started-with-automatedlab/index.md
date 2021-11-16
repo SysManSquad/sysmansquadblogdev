@@ -3,15 +3,7 @@ title: Getting started with AutomatedLab
 author: Adam Cook
 type: post
 date: 2020-06-15T06:00:00+00:00
-url: 2020-06/15/getting-started-with-automatedlab/
-uagb_style_timestamp-css:
-  - 1588602441
-uagb_style_timestamp-js:
-  - 1589549253
-uag_style_timestamp-css:
-  - 1592234910
-uag_style_timestamp-js:
-  - 1592234910
+url: /2020/06/15/getting-started-with-automatedlab/
 categories:
   - Powershell
   - Scripting

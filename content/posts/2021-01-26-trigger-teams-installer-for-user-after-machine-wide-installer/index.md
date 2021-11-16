@@ -4,7 +4,7 @@ author: Cody Mathis
 type: post
 date: 2021-01-26T12:30:17+00:00
 excerpt: Automatically launch Microsoft Teams for the user after a Teams Machine Wide Installer is completed. Improved user experience
-url: 2021-01-26-trigger-teams-installer-for-user-after-machine-wide-installer/
+url: /2021/01/26/trigger-teams-installer-for-user-after-machine-wide-installer/
 featured_image: Teams-NotFound.png
 categories:
   - Endpoint Management
@@ -90,7 +90,7 @@ You are welcome to package the script alongside the Teams MSI and run them back 
 ### Just Give Me The Script - I'll Figure Out the Rest {#The-Script}
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;New-PostTeamsMachineWideInstallScheduledTask.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">&lt;#
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"New-PostTeamsMachineWideInstallScheduledTask.ps1","language":"PowerShell","modeName":"powershell"}">&lt;#
 .SYNOPSIS
     Launch the Teams install as the logged in user via a scheduled task
 .DESCRIPTION

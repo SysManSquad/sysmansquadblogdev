@@ -3,10 +3,8 @@ title: 'Windows Virtual Desktop: Creation and Management'
 author: Jake Shackelford
 type: post
 date: 2020-01-13T06:33:53+00:00
-url: 2021-01-13-wvd-creation-and-management/
+url: /2021/01/13/wvd-creation-and-management/
 featured_image: image-1.png
-uag_style_timestamp-js:
-  - 1591720982
 categories:
   - Azure
   - Endpoint Management
@@ -77,7 +75,7 @@ We need to create a service principal account to access Marcel's UI and also gra
 Time for some powershell! The following powershell will add a WVD tenant. Please use an administrative account when signing in as you have to grant access for your tenant.
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;shell.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">$ApplicationID = PASTE YOUR SERVICE PRINCIPAL ACCOUNT APP ID HERE
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}">$ApplicationID = PASTE YOUR SERVICE PRINCIPAL ACCOUNT APP ID HERE
 $TenantName = PASTE YOUR FULL TENANT NAME HERE
 Install-Module -Name Microsoft.RDInfra.RDPowerShell
 Add-RdsAccount -DeploymentUrl "https://rdbroker.wvd.microsoft.com"
@@ -148,7 +146,7 @@ I hate to use the word master VMs as it really boils down to a golden image or t
  26. Shutdown the VM
 
 <div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;shell.ps1&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" /v RemoteAppLogoffTimeLimit /t REG_DWORD /d 0 /f 
+  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}">reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" /v RemoteAppLogoffTimeLimit /t REG_DWORD /d 0 /f 
 
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" /v fResetBroken /t REG_DWORD /d 1 /f 
 

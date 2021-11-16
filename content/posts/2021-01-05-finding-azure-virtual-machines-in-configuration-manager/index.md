@@ -3,7 +3,7 @@ title: Finding Azure Virtual Machines in Configuration Manager
 author: Nic Wendlowsky
 type: post
 date: 2021-01-06T05:04:40+00:00
-url: 2021-01-05-finding-azure-virtual-machines-in-configuration-manager/
+url: /2021/01/05/finding-azure-virtual-machines-in-configuration-manager/
 featured_image: image-14.png
 categories:
   - Azure
@@ -66,7 +66,7 @@ A request came in from my System Admin group to push certain policies only to VM
                     </p>
                     
                     <div class="wp-block-codemirror-blocks-code-block code-block">
-                      <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;shell&quot;,&quot;mime&quot;:&quot;text/x-sh&quot;,&quot;theme&quot;:&quot;xq-light&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:false,&quot;readOnly&quot;:false,&quot;languageLabel&quot;:&quot;language&quot;,&quot;language&quot;:&quot;Shell&quot;,&quot;modeName&quot;:&quot;shell&quot;}">curl -H Metadata:true --noproxy "*" "http://169.254.169.254/metadata/instance?api-version=2020-09-01"</pre>
+                      <pre class="CodeMirror" data-setting="{"mode":"shell","mime":"text/x-sh","theme":"xq-light","lineNumbers":true,"styleActiveLine":true,"lineWrapping":false,"readOnly":false,"languageLabel":"language","language":"Shell","modeName":"shell"}">curl -H Metadata:true --noproxy "*" "http://169.254.169.254/metadata/instance?api-version=2020-09-01"</pre>
                     </div>
                     
                     <p>
@@ -74,7 +74,7 @@ A request came in from my System Admin group to push certain policies only to VM
                     </p>
                     
                     <div class="wp-block-codemirror-blocks-code-block code-block">
-                      <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;pastel-on-dark&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:false,&quot;readOnly&quot;:false,&quot;languageLabel&quot;:&quot;language&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">Invoke-RestMethod -Headers @{"Metadata"="true"} -Uri "http://169.254.169.254/metadata/instance/compute?api-version=2018-10-01"</pre>
+                      <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"pastel-on-dark","lineNumbers":true,"styleActiveLine":true,"lineWrapping":false,"readOnly":false,"languageLabel":"language","language":"PowerShell","modeName":"powershell"}">Invoke-RestMethod -Headers @{"Metadata"="true"} -Uri "http://169.254.169.254/metadata/instance/compute?api-version=2018-10-01"</pre>
                     </div>
                     
                     <p>
@@ -82,7 +82,7 @@ A request came in from my System Admin group to push certain policies only to VM
                     </p>
                     
                     <div class="wp-block-codemirror-blocks-code-block code-block">
-                      <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;pastel-on-dark&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:false,&quot;readOnly&quot;:false,&quot;languageLabel&quot;:&quot;language&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">FUNCTION Test-IsAzureVM {
+                      <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"pastel-on-dark","lineNumbers":true,"styleActiveLine":true,"lineWrapping":false,"readOnly":false,"languageLabel":"language","language":"PowerShell","modeName":"powershell"}">FUNCTION Test-IsAzureVM {
     IF(Invoke-RestMethod -Headers @{"Metadata"="true"} -URI "http://169.254.169.254/metadata/instance/compute?api-version=2017-08-01"){
       $true
     }ELSE{
@@ -130,7 +130,7 @@ A request came in from my System Admin group to push certain policies only to VM
                     </p>
                     
                     <div class="wp-block-codemirror-blocks-code-block code-block">
-                      <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;pastel-on-dark&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:false,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;Test-IsAzureVM&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">FUNCTION Test-IsAzureVM {
+                      <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"pastel-on-dark","lineNumbers":true,"styleActiveLine":true,"lineWrapping":false,"readOnly":false,"fileName":"Test-IsAzureVM","language":"PowerShell","modeName":"powershell"}">FUNCTION Test-IsAzureVM {
   TRY{
     $Output = [bool](Invoke-RestMethod -Headers @{"Metadata"="true"} -URI "http://169.254.169.254/metadata/instance/compute?api-version=2017-08-01")
   }

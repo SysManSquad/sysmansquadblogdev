@@ -3,7 +3,7 @@ title: Automating Outside of Business Hours Responses
 author: Kevin Crouch
 type: post
 date: 2020-12-30T19:20:15+00:00
-url: 2020-12/30/automating-changing-out-of-business-hours-responses/
+url: /2020/12/30/automating-changing-out-of-business-hours-responses/
 categories:
   - Azure
   - Endpoint Management
@@ -136,7 +136,7 @@ Our customer will be moving to Azure later so we will probably revisit this as A
                 </p>
                 
                 <div class="wp-block-codemirror-blocks-code-block alignwide code-block">
-                  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;Create_Certificate_And_App.ps1&quot;,&quot;align&quot;:&quot;wide&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}"># --- config start
+                  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Create_Certificate_And_App.ps1","align":"wide","language":"PowerShell","modeName":"powershell"}"># --- config start
 $appName = "AutomaticAutoReply"
 $password = "Come up with something secure!" # Certificate password
 $folderPath = "C:\temp" # Where do you want the certificate files to get saved to? The folder needs to exist.
@@ -240,7 +240,7 @@ Write-Host -ForeGroundColor Cyan "Copied to ClipBoard"
                 </p>
                 
                 <div class="wp-block-codemirror-blocks-code-block alignwide code-block">
-                  <pre class="CodeMirror" data-setting="{&quot;mode&quot;:&quot;powershell&quot;,&quot;mime&quot;:&quot;application/x-powershell&quot;,&quot;theme&quot;:&quot;default&quot;,&quot;lineNumbers&quot;:true,&quot;styleActiveLine&quot;:true,&quot;lineWrapping&quot;:true,&quot;readOnly&quot;:false,&quot;fileName&quot;:&quot;Update-AutoReply.ps1&quot;,&quot;align&quot;:&quot;wide&quot;,&quot;language&quot;:&quot;PowerShell&quot;,&quot;modeName&quot;:&quot;powershell&quot;}">#Region Variables
+                  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Update-AutoReply.ps1","align":"wide","language":"PowerShell","modeName":"powershell"}">#Region Variables
 #Vars for Graph Connection
 $ClientID   = '9d6033b0-XXXX-XXXX-XXXX-33f02ff30d52'
 #$tenant    = 'Contoso.one'    #Domain Name for a tenant also works here in my testing, just as Tenant GUID does
