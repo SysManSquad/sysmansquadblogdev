@@ -37,7 +37,7 @@ Then it simply uninstalls the appx package for the consumer teams app, note that
 Pretty simple stuff, 
 
 
-```powershell 
+```powershell
 # Detection
 try {
 
@@ -74,7 +74,7 @@ catch {
 Here is the remediation code, parts of it were made using the [reg2ps website](https://reg2ps.azurewebsites.net/) which i highly recommend.
 
 
-```powershell 
+```powershell
 # Remediation
 
 try {

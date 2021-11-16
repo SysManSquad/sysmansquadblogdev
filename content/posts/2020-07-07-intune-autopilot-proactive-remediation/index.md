@@ -39,7 +39,7 @@ You'll notice by default we have two Script Packages that Microsoft authored. Af
 ### First we need to create a Detection script
 
 
-```powershell 
+```powershell
 try{
     if (Get-VpnConnection -AllUserConnection -Name "VPN" -ErrorAction Stop)
     {
@@ -63,7 +63,7 @@ If you'd like to read more on error handling and exceptions Kevin Marquette has 
 ### Next lets make a remediation script
 
 
-```powershell 
+```powershell
 try{
     Add-VpnConnection -Name "VPN" -ServerAddress "VPN.Contoso.loc" -TunnelType L2TP -L2tpPsk "SecretPassword" -Force -AuthenticationMethod PAP -RememberCredential -AllUserConnection -ErrorAction Stop
     exit 0

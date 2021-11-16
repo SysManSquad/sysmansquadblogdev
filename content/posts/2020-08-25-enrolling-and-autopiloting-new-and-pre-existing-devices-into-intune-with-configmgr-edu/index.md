@@ -25,7 +25,7 @@ For now we will not assign this to a group, this comes later.
 Next we are going to pull down this config into a file called AutopilotConfigurationFile.JSON. In powershell run the following commands:
 
 
-```powershell 
+```powershell
 Install-Module WindowsAutopilotIntune -Force
 Connect-MSGraph
 ```
@@ -34,7 +34,7 @@ Connect-MSGraph
 Sign into your tenant here and back in powershell run the following command:
 
 
-```powershell 
+```powershell
 
 
 

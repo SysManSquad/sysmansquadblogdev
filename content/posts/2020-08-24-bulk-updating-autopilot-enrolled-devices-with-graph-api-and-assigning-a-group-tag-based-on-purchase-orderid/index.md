@@ -78,7 +78,7 @@ Watch a demo of this script on Intune.Training.
 You will need to update 4 fields in the below script with information you copied earlier. Those fields being line 2,3,4, and 6 if you changed the group tag for your dynamic device query. The script will use the App we created earlier to authenticate and grab information for all devices and create an array of devices based on Purchase Order ID. that you manually enter via prompt. It then loops through that array and assigns the Group Tag to all devices . Once all group tags have been assigned it will push a refresh to your portal, bare in mind that you may have to wait an hour or so for the new group tags to show up. This is incredibly helpful for large bulk orders.
 
 
-```powershell 
+```powershell
 # Application (client) ID, tenant Name and secret
 $clientid = ""
 $clientSecret = "-"

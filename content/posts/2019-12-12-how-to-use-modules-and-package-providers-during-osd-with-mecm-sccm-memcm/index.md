@@ -38,7 +38,7 @@ Now please forgive me for my terrible PS skills I'm working on improving them!
 Create a script in the same folder you put PackageManagemet and WindowsPowerShell that looks like the following
 
 
-```powershell 
+```powershell
 $executingScriptDirectory = Split-Path -Path $MyInvocation.MyCommand.Definition -Parent
 
 copy-item $executingScriptDirectory\PackageManagement $env:ProgramFiles -force -Recurse
@@ -58,7 +58,7 @@ In your OSD task Sequence create a run PowerShell script step and reference the 
 Next, in your original script that's failing to run, you'll want to IMPORT those modules or packageproviders as opposed to installing them since you now have the content copied to that local machine. In my case the code looks like so: (This will look different depending on the modules you are trying to import)
 
 
-```powershell 
+```powershell
 Import-Module -Name $env:ProgramFiles\WindowsPowerShell\Modules\SnipeitPS -Verbose
 
 Import-PackageProvider -Name "Nuget" -Verbose

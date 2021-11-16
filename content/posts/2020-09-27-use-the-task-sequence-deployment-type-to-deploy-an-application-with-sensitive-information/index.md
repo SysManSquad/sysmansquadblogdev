@@ -145,7 +145,7 @@ categories:
                   Note that there is a particularity with the MMA executable. When you get the sources [from this page](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/agent-windows#install-agent-using-dsc-in-azure-automation), you need to extract them because the MMA-Setup_AMD64.exe file can't be used for a silent installation. Instead, use the following command to extract its content and use this extracted content as the source of your package.
                 </p>
                 
-                <pre class="wp-block-code"><code>MMASetup-AMD64.exe /c /t:Full Extraction Path></code></pre><figure class="wp-block-image size-large">
+                `MMASetup-AMD64.exe /c /t:Full Extraction Path>`<figure class="wp-block-image size-large">
                 
                 ![](Package-1-1024x576.png)<figcaption>Package overview</figcaption></figure> <h5>
                   2. Task Sequence creation
@@ -163,7 +163,7 @@ categories:
                   The next step is the <strong>installation of the application</strong> itself. Use the “<strong>Run Command Line</strong>” step and select the package you previously created and the following command line (Taken from the [online documentation](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/agent-windows#install-agent-using-command-line)).
                 </p>
                 
-                <pre class="wp-block-code"><code>setup.exe /qn NOAPM=1 ADD_OPINSIGHTS_WORKSPACE=1 OPINSIGHTS_WORKSPACE_AZURE_CLOUD_TYPE=0 OPINSIGHTS_WORKSPACE_ID="%WorkspaceID%" OPINSIGHTS_WORKSPACE_KEY="%WorkspaceKey%" AcceptEndUserLicenseAgreement=1</code></pre>
+                `setup.exe /qn NOAPM=1 ADD_OPINSIGHTS_WORKSPACE=1 OPINSIGHTS_WORKSPACE_AZURE_CLOUD_TYPE=0 OPINSIGHTS_WORKSPACE_ID="%WorkspaceID%" OPINSIGHTS_WORKSPACE_KEY="%WorkspaceKey%" AcceptEndUserLicenseAgreement=1`
                 
                 <p class="has-text-align-justify">
                   Note that in place of the Workspace ID and key, you need to call the two TS variables that you have defined in the previous step. That is done by surrounding the variable name with the<strong> % character</strong>.

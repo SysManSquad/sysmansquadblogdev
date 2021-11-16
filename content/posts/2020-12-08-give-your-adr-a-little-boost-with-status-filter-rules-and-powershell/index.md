@@ -375,7 +375,7 @@ The $NewSUGName Software Update Group has been created. It contains the followin
                         This command line will call the PowerShell script with three parameters. As you can see, they are Status Filter Rules variables.
                       </p>
                       
-                      <pre class="wp-block-code"><code>C:\Windows\system32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -NoProfile -WindowStyle Hidden -File C:\Scripts\OnADRCompletion.ps1 -SiteServer %sitesvr -SiteCode %sc -Description "%msgdesc"</code></pre><figure class="wp-block-gallery columns-2 is-cropped">
+                      `C:\Windows\system32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -NoProfile -WindowStyle Hidden -File C:\Scripts\OnADRCompletion.ps1 -SiteServer %sitesvr -SiteCode %sc -Description "%msgdesc"`<figure class="wp-block-gallery columns-2 is-cropped">
                       
                       <ul class="blocks-gallery-grid">
                         <li class="blocks-gallery-item">

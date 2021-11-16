@@ -109,7 +109,7 @@ tags:
                                                     </h2>
                                                     
                                                     <p>
-                                                      Resources for AutomatedLab aren’t hard to find. I personally found everything I needed by looking at the&nbsp;[wiki](https://github.com/AutomatedLab/AutomatedLab/wiki)&nbsp;on&nbsp;[GitHub](https://github.com/AutomatedLab/AutomatedLab), reviewing the documentation on their&nbsp;[website](https://automatedlab.org/), and checking out the&nbsp;[sample scripts folder](https://github.com/AutomatedLab/AutomatedLab/tree/master/LabSources/SampleScripts).
+                                                      Resources for AutomatedLab aren’t hard to find. I personally found everything I needed by looking at the[wiki](https://github.com/AutomatedLab/AutomatedLab/wiki)on[GitHub](https://github.com/AutomatedLab/AutomatedLab), reviewing the documentation on their[website](https://automatedlab.org/), and checking out the[sample scripts folder](https://github.com/AutomatedLab/AutomatedLab/tree/master/LabSources/SampleScripts).
                                                     </p>
                                                     
                                                     <p>
@@ -121,7 +121,7 @@ tags:
                                                     </h2>
                                                     
                                                     <p>
-                                                      As per the&nbsp;[documentation](http://automatedlab.org/en/latest/#requirements), at the time of writing this, the requirements are:
+                                                      As per the[documentation](http://automatedlab.org/en/latest/#requirements), at the time of writing this, the requirements are:
                                                     </p>
                                                     
                                                     <ul>
@@ -156,11 +156,11 @@ tags:
                                                     </h3>
                                                     
                                                     <p>
-                                                      AutomatedLab operates on an&nbsp;<strong>opt-out</strong>&nbsp;telemetry system. The&nbsp;[documentation](http://automatedlab.org/en/latest/#requirements)&nbsp;on this heavily suggests no personal identifiable information is collected and it’s used purely for supportability and usage statistics. Snippets of json data which is sent back are included in the docs to give you insight to the amount of detail shared.
+                                                      AutomatedLab operates on an<strong>opt-out</strong>telemetry system. The[documentation](http://automatedlab.org/en/latest/#requirements)on this heavily suggests no personal identifiable information is collected and it’s used purely for supportability and usage statistics. Snippets of json data which is sent back are included in the docs to give you insight to the amount of detail shared.
                                                     </p>
                                                     
                                                     <p>
-                                                      To opt out, you either set environment variable&nbsp;<strong><code>AUTOMATEDLAB_TELEMETRY_OPTIN</code>&nbsp;</strong>to&nbsp;<code>strong>false/strong></code>,&nbsp;<strong><code>no</code>&nbsp;</strong>or&nbsp;<code>strong>0/strong></code>. Or simply use&nbsp;<code>strong>Disable-LabTelemetry/strong></code>&nbsp;after installing.
+                                                      To opt out, you either set environment variable<strong><code>AUTOMATEDLAB_TELEMETRY_OPTIN</code></strong>to<code>strong>false/strong></code>,<strong><code>no</code></strong>or<code>strong>0/strong></code>. Or simply use<code>strong>Disable-LabTelemetry/strong></code>after installing.
                                                     </p>
                                                     
                                                     <p>
@@ -191,10 +191,10 @@ tags:
                                                       Enabling WinRM CredSSP
                                                     </h4>
                                                     
-                                                    <pre class="wp-block-code"><code>Enable-WSManCredSSP -Role Client -DelegateComputer * -Force</code></pre>
+                                                    `Enable-WSManCredSSP -Role Client -DelegateComputer * -Force`
                                                     
                                                     <p>
-                                                      The&nbsp;[documentation](http://automatedlab.org/en/latest/Wiki/invokelabcommand/#double-hop-authentication-and-credssp)&nbsp;on this gives the following reason for this change:
+                                                      The[documentation](http://automatedlab.org/en/latest/Wiki/invokelabcommand/#double-hop-authentication-and-credssp)on this gives the following reason for this change:
                                                     </p>
                                                     
                                                     <p>
@@ -205,10 +205,10 @@ tags:
                                                       Enters a wildcard in your system's TrustedHosts file
                                                     </h4>
                                                     
-                                                    <pre class="wp-block-code"><code>Set-Item -Path Microsoft.WSMan.Management\WSMan::localhost\Client\TrustedHosts -Value '*' -Force</code></pre>
+                                                    `Set-Item -Path Microsoft.WSMan.Management\WSMan::localhost\Client\TrustedHosts -Value '*' -Force`
                                                     
                                                     <p>
-                                                      The&nbsp;[exception message](https://github.com/AutomatedLab/AutomatedLab/blob/d1c5f04096c8bdef4ad29b4c495de05d25ca5a0a/AutomatedLab/AutomatedLab.psm1#L72)&nbsp;thrown if you choose not to accept reads:
+                                                      The[exception message](https://github.com/AutomatedLab/AutomatedLab/blob/d1c5f04096c8bdef4ad29b4c495de05d25ca5a0a/AutomatedLab/AutomatedLab.psm1#L72)thrown if you choose not to accept reads:
                                                     </p>
                                                     
                                                     <p>
@@ -274,7 +274,7 @@ tags:
                                                     </h4>
                                                     
                                                     <p>
-                                                      The setting it changes for CVE-2018-0886 /&nbsp;[KB4093492](https://support.microsoft.com/en-us/help/4093492/credssp-updates-for-cve-2018-0886-march-13-2018)&nbsp;is&nbsp;<code>strong>AllowEncryptionOracle/strong></code>&nbsp;=&nbsp;<strong><code>2</code></strong>:
+                                                      The setting it changes for CVE-2018-0886 /[KB4093492](https://support.microsoft.com/en-us/help/4093492/credssp-updates-for-cve-2018-0886-march-13-2018)is<code>strong>AllowEncryptionOracle/strong></code>=<strong><code>2</code></strong>:
                                                     </p>
                                                     
                                                     <pre class="wp-block-code"><code>New-Item -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\CredSSP\Parameters -Force | Out-Null
@@ -316,7 +316,7 @@ Set-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\
                                                     </p>
                                                     
                                                     <p>
-                                                      I’m not going to reinvent the wheel. The&nbsp;[Installation docs](https://automatedlab.org/en/latest/Wiki/Basic/install/)&nbsp;are good enough!
+                                                      I’m not going to reinvent the wheel. The[Installation docs](https://automatedlab.org/en/latest/Wiki/Basic/install/)are good enough!
                                                     </p>
                                                     
                                                     <h3>
@@ -328,7 +328,7 @@ Set-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\
                                                     </p>
                                                     
                                                     <p>
-                                                      LabSources is not the directory where VMs are stored. It’s where installation media / sources and scripts are kept. By default, VMs are stored in in a directory named AutomatedLab-VMs but this is also configurable on a per lab basis using&nbsp;[-VmPath](http://automatedlab.org/en/latest/AutomatedLabDefinition/en-us/New-LabDefinition/#-vmpath)&nbsp;parameter.
+                                                      LabSources is not the directory where VMs are stored. It’s where installation media / sources and scripts are kept. By default, VMs are stored in in a directory named AutomatedLab-VMs but this is also configurable on a per lab basis using[-VmPath](http://automatedlab.org/en/latest/AutomatedLabDefinition/en-us/New-LabDefinition/#-vmpath)parameter.
                                                     </p>
                                                     
                                                     <p>
@@ -348,7 +348,7 @@ Set-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\
                                                     </h4>
                                                     
                                                     <p>
-                                                      AutomatedLab has a concept of “roles” that are installed after a VM OS is installed.&nbsp;[Here are a list](http://automatedlab.org/en/latest/Wiki/roles/)&nbsp;of predefined / “built in” roles. Associating a role with a VM will install applications such as Exchange, Active Directory, SharePoint, SQL, lots of good stuff and more. You associate a role with a VM using the&nbsp;<code>strong>-Roles/strong></code>&nbsp;parameter with the&nbsp;<code>strong>Add-LabMachineDefinition/strong></code>&nbsp;command.
+                                                      AutomatedLab has a concept of “roles” that are installed after a VM OS is installed.[Here are a list](http://automatedlab.org/en/latest/Wiki/roles/)of predefined / “built in” roles. Associating a role with a VM will install applications such as Exchange, Active Directory, SharePoint, SQL, lots of good stuff and more. You associate a role with a VM using the<code>strong>-Roles/strong></code>parameter with the<code>strong>Add-LabMachineDefinition/strong></code>command.
                                                     </p>
                                                     
                                                     <p>
@@ -400,7 +400,7 @@ Set-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\
                                                     </h4>
                                                     
                                                     <p>
-                                                      This folder can be copied to all VMs in a lab so if there’s files/folders you want in common, populate this folder with what you want and use the&nbsp;<code>strong>-ToolsPath/strong></code>&nbsp;parameter with the&nbsp;<code>strong>Add-LabMachineDefinition/strong></code>&nbsp;command.
+                                                      This folder can be copied to all VMs in a lab so if there’s files/folders you want in common, populate this folder with what you want and use the<code>strong>-ToolsPath/strong></code>parameter with the<code>strong>Add-LabMachineDefinition/strong></code>command.
                                                     </p>
                                                     
                                                     <h2>
@@ -417,13 +417,13 @@ Set-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\
                                                     
                                                     <ul>
                                                       <li>
-                                                        Create an AutomatedLab named whatever you passed for the&nbsp;<strong><code>-LabName</code></strong>&nbsp;parameter
+                                                        Create an AutomatedLab named whatever you passed for the<strong><code>-LabName</code></strong>parameter
                                                       </li>
                                                       <li>
                                                         Create a three VM lab all running Windows Server 2019 Datacenter (Desktop Experience)
                                                       </li>
                                                       <li>
-                                                        The domain will be whatever you passed for the&nbsp;<code>strong>-Domain/strong></code>&nbsp;parameter
+                                                        The domain will be whatever you passed for the<code>strong>-Domain/strong></code>parameter
                                                       </li>
                                                       <li>
                                                         All VMs will be networked only with each other using 192.168.123.0/24 address space
@@ -441,11 +441,11 @@ Set-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\
                                                     </h2>
                                                     
                                                     <p>
-                                                      While you can delete the Hyper-V virtual machines from the VMM service and vhdx/vmcx files off disk, AutomatedLab will still think they exist. AutomatedLab keeps track of what’s where within the realm of AutomatedLab via XML files which can be found in&nbsp;<strong><code>C:\ProgramData\AutomatedLab\Labs</code></strong>.
+                                                      While you can delete the Hyper-V virtual machines from the VMM service and vhdx/vmcx files off disk, AutomatedLab will still think they exist. AutomatedLab keeps track of what’s where within the realm of AutomatedLab via XML files which can be found in<strong><code>C:\ProgramData\AutomatedLab\Labs</code></strong>.
                                                     </p>
                                                     
                                                     <p>
-                                                      To delete individual VMs, use&nbsp;<strong><code>a href="http://automatedlab.org/en/latest/AutomatedLab/en-us/Remove-LabVM/">Remove-LabVM/a></code></strong>. To remove all VMs associated with a lab, use&nbsp;<strong><code>a href="http://automatedlab.org/en/latest/AutomatedLab/en-us/Remove-Lab/">Remove-Lab/a></code></strong>&nbsp;.
+                                                      To delete individual VMs, use<strong><code>a href="http://automatedlab.org/en/latest/AutomatedLab/en-us/Remove-LabVM/">Remove-LabVM/a></code></strong>. To remove all VMs associated with a lab, use<strong><code>a href="http://automatedlab.org/en/latest/AutomatedLab/en-us/Remove-Lab/">Remove-Lab/a></code></strong>.
                                                     </p>
                                                     
                                                     <p>
@@ -453,11 +453,11 @@ Set-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\
                                                     </p>
                                                     
                                                     <p>
-                                                      As for adding machines to an existing lab, at the time of writing this, there’s no function available within AutomatedLab to specifically add a new VM to an existing lab. It’s only achievable by modifying or creating a new AutomatedLab script with the same properties (e.g. domain, address space etc) and calling&nbsp;<code>strong>Install-Lab -NoValidation/strong></code>.
+                                                      As for adding machines to an existing lab, at the time of writing this, there’s no function available within AutomatedLab to specifically add a new VM to an existing lab. It’s only achievable by modifying or creating a new AutomatedLab script with the same properties (e.g. domain, address space etc) and calling<code>strong>Install-Lab -NoValidation/strong></code>.
                                                     </p>
                                                     
                                                     <p>
-                                                      It seems more appropriate functionality to add machines to an existing lab or domain created from AutomatedLab is incoming in&nbsp;[version 6 of AutomatedLab](https://github.com/AutomatedLab/AutomatedLab/milestone/5)!
+                                                      It seems more appropriate functionality to add machines to an existing lab or domain created from AutomatedLab is incoming in[version 6 of AutomatedLab](https://github.com/AutomatedLab/AutomatedLab/milestone/5)!
                                                     </p>
                                                     
                                                     <h2>

@@ -51,7 +51,7 @@ A request came in from my System Admin group to push certain policies only to VM
                       Officially, the Azure Metadata Service is:
                     </p>
                     
-                    <pre class="wp-block-code"><code>[...] a REST API that's available at a well-known, non-routable IP address (169.254.169.254). You can only access it from within the VM. Communication between the VM and IMDS never leaves the host. Have your HTTP clients bypass web proxies within the VM when querying IMDS, and treat 169.254.169.254 the same as 168.63.129.16.</code></pre>
+                    `[...] a REST API that's available at a well-known, non-routable IP address (169.254.169.254). You can only access it from within the VM. Communication between the VM and IMDS never leaves the host. Have your HTTP clients bypass web proxies within the VM when querying IMDS, and treat 169.254.169.254 the same as 168.63.129.16.`
                     
                     <p>
                       Basically, it's an internal API using APIPA addressing to ensure that it can only be accessed while logged into the OS (or using <code>Invoke-Command</code>). It allows us to get information about the guest OS. For our purposes today, we only care if it exists and won't be utilizing the actual data, but you can use this as a starting point for whatever's useful for you.
@@ -117,7 +117,7 @@ FUNCTION Test-IsAzureVM {
                       <div class="wp-block-group__inner-container">
                         <blockquote class="wp-block-quote">
                           <p>
-                            When&nbsp;<code>Invoke-WebRequest</code>&nbsp;encounters a non-success HTTP message (404, 500, etc.), it returns no output and throws a terminating error. To catch the error and view the&nbsp;<strong>StatusCode</strong>&nbsp;you can enclose execution in a&nbsp;<code>try/catch</code>&nbsp;block.
+                            When<code>Invoke-WebRequest</code>encounters a non-success HTTP message (404, 500, etc.), it returns no output and throws a terminating error. To catch the error and view the<strong>StatusCode</strong>you can enclose execution in a<code>try/catch</code>block.
                           </p>
                         </blockquote>
                       </div>

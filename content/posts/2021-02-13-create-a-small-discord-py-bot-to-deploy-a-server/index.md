@@ -42,7 +42,7 @@ Because I have been exposed to Python before, I was already aware that python pr
 I created my virtual environment as a sub-folder. I couldn't possibly say whether it's good practice, but it worked. The virtual environment was in a subfolder called 'venv' so I added it to my `.gitignore` file. You may find [pyenv](https://github.com/pyenv/pyenv) useful.
 
 
-```powershell 
+```powershell
 venv/
 
 ```

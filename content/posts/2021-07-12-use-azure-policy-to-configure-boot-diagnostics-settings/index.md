@@ -110,7 +110,7 @@ With this Azure Policy you can automatically enable Boot Diagnostics and apply a
                 For the Policy Rule Definition, you should be able to copy over this JSON below, or use [this JSON](https://gist.github.com/PsychoData/27c5028a5a78237f9910d4f652f6b269#file-enable_boot_diagnostics-json). Note: Later on, you can configure this to be deployed from a GitHub repo directly, though GitHub actions, but we will talk about that in a later section.
               </p>
               
-              <div class="wp-block-codemirror-blocks-code-block alignwide code-block">
+              
 ```json
 {
   "mode": "All",
@@ -171,7 +171,7 @@ With this Azure Policy you can automatically enable Boot Diagnostics and apply a
   }
 }
 ```
-              </div>
+              
               
               <h2 class="has-large-font-size">
                 <span style="color:#ba0c49" class="has-inline-color">3.</span> Assign Policy to Resources

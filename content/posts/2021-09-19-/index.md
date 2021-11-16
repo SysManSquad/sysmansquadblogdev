@@ -24,7 +24,7 @@ In the Pre-installation task area
 Don't forget to download the latest [Dell Command Update](https://www.dell.com/support/kbdoc/en-us/000177325/dell-command-update) and make the needed changes on line 12 if needed
 
 
-```powershell 
+```powershell
 		# check if Dell command update is installed
 		# the reason for the wildcard is because there are two versions of DCU available
 		# one is a UWP app, called "Dell Command | Update for Windows 10" 
@@ -45,7 +45,7 @@ Don't forget to download the latest [Dell Command Update](https://www.dell.com/s
 In the Installation task area
 
 
-```powershell 
+```powershell
         # success is more likely when you have the correct path to the dcu-cli.exe
         $dcupath = $dcu.InstallLocation + "dcu-cli.exe"
 
@@ -59,7 +59,7 @@ And finally in the post-installation area
 
 
 
-```powershell 
+```powershell
         # we might not have installed anything, we just executed a service
         # win32 apps need a detection, so lets up make one up
 		Set-RegistryKey -Key 'HKEY_LOCAL_MACHINE\SOFTWARE\Dell' -Name 'Autopilot-run' -Type 'Dword' -Value '1'
@@ -74,7 +74,7 @@ You could target the dynamic group that queries for the autopilot grouptag. But 
 Simply create a new filter using the example query below
 
 
-```powershell 
+```powershell
 
 
 
@@ -85,10 +85,12 @@ and add it to the application assignment
 You might not want to cause a sudden driver installation on your existing devices, a quick script takes care of that. Just make sure to deploy this to your devices well ahead of putting the autopilot solution into production.
 
 
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}"># Reg2CI (c) 2021 by Roger Zander
+  ```powershell 
+# Reg2CI (c) 2021 by Roger Zander
 # https://reg2ps.azurewebsites.net/
 if((Test-Path -LiteralPath "HKLM:\SOFTWARE\Dell") -ne $true) {  New-Item "HKLM:\SOFTWARE\Dell" -force -ea SilentlyContinue };
 New-ItemProperty -LiteralPath 'HKLM:\SOFTWARE\Dell' -Name 'Autopilot-run' -Value 1 -PropertyType DWord -Force -ea SilentlyContinue;
+
 ```
 
 

@@ -25,7 +25,7 @@ If the 32-bit Project condition evaluates true the generic status message is sen
 <table>
   <tr>
     <td>
-      <strong>%</strong>SYSTEMROOT%\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -Command " & { $eventObj = New-Object -ComObject Microsoft.SMS.Event -ErrorAction Stop; $eventObj.EventType = \"SMS_GenericStatusMessage_Info\";$eventObj.SetProperty(\"Attribute403\", \"GenericMsg_SeeInsertionStrings\");$eventObj.SetProperty(\"InsertionString1\", \"MsgType_Office365Upgrade\");$eventObj.SetProperty(\"InsertionString2\", \"projectInstalled\");$eventObj.Submit()}" &nbsp;
+      <strong>%</strong>SYSTEMROOT%\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -Command " & { $eventObj = New-Object -ComObject Microsoft.SMS.Event -ErrorAction Stop; $eventObj.EventType = \"SMS_GenericStatusMessage_Info\";$eventObj.SetProperty(\"Attribute403\", \"GenericMsg_SeeInsertionStrings\");$eventObj.SetProperty(\"InsertionString1\", \"MsgType_Office365Upgrade\");$eventObj.SetProperty(\"InsertionString2\", \"projectInstalled\");$eventObj.Submit()}" 
     </td>
   </tr>
 </table></figure> 
@@ -43,7 +43,7 @@ There are creative ways to use this information. We can programmatically query f
 <table>
   <tr>
     <td>
-      <strong>select</strong> SMS_R_SYSTEM.ResourceID,<br />SMS_R_SYSTEM.ResourceType,<br />SMS_R_SYSTEM.Name,<br />SMS_R_SYSTEM.SMSUniqueIdentifier,<br />SMS_R_SYSTEM.ResourceDomainORWorkgroup,<br />SMS_R_SYSTEM.Client <br /><strong>from</strong> sms_R_System&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br /><strong>JOIN</strong> sms_statusmessage <strong>ON</strong> sms_R_System.netbios_name0 = sms_statusmessage.machinename&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br /><strong>JOIN</strong> sms_StatMsgWithInsStrings <strong>ON</strong> sms_statusmessage.RecordID = sms_StatMsgWithInsStrings.RecordID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br /><strong>WHERE</strong> sms_statusmessage.messageid = "39997"&nbsp;&nbsp;&nbsp;&nbsp; <br /><strong>AND</strong> sms_StatMsgWithInsStrings.InsString1 = "MsgType_Office365Upgrade"&nbsp; <br /><strong>AND</strong> sms_StatMsgWithInsStrings.InsString2 = "projectInstalled" &nbsp;
+      <strong>select</strong> SMS_R_SYSTEM.ResourceID,<br />SMS_R_SYSTEM.ResourceType,<br />SMS_R_SYSTEM.Name,<br />SMS_R_SYSTEM.SMSUniqueIdentifier,<br />SMS_R_SYSTEM.ResourceDomainORWorkgroup,<br />SMS_R_SYSTEM.Client <br /><strong>from</strong> sms_R_System <br /><strong>JOIN</strong> sms_statusmessage <strong>ON</strong> sms_R_System.netbios_name0 = sms_statusmessage.machinename <br /><strong>JOIN</strong> sms_StatMsgWithInsStrings <strong>ON</strong> sms_statusmessage.RecordID = sms_StatMsgWithInsStrings.RecordID <br /><strong>WHERE</strong> sms_statusmessage.messageid = "39997" <br /><strong>AND</strong> sms_StatMsgWithInsStrings.InsString1 = "MsgType_Office365Upgrade" <br /><strong>AND</strong> sms_StatMsgWithInsStrings.InsString2 = "projectInstalled" 
     </td>
   </tr>
 </table></figure> 

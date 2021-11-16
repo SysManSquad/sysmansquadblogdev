@@ -329,9 +329,9 @@ foreach ($DummyDevice in $DummyDevices) {
                               Pulls Autopilot device information from MS Graph
                             </li>
                             <li>
-                              Creates&nbsp;new&nbsp;dummy computer objects&nbsp;in&nbsp;AD using the Autopilot device information<ul>
+                              Createsnewdummy computer objectsinAD using the Autopilot device information<ul>
                                 <li>
-                                  Already&nbsp;existing&nbsp;dummy devices are skipped
+                                  Alreadyexistingdummy devices are skipped
                                 </li>
                               </ul>
                             </li>

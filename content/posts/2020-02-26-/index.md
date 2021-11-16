@@ -42,7 +42,7 @@ How you accomplish this will depend on your environment. In this case I needed 3
 You'll need the converted .txt representation of the certificate for the Remediation script below. Run the below PowerShell against each .cer file, replacing the source and destination filenames each time.
 
 
-```powershell 
+```powershell
 
 
 
@@ -53,7 +53,7 @@ Jason's code (link to his blog post above) is much simpler than Ioan's, so I wil
 For each certificate you want included in the Compliance Setting, edit the below code, save the script, and finally sign the script with your code signing certificate. The examples and screenshots below are for our code signing certificate which we want in the Trusted Publishers certificate store.
 
 
-```powershell 
+```powershell
 $sn = '21001424eb63195fabb987e9fd0003001424eb'
 $storeName = "TrustedPublisher"
  
@@ -102,7 +102,7 @@ In a secure environment, ConfigMgr's PowerShell execution policy should be set t
 There are a couple of ways to sign PowerShell code and that is not the focus of this topic so I'm not going to go into a lot of detail. I personally highly recommend Sapien's PowerShell Studio as it signs scripts I write for me. However assuming you have the codesigning certificate (with private key) in your personal certificate store, you could use a simple PowerShell method like below to sign your scripts.
 
 
-```powershell 
+```powershell
 
 
 
@@ -113,7 +113,8 @@ Repeat the above steps for all certificates to be included in the Compliance Set
 Again, I used Jason's code; unmodified in this case. The example and screenshots are still for the code signing certificate as in step 3.
 
 
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"language":"PowerShell","modeName":"powershell"}">$storeName = "TrustedPublisher"
+  ```powershell 
+$storeName = "TrustedPublisher"
 $certString = "----Insert Base64 Encoded Certificate Here----"
  
 $store = New-Object System.Security.Cryptography.X509Certificates.X509Store $storeName, LocalMachine
@@ -126,6 +127,7 @@ $cert.Import($certByteArray)
  
 $store.Add($cert)
 $store.Close()
+
 ```
 
 

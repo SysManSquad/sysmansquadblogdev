@@ -166,11 +166,11 @@ Well you can - and finding the information can be so easy. Read on below to see 
                                 So, here we can easily see that our URL that the report is referencing is
                               </p>
                               
-                              <div class="wp-block-codemirror-blocks-code-block alignwide code-block">
+                              
 ```web
 https://graph.microsoft.com/beta/deviceManagement/deviceHealthScripts/02a4e7e8-195a-4824-8044-08b3a7f2d555/runSummary
 ```
-                              </div>
+                              
                             </div>
                           </div>
                           
@@ -189,11 +189,11 @@ https://graph.microsoft.com/beta/deviceManagement/deviceHealthScripts/02a4e7e8-1
                                 So, from our URL - we have three key terms to look up
                               </p>
                               
-                              <div class="wp-block-codemirror-blocks-code-block alignwide code-block">
+                              
 ```web
 https://graph.microsoft.com/beta/deviceManagement/deviceHealthScripts/02a4e7e8-195a-4824-8044-08b3a7f2d555/runSummary
 ```
-                              </div>
+                              
                               
                               <ul>
                                 <li>
@@ -241,7 +241,7 @@ https://graph.microsoft.com/beta/deviceManagement/deviceHealthScripts/02a4e7e8-1
                                 Here is what a full script to implement the above query might look like
                               </p>
                               
-                              <div class="wp-block-codemirror-blocks-code-block alignwide code-block">
+                              
 ```powershell
 Install-Module MSAL.PS
 $AuthParams =  @{
@@ -259,7 +259,7 @@ $QueryParams =  @{
     }
 Invoke-RestMethod -Headers @{Authorization = "Bearer $($Token.AccessToken)"} @QueryParams
 ```
-                              </div>
+                              
                               
                               <p>
                               </p>
@@ -288,11 +288,11 @@ Invoke-RestMethod -Headers @{Authorization = "Bearer $($Token.AccessToken)"} @Qu
                                 This gives us the Query URL below.
                               </p>
                               
-                              <div class="wp-block-codemirror-blocks-code-block alignwide code-block">
+                              
 ```powershell
 https://graph.windows.net/myorganization/activities/authenticationMethodUserDetails?$orderby=userPrincipalName%20asc&api-version=beta
 ```
-                              </div>
+                              
                               
                               <p>
                                 Voila! Well... somewhat. Most people know of Microsoft Graph, but there are other Microsoft APIs that are available. Some variations include:
@@ -427,7 +427,7 @@ https://graph.windows.net/myorganization/activities/authenticationMethodUserDeta
                                 The <strong>Bearer</strong> at the beginning just references the type of token, but everything bolded below is one big chunk with all three parts. Well - if you want you can run it through a [Base64Decoder](https://www.base64decode.org/) - but the Signature part at the end comes out looking like random high ASCII.
                               </p>
                               
-                              <pre id="bearer-example" class="wp-block-preformatted">Bearer&nbsp;<strong>e01lc3NhZ2U6ICJEaWQgeW91IHRoaW5rIHRoaXMgd2FzIGdvaW5nIHRvIGhhdmUgYW4gYWN0dWFsIHJlYWwgdG9rZW4gaW4gaXQ/IEhhISAKV2VsbCBhcyBsb25nIGFzIHlvdSdyZSBoZXJlIC0gV2hhdCBpcyB5b3VyIGZhdm9yaXRlIGNvbG9yPyBPaC4uLiBobW1tLi4uIEkgd29uJ3QgcmVhbGx5IHNlZSB5b3VyIHJlc3BvbnNlIGhlcmUuIERhbW4uIFdlbGwgLSB0aGUgYmVzdCB3YXkgdG8gY2hhdCB3aXRoIG1lIGlzIHRvIGNvbWUgYnkgdGhlIFdpbkFkbWlucyBEaXNjb3JkLiBZb3UgY2FuIGdldCBhbiBpbnZpdGUgb3ZlciBoZXJlIGh0dHBzOi8vd2luYWRtaW5zLmlvL2Rpc2NvcmQgLiBDb21lIG9uIGJ5IHNvbWV0aW1lLCBhbmQgZmVlbCBmcmVlIHRvIHRhZyBtZSBhdCBAUHN5Y2hvRGF0YSBhbmQgdGVsbCBtZSB5b3VyIGZhdm9yaXRlIGNvbG9yISAKCkJldHRlciB5ZXQsIHNvbWV0aGluZyBmdW4uLi4uLiB0ZWxsIG1lIHlvdSBmb3VuZCBteSBsb3N0IHNvY2shIEl0IHdpbGwgY29uZnVzZSBldmVyeW9uZSBlbHNlIGFuZCBiZSBsb3RzIG9mIGdvb2QgZnVuISAKCldlbGwsIEknbSBhYm91dCBvdXQgb2YgdGhpbmdzIHRvIHJhbWJsZSBhYm91dC4uLiBTby4uIHVoaCBibHVyLXBsZT8gTW9udGdvbWVyeS4gVHVybnBpa2UuIFRoYXQncyBhbGwgSSBoYXZlIHNvIGhvcGUgdG8gY2hhdCBpbiBEaXNjb3JkIHNvbWUgdGltZSEiIH0KJeGIadj0TKLmjz_kgjH0byyuyGZA0CSRQDOP3tbP27tGoERHMQcyyWxv1J0ZtCDbAC7OWRQdxsf6YmcgKNmvyWCZDac2p6e2HGf9ZESfOCj6iFIQBR05FvByqudE_tPZlQgQk0wotkr3oQoxJQ</strong></pre>
+                              <pre id="bearer-example" class="wp-block-preformatted">Bearer<strong>e01lc3NhZ2U6ICJEaWQgeW91IHRoaW5rIHRoaXMgd2FzIGdvaW5nIHRvIGhhdmUgYW4gYWN0dWFsIHJlYWwgdG9rZW4gaW4gaXQ/IEhhISAKV2VsbCBhcyBsb25nIGFzIHlvdSdyZSBoZXJlIC0gV2hhdCBpcyB5b3VyIGZhdm9yaXRlIGNvbG9yPyBPaC4uLiBobW1tLi4uIEkgd29uJ3QgcmVhbGx5IHNlZSB5b3VyIHJlc3BvbnNlIGhlcmUuIERhbW4uIFdlbGwgLSB0aGUgYmVzdCB3YXkgdG8gY2hhdCB3aXRoIG1lIGlzIHRvIGNvbWUgYnkgdGhlIFdpbkFkbWlucyBEaXNjb3JkLiBZb3UgY2FuIGdldCBhbiBpbnZpdGUgb3ZlciBoZXJlIGh0dHBzOi8vd2luYWRtaW5zLmlvL2Rpc2NvcmQgLiBDb21lIG9uIGJ5IHNvbWV0aW1lLCBhbmQgZmVlbCBmcmVlIHRvIHRhZyBtZSBhdCBAUHN5Y2hvRGF0YSBhbmQgdGVsbCBtZSB5b3VyIGZhdm9yaXRlIGNvbG9yISAKCkJldHRlciB5ZXQsIHNvbWV0aGluZyBmdW4uLi4uLiB0ZWxsIG1lIHlvdSBmb3VuZCBteSBsb3N0IHNvY2shIEl0IHdpbGwgY29uZnVzZSBldmVyeW9uZSBlbHNlIGFuZCBiZSBsb3RzIG9mIGdvb2QgZnVuISAKCldlbGwsIEknbSBhYm91dCBvdXQgb2YgdGhpbmdzIHRvIHJhbWJsZSBhYm91dC4uLiBTby4uIHVoaCBibHVyLXBsZT8gTW9udGdvbWVyeS4gVHVybnBpa2UuIFRoYXQncyBhbGwgSSBoYXZlIHNvIGhvcGUgdG8gY2hhdCBpbiBEaXNjb3JkIHNvbWUgdGltZSEiIH0KJeGIadj0TKLmjz_kgjH0byyuyGZA0CSRQDOP3tbP27tGoERHMQcyyWxv1J0ZtCDbAC7OWRQdxsf6YmcgKNmvyWCZDac2p6e2HGf9ZESfOCj6iFIQBR05FvByqudE_tPZlQgQk0wotkr3oQoxJQ</strong></pre>
                               
                               <p>
                                 However, there are services that know how to gracefully decode all the Microsoft Style bits and bobs. There is one public JWT decoder that you can paste your token into [here](https://jwt.io/#debugger-io), but Microsoft actually runs one of their own, and it will automatically identify the issuer of certain types of the tokens as well.
@@ -601,7 +601,7 @@ https://graph.windows.net/myorganization/activities/authenticationMethodUserDeta
                               <div class="wp-block-columns are-vertically-aligned-center">
                                 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:66.66%">
                                   <p>
-                                    If you have questions, are having problems, or just want to chat over something, you can leave a comment below or reach me on the&nbsp;[WinAdmins Discord](https://discord.com/invite/winadmins)&nbsp;at&nbsp;[@PsychoData](https://discordapp.com/users/264652399824601088)
+                                    If you have questions, are having problems, or just want to chat over something, you can leave a comment below or reach me on the[WinAdmins Discord](https://discord.com/invite/winadmins)at[@PsychoData](https://discordapp.com/users/264652399824601088)
                                   </p>
                                 </div>
                                 

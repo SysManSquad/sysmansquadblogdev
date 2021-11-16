@@ -29,7 +29,7 @@ This solution takes care of picking the default outlook profile. but keep in min
 You only need to specify the name of the signature file on line 4 in both the detection and remediation scripts, which are case sensitive.
 
 
-```powershell 
+```powershell
 # you need to add the name of the signature that you want to make default
 
 ### this is case sensitive! ###
@@ -71,7 +71,7 @@ catch {
 You need to change the name of the signature on line 4.
 
 
-```powershell 
+```powershell
 # Remediation
 # you need to add the name of the signature that you want to make default
 ### this is case sensitive! ###

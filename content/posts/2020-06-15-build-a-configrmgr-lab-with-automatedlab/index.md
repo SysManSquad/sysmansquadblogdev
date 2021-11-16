@@ -46,10 +46,9 @@ At the time I found AutomatedLab, the ConfigMgr / SCCM / MEMCM / MECM (ARGH!) Cu
 
 First things first, make sure you have got the latest version of the AutomatedLab module installed. Compare your installed version with what's available on the [AutomatedLab repository assets page](https://github.com/AutomatedLab/AutomatedLab/releases):
 
-
-```powershell 
-
-
+```cmd
+PS C:\> Get-Module "AutomatedLab" -ListAvailable
+```
 
 <div class="wp-block-image">
   <figure class="aligncenter size-medium">[![](ALInstalledModule.jpg)](ALInstalledModule.jpg)<figcaption>Get installed version of AutomatedLab</figcaption></figure>
@@ -66,25 +65,23 @@ However, there's a high probability that what's in my repository is going to con
 
 Download using either `git` or just download ZIP from the repository's web page:
 
-
-  <pre class="CodeMirror" data-setting="{"mode":"shell","mime":"text/x-sh","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":true,"showPanel":false,"languageLabel":"no","language":"Shell","modeName":"shell"}">cd C:\path\to\where\you\want\to\download
+```cmd
+cd C:\path\to\where\you\want\to\download
 git clone https://github.com/codaamok/PoSH.git
 ```
-
 
 <div class="wp-block-image">
   <figure class="aligncenter size-medium">![](CM2002ALDownloadZip.jpg)<figcaption>Download as ZIP from [https://github.com/codaamok/posh](https://github.com/codaamok/posh)</figcaption></figure>
 </div>
 
-Now the content is downloaded, we must copy only the `CustomRole\CM-2002` folder to the correct location on disk so AutomatedLab can use the scripts inside it. The location of `CM-2002.ps1` isn't important. 
+Now the content is downloaded, we must copy only the `CustomRole\CM-2002` folder to the correct location on disk so AutomatedLab can use the scripts inside it. The location of `CM-2002.ps1` isn't important.
 
 If you were to use PowerShell, the command would look like this:
 
 
-```powershell 
+```powershell
 PS C:\> Copy-Item -Path "C:\path\to\where\you\downloaded\PoSH\AutomatedLab\CustomRoles\CM-2002" -Destination "C:\LabSources\CustomRoles" -Recurse -Force
 ```
-
 
 Make sure you have a Windows Server 2016 or 2019 ISO (Evaluation will be fine) in your `C:\LabSources\ISOs` directory.
 
@@ -94,7 +91,7 @@ Of course parameters are available to further customise your lab, however as is 
 
   * 1x AutomatedLab lab
       * Name: "CMLab01"
-      * VMPath: _<drive>_:\AutomatedLab-VMs where _<drive>_ is the fastest drive available
+      * VMPath: _`<drive`>_:\AutomatedLab-VMs where _`<drive`>_ is the fastest drive available
       * AddressSpace: An unused and available subnet increasing 192.168.1.0 by 1 until one is found.
       * ExternalVMSwitch: Allows physical network access via Hyper-V external switch named "Internet". "Default Switch" is an acceptable value to leverage an independent virtual network behind NAT.
   * 1x Active Directory domain:
@@ -108,7 +105,7 @@ Of course parameters are available to further customise your lab, however as is 
           * vCPU: 2
           * Max memory: 2GB
           * Roles: "RootDC", "Routing"
-      * 1x Configuration&nbsp;Manager&nbsp;primary&nbsp;site&nbsp;server:
+      * 1x ConfigurationManagerprimarysiteserver:
           * Name: "CM01"
           * vCPU: 4
           * Max memory: 8GB

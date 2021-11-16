@@ -85,7 +85,7 @@ For each of the below I will link to the resource, offer a brief description on 
                           
                           <blockquote class="wp-block-quote">
                             <p>
-                              [Microsoft PowerToys](https://github.com/microsoft/PowerToys) is a set of utilities for power users to tune and streamline their Windows experience for greater productivity. Inspired by the&nbsp;[Windows 95 era PowerToys project](https://en.wikipedia.org/wiki/Microsoft_PowerToys), this reboot provides power users with ways to squeeze more efficiency out of the Windows 10 shell and customize it for individual workflows. A great overview of the Windows 95 PowerToys can be found&nbsp;[here](https://socket3.wordpress.com/2016/10/22/using-windows-95-powertoys/).
+                              [Microsoft PowerToys](https://github.com/microsoft/PowerToys) is a set of utilities for power users to tune and streamline their Windows experience for greater productivity. Inspired by the[Windows 95 era PowerToys project](https://en.wikipedia.org/wiki/Microsoft_PowerToys), this reboot provides power users with ways to squeeze more efficiency out of the Windows 10 shell and customize it for individual workflows. A great overview of the Windows 95 PowerToys can be found[here](https://socket3.wordpress.com/2016/10/22/using-windows-95-powertoys/).
                             </p>
                             
                             <cite>[https://github.com/microsoft/PowerToys](https://github.com/microsoft/PowerToys)</cite>

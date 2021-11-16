@@ -209,11 +209,11 @@ PS C:\> Import-Module PSCMContentMgmt
                                         </p>
                                         
                                         <p>
-                                          If you receive a warning along the lines of being unable to auto-populate variables&nbsp;<code>$CMSiteServer</code>&nbsp;or&nbsp;<code>$CMSiteCode</code>, that means the module failed to read the previously mentioned registry value or the&nbsp;<code>SMS_ProviderLocation</code>&nbsp;class on your site server.
+                                          If you receive a warning along the lines of being unable to auto-populate variables<code>$CMSiteServer</code>or<code>$CMSiteCode</code>, that means the module failed to read the previously mentioned registry value or the<code>SMS_ProviderLocation</code>class on your site server.
                                         </p>
                                         
                                         <p>
-                                          If the reason why the module could not set these variables itself is not known, or there's no viable workaround for you, then you can set&nbsp;<code>$CMSiteServer</code>&nbsp;or&nbsp;<code>$CMSiteCode</code>&nbsp;yourself. Alternatively you can use the&nbsp;<code>-SiteServer</code>&nbsp;and&nbsp;<code>-SiteCode</code>&nbsp;parameters on an ad-hoc basis.
+                                          If the reason why the module could not set these variables itself is not known, or there's no viable workaround for you, then you can set<code>$CMSiteServer</code>or<code>$CMSiteCode</code>yourself. Alternatively you can use the<code>-SiteServer</code>and<code>-SiteCode</code>parameters on an ad-hoc basis.
                                         </p>
                                         
                                         <h2>

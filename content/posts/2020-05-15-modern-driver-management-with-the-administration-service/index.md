@@ -87,8 +87,8 @@ The actual query to the AdminService is quite simple. I'm querying for all packa
 
 The rest of the script is simply filtering which driver package is the most suitable with the information provided and then it returns a PackageID. Here is a snippet of the relevant part of the script where we retrieve a list of packages from the AdminService:
 
-<div class="wp-block-codemirror-blocks-code-block alignwide code-block">
-```powershell 
+
+```powershell
         If($PackageType -eq "DriverPackage"){
             $Filter = "startswith(Name,'Drivers - ')"
         }ElseIf($PackageType -eq "BIOSPackage"){
@@ -101,7 +101,7 @@ The rest of the script is simply filtering which driver package is the most suit
 
         $Packages = (Invoke-RestMethod -Method Get -Uri $WMIPackageURL -Body $Body @Global:InvokeRestMethodCredential | Select-Object -ExpandProperty value)
 ```
-</div>
+
 
 <div class="wp-block-image">
   <figure class="aligncenter size-full">[![](GetPackageIDLog.png)](https://www.sysmansquad.com/?attachment_id=1055)<figcaption>Log file in CMTrace format for your troubleshooting needs</figcaption></figure>

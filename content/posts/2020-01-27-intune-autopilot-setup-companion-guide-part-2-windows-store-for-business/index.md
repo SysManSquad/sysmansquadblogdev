@@ -24,7 +24,7 @@ Why do you need the WSfB? You need the WSfB in order to deploy the company porta
 
 ## Enabling Windows Store for Business
 
-Navigate to the&nbsp;[MEM admin center](https://devicemanagement.microsoft.com/) and login with your azure credentials if prompted.
+Navigate to the[MEM admin center](https://devicemanagement.microsoft.com/) and login with your azure credentials if prompted.
 
   1. Select **Tenant Administration** on the left hand side
   2. Select **Connectors and tokens**

@@ -135,7 +135,7 @@ Our customer will be moving to Azure later so we will probably revisit this as A
                   Just setup the first few variables on lines 2-4 with your options
                 </p>
                 
-                <div class="wp-block-codemirror-blocks-code-block alignwide code-block">
+                
 ```powershell
 # --- config start
 $appName = "AutomaticAutoReply"
@@ -199,7 +199,7 @@ $connectGraph + "`n Get-MgContext" | Set-Clipboard
 Write-Host -ForeGroundColor Cyan "Copied to ClipBoard"
 
 ```
-                </div>
+                
                 
                 <h2 id="Using-auth-cert">
                   Using our App Auth Certificate
@@ -241,7 +241,7 @@ Write-Host -ForeGroundColor Cyan "Copied to ClipBoard"
                   Next, on lines 58-75, I assemble a <strong>patch JSON</strong>, and use Invoke-GraphRequest to patch it onto our user and change the settings.
                 </p>
                 
-                <div class="wp-block-codemirror-blocks-code-block alignwide code-block">
+                
 ```powershell
 #Region Variables
 #Vars for Graph Connection
@@ -331,7 +331,7 @@ catch {
 }
 
 ```
-                </div>
+                
                 
                 <h2>
                   Scheduling the Script

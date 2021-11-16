@@ -55,7 +55,7 @@ To solve this, you should wrap up the script as a win32 app, deploy it as a requ
 Here is a dead simple example code you can use, just change the $DomainGUID to your own
 
 
-```powershell 
+```powershell
 $DomainGUID = "a2936ecb-ea97-4854-a494-82a39a3195be"
 new-item -itemtype directory -path "hklm:\Software\Policies\Microsoft\OneDrive" -force
 Set-ItemProperty -Path "hklm:\Software\Policies\Microsoft\OneDrive" -Name "AADJMachineDomainGuid" -Value $DomainGUID -Force

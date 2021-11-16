@@ -121,7 +121,7 @@ Create a VM with ~2048MB RAM and a minimum 60GB disk space. By now you're acquai
 Set the IP address:
 
 
-```powershell 
+```powershell
 # Change these to match the config in your documentation
 $IPv6Address='fdda:f6d4:f5a2:f1e6::4'
 $IPv6PrefixLength='64'
@@ -158,7 +158,7 @@ New-NetIPAddress @IPv6Arguments
 Then you'll need to install the domain controller.
 
 
-```powershell 
+```powershell
 $SafeModeAdminPassword='P@ssw0rd2' # Change this. 
 $DomainName = 'ad.lab.test
 Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
@@ -174,7 +174,7 @@ Obviously, you'll want to change the safe mode administrator password. Your AD c
 Since your `dns` server is _authoritative_ for `lab.test`, you will create a "delegation" for the subdomain `ad.lab.test` to authorize your new AD controller to handle it's own dns records.
 
 
-```powershell 
+```powershell
 #######################################################################################################
 # Run this from your existing DNS server, not your AD controller, even though it too is a DNS server. #
 #######################################################################################################
@@ -193,7 +193,7 @@ Add-DnsServerZoneDelegation -Name $ParentZone -ChildZoneName $ChildZone -IPAddre
 The delegation records now exist that will help your clients find your AD domain to join it. Now, using your `ad\administrator` credentials, you can join your new domain on each of your core installs through powershell:
 
 
-```powershell 
+```powershell
 Add-Computer –DomainName 'ad.lab.test' -restart –force
 ```
 

@@ -53,8 +53,8 @@ Well, now you can! <figure class="wp-block-image">
 
 I have modified the PowerShell script created by Terence Beggs from <https://www.scconfigmgr.com/2017/10/06/configmgr-osd-notification-service-teams/>
 
-<div class="wp-block-codemirror-blocks-code-block alignwide code-block">
-```powershell 
+
+```powershell
 #
     .NOTES
     ==================================================================
@@ -162,7 +162,7 @@ $body = @"
 Invoke-RestMethod -uri $uri -Method Post -body $body -ContentType 'application/json'
 
 ```
-</div>
+
 
 ### Customising the MessageCard
 

@@ -21,7 +21,7 @@ This leads me to the bread and butter of this blog post. The following is a smal
 ## Microsoft Teams Cache Clearing Script
 
 
-```powershell 
+```powershell
 Write-Output "Killing Microsoft Teams process"
 Stop-Process -Name Teams -Force -erroraction 'silentlycontinue'
 Start-Sleep -seconds 5
@@ -57,7 +57,7 @@ That takes care of the script portion of this blog post. Next, we need to encaps
 It is literally a simple as:
 
 
-```powershell 
+```powershell
 PS2EXE "ClearTeamsCache.ps1" "ClearTeamsCache.exe"
 ```
 

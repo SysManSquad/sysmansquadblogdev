@@ -27,11 +27,11 @@ Before we get started let me explain how this process works. We are going to cre
   2. Follow the onscreen options to add/remove mapped drives as needed
   3. Select **Download Powershell Script**
   4. Edit the powershell script, near the bottom you will see the following line  
-    `$trigger&nbsp;=&nbsp;New-ScheduledTaskTrigger&nbsp;-AtLogOn`
+    `$trigger=New-ScheduledTaskTrigger-AtLogOn`
   5. Remove everything below that point and add the following
 
 
-```powershell 
+```powershell
 $trigger = New-ScheduledTaskTrigger -AtLogOn
 
 $class = cimclass MSFT_TaskEventTrigger root/Microsoft/Windows/TaskScheduler

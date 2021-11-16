@@ -75,7 +75,7 @@ We need to create a service principal account to access Marcel's UI and also gra
 Time for some powershell! The following powershell will add a WVD tenant. Please use an administrative account when signing in as you have to grant access for your tenant.
 
 
-```powershell 
+```powershell
 $ApplicationID = PASTE YOUR SERVICE PRINCIPAL ACCOUNT APP ID HERE
 $TenantName = PASTE YOUR FULL TENANT NAME HERE
 Install-Module -Name Microsoft.RDInfra.RDPowerShell
@@ -122,7 +122,7 @@ I hate to use the word master VMs as it really boils down to a golden image or t
 
   1. Navigate to the Master-VMs resource group we created earlier
   2. Create a new resource by selecting the Add button
-  3. Search for Microsoft Windows 10 + Office 365 ProPlus (you do the + Office 365 ProPlus because the non-office version isn't the latest release of windows) and make sure you're selecting the latest version&nbsp;
+  3. Search for Microsoft Windows 10 + Office 365 ProPlus (you do the + Office 365 ProPlus because the non-office version isn't the latest release of windows) and make sure you're selecting the latest version
   4. Click Create![](GetImage.png)
   5. For Virtual Machine name change it to whatever your preference in my case i'll be calling it AutoCAD after the program that I'll be installing
   6. You can leave the Size default I typically select B2Ms as I like to penny pinch (Please note this server won't cost you anything other than the storage of the drive when we are done with it)
@@ -148,7 +148,7 @@ I hate to use the word master VMs as it really boils down to a golden image or t
  26. Shutdown the VM
 
 
-```powershell 
+```powershell
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" /v RemoteAppLogoffTimeLimit /t REG_DWORD /d 0 /f 
 
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" /v fResetBroken /t REG_DWORD /d 1 /f 

@@ -27,7 +27,7 @@ Using Group Policies, this is a trivial task, but Intune has no proper built in 
 Relatively straight forward, the script checks if the relevant filesystem rights have been assigned, if not, it will error out and report non-compliance
 
 
-```powershell 
+```powershell
 # Discovery
 $acl = Get-Acl -Path 'C:\Users\Public\Desktop'
 $aclEveryone = $acl.Access | where { $_.IdentityReference -like "everyone" } 
@@ -58,7 +58,7 @@ catch {
 Should the discovery report non-compliance, the following will execute.
 
 
-```powershell 
+```powershell
 # Remediation
 
 try {
@@ -89,4 +89,4 @@ Obviously, this example are pretty simplistic, but it can give you an idea how P
 
 ### Questions/Issues?
 
-If you run into any issues or have questions about anything Intune related head over to the&nbsp;[WinAdmins discord community](https://aka.ms/winadmins)&nbsp;and go to the&nbsp;`#Intune`&nbsp;channel.
+If you run into any issues or have questions about anything Intune related head over to the[WinAdmins discord community](https://aka.ms/winadmins)and go to the`#Intune`channel.

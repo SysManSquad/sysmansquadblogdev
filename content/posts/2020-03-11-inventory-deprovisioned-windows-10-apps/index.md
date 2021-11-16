@@ -58,10 +58,11 @@ Thankfully the power of MEMCM can save us from our mistakes! Custom hardware inv
 
 #### Step 1 - Write a script to gather the data
 
-'The data' is stored in the registry, so we need to extract it from there. From my previous post, we know the data is located at 
+'The data' is stored in the registry, so we need to extract it from there. From my previous post, we know the data is located at
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Depro.reg","language":"PowerShell","modeName":"powershell"}">"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Deprovisioned"```
+```powershell
+"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Deprovisioned"
+```
 
 But it is stored as a set of registry keys instead of properties on a registry key. Depending on the structure of data in the registry it may be possible to use [RegKeyToMof](https://gallery.technet.microsoft.com/RegKeyToMof-28e84c28) to generate a MOF file. With this being a set of indeterminate registry keys I've decided to use a script instead.
 
@@ -74,8 +75,8 @@ Scripts for custom hardware inventory typically follow this workflow. At least..
   * Populate WMI
   * Write out some random gibberish so that your CI can be 'Compliant'
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":" Inventory-DeprovisionedAppX.ps1","language":"PowerShell","modeName":"powershell"}">#region define your Hardware Inventory Class Name, and the namespace in WMI to store it
+```powershell
+#region define your Hardware Inventory Class Name, and the namespace in WMI to store it
 $HinvClassName = 'DeprovisionedAppX'
 $HinvNamespace = 'root\CustomHinv'
 #endregion define your Hardware Inventory Class Name, and the namespace in WMI to store it
@@ -127,7 +128,8 @@ if ($null -ne $AllDeprovisionedApps) {
     }
 }
 
-Write-Output 'Inventory Complete'```
+Write-Output 'Inventory Complete'
+```
 
 <blockquote class="wp-block-quote">
   <p>
@@ -200,23 +202,29 @@ This bit will have to wait for another post! There is some fun stuff we can do w
 
 In it's simplest form, we can query the MEMCM database as below.
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Get-AllDeproAppX.sql<br><br>.sql","language":"PowerShell","modeName":"powershell"}">SELECT * FROM v_GS_DEPROVISIONEDAPPX```<figure class="wp-block-image size-large">
+```sql
+SELECT * FROM v_GS_DEPROVISIONEDAPPX
+```
+
+<figure class="wp-block-image size-large">
 
 ![](CustomHINV-BasicDB.png) </figure> 
 
 If we desire a little more insight, the query can be adjusted to show counts.
 
-<div class="wp-block-codemirror-blocks-code-block code-block">
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Get-DeproAppXCount.sql","language":"PowerShell","modeName":"powershell"}">SELECT depro.DeprovisionedApp0
-	, COUNT(depro.DeprovisionedApp0) [Count]
+```sql
+SELECT 
+  depro.DeprovisionedApp0,
+  COUNT(depro.DeprovisionedApp0) [Count]
 FROM v_GS_DEPROVISIONEDAPPX depro
 GROUP BY depro.DeprovisionedApp0
-ORDER BY 2 DESC```<figure class="wp-block-image size-large">
+ORDER BY 2 DESC
+```
+
+<figure class="wp-block-image size-large">
 
 ![](CustomHINV-CountDB.png) </figure> 
 
 Join us next time, when decisions, and actions are made with our new found data!
 
 [@CodyMathis123](https://twitter.com/CodyMathis123)
-

@@ -306,7 +306,7 @@ date: 2019-12-09T20:11:54+00:00
           
           <div class="e342-76 x-text" >
             <p>
-              Ashley is an ICT Systems Engineer and Manager&nbsp; based in Melbourne with a passion for sharing experiences.
+              Ashley is an ICT Systems Engineer and Manager based in Melbourne with a passion for sharing experiences.
             </p>
           </div>
           

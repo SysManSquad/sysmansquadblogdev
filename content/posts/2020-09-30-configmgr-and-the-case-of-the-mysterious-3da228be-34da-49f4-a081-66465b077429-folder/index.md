@@ -88,7 +88,7 @@ I should mention, I am not concerned about a small number of folders, even a few
 [PowershellScripts/CleanupFoldersWithRoboCopy.ps1 at master · AdamGrossTX/PowershellScripts (github.com)](https://github.com/AdamGrossTX/PowershellScripts/blob/master/ConfigMgr/Troubleshooting/CleanupFoldersWithRoboCopy.ps1)
 
 
-```powershell 
+```powershell
 [cmdletbinding()]
 param(
     $incoming,

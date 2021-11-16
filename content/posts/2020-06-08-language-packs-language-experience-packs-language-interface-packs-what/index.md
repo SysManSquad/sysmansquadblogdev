@@ -165,12 +165,12 @@ dism.exe /Image:"%OSDTargetSystemDrive%" /ScratchDir:%OSDTargetSystemDrive%Windo
                 </div>
                 
                 <p>
-                  You have two options with the&nbsp;<code>Apply Windows settings</code>&nbsp;step. Either:
+                  You have two options with the<code>Apply Windows settings</code>step. Either:
                 </p>
                 
                 <ul>
                   <li>
-                    Use the new-ish&nbsp;[OSDWindowsSettings* task sequence variables](https://docs.microsoft.com/en-us/mem/configmgr/osd/understand/task-sequence-steps#BKMK_ApplyWindowsSettings). These set what you would otherwise select from the dropdown settings in the <code>Apply Windows settings</code> step.
+                    Use the new-ish[OSDWindowsSettings* task sequence variables](https://docs.microsoft.com/en-us/mem/configmgr/osd/understand/task-sequence-steps#BKMK_ApplyWindowsSettings). These set what you would otherwise select from the dropdown settings in the <code>Apply Windows settings</code> step.
                   </li>
                 </ul>
                 
@@ -180,7 +180,7 @@ dism.exe /Image:"%OSDTargetSystemDrive%" /ScratchDir:%OSDTargetSystemDrive%Windo
                 
                 <ul>
                   <li>
-                    Have as many&nbsp;<code>Apply Windows settings</code>&nbsp;steps as you do languages and select the locale options you want in the dropdown settings, then condition each step based on some criteria.
+                    Have as many<code>Apply Windows settings</code>steps as you do languages and select the locale options you want in the dropdown settings, then condition each step based on some criteria.
                   </li>
                 </ul>
                 
@@ -234,7 +234,7 @@ dism.exe /Image:"%OSDTargetSystemDrive%" /ScratchDir:%OSDTargetSystemDrive%Windo
                 
                 <ul>
                   <li>
-                    [Solving&nbsp;Windows&nbsp;10&nbsp;feature&nbsp;updates&nbsp;in&nbsp;a&nbsp;multilingual&nbsp;deployment](https://www.youtube.com/watch?v=ZhL0AO8Cnig&ab_channel=MicrosoftIgnite) - Sudhagar Thirumoolan ([@sudhagart](https://twitter.com/sudhagart?lang=en))
+                    [SolvingWindows10featureupdatesinamultilingualdeployment](https://www.youtube.com/watch?v=ZhL0AO8Cnig&ab_channel=MicrosoftIgnite) - Sudhagar Thirumoolan ([@sudhagart](https://twitter.com/sudhagart?lang=en))
                   </li>
                 </ul>
                 
@@ -254,7 +254,7 @@ dism.exe /Image:"%OSDTargetSystemDrive%" /ScratchDir:%OSDTargetSystemDrive%Windo
                   After we've built a system like this, if we attempt to feature update it using en-us media <code>setupact.log</code> and [SetupDiag.exe](https://docs.microsoft.com/en-us/windows/deployment/upgrade/setupdiag) will both tell you:
                 </p>
                 
-                <pre class="wp-block-code"><code>Target language en-US is not compatible with the host language</code></pre>
+                `Target language en-US is not compatible with the host language`
                 
                 <p>
                   Now what? Well your options are:
@@ -357,7 +357,7 @@ dism.exe /Image:"%OSDTargetSystemDrive%" /ScratchDir:%OSDTargetSystemDrive%Windo
                 
                 <ul>
                   <li>
-                    [Windows&nbsp;10&nbsp;Multilanguage&nbsp;Deployment&nbsp;with&nbsp;MEMCM](https://techcommunity.microsoft.com/t5/premier-field-engineering/windows-10-multilanguage-deployment-with-memcm/ba-p/1347144)
+                    [Windows10MultilanguageDeploymentwithMEMCM](https://techcommunity.microsoft.com/t5/premier-field-engineering/windows-10-multilanguage-deployment-with-memcm/ba-p/1347144)
                   </li>
                 </ul>
                 
@@ -711,7 +711,7 @@ Get-CimInstance -Namespace "Rootcimv2mdmdmmap" -ClassName "MDM_EnterpriseModernA
                   <li>
                     <code>New-FoDLanguageFeaturesRepository</code><ul>
                       <li>
-                        Copy&nbsp;out&nbsp;only&nbsp;the&nbsp;languages&nbsp;you&nbsp;want&nbsp;of&nbsp;the&nbsp;Features&nbsp;on&nbsp;Demand&nbsp;LanguageFeatures&nbsp;Basic,&nbsp;Handwriting,&nbsp;OCR,&nbsp;Speech&nbsp;and&nbsp;TextToSpeech&nbsp;from&nbsp;Features&nbsp;on&nbsp;Demand&nbsp;ISO
+                        CopyoutonlythelanguagesyouwantoftheFeaturesonDemandLanguageFeaturesBasic,Handwriting,OCR,SpeechandTextToSpeechfromFeaturesonDemandISO
                       </li>
                     </ul>
                   </li>
@@ -751,7 +751,7 @@ Get-CimInstance -Namespace "Rootcimv2mdmdmmap" -ClassName "MDM_EnterpriseModernA
                 
                 <ul>
                   <li>
-                    [Solving&nbsp;Windows&nbsp;10&nbsp;feature&nbsp;updates&nbsp;in&nbsp;a&nbsp;multilingual&nbsp;deployment](https://www.youtube.com/watch?v=ZhL0AO8Cnig&ab_channel=MicrosoftIgnite) - Sudhagar Thirumoolan ([@sudhagart](https://twitter.com/sudhagart?lang=en))
+                    [SolvingWindows10featureupdatesinamultilingualdeployment](https://www.youtube.com/watch?v=ZhL0AO8Cnig&ab_channel=MicrosoftIgnite) - Sudhagar Thirumoolan ([@sudhagart](https://twitter.com/sudhagart?lang=en))
                   </li>
                 </ul>
                 

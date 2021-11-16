@@ -19,15 +19,15 @@ We are going to talk about how to use this module to retrieve additional details
 
 Open an elevated PowerShell prompt and run
 
-<pre class="wp-block-code"><code>Install-Module -Name WindowsAutoPilotIntune</code></pre>
+`Install-Module -Name WindowsAutoPilotIntune`
 
 You should also make sure you have the official MS Graph module installed as well. 
 
-<pre class="wp-block-code"><code>Install-Module -Name Microsoft.Graph.Intune</code></pre>
+`Install-Module -Name Microsoft.Graph.Intune`
 
 To check if they are installed run the follow cmd. 
 
-<pre class="wp-block-code"><code>Get-module -ListAvailable | ?{ $_.Name -eq "WindowsAutoPilotIntune" -or $_.Name -eq "Microsoft.Graph.Intune"}</code></pre><figure class="wp-block-image size-large">
+`Get-module -ListAvailable | ?{ $_.Name -eq "WindowsAutoPilotIntune" -or $_.Name -eq "Microsoft.Graph.Intune"}`<figure class="wp-block-image size-large">
 
 ![](image-1024x157.png) </figure> 
 

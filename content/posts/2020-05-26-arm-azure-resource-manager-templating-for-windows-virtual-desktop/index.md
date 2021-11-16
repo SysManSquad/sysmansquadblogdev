@@ -16,7 +16,7 @@ categories:
 ---
 ### Why would I use ARM templating, isn't the default Image Gallery fine?
 
-Well first off, what is ARM Templating? According to Microsoft "_You can automate deployments and use the practice of infrastructure as code. In code, you define the infrastructure that needs to be deployed. The infrastructure code becomes part of your project. Just like application code, you store the infrastructure code in a source repository and version it..._&nbsp;" 
+Well first off, what is ARM Templating? According to Microsoft "_You can automate deployments and use the practice of infrastructure as code. In code, you define the infrastructure that needs to be deployed. The infrastructure code becomes part of your project. Just like application code, you store the infrastructure code in a source repository and version it..._" 
 
 What does all that mean? You can go through the manual creation process of a resource, then at the end you have an option to create an ARM template based on all the settings you picked. You can then use this template to deploy the exact same resource in the future with the same settings. (Don't worry we can make it more dynamic and less rigid).
 
@@ -41,7 +41,7 @@ We are going to have to create a few **resource groups**, a **key vault**, and a
 We are going to open Powershell as an Admin and install the required module to connect to Azure. Then we'll create a few resource groups to store our images, our secure passwords in a keyvault, and a storage account for our powershell scripts and other items we may need. Feel free to change the names and location as you see fit (Remember to keep location the same throughout).
 
 
-```powershell 
+```powershell
 Install-module azaccount -force
 Connect-azaccount
 #Change to your desired location
@@ -67,7 +67,7 @@ New-AzResourceGroupDeployment -ResourceGroupName $storageaccount -TemplateUri $t
 
 After the last line you should see some output, you'll want to copy the value called _keyVaultId_ for later, it should look similar to this: 
 
-<pre class="wp-block-code"><code>/subscriptions/SubscriptionID>/resourceGroups/mykeyvaultdeploymentrg/providers/Microsoft.KeyVault/vaults/KeyVaultName></code></pre>
+`/subscriptions/<SubscriptionID>/resourceGroups/mykeyvaultdeploymentrg/providers/Microsoft.KeyVault/vaults/<KeyVaultName>`
 
 ### Adding files to our storage account
 
@@ -78,7 +78,7 @@ At this point you'll want to have your powershell scripts that you want to execu
 Below is an example of the module install script I have. 
 
 
-```powershell 
+```powershell
 Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
 Install-Module -Name PSFTP -Force
 
@@ -89,7 +89,7 @@ Install-Module -Name PSFTP -Force
 The next script is an example of my configuration script. 
 
 
-```powershell 
+```powershell
 Try{
 #DO ALL THE FANCY THINGS here like your reg changes, or whatever else.
 #You can upload the FSLogix.exe to the storage account which we will go over below
@@ -162,20 +162,20 @@ Now we are going to add all the extras to this template that let us dynamically 
 
   1. Open both parameters.json and template.json
   2. In parameters.json change the "adminPassword" from  
-    <span class="has-inline-color has-vivid-cyan-blue-color"><code>"adminPassword":&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"value":&nbsp;null&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</code></span>  
+    <span class="has-inline-color has-vivid-cyan-blue-color"><code>"adminPassword":{"value":null}</code></span>  
     to  
     <span class="has-inline-color has-vivid-cyan-blue-color"><code>"adminPassword": {br>"reference": {br>"keyVault": {br>"id": "THE KEYVAULTID ID YOU COPIED EARLIER"br>},br>"secretName": "vmAdminPassword"br>}</code></span>
   3. Change the id to the KeyVaultID you copied earlier
   4. The rest of parameters.json can be left as is, you can override these values later in our execution script if desired
   5. Open template.json
   6. Do a search for **enableAutomaticUpdates** change the value to **false**  
-    `"enableAutomaticUpdates":&nbsp;false,`
-  7. A few lines down you will see `"licenseType":&nbsp;"Windows_Client"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`  
+    `"enableAutomaticUpdates":false,`
+  7. A few lines down you will see `"licenseType":"Windows_Client"`  
     `}`  
     add the following after (Make sure it's after the bracket)
 
 
-```powershell 
+```powershell
         },
         {
   "type": "Microsoft.Compute/virtualMachines/extensions",
@@ -218,7 +218,7 @@ Below I will be posting the script I use to make the magic happen. It will conne
 This can be changed to meet your preferences. You'll notice on lines 16-18 I specified a virtualMachineName, networkInferfaceName, publicIpAddressName, all three of these items have a default, and can be found in our parameters.json - however by defining them in our script I'm overwriting the default values to give us a bit more flexibility. 
 
 
-```powershell 
+```powershell
 Connect-azaccount
 $vmName = "TempMachine"
 $imagename = Read-Host -Prompt 'Input a unique image name'

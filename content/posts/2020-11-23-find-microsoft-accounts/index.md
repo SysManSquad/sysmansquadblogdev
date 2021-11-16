@@ -208,7 +208,7 @@ The other day I was helping someone over in the [WinAdmins Discord](https://aka.
                             <div class="wp-block-group">
                               <div class="wp-block-group__inner-container">
                                 <p>
-                                  [https://login.microsoftonline.com/consumers/oauth2/v2.0/authorize?<br />&nbsp; &nbsp; client_id=<strong>bd53bb89-0cc1-4eb3-90b7-ba008b1f2a2c</strong><br />&nbsp; &nbsp; &scope=user.read<br />&nbsp; &nbsp; &response_type=code<br />&nbsp; &nbsp; &state=23424<br />&nbsp; &nbsp; &login_hint=<strong>TinaFey@contoso.one</strong>](https://login.microsoftonline.com/consumers/oauth2/v2.0/authorize?client_id=bd53bb89-0cc1-4eb3-90b7-ba008b1f2a2c&scope=user.read&response_type=code&state=23424&login_hint=TinaFey@contoso.one)
+                                  [https://login.microsoftonline.com/consumers/oauth2/v2.0/authorize?<br />  client_id=<strong>bd53bb89-0cc1-4eb3-90b7-ba008b1f2a2c</strong><br />  &scope=user.read<br />  &response_type=code<br />  &state=23424<br />  &login_hint=<strong>TinaFey@contoso.one</strong>](https://login.microsoftonline.com/consumers/oauth2/v2.0/authorize?client_id=bd53bb89-0cc1-4eb3-90b7-ba008b1f2a2c&scope=user.read&response_type=code&state=23424&login_hint=TinaFey@contoso.one)
                                 </p>
                                 
                                 <p>
@@ -326,7 +326,7 @@ $results
                             </p>
                             
                             <p>
-                              [https://login.microsoftonline.com/consumers/oauth2/v2.0/authorize?<br />&nbsp; &nbsp; client_id=<strong>bd53bb89-0cc1-4eb3-90b7-ba008b1f2a2c</strong><br />&nbsp; &nbsp; &scope=user.read<br />&nbsp; &nbsp; &response_type=code<br />&nbsp; &nbsp; &state=23424<br />](https://login.microsoftonline.com/consumers/oauth2/v2.0/authorize?client_id=bd53bb89-0cc1-4eb3-90b7-ba008b1f2a2c&scope=user.read&response_type=code&state=23424&login_hint=TinaFey@contoso.one)
+                              [https://login.microsoftonline.com/consumers/oauth2/v2.0/authorize?<br />  client_id=<strong>bd53bb89-0cc1-4eb3-90b7-ba008b1f2a2c</strong><br />  &scope=user.read<br />  &response_type=code<br />  &state=23424<br />](https://login.microsoftonline.com/consumers/oauth2/v2.0/authorize?client_id=bd53bb89-0cc1-4eb3-90b7-ba008b1f2a2c&scope=user.read&response_type=code&state=23424&login_hint=TinaFey@contoso.one)
                             </p>
                           </div>
                         </div>

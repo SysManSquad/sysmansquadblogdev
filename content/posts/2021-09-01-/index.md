@@ -75,11 +75,11 @@ Save each as a different version. E.g. M365Apps-AVD-Base.xml, M365Apps-AVD-Visio
 
 Download the office setup files by running:
 
-<pre class="wp-block-code"><code>.\setup.exe /download .\M365Apps-AVD-Base.xml</code></pre>
+`.\setup.exe /download .\M365Apps-AVD-Base.xml`
 
 Install the FSLogix PowerShell Module
 
-<pre class="wp-block-code"><code>Install-Module -Name "FSLogix.PowerShell.Rules"</code></pre>
+`Install-Module -Name "FSLogix.PowerShell.Rules"`
 
 Snapshot the VM - "Pre-Office" (I snapshot here in case I make a mistake with the base install)
 
@@ -89,7 +89,7 @@ Snapshot the VM - "Pre-Office" (I snapshot here in case I make a mistake with th
       Now install the Base Office
     </p>
     
-    <pre class="wp-block-code"><code>.\setup.exe /configure .\M365Apps-AVD-Base.xml</code></pre>
+    `.\setup.exe /configure .\M365Apps-AVD-Base.xml`
     
     <h4>
       Create Access Ruleset
@@ -99,7 +99,7 @@ Snapshot the VM - "Pre-Office" (I snapshot here in case I make a mistake with th
       Run:
     </p>
     
-    <pre class="wp-block-code"><code>.\New-MicrosoftOfficeRuleset.ps1 -SearchString "Access"</code></pre>
+    `.\New-MicrosoftOfficeRuleset.ps1 -SearchString "Access"`
     
     <ul>
       <li>
@@ -133,7 +133,7 @@ Added by New—WcrosoftOffceRu/eset.psI. " class="wp-image-2953" srcset="image-1
       Run:
     </p>
     
-    <pre class="wp-block-code"><code>.\New-MicrosoftOfficeRuleset.ps1 -SearchString "Publisher"</code></pre>
+    `.\New-MicrosoftOfficeRuleset.ps1 -SearchString "Publisher"`
     
     <ul>
       <li>
@@ -166,13 +166,13 @@ Added by New—WcrosoftOffceRu/eset.psI. " class="wp-image-2953" srcset="image-1
       Install Office with Visio
     </p>
     
-    <pre class="wp-block-code"><code>.\setup.exe /configure .\M365Apps-AVD-Visio.xml</code></pre>
+    `.\setup.exe /configure .\M365Apps-AVD-Visio.xml`
     
     <p>
       Run:
     </p>
     
-    <pre class="wp-block-code"><code>.\New-MicrosoftOfficeRuleset.ps1 -SearchString "Visio"</code></pre>
+    `.\New-MicrosoftOfficeRuleset.ps1 -SearchString "Visio"`
     
     <ul>
       <li>
@@ -205,13 +205,13 @@ Added by New—WcrosoftOffceRu/eset.psI. " class="wp-image-2953" srcset="image-1
       Install Office with Project
     </p>
     
-    <pre class="wp-block-code"><code>.\setup.exe /configure .\M365Apps-AVD-Project.xml</code></pre>
+    `.\setup.exe /configure .\M365Apps-AVD-Project.xml`
     
     <p>
       Run:
     </p>
     
-    <pre class="wp-block-code"><code>.\New-MicrosoftOfficeRuleset.ps1 -SearchString "Project", "WinProj"</code></pre>
+    `.\New-MicrosoftOfficeRuleset.ps1 -SearchString "Project", "WinProj"`
     
     <ul>
       <li>

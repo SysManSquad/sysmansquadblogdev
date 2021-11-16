@@ -39,7 +39,7 @@ Now that we have the current BIOS version and release date, we need to evaluate 
 For this part, I had to dig into the [Invoke-CMDownloadBIOSPackage.ps1](https://github.com/MSEndpointMgr/ConfigMgr/blob/master/Operating%20System%20Deployment/BIOS/Invoke-CMDownloadBIOSPackage.ps1) script and in the script of the [Driver Automation Tool](https://github.com/maurice-daly/DriverAutomationTool/blob/master/Content/DriverAutomationTool.ps1) to see how they were filtering and extracting version information for the different vendors. I ended up with the following code to compare BIOS versions.
 
 
-```powershell 
+```powershell
 Add-TextToCMLog $LogFile  "Filtering package results to only BIOS packages that would be an upgrade to the current BIOS." $component 1
 $ApplicableBIOSPackages = New-Object System.Collections.ArrayList
 If($Manufacturer -ne "Lenovo"){

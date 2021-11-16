@@ -17,7 +17,7 @@ As I opened an old stand-by function from my stash (originally posted here: [htt
 The first thing I needed to do was identify how to get the same information in a faster manner. Since this function is using `Get-WMIObject` to search Event Logs, we already know improvements can be made with using `Get-EventLog` or `Get-WinEvent`. And we can test each with `Measure-Object` to determine the winner:
 
 
-```powershell 
+```powershell
 'Get-WinEvent takes {0} milliseconds to find {1} events' -f (Measure-Command -Expression {
     $Params = @{ 
       FilterHashtable = @{Logname = 'System';ID = "1074","6008","6009"}
@@ -71,7 +71,7 @@ I like the information that `Get-RebootHistory` outputs, so I want to keep the s
 Identify the main, slow command:
 
 
-```powershell 
+```powershell
 Try {  
    $d = 0 
    $Events = Get-WmiObject @Params 
@@ -83,7 +83,7 @@ Try {
 And Since it's using splatting, we need to find the variable holding the values:
 
 
-```powershell 
+```powershell
 # Arguments to be passed to our WMI call.  
 $Params = @{ 
    ErrorAction  = 'Stop' 
@@ -98,7 +98,7 @@ $Params = @{
 Now we need to replace `Get-WMIObject` with `Get-WinEvent` and compare the outputs. Referencing good ol' [Dr. Scripto's blog on the FilterHashtable param](https://devblogs.microsoft.com/scripting/use-filterhashtable-to-filter-event-log-with-powershell/), we replace the WMI splat and the `$Events` line with:
 
 
-```powershell 
+```powershell
 $Params = @{ 
             ErrorAction  = 'Stop' 
             ComputerName = $Computer 
@@ -113,7 +113,7 @@ $Events = Get-WinEvent @Params
 Next we'll need to verify the integrity of this `Switch` statement
 
 
-```powershell 
+```powershell
 # Record the relevant details for the shutdown event. 
 Switch ($Event.EventCode) {
    6009 { $BootHistory += (Get-Date(([WMI]'').ConvertToDateTime($Event.TimeGenerated)) -Format g)}
@@ -130,7 +130,7 @@ For the `InsertionStrings` property, I just went exploring and tried this, which
 and led to the new Switch statement:
 
 
-```powershell 
+```powershell
 # Record the relevant details for the shutdown event. 
 Switch ($Event.Id) {  
    6009 { $BootHistory += $Event.TimeCreated | Get-Date -Format g } 
@@ -143,7 +143,7 @@ Switch ($Event.Id) {
 Finally, we validate the `$ShutdownDetail` values:
 
 
-```powershell 
+```powershell
 # Grab details about the last clean shutdown and generate our return object. 
 $ShutdownDetail | Select -First 1 | ForEach-Object {  
   New-Object -TypeName PSObject -Property @{ 
@@ -166,7 +166,7 @@ $ShutdownDetail | Select -First 1 | ForEach-Object {
 Once again, there are values to modify by comparing the output of the WMI event object to the new object, but I came across one property that didn't translate well, the `LastShutdownUser` property. With WMI, the readable User Name was placed in the `$Events[0].InsertionStrings` property, but `Get-WinEvent` provides just the SID. I put together a quick CIM function to grab the User name:
 
 
-```powershell 
+```powershell
 FUNCTION Get-UserFromRegistry{
   PARAM(
     $SID
@@ -190,7 +190,7 @@ Now I can call that function for the `LastShutdownUser` property and replicate t
 Additionally, we can once again replace the `InsertionStrings` and simplify the `LastShutdownUser`, `LastShutdownProcess`, `LastShutdown`, and `LastShutdownReason` since `Get-WinEvent` also provides more readily readable values:
 
 
-```powershell 
+```powershell
 # Grab details about the last clean shutdown and generate our return object. 
 $ShutdownDetail | Select -First 1 | ForEach-Object {  
   New-Object -TypeName PSObject -Property @{

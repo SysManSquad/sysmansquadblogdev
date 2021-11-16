@@ -119,7 +119,7 @@ categories:
                       Specifically, the issue they would have seen is a halted IPU / feature upgrade, with <code>setupact.log</code> and [SetupDiag.exe](https://docs.microsoft.com/en-us/windows/deployment/upgrade/setupdiag) complaining about:
                     </p>
                     
-                    <pre class="wp-block-code"><code>Target language en-US is not compatible with the host language</code></pre>
+                    `Target language en-US is not compatible with the host language`
                     
                     <p>
                       This new change means we don't have to do anything special or overly cumbersome in our task sequence! All we need is to specify the language we want in the <code>Apply Windows Settings</code> step. And more importantly, we can do so without worrying about it coming back to bite us later when you upgrade the system to a newer version of Windows 10.

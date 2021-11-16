@@ -21,7 +21,7 @@ This post is intended to help others who might want to better understand why the
   </div>
 </div><figure class="wp-block-pullquote">
 
-> _YES - Before you mention it - I recognize that I should be using&nbsp;[DART](https://github.com/AdamGrossTX/PowershellScripts/tree/master/ConfigMgr/BootImage)&nbsp;in my boot image so I can capture screenshots and not have to crop cell phone pictures, but I just haven't yet and I wanted to get this process documented_...  
+> _YES - Before you mention it - I recognize that I should be using[DART](https://github.com/AdamGrossTX/PowershellScripts/tree/master/ConfigMgr/BootImage)in my boot image so I can capture screenshots and not have to crop cell phone pictures, but I just haven't yet and I wanted to get this process documented_...  
 > [![](OCDame_Am-I-Crazy_002.png)](http://www.ravishly.com/you-arent-lazy-youre-just-terrified-paralysis-and-perfectionism-mental-health)
 > 
 > _[If I wait for perfectionism, then my procrastination and paralysis will kick in.](http://www.ravishly.com/you-arent-lazy-youre-just-terrified-paralysis-and-perfectionism-mental-health)_ 

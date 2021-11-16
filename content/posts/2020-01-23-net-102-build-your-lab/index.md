@@ -496,7 +496,7 @@ Install-WindowsFeature -Name 'RSAT-DHCP'</code></pre>
                     </p>
                     
                     <p>
-                      A&nbsp;DHCP&nbsp;server's&nbsp;job&nbsp;is&nbsp;to&nbsp;configure&nbsp;the&nbsp;clients&nbsp;so&nbsp;you&nbsp;don't&nbsp;have&nbsp;to&nbsp;manually&nbsp;set&nbsp;up&nbsp;each&nbsp;individual&nbsp;host.&nbsp;We&nbsp;will&nbsp;set&nbsp;several&nbsp;settings&nbsp;for&nbsp;the&nbsp;DHCP&nbsp;server&nbsp;to&nbsp;tell&nbsp;clients&nbsp;about.&nbsp;Some&nbsp;will&nbsp;be&nbsp;on&nbsp;a&nbsp;scope,&nbsp;some&nbsp;at&nbsp;a&nbsp;&nbsp;server&nbsp;level.&nbsp;
+                      ADHCPserver'sjobistoconfiguretheclientssoyoudon'thavetomanuallysetupeachindividualhost.WewillsetseveralsettingsfortheDHCPservertotellclientsabout.Somewillbeonascope,someataserverlevel.
                     </p>
                     
                     <p>

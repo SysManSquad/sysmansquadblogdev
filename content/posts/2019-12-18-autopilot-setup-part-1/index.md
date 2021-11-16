@@ -102,7 +102,7 @@ The first time you select this you will need to choose an MDM Authority. Since w
 Now that we have the above complete we can actually test Autopilot! First we need to download the profile we created. To do so we will have to do a few quick powershell commands 
 
 
-```powershell 
+```powershell
 Install-Module -name WindowsAutoPilotIntune
 Connect-MSGraph
 ```
@@ -111,7 +111,7 @@ Connect-MSGraph
 You will be prompted to specify your UPN. Supply the UPN and signin. You will be prompted with a Permissions requested screen (This ties in with the Microsoft Graph). Check the Consent on behalf of my organization box and select Accept.
 
 
-```powershell 
+```powershell
 $apppolicies = Get-AutoPilotProfile
 $apppolicies | ConvertTo-AutoPilotConfigurationJSON | Out-File "C:\AutopilotConfigurationFile.json" -Encoding ascii
 ```

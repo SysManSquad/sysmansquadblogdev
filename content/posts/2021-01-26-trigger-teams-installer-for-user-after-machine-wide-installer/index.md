@@ -90,7 +90,7 @@ You are welcome to package the script alongside the Teams MSI and run them back 
 ### Just Give Me The Script - I'll Figure Out the Rest {#The-Script}
 
 
-```powershell 
+```powershell
 #
 .SYNOPSIS
     Launch the Teams install as the logged in user via a scheduled task

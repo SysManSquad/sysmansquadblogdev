@@ -29,11 +29,11 @@ Select the new VPN option in the Type drop-down<figure class="wp-block-image siz
 
 From the [Define boundaries - Configuration Manager | Microsoft Docs](https://docs.microsoft.com/en-us/mem/configmgr/core/servers/deploy/configure/boundaries#vpn), these are the type options:
 
-  * **Auto detect VPN**: Configuration Manager detects any VPN solution that uses the point-to-point tunneling protocol (PPTP). If it doesn't detect your VPN, use one of the other options. The boundary value in the console list will be&nbsp;Auto:On.
-  * **Connection name**: Specify the name of the VPN connection on the device. It's the name of the network adapter in Windows for the VPN connection. Configuration Manager matches the first 250 characters of the string, but doesn't support wildcard characters or partial strings. The boundary value in the console list will be&nbsp;Name:<name>, where&nbsp;<name>&nbsp;is the connection name that you specify.  
-    For example, you run the&nbsp;ipconfig&nbsp;command on the device, and one of the sections starts with:&nbsp;PPP adapter ContosoVPN:. Use the string&nbsp;ContosoVPN&nbsp;as the&nbsp;**Connection name**. It displays in the list as&nbsp;Name:CONTOSOVPN.
-  * **Connection description**: Specify the description of the VPN connection. Configuration Manager matches the first 243 characters of the string, <span class="has-inline-color has-vivid-red-color"><strong>but doesn't support wildcard characters or partial strings</strong></span>. The boundary value in the console list will be&nbsp;Description:<description>, where&nbsp;<description>&nbsp;is the connection description that you specify.  
-    For example, you run the&nbsp;ipconfig /all&nbsp;command on the device, and one of the connections includes the following line:&nbsp;Description . . . . . . . . . . . : ContosoMainVPN. Use the string&nbsp;ContosoMainVPN&nbsp;as the&nbsp;**Connection description**. It displays in the list as&nbsp;Description:CONTOSOMAINVPN.
+  * **Auto detect VPN**: Configuration Manager detects any VPN solution that uses the point-to-point tunneling protocol (PPTP). If it doesn't detect your VPN, use one of the other options. The boundary value in the console list will beAuto:On.
+  * **Connection name**: Specify the name of the VPN connection on the device. It's the name of the network adapter in Windows for the VPN connection. Configuration Manager matches the first 250 characters of the string, but doesn't support wildcard characters or partial strings. The boundary value in the console list will beName:<name>, where<name>is the connection name that you specify.  
+    For example, you run theipconfigcommand on the device, and one of the sections starts with:PPP adapter ContosoVPN:. Use the stringContosoVPNas the**Connection name**. It displays in the list asName:CONTOSOVPN.
+  * **Connection description**: Specify the description of the VPN connection. Configuration Manager matches the first 243 characters of the string, <span class="has-inline-color has-vivid-red-color"><strong>but doesn't support wildcard characters or partial strings</strong></span>. The boundary value in the console list will beDescription:<description>, where<description>is the connection description that you specify.  
+    For example, you run theipconfig /allcommand on the device, and one of the connections includes the following line:Description . . . . . . . . . . . : ContosoMainVPN. Use the stringContosoMainVPNas the**Connection description**. It displays in the list asDescription:CONTOSOMAINVPN.
 
 #### Finding the Best Fit<figure class="wp-block-table">
 
@@ -114,7 +114,9 @@ Then I added the new Boundary to my VPN Boundary Group.
 What happened next confused me. After forcing a few clients to update their Machine Policy, I saw VPN-connected devices drop _out_ of the VPN Boundary Group that I added my newly-created Boundary to. I double-checked my own machine:
 
 
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"tomorrow-night-bright","lineNumbers":false,"styleActiveLine":false,"lineWrapping":true,"readOnly":false,"languageLabel":"language","language":"PowerShell","modeName":"powershell"}">Get-CimInstance -Namespace "rootccmLocationServices" -ClassName "BoundaryGroupCache"```
+  ```powershell 
+Get-CimInstance -Namespace "rootccmLocationServices" -ClassName "BoundaryGroupCache"
+```
 
 The output revealed that my machine was no longer in my VPN Boundary Group, and instead was merely in the fallback Default Boundary Group.  
 But WHY?

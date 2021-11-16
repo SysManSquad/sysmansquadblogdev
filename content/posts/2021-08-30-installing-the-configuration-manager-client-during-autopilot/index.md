@@ -43,7 +43,7 @@ Step 3: open Deploy-Application.ps1 in your favorite powershell editor.
 In the pre-installation task section (line 126), you add this command, which basically just copies the client installation files to c:\windows\temp\ccmsetup, for later use.
 
 
-```powershell 
+```powershell
 # copy installation media to temp directory, for later use
 Copy-File -Path $dirfiles\* -Destination C:\Windows\Temp\ccmsetup -Recurse
 ```
@@ -53,7 +53,7 @@ Next up, add this to the installation task section (line 140).
 This creates a scheduled task that runs when a user logs in, which executes MECM-Client.ps1, more on that script later.
 
 
-```powershell 
+```powershell
 # Create the Scheduled Task installer
 $A = New-ScheduledTaskAction -Execute "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -Argument '-ExecutionPolicy Bypass -File "C:\Windows\Temp\ccmsetup\MECM-client.ps1"'
 $T = New-ScheduledTaskTrigger -Once -At (Get-Date) # thanks @alpharius
@@ -80,7 +80,7 @@ go to the properties of your co-management settings.<figure class="wp-block-imag
 ![](vmconnect_repLU2tUGj-1024x940.png) </figure> 
 
 
-```powershell 
+```powershell
 # waits for the wwahost process to terminate, which is a good indication that autopilot/ESP is over
 Wait-Process wwahost
 
@@ -100,7 +100,7 @@ Of course you will need a detection method for your win32 app in intune, thankfu
 Don't forget to change the sitecode on line 4.
 
 
-```powershell 
+```powershell
 # ConfigMgr Client detection for the Autopilot Scheduled Task installer
 
 #Set your expected Site Code

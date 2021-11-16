@@ -40,7 +40,7 @@ Here is the short version of how this works:
 ## Example cloud-init configs:
 
 
-```powershell 
+```powershell
 #cloud-config
 hostname: {name}
 users:
@@ -80,7 +80,7 @@ ca-certs:
 </div>
 
 
-```powershell 
+```powershell
 #network:
     version: 2
     renderer: networkd

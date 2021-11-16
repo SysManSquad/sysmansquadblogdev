@@ -79,7 +79,7 @@ Since for most people, downloading the root certificate is a one time operation,
 Paste the application GUID into the $AppID variable and you should be ready to go.
 
 
-```powershell 
+```powershell
 # This simple script is used to download the Device Guard Signing Service v2 Root Certificate
 
 

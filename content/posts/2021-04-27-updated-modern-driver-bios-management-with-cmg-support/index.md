@@ -201,7 +201,7 @@ Now that I knew what information I needed to use to query the AdminService over 
 Depending on if the client is on the internet or not, my script would require a different set of parameters. This was the perfect opportunity to use [parameter sets](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_parameter_sets?view=powershell-7.1).
 
 
-```powershell 
+```powershell
 [parameter(Mandatory = $true, ParameterSetName = "Intranet")]
 [ValidateNotNullOrEmpty()]
 [string]$ServerFQDN,
@@ -248,7 +248,7 @@ The tricky part here is that the MSAL.PS module requires us to accept the licens
 This function checks for the availability of the MSAL.PS module and if it’s not there it will check for the prerequisites to install before it can import the module.
 
 
-```powershell 
+```powershell
 Function Import-MSALPSModule{
     Add-TextToCMLog $LogFile "Checking if MSAL.PS module is available on the device." $component 1
     $MSALModule = Get-Module -ListAvailable MSAL.PS
@@ -363,7 +363,7 @@ If you decide to go with enabling support for PowerShell Gallery in WinPE, you c
 Now, depending on what parameters were used, we will query the AdminService locally or via the CMG:
 
 
-```powershell 
+```powershell
 switch($PSCmdlet.ParameterSetName){
     'Intranet'{
         $Packages = Invoke-RestMethod -Method Get -Uri $WMIPackageURL -Body $Body @InvokeRestMethodCredential | Select-Object -ExpandProperty value
@@ -399,7 +399,7 @@ Note: In my limited testing, I found that if a task sequence does not reference 
 If the “ClientIsOnInternet” is still not set after this step and device is not in WinPE, we use the following PowerShell command to determine if the device is on Internet:
 
 
-```powershell 
+```powershell
 
 <figure class="wp-block-image size-large">
 
