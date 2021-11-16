@@ -70,7 +70,7 @@ I have modified the PowerShell script created by Terence Beggs from <https://www
     ==================================================================
     .TODO
     - Add Error codes to MessageCard
-#&gt;
+#>
 $uri = 'INSERT URI HERE'
 
 # Open TSEnv for use.

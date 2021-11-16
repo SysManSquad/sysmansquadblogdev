@@ -66,7 +66,9 @@ A request came in from my System Admin group to push certain policies only to VM
                     </p>
                     
                     
-                      <pre class="CodeMirror" data-setting="{"mode":"shell","mime":"text/x-sh","theme":"xq-light","lineNumbers":true,"styleActiveLine":true,"lineWrapping":false,"readOnly":false,"languageLabel":"language","language":"Shell","modeName":"shell"}">curl -H Metadata:true --noproxy "*" "http://169.254.169.254/metadata/instance?api-version=2020-09-01"</pre>
+```shell
+curl -H Metadata:true --noproxy "*" "http://169.254.169.254/metadata/instance?api-version=2020-09-01"
+```
                     
                     
                     <p>
@@ -74,7 +76,9 @@ A request came in from my System Admin group to push certain policies only to VM
                     </p>
                     
                     
-                      <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"pastel-on-dark","lineNumbers":true,"styleActiveLine":true,"lineWrapping":false,"readOnly":false,"languageLabel":"language","language":"PowerShell","modeName":"powershell"}">Invoke-RestMethod -Headers @{"Metadata"="true"} -Uri "http://169.254.169.254/metadata/instance/compute?api-version=2018-10-01"</pre>
+```powershell
+Invoke-RestMethod -Headers @{"Metadata"="true"} -Uri "http://169.254.169.254/metadata/instance/compute?api-version=2018-10-01"
+```
                     
                     
                     <p>
@@ -82,13 +86,15 @@ A request came in from my System Admin group to push certain policies only to VM
                     </p>
                     
                     
-                      <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"pastel-on-dark","lineNumbers":true,"styleActiveLine":true,"lineWrapping":false,"readOnly":false,"languageLabel":"language","language":"PowerShell","modeName":"powershell"}">FUNCTION Test-IsAzureVM {
+```powershell
+FUNCTION Test-IsAzureVM {
     IF(Invoke-RestMethod -Headers @{"Metadata"="true"} -URI "http://169.254.169.254/metadata/instance/compute?api-version=2017-08-01"){
       $true
     }ELSE{
       $false
     }
-}</pre>
+}
+```
                     
                     
                     <p>
@@ -130,7 +136,8 @@ A request came in from my System Admin group to push certain policies only to VM
                     </p>
                     
                     
-                      <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"pastel-on-dark","lineNumbers":true,"styleActiveLine":true,"lineWrapping":false,"readOnly":false,"fileName":"Test-IsAzureVM","language":"PowerShell","modeName":"powershell"}">FUNCTION Test-IsAzureVM {
+```powershell
+FUNCTION Test-IsAzureVM {
   TRY{
     $Output = [bool](Invoke-RestMethod -Headers @{"Metadata"="true"} -URI "http://169.254.169.254/metadata/instance/compute?api-version=2017-08-01")
   }
@@ -138,7 +145,8 @@ A request came in from my System Admin group to push certain policies only to VM
     $Output = $false
   }
   $Output
-}</pre>
+}
+```
                     
                     
                     <h1>

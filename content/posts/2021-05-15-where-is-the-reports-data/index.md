@@ -167,7 +167,9 @@ Well you can - and finding the information can be so easy. Read on below to see 
                               </p>
                               
                               <div class="wp-block-codemirror-blocks-code-block alignwide code-block">
-                                <pre class="CodeMirror" data-setting="{"mode":"webidl","mime":"text/x-webidl","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"QueryURL","align":"wide","language":"Web IDL","modeName":"webidl"}">https://graph.microsoft.com/beta/deviceManagement/deviceHealthScripts/02a4e7e8-195a-4824-8044-08b3a7f2d555/runSummary</pre>
+```web
+https://graph.microsoft.com/beta/deviceManagement/deviceHealthScripts/02a4e7e8-195a-4824-8044-08b3a7f2d555/runSummary
+```
                               </div>
                             </div>
                           </div>
@@ -188,7 +190,9 @@ Well you can - and finding the information can be so easy. Read on below to see 
                               </p>
                               
                               <div class="wp-block-codemirror-blocks-code-block alignwide code-block">
-                                <pre class="CodeMirror" data-setting="{"mode":"webidl","mime":"text/x-webidl","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"align":"wide","language":"Web IDL","modeName":"webidl"}">https://graph.microsoft.com/beta/deviceManagement/deviceHealthScripts/02a4e7e8-195a-4824-8044-08b3a7f2d555/runSummary</pre>
+```web
+https://graph.microsoft.com/beta/deviceManagement/deviceHealthScripts/02a4e7e8-195a-4824-8044-08b3a7f2d555/runSummary
+```
                               </div>
                               
                               <ul>
@@ -238,7 +242,8 @@ Well you can - and finding the information can be so easy. Read on below to see 
                               </p>
                               
                               <div class="wp-block-codemirror-blocks-code-block alignwide code-block">
-                                <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"QueryUserAuthenticationMethods.ps1","align":"wide","language":"PowerShell","modeName":"powershell"}">Install-Module MSAL.PS
+```powershell
+Install-Module MSAL.PS
 $AuthParams =  @{
 	ClientID  = $YourAppID
     TenantID  = 'contoso.one' #Also could use the GUID form from decoding your JWT token, like '492d0e46-26b0-475c-82d0-102c962ea477' 
@@ -252,7 +257,8 @@ $QueryParams =  @{
     queryURL = 'https://graph.microsoft.com/beta/deviceManagement/deviceHealthScripts/02a4e7e8-195a-4824-8044-08b3a7f2d555/runSummary'
     Method   = 'GET'
     }
-Invoke-RestMethod -Headers @{Authorization = "Bearer $($Token.AccessToken)"} @QueryParams</pre>
+Invoke-RestMethod -Headers @{Authorization = "Bearer $($Token.AccessToken)"} @QueryParams
+```
                               </div>
                               
                               <p>
@@ -283,7 +289,9 @@ Invoke-RestMethod -Headers @{Authorization = "Bearer $($Token.AccessToken)"} @Qu
                               </p>
                               
                               <div class="wp-block-codemirror-blocks-code-block alignwide code-block">
-                                <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"QueryURL","align":"wide","language":"PowerShell","modeName":"powershell"}">https://graph.windows.net/myorganization/activities/authenticationMethodUserDetails?$orderby=userPrincipalName%20asc&api-version=beta</pre>
+```powershell
+https://graph.windows.net/myorganization/activities/authenticationMethodUserDetails?$orderby=userPrincipalName%20asc&api-version=beta
+```
                               </div>
                               
                               <p>

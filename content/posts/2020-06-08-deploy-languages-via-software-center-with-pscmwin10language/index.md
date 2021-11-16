@@ -53,7 +53,9 @@ tags:
               </p>
               
               
-                <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":true,"languageLabel":"language","language":"PowerShell","modeName":"powershell"}">Install-Module "PSCMWin10Language" -Scope CurrentUser</pre>
+```powershell
+Install-Module "PSCMWin10Language" -Scope CurrentUser
+```
               
               
               <p>
@@ -61,8 +63,10 @@ tags:
               </p>
               
               
-                <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":true,"languageLabel":"language","language":"PowerShell","modeName":"powershell"}">Import-Module "PSCMWin10Language"
-Get-Command -Module "PSCMWin10Language"</pre>
+```powershell
+Import-Module "PSCMWin10Language"
+Get-Command -Module "PSCMWin10Language"
+```
               
               
               <h2>
@@ -102,7 +106,8 @@ Get-Command -Module "PSCMWin10Language"</pre>
               </p>
               
               
-                <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":false,"styleActiveLine":false,"lineWrapping":true,"readOnly":true,"languageLabel":"language","language":"PowerShell","modeName":"powershell"}">PS C:\&gt; tree "\\sccm.acc.local\OSD\Source\1909-Languages" | Select-Object -Skip 2
+```powershell
+PS C:\> tree "\\sccm.acc.local\OSD\Source\1909-Languages" | Select-Object -Skip 2
 \\SCCM.ACC.LOCAL\OSD\SOURCE\1909-LANGUAGES
 +---de-de
 ¦   +---FoD
@@ -111,7 +116,8 @@ Get-Command -Module "PSCMWin10Language"</pre>
 +---fr-fr
     +---FoD
     +---LP
-    +---LXP</pre>
+    +---LXP
+```
               
               
               <p>
@@ -132,9 +138,11 @@ Get-Command -Module "PSCMWin10Language"</pre>
               </p>
               
               
-                <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":true,"languageLabel":"language","language":"PowerShell","modeName":"powershell"}">New-LPRepository -Language "fr-FR", "de-DE" -SourcePath "I:\x64\langpacks" -TargetPath "\\sccm.acc.local\OSD\Source\1909-Languages"
+```powershell
+New-LPRepository -Language "fr-FR", "de-DE" -SourcePath "I:\x64\langpacks" -TargetPath "\\sccm.acc.local\OSD\Source\1909-Languages"
 New-LXPRepository -Language "fr-FR", "de-DE" -SourcePath "I:\LocalExperiencePack\" -TargetPath "\\sccm.acc.local\OSD\Source\1909-Languages"
-New-FoDLanguageFeaturesRepository -Language "fr-FR", "de-DE" -SourcePath "J:\" -TargetPath "\\sccm.acc.local\OSD\Source\1909-Languages"</pre>
+New-FoDLanguageFeaturesRepository -Language "fr-FR", "de-DE" -SourcePath "J:\" -TargetPath "\\sccm.acc.local\OSD\Source\1909-Languages"
+```
               
               
               <h2>
@@ -146,7 +154,9 @@ New-FoDLanguageFeaturesRepository -Language "fr-FR", "de-DE" -SourcePath "J:\" -
               </p>
               
               
-                <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":true,"languageLabel":"language","language":"PowerShell","modeName":"powershell"}">New-CMLanguagePackApplication -SiteServer "cm.contoso.com" -SiteCode "P01" -SourcePath "\\sccm.acc.local\OSD\Source\1909-Languages" -Languages "fr-fr", "de-de" -WindowsVersion @{ "Version" = "1909"; "Build" = "18363" } -GlobalConditionName "Operating System build" -CreateAppIfMissing -CreateGlobalConditionIfMissing</pre>
+```powershell
+New-CMLanguagePackApplication -SiteServer "cm.contoso.com" -SiteCode "P01" -SourcePath "\\sccm.acc.local\OSD\Source\1909-Languages" -Languages "fr-fr", "de-de" -WindowsVersion @{ "Version" = "1909"; "Build" = "18363" } -GlobalConditionName "Operating System build" -CreateAppIfMissing -CreateGlobalConditionIfMissing
+```
               
               
               <p>
@@ -203,10 +213,12 @@ New-FoDLanguageFeaturesRepository -Language "fr-FR", "de-DE" -SourcePath "J:\" -
               </p>
               
               
-                <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":true,"languageLabel":"language","language":"PowerShell","modeName":"powershell"}">New-LXPRepository -Language "fr-fr", "de-de" -SourcePath "I:\LocalExperiencePack\" -TargetPath "\\sccm.acc.local\OSD\Source\2004-Languages"
+```powershell
+New-LXPRepository -Language "fr-fr", "de-de" -SourcePath "I:\LocalExperiencePack\" -TargetPath "\\sccm.acc.local\OSD\Source\2004-Languages"
 New-LPRepository -Language "fr-fr", "de-de" -SourcePath "I:\x64\langpacks\" -TargetPath "\\sccm.acc.local\OSD\Source\2004-Languages"
 New-FoDLanguageFeaturesRepository -Language "fr-fr", "de-de" -SourcePath "I:\" -TargetPath "\\sccm.acc.local\OSD\Source\2004-Languages"
-New-CMLanguagePackApplication -SiteServer "cm.contoso.com" -SiteCode "P01" -SourcePath "\\sccm.acc.local\OSD\Source\2004-Languages" -Languages "fr-fr", "de-de" -WindowsVersion @{ "Version" = "2004"; "Build" = "19041" } -GlobalConditionName "Operating System build" -CreateAppIfMissing -CreateGlobalConditionIfMissing</pre>
+New-CMLanguagePackApplication -SiteServer "cm.contoso.com" -SiteCode "P01" -SourcePath "\\sccm.acc.local\OSD\Source\2004-Languages" -Languages "fr-fr", "de-de" -WindowsVersion @{ "Version" = "2004"; "Build" = "19041" } -GlobalConditionName "Operating System build" -CreateAppIfMissing -CreateGlobalConditionIfMissing
+```
               <figure class="wp-block-image size-large">
               
               [![](LPSoftwareCenter-EndResult-3-new-1024x658.jpg)](LPSoftwareCenter-EndResult-3-new.jpg)</figure> <h2>

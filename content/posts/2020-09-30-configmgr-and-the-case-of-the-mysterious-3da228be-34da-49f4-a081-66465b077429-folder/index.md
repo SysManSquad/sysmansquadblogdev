@@ -28,7 +28,8 @@ This morning, I reached out the the ConfigMgr team to file a bug and already hea
 Even though this will likely be fixed in a future release, I was curious about the source still. After searching all through the registry, started checking the client install logs the log I was looking for. It confirmed that the root folder `C:\Windows\System32\{3DA228BE-34DA-49f4-A081-66465B077429}` is created as a backup folder by the ConfigMgr installer `client.msi` where it's backing up old settings/inventory data to a new `{GUID}` folder before upgrading the client, then it restores the data back, but seems to be leaving the backup folders behind. Check out this excerpt from `C:\Windows\ccmsetup\Logs`\`client.msi.log` file from one of my production workstations.
 
 
-  <pre class="CodeMirror" data-setting="{"mode":"null","mime":"text/plain","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"client.msi.log","language":"Plain Text","modeName":"text"}">MSI (s) (CC:3C) [11:03:21:957]: Executing op: ActionStart(Name=SmsDeinstallDesktopClient,Description=This custom action uninstalls the desktop client with following steps-
+```text
+MSI (s) (CC:3C) [11:03:21:957]: Executing op: ActionStart(Name=SmsDeinstallDesktopClient,Description=This custom action uninstalls the desktop client with following steps-
 1. Makes sure there are no desktop client installations in progress and prevents any new instance of intallation.
 2. Checks the desktop client version and gets the installation directory.
 3. Stops remote control and other desktop components.
@@ -66,7 +67,8 @@ MSI (s) (CC!24) [11:03:55:712]: Creating MSIHANDLE (20848) of type 790531 for th
 MSI (s) (CC!24) [11:03:55:712]: Closing MSIHANDLE (20848) of type 790531 for thread 52772
 MSI (s) (CC!24) [11:03:55:712]: Creating MSIHANDLE (20849) of type 790531 for thread 52772
 [11:03:55] Backed up directory {3DA228BE-34DA-49f4-A081-66465B077429}\{38F7D84E-8A58-480E-9B90-3A3CAA761D3D} to C:\Windows\CCM\Inventory\noidmifs
-MSI (s) (CC!24) [11:03:55:713]: Closing MSIHANDLE (20849) of type 790531 for thread 52772</pre>
+MSI (s) (CC!24) [11:03:55:713]: Closing MSIHANDLE (20849) of type 790531 for thread 52772
+```
 
 
 In my client's environment, the number of folders seemed to be quite excessive so I checked my production environment to compare by using Run Scripts to run a small PowerShell script to output the count of folders found (see below for code). I found that on average, my machines have about empty 24 folders in this location with the largest number hitting ~600 folders. When I checked the workstation with ~600 folders, I found that a majority of them were created on the same day and had the same timestamp which feels like it could be caused by a client install that is failing in some catastrophic way - just a guess though. I also did the same check in my client's environment and found that there may have been a client health service that was attempting a repair every 5 hours, ever day, FOREVER!

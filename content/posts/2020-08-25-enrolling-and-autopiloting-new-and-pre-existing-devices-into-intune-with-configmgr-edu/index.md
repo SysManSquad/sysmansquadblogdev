@@ -57,7 +57,8 @@ The step we added "Autopilot for existing devices config file" is a "Run Command
 ![](image-9.png) </figure> 
 
 
-  <pre class="CodeMirror" data-setting="{"mode":"null","mime":"text/plain","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Command Line","language":"Plain Text","modeName":"text"}">cmd.exe /c xcopy AutopilotConfigurationFile.json %OSDTargetSystemDrive%\windows\provisioning\Autopilot\ /c
+```text
+cmd.exe /c xcopy AutopilotConfigurationFile.json %OSDTargetSystemDrive%\windows\provisioning\Autopilot\ /c
 ```
 
 
@@ -66,7 +67,8 @@ Distribute this content to your DP.
 At this point lets head back to MEMAC and create our dynamic device security group that we will be targeting with our AP profile. The dynamic membership rules will be as follows (This is based on my computer naming convention that is in the Autopilot Profile)
 
 
-  <pre class="CodeMirror" data-setting="{"mode":"null","mime":"text/plain","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Dynamic Membership Rule","language":"Plain Text","modeName":"text"}">(device.displayName -startsWith "LLP")</pre>
+  <pre class="CodeMirror" data-setting="{"mode":"null","mime":"text/plain","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Dynamic Membership Rule","language":"Plain Text","modeName":"text"}">(device.displayName -startsWith "LLP")
+```
 
 
 Once this group is created, navigate to the Deployment Profiles blade that we linked at the beginning of the blog, select your AP profile and under properties, edit the assignments and assign the profile to the newly created dynamic group.

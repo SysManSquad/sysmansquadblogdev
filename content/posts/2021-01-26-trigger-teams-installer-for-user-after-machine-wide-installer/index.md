@@ -102,7 +102,7 @@ You are welcome to package the script alongside the Teams MSI and run them back 
     log off and back on.
 .NOTES
     Generally used as a script that runs after a Teams Machine Wide Installer completes
-#&gt;
+#>
 if (!(Get-ScheduledTask -TaskName 'Teams User Install - Post Machine Wide Install' -ErrorAction SilentlyContinue)) {
     switch ([System.Environment]::Is64BitOperatingSystem) {
         $true {

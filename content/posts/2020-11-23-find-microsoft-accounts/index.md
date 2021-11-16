@@ -266,7 +266,8 @@ The other day I was helping someone over in the [WinAdmins Discord](https://aka.
                             </p>
                             
                             
-                              <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"FindMicrosoftAccounts.ps1","language":"PowerShell","modeName":"powershell"}">#$emailAddresses = 'tinafey@contoso.one','username@domain.com','ronswanson@contoso.one'
+```powershell
+#$emailAddresses = 'tinafey@contoso.one','username@domain.com','ronswanson@contoso.one'
 $emailAddresses = Get-EXORecipient -RecipientTypeDetails UserMailbox -PropertySets Minimum | select -ExpandProperty Emailaddresses | where {$_ -match "SMTP:"} | foreach {$_ -replace '^smtp:'} 
 
 $ApplicationID  = 'bd53bb89-0cc1-4eb3-90b7-ba008b1f2a2c'
@@ -288,7 +289,8 @@ $emailAddresses | foreach -Begin { $i = 1} -Process {
     $i++
 } 
 $results
-</pre>
+
+```
                             <figure class="wp-block-image size-large">
                             
                             ![](image-10.png)</figure>

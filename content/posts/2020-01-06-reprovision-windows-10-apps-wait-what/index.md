@@ -59,12 +59,12 @@ function Get-DeprovisionedAppX {
         Option filter that will be ran through as a '-match' so that regex can be used
         Accepts an array of strings, which can be a regex string if you wish
     .EXAMPLE
-        PS C:\&gt; Get-DeprovisionedAppX
+        PS C:\> Get-DeprovisionedAppX
         Return all deprovisioned apps on the local computers
     .EXAMPLE
-        PS C:\&gt; Get-DeprovisionedAppX -Filter Store
+        PS C:\> Get-DeprovisionedAppX -Filter Store
         Return all deprovisioned apps on the local computers that match the filter 'Store'
-    #&gt;
+    #>
     param (
         [parameter(Mandatory = $false)]
         [string[]]$Filter
@@ -129,7 +129,7 @@ function Reprovision-AppX {
         The full name of the app to reprovision, as it appears in the registry. You can easily get this name using
         the Get-DeprovisionedApp function. 
     .EXAMPLE
-        PS C:\&gt; Reprovision-AppX -DeprovisionedApp 'Microsoft.WindowsAlarms_8wekyb3d8bbwe'
+        PS C:\> Reprovision-AppX -DeprovisionedApp 'Microsoft.WindowsAlarms_8wekyb3d8bbwe'
         Removes the registry key for the deprovisioned WindowsAlarms app. The app will return after the next
         feature update.
     .INPUTS
@@ -137,7 +137,7 @@ function Reprovision-AppX {
     .NOTES
         You must provide the exact name of the app as it appears in the registry. This is the full app 'name' - It is 
         recommended to first use the Get-DeprovisionApp function to find apps that can be reprovisioned.
-    #&gt;
+    #>
     [CmdletBinding(SupportsShouldProcess)]
     param(
         [parameter(Mandatory = $true, ValueFromPipelineByPropertyName = $true)]

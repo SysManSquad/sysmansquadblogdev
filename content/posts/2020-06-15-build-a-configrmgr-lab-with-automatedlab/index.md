@@ -82,7 +82,7 @@ If you were to use PowerShell, the command would look like this:
 
 
 ```powershell 
-PS C:\&gt; Copy-Item -Path "C:\path\to\where\you\downloaded\PoSH\AutomatedLab\CustomRoles\CM-2002" -Destination "C:\LabSources\CustomRoles" -Recurse -Force
+PS C:\> Copy-Item -Path "C:\path\to\where\you\downloaded\PoSH\AutomatedLab\CustomRoles\CM-2002" -Destination "C:\LabSources\CustomRoles" -Recurse -Force
 ```
 
 

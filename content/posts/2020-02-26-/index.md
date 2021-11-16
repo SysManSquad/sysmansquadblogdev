@@ -53,7 +53,8 @@ Jason's code (link to his blog post above) is much simpler than Ioan's, so I wil
 For each certificate you want included in the Compliance Setting, edit the below code, save the script, and finally sign the script with your code signing certificate. The examples and screenshots below are for our code signing certificate which we want in the Trusted Publishers certificate store.
 
 
-  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"language":"PowerShell","modeName":"powershell"}">$sn = '21001424eb63195fabb987e9fd0003001424eb'
+```powershell 
+$sn = '21001424eb63195fabb987e9fd0003001424eb'
 $storeName = "TrustedPublisher"
  
 $store = New-Object System.Security.Cryptography.X509Certificates.X509Store $storeName, LocalMachine
@@ -91,7 +92,8 @@ Disallowed, LocalMachine
 My, LocalMachine
 Root, LocalMachine
 TrustedPeople, LocalMachine
-TrustedPublisher, LocalMachine</code></pre>
+TrustedPublisher, LocalMachine</code>
+```
 
 **3.3 Save and sign the script**
 

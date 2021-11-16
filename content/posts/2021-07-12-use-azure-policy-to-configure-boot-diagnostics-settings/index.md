@@ -111,7 +111,8 @@ With this Azure Policy you can automatically enable Boot Diagnostics and apply a
               </p>
               
               <div class="wp-block-codemirror-blocks-code-block alignwide code-block">
-                <pre class="CodeMirror" data-setting="{"mode":"javascript","mime":"application/json","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"u003ca href=u0022http://Enable_Boot_Diagnostics.jsonu0022 target=u0022_blanku0022 rel=u0022noreferrer noopeneru0022u003eEnable_Boot_Diagnostics.jsonu003c/au003e","align":"wide","language":"JSON","modeName":"json"}">{
+```json
+{
   "mode": "All",
   "policyRule": {
     "if": {
@@ -168,7 +169,8 @@ With this Azure Policy you can automatically enable Boot Diagnostics and apply a
       "defaultValue": "https://YourBlobStorage.blob.core.windows.net"
     }
   }
-}</pre>
+}
+```
               </div>
               
               <h2 class="has-large-font-size">

@@ -51,12 +51,14 @@ venv/
 Having activated my virtual environment, I followed the instructions to use `pip` to add the required modules for Discord.py, and added a few of my own. I wanted to avoid storing credentials in a git repository, and the best way to do that is to hand them off to a vault of some kind. A quick google search found me a module called `keyring`. I also wanted to make sure that as I typed the token to save it, it wouldn't echo to the screen, so that led me to another module called `getpass`. Seems simple enough so far - they all seem to do what they say they will. The bot's name is MR_FLOOFY. 
 
 
-  <pre class="CodeMirror" data-setting="{"mode":"python","mime":"text/x-python","theme":"monokai","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"save_key.py","language":"Python","modeName":"python"}">import keyring
+```python
+import keyring
 import getpass
 
 service_id='MR_FLOOFY'
 token=getpass.getpass(prompt='Token: ', stream=None)
-keyring.set_password(service_id, service_id, token)</pre>
+keyring.set_password(service_id, service_id, token)
+```
 
 
 Having a few extra python `pip` modules in place, I followed the instructions to use `pip` to freeze the list of installed modules in my environment to `requirements.txt`. This will allow me to quickly re-create this virtual environment if it is destroyed, or I need to change where it's hosted.
@@ -70,10 +72,12 @@ I'm not going to describe the entire, frustrating process of learning just enoug
 The first thing one typically does in a python file is import the modules you'll need in the script. 
 
 
-  <pre class="CodeMirror" data-setting="{"mode":"python","mime":"text/x-python","theme":"monokai","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"init.py","language":"Python","modeName":"python"}">import sys
+```python
+import sys
 import discord
 import keyring
-import logging</pre>
+import logging
+```
 
 
 Next, we set some discord-specific options, retrieve our token and build objects to use later. The `intents` object is used to tell Discord what things the bot will need access to, so we create the object with the defaults, then also ask for the member list. 
@@ -83,12 +87,14 @@ The `client` object is what we'll use later to make things go. The `logging` obj
 The logging settings are also very important - if you screw up and do too many things to some API endpoints, you'll get locked out of it for a period of time. Some of the endpoint limits are ridiculously low and the logging will print to the screen to let you know when you've hit one of those limits so you don't enrage yourself wondering why code that worked a few minutes ago doesn't work now.
 
 
-  <pre class="CodeMirror" data-setting="{"mode":"python","mime":"text/x-python","theme":"monokai","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"init.py","firstLineNumber":"5","language":"Python","modeName":"python"}">intents = discord.Intents.default()
+```python
+intents = discord.Intents.default()
 intents.members = True
 client = discord.Client(intents=intents)
 logging.basicConfig(level=logging.INFO)
 service_id ='MR_FLOOFY'
-TOKEN=keyring.get_password(service_id, service_id)</pre>
+TOKEN=keyring.get_password(service_id, service_id)
+```
 
 
 This bot is meant to listen for messages that meet criteria, so we use this code to define what the bot will look for. I mostly looked through the Discord.py examples linked earlier to figure out how to get started.
@@ -98,7 +104,8 @@ We define the event we care about, then say what should happen when that event f
 If the message meets some criteria, we do some stuff, then `return` to end processing. In this case the only one that needs to issue commands is me, so our first two conditions just check to see if the bot is talking to itself, or whether the caller is not me. Obviously the second condition would make the first condition completely irrelevant - but I'm leaving it in for this example.
 
 
-  <pre class="CodeMirror" data-setting="{"mode":"python","mime":"text/x-python","theme":"monokai","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"init.py","firstLineNumber":"11","language":"Python","modeName":"python"}">@client.event
+```python
+@client.event
 async def on_message(message):
     # we do not want the bot to reply to itself
     if message.author == client.user:
@@ -110,7 +117,8 @@ async def on_message(message):
 
     if message.content.startswith('!exit'):
         print('Exit command received')
-        await client.close()</pre>
+        await client.close()
+```
 
 
 CCDC games are run by [several teams](https://www.nationalccdc.org/index.php/competition/competitors/rules). Given the audience of this Discord server and it's purpose, I have to code for 5 separate roles.
@@ -126,13 +134,15 @@ I originally had all of this bundled up in one command. It was _really_ fun to i
 This next stanza sets up the non-competition roles, along with what color they should appear as, whether the role members should be listed apart from all other server members ('_hoisted_') , server-wide [permissions](https://discordapi.com/permissions.html), etc. 
 
 
-  <pre class="CodeMirror" data-setting="{"mode":"python","mime":"text/x-python","theme":"monokai","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"init.py","firstLineNumber":"24","language":"Python","modeName":"python"}">    if message.content.startswith('!staffroles'):
+```python
+    if message.content.startswith('!staffroles'):
         guild = message.guild
         await guild.create_role(name="Gold Team", color=discord.Color(0xe6bc00), hoist=1, permissions=discord.Permissions(permissions=1341648705))
         await guild.create_role(name="Black Team", color=discord.Color(0x004d27), hoist=1, permissions=discord.Permissions(permissions=1341648705))
         await guild.create_role(name="White Team", color=discord.Color(0xffffff), hoist=1, permissions=discord.Permissions(permissions=1341648705))
         await guild.create_role(name="Coach", color=discord.Color(0xff3333), hoist=1, permissions=discord.Permissions(permissions=68224000))
-</pre>
+
+```
 
 
 Now, we need to create a category of channels for staff using these roles, along with customized permissions for channels inside that category. 
@@ -140,7 +150,8 @@ Now, we need to create a category of channels for staff using these roles, along
 We begin by getting the role objects we created earlier. We then create permission override objects we'll use when we create the channels. Following that, we create the category, get an object representing it, and create channels using the category object and the permission overrides.
 
 
-  <pre class="CodeMirror" data-setting="{"mode":"python","mime":"text/x-python","theme":"monokai","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"init.py","firstLineNumber":"31","language":"Python","modeName":"python"}">    if message.content.startswith('!staffchannels'):
+```python
+    if message.content.startswith('!staffchannels'):
         guild = message.guild
 
         role_black=discord.utils.get(guild.roles, name="Black Team")
@@ -189,7 +200,8 @@ We begin by getting the role objects we created earlier. We then create permissi
         await guild.create_text_channel(name="Black Team", category=staff_category, overwrites=black_team_overwrites)
         await guild.create_text_channel(name="Gold x Black Team", category=staff_category, overwrites=gold_x_black_team_overwrites)
         await guild.create_text_channel(name="coaches", category=staff_category, overwrites=coach_overwrites)
-        await guild.create_text_channel(name="White Team", category=staff_category)</pre>
+        await guild.create_text_channel(name="White Team", category=staff_category)
+```
 
 
 Here we come to the meat of the script - how do you quickly create a number of teams along with some work channels, locked down to keep each blue team out of each other's business? Some loops mostly, using the code we've already seen above.
@@ -201,7 +213,8 @@ Black/Gold/White/[1 Blue team] should have r/w for text and voice, while coaches
 The coach role permissions below are not good enough, they allow the guild-wide permissions for the coach role to filter down to the teams. I'll change how those work in future versions of Mr Floofy.
 
 
-  <pre class="CodeMirror" data-setting="{"mode":"python","mime":"text/x-python","theme":"monokai","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"init.py","firstLineNumber":"81","language":"Python","modeName":"python"}">    if message.content.startswith('!deployteams'):
+```python
+    if message.content.startswith('!deployteams'):
         guild = message.guild
 
         numTeams = int(message.content.split(' ')[1])
@@ -235,7 +248,8 @@ The coach role permissions below are not good enough, they allow the guild-wide 
             await guild.create_text_channel(name="Team{:02d} C".format(i),category=category, topic='Channel to separate efforts and reduce cross-talk')
             await guild.create_voice_channel(name="Team{:02d} Voice 1".format(i),category=category)
             await guild.create_voice_channel(name="Team{:02d} Voice 2".format(i),category=category)
-</pre>
+
+```
 
 
 As you can see, we create a number of channels. Between the number of categories and channels involved, doing this by hand would be prohibitive and prone to failure.
@@ -243,7 +257,8 @@ As you can see, we create a number of channels. Between the number of categories
 Lastly, as a final command to help set things up, I wanted a way to automate assigning a user to a role in a way where I could easily paste some commands and get a team in their roles from a spreadsheet, given how the list of team members would be sent to me.
 
 
-  <pre class="CodeMirror" data-setting="{"mode":"python","mime":"text/x-python","theme":"monokai","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"init.py","firstLineNumber":"116","language":"Python","modeName":"python"}">    if message.content.startswith('!assign'):
+```python
+    if message.content.startswith('!assign'):
         guild = message.guild
         userid = int(message.content.split(' ')[1])
         teamid = str(message.content.split(' ')[2])
@@ -259,7 +274,8 @@ Lastly, as a final command to help set things up, I wanted a way to automate ass
             await message.channel.send('There was an error running this command ' + str(e))
         else:
             await message.channel.send('I think it worked')
-</pre>
+
+```
 
 
 It should be noted that the roles are case-sensitive here.
@@ -267,13 +283,15 @@ It should be noted that the roles are case-sensitive here.
 Lastly, we need an event to fire when the script has initialized and begun to run. We'll use the objects from the top of the script and tell the bot to go.
 
 
-  <pre class="CodeMirror" data-setting="{"mode":"python","mime":"text/x-python","theme":"monokai","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"init.py","firstLineNumber":"133","language":"Python","modeName":"python"}">@client.event
+```python
+@client.event
 async def on_ready():
     print(client.user.id)
     print('------')
 
 client.run(TOKEN)
-</pre>
+
+```
 
 
 ## Conclusion

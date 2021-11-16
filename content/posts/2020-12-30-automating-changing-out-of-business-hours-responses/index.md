@@ -136,7 +136,8 @@ Our customer will be moving to Azure later so we will probably revisit this as A
                 </p>
                 
                 <div class="wp-block-codemirror-blocks-code-block alignwide code-block">
-                  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Create_Certificate_And_App.ps1","align":"wide","language":"PowerShell","modeName":"powershell"}"># --- config start
+```powershell
+# --- config start
 $appName = "AutomaticAutoReply"
 $password = "Come up with something secure!" # Certificate password
 $folderPath = "C:\temp" # Where do you want the certificate files to get saved to? The folder needs to exist.
@@ -196,7 +197,8 @@ Write-Host -ForeGroundColor Cyan "After providing admin consent, you can use the
 Write-Host $connectGraph
 $connectGraph + "`n Get-MgContext" | Set-Clipboard 
 Write-Host -ForeGroundColor Cyan "Copied to ClipBoard"
-</pre>
+
+```
                 </div>
                 
                 <h2 id="Using-auth-cert">
@@ -240,7 +242,8 @@ Write-Host -ForeGroundColor Cyan "Copied to ClipBoard"
                 </p>
                 
                 <div class="wp-block-codemirror-blocks-code-block alignwide code-block">
-                  <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Update-AutoReply.ps1","align":"wide","language":"PowerShell","modeName":"powershell"}">#Region Variables
+```powershell
+#Region Variables
 #Vars for Graph Connection
 $ClientID   = '9d6033b0-XXXX-XXXX-XXXX-33f02ff30d52'
 #$tenant    = 'Contoso.one'    #Domain Name for a tenant also works here in my testing, just as Tenant GUID does
@@ -270,7 +273,7 @@ param (
     Invoke-RestMethod -Uri $WebHookUrl -Method Post -Body $body -ContentType 'application/json'
 }
 
-$Message = "Thank you, we have received your email and will respond the following business day. br /&gt; br /&gt; Our regular business hours are Monday - Friday, 8AM - 5PM, EST."
+$Message = "Thank you, we have received your email and will respond the following business day. br /> br /> Our regular business hours are Monday - Friday, 8AM - 5PM, EST."
 
 #Get today's date
 $Today = (Get-Date)
@@ -326,7 +329,8 @@ try {
 catch {
     Fail -ErrorRecord $_ -WebHookUrl $WebHookUrl
 }
-</pre>
+
+```
                 </div>
                 
                 <h2>

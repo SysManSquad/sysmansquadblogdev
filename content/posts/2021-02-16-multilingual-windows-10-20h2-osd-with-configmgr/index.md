@@ -219,11 +219,13 @@ categories:
                     </p>
                     
                     
-                      <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":false,"readOnly":true,"fileName":"PowerShell","language":"PowerShell","modeName":"powershell"}">Install-Module "PSCMWin10Language" -Scope CurrentUser
+```powershell
+Install-Module "PSCMWin10Language" -Scope CurrentUser
 Import-Module "PSCMWin10Language"
 New-LPRepository -Language "fr-FR", "de-DE" -SourcePath "D:\x64\langpacks\" -TargetPath "G:\OSD\Windows10-1903-Languages\"
 New-LXPRepository -Language "fr-FR", "de-DE" -SourcePath "D:\LocalExperiencePack" -TargetPath "G:\OSD\Windows10-1903-Languages\"
-New-FoDLanguageFeaturesRepository -Language "fr-FR", "de-DE" -SourcePath "E:\" -TargetPath "G:\OSD\Windows10-1903-Languages\"</pre>
+New-FoDLanguageFeaturesRepository -Language "fr-FR", "de-DE" -SourcePath "E:\" -TargetPath "G:\OSD\Windows10-1903-Languages\"
+```
                     
                     
                     <div class="wp-block-image">

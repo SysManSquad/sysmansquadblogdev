@@ -148,11 +148,11 @@ $officelocation = $data.officeLocation
 # keep in mind that if you use CSS, you need to put it its own here string, as the {} in CSS don't mix well with the -f format operator
 
 $HTML = @' 
-p&gt;displayname: {0} /p&gt;
-p&gt;jobtitle: {1} /p&gt;
-p&gt;phone: {2} /p&gt;
-p&gt;email: {3} /p&gt;
-p&gt;location: {4} /p&gt;
+<p>displayname: {0} </p>
+<p>jobtitle: {1} </p>
+<p>phone: {2} </p>
+<p>email: {3} </p>
+<p>location: {4} </p>
 '@ -f $displayname, $jobtitle, $($businessphone), $mail, $officelocation
 #EndRegion HTML
 

@@ -143,7 +143,8 @@ tags:
                           </p>
                           
                           <div class="wp-block-codemirror-blocks-code-block code-block lineWrapping: false">
-                            <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"base16-dark","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":true,"fileName":"New-DummyComputer.ps1","className":"lineWrapping: false","language":"PowerShell","modeName":"powershell"}">[CmdletBinding(DefaultParameterSetName = 'Default')]
+```powershell
+[CmdletBinding(DefaultParameterSetName = 'Default')]
 param(
     [Parameter(Mandatory=$False)] [String] $deviceName = "",
     [Parameter(Mandatory=$False)] [Switch] $nameMap
@@ -153,7 +154,7 @@ param(
 $orgUnit = "OU=Dummy Devices,OU=Devices,DC=yourdomain,DC=tld" 
 
 # Set the certificate path for name mapping
-$certPath = "X509:I&gt;DC=tld,DC=yourdomain,CN=your-CAS&gt;CN=" 
+$certPath = "X509:I>DC=tld,DC=yourdomain,CN=your-CAS>CN=" 
 
 # Prepare SAMAccountName based off of length constraints
 $SAMAccountName = if ($deviceName.Length -ge 15) {$deviceName.Substring(0,15) + "$"} else {$deviceName + "$"}
@@ -175,7 +176,8 @@ if ($nameMap) {
         Write-Host "Skipping name mapping (likely because device does not exist in AD)" -ForegroundColor Red
         exit 1
     }
-}</pre>
+}
+```
                           </div>
                           
                           <p>
@@ -241,7 +243,8 @@ if ($nameMap) {
                           </p>
                           
                           
-                            <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"base16-dark","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Sync-DummyComputers.ps1","language":"PowerShell","modeName":"powershell"}">[CmdletBinding(DefaultParameterSetName = 'Default')]
+```powershell
+[CmdletBinding(DefaultParameterSetName = 'Default')]
 param(
     [Parameter(Mandatory=$True)] [String] $TenantId = "",
     [Parameter(Mandatory=$True)] [String] $ClientId = "",
@@ -270,7 +273,7 @@ $AutopilotDevices = Get-AutopilotDevice | Select-Object azureActiveDirectoryDevi
 $orgUnit = "OU=Dummy Devices,OU=Devices,DC=yourdomain,DC=tld" 
 
 # Set the certificate path for name mapping
-$certPath = "X509:I&gt;DC=tld,DC=yourdomain,CN=your-CAS&gt;CN=" 
+$certPath = "X509:I>DC=tld,DC=yourdomain,CN=your-CAS>CN=" 
 
 # Create new Autopilot computer objects in AD while skipping already existing computer objects
 foreach ($Device in $AutopilotDevices) {
@@ -305,7 +308,8 @@ foreach ($DummyDevice in $DummyDevices) {
         # Remove-ADComputer -Identity $DummyDevice.SAMAccountName -Confirm:$False -WhatIf 
         #Remove -WhatIf once you are comfortrable with this workflow and have verified the remove operations are only performed in the OU you specified
     }
-}</pre>
+}
+```
                           
                           
                           <p>

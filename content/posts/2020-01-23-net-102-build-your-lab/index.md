@@ -358,7 +358,7 @@ Add-DnsServerPrimaryZone -NetworkId $IPv6NetworkID -ZoneFile $IPv6ReverseName
                       Again, pretty simple. No fancy or difficult-to-read powershell here. Let's check our work:
                     </p>
                     
-                    <pre class="wp-block-code"><code>PS C:\Users\Administrator&gt; Get-DnsServerZone|select ZoneName
+                    <pre class="wp-block-code"><code>PS C:\Users\Administrator> Get-DnsServerZone|select ZoneName
 ZoneName
 --------
 0.0.0.0.0.0.0.0.0.0.0.0.0.0.6.e.1.f.2.a.5.f.4.d.6.f.a.d.d.f.ip6.arpa
@@ -368,7 +368,7 @@ ZoneName
 255.in-addr.arpa
 lab.test
 
-PS C:\Users\Administrator&gt; Get-ChildItem C:\Windows\System32\dns\
+PS C:\Users\Administrator> Get-ChildItem C:\Windows\System32\dns\
 
     Directory: C:\Windows\System32\dns
 
@@ -384,7 +384,7 @@ d-----       12/26/2019   6:58 PM                samples
 -a----       12/26/2019   8:48 PM            513 lab.test.dns
 
 
-PS C:\Users\Administrator&gt; Get-DnsServerResourceRecord -ZoneName lab.test|select Hostname,RecordType,RecordData
+PS C:\Users\Administrator> Get-DnsServerResourceRecord -ZoneName lab.test|select Hostname,RecordType,RecordData
 
 Hostname RecordType RecordData
 -------- ---------- ----------

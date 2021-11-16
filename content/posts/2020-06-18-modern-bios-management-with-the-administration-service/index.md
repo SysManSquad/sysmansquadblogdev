@@ -67,7 +67,7 @@ If($Manufacturer -ne "Lenovo"){
 				}
 				"Hewlett-Packard"{
 					$packageVersion = ($package.Version).TrimEnd(".")
-					$packageVersion = $packageVersion.Split(" ")[0] #Example: 02.02.03 A 1 --&gt; Will only use 02.02.03 for evaluating
+					$packageVersion = $packageVersion.Split(" ")[0] #Example: 02.02.03 A 1 --> Will only use 02.02.03 for evaluating
 					If($packageVersion -as [Version]){
 						If($CurrentBIOSVersion -as [Version]){
 							If([Version]$packageVersion -gt [Version]$CurrentBIOSVersion){

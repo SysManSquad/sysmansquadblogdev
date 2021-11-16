@@ -146,7 +146,8 @@ categories:
                       </p>
                       
                       
-                        <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Prerequisites.ps1","language":"PowerShell","modeName":"powershell"}">[CmdletBinding()]
+```powershell
+[CmdletBinding()]
 param(
     # Name of the site server returned by the Status Filter Rule
     [Parameter(Mandatory = $true)]
@@ -180,7 +181,8 @@ If(-not(Get-PSDrive $SiteCode)) {
 }
 
 # Set the location to the Configuration Manager PSDrive to be able to use MEMCM Powershell commands
-Set-Location "$($SiteCode):"</pre>
+Set-Location "$($SiteCode):"
+```
                       
                       
                       <h4>
@@ -233,8 +235,9 @@ Set-Location "$($SiteCode):"</pre>
                       </p>
                       
                       
-                        <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Actions.ps1","language":"PowerShell","modeName":"powershell"}"># Regex to capture the name of the created SUG and the creation date
-[regex]$Regex = "CI Assignment Manager successfully processed new CI Assignment\s+(?Name&gt;.*)\s(?Date&gt;\d{4}-\d{2}-\d{2})"
+```powershell
+# Regex to capture the name of the created SUG and the creation date
+[regex]$Regex = "CI Assignment Manager successfully processed new CI Assignment\s+(?Name>.*)\s(?Date>\d{4}-\d{2}-\d{2})"
 
 # Use the Regex on the Description variable to extract the SUG's name and creation date. Store the values in variables
 $Description | Select-String -Pattern $Regex -AllMatches | ForEach-Object {
@@ -258,7 +261,8 @@ If ($DeploymentName -notlike "*Definition*") {
             }
         }
     }
-}</pre>
+}
+```
                       
                       
                       <h4>
@@ -278,9 +282,10 @@ If ($DeploymentName -notlike "*Definition*") {
                       </p>
                       
                       
-                        <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"fileName":"Reporting.ps1","language":"PowerShell","modeName":"powershell"}"># Define some CSS style that will be added to the HTML report header
+```powershell
+# Define some CSS style that will be added to the HTML report header
         $HtmlHeader = @"
-style&gt;
+style>
     body {
         font-size: 12px;
         font-family: Arial, Helvetica, sans-serif;
@@ -310,14 +315,14 @@ style&gt;
     tbody tr:nth-child(even) {
         background: #f0f0f2;
 }
-/style&gt;
+/style>
 "@
 
         # Define the text that will be part of the HTML report in a herestring. Be careful with "@
         $PreContent = @"
-Hello, br/&gt;br/&gt;
+Hello, br/>br/>
 
-The $NewSUGName Software Update Group has been created. It contains the following updates:br/&gt;br/&gt;
+The $NewSUGName Software Update Group has been created. It contains the following updates:br/>br/>
 "@
         
         # Build an array of PS Objects each containing the KB ID, KB Name and execution time
@@ -334,7 +339,8 @@ The $NewSUGName Software Update Group has been created. It contains the followin
         }
 
         # Build an HTML table out of the previous array and add the header and precontent text
-        $Info | ConvertTo-Html -As Table -PreContent $PreContent -Head $HtmlHeader | Out-File "C:\Temp\$NewSUGName.html"</pre>
+        $Info | ConvertTo-Html -As Table -PreContent $PreContent -Head $HtmlHeader | Out-File "C:\Temp\$NewSUGName.html"
+```
                       
                       
                       <h2>

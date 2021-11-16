@@ -173,8 +173,10 @@ tags:
                                         </p>
                                         
                                         
-                                          <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"showPanel":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}">PS C:\&gt; Install-Module PSCMContentMgmt -Scope CurrentUser
-PS C:\&gt; Import-Module PSCMContentMgmt</pre>
+```powershell
+PS C:\> Install-Module PSCMContentMgmt -Scope CurrentUser
+PS C:\> Import-Module PSCMContentMgmt
+```
                                         
                                         
                                         <p>
@@ -227,7 +229,8 @@ PS C:\&gt; Import-Module PSCMContentMgmt</pre>
                                         </h4>
                                         
                                         
-                                          <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"showPanel":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}">PS C:\&gt; Compare-DPContent -Source "dp1.contoso.com" -Target "dp2.contoso.com"
+```powershell
+PS C:\> Compare-DPContent -Source "dp1.contoso.com" -Target "dp2.contoso.com"
 
 ObjectName        : 2020-03-1809
 Description       :
@@ -243,7 +246,8 @@ ObjectID          : ACC000F4
 SourceSize        : 292894
 DistributionPoint : dp1.contoso.com
 
-...</pre>
+...
+```
                                         
                                         
                                         <p>
@@ -255,7 +259,8 @@ DistributionPoint : dp1.contoso.com
                                         </p>
                                         
                                         
-                                          <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"showPanel":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}">PS C:\&gt; Compare-DPContent -Source "dp1.contoso.com" -Target "dp2.contoso.com" | Start-DPContentDistribution -DistributionPoint "dp2.contoso.com"
+```powershell
+PS C:\> Compare-DPContent -Source "dp1.contoso.com" -Target "dp2.contoso.com" | Start-DPContentDistribution -DistributionPoint "dp2.contoso.com"
 
 Result    ObjectId ObjectType               Message
 ------    -------- ----------               -------
@@ -270,7 +275,8 @@ Success   16999752 Application
 Success   16999720 Application
 Success   17007034 Application
 
-...</pre>
+...
+```
                                         
                                         
                                         <h4>
@@ -282,12 +288,14 @@ Success   17007034 Application
                                         </p>
                                         
                                         
-                                          <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"showPanel":false,"language":"PowerShell","modeName":"powershell"}">PS C:\&gt; Get-DP | Get-DPDistributionStatus -DistributionFailed | Group-Object -Property DistributionPoint
+```powershell
+PS C:\> Get-DP | Get-DPDistributionStatus -DistributionFailed | Group-Object -Property DistributionPoint
 
 Count Name                      Group
 ----- ----                      -----
    42 dp1.contoso.com           {@{ObjectID=17099179; ObjectType=Applicat...
-   30 dp2.contoso.com	        {@{ObjectID=17099179; ObjectType=Applicat...</pre>
+   30 dp2.contoso.com	        {@{ObjectID=17099179; ObjectType=Applicat...
+```
                                         
                                         
                                         <p>
@@ -295,7 +303,9 @@ Count Name                      Group
                                         </p>
                                         
                                         
-                                          <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"showPanel":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}">PS C:\&gt; Get-DPDistributionStatus -DistributionPoint "dp1.contoso.com" -DistributionFailed | Start-DPContentRedistribution</pre>
+```powershell
+PS C:\> Get-DPDistributionStatus -DistributionPoint "dp1.contoso.com" -DistributionFailed | Start-DPContentRedistribution
+```
                                         
                                         
                                         <p>
@@ -364,7 +374,9 @@ Count Name                      Group
                                         </ul>
                                         
                                         
-                                          <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"showPanel":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}">PS C:\&gt; Find-CMObject -ID "ACC00048"</pre>
+```powershell
+PS C:\> Find-CMObject -ID "ACC00048"
+```
                                         
                                         
                                         <p>
@@ -408,7 +420,9 @@ Count Name                      Group
                                         </p>
                                         
                                         
-                                          <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"showPanel":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}">PS C:\&gt; Get-DPContent -DistributionPoint "OldDP.contoso.com" | Export-DPContent -Folder "E:\exported"</pre>
+```powershell
+PS C:\> Get-DPContent -DistributionPoint "OldDP.contoso.com" | Export-DPContent -Folder "E:\exported"
+```
                                         
                                         
                                         <h6>
@@ -420,7 +434,9 @@ Count Name                      Group
                                         </p>
                                         
                                         
-                                          <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"showPanel":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}">PS C:\&gt; Set-DPAllowPrestagedContent -DistributionPoint "NewDP.contoso.com"</pre>
+```powershell
+PS C:\> Set-DPAllowPrestagedContent -DistributionPoint "NewDP.contoso.com"
+```
                                         
                                         
                                         <h6>
@@ -436,7 +452,9 @@ Count Name                      Group
                                         </p>
                                         
                                         
-                                          <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"showPanel":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}">Start-DPContentDistribution -Folder "E:\exported" -DistributionPoint "NewDP.contoso.com"</pre>
+```powershell
+Start-DPContentDistribution -Folder "E:\exported" -DistributionPoint "NewDP.contoso.com"
+```
                                         
                                         
                                         <h6>
@@ -456,7 +474,9 @@ Count Name                      Group
                                         </p>
                                         
                                         
-                                          <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"showPanel":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}">PS C:\&gt; Import-DPContent -Folder "\\OldDP.contoso.com\e$\exported"</pre>
+```powershell
+PS C:\> Import-DPContent -Folder "\\OldDP.contoso.com\e$\exported"
+```
                                         
                                         
                                         <h6>
@@ -464,7 +484,9 @@ Count Name                      Group
                                         </h6>
                                         
                                         
-                                          <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":false,"showPanel":false,"fileName":"shell.ps1","language":"PowerShell","modeName":"powershell"}">PS C:\&gt; Set-DPAllowPrestagedContent -DistributionPoint "NewDP.contoso.com" -State $false</pre>
+```powershell
+PS C:\> Set-DPAllowPrestagedContent -DistributionPoint "NewDP.contoso.com" -State $false
+```
                                         
                                         
                                         <h2>
@@ -484,7 +506,9 @@ Count Name                      Group
                                         </p>
                                         
                                         
-                                          <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":true,"showPanel":false,"language":"PowerShell","modeName":"powershell"}">PS C:\&gt; Get-Help Compare-DPContent -Detailed</pre>
+```powershell
+PS C:\> Get-Help Compare-DPContent -Detailed
+```
                                         
                                         
                                         <p>
@@ -492,7 +516,9 @@ Count Name                      Group
                                         </p>
                                         
                                         
-                                          <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":true,"showPanel":false,"language":"PowerShell","modeName":"powershell"}">PS C:\&gt; Get-Help about_PSCMContentMgmt*</pre>
+```powershell
+PS C:\> Get-Help about_PSCMContentMgmt*
+```
                                         
                                         
                                         <p>
@@ -500,7 +526,9 @@ Count Name                      Group
                                         </p>
                                         
                                         
-                                          <pre class="CodeMirror" data-setting="{"mode":"powershell","mime":"application/x-powershell","theme":"default","lineNumbers":true,"styleActiveLine":true,"lineWrapping":true,"readOnly":true,"showPanel":false,"language":"PowerShell","modeName":"powershell"}">PS C:\&gt; Get-Help about_PSCMContentMgmt_Query</pre>
+```powershell
+PS C:\> Get-Help about_PSCMContentMgmt_Query
+```
                                         
                                         
                                         <p>

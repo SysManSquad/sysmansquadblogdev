@@ -37,11 +37,11 @@ $trigger = New-ScheduledTaskTrigger -AtLogOn
 $class = cimclass MSFT_TaskEventTrigger root/Microsoft/Windows/TaskScheduler
 $trigger2 = $class | New-CimInstance -ClientOnly
 $trigger2.Enabled = $True
-$trigger2.Subscription = 'QueryList&gt;Query Id="0" Path="Microsoft-Windows-NetworkProfile/Operational"&gt;Select Path="Microsoft-Windows-NetworkProfile/Operational"&gt;*[System[Provider[@Name=''Microsoft-Windows-NetworkProfile''] and EventID=10002]]/Select&gt;/Query&gt;/QueryList&gt;'
+$trigger2.Subscription = 'QueryList>Query Id="0" Path="Microsoft-Windows-NetworkProfile/Operational">Select Path="Microsoft-Windows-NetworkProfile/Operational">*[System[Provider[@Name=''Microsoft-Windows-NetworkProfile''] and EventID=10002]]/Select>/Query>/QueryList>'
 
 $trigger3 = $class | New-CimInstance -ClientOnly
 $trigger3.Enabled = $True
-$trigger3.Subscription = 'QueryList&gt;Query Id="0" Path="Microsoft-Windows-NetworkProfile/Operational"&gt;Select Path="Microsoft-Windows-NetworkProfile/Operational"&gt;*[System[Provider[@Name=''Microsoft-Windows-NetworkProfile''] and EventID=4004]]/Select&gt;/Query&gt;/QueryList&gt;'
+$trigger3.Subscription = 'QueryList>Query Id="0" Path="Microsoft-Windows-NetworkProfile/Operational">Select Path="Microsoft-Windows-NetworkProfile/Operational">*[System[Provider[@Name=''Microsoft-Windows-NetworkProfile''] and EventID=4004]]/Select>/Query>/QueryList>'
 
 #Execute task in users context
 $principal= New-ScheduledTaskPrincipal -GroupId "S-1-5-32-545" -Id "Author"

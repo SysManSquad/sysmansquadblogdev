@@ -145,7 +145,7 @@ categories:
                   Note that there is a particularity with the MMA executable. When you get the sources [from this page](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/agent-windows#install-agent-using-dsc-in-azure-automation), you need to extract them because the MMA-Setup_AMD64.exe file can't be used for a silent installation. Instead, use the following command to extract its content and use this extracted content as the source of your package.
                 </p>
                 
-                <pre class="wp-block-code"><code>MMASetup-AMD64.exe /c /t:Full Extraction Path&gt;</code></pre><figure class="wp-block-image size-large">
+                <pre class="wp-block-code"><code>MMASetup-AMD64.exe /c /t:Full Extraction Path></code></pre><figure class="wp-block-image size-large">
                 
                 ![](Package-1-1024x576.png)<figcaption>Package overview</figcaption></figure> <h5>
                   2. Task Sequence creation
