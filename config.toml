@@ -75,7 +75,10 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
       style = "github"
       tabWidth = 4
 
-
+[taxonomies]
+  author = "authors"
+  tag = "tags"
+  category = "categories"
 
   #omit_categories = false
 

@@ -1,6 +1,7 @@
 ---
 title: 'NET-103 : Layering in Active Directory'
-author: Aaron
+authors:
+  - Aaron
 type: post
 date: 2020-05-19T14:00:00+00:00
 excerpt: "In previous articles, we've built the basic services you need without getting too far in the weeds. Now we're going to layer in a central identity service."
