@@ -12,7 +12,7 @@ categories:
 ---
 ## Purpose
 
-The following blog posts will be a companion guide to Steve and Adam's Intune training videos found at [intune.training](https://intune.training) (this covers Episode 1 and 2) and will help you get Autopilot going in your environment. This guide assumes that you already have office 365 and azure configured. By the end of this guide you will have a working bare bones Autopilot configuration. This has been a major request from several people in the [WinAdmins](https://aka.ms/winadmins) community. I strongly recommend joining if you are not already a member!
+The following blog posts will be a companion guide to Steve and Adam's Intune training videos found at [Intune.Training](https://intune.training) (this covers Episode 1 and 2) and will help you get Autopilot going in your environment. This guide assumes that you already have office 365 and azure configured. By the end of this guide you will have a working bare bones Autopilot configuration. This has been a major request from several people in the [WinAdmins](https://aka.ms/winadmins) community. I strongly recommend joining if you are not already a member!
 
 ## Why?
 
@@ -22,13 +22,13 @@ Why would you want to setup Intune? The benefit of setting up and deploying mach
 
 Who doesn't love trying to understand Microsoft Licensing? Here are the basic requirements you will need at least one of the following to get Intune started:
 
-  * M365 Business 
-  * M365 F1 
-  * M365 A1-A3-A5 
-  * M365 E3-E5 
-  * Enterprise Mobility and Security E3-E5 
-  * Intune for Education 
-  * Azure Active Directory Premium (Required for Dynamic membership rules) 
+* M365 Business
+* M365 F1
+* M365 A1-A3-A5
+* M365 E3-E5
+* Enterprise Mobility and Security E3-E5
+* Intune for Education
+* Azure Active Directory Premium (Required for Dynamic membership rules)
 
 ## How does the process work?
 
@@ -38,9 +38,7 @@ I'm a big fan of pictures and I believe this one encapsulates the process quiet 
 
 ## Configuration
 
-<p class="has-normal-font-size">
-  Now before you go moving sliders and configuring things I want to stress that **<span style="text-decoration: underline;">you should do this in a dev environment</span>** to begin with. I am not responsible for you messing your production environment up!
-</p>
+Now before you go moving sliders and configuring things I want to stress that **<span style="text-decoration: underline;">you should do this in a dev environment</span>** to begin with. I am not responsible for you messing your production environment up!
 
 ### Company Branding
 

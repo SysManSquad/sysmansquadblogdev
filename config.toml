@@ -1,6 +1,6 @@
 baseurl = "https://blog.sysmansquad.com"
 title = "Systems Management Squad"
-theme = "asquaredozen_theme"
+theme = "sysmansquadblog_theme"
 languageCode = "en-us"
 newContentEditor = "code"
 googleAnalytics = "G-XXZR1RSQYX"
