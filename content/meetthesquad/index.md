@@ -5,107 +5,30 @@ type: page
 date: 2019-12-09T20:11:54+00:00
 
 ---
-<div id="cs-content" class="cs-content"  >
-  <div class="e342-1 x-section" >
-    <div class="e342-2 x-row" >
-      <div class="x-row-inner">
-        <div class="e342-3 x-col" >
-          <span class="e342-4 x-image headshot" > <img src="Adam-Headshot-1-of-1.jpg" width="643" height="900" alt="Image" loading="lazy" /> </span> 
-          
-          <div class="e342-5 x-text" >
-            Adam Gross
-          </div>
-          
-          <div class="e342-6 x-text" >
-            Founder
-          </div>
-          
-          <div class="e342-7 x-text" >
-            Adam is a Microsoft MVP in Enterprise Mobility and is the founder of SysManSquad.
-          </div>
-          
-          <div class="e342-8 x-row" >
-            <div class="x-row-inner">
-              <div class="e342-9 x-col" >
-                <a class="e342-10 x-anchor x-anchor-button has-graphic" tabindex="0" href="https://twitter.com/AdamGrossTX" target="_blank" rel="noopener noreferrer" > 
-                
-                <div class="x-anchor-content">
-                  <span class="x-graphic" aria-hidden="true" > <i class="x-icon x-graphic-child x-graphic-icon x-graphic-primary" aria-hidden="true" data-x-icon-b="&#xf099;" ></i> </span>
-                </div></a> 
-                
-                <a class="e342-11 x-anchor x-anchor-button has-graphic" tabindex="0" href="https://www.linkedin.com/in/asquaredozen/" target="_blank" rel="noopener noreferrer" > 
-                
-                <div class="x-anchor-content">
-                  <span class="x-graphic" aria-hidden="true" > <i class="x-icon x-graphic-child x-graphic-icon x-graphic-primary" aria-hidden="true" data-x-icon-b="&#xf08c;" ></i> </span>
-                </div></a> 
-                
-                <hr class="e342-12 x-line" />
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="e342-13 x-col" >
-          <span class="e342-14 x-image headshot" > <img src="Jake-e1576115204749.png" width="319.5" height="480" alt="Image" loading="lazy" /> </span> 
-          
-          <div class="e342-15 x-text" >
-            <p>
-              Jake Shackelford
-            </p>
-          </div>
-          
-          <div class="e342-16 x-text" >
-            <p>
-              Admin/Contributor
-            </p>
-          </div>
-          
-          <div class="e342-17 x-text" >
-            <p>
-              Jake is one of our Admins but also our inaugural author and the main reason SysManSquad exists today.
-            </p>
-          </div>
-          
-          <div class="e342-18 x-row" >
-            <div class="x-row-inner">
-              <div class="e342-19 x-col" >
-                <a class="e342-20 x-anchor x-anchor-button has-graphic" tabindex="0" href="https://twitter.com/shackelfjaco" target="_blank" rel="noopener noreferrer" > 
-                
-                <div class="x-anchor-content">
-                  <span class="x-graphic" aria-hidden="true" > <i class="x-icon x-graphic-child x-graphic-icon x-graphic-primary" aria-hidden="true" data-x-icon-b="&#xf099;" ></i> </span>
-                </div></a> 
-                
-                <hr class="e342-21 x-line" />
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="e342-22 x-col" >
-          <span class="e342-23 x-image headshot" > <img src="Nathan.jpg" width="200" height="200" alt="Image" loading="lazy" /> </span> 
-          
-          <div class="e342-24 x-text" >
-            <p>
-              Nathan Ziehnert
-            </p>
-          </div>
-          
-          <div class="e342-25 x-text" >
-            <p>
-              Admin/Mentor
-            </p>
-          </div>
-          
-          <div class="e342-26 x-text" >
-            <p>
-              Nathan is a Senior Lead Consultant who enjoys tinkering with WordPress in his free time. He is a speaker and blogger passionate about ConfigMgr and PowerShell mentoring.
-            </p>
-          </div>
-          
-          <div class="e342-27 x-row" >
-            <div class="x-row-inner">
-              <div class="e342-28 x-col" >
-                <a class="e342-29 x-anchor x-anchor-button has-graphic" tabindex="0" href="https://twitter.com/TheZNerd" target="_blank" rel="noopener noreferrer" > 
+
+![Adam Gross](/authors/adam-gross/adam-headshot-mini.png)
+**Adam Gross**  
+_Founder_  
+
+Adam is a Microsoft MVP in Enterprise Mobility and is the founder of SysManSquad.
+
+Twitter: [@AdamGrossTX](https://twitter.com/AdamGrossTX)  
+LinkedIn: [asquaredozen](https://www.linkedin.com/in/asquaredozen/)  
+
+![Jake Shackelford](/authors/jake-shackelford/jake-headshot-mini.png)  
+**Jake Shackelford**  
+_Admin/Contributor_  
+
+Jake is one of our Admins but also our inaugural author and the main reason SysManSquad exists today.
+
+Twitter: [@shackelfjaco](https://twitter.com/shackelfjaco)
+
+**Nathan Ziehnert**  
+_Admin/Mentor_  
+
+Nathan is a Senior Lead Consultant who enjoys tinkering with WordPress in his free time. He is a speaker and blogger passionate about ConfigMgr and PowerShell mentoring.
+
+Twitter: [@TheZNerd](https://twitter.com/TheZNerd)
                 
                 <div class="x-anchor-content">
                   <span class="x-graphic" aria-hidden="true" > <i class="x-icon x-graphic-child x-graphic-icon x-graphic-primary" aria-hidden="true" data-x-icon-b="&#xf099;" ></i> </span>
