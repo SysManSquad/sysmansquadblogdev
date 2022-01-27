@@ -29,9 +29,9 @@ Note there is no Custom Company Branding on the logo, background, or the rest of
 
 ### "Just log off" - NO
 
-You might think you could just log-off however, Office 365 and SSSO actually support Log Off and will store cookies that tell them you explicitly "Logged Off" and not just "Are not signed in". 
+You might think you could just log-off however, Office 365 and SSSO actually support Log Off and will store cookies that tell them you explicitly "Logged Off" and not just "Are not signed in".
 
-The best ways I have found to test this are either a 
+The best ways I have found to test this are either a
 
 <ul id="NewChromeProfile">
   <li>
@@ -42,9 +42,9 @@ The best ways I have found to test this are either a
   </li>
 </ul>
 
-#### To clear the Cookies 
+#### To clear the Cookies
 
-Copy-Paste `**chrome://settings/siteData**` into a new Chrome Tab and you should see something like this. Though if this is a normal-use browser profile you may have thousands more entries. <figure class="wp-block-image size-large">
+Copy-Paste `chrome://settings/siteData` into a new Chrome Tab and you should see something like this. Though if this is a normal-use browser profile you may have thousands more entries. <figure class="wp-block-image size-large">
 
 ![](image-1.png) </figure> 
 

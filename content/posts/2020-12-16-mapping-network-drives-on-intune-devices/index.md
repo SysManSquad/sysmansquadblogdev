@@ -72,6 +72,6 @@ stop-Transcript
 
 ## Verify the Scheduled Task Exists
 
-Once you have deployed the script to the selected group, you can sync Intune policies through Company Portal. Remember it can take up to 8 hours for this to appear. You should see a scheduled Task named `**IntuneDriveMapping**` and the triggers should look like the below.<figure class="wp-block-image size-large is-resized">
+Once you have deployed the script to the selected group, you can sync Intune policies through Company Portal. Remember it can take up to 8 hours for this to appear. You should see a scheduled Task named `IntuneDriveMapping` and the triggers should look like the below.<figure class="wp-block-image size-large is-resized">
 
 ![](MicrosoftTeams-image-2-1024x439.png) </figure>

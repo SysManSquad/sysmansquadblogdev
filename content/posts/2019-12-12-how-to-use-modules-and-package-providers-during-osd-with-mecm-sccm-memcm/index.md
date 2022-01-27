@@ -7,7 +7,6 @@ url: /2019/12/12/how-to-use-modules-and-package-providers-during-osd-with-mecm-s
 categories:
   - Powershell
   - Scripting
-
 ---
 ![PowerShell_5.0_icon-1.png](PowerShell_5.0_icon-1.png)
 

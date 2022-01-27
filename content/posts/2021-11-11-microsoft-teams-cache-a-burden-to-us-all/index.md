@@ -20,8 +20,9 @@ This leads me to the bread and butter of this blog post. The following is a smal
 
 ## Microsoft Teams Cache Clearing Script
 
-
 ```powershell
+#ClearTeamsCache.ps1
+
 Write-Output "Killing Microsoft Teams process"
 Stop-Process -Name Teams -Force -erroraction 'silentlycontinue'
 Start-Sleep -seconds 5
@@ -37,18 +38,17 @@ Start-Process Outlook
 
 ```
 
-
 If you are reading this blog post, then you are probably at least somewhat familiar with PowerShell, but nevertheless, let's just go through this cute little PowerShell script right quick
 
-Since this is a script where the output will be presented to the user (at least in the way I did it, you can choose to forgo that part if you wish), I have used the `**Write-Output**` so the user knows what is happening.
+Since this is a script where the output will be presented to the user (at least in the way I did it, you can choose to forgo that part if you wish), I have used the `Write-Output` so the user knows what is happening.
 
-So this script kills the Teams Process and kills the Outlook process (because Outlook has a Teams plugin). There is a `**Start-Sleep**` between them because I have seen weird things where even when you kill the Teams process, it likes to hold on to files for a couple of seconds after the process has ended. All the Start-Sleeps are for is to give a couple of seconds for all the hooks on the files to be closed.
+So this script kills the Teams Process and kills the Outlook process (because Outlook has a Teams plugin). There is a `Start-Sleep` between them because I have seen weird things where even when you kill the Teams process, it likes to hold on to files for a couple of seconds after the process has ended. All the Start-Sleeps are for is to give a couple of seconds for all the hooks on the files to be closed.
 
-Once Teams and Outlook are closed, the entire Teams folder located at `**$($env:USERPROFILE)\Appdata\Roaming\Microsoft\Teams"**` gets removed from the system. This is not the "official" way to clear the cache in teams, but this is the most effective way, or what I like to call the "big hammer method" way.
+Once Teams and Outlook are closed, the entire Teams folder located at `$($env:USERPROFILE)\Appdata\Roaming\Microsoft\Teams"` gets removed from the system. This is not the "official" way to clear the cache in teams, but this is the most effective way, or what I like to call the "big hammer method" way.
 
 It then does another Start-Sleep just to make sure there are no pending hooks in the file system, then it relaunches the Teams process and the Outlook Process.
 
-Notice the `**-ArgumentList "--processStart Teams.exe"**` on the Teams command line. This is extremely important. Without this, Teams will not launch. Also, make sure the p in Process is lower case. Ask me how I know.
+Notice the `-ArgumentList "--processStart Teams.exe"` on the Teams command line. This is extremely important. Without this, Teams will not launch. Also, make sure the p in Process is lower case. Ask me how I know.
 
 ## Creating the Executable
 
@@ -56,17 +56,15 @@ That takes care of the script portion of this blog post. Next, we need to encaps
 
 It is literally a simple as:
 
-
 ```powershell
 PS2EXE "ClearTeamsCache.ps1" "ClearTeamsCache.exe"
 ```
-
 
 That is the simplest form you can do. There are a bunch of other switches you can do to add other information like Company Name, Version, Author, etc.
 
 ### Caveats
 
-One caveat to this is that the EXE and the PS1 file **_<span style="text-decoration: underline">must</span>_** remain in the same directory with each other. Think of the EXE as basically a shortcut for the PS1 file, but still functions as a normal EXE.
+One caveat to this is that the EXE and the PS1 file **must** remain in the same directory with each other. Think of the EXE as basically a shortcut for the PS1 file, but still functions as a normal EXE.
 
 The other caveat to keep in mind is that some AV solutions will falsely identify your newly created EXE as malicious since a lot of malware use this same method. From what I have seen, Defender does not detect this as malicious (in my environment at least). I don't know how you could get around this other than add the install location as an exclusion in your AV.
 
@@ -78,14 +76,13 @@ Whichever way you decide to package up your EXE and PS1 for install, just make s
 
 ## Conclusion
 
-If you implement this as I have described, when a user runs this, they will be presented with a PowerShell window that says:<figure class="wp-block-image size-large">
+If you implement this as I have described, when a user runs this, they will be presented with a PowerShell window that says:
 
-![](ClearTeamsCache.png) <figcaption>Clear Teams Cache results window</figcaption></figure> 
+![Clear Teams Cache results window](ClearTeamsCache.png "Clear Teams Cache results window")
 
-And here is the Icon I made for my application if you want it. You can also make your own fairly easily if you wish.
+<!--And here is the Icon I made for my application if you want it. You can also make your own fairly easily if you wish.
 
-<div class="wp-block-file">
-  [ClearTeamsCacheIcon](ClearTeamsCacheIcon.ico)[Download](ClearTeamsCacheIcon.ico)
-</div>
+-- ![ClearTeamsCacheIcon](ClearTeamsCacheIcon.ico)
+-->
 
 That should be it. You should now have a fully functioning "program" to clear the Microsoft Teams Cache on a computer.

@@ -16,9 +16,9 @@ tags:
 ---
 ## Intro
 
-So you've started rolling out Windows 11 to your endpoints, and your users got confused and upset over the consumer teams apps that is installed? Understandably you wish to do something about this.<figure class="wp-block-image size-large">
+So you've started rolling out Windows 11 to your endpoints, and your users got confused and upset over the consumer teams apps that is installed? Understandably you wish to do something about this.
 
-![](vmconnect_HKVrTs61hf.png) <figcaption>(╯°□°）╯︵ ┻━┻</figcaption></figure> 
+![(╯°□°）╯︵ ┻━┻](vmconnect_HKVrTs61hf.png "(╯°□°）╯︵ ┻━┻")
 
 No worries mate, Intune Proactive Remediations to the rescue!
 
@@ -26,16 +26,15 @@ No worries mate, Intune Proactive Remediations to the rescue!
 
 The code below fixes two things.
 
-It removes the chat by writing the registry key that disables it<figure class="wp-block-image size-large">
+It removes the chat by writing the registry key that disables it
 
-![](vmconnect_GJk3LXz1EF.png) <figcaption>the TaskbarMn DWORD controls this</figcaption></figure> 
+![the TaskbarMn DWORD controls this](vmconnect_GJk3LXz1EF.png "the TaskbarMn DWORD controls this")
 
 Then it simply uninstalls the appx package for the consumer teams app, note that this has no effect on the regular teams app. The two are completely different.
 
 ## Code
 
-Pretty simple stuff, 
-
+Pretty simple stuff,
 
 ```powershell
 # Detection
@@ -70,9 +69,7 @@ catch {
 }
 ```
 
-
 Here is the remediation code, parts of it were made using the [reg2ps website](https://reg2ps.azurewebsites.net/) which i highly recommend.
-
 
 ```powershell
 # Remediation
@@ -102,13 +99,12 @@ catch {
 }
 ```
 
-
 ## Setting it up
 
-Go to the [Proactive Remediations blade](https://endpoint.microsoft.com/#blade/Microsoft_Intune_Enrollment/UXAnalyticsMenu/proactiveRemediations) in the Intune admin portal, create a new PR and add the detection and remediation scripts, configure the PR to run in user context and 64bit, and deploy accordingly.<figure class="wp-block-image size-large">
+Go to the [Proactive Remediations blade](https://endpoint.microsoft.com/#blade/Microsoft_Intune_Enrollment/UXAnalyticsMenu/proactiveRemediations) in the Intune admin portal, create a new PR and add the detection and remediation scripts, configure the PR to run in user context and 64bit, and deploy accordingly.
 
-![](WindowsSandboxClient_EZVCQZGC8M.png) </figure> 
+![Windows Sandbox Client](WindowsSandboxClient_EZVCQZGC8M.png "Windows Sandbox Client")
 
-Once the Remediation has run on the targeted endpoints, your users will be happier and slightly less confused.<figure class="wp-block-image size-large">
+Once the Remediation has run on the targeted endpoints, your users will be happier and slightly less confused.
 
-![](j4sLKefuYe.png) <figcaption>┳━┳ ノ( ゜-゜ノ)</figcaption></figure>
+![┳━┳ ノ( ゜-゜ノ)](j4sLKefuYe.png "┳━┳ ノ( ゜-゜ノ)")

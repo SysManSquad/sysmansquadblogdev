@@ -11,7 +11,6 @@ categories:
   - How-To
   - Networking
   - Uncategorized
-
 ---
 As I go through my career, I often find that the answers I take for granted are not easy to find for people who are just starting out. I had the advantage of a dedicated class on network administration to build on, but not everyone had that opportunity. While this article focuses on a lab environment, most of the content will be applicable to real life as well.
 
