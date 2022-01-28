@@ -1,4 +1,15 @@
 {{ if eq .display "true" }}
-<img src="/authors/{{ .stub }}/avatar.png" alt="Photo of {{ .name }}" />
+<img src="/authors/{{ .stub }}/avatar.png" alt="Photo of {{ .name }}" /><br />
+<strong>{{ .name }}</strong>
+<em>{{ .role }}</em>
+    <div>
+    {{ if .social.twitter }}
+     <a href="https://twitter.com/{{.social.twitter}}"><img src="/img/social/twitter.png"></a>
+    {{ end }}
+    {{ if .social.linkedin }}
+    <a href="https://www.linkedin.com/in/{{.social.linkedin}}"><img src="/img/social/linkedin.png"></a>
+    {{ end }}
+    </div>
 <p>{{ .bio }}</p>
+<hr />
 {{ end }}

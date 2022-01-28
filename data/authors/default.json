@@ -1,9 +1,10 @@
 {
     "name": "SysMansQuad",
     "stub": "molly",
+    "role": "staff",
     "display": "false",
     "bio" : "SysManSquad Staff",
     "social": {
-        "twitter": "https://twitter.com/sysmansquad"
+        "twitter": "sysmansquad"
     }
 }

@@ -2,8 +2,9 @@
     "name": "Jake Shackelford",
     "stub": "jake",
     "display": "true",
+    "role": "Admin/Contributor",
     "bio" : "Jake is one of our Admins but also our inaugural author and the main reason SysManSquad exists today.",
     "social": {
-        "linkedin": "https://www.linkedin.com/in/aaron-g-961b5359/"
+        "twitter":"shackelfjaco"
     }
 }

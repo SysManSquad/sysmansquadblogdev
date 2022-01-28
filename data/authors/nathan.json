@@ -1,0 +1,11 @@
+{
+    "name": "Nathan Ziehnert",
+    "stub": "nathan",
+    "role": "Admin/Mentor",
+    "display": "true",
+    "bio" : "Nathan is a Senior Lead Consultant who enjoys tinkering with WordPress in his free time. He is a speaker and blogger passionate about ConfigMgr and PowerShell mentoring.",
+    "social": {
+        "twitter": "TheZNerd",
+        "linkedin": "nathanziehnert"
+    }
+}

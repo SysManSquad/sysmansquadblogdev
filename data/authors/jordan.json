@@ -1,0 +1,11 @@
+{
+    "name": "Jordan Benzing",
+    "stub": "jordan",
+    "display": "true",
+    "role": "Mentor/Contributor",
+    "bio" : "Jordan is a consultant for TrueSec and an active member of the Configuration Manager community. An active speaker on subjects such as reporting, patching and that wonderful thing no one likes doing documentation.",
+    "social": {
+        "twitter": "JordanTheITguy",
+        "linkedin": "jordan-benzing-432b0619"
+    }
+}
