@@ -1,10 +1,10 @@
 ---
 title: Intune/Autopilot Setup Companion Guide Part 1
-author: Jake Shackelford
+author: jake
 type: post
 date: 2019-12-18T14:50:37+00:00
 url: /2019/12/18/autopilot-setup-part-1/
-featured_image: image1.png
+featured_image: image-1.png
 categories:
   - Endpoint Management
   - Intune
@@ -12,11 +12,11 @@ categories:
 ---
 ## Purpose
 
-The following blog posts will be a companion guide to Steve and Adam's Intune training videos found at [Intune.Training](https://intune.training) (this covers Episode 1 and 2) and will help you get Autopilot going in your environment. This guide assumes that you already have office 365 and azure configured. By the end of this guide you will have a working bare bones Autopilot configuration. This has been a major request from several people in the [WinAdmins](https://aka.ms/winadmins) community. I strongly recommend joining if you are not already a member!
+The following blog posts will be a companion guide to Steve and Adam's Intune training videos found at [Intune.Training](https://intune.training) (this covers Episode 1 and 2) and will help you get Autopilot going in your environment. This guide assumes that you already have office 365 and azure configured. By the end of this guide you will have a working bare bones Autopilot configuration. This has been a major request from several people in the [WinAdmins](https://winadmins.io) community. I strongly recommend joining if you are not already a member!
 
 ## Why?
 
-Why would you want to setup Intune? The benefit of setting up and deploying machines via Intune are quiet simple. You get a true zero touch deployment where your IT staff will no longer need to ever touch a device in order to get it configured. You can manage those devices from anywhere using the M365 Device Management Portal. Wipe, reset, and fresh start options are also available. You'll find a common theme throughout Intune is that if a device is having an issue simply reset it and be on your marry way. 
+Why would you want to setup Intune? The benefit of setting up and deploying machines via Intune are quiet simple. You get a true zero touch deployment where your IT staff will no longer need to ever touch a device in order to get it configured. You can manage those devices from anywhere using the M365 Device Management Portal. Wipe, reset, and fresh start options are also available. You'll find a common theme throughout Intune is that if a device is having an issue simply reset it and be on your marry way.
 
 ## Requirements
 
@@ -34,7 +34,7 @@ Who doesn't love trying to understand Microsoft Licensing? Here are the basic re
 
 I'm a big fan of pictures and I believe this one encapsulates the process quiet well.
 
-![image1.png](image1.png)
+![image1.png](image-1.png)
 
 ## Configuration
 
@@ -71,7 +71,7 @@ Next select Windows Enrollment under Windows Devices.
 
 The first time you select this you will need to choose an MDM Authority. Since we are using Intune we will select the first option Intune MDM Authority. Once we have this configured we can create a Deployment Profile Located under Windows Autopilot Deployment Program.
 
-![msedge_RFZlECrA6L-1-1024x734.png]()
+![msedge_RFZlECrA6L.png](msedge_RFZlECrA6L.png)
 
   1. Select + Create Profile at the top
   2. Give it a unique name and description so you won't forget what this specific profile is for
