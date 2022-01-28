@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "docsmsft.docs-authoring-pack",
+        "streetsidesoftware.code-spell-checker",
+        "yzhang.markdown-all-in-one",
+        "davidanson.vscode-markdownlint",
+        "be5invis.toml"
+    ]
+}
