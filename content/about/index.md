@@ -1,6 +1,6 @@
 ---
 title: About
-author: SysManSquad
+author: default
 type: page
 date: 2019-12-09T06:00:01+00:00
 
