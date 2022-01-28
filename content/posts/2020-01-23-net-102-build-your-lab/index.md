@@ -1,6 +1,6 @@
 ---
 title: 'NET-102: Build your lab'
-author: Aaron
+author: aaron
 type: post
 date: 2020-01-23T07:13:45+00:00
 url: /2021/01/23/net-102-build-your-lab/
@@ -11,7 +11,7 @@ categories:
   - Windows
 
 ---
-Welcome back! We're now going to move on to the actual effort it takes to build your lab. As you recall we got pretty far last time in documenting the beginnings of our network. For this lab I'll be using [VMWare Workstation](https://www.vmware.com/products/workstation-pro.html), but you can accomplish this with [Microsoft Hyper-V](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/), [Oracle VirtualBox](https://www.virtualbox.org/), the free tier of [VMWare's ESX](https://www.vmware.com/products/vsphere.html), or [XCP-NG](https://xcp-ng.org/).
+Welcome back! We're now going to move on to the actual effort it takes to build your lab. As you recall we got pretty far last time in documenting the beginnings of our network. For this lab I'll be using [VMWare Workstation](https://www.vmware.com/products/workstation-pro.html), but you can accomplish this with [Microsoft Hyper-V](https://docs.microsoft.com/virtualization/hyper-v-on-windows/about/), [Oracle VirtualBox](https://www.virtualbox.org/), the free tier of [VMWare's ESX](https://www.vmware.com/products/vsphere.html), or [XCP-NG](https://xcp-ng.org/).
 
 If you haven't read the previous post, please have a look [here](https://sysmansquad.com/2019/12/17/net-101-create-a-basic-lab-network-design/) as each post builds upon the last.
 
@@ -50,7 +50,7 @@ It's time to upgrade our documentation.
 
 You're going to need a machine to use to work from inside your lab network and reach the management address of your gateway/firewall.
 
-Install a Windows 10 VM to use as your admin workstation. Let's say that you're using an evaluation copy from the [evaluation center](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-10-enterprise), which will function for 90 days. Place it on the lab network, and if you'd like to RDP to it, give it an adapter on the parent network as well.
+Install a Windows 10 VM to use as your admin workstation. Let's say that you're using an evaluation copy from the [evaluation center](https://www.microsoft.com/evalcenter/evaluate-windows-10-enterprise), which will function for 90 days. Place it on the lab network, and if you'd like to RDP to it, give it an adapter on the parent network as well.
 
 NOTE: Your local account on the admin workstation will need a password if you intend to use remote desktop to connect, and also as basic security hygiene.
 
@@ -76,7 +76,7 @@ After setting your addresses, if you open a terminal (either **cmd** or **PowerS
 
 ## The Default Gateway
 
-We touched on what this is and what it does last time, so you know that this will serve as the default gateway for the network. It is also the firewall and IPv4 NAT appliance. Grab the latest [PFSense ](https://www.pfsense.org/download/)ISO and install a VM with ~2048MB RAM and two ethernet interfaces. The first will be the parent network, in this case your home or business network, the second will be the in-lab network. Consult the pfsense documentation for installing and setting the IP addresses you've chosen for the in-lab interface. The parent network interface should be set to DHCP.
+We touched on what this is and what it does last time, so you know that this will serve as the default gateway for the network. It is also the firewall and IPv4 NAT appliance. Grab the latest [PFSense](https://www.pfsense.org/download/)ISO and install a VM with ~2048MB RAM and two ethernet interfaces. The first will be the parent network, in this case your home or business network, the second will be the in-lab network. Consult the pfsense documentation for installing and setting the IP addresses you've chosen for the in-lab interface. The parent network interface should be set to DHCP.
 
 For now the only setting you need to set on the gateway is it's IPv4 and IPv6 addresses, aside from setting a new default password for the admin account.
 
