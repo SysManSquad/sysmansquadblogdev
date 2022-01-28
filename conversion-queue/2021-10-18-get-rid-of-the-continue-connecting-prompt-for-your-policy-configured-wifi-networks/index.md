@@ -1,6 +1,6 @@
 ---
 title: Get rid of the “Continue connecting?” prompt for your policy-configured wifi networks
-author: jóhannes-geir-kristjánsson
+author: aaron
 type: post
 date: 2021-10-18T19:05:26+00:00
 url: /2021/10/18/get-rid-of-the-continue-connecting-prompt-for-your-policy-configured-wifi-networks/
