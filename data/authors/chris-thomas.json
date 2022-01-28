@@ -1,0 +1,11 @@
+{
+    "name": "Chris Thomas",
+    "stub": "chris-thomas",
+    "role": "Contributor",
+    "display": "true",
+    "bio" : "Chris has supported technology in the public education sector for the last 20 years. He has a strong interest in ConfigMgr and PowerShell.",
+    "social": {
+        "twitter": "AutomateMyStuff",
+        "linkedin": "christopher-thomas-7322ab77"
+    }
+}
