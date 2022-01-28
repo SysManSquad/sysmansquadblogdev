@@ -1,9 +1,9 @@
 {
-    "name": "SysMansQuad",
+    "name": "SysManSquad",
     "stub": "molly",
-    "role": "staff",
+    "role": "Staff",
     "display": "false",
-    "bio" : "SysManSquad Staff",
+    "bio" : "Molly, the best puppy",
     "social": {
         "twitter": "sysmansquad"
     }
