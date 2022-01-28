@@ -8,7 +8,7 @@ categories:
   - Powershell
   - Scripting
 ---
-![PowerShell_5.0_icon-1.png](PowerShell_5.0_icon-1.png)
+![Powershell Icon](PowerShell.png)
 
 For the past few days, I've been implementing SnipeIT into our environment to start actually tracking assets as opposed to the archaic spreadsheet we had going. I wanted to add any new machine that were imaged into the database right away without any input from me. That way, all I had to do was assign a user to the device in the asset management portal for SnipeIT, and I was good to go. However, this proved to be quite the headache for me. Special thanks to Christopher Kibble, Colin Wilkins, and Adam Gross for all their support and helping me learn some PS along the way (I'm still a noob).
 
@@ -28,29 +28,27 @@ I copied the WindowsPowerShell folder and the PacakageManagement folders to a ne
 
 In my case, my folder structure for the entire package looks like so:
 
-![Imgur2](https://camo.githubusercontent.com/ec9b5904e323575dc980183eb46dc07aed204989/68747470733a2f2f696d6775722e636f6d2f37656a7339526f2e6a7067)
+![An image from Windows Explorer containing 2 folders and 2 powershell scripts](https://camo.githubusercontent.com/ec9b5904e323575dc980183eb46dc07aed204989/68747470733a2f2f696d6775722e636f6d2f37656a7339526f2e6a7067)
 
 Once we have these two folders in a folder on our SCCM, we can create a package.
 
 Now please forgive me for my terrible PS skills I'm working on improving them!
 
-Create a script in the same folder you put PackageManagemet and WindowsPowerShell that looks like the following
+Create a script in the same folder you put PackageManagement and WindowsPowerShell that looks like the following
 
 ```powershell
 $executingScriptDirectory = Split-Path -Path $MyInvocation.MyCommand.Definition -Parent
-
 copy-item $executingScriptDirectory\PackageManagement $env:ProgramFiles -force -Recurse
-
 copy-item $executingScriptDirectory\WindowsPowershell $env:ProgramFiles -force -Recurse
 ```
 
 In my case, I called this script **MoveItems.ps1**
 
-Once you have this complete create a package with all the content.
+Once you have this complete, create a package with all the content.
 
-In your OSD task Sequence create a run PowerShell script step and reference the package you made like so
+In your OSD task Sequence create a "run PowerShell script" step and reference the package you made like so:
 
-![Imgur3](https://camo.githubusercontent.com/17cb3f713d11be996213630ba822f8b005cb446b/68747470733a2f2f696d6775722e636f6d2f6f4f43627857442e6a7067)
+![An image showing the properties tab of a task sequence step](https://camo.githubusercontent.com/17cb3f713d11be996213630ba822f8b005cb446b/68747470733a2f2f696d6775722e636f6d2f6f4f43627857442e6a7067)
 
 Next, in your original script that's failing to run, you'll want to IMPORT those modules or packageproviders as opposed to installing them since you now have the content copied to that local machine. In my case the code looks like so: (This will look different depending on the modules you are trying to import)
 
@@ -61,4 +59,4 @@ Import-PackageProvider -Name "Nuget" -Verbose
 
 Add another Run PowerShell script to your task sequence and reference your script with the newly added Import commands and you should be good to go! Don't forget to update your distribution point for the package you created!
 
-If anyone is interested in the actual SnipeIT script feel free to come to the [WinAdmins](https://aka.ms/winadmins) discord and send me a message!
+If anyone is interested in the actual SnipeIT script feel free to come to the [WinAdmins](https://winadmins.io/) discord and send me a message!
