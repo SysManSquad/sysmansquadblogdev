@@ -3,11 +3,21 @@
 Domain Registrar - Hosted on domains.google.com  
 DNS - CloudFlare  
 
+<!--
 Initialize Clone all 3 repos locally  
 
 https://github.com/SysManSquad/sysmansquadblogdev  
 https://github.com/SysManSquad/sysmansquadblog  
 https://github.com/SysManSquad/sysmansquadblog_theme  
+-->
+
+```sh
+git clone https://github.com/SysManSquad/sysmansquadblogdev
+git submodule init
+git submodule update
+```
+
+> Be sure and run the git commands above before running a hugo server or it will cause you all kinds of trouble.
 
 If you want to see your post in Hugo before submitting you'll need Hugo installed. Follow these steps.  
 https://gohugo.io/getting-started/installing#chocolatey-windows
@@ -27,7 +37,7 @@ git submodule add https://github.com/SysManSquad/sysmansquadblog.git public
 
 ## To Launch Website Locally
 
-Run this command from the root of your sysmansquaddev folder
+Run this command from the root of your sysmansquadblogdev folder
 
 ```ps
 cd C:\GitHub\Blog\sysmansquadblogdev  
