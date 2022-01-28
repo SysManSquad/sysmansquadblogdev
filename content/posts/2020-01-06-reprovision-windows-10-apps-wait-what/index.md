@@ -1,6 +1,6 @@
 ---
 title: Reprovision Windows 10 Apps… Wait, What?
-author: Cody Mathis
+author: cody
 type: post
 date: 2020-01-06T13:54:48+00:00
 url: /2021/01/06/reprovision-windows-10-apps-wait-what/
