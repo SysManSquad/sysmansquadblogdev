@@ -1,6 +1,6 @@
 ---
 title: Intune/Autopilot Setup Companion Guide Part 2 – Windows Store for Business
-author: Jake Shackelford
+author: jake
 type: post
 date: 2020-01-27T19:15:59+00:00
 url: /2021/01/27/intune-autopilot-setup-companion-guide-part-2-windows-store-for-business/
@@ -16,7 +16,7 @@ categories:
 ---
 ## Purpose
 
-The following blog posts will be a companion guide to Steve and Adam’s Intune training videos found at [Intune.Training](https://intune.training/) (this covers Episode 3) and will help you get the Windows Store for Business (WSfB, also known as Microsoft Store for Business) setup in your environment. This guide assumes that you already have followed [Part 1](https://sysmansquad.com/2019/12/18/intune-autopilot-setup-companion-guide-part-1/) of this series and already have a working deployment profile. By the end of this guide you will have access to the Company Portal app and other apps of your choosing. This has been a major request from several people in the [WinAdmins](https://aka.ms/winadmins) community. I strongly recommend joining if you are not already a member! 
+The following blog posts will be a companion guide to Steve and Adam’s Intune training videos found at [Intune.Training](https://intune.training/) (this covers Episode 3) and will help you get the Windows Store for Business (WSfB, also known as Microsoft Store for Business) setup in your environment. This guide assumes that you already have followed [Part 1](https://sysmansquad.com/2019/12/18/intune-autopilot-setup-companion-guide-part-1/) of this series and already have a working deployment profile. By the end of this guide you will have access to the Company Portal app and other apps of your choosing. This has been a major request from several people in the [WinAdmins](https://aka.ms/winadmins) community. I strongly recommend joining if you are not already a member!
 
 ## Why?
 
@@ -44,9 +44,9 @@ Navigate to the[MEM admin center](https://devicemanagement.microsoft.com/) and l
  16. Select your **Language**
  17. Select **Save**
  18. Hit **Sync**
- 19. It should look similar to the image below<figure class="wp-block-image size-large">
+ 19. It should look similar to the image below
 
-![](msedge_ZZvRDfDAxr.png) </figure> 
+![An image showing the status as active](msedge_ZZvRDfDAxr.png)
 
 ## What about the actual applications?
 
@@ -56,7 +56,7 @@ Now that we have a working WSfB connector lets add some applications! Please not
   2. Select **Shop** for my group
   3. On the right hand side in the **Search** the store type in Company Portal
   4. Select **Company Portal** from the list of available apps  
-![](msedge_hD8ykaEhDr.png) 
+![An image showing the "Company Portal" app in the store.](msedge_hD8ykaEhDr.png)
   5. Select **Get the app**
   6. A prompt will appear letting you know the app has been purchased and added to your inventory
   7. In the search bar type in PowerBI
@@ -67,7 +67,7 @@ Now that we have a working WSfB connector lets add some applications! Please not
 
 Congrats you now have apps in your tenant!
 
-![](giphy-2.gif) 
+![A gif from a tv show with two people celebrating and spraying champagne](giphy-2.gif)
 
 ## Okay, so now I have some applications but how do I deploy them?
 
@@ -105,7 +105,7 @@ Who doesn't love a little extra icing on the cake? In this section I'll walk you
   5. The App type will be **Windows 10 (preview)** Located under Microsoft Edge, version 77 and later
   6. Click **App information**
   7. Give the app a name and description  
-![](msedge_uWOZP5GHSx.png) 
+![An image showing a name and description for Microsoft Edge](msedge_uWOZP5GHSx.png) 
   8. Select **OK**
   9. Click **App settings**
  10. Change the Channel to **Stable**
@@ -118,7 +118,6 @@ Who doesn't love a little extra icing on the cake? In this section I'll walk you
  17. Select Include Groups
  18. Select the group or turn the sliders for **All users and devices** to YES
 
-With that set you now have the new Edge! As always if you have questions or concerns please head over to the [WinAdmins][2] discord. The next post will go over Configuration Profiles and potentially PowerShell scripts!<figure class="wp-block-image size-large">
+With that set you now have the new Edge! As always if you have questions or concerns please head over to the [WinAdmins][2] discord. The next post will go over Configuration Profiles and potentially PowerShell scripts!
 
-![](giphy-1-1.gif) </figure>
-
+![a gif of two men high-fiving each other](giphy-1-1.gif)
