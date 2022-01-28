@@ -1,6 +1,6 @@
 ---
 title: 'Windows Virtual Desktop: Creation and Management'
-author: Jake Shackelford
+author: jake
 type: post
 date: 2020-01-13T06:33:53+00:00
 url: /2021/01/13/wvd-creation-and-management/
@@ -15,27 +15,28 @@ tags:
   - WVD
 
 ---
-## THIS GUIDE IS NOW OUTDATED WITH THE RELEASE OF WVD 2.0 I will create a new blog with the updated info in the future! Some of the info below is still valid!
 
-### Why Windows Virtual Desktop?  {#0--why-windows-virtual-desktop-}
+# **THIS GUIDE IS NOW OUTDATED WITH THE RELEASE OF WVD 2.0, I will create a new blog with the updated info in the future! Some of the info below is still valid!**
+
+## Why Windows Virtual Desktop?
 
 Windows Virtual Desktop allows you to create virtual Windows 10 machines that can be accessed from virtually anywhere. This means you can give someone a full desktop experience from virtually anywhere including android and iOS! In addition, if you do not want users to have a full desktop you can deploy specific applications which look and act like a native app on the machine, which can save you time and headaches when trying to deploy complex software.
 
-### Requirements {#1-requirements}<figure class="wp-block-table">
+### Requirements
 
-| OS                                                           | Required license                                                    |
-| ------------------------------------------------------------ | ------------------------------------------------------------------- |
-| Windows 10 Enterprise multi-session or Windows 10 Enterprise | Microsoft 365 E3, E5, A3, A5, F1, Business  
-Windows E3, E5, A3, A5 |</figure> 
+| OS                                                           | Required license                           |
+| ------------------------------------------------------------ | ------------------------------------------ |
+| Windows 10 Enterprise multi-session or Windows 10 Enterprise | Microsoft 365 E3, E5, A3, A5, F1, Business |
+| Windows E3, E5, A3, A5                                       |                                            |
 
-This guide assumes you have either [Azure Active Directory Domain Services (Azure AD DS)](https://docs.microsoft.com/en-us/azure/active-directory-domain-services/) or a network connection from your Azure tenant to your on-premises network. In the following guide I will be going over the Azure AD DS method, but both are similar.  
+This guide assumes you have either [Azure Active Directory Domain Services (Azure AD DS)](https://docs.microsoft.com/azure/active-directory-domain-services/) or a network connection from your Azure tenant to your on-premises network. In the following guide I will be going over the Azure AD DS method, but both are similar.  
   
 You will also need [Marcel Meurer's tool](https://blog.itprocloud.de/Windows-Virtual-Desktop-Admin/) (I provide download links farther down). Several of the items I will be covering are a re-hash of what he has in his post but with more steps for using the tool and creating a master virtual machine (VM).
 
 ## Creating Resource Groups {#2-creating-resource-groups}
 
-  1. Login to the Azure portal <https://portal.azure.com/> 
-  2. Click the **Create a resource** button![](image-1.png)
+  1. Login to the Azure portal <https://portal.azure.com/>
+  2. Click the **Create a resource** button![An image showing the heading "Azure services" with a button labeled "Create a resource"](image-1.png)
   3. Search for Resource group
   4. Create a Resource group called DOMAIN-Master-VMs or whatever you'd like your golden images to be based off (YES WVD is essentially build and capture/reference image)
   5. Create a second Resource group and give it whatever name you'd like. EX. I'm going to deploy AutoCAD so I'll name it DOMAIN-AutoCAD-HostPool
@@ -63,17 +64,16 @@ We need to create a service principal account to access Marcel's UI and also gra
   1. Navigate to the two Resource groups we created earlier
   2. Select Access Control (IAM)
   3. Select Role assignments
-  4. Select Add 
+  4. Select Add
   5. Select Role assignment
   6. Role should be set to Contributor
   7. Select should be set to your Service account; in this case svc_WVDAdmin
-  8. Select Save 
+  8. Select Save
   9. Apply the same setup to your other resource group or any resource groups you want to create and manage WVD with
 
 ### Creating a WVD tenant {#5-creating-a-wvd-tenant}
 
 Time for some powershell! The following powershell will add a WVD tenant. Please use an administrative account when signing in as you have to grant access for your tenant.
-
 
 ```powershell
 $ApplicationID = PASTE YOUR SERVICE PRINCIPAL ACCOUNT APP ID HERE
@@ -82,9 +82,9 @@ Install-Module -Name Microsoft.RDInfra.RDPowerShell
 Add-RdsAccount -DeploymentUrl "https://rdbroker.wvd.microsoft.com"
 New-RdsRoleAssignment -TenantName $TenantName -RoleDefinitionName "RDS Owner" -ApplicationId $ApplicationID
 ```
-<figure class="wp-block-image size-large is-resized">
 
-![](powershell_rJBQfXUtgx.png) <figcaption>Successful execution</figcaption></figure> 
+![An image showing a completed RDS role assignment](powershell_rJBQfXUtgx.png)
+_Successful execution_
 
 ### Setting up Marcel's tool and creating a network share {#6-setting-up-marcels-tool-and-creating-a-network-share}
 
@@ -98,11 +98,13 @@ You will need to download 4 items at this point:
   4. [Microsoft.RDInfra.RDAgentBootLoader.msi](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RWrxrH)
   5. Rename 2-4 to match the link text since they will be named incorrectly when you download them.
 
+With these downloaded, create the file share:
+
   1. Navigate to C:\ and create a folder called Configuration
   2. Inside of your Configuration folder create a WVD folder
   3. Right click the WVD folder and select Share
   4. Give Everyone Read Access
-  5. Move the 3 files we downloaded and renamed earlier into this folder; it should look like the following![](mstsc_n4qL8uv5Vs.png)
+  5. Move the 3 files we downloaded and renamed earlier into this folder; it should look like the following![An image showing windows explorer opened to "C:\Windows\Configuration\WVD", with two msi files and one powershell script displayed](mstsc_n4qL8uv5Vs.png)
   6. Next install Marcel's tool. You can leave all the options to default
 
 ### Launching the tool {#7-launching-the-tool}
@@ -123,7 +125,7 @@ I hate to use the word master VMs as it really boils down to a golden image or t
   1. Navigate to the Master-VMs resource group we created earlier
   2. Create a new resource by selecting the Add button
   3. Search for Microsoft Windows 10 + Office 365 ProPlus (you do the + Office 365 ProPlus because the non-office version isn't the latest release of windows) and make sure you're selecting the latest version
-  4. Click Create![](GetImage.png)
+  4. Click Create![An image depicting the controls to create a new Windows 10 + Office 365 ProPlus instance.](GetImage.png)
   5. For Virtual Machine name change it to whatever your preference in my case i'll be calling it AutoCAD after the program that I'll be installing
   6. You can leave the Size default I typically select B2Ms as I like to penny pinch (Please note this server won't cost you anything other than the storage of the drive when we are done with it)
   7. Scroll down and set an administrator account. This is a local admin account
@@ -147,7 +149,6 @@ I hate to use the word master VMs as it really boils down to a golden image or t
  25. Make any registry changes you want. I personally use the list below
  26. Shutdown the VM
 
-
 ```powershell
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" /v RemoteAppLogoffTimeLimit /t REG_DWORD /d 0 /f 
 
@@ -165,7 +166,6 @@ reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" /v fEnab
 
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\StorageSense\Parameters\StoragePolicy" /v 01 /t REG_DWORD /d 0 /f 
 ```
-
 
 ### Creating a Template Image {#9-creating-a-template-image}
 
@@ -187,20 +187,20 @@ Now that we have a VM that's ready to go let's create a template of it! Using th
 
 ### Creating a host pool
 
-![](giphy.gif)  
-Now that we have a template image, we are ready to create the host pool! 
+![A short gif of a man from a tv show mouthing "so close"](giphy.gif)  
+Now that we have a template image, we are ready to create the host pool!
 
   1. Navigate to your Tenant name on the left-hand side
-  2. Right click on your tenant 
+  2. Right click on your tenant
   3. You will have 2 options one being Shared the other being Persistent/VDI in this scenario we are going to select Shared
   4. Select a name for the resource. In my case I'll call it AutoCAD
   5. Navigate back to Azure and expand Images
-  6. Expand your Resource Groups 
-  7. Right click the image that we created earlier 
+  6. Expand your Resource Groups
+  7. Right click the image that we created earlier
   8. Select Create a session host from image
-  9. Your screen at this point should look like this:![](mstsc_dJ47TcxRQX.png)
+  9. Your screen at this point should look like this:![An image of the "rollout" tab](mstsc_dJ47TcxRQX.png)
  10. First we can apply a VM Name. You'll notice at the end we have ###, this will auto number the VM based on the Count to the right so if I have a count of two it will create two VMs in the host pool called WVD-PROD-001 and WVD-PROD-002
- 11. We will select our Image 
+ 11. We will select our Image
  12. Select the host pool we created at the beginning of these steps
  13. Select your subnet
  14. Select the resource group you'd like these servers to live in (EX I'll be using the resource group we created earlier DOMAIN-AutoCAD-HostPool )
@@ -213,27 +213,26 @@ Now that we have a template image, we are ready to create the host pool!
  21. Local admin and password will be the local administrator account on the newly created VMs
  22. Script path should be set to the same path as when we created an image template (EX: \\Server.Contoso.com\Confiration\WVD)
  23. Select Start Rollout
- 24. The time for this can vary based on machine size and number of machines 
+ 24. The time for this can vary based on machine size and number of machines
  25. Once completed, you will be able to go to the resource you created under your tenant and see the Session Hosts
 
 \*** Note that if you are using forced tunneling in your environment that your activation will fail. See the following links for more details:
 
-  * [Forced Tunneling](https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-forced-tunneling-rm)
-  * [Failed KMS Activation](https://docs.microsoft.com/en-us/azure/virtual-machines/troubleshooting/custom-routes-enable-kms-activation)
+* [Forced Tunneling](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-forced-tunneling-rm)
+* [Failed KMS Activation](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/custom-routes-enable-kms-activation)
 
 ### Assigning Groups and Access
 
 Now that we have a host-pool we can start assigning access to them. On the resource we created earlier under our tenant in the WVD Admin application you should be able to see the session hosts that we just made. You'll also notice that a tab called Host Pool opens up.  
-![](mstsc_8jOwEORRJs.png) 
+![An image depicting the "Host Pool" tab](mstsc_8jOwEORRJs.png)
 
 From here we can change several things; the two important ones being the Max Session Limit and Load Balancer Type. Max Session limit should be pretty straight forward, how many sessions can each VM in the Session host accept. Load Balancer Type gives you three options:
 
-  1. Breadth First - Users will be evenly spread out across all the VMs in the host pool 
+  1. Breadth First - Users will be evenly spread out across all the VMs in the host pool
   2. Depth First - Users will be loaded up onto the first VM until the max session limit is reached and then loaded onto the next
   3. Persistent - When a user signs in for the first time they will always logon to the same VM in the pool  
-    
 
-In my experience Breath First is the one to go with as it will cause the least amount of hiccups performance wise, it's also selected by default. 
+In my experience Breath First is the one to go with as it will cause the least amount of hiccups performance wise, it's also selected by default.
 
 Now that we have that set, we have two options on the type of groups we can create:
 
@@ -246,15 +245,15 @@ In this scenario we will create an application group as a Desktop group is very 
   2. Right click and select Add Application Group
   3. Give the group a name (EX AutoCAD)
   4. Right click the newly created group and select Add Remote Application
-  5. Give it a name as well (EX Revit):![](mstsc_uuyZLfch9A.png)
-  6. I personally set CLI settings to DoNotAllow because I'm not passing any Azure CLI commands to these VMs (More info can be found [HERE](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest))
+  5. Give it a name as well (EX Revit):![An image of the "Remote App" tab](mstsc_uuyZLfch9A.png)
+  6. I personally set CLI settings to DoNotAllow because I'm not passing any Azure CLI commands to these VMs (More info can be found [HERE](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest))
   7. File Path will be the path to the EXE that you should have copied down earlier when installing your applications, you can also set Icon Path to this as well
   8. If you want the app to appear in a folder you can give it a folder name, but I personally do not
   9. Friendly name is the name the app will appear as in the web feed or remote desktop application
  10. Select Save Changes
 
 We are almost there! Take a minute to breathe or grab a drink!  
-![](giphy-1.gif) 
+![a gif depicting a woman breathing into a paper bag to calm down](giphy-1.gif)
 
 Next, we are going to assign access to the application group we made. Currently in WVD we have to do manual assignments... it does not support groups but will in the future.
 
@@ -268,8 +267,7 @@ Next, we are going to assign access to the application group we made. Currently 
 
 To access these apps you can use one of the following:
 
-[Remote Desktop Client](http://aka.ms/wvd/clients/windows)
+[Remote Desktop Client](https://aka.ms/wvd/clients/windows)
 [Remote Desktop Web client](https://rdweb.wvd.microsoft.com/webclient/index.html)
 
-I strongly recommend using the Remote Desktop Client option as the second just loads the app in a webpage. Once downloaded and installed you can subscribe with the user you granted access to and you should see the applications that were granted. If you double click on the app you will be prompted to sign in (Currently SSO only works with ADFS this will change in the future). The first sign in will be a little slower as it's creating a profile for the user in the background. This can be alleviated with solutions such as [FSLogix](https://docs.microsoft.com/en-us/fslogix/overview) which is very easy to setup. In any event we are done and you're now the proud owner of a WVD environment.
-
+I strongly recommend using the Remote Desktop Client option as the second just loads the app in a webpage. Once downloaded and installed you can subscribe with the user you granted access to and you should see the applications that were granted. If you double click on the app you will be prompted to sign in (Currently SSO only works with ADFS this will change in the future). The first sign in will be a little slower as it's creating a profile for the user in the background. This can be alleviated with solutions such as [FSLogix](https://docs.microsoft.com/fslogix/overview) which is very easy to setup. In any event we are done and you're now the proud owner of a WVD environment.
