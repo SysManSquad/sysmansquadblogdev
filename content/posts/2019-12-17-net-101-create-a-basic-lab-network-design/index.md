@@ -1,6 +1,6 @@
 ---
 title: 'NET-101 : Create a Basic Lab Network – Design'
-author: Aaron
+author: aaron
 type: post
 date: 2019-12-17T06:59:18+00:00
 excerpt: Begin creating a lab environment by documenting it.
@@ -10,13 +10,17 @@ categories:
   - Documentation
   - How-To
   - Networking
-  - Uncategorized
 ---
+
 As I go through my career, I often find that the answers I take for granted are not easy to find for people who are just starting out. I had the advantage of a dedicated class on network administration to build on, but not everyone had that opportunity. While this article focuses on a lab environment, most of the content will be applicable to real life as well.
 
 I've tried to include as many reference links as possible to help you learn about the concepts involved, but I cannot explain everything in one article. If you think there's a section that can use a bit more explanation, let us know, and we'll take a look as time allows.
 
-**Why is this a networking article on a site for sysadmins? Because all systems depend on the network. If you know how your network works, you will have an easier time of building & fixing your systems.**
+> Why is this a networking article on a site for sysadmins?
+
+Because all systems depend on the network. If you know how your network works, you will have an easier time of building & fixing your systems.
+
+This was also a good excuse to learn IPv6.
 
 ## Prerequisites
 
@@ -71,13 +75,11 @@ For IPv6, you can use [SimpleDNS](https://simpledns.com/private-ipv6), who were 
 * The network identifier for this network is: **fdda:f6d4:f5a2:f1e6:0000:0000:0000:0000**
 * Which can also be written as: **fdda:f6d4:f5a2:f1e6::/64**
 
-~~I'm not sure how one normally divides up an IPv6 network.~~
-
-It turns out the minimum size is a /64.
+The smallest normal network size is a **/64**.
 
 #### The Default Gateway
 
-What is a gateway? What separates it from a router? Well, a gateway, or more typically a 'default gateway' is the machine that passes all network traffic meant for another subnet on to the next router. While a gateway is a router, not all routers are gateways. It is possible that there is more than one router with a presence inside a subnet, and it may be true that traffic bound for one specific network has a router inside your subnet that you can pass traffic to, and it will get there. It is more common however, to simply have one router on your network that catches all traffic that leaves the subnet. In our case, there will be one router, because there is only one way for traffic to leave our first subnet.
+What is a gateway? What separates it from a router? Well, a gateway, or more typically a 'default gateway' is the machine that passes all network traffic meant for another subnet on to the next router. It is possible that there is more than one router with a presence inside a subnet, and it may be true that traffic bound for one specific network has a router inside your subnet that you can pass traffic to, and it will get there. It is more common however, to simply have one router on your network that catches all traffic that leaves the subnet. In our case, there will be one router, because there is only one way for traffic to leave our first subnet.
 
 Once you have selected an address space, your first task will be deciding what address your router or gateway will use.
 
@@ -119,11 +121,10 @@ _!! Remember - this is the same number of addresses, but written in hex. Even th
 
 #### DNS
 
-```txt
-It's not DNS.
-There's no way it's DNS.
-It was DNS.
-```
+> It's not DNS.  
+> There's no way it's DNS.  
+> It was DNS.
+
 
 An embarrassingly large number of systems problems can be traced back to DNS.
 
@@ -160,7 +161,7 @@ Well that was simple. But also maybe we should do this in a visual way as well. 
 
 Pretty neat huh? While you may at some point get to a level where you have some tool that generates these diagrams for you, I wouldn't count on it being soon. Some networks are so big that one human simply can't track every change to the topology or other critical information, but this lab network isn't one of them.
 
-I didn't just come up with this diagram design on my own, I have to thank the folks at Packet Pushers for the advice on how to do it well. [How to Draw Clear L3 Logical Network Diagrams](https://packetpushers.net/how-to-draw-clear-l3-logical-network-diagrams/). I also don't use visio as it's extremely expensive and not better than [Draw.io](https://www.draw.io/). If you prefer a downloadable app instead of a website, have a look over here at their [github releases](https://github.com/jgraph/drawio-desktop/releases) page.
+I didn't just come up with this diagram design on my own, I have to thank the folks at Packet Pushers for the advice on how to do it well. [How to Draw Clear L3 Logical Network Diagrams](https://packetpushers.net/how-to-draw-clear-l3-logical-network-diagrams/). I also don't use visio as it's extremely expensive and not better than [Draw.io/Diagrams.net](https://app.diagrams.net/). If you prefer a downloadable app instead of a website, have a look over here at their [github releases](https://github.com/jgraph/drawio-desktop/releases) page.
 
 You may also notice that I've included some interface names here, em0 and em1. This is because I happen to know that the software appliance we'll use to create our gateway/firewall device names its interfaces this way.
 
