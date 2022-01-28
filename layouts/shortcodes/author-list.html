@@ -1,0 +1,16 @@
+<!--
+{{ if .IsNamedParams }}
+
+{{ $data := index $.Site.Data.authors $.Params.data }}
+
+{{ range $data}}
+<div>
+    {{ partial "author" . }}
+</div>
+{{ end }}
+
+{{ end }}
+-->
+{{ range $.Site.Data.authors}}
+    {{ partial "author" . }}
+{{ end}}

@@ -1,6 +1,7 @@
 {
     "name": "Adam Gross",
     "stub": "adam",
+    "display": "true",
     "bio" : "Adam is a Microsoft MVP in Enterprise Mobility and is the founder of SysManSquad",
     "social": {
         "twitter": "https://twitter.com/AdamGrossTX"

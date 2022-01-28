@@ -1,6 +1,7 @@
 {
     "name": "Aaron Glenn",
     "stub": "aaron",
+    "display": "true",
     "bio" : "Aaron is a Senior Systems Administrator from Tulsa, specializing in Microsoft technologies, with an emphasis on powershell.",
     "social": {
         "linkedin": "https://www.linkedin.com/in/aaron-g-961b5359/"
