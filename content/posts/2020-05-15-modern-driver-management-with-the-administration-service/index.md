@@ -92,11 +92,11 @@ The goal of this task sequence is to identify the manufacturer, model and SKU of
 
 Then, with those values, we call the Invoke-GetPackageIDFromAdminService to get the PackageID of the driver package we need.
 
-![screenshot](QueryAdminServiceTS-1-1024x759.png)  
+![screenshot](QueryAdminServiceTS-1.png)  
 
 Keep in mind that you will need to set the appropriate credentials to use to query the AdminService, see here: 
 
-![screenshot](QueryAdminServiceTS_Parameters-1-1024x518.png)  
+![screenshot](QueryAdminServiceTS_Parameters-1.png)  
 
 The user account needed in this step only needs "Read" permission on Packages in configuration manager. That's it.
 
@@ -123,7 +123,7 @@ I created an “Apply Driver Package” task sequence which uses the previous ta
   * In-place upgrade
   * Precache only
 
-![screenshot](ApplyDrivers_TS-1-1024x984.png)  
+![screenshot](ApplyDrivers_TS-1.png)  
 
 You can reuse this task sequence in multiple other task sequences simply by defining some key variables.
 
@@ -138,7 +138,7 @@ In this section, I'll simply show you how you can reuse the same task sequence i
 * Applying 1809 64-bit
 * Drivers should be cached in C:\Win10Drivers_1809
 
-![screenshot](Example1-1024x258.png)  
+![screenshot](Example1.png)  
 
 There is no need to specify the "DriverPackageOSArch" in this case because the default value is x64. If you were deploying a 32-bit OS image, you would need to specify that too.
 
