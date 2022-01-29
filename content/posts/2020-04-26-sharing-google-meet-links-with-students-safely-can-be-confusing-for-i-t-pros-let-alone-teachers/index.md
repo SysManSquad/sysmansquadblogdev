@@ -3,7 +3,7 @@ title: Sharing Google Meet Links With Students Safely Can Be Confusing For I.T. 
 author: chris-thomas
 type: post
 date: 2020-04-26T20:26:23+00:00
-url: /2020/04/26/sharing-google-meet-links-with-students-safely-can-be-confusing-for-i-t-pros-let-alone-teachers/
+url: /2020/04/26/sharing-google-meet-links-with-students-safely/
 categories:
   - Documentation
   - How-To
@@ -104,7 +104,7 @@ Awesome! One less thing to worry about!
 
 If a teacher makes their way over to [Classroom Help](https://support.google.com/edu/classroom/answer/9776888) support site at some point there is a "_Manage participants in a video meeting_" section with a "_Prevent students from rejoining a meeting_" drop-down with guidance on removing students before ending a meeting.
 
-[![screenshot](Classroom_Support_Manage_Participants_In_Video_Meeting_Prevent_Students_From_Rejoining_A_Meeting.png)](https://support.google.com/edu/classroom/answer/9776888) 
+[![screenshot](prevent_rejoin.png)](https://support.google.com/edu/classroom/answer/9776888) 
 
 Wait ... what did they mean back there on March 19th with "these types of meetings"? What types of meetings?  
   
