@@ -1,6 +1,6 @@
 ---
 title: Modern Driver Management with the Administration Service
-author: Charles
+author: charles
 type: post
 date: 2020-05-15T14:39:20+00:00
 url: /2020/05/15/modern-driver-management-with-the-administration-service/
@@ -22,47 +22,28 @@ Today I’d like to share with you a new solution I’ve developed to allow me t
 
 Here is a quick summary of their existing solution:
 
-<ol type="1">
-  <li>
-    Use the Driver Automation Tool to download and create standard packages in Configuration Manager
-  </li>
-  <li>
-    Install and Configure the Web Service
-  </li>
-  <li>
-    Use the "ApplyDriverPackage" PowerShell script to:<ul>
-      <li>
-        Detect the device manufacturer, model and System SKU
-      </li>
-      <li>
-        Query the web service for a list of driver packages
-      </li>
-      <li>
-        Filter down to the best driver package for your system
-      </li>
-      <li>
-        Download the driver package
-      </li>
-      <li>
-        Apply the drivers
-      </li>
-    </ul>
-  </li>
-</ol>
+1. Use the Driver Automation Tool to download and create standard packages in Configuration Manager
+2. Install and Configure the Web Service
+3. Use the "ApplyDriverPackage" PowerShell script to:
+    * Detect the device manufacturer, model and System SKU
+    * Query the web service for a list of driver packages
+    * Filter down to the best driver package for your system
+    * Download the driver package
+    * Apply the drivers
 
 ### What is the Administration Service?
 
 The Administration Service (AdminService for short) is a REST API for the SMS_Provider that is accessible via HTTPS. It's a web service developed and maintained by the product team.
 
-If you want to know more, check out the official documentation [here](https://docs.microsoft.com/en-us/mem/configmgr/develop/adminservice/overview).
+If you want to know more, check out the official documentation [here](https://docs.microsoft.com/mem/configmgr/develop/adminservice/overview).
 
 #### Great, but how do I use this service?
 
 Since I had no idea where to start initially to get some data back from the AdminService, I found some good blog articles and videos to guide me. Here is what helped me out the most:
 
-  * [A video about the Administration Service](https://www.youtube.com/watch?v=7oLL5F-L6As) by Steven Rachui
-  * [A collection of blog posts on the AdminService](https://www.asquaredozen.com/2019/02/12/the-system-center-configuration-manager-adminservice-guide/) by Adam Gross
-  * [Working with the AdminService – Reading Data](https://z-nerd.com/blog/2019/12/05-working-with-adminservice-and-odata/) by Nathan Ziehnert
+* [A video about the Administration Service](https://www.youtube.com/watch?v=7oLL5F-L6As) by Steven Rachui
+* [A collection of blog posts on the AdminService](https://www.asquaredozen.com/2019/02/12/the-system-center-configuration-manager-adminservice-guide/) by Adam Gross
+* [Working with the AdminService – Reading Data](https://z-nerd.com/blog/2019/12/05-working-with-adminservice-and-odata/) by Nathan Ziehnert
 
 ### Step 1 - Replace the web service
 
@@ -70,12 +51,12 @@ The main “challenge” to replace the web service was to create a PowerShell s
 
 After a lot of trial and error, I wrote a script that allows me to specify multiple parameters such as:
 
-  * Device Manufacturer
-  * Model
-  * System SKU
-  * OS Architecture
-  * Release ID
-  * etc.
+* Device Manufacturer
+* Model
+* System SKU
+* OS Architecture
+* Release ID
+* etc.
 
 Then, with this information, the script queries the AdminService for a list of packages and filters down to the best possible package and returns the ID of the package. My goal was to dynamically provide these parameters during a task sequence and output the package ID to a TS variable.
 
@@ -86,7 +67,6 @@ I think the title of the script (Invoke-GetPackageIDFromAdminService) explains w
 The actual query to the AdminService is quite simple. I'm querying for all packages with a package name that starts with "Drivers -" or "Bios Update -" depending on the value of "PackageType". Instead of returning all the properties of the packages, I select a few properties that will help me filter which is the best package for the device.
 
 The rest of the script is simply filtering which driver package is the most suitable with the information provided and then it returns a PackageID. Here is a snippet of the relevant part of the script where we retrieve a list of packages from the AdminService:
-
 
 ```powershell
         If($PackageType -eq "DriverPackage"){
@@ -102,10 +82,7 @@ The rest of the script is simply filtering which driver package is the most suit
         $Packages = (Invoke-RestMethod -Method Get -Uri $WMIPackageURL -Body $Body @Global:InvokeRestMethodCredential | Select-Object -ExpandProperty value)
 ```
 
-
-<div class="wp-block-image">
-  <figure class="aligncenter size-full">[![](GetPackageIDLog.png)](https://www.sysmansquad.com/?attachment_id=1055)<figcaption>Log file in CMTrace format for your troubleshooting needs</figcaption></figure>
-</div>
+  [![screenshot](GetPackageIDLog.png)](https://www.sysmansquad.com/?attachment_id=1055)Log file in CMTrace format for your troubleshooting needs
 
 The script is hosted on [GitHub](https://github.com/CharlesNRU/mdm-adminservice) and I invite you to send me pull requests if you believe you can improve the script. I do not have that many different PC models to test and I might have missed something.
 
@@ -113,13 +90,13 @@ The script is hosted on [GitHub](https://github.com/CharlesNRU/mdm-adminservice)
 
 The goal of this task sequence is to identify the manufacturer, model and SKU of the current system and make sure it matches the naming convention used by the Driver Automation Tool.
 
-Then, with those values, we call the Invoke-GetPackageIDFromAdminService to get the PackageID of the driver package we need.<figure class="wp-block-image size-large">
+Then, with those values, we call the Invoke-GetPackageIDFromAdminService to get the PackageID of the driver package we need.
 
-![](QueryAdminServiceTS-1-1024x759.png) </figure> 
+![screenshot](QueryAdminServiceTS-1-1024x759.png)  
 
-Keep in mind that you will need to set the appropriate credentials to use to query the AdminService, see here: <figure class="wp-block-image size-large">
+Keep in mind that you will need to set the appropriate credentials to use to query the AdminService, see here: 
 
-![](QueryAdminServiceTS_Parameters-1-1024x518.png) </figure> 
+![screenshot](QueryAdminServiceTS_Parameters-1-1024x518.png)  
 
 The user account needed in this step only needs "Read" permission on Packages in configuration manager. That's it.
 
@@ -137,16 +114,16 @@ If the steps are performed with the built-in task sequence steps, it becomes muc
 
 I created an “Apply Driver Package” task sequence which uses the previous task sequence and performs other steps needed like:
 
-  * Downloading the package
-  * Extract the drivers, if needed
-  * Cache Drivers in a custom location
-  * Support for different driver deployment types:
-      * Baremetal
-      * Driver Refresh/Update
-      * In-place upgrade
-      * Precache only<figure class="wp-block-image size-large">
+* Downloading the package
+* Extract the drivers, if needed
+* Cache Drivers in a custom location
+* Support for different driver deployment types:
+  * Baremetal
+  * Driver Refresh/Update
+  * In-place upgrade
+  * Precache only
 
-![](ApplyDrivers_TS-1-1024x984.png) </figure> 
+![screenshot](ApplyDrivers_TS-1-1024x984.png)  
 
 You can reuse this task sequence in multiple other task sequences simply by defining some key variables.
 
@@ -158,19 +135,19 @@ In this section, I'll simply show you how you can reuse the same task sequence i
 
 #### Example 1 - Baremetal
 
-  * Applying 1809 64-bit
-  * Drivers should be cached in C:\Win10Drivers_1809<figure class="wp-block-image size-large">
+* Applying 1809 64-bit
+* Drivers should be cached in C:\Win10Drivers_1809
 
-![](Example1-1024x258.png) </figure> 
+![screenshot](Example1-1024x258.png)  
 
 There is no need to specify the "DriverPackageOSArch" in this case because the default value is x64. If you were deploying a 32-bit OS image, you would need to specify that too.
 
 #### Example 2 - In-place upgrade
 
-  * Stage the 1909 drivers before the in-place upgrade
-  * Don't cache the drivers in a custom location<figure class="wp-block-image size-large is-resized">
+* Stage the 1909 drivers before the in-place upgrade
+* Don't cache the drivers in a custom location
 
-![](image-2.png) </figure> 
+![screenshot](image-2.png)  
 
 Setting the "DriverDeploymentType" to OSUpgrade will assign the TS variable "OSDUpgradeStagedContent" to the location of the downloaded drivers. 
 
@@ -180,19 +157,19 @@ For more information, see [here](https://deploymentresearch.com/improving-the-co
 
 #### Example 3 - Driver refresh
 
-  * Update the current drivers on system
-  * Don't cache the drivers in a custom location<figure class="wp-block-image size-large is-resized">
+* Update the current drivers on system
+* Don't cache the drivers in a custom location
 
-![](image-3.png) </figure> 
+![screenshot](image-3.png)  
 
 The default behavior of the "Apply Driver Package" TS is to perform a driver refresh when run in Full OS.
 
 #### Example 4 - Precache drivers
 
-  * Cache the drivers in the location C:\Drivers\1909
-  * Precache Windows 10 1909 drivers only, don't install the drivers<figure class="wp-block-image size-large is-resized">
+* Cache the drivers in the location C:\Drivers\1909
+* Precache Windows 10 1909 drivers only, don't install the drivers
 
-![](image-4.png) </figure> 
+![screenshot](image-4.png)  
 
 ### Next steps
 
@@ -203,4 +180,3 @@ I will also be working on a similar task sequence for BIOS packages.
 Task Sequences exports and the script to query the AdminService is on my [GitHub repository](https://github.com/CharlesNRU/mdm-adminservice).
 
 Thank you - Charles.
-
