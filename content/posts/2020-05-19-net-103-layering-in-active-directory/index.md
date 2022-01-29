@@ -1,6 +1,6 @@
 ---
 title: 'NET-103 : Layering in Active Directory'
-author: Aaron
+author: aaron
 type: post
 date: 2020-05-19T14:00:00+00:00
 excerpt: "In previous articles, we've built the basic services you need without getting too far in the weeds. Now we're going to layer in a central identity service."
@@ -47,18 +47,19 @@ Ethernet adapter Ethernet0:
    Default Gateway . . . . . . . . . : this should be blank>
    NetBIOS over Tcpip. . . . . . . . : Enabled</code></pre>
 ```
+
 ## Planning your AD environment
 
 For an environment this small, it's going to be pretty simple. You merely need to decide on the AD domain name and set the IP addressing of the controller. In a larger network and environment you'd have to plan things like AD Sites & Services topology, scaling the number of controllers to the number of clients, redundancy, etc.
 
-**AD Information**
+### **AD Information**
+
 | Item | Value |
 |------|-------|
 | AD Domain Name | ad |
 |AD FQDN | ad.lab.test |
 |ADC IPv4 | 10.248.100.4 |
 |ADC IPv6 | fdda:f6d4:f5a2:f1e6::4/64 |
-
 
 Keep in mind that the AD domain name isn't changeable later without causing a large amount of headache for yourself. Keep it reasonably generic. You can certainly name it CONTOSOAD or whatever your company is named but keep in mind - company names change on occasion. Your company could rebrand, be acquired or acquire another company. This name will stick with you a long time, and is **always visible to all staff**, so don't try to be cute with it. You'll also probably find yourself typing it many times, so shorter is better.
 
