@@ -1,6 +1,6 @@
 ---
 title: ARM (Azure Resource Manager) Templating for Windows Virtual Desktop
-author: Jake Shackelford
+author: jake
 type: post
 date: 2020-05-26T12:56:38+00:00
 url: /2020/05/26/arm-azure-resource-manager-templating-for-windows-virtual-desktop/
@@ -32,14 +32,13 @@ This automation process involves using an ARM Template that deploys a new VM, in
 
 ### Lets get cracking
 
-<span style="text-decoration: underline;">Before we start, I'd like to suggest you do this in a lab and not production (like I did</span>), and before you ask - this is, in essence, build and capture. Yes I know it's 2020 but sadly this is the reality we live in. 
+__Before we start, I'd like to suggest you do this in a lab and not production (like I did)__, and before you ask - this is, in essence, build and capture. Yes I know it's 2020 but sadly this is the reality we live in. 
 
 We are going to have to create a few **resource groups**, a **key vault**, and a **storage account** to store all our info. (I should mention this is going to be a good old step by step with explanations on things scattered throughout)
 
 ### Creating our resource groups, key vault, and storage account
 
 We are going to open Powershell as an Admin and install the required module to connect to Azure. Then we'll create a few resource groups to store our images, our secure passwords in a keyvault, and a storage account for our powershell scripts and other items we may need. Feel free to change the names and location as you see fit (Remember to keep location the same throughout).
-
 
 ```powershell
 Install-module azaccount -force
@@ -64,7 +63,6 @@ $templateUri = "https://raw.githubusercontent.com/Azure/azure-docs-json-samples/
 New-AzResourceGroupDeployment -ResourceGroupName $storageaccount -TemplateUri $templateUri -keyVaultName $keyVaultName -adUserId $adUserId -secretValue $secretValue
 ```
 
-
 After the last line you should see some output, you'll want to copy the value called _keyVaultId_ for later, it should look similar to this: 
 
 `/subscriptions/<SubscriptionID>/resourceGroups/mykeyvaultdeploymentrg/providers/Microsoft.KeyVault/vaults/<KeyVaultName>`
@@ -77,7 +75,6 @@ At this point you'll want to have your powershell scripts that you want to execu
 
 Below is an example of the module install script I have. 
 
-
 ```powershell
 Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
 Install-Module -Name PSFTP -Force
@@ -85,9 +82,7 @@ Install-Module -Name PSFTP -Force
 ./config.ps1
 ```
 
-
 The next script is an example of my configuration script. 
-
 
 ```powershell
 Try{
@@ -110,14 +105,13 @@ Start-Process -FilePath C:\Windows\System32\Sysprep\Sysprep.exe -ArgumentList '/
 Stop-Computer -ComputerName localhost -Force
 ```
 
-
 ### Using the storage account
 
 Now that our two scripts are ready lets upload them! Navigate to the resource group we created earlier in this case "Contoso-Key-Storage"
 
   1. Select the storage account
   2. Select **Containers**  
-     ****![](msedge_uFT7VQv2mm.png)
+     ****![screenshot](msedge_uFT7VQv2mm.png)
   3. Select **+ Container**
   4. Give your Container a name
   5. Leave Public access as Private
@@ -137,9 +131,9 @@ Now that our two scripts are ready lets upload them! Navigate to the resource gr
 
   1. Login to <https://portal.azure.com/>
   2. Select a desired resource group or create a new one (Note nothing will actually get created in the group)
-  3. Select **Add**![](msedge_MCoWS09HuE.png) 
-  4. Type in "**Windows 10**" and select **Microsoft Windows 10 + Office 365 ProPlus**![](msedge_sl8U6dkdIm.png)
-  5. Select **Create**![](msedge_CxaaJwZiAP.png) 
+  3. Select **Add**![screenshot](msedge_MCoWS09HuE.png) 
+  4. Type in "**Windows 10**" and select **Microsoft Windows 10 + Office 365 ProPlus**![screenshot](msedge_sl8U6dkdIm.png)
+  5. Select **Create**![screenshot](msedge_CxaaJwZiAP.png) 
   6. Add a **Virtual Machine Name**
   7. Change **size** to desired VM (I recommend **Standard B2ms**)
   8. Add **Username, Password, Confirm Password**
@@ -151,7 +145,7 @@ Now that our two scripts are ready lets upload them! Navigate to the resource gr
  14. Select **Next : Management >** 
  15. Change Boot Diagnostics to **Off**
  16. Select **Review + Create**
- 17. Select **Download a template for automation**![](msedge_TyKXYqsKI6.png) 
+ 17. Select **Download a template for automation**![screenshot](msedge_TyKXYqsKI6.png) 
  18. Select **Download** in the top left
 
 You should now have a template.zip with two files named parameters.json and tempalte.json you will want to extract these to a folder and open them both with a text editor. I recommend Visual Studio Code.
@@ -162,9 +156,9 @@ Now we are going to add all the extras to this template that let us dynamically 
 
   1. Open both parameters.json and template.json
   2. In parameters.json change the "adminPassword" from  
-    <span class="has-inline-color has-vivid-cyan-blue-color"><code>"adminPassword":{"value":null}</code></span>  
+    `"adminPassword":{"value":null}`</span>  
     to  
-    <span class="has-inline-color has-vivid-cyan-blue-color"><code>"adminPassword": {br>"reference": {br>"keyVault": {br>"id": "THE KEYVAULTID ID YOU COPIED EARLIER"br>},br>"secretName": "vmAdminPassword"br>}</code></span>
+    `"adminPassword": {br>"reference": {br>"keyVault": {br>"id": "THE KEYVAULTID ID YOU COPIED EARLIER"br>},br>"secretName": "vmAdminPassword"br>}`</span>
   3. Change the id to the KeyVaultID you copied earlier
   4. The rest of parameters.json can be left as is, you can override these values later in our execution script if desired
   5. Open template.json
@@ -173,7 +167,6 @@ Now we are going to add all the extras to this template that let us dynamically 
   7. A few lines down you will see `"licenseType":"Windows_Client"`  
     `}`  
     add the following after (Make sure it's after the bracket)
-
 
 ```powershell
         },
@@ -200,14 +193,13 @@ Now we are going to add all the extras to this template that let us dynamically 
   }
 ```
 
-
 You will notice under fileUris we have two URLTOCHANGELATER items on lines 17 and 18, we are going to change that to the two SAS token URLs you copied earlier. You can add more URLs with a comma for things like the FSLogix installation exe. On line 20 you will want to change the -File to match the name of your moduleinstall script.
 
 So what exactly does adding those URLs do? Well they download the files from the respective URL. In this case we are downloading the moduleInstall.ps1 and config.ps1. After that we are executing a command to run moduleInstall.ps1.
 
 ### Lets recap
 
-I want you to take a deep breathe as you've done a lot so far.![](giphy.gif)
+I want you to take a deep breathe as you've done a lot so far.![screenshot](giphy.gif)
 
 You created a few resource groups, a key vault, storage account, an ARM template file, and two powershell scripts and that's awesome!
 
@@ -216,7 +208,6 @@ You created a few resource groups, a key vault, storage account, an ARM template
 Below I will be posting the script I use to make the magic happen. It will connect to azure, ask you for an image name, the destination resourcegroup which in this case is "Contoso-MyImages" if you've copied word for word. The script creates a temporary resource group, creates our VM, converts it to an image, and cleans up the temporary resource group which includes our VM. The result is a new Image located in Contoso-MyImages. You can then use this image to create a WVD Host Pool.
 
 This can be changed to meet your preferences. You'll notice on lines 16-18 I specified a virtualMachineName, networkInferfaceName, publicIpAddressName, all three of these items have a default, and can be found in our parameters.json - however by defining them in our script I'm overwriting the default values to give us a bit more flexibility. 
-
 
 ```powershell
 Connect-azaccount
@@ -247,8 +238,7 @@ New-AzImage -Image $image -ImageName $imagename -ResourceGroupName $imageLocatio
 Get-AzResourceGroup -Name $resourceGroupName | Remove-AzResourceGroup  -Force
 ```
 
-
 Resources:  
-<https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/template-tutorial-use-key-vault>  
-<https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-powershell>  
-<https://docs.microsoft.com/en-us/fslogix/install-ht>
+<https://docs.microsoft.com/azure/azure-resource-manager/templates/template-tutorial-use-key-vault>  
+<https://docs.microsoft.com/azure/storage/common/storage-account-create?tabs=azure-powershell>  
+<https://docs.microsoft.com/fslogix/install-ht>
