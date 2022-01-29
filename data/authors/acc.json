@@ -1,0 +1,11 @@
+{
+    "name": "Adam Cook",
+    "stub": "acc",
+    "role": "Admin/Contributor",
+    "display": "true",
+    "bio" : "Adam loves technology and helping people, focusing on PowerShell, Azure, ConfigMgr, and Linux.",
+    "social": {
+        "twitter": "codaamok",
+        "linkedin": "adamcharlescook"
+    }
+}
