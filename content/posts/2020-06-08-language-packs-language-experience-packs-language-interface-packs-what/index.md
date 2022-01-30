@@ -19,7 +19,7 @@ For a while I have been curious on how to do Windows OSD with multiple languages
 Googling the topic is just a hot mess. You're faced with information that's old, lacking real detail or generally misunderstood. My aim here is to demystify the topic and show you a solid way to do Windows 10 multi language OSD with ConfigMgr along with sound reasoning.
 I'll also touch on how to deploy languages via the Software Center and discuss what's improved in Windows 10 version 2004.
 
-#### Update 2021-02-16
+## Update 2021-02-16
 
 I've written a new post [Multilingual Windows 10 20H2 OSD with ConfigMgr](https://sysmansquad.com/2021/02/16/multilingual-windows-10-20h2-osd-with-configmgr/) which walks you through the detail on how to do this with Windows 10 2004 and onwards.
 
