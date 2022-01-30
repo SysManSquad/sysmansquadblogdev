@@ -1,6 +1,6 @@
 ---
 title: Build a ConfigrMgr lab with AutomatedLab
-author: Adam Cook
+author: acc
 type: post
 date: 2020-06-15T06:00:00+00:00
 url: /2020/06/15/build-a-configrmgr-lab-with-automatedlab/
@@ -33,10 +33,10 @@ If you're curious and want an introduction to AutomatedLab, [check out this post
 
 In my quest for finding an automated way to build out a ConfigMgr lab, I found several excellent options:
 
-  * [PSNewCMENV](https://github.com/onpremcloudguy/PSNewCMENV) - @onpremcloudguy
-  * [CMHyperHydrate](https://github.com/AdamGrossTX/CMHyperHydrate) - @AdamGrossTX
-  * [CMBuild](https://github.com/Skatterbrainz/CMBuild) - @skatterbrainzz
-  * [ViaMonstra Hydration Kit](https://deploymentresearch.com/hydration-kit-for-windows-server-2016-and-configmgr-current-technical-preview-branch/) - @jarwidmark
+* [PSNewCMENV](https://github.com/onpremcloudguy/PSNewCMENV) - @onpremcloudguy
+* [CMHyperHydrate](https://github.com/AdamGrossTX/CMHyperHydrate) - @AdamGrossTX
+* [CMBuild](https://github.com/Skatterbrainz/CMBuild) - @skatterbrainzz
+* [ViaMonstra Hydration Kit](https://deploymentresearch.com/hydration-kit-for-windows-server-2016-and-configmgr-current-technical-preview-branch/) - @jarwidmark
 
 I was mainly interested in something that was hands off and had opportunities for me to contribute to. With that I felt AutomatedLab was exactly what I wanted.
 
@@ -50,14 +50,12 @@ First things first, make sure you have got the latest version of the AutomatedLa
 PS C:\> Get-Module "AutomatedLab" -ListAvailable
 ```
 
-<div class="wp-block-image">
-  <figure class="aligncenter size-medium">[![](ALInstalledModule.jpg)](ALInstalledModule.jpg)<figcaption>Get installed version of AutomatedLab</figcaption></figure>
-</div>
+  [![screenshot](ALInstalledModule.jpg)](ALInstalledModule.jpg)Get installed version of AutomatedLab
 
 To get started you'll need two things:
 
-  * The `CM-2002.ps1` script.
-  * The `CM-2002` CustomRole folder and all of its contents, stored in your local AutomatedLab's CustomRole folder.
+* The `CM-2002.ps1` script.
+* The `CM-2002` CustomRole folder and all of its contents, stored in your local AutomatedLab's CustomRole folder.
 
 You can source these things from either my [PoSH GitHub repository](https://github.com/codaamok/posh), the [AutomatedLab GitHub repository](https://github.com/AutomatedLab/AutomatedLab) or they're are bundled within the AutomatedLab installer so you probably already have them on disk right now.
 
@@ -70,14 +68,11 @@ cd C:\path\to\where\you\want\to\download
 git clone https://github.com/codaamok/PoSH.git
 ```
 
-<div class="wp-block-image">
-  <figure class="aligncenter size-medium">![](CM2002ALDownloadZip.jpg)<figcaption>Download as ZIP from [https://github.com/codaamok/posh](https://github.com/codaamok/posh)</figcaption></figure>
-</div>
+  ![screenshot](CM2002ALDownloadZip.jpg)Download as ZIP from [https://github.com/codaamok/posh](https://github.com/codaamok/posh)
 
 Now the content is downloaded, we must copy only the `CustomRole\CM-2002` folder to the correct location on disk so AutomatedLab can use the scripts inside it. The location of `CM-2002.ps1` isn't important.
 
 If you were to use PowerShell, the command would look like this:
-
 
 ```powershell
 PS C:\> Copy-Item -Path "C:\path\to\where\you\downloaded\PoSH\AutomatedLab\CustomRoles\CM-2002" -Destination "C:\LabSources\CustomRoles" -Recurse -Force
@@ -89,33 +84,33 @@ Now you can just call `CM-2002.ps1` as is, without any parameters! It will downl
 
 Of course parameters are available to further customise your lab, however as is will give you a functional lab with the below configurations:
 
-  * 1x AutomatedLab lab
-      * Name: "CMLab01"
-      * VMPath: _`<drive`>_:\AutomatedLab-VMs where _`<drive`>_ is the fastest drive available
-      * AddressSpace: An unused and available subnet increasing 192.168.1.0 by 1 until one is found.
-      * ExternalVMSwitch: Allows physical network access via Hyper-V external switch named "Internet". "Default Switch" is an acceptable value to leverage an independent virtual network behind NAT.
-  * 1x Active Directory domain:
-      * Domain: "sysmansquad.lab"
-      * Username: "Administrator"
-      * Password: "Somepass1"
-  * 2x Hyper-V virtual machines:
-      * Operating System: Windows Server 2019 (Desktop Experience)
-      * 1x Domain Controller
-          * Name: "DC01"
-          * vCPU: 2
-          * Max memory: 2GB
-          * Roles: "RootDC", "Routing"
-      * 1x ConfigurationManagerprimarysiteserver:
-          * Name: "CM01"
-          * vCPU: 4
-          * Max memory: 8GB
-          * Roles: "SQLServer2017"
-          * CustomRoles: "CM-2002"
-          * SiteCode: "P01"
-          * SiteName: "CMLab01"
-          * Version: "Latest"
-          * LogViewer: "OneTrace"
-          * Site system roles: MP, DP, SUP (inc WSUS), RSP, EP
+* 1x AutomatedLab lab
+  * Name: "CMLab01"
+  * VMPath: _`<drive`>_:\AutomatedLab-VMs where _`<drive`>_ is the fastest drive available
+  * AddressSpace: An unused and available subnet increasing 192.168.1.0 by 1 until one is found.
+  * ExternalVMSwitch: Allows physical network access via Hyper-V external switch named "Internet". "Default Switch" is an acceptable value to leverage an independent virtual network behind NAT.
+* 1x Active Directory domain:
+  * Domain: "sysmansquad.lab"
+  * Username: "Administrator"
+  * Password: "Somepass1"
+* 2x Hyper-V virtual machines:
+  * Operating System: Windows Server 2019 (Desktop Experience)
+  * 1x Domain Controller
+    * Name: "DC01"
+    * vCPU: 2
+    * Max memory: 2GB
+    * Roles: "RootDC", "Routing"
+    * 1x ConfigurationManagerprimarysiteserver:
+      * Name: "CM01"
+      * vCPU: 4
+      * Max memory: 8GB
+      * Roles: "SQLServer2017"
+      * CustomRoles: "CM-2002"
+      * SiteCode: "P01"
+      * SiteName: "CMLab01"
+      * Version: "Latest"
+      * LogViewer: "OneTrace"
+      * Site system roles: MP, DP, SUP (inc WSUS), RSP, EP
 
 ### Customisations
 
@@ -125,17 +120,17 @@ Review the parameters available for `CM-2002.ps1` via `Get-Help C:\path\to\CM-20
 
 A few examples of things you can customise using parameters of `CM-2002.ps1` are:
 
-  * Which branch to use, whether Current Branch or Technical Preview
-  * Domain
-  * Use Windows Server 2016 or 2019, Standard or Datacenter
-  * Username / password 
-  * Enable/disable auto logon
-  * Address space / subnet for the lab
-  * Site code and name
-  * Hyper-V setting such as vCPU count or memory settings per VM
-  * Target Configuration Manager version
-      * At the time of writing this, only 2002 is available. However when updates become available, you'll be able to specify 2002, 2006, 2010 or just simply "Latest"
-      * For Technical Preview, you'll only ever be able to specify 2002 or "Latest".
+* Which branch to use, whether Current Branch or Technical Preview
+* Domain
+* Use Windows Server 2016 or 2019, Standard or Datacenter
+* Username / password 
+* Enable/disable auto logon
+* Address space / subnet for the lab
+* Site code and name
+* Hyper-V setting such as vCPU count or memory settings per VM
+* Target Configuration Manager version
+  * At the time of writing this, only 2002 is available. However when updates become available, you'll be able to specify 2002, 2006, 2010 or just simply "Latest"
+  * For Technical Preview, you'll only ever be able to specify 2002 or "Latest".
 
 If you wanted to apply scripted customisations to your lab, after the build is complete, then you can consider using `C:\LabSources\CustomRoles\CM-2002\CustomiseCM.ps1`.
 
