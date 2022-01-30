@@ -1,6 +1,6 @@
 ---
 title: Signing and Deploying Applications via MSIX with Intune
-author: Jake Shackelford
+author: jake
 type: post
 date: 2020-09-15T17:22:10+00:00
 url: /2020/09/15/signing-and-deploying-applications-via-msix-with-intune/
@@ -18,7 +18,7 @@ tags:
 
 ### Why would I want to use MSIX and what is it?
 
-[MSIX is a Windows app package format that provides a modern packaging experience to all Windows apps. The MSIX package format preserves the functionality of existing app packages and/or install files in addition to enabling new, modern packaging and deployment features to Win32, WPF, and Windows Forms apps.](https://docs.microsoft.com/en-us/windows/msix/overview#:~:text=MSIX%20is%20a%20Windows%20app,WPF%2C%20and%20Windows%20Forms%20apps.)
+[MSIX is a Windows app package format that provides a modern packaging experience to all Windows apps. The MSIX package format preserves the functionality of existing app packages and/or install files in addition to enabling new, modern packaging and deployment features to Win32, WPF, and Windows Forms apps.](https://docs.microsoft.com/windows/msix/overview#:~:text=MSIX%20is%20a%20Windows%20app,WPF%2C%20and%20Windows%20Forms%20apps.)
 
 Do you have a bloated application? Maybe one or two that are so old it doesn't even have any install parameters? Maybe you have a massive application that is a pain to deploy?
 
@@ -34,13 +34,13 @@ A machine that can run Hyper-V
 ### Getting your certificate and deploying it
 
 The reason we need to get a certificate is to make the app a trusted one. Once we have this in place the app will go from Untrusted to Trusted like the picture below  
-![](vmconnect_1eSsb6FTKd.png) 
+![screenshot](vmconnect_1eSsb6FTKd.png) 
 
-  1. Log in to [Microsoft Store for Business](https://businessstore.microsoft.com/en-us/store?signin=)
+  1. Log in to [Microsoft Store for Business](https://businessstore.microsoft.com/store?signin=)
   2. Select **Manage**
   3. Select **Settings**
   4. Select **Devices**
-  5. Select **Download** on Download your organization's root certificate file for use with Device Guard![](msedge_5t3OJ6orOw.png) 
+  5. Select **Download** on Download your organization's root certificate file for use with Device Guard![screenshot](msedge_5t3OJ6orOw.png) 
 
 You will need to deploy this certificate to any machine that you want to install the app on so let's create the Intune Configuration Profile for it
 
@@ -104,6 +104,6 @@ This will start the creation process of your image. It will take some time to do
  11. Select **Next**
  12. Select **Create**
 
-Congrats! You have a deployed app now! I strongly recommend rebooting the machine after the certificate is deployed and then attempting the installation but you should be all set!<figure class="wp-block-image size-large">
+Congrats! You have a deployed app now! I strongly recommend rebooting the machine after the certificate is deployed and then attempting the installation but you should be all set!
 
-![](giphy-2.gif) </figure>
+![gif](giphy-2.gif) </figure>
