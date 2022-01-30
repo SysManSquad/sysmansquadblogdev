@@ -1,6 +1,6 @@
 ---
 title: Collecting Logs with Log Analytics for Intune devices
-author: Jake Shackelford
+author: jake
 type: post
 date: 2021-01-18T17:38:51+00:00
 url: /2021/01/18/collecting-logs-with-log-analytics-for-intune-devices/
@@ -40,22 +40,22 @@ Now that we have the log analytics workspace configured we can configure the Mic
   2. Navigate to your log analytics workspace
   3. Select **Advanced Settings**
   4. Select **Data**  
-    You can now add any event log you wish to collect. Begin typing a log you wish to collect and it should auto populate. If the log you wish to use does not appear you can type in the full log path and it will be added. I've included an example of a few logs below, please bare in mind that if the log is not enabled by default you will still need to enable that log separately. <figure class="wp-block-image size-large">
+    You can now add any event log you wish to collect. Begin typing a log you wish to collect and it should auto populate. If the log you wish to use does not appear you can type in the full log path and it will be added. I've included an example of a few logs below, please bare in mind that if the log is not enabled by default you will still need to enable that log separately. 
 
-![](image.png) </figure> 
+![screenshot](image.png)  
 
   1. Navigate back to your log analytics workspace
   2. Select **Agents management**
   3. Copy down the **Workspace ID** and **Primary Key**
   4. Select **Download Windows Agent (64bit)** 
   5. Create a folder and put the **MMA-Setup-AMD64.exe** inside of it
-  6. Open command prompt and run **MMA-Setup-AMD64.exe /C** in the directory your install exists![](Discord_KkLVtr1Ip4.png)
+  6. Open command prompt and run **MMA-Setup-AMD64.exe /C** in the directory your install exists![screenshot](Discord_KkLVtr1Ip4.png)
   7. Extract the contents to your desired folder
   8. Download the repo located [Github-IntuneContentPrep][2]
   9. Extract and run the **IntuneWinAppUtil.exe**
  10. Specify the **source folder**
  11. Specify the **setup file** (Setup.exe)
- 12. Specify an **output folder**![](SQQldCGPu6.png)
+ 12. Specify an **output folder**![screenshot](SQQldCGPu6.png)
 
 ## Creating the MMA app deployment
 
