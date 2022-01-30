@@ -1,6 +1,6 @@
 ---
 title: Enrolling and Autopiloting New and Pre-existing Devices into Intune with ConfigMgr – EDU
-author: Andrew Arsenault
+author: andrew
 type: post
 date: 2020-08-25T15:45:46+00:00
 url: /2020/08/25/enrolling-and-autopiloting-new-and-pre-existing-devices-into-intune-with-configmgr-edu/
@@ -16,23 +16,20 @@ I created a ConfigMgr PXE task sequence that with minimal intervention, will "re
 
 First off we will prepare the Autopilot Profile and download the config JSON
 
-In MEMAC, navigate to the "Windows Autopilot deployment profiles" blade, and create a new Autopilot profile, call this whatever you want. The only basic setting we are worried about is the "Convert all targeted devices to Autopilot", set this to Yes. Next we will set the OOBE settings to the following (Note: the "Enter a name" option can be whatever you want to name your devices, this is important as we will use this to target the Autopilot profile post image): <figure class="wp-block-image size-large">
+In MEMAC, navigate to the "Windows Autopilot deployment profiles" blade, and create a new Autopilot profile, call this whatever you want. The only basic setting we are worried about is the "Convert all targeted devices to Autopilot", set this to Yes. Next we will set the OOBE settings to the following (Note: the "Enter a name" option can be whatever you want to name your devices, this is important as we will use this to target the Autopilot profile post image): 
 
-![](image.png) </figure> 
+![screenshot](image.png)
 
 For now we will not assign this to a group, this comes later.
 
 Next we are going to pull down this config into a file called AutopilotConfigurationFile.JSON. In powershell run the following commands:
-
 
 ```powershell
 Install-Module WindowsAutopilotIntune -Force
 Connect-MSGraph
 ```
 
-
 Sign into your tenant here and back in powershell run the following command:
-
 
 ```powershell
 Get-AutopilotProfile | ConvertTo-AutopilotConfigurationJSON | Out-File c:\Autopilot\AutopilotConfigurationFile.json -Encoding ASCII
@@ -44,23 +41,21 @@ Next we head into ConfigMgr and create a new package, this package can have any 
 
 Now, create a new task sequence and select the option for "Deploy Windows Autopilot for Existing Devices". The rest of these options can be default, just select your Windows image you want to use and on the Prepare System for Windows Autopilot screen, select the package that you just created that contains your JSON.
 
-Once the TS is created it should look something like this:<figure class="wp-block-image size-large">
+Once the TS is created it should look something like this:
 
-![](image-1.png) </figure> 
+![screenshot](image-1.png)  
 
-We are going to make some small changes to this task sequence, when completed, it should look like this:<figure class="wp-block-image size-large">
+We are going to make some small changes to this task sequence, when completed, it should look like this:
 
-![](image-3.png) <figcaption>The final reboot step reboots to the currently installed operation system </figcaption></figure> 
+![screenshot](image-3.png) The final reboot step reboots to the currently installed operation system  
 
-The step we added "Autopilot for existing devices config file" is a "Run Command Line" and will copy the config JSON from the package we created earlier and place it in the C:\Windows\Provisioning\Autopilot\ folder. It should look something like this:<figure class="wp-block-image size-large">
+The step we added "Autopilot for existing devices config file" is a "Run Command Line" and will copy the config JSON from the package we created earlier and place it in the C:\Windows\Provisioning\Autopilot\ folder. It should look something like this:
 
-![](image-9.png) </figure> 
-
+![screenshot](image-9.png)  
 
 ```text
 cmd.exe /c xcopy AutopilotConfigurationFile.json %OSDTargetSystemDrive%\windows\provisioning\Autopilot\ /c
 ```
-
 
 Distribute this content to your DP.
 
@@ -70,31 +65,30 @@ At this point lets head back to MEMAC and create our dynamic device security gro
   (device.displayName -startsWith "LLP")
 ```
 
-
 Once this group is created, navigate to the Deployment Profiles blade that we linked at the beginning of the blog, select your AP profile and under properties, edit the assignments and assign the profile to the newly created dynamic group.
 
-Congrats! Most of the setup is complete at this point, we only have to deploy the new Task Sequence and run it! Back in ConfigMgr deploy your Provisioning TS to "All Unknown Computers" or to a collection if you want to convert already managed machines (there is an easier way to do this that I may blog about later) and PXE boot your device, run the task sequence! After some time (usually 20 min or so) you should be presented with the following screen:<figure class="wp-block-image size-large">
+Congrats! Most of the setup is complete at this point, we only have to deploy the new Task Sequence and run it! Back in ConfigMgr deploy your Provisioning TS to "All Unknown Computers" or to a collection if you want to convert already managed machines (there is an easier way to do this that I may blog about later) and PXE boot your device, run the task sequence! After some time (usually 20 min or so) you should be presented with the following screen:
 
-![](image-4-1024x767.png) <figcaption>Choose any options for all of these screens as they will be handled by AutoPilot going forward</figcaption></figure> 
+![screenshot](image-4-1024x767.png) Choose any options for all of these screens as they will be handled by AutoPilot going forward 
 
-After selecting your defaults, the final screen you should see is your Org login screen.<figure class="wp-block-image size-large">
+After selecting your defaults, the final screen you should see is your Org login screen.
 
-![](ap-1024x773.jpg) </figure> 
+![screenshot](ap-1024x773.jpg)  
 
 After another couple of minutes of setup, the provisioning process begins! At this point it will apply any settings that were configured as a part of that Autopilot Profile we set up earlier. 
 
-If you check MEMAC at this stage you should see your newly created device but it won't be named properly yet, and is missing some info.<figure class="wp-block-image size-large">
+If you check MEMAC at this stage you should see your newly created device but it won't be named properly yet, and is missing some info.
 
-![](image-5-1024x29.png) </figure> 
+![screenshot](image-5-1024x29.png)  
 
 At this point the machine still isn't completely converted, that comes a little later, for now, let the device provision and send you to your desktop.
 
-Once we are at the desktop, take a look in MEMAC, TA-DA!<figure class="wp-block-image size-large">
+Once we are at the desktop, take a look in MEMAC, TA-DA!
 
-![](image-7-1024x24.png) </figure> 
+![screenshot](image-7-1024x24.png)  
 
-The new device is named according to our AP config file, and is now managed by Intune. If we check the Autopiloted Devices blade we see the following:<figure class="wp-block-image size-large">
+The new device is named according to our AP config file, and is now managed by Intune. If we check the Autopiloted Devices blade we see the following:
 
-![](complete-1.png) </figure> 
+![screenshot](complete-1.png)  
 
 Your device is now Autopiloted and managed by Intune! You can now reset this device and it will come up with the settings configured in the AP Config JSON.
