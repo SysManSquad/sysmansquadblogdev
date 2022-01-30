@@ -1,6 +1,6 @@
 ---
 title: Getting Reboot History and Optimizing Legacy Functions
-author: Nic Wendlowsky
+author: nic
 type: post
 date: 2020-08-28T14:00:00+00:00
 url: /2020/08/28/getting-reboot-history-and-optimizing-legacy-functions/
@@ -15,7 +15,6 @@ The other day, I logged on to a jump server and, while investigating an unrelate
 As I opened an old stand-by function from my stash (originally posted here: [https://gallery.technet.microsoft.com/scriptcenter/Get-RebootHistory-bc804819](https://gallery.technet.microsoft.com/scriptcenter/Get-RebootHistory-bc804819) in 2015) and ran it, I was a bit annoyed at how SLOW it was. I decide to open the function and was saddened to see that it wasn't even using Get-Event... It was using WMI to comb Event Logs. So, I deviated from my original task and set out fixing it. Here's how:
 
 The first thing I needed to do was identify how to get the same information in a faster manner. Since this function is using `Get-WMIObject` to search Event Logs, we already know improvements can be made with using `Get-EventLog` or `Get-WinEvent`. And we can test each with `Measure-Object` to determine the winner:
-
 
 ```powershell
 'Get-WinEvent takes {0} milliseconds to find {1} events' -f (Measure-Command -Expression {
@@ -45,29 +44,19 @@ Remove-Variable Params,count
 Remove-Variable Params,count
 ```
 
-
-<div class="wp-block-uagb-inline-notice uagb-inline_notice__outer-wrap uagb-inline_notice__align-left uagb-block-1f687e7f">
-##### Note: Get-EventLog InstanceID
+Note: **Get-EventLog InstanceID**
   
-  <div class="uagb-notice-text">
-    <p>
-      Even though it's not used in the script, I wanted to point out that <code>Get-EventLog</code>'s InstanceID value does not correspond to the Event ID used in the other cmdlets. I used this [ConvertTo-InstanceID](https://community.idera.com/database-tools/powershell/powertips/b/tips/posts/translate-eventid-to-instanceid) function to get the corresponding InstanceID for each Event ID.
-    </p>
-  </div>
-</div>
+> Even though it's not used in the script, I wanted to point out that `Get-EventLog`'s InstanceID value does not correspond to the Event ID used in the other cmdlets. I used this [ConvertTo-InstanceID](https://community.idera.com/database-tools/powershell/powertips/b/tips/posts/translate-eventid-to-instanceid) function to get the corresponding InstanceID for each Event ID.
 
 Which resulted in the following times:
 
-<div class="wp-block-image">
-  <figure class="alignleft size-full is-resized">![Measure cmdlets to search Event Logs](Snag_21a99dae.png)<figcaption>A 99.78% decrease in time!</figcaption></figure>
-</div>
+  ![Measure cmdlets to search Event Logs](Snag_21a99dae.png) A 99.78% decrease in time!
 
 Wow, I knew WMI cmdlets were a bit slow, but I didn't expect to see such a drastic improvement by using `Get-WinEvent`. It's safe to say this is how we'll move forward. 
 
 I like the information that `Get-RebootHistory` outputs, so I want to keep the same data while using the more efficient command. Let's dig through the function to find out what we're modifying.
 
 Identify the main, slow command:
-
 
 ```powershell
 Try {  
@@ -77,9 +66,7 @@ Try {
    ForEach ($Event In $Events) {..}
 ```
 
-
 And Since it's using splatting, we need to find the variable holding the values:
-
 
 ```powershell
 # Arguments to be passed to our WMI call.  
@@ -92,9 +79,7 @@ $Params = @{
 } 
 ```
 
-
 Now we need to replace `Get-WMIObject` with `Get-WinEvent` and compare the outputs. Referencing good ol' [Dr. Scripto's blog on the FilterHashtable param](https://devblogs.microsoft.com/scripting/use-filterhashtable-to-filter-event-log-with-powershell/), we replace the WMI splat and the `$Events` line with:
-
 
 ```powershell
 $Params = @{ 
@@ -107,9 +92,7 @@ $Params = @{
 $Events = Get-WinEvent @Params
 ```
 
-
 Next we'll need to verify the integrity of this `Switch` statement
-
 
 ```powershell
 # Record the relevant details for the shutdown event. 
@@ -120,13 +103,11 @@ Switch ($Event.EventCode) {
 }
 ```
 
-
 Testing the output of our new `$Events` variable, we see the properties of the first element do not have the same property names. Most are easy enough to match up, save for the `InsertionStrings` property  
 ![Event property compare](Snag_2180a815.png)  
 For the `InsertionStrings` property, I just went exploring and tried this, which had the corresponding values:  
 ![6008 properties](Snag_2184b929.png)  
 and led to the new Switch statement:
-
 
 ```powershell
 # Record the relevant details for the shutdown event. 
@@ -137,9 +118,7 @@ Switch ($Event.Id) {
 } 
 ```
 
-
 Finally, we validate the `$ShutdownDetail` values:
-
 
 ```powershell
 # Grab details about the last clean shutdown and generate our return object. 
@@ -160,9 +139,7 @@ $ShutdownDetail | Select -First 1 | ForEach-Object {
 }   
 ```
 
-
 Once again, there are values to modify by comparing the output of the WMI event object to the new object, but I came across one property that didn't translate well, the `LastShutdownUser` property. With WMI, the readable User Name was placed in the `$Events[0].InsertionStrings` property, but `Get-WinEvent` provides just the SID. I put together a quick CIM function to grab the User name:
-
 
 ```powershell
 FUNCTION Get-UserFromRegistry{
@@ -183,10 +160,8 @@ FUNCTION Get-UserFromRegistry{
 }
 ```
 
-
 Now I can call that function for the `LastShutdownUser` property and replicate the output from the original `Get-RebootHistory` function in the output object.  
 Additionally, we can once again replace the `InsertionStrings` and simplify the `LastShutdownUser`, `LastShutdownProcess`, `LastShutdown`, and `LastShutdownReason` since `Get-WinEvent` also provides more readily readable values:
-
 
 ```powershell
 # Grab details about the last clean shutdown and generate our return object. 
@@ -207,9 +182,7 @@ $ShutdownDetail | Select -First 1 | ForEach-Object {
 }
 ```
 
-
 All of that leads to the finished product, which I've put in a gist on GitHub.  
 Enjoy!
 
 [https://gist.github.com/hkystar35/12b5f54401edfb9077346da7fe938e4e](https://gist.github.com/hkystar35/12b5f54401edfb9077346da7fe938e4e)
-
