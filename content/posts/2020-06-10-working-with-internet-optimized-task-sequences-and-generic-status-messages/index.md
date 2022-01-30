@@ -1,6 +1,6 @@
 ---
 title: Working With Internet-Optimized Task Sequences and Generic Status Messages
-author: Ronald Montgomery
+author: ronald
 type: post
 date: 2020-06-10T14:00:00+00:00
 url: /2020/06/10/working-with-internet-optimized-task-sequences-and-generic-status-messages/
@@ -20,15 +20,9 @@ I found [this](https://www.reddit.com/r/SCCM/comments/b19gzw/how_we_used_to_do_i
 
 The author explains how to return a generic information status message, with information of your choice in one of the insertion string fields. I created an action in my task sequence to return a string value of **projectInstalled** if 32-bit Project was installed. I use the Project boolean task sequence variable set earlier in the task sequence as a condition for the action.
 
-If the 32-bit Project condition evaluates true the generic status message is sent:<figure class="wp-block-table">
+If the 32-bit Project condition evaluates true the generic status message is sent:
 
-<table>
-  <tr>
-    <td>
-      **%**SYSTEMROOT%\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -Command " & { $eventObj = New-Object -ComObject Microsoft.SMS.Event -ErrorAction Stop; $eventObj.EventType = \"SMS_GenericStatusMessage_Info\";$eventObj.SetProperty(\"Attribute403\", \"GenericMsg_SeeInsertionStrings\");$eventObj.SetProperty(\"InsertionString1\", \"MsgType_Office365Upgrade\");$eventObj.SetProperty(\"InsertionString2\", \"projectInstalled\");$eventObj.Submit()}" 
-    </td>
-  </tr>
-</table></figure> 
+  **%**SYSTEMROOT%\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -Command " & { $eventObj = New-Object -ComObject Microsoft.SMS.Event -ErrorAction Stop; $eventObj.EventType = \"SMS_GenericStatusMessage_Info\";$eventObj.SetProperty(\"Attribute403\", \"GenericMsg_SeeInsertionStrings\");$eventObj.SetProperty(\"InsertionString1\",\"MsgType_Office365Upgrade\");$eventObj.SetProperty(\"InsertionString2\", \"projectInstalled\");$eventObj.Submit()}"
 
 (A quick aside: I used a task sequence command line action to run this script. The preferred method is to run a PowerShell script; old dog, new tricks, and all that jazz. Adam Gross has re-written the above code as a robust PowerShell script. The script is available [here](https://github.com/RonaldMontgomery/SysManSquad/blob/master/New-CustomStatusMessage).)
 
@@ -38,15 +32,20 @@ When querying status messages on the CAS I saw the generic status messages retur
 
 There are creative ways to use this information. We can programmatically query for these generic status messages, or use Microsoft Flow or a Status Filter Rule, and then call the internal webservice to inject the resource records in the corresponding 64-bit deployment collections. For now, we’ve stayed simple and built remediation collections from the generic status messages.
 
-[This](https://social.technet.microsoft.com/Forums/en-US/0822d4d9-3033-4344-8cff-c72d89a0db20/how-to-create-collection-based-on-status-message?forum=configmgrgeneral) Technet forum thread gives the collection query syntax. The WQL query for the 64-bit Project deployment collection is below. Messsage ID **39997** is the generic information status message ID. The first insertion string value of **MsgType_Office365Upgrade** was chosen to separate these messages from future deployment messages.<figure class="wp-block-table">
+[This](https://social.technet.microsoft.com/Forums/en-US/0822d4d9-3033-4344-8cff-c72d89a0db20/how-to-create-collection-based-on-status-message?forum=configmgrgeneral) Technet forum thread gives the collection query syntax. The WQL query for the 64-bit Project deployment collection is below. Messsage ID **39997** is the generic information status message ID. The first insertion string value of **MsgType_Office365Upgrade** was chosen to separate these messages from future deployment messages.
 
-<table>
-  <tr>
-    <td>
-      **select** SMS_R_SYSTEM.ResourceID,<br />SMS_R_SYSTEM.ResourceType,<br />SMS_R_SYSTEM.Name,<br />SMS_R_SYSTEM.SMSUniqueIdentifier,<br />SMS_R_SYSTEM.ResourceDomainORWorkgroup,<br />SMS_R_SYSTEM.Client <br />**from** sms_R_System <br />**JOIN** sms_statusmessage **ON** sms_R_System.netbios_name0 = sms_statusmessage.machinename <br />**JOIN** sms_StatMsgWithInsStrings **ON** sms_statusmessage.RecordID = sms_StatMsgWithInsStrings.RecordID <br />**WHERE** sms_statusmessage.messageid = "39997" <br />**AND** sms_StatMsgWithInsStrings.InsString1 = "MsgType_Office365Upgrade" <br />**AND** sms_StatMsgWithInsStrings.InsString2 = "projectInstalled" 
-    </td>
-  </tr>
-</table></figure> 
+  **select** SMS_R_SYSTEM.ResourceID,
+  SMS_R_SYSTEM.ResourceType,
+  SMS_R_SYSTEM.Name,
+  SMS_R_SYSTEM.SMSUniqueIdentifier,
+  SMS_R_SYSTEM.ResourceDomainORWorkgroup,
+  SMS_R_SYSTEM.Client 
+  **from** sms_R_System 
+  **JOIN** sms_statusmessage **ON** sms_R_System.netbios_name0 = sms_statusmessage.machinename 
+  **JOIN** sms_StatMsgWithInsStrings **ON** sms_statusmessage.RecordID = sms_StatMsgWithInsStrings.RecordID 
+  **WHERE** sms_statusmessage.messageid = "39997" 
+  **AND** sms_StatMsgWithInsStrings.InsString1 = "MsgType_Office365Upgrade" 
+  **AND** sms_StatMsgWithInsStrings.InsString2 = "projectInstalled"
 
 Through the use of generic status messages in the Microsoft 365 Apps upgrade task sequence we hope to automate application upgrade/installation for the Outlook plug-in, Visio, and Project users. A second goal is to reduce the task sequence payload for internet-based clients – and keep only one task sequence for all deployment cases.  
 Do you do similar work in your environment? Do you have ideas to make this process work better? I’m always trying to learn new ways of working. Please let me know.
