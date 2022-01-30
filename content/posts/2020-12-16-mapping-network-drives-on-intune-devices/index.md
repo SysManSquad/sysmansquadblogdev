@@ -1,6 +1,6 @@
 ---
 title: Mapping Network Drives on Intune Devices
-author: Jake Shackelford
+author: jake
 type: post
 date: 2020-12-16T19:04:49+00:00
 url: /2020/12/16/mapping-network-drives-on-intune-devices/
@@ -17,19 +17,18 @@ tags:
 ---
  
 
-This guide is part of a video series companion guide on setting up mapped drives on Intune devices - you can watch the video here [<a href="https://www.youtube.com/watch?v=hHtXFeuHkC4">S02E18 - How to Map Network Drives on Microsoft Intune Devices - (I.T) - YouTube](https://www.youtube.com/watch?v=hHtXFeuHkC4)</a>! This is rather simple but I will be adding some useful bits of code for people who do not have an always on VPN solution for all those Work From Home scenarios. 
+This guide is part of a video series companion guide on setting up mapped drives on Intune devices - you can watch the video here [S02E18 How to Map Network Drives on Microsoft Intune Devices - (I.T)](https://www.youtube.com/watch?v=hHtXFeuHkC4)! This is rather simple but I will be adding some useful bits of code for people who do not have an always on VPN solution for all those Work From Home scenarios. 
 
 ## Creating the script
 
 Before we get started let me explain how this process works. We are going to create a script that we deploy via intune, which in turn will create a scheduled task to map the network drives at login. We will then be adding a few lines of code to also have it map on any network changes.
 
-  1. Go to [https://intunedrivemapping.azurewebsites.net/DriveMapping](https://intunedrivemapping.azurewebsites.net/DriveMapping)
-  2. Follow the onscreen options to add/remove mapped drives as needed
-  3. Select **Download Powershell Script**
-  4. Edit the powershell script, near the bottom you will see the following line  
-    `$trigger=New-ScheduledTaskTrigger-AtLogOn`
-  5. Remove everything below that point and add the following
-
+1. Go to [https://intunedrivemapping.azurewebsites.net/DriveMapping](https://intunedrivemapping.azurewebsites.net/DriveMapping)
+2. Follow the onscreen options to add/remove mapped drives as needed
+3. Select **Download Powershell Script**
+4. Edit the powershell script, near the bottom you will see the following line  
+  `$trigger=New-ScheduledTaskTrigger-AtLogOn`
+5. Remove everything below that point and add the following
 
 ```powershell
 $trigger = New-ScheduledTaskTrigger -AtLogOn
@@ -58,7 +57,6 @@ stop-Transcript
 }
 ```
 
-
 ## Upload to Intune
 
   1. Navigate to [https://endpoint.microsoft.com/](https://endpoint.microsoft.com/)
@@ -72,6 +70,6 @@ stop-Transcript
 
 ## Verify the Scheduled Task Exists
 
-Once you have deployed the script to the selected group, you can sync Intune policies through Company Portal. Remember it can take up to 8 hours for this to appear. You should see a scheduled Task named `IntuneDriveMapping` and the triggers should look like the below.<figure class="wp-block-image size-large is-resized">
+Once you have deployed the script to the selected group, you can sync Intune policies through Company Portal. Remember it can take up to 8 hours for this to appear. You should see a scheduled Task named `IntuneDriveMapping` and the triggers should look like the below.
 
-![](MicrosoftTeams-image-2-1024x439.png) </figure>
+![screenshot](MicrosoftTeams-image-2-1024x439.png) 
