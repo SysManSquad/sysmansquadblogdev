@@ -17,7 +17,7 @@ In this post I'll show you how to start building a ConfigMgr lab, for either Cur
 
 It downloads all the necessary files for you, including the CB or TP installation media. All you have to do is provide a Windows Server 2016/2019 ISO, but this can also be an evaluation copy.
 
-This post was originally posted on the [WinAdmin's](https://winadmins.chat) blog, however we've joined forces with SysManSquad and moved the content. Since that post, I've updated the code to support the 2002 baseline, several bug fixes and now support installing Technical Preview! I also intend to provide clearer instructions.
+This post was originally posted on the [WinAdmins](https://winadmins.io) blog, however we've joined forces with SysManSquad and moved the content. Since that post, I've updated the code to support the 2002 baseline, several bug fixes and now support installing Technical Preview! I also intend to provide clearer instructions.
 
 ### What is AutomatedLab?
 
