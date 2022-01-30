@@ -1,6 +1,6 @@
 ---
 title: Create Windows 10 Kiosk Environment
-author: AshMT
+author: ashmt
 type: post
 date: 2020-06-16T14:00:00+00:00
 url: /2020/06/16/create-windows-10-kiosk-environment/
@@ -14,19 +14,18 @@ I discovered these registry settings to allow me to functionally create a Kiosk 
 
 These registry edits will result in the following:
 
-  * Any time the user logs into this computer. The chosen application will launch.
-  * The taskbar will be hidden
-  * Ctrl+Alt+Del wont work once the user is logged in (If you opt in for that registry edit.)
-  * The user will login automatically when the computer turns on (If you opt in for that registry edit.)
+* Any time the user logs into this computer. The chosen application will launch.
+* The taskbar will be hidden
+* Ctrl+Alt+Del wont work once the user is logged in (If you opt in for that registry edit.)
+* The user will login automatically when the computer turns on (If you opt in for that registry edit.)
 
 First enter Registry Editor:  
-Win+R<figure class="wp-block-image size-large is-resized">
+**Hotkey**: `Win+R`
 
-![](image-8.png) </figure> 
+![screenshot](image-8.png)
 
-
-
-<pre class="wp-block-code"><code># Add startup application:
+```powershell
+# Add startup application:
 
     [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\System]
     "Shell"="C:\\full\\path\\to\\your\\application.exe>"
@@ -45,14 +44,12 @@ Win+R<figure class="wp-block-image size-large is-resized">
     Computer\HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\System
      ## the registry key "System" may not exist. In that situation just create       a new key called System.
     "DisableTaskMgr "="1"</code></pre><figure class="wp-block-image size-large">
+```
 
-![](image-10-1024x556.png) </figure> 
-
-  
+![screenshot](image-10-1024x556.png)  
   
 I also suggest downgrading that user to a "Standard User" so they can't make changes to the computer without admin privileges.  
-<figure class="wp-block-image size-large">
 
-![](image-9.png) </figure> 
+![screenshot](image-9.png)  
 
 Using these simple Registry settings you will be up and running with a Kiosk that runs any application you need as well as locking down the interface of the Windows 10 computer.
