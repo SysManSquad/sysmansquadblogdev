@@ -1,6 +1,6 @@
 ---
 title: Bulk Updating Autopilot enrolled devices with Graph API and assigning a Group Tag based on Purchase OrderID
-author: Jake Shackelford
+author: jake
 type: post
 date: 2020-08-24T14:31:46+00:00
 url: /2020/08/24/bulk-updating-autopilot-enrolled-devices-with-graph-api-and-assigning-a-group-tag-based-on-purchase-orderid/
@@ -47,36 +47,32 @@ Watch a demo of this script on Intune.Training.
 
 ### Registering an APP to access Graph API and Grabbing Additional Information
 
-  1. Navigate to your [Azure Active Directory](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps)
-  2. Select **App registrations** 
-  3. Select **New registration**
-  4. Give your app a name such as Intune Graph Access
-  5. Select **Register**
-  6. Go to your newly created App
-  7. Select **API permissions**
-  8. Select **Add a permission**
-  9. Select **Microsoft Graph**
- 10. Select **Application permissions**
- 11. Enable **DeviceManagementServiceConfig.ReadWrite.All**
- 12. Select **Add permissions**
- 13. Select **Grant Admin Consent for CONTOSO**
-
-  1. Navigate to **Certificates & Secrets** for your app
-  2. Select **New client secret**
-  3. Give a description and select an expiration time
-  4. Select **Add**
-  5. Copy the key value for later use
-
-  1. Select **Overview**
-  2. Copy the Application (client) ID for later use
-
-  1. Select **Custom domain names**
-  2. Copy your domain that has the .onmicrosoft.com for later use
+1. Navigate to your [Azure Active Directory](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps)
+2. Select **App registrations** 
+3. Select **New registration**
+4. Give your app a name such as Intune Graph Access
+5. Select **Register**
+6. Go to your newly created App
+7. Select **API permissions**
+8. Select **Add a permission**
+9. Select **Microsoft Graph**
+10. Select **Application permissions**
+11. Enable **DeviceManagementServiceConfig.ReadWrite.All**
+12. Select **Add permissions**
+13. Select **Grant Admin Consent for CONTOSO**
+    1. Navigate to **Certificates & Secrets** for your app
+    2. Select **New client secret**
+    3. Give a description and select an expiration time
+    4. Select **Add**
+    5. Copy the key value for later use
+    6. Select **Overview**
+    7. Copy the Application (client) ID for later use
+    8. Select **Custom domain names**
+    9. Copy your domain that has the .onmicrosoft.com for later use
 
 ### The Script
 
 You will need to update 4 fields in the below script with information you copied earlier. Those fields being line 2,3,4, and 6 if you changed the group tag for your dynamic device query. The script will use the App we created earlier to authenticate and grab information for all devices and create an array of devices based on Purchase Order ID. that you manually enter via prompt. It then loops through that array and assigns the Group Tag to all devices . Once all group tags have been assigned it will push a refresh to your portal, bare in mind that you may have to wait an hour or so for the new group tags to show up. This is incredibly helpful for large bulk orders.
-
 
 ```powershell
 # Application (client) ID, tenant Name and secret
@@ -114,4 +110,3 @@ foreach ($device in $Devices) {
 $apiUrl2 = "https://graph.microsoft.com/beta/deviceManagement/windowsAutopilotSettings/sync"
 Invoke-RestMethod -Headers @{Authorization = "Bearer $($TokenResponse.access_token)"} -Uri $apiUrl2 -Method Post
 ```
-
