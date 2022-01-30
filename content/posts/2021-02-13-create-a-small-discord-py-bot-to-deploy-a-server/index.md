@@ -1,11 +1,11 @@
 ---
 title: Create a small discord.py bot to deploy a server
-author: Aaron
+author: aaron
 type: post
 date: 2021-02-14T04:10:39+00:00
 excerpt: Building a discord.py bot to deploy a discord server for a competition.
 url: /2021/02/13/create-a-small-discord-py-bot-to-deploy-a-server/
-featured_image: eagle-46636_1280.png
+featured_image: eagle.png
 categories:
   - General
   - How-To
@@ -15,9 +15,9 @@ categories:
 ---
 I volunteer to help run [Southwest CCDC](https://southwestccdc.com/) every year, and had a need to deploy all of the communication infrastructure in a hurry. With Covid Times™ upon us, we needed to move a competition that usually has at least one round in person to all-virtual. Discord was the obvious choice for how to do that successfully - it is targeted to communities of people, and has moderation tools. My discord server needed to have a few things:
 
-  * A few general channels for normal Discord business - announcements, general chatter, help requests etc.
-  * Private channels for each competing team
-  * Private channels for staff to organize during the event
+* A few general channels for normal Discord business - announcements, general chatter, help requests etc.
+* Private channels for each competing team
+* Private channels for staff to organize during the event
 
 Given that the smallest round will usually have 8 teams and the largest round varies - the only answer to make it correctly, efficiently, and correctly seemed to be automation. Clicking around in a GUI isn't fast nor is it easy to track what's been done and what is left. Discord's settings screens are also always full-screen instead of being something smaller you can drag around.
 
@@ -41,15 +41,12 @@ Because I have been exposed to Python before, I was already aware that python pr
 
 I created my virtual environment as a sub-folder. I couldn't possibly say whether it's good practice, but it worked. The virtual environment was in a subfolder called 'venv' so I added it to my `.gitignore` file. You may find [pyenv](https://github.com/pyenv/pyenv) useful.
 
-
 ```powershell
 venv/
 
 ```
 
-
 Having activated my virtual environment, I followed the instructions to use `pip` to add the required modules for Discord.py, and added a few of my own. I wanted to avoid storing credentials in a git repository, and the best way to do that is to hand them off to a vault of some kind. A quick google search found me a module called `keyring`. I also wanted to make sure that as I typed the token to save it, it wouldn't echo to the screen, so that led me to another module called `getpass`. Seems simple enough so far - they all seem to do what they say they will. The bot's name is MR_FLOOFY. 
-
 
 ```python
 import keyring
@@ -59,7 +56,6 @@ service_id='MR_FLOOFY'
 token=getpass.getpass(prompt='Token: ', stream=None)
 keyring.set_password(service_id, service_id, token)
 ```
-
 
 Having a few extra python `pip` modules in place, I followed the instructions to use `pip` to freeze the list of installed modules in my environment to `requirements.txt`. This will allow me to quickly re-create this virtual environment if it is destroyed, or I need to change where it's hosted.
 
@@ -71,7 +67,6 @@ I'm not going to describe the entire, frustrating process of learning just enoug
 
 The first thing one typically does in a python file is import the modules you'll need in the script. 
 
-
 ```python
 import sys
 import discord
@@ -79,13 +74,11 @@ import keyring
 import logging
 ```
 
-
 Next, we set some discord-specific options, retrieve our token and build objects to use later. The `intents` object is used to tell Discord what things the bot will need access to, so we create the object with the defaults, then also ask for the member list. 
 
 The `client` object is what we'll use later to make things go. The `logging` object seems to come for free because we used `import logging` earlier , I didn't have to specifically create it. We define the service id that matches the service id from when we ran `save_key.py` earlier. We then retrieve the token to use later. 
 
 The logging settings are also very important - if you screw up and do too many things to some API endpoints, you'll get locked out of it for a period of time. Some of the endpoint limits are ridiculously low and the logging will print to the screen to let you know when you've hit one of those limits so you don't enrage yourself wondering why code that worked a few minutes ago doesn't work now.
-
 
 ```python
 intents = discord.Intents.default()
@@ -96,13 +89,11 @@ service_id ='MR_FLOOFY'
 TOKEN=keyring.get_password(service_id, service_id)
 ```
 
-
 This bot is meant to listen for messages that meet criteria, so we use this code to define what the bot will look for. I mostly looked through the Discord.py examples linked earlier to figure out how to get started.
 
 We define the event we care about, then say what should happen when that event fires, in our case `on_message`. I believe this is a 'callback' but don't quote me. The `message` object contains the contents of the message, who sent it, the server it came from, and a number of other useful properties.
 
 If the message meets some criteria, we do some stuff, then `return` to end processing. In this case the only one that needs to issue commands is me, so our first two conditions just check to see if the bot is talking to itself, or whether the caller is not me. Obviously the second condition would make the first condition completely irrelevant - but I'm leaving it in for this example.
-
 
 ```python
 @client.event
@@ -120,19 +111,17 @@ async def on_message(message):
         await client.close()
 ```
 
-
 CCDC games are run by [several teams](https://www.nationalccdc.org/index.php/competition/competitors/rules). Given the audience of this Discord server and it's purpose, I have to code for 5 separate roles.
 
-  * Gold team - organizers of the competition
-  * Black team - infrastructure for the game, including the game machines themselves
-  * White team - folks who help run the people side of the competition. 
-  * I also have to set up special rights for team coaches, who are allowed to observe but not help. 
-  * A role for each team
+* Gold team - organizers of the competition
+* Black team - infrastructure for the game, including the game machines themselves
+* White team - folks who help run the people side of the competition. 
+* I also have to set up special rights for team coaches, who are allowed to observe but not help. 
+* A role for each team
 
 I originally had all of this bundled up in one command. It was _really_ fun to issue one command and watch an entire discord server populate, but like all good things - it got too complicated and debugging turned into a pain. 
 
 This next stanza sets up the non-competition roles, along with what color they should appear as, whether the role members should be listed apart from all other server members ('_hoisted_') , server-wide [permissions](https://discordapi.com/permissions.html), etc. 
-
 
 ```python
     if message.content.startswith('!staffroles'):
@@ -144,11 +133,9 @@ This next stanza sets up the non-competition roles, along with what color they s
 
 ```
 
-
 Now, we need to create a category of channels for staff using these roles, along with customized permissions for channels inside that category. 
 
 We begin by getting the role objects we created earlier. We then create permission override objects we'll use when we create the channels. Following that, we create the category, get an object representing it, and create channels using the category object and the permission overrides.
-
 
 ```python
     if message.content.startswith('!staffchannels'):
@@ -203,7 +190,6 @@ We begin by getting the role objects we created earlier. We then create permissi
         await guild.create_text_channel(name="White Team", category=staff_category)
 ```
 
-
 Here we come to the meat of the script - how do you quickly create a number of teams along with some work channels, locked down to keep each blue team out of each other's business? Some loops mostly, using the code we've already seen above.
 
 Generally speaking, here's how the permissions for teams are supposed to work:
@@ -211,7 +197,6 @@ Generally speaking, here's how the permissions for teams are supposed to work:
 Black/Gold/White/[1 Blue team] should have r/w for text and voice, while coaches can see everything and say nothing. This is to replicate the in-person experience where team coaches serve as room monitors for all teams except their own. It's not just about rule enforcement however, coaches have access to this level of information because it will help them coach their teams and learn from other team experiences. Since the ultimate goal of the competition is education, this aligns with that goal without making the competition unfair.
 
 The coach role permissions below are not good enough, they allow the guild-wide permissions for the coach role to filter down to the teams. I'll change how those work in future versions of Mr Floofy.
-
 
 ```python
     if message.content.startswith('!deployteams'):
@@ -251,11 +236,9 @@ The coach role permissions below are not good enough, they allow the guild-wide 
 
 ```
 
-
 As you can see, we create a number of channels. Between the number of categories and channels involved, doing this by hand would be prohibitive and prone to failure.
 
 Lastly, as a final command to help set things up, I wanted a way to automate assigning a user to a role in a way where I could easily paste some commands and get a team in their roles from a spreadsheet, given how the list of team members would be sent to me.
-
 
 ```python
     if message.content.startswith('!assign'):
@@ -277,11 +260,9 @@ Lastly, as a final command to help set things up, I wanted a way to automate ass
 
 ```
 
-
 It should be noted that the roles are case-sensitive here.
 
 Lastly, we need an event to fire when the script has initialized and begun to run. We'll use the objects from the top of the script and tell the bot to go.
-
 
 ```python
 @client.event
@@ -293,7 +274,6 @@ client.run(TOKEN)
 
 ```
 
-
 ## Conclusion
 
 It has been an interesting experience building this bot, and as simple as it is, I'm very proud of it. I look forward to extending or replacing it with a proper PowerShell bot, perhaps [PoshBot](https://github.com/poshbotio/PoshBot). I deeply hate the experience of trying to debug python, especially in the context of a bot like this. 
@@ -303,4 +283,3 @@ I hope it's been instructive to you.
 I want to thank my friend [George](https://twitter.com/duplico) for both his expertise and patience as I struggled through some of the nastier parts of getting used to Python.
 
 I also want to thank the fine folks at [Pixabay](https://pixabay.com/vectors/eagle-snake-kill-bird-wings-claws-46636/) for this beautiful header image that expresses my feelings about python.
-
