@@ -1,6 +1,6 @@
 ---
 title: Setting ACL using Intune Endpoint Analytics Proactive Remediations
-author: Jóhannes Geir Kristjánsson
+author: johannes
 type: post
 date: 2020-07-27T14:56:26+00:00
 url: /2020/07/27/setting-acl-using-intune-endpoint-analytics-proactive-remediations/
@@ -16,7 +16,7 @@ categories:
   - Windows
 
 ---
-Namaste y'all! In todays Siri dictated blog post, I will show you how you can configure access control lists (ACL) for a directory using [Intune Proactive remediations](https://docs.microsoft.com/en-us/mem/analytics/proactive-remediations).
+Namaste y'all! In todays Siri dictated blog post, I will show you how you can configure access control lists (ACL) for a directory using [Intune Proactive remediations](https://docs.microsoft.com/mem/analytics/proactive-remediations).
 
 The issue I was facing was that regular users do not have modify permissions to the public desktop on their corporate devices, meaning that the user is unable to remove annoying shortcuts that would get placed there by the various apps they install. While this is hardly a high priority task to solve. I believe that the user experience should be taken into account and amended if possible.
 
@@ -25,7 +25,6 @@ Using Group Policies, this is a trivial task, but Intune has no proper built in 
 ## Discovery
 
 Relatively straight forward, the script checks if the relevant filesystem rights have been assigned, if not, it will error out and report non-compliance
-
 
 ```powershell
 # Discovery
@@ -52,11 +51,9 @@ catch {
 }
 ```
 
-
 ## Remediation
 
 Should the discovery report non-compliance, the following will execute.
-
 
 ```powershell
 # Remediation
@@ -78,10 +75,9 @@ catch {
 }
 ```
 
-
 ## Deployment
 
-Set this to run in the system context and deploy to the relevant group using these steps <https://docs.microsoft.com/en-us/mem/analytics/proactive-remediations#deploy-the-script-packages>. Given the nature of this code, you can safely set the daily interval to a fairly high value.
+Set this to run in the system context and deploy to the relevant group using these steps <https://docs.microsoft.com/mem/analytics/proactive-remediations#deploy-the-script-packages>. Given the nature of this code, you can safely set the daily interval to a fairly high value.
 
 ## Closing words
 
