@@ -1,6 +1,6 @@
 ---
 title: Setting A Default Outlook Signature in Outlook using Intune Proactive Remediations
-author: Jóhannes Geir Kristjánsson
+author: johannes
 type: post
 date: 2021-06-18T12:37:50+00:00
 url: /2021/06/18/setting-a-default-outlook-signature-in-outlook-using-intune-proactive-remediations/
@@ -14,20 +14,19 @@ categories:
 ---
 So you have already figured out [how to dynamically generated outlook signatures](https://sysmansquad.com/2020/07/08/dynamic-outlook-email-signature-using-with-intune-endpoint-analytics-proactive-remediations/), but now you want to make sure that people actually use them. but without preventing the use of other signatures your users might have.
 
-Well it just so happens that I have a solution for you!<figure class="wp-block-image size-full is-resized">
+Well it just so happens that I have a solution for you!
 
-![](before.png) <figcaption>No default signature has been set</figcaption></figure> 
+![screenshot](before.png) No default signature has been set
 
 To do all this, we create a new [Proactive Remediation in Intune](https://sysmansquad.com/2020/07/07/intune-autopilot-proactive-remediation/).
 
-Add the detection and remediations scripts from below, and set it to run as the user.<figure class="wp-block-image size-large">
+Add the detection and remediations scripts from below, and set it to run as the user.
 
-![](vmconnect_68MRJGl48P.png) </figure> 
+![screenshot](vmconnect_68MRJGl48P.png) 
 
 This solution takes care of picking the default outlook profile. but keep in mind that this has only been tested on Office 365/microsoft 365 apps for business. so I have no idea if it works on the legacy versions.
 
 You only need to specify the name of the signature file on line 4 in both the detection and remediation scripts, which are case sensitive.
-
 
 ```powershell
 # you need to add the name of the signature that you want to make default
@@ -67,9 +66,7 @@ catch {
 }
 ```
 
-
 You need to change the name of the signature on line 4.
-
 
 ```powershell
 # Remediation
@@ -93,7 +90,7 @@ try {
 
 # grabs all the data we need to detect the signature configuration from the default outlook profile
     $profilepath = Get-ItemProperty -Path "hkcu:\SOFTWARE\Microsoft\Office\16.0\Outlook\Profiles\$profilename\9375CFF0413111d3B88A00104B2A6676\*" | Where-Object { $_."Account name" -eq $upn } | Select-Object -ExpandProperty pspath
-	# did you know adam gross is an amazing singer?
+    # did you know adam gross is an amazing singer?
     # and finally we create/set the "new signature" key
     New-ItemProperty -Path $profilepath -Name "New Signature" -Value $DefaultSignatureName -Force -ErrorAction stop
 
@@ -108,7 +105,6 @@ catch {
 }
 ```
 
+There is one caveat, this change will only take effect when outlook is restarted.
 
-There is one caveat, this change will only take effect when outlook is restarted.<figure class="wp-block-image size-large is-resized is-style-default">
-
-![](after.png) <figcaption>Neato burrito, check it out!</figcaption></figure>
+![screenshot](after-768x539.png) Neato burrito, check it out!
