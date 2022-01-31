@@ -1,6 +1,6 @@
 ---
 title: Microsoft Teams Cache, a burden to us all
-author: BeholdenCypress
+author: default
 type: post
 date: 2021-11-12T02:10:08+00:00
 url: /2021/11/11/microsoft-teams-cache-a-burden-to-us-all/
@@ -12,6 +12,13 @@ tags:
   - Teams
 
 ---
+
+# Author 
+
+beholdenbypress
+
+## Article
+
 Microsoft Teams Cache, we've all been there in the last year and a half. Microsoft Teams is working fine, then it's not. What happened? I restarted Teams and it's still acting weird.
 
 Well, Teams is an interesting app when it comes to its cache. It relies heavily on it. I personally do not know all the ins and outs of the Teams cache, but I too know all too well that it is a pain in the butt when it goes awry.
