@@ -1,6 +1,6 @@
 ---
 title: Installing The Configuration Manager Client During Autopilot
-author: Jóhannes Geir Kristjánsson
+author: johannes
 type: post
 date: 2021-08-31T03:24:39+00:00
 url: /2021/08/30/installing-the-configuration-manager-client-during-autopilot/
