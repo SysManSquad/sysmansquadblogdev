@@ -1,9 +1,11 @@
 ---
 title: Removing The Built-in Teams App in Windows 11 with Intune
-author: Jóhannes Geir Kristjánsson
+author: johannes
 type: post
 date: 2021-10-08T13:59:21+00:00
 url: /2021/10/08/removing-the-built-in-teams-app-in-windows-11-with-intune/
+featured_image: vmconnect_HKVrTs61hf.png
+images: [/2021/10/08/removing-the-built-in-teams-app-in-windows-11-with-intune/vmconnect_HKVrTs61hf.png]
 categories:
   - Endpoint Management
   - Intune

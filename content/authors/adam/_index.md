@@ -1,8 +1,8 @@
 ---
 author: Adam Gross
-photo: /authors/adam-gross/adam-headshot.png
+photo: /authors/adam/adam-headshot.png
 twitter: https://twitter.com/AdamGrossTX
 role: Founder
-url: "/authors/adam-gross"
+url: "/authors/adam"
 ---
-Adam is a Microsoft MVP in Enterprise Mobility and is the founder of SysManSquad
+Adam is a Microsoft MVP in Enterprise Mobility and is the founder of SysManSquad test 

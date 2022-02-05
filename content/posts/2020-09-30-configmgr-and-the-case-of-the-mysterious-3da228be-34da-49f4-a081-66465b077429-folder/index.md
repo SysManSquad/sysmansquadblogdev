@@ -5,6 +5,7 @@ type: post
 date: 2020-09-30T05:50:17+00:00
 url: /2020/09/30/configmgr-and-the-case-of-the-mysterious-3da228be-34da-49f4-a081-66465b077429-folder/
 featured_image: image-5.png
+images: [/2020/09/30/configmgr-and-the-case-of-the-mysterious-3da228be-34da-49f4-a081-66465b077429-folder/image-5.png]
 categories:
   - Endpoint Management
   - How-To

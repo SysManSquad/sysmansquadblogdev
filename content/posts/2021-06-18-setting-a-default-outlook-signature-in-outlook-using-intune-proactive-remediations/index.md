@@ -4,6 +4,8 @@ author: johannes
 type: post
 date: 2021-06-18T12:37:50+00:00
 url: /2021/06/18/setting-a-default-outlook-signature-in-outlook-using-intune-proactive-remediations/
+featured_image: before.png
+images: [/2021/06/18/setting-a-default-outlook-signature-in-outlook-using-intune-proactive-remediations/before.png]
 categories:
   - Endpoint Management
   - Intune
