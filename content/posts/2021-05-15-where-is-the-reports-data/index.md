@@ -5,6 +5,7 @@ type: post
 date: 2021-05-16T03:21:09+00:00
 url: /2021/05/15/where-is-the-reports-data/
 featured_image: wordcloud_api_graph-3.png
+images: [/2021/05/15/where-is-the-reports-data/wordcloud_api_graph-3.png]
 categories:
   - Azure
   - Documentation
@@ -37,7 +38,7 @@ Well you can - and finding the information can be so easy. Read on below to see 
 Take for example this report on a [Proactive Remediation](https://endpoint.microsoft.com/#blade/Microsoft_Intune_Enrollment/UXAnalyticsMenu/proactiveRemediations). I used one of the built in Proactive Remediations for the example, but it could easily be one of our other [Proactive Remediation](https://sysmansquad.com/category/endpoint-management/proactive-remediation/) posts, like [Dynamic Outlook Signatures](https://sysmansquad.com/2020/07/08/dynamic-outlook-email-signature-using-with-intune-endpoint-analytics-proactive-remediations/), [Building VPN Connections](https://sysmansquad.com/2020/07/07/intune-autopilot-proactive-remediation/), or [Repairing Folder permissions](https://sysmansquad.com/2020/07/27/setting-acl-using-intune-endpoint-analytics-proactive-remediations/).
 </p>
 
-![screenshot](https://i.imgur.com/Zffu5T5.png) 
+![screenshot](Zffu5T5.png) 
 
 This data is generally all exposed by Graph or a similar Microsoft API, it is just a matter of finding the right endpoints.
 

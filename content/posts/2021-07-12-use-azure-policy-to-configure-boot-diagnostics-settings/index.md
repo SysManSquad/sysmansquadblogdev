@@ -4,6 +4,8 @@ author: kevin-crouch
 type: post
 date: 2021-07-12T17:42:11+00:00
 url: /2021/07/12/use-azure-policy-to-configure-boot-diagnostics-settings/
+featured_image: BRJEnNY.png
+images: [/2021/07/12/use-azure-policy-to-configure-boot-diagnostics-settings/BRJEnNY.png]
 categories:
   - Endpoint Management
 tags:
@@ -29,13 +31,13 @@ Our process will have several major parts
 First we will need to Create a Custom Definition. To start with head to Portal.Azure.com > [Azure Policy | Definitions](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyMenuBlade/Definitions).
 
 From here, we will need to create a new Policy Definition
-![screenshot](https://i.imgur.com/7ANVOqt.png) Fill in several fields
+![screenshot](7ANVOqt.png) Fill in several fields
 
 * "Definition Location" - which will be the Subscription.
 * Give it a name
 * Create a custom category, or select an existing one
 
-![screenshot](https://i.imgur.com/BRJEnNY.png) For the Policy Rule Definition, you should be able to copy over this JSON below, or use [this JSON](https://gist.github.com/PsychoData/27c5028a5a78237f9910d4f652f6b269#file-enable_boot_diagnostics-json). Note: Later on, you can configure this to be deployed from a GitHub repo directly, though GitHub actions, but we will talk about that in a later section.
+![screenshot](BRJEnNY.png) For the Policy Rule Definition, you should be able to copy over this JSON below, or use [this JSON](https://gist.github.com/PsychoData/27c5028a5a78237f9910d4f652f6b269#file-enable_boot_diagnostics-json). Note: Later on, you can configure this to be deployed from a GitHub repo directly, though GitHub actions, but we will talk about that in a later section.
 
 ```json
 {
@@ -104,14 +106,14 @@ From here, we will need to create a new Policy Definition
 
   By default, the JSON policy provided will ignore any resources with the tag **IgnoreBootDiagnostics**, but you can also add **Exclusions** here, as well.
 
-![screenshot](https://i.imgur.com/1lJbBMM.png)   
+![screenshot](1lJbBMM.png)   
 For the parameter, you need to fill in the URL to a Azure Blob storage service.
 
 ### Get your Blob Storage Endpoint
 
 My example is [https://YourBlobStorage.blob.core.windows.net](https://YourBlobStorage.blob.core.windows.net) , but you can find the endpoint for your Storage Account by opening your [Storage Accounts](https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Storage%2FStorageAccounts) > Select or Create Relevant Storage account > Settings > Endpoints
 
-![screenshot](https://i.imgur.com/XIQQYC4.png)
+![screenshot](XIQQYC4.png)
 
 ## 4. Create Remediation Task
 
@@ -121,7 +123,7 @@ Since the policy specifies the access needed, it will default to creating a mana
 
 Without the Remediation Task, the Policy will just Report Compliance or failure, but you can always start with no Remediation and then add it back later.
 
-![screenshot](https://i.imgur.com/4Ndafmo.png) 
+![screenshot](4Ndafmo.png) 
 
 ## 5. Be Patient and Enjoy
 
@@ -131,11 +133,11 @@ From there it usually takes *another* 30 minutes to multiple hours before the re
 
 You can check your Remediation status by going to [Policy Assignments](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyMenuBlade/Assignments)> Select your policy name > Remediation tab
 
-![screenshot](https://i.imgur.com/JtkoH2i.png) 
+![screenshot](JtkoH2i.png) 
 
 To see the details, use the three-dots menu on the right to View remediation task
 
-![screenshot](https://i.imgur.com/qESeb98.png) 
+![screenshot](qESeb98.png) 
 
 ## 6. Optional: Export to GitHub
 
@@ -145,7 +147,7 @@ Azure Policies has this built in, including Automated Deployment from GitHub wit
 
 Open [Azure Policy Assignments](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyMenuBlade/Assignments) > Select your assignment > **View Definition** button near the top > **Export Definition** button
 
-![screenshot](https://i.imgur.com/KGmXwlg.gif) 
+![screenshot](KGmXwlg.gif) 
 
 From there, you will need to authorize a connection to a GitHub account with rights to the Account/Repo you want to store the policy in.
 

@@ -1,0 +1,11 @@
+{
+    "name": "Beholden Cypress",
+    "stub": "beholden-cypress",
+    "role": "Member",
+    "display": "true",
+    "bio" : "Need Author Bio",
+    "social": {
+        "twitter": "elonmusk",
+        "linkedin": "elonmusk"
+    }
+}

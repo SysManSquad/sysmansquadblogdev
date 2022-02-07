@@ -4,6 +4,8 @@ author: johannes
 type: post
 date: 2021-08-31T03:24:39+00:00
 url: /2021/08/30/installing-the-configuration-manager-client-during-autopilot/
+featured_image: JlUmG62Jae.png
+images: [/2021/08/30/installing-the-configuration-manager-client-during-autopilot/JlUmG62Jae.png]
 categories:
   - Endpoint Management
 

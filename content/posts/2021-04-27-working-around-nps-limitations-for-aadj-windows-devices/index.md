@@ -1,9 +1,11 @@
 ---
 title: Working around NPS limitations for AADJ Windows devices
-author: default
+author: andrew-blackburn
 type: post
 date: 2021-04-28T03:10:47+00:00
 url: /2021/04/27/working-around-nps-limitations-for-aadj-windows-devices/
+featured_image: image-9.png
+images: [/2021/04/27/working-around-nps-limitations-for-aadj-windows-devices/image-9.png]
 categories:
   - Endpoint Management
   - Intune
@@ -16,10 +18,6 @@ tags:
   - wifi
 
 ---
-
-# Author
-
-Andrew Blackburn
 
 ## Introduction
 
