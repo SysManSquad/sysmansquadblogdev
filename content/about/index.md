@@ -2,6 +2,7 @@
 title: About
 author: default
 type: page
+layout: noauthor
 date: 2019-12-09T06:00:01+00:00
 
 ---

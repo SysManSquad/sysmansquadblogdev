@@ -1,7 +1,7 @@
 ---
 title: Meet the Squad
-author: default
 type: page
+layout: noauthor
 date: 2019-12-09T20:11:54+00:00
 
 ---
