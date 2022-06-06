@@ -1,7 +1,7 @@
 {{ if eq .display "true" }}
 <center>
     <img src="/authors/{{ .stub }}/avatar.png" alt="Photo of {{ .name }}" width="200px" /><br />
-    <strong>{{ .name }}</strong>
+    <strong><a href="/authors/{{ .stub }}">{{ .name }}</a></strong>
     <em>{{ .role }}</em>
         <div>
         {{ if .social.twitter }}
