@@ -1,4 +1,4 @@
-baseurl = "https://blog.sysmansquad.com"
+baseurl = "https://sysmansquad.com"
 title = "Systems Management Squad"
 theme = "sysmansquadblog_theme"
 languageCode = "en-us"
