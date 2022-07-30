@@ -3,9 +3,9 @@ title: who is logged on, from the system context
 author: johannes
 type: post
 date: 2022-7-08T13:59:21+00:00
-url: /2021/10/08/removing-the-built-in-teams-app-in-windows-11-with-intune/
-featured_image: vmconnect_HKVrTs61hf.png
-images: [/2021/10/08/removing-the-built-in-teams-app-in-windows-11-with-intune/vmconnect_HKVrTs61hf.png]
+url: /2022/7/30/which-user-is-logged-in-when-running-as-systeme/
+featured_image:
+images: 
 categories:
   - Powershell
   - Intune
