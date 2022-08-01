@@ -1,5 +1,5 @@
 ---
-title: Contact Use
+title: Contact Us
 author: SysManSquad
 type: page
 layout: noauthor
