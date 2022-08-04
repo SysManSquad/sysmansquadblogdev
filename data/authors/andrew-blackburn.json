@@ -1,10 +1,11 @@
 {
     "name": "Andrew Blackburn",
-    "stub": "andrew-blackburn",
+    "stub": "blurn",
     "role": "Contributor",
     "display": "true",
-    "bio" : "Need Author BIO",
+    "bio" : "Andrew is a K-12 technology director from the Atlanta area, focusing on Windows/iOS/macOS endpoint management.",
     "social": {
-        
+        "twitter": "blurn",
+        "linkedin": "andrewjblackburn"
     }
 }
