@@ -1,6 +1,6 @@
 ---
 title: Working around NPS limitations for AADJ Windows devices
-author: andrew-blackburn
+author: blurn
 type: post
 date: 2021-04-28T03:10:47+00:00
 url: /2021/04/27/working-around-nps-limitations-for-aadj-windows-devices/
@@ -69,7 +69,7 @@ param(
 $orgUnit = "OU=Dummy Devices,OU=Devices,DC=yourdomain,DC=tld" 
 
 # Set the certificate path for name mapping
-$certPath = "X509:I>DC=tld,DC=yourdomain,CN=your-CAS>CN=" 
+$certPath = "X509:<I>DC=tld,DC=yourdomain,CN=your-CA<S>CN=" 
 
 # Prepare SAMAccountName based off of length constraints
 $SAMAccountName = if ($deviceName.Length -ge 15) {$deviceName.Substring(0,15) + "$"} else {$deviceName + "$"}
@@ -134,7 +134,7 @@ Get-PackageProvider -Name "NuGet" -Force | Out-Null
 # Get WindowsAutopilotIntune module (and dependencies)
 $module = Import-Module WindowsAutopilotIntune -PassThru -ErrorAction Ignore
 if (-not $module) {
-    Write-Host "Installing module WindowsAutopilotIntune"
+    Write-Output "Installing module WindowsAutopilotIntune"
     Install-Module WindowsAutopilotIntune -Force
 }
 Import-Module WindowsAutopilotIntune -Scope Global
@@ -149,27 +149,27 @@ $AutopilotDevices = Get-AutopilotDevice | Select-Object azureActiveDirectoryDevi
 $orgUnit = "OU=Dummy Devices,OU=Devices,DC=yourdomain,DC=tld" 
 
 # Set the certificate path for name mapping
-$certPath = "X509:I>DC=tld,DC=yourdomain,CN=your-CAS>CN=" 
+$certPath = "X509:<I>DC=tld,DC=yourdomain,CN=your-CA<S>CN="
 
-# Create new Autopilot computer objects in AD while skipping already existing computer objects
+# Create new Autopilot device objects in AD while skipping already existing computer objects
 foreach ($Device in $AutopilotDevices) {
     if (Get-ADComputer -Filter "Name -eq ""$($Device.azureActiveDirectoryDeviceId)""" -SearchBase $orgUnit -ErrorAction SilentlyContinue) {
-        Write-Host "Skipping $($Device.azureActiveDirectoryDeviceId) because it already exists. " -ForegroundColor Yellow
+        #Write-Output "Skipping $($Device.azureActiveDirectoryDeviceId) because it already exists. "
     } else {
         # Create new AD computer object
         try {
             New-ADComputer -Name "$($Device.azureActiveDirectoryDeviceId)" -SAMAccountName "$($Device.azureActiveDirectoryDeviceId.Substring(0,15))`$" -ServicePrincipalNames "HOST/$($Device.azureActiveDirectoryDeviceId)" -Path $orgUnit
-            Write-Host "Computer object created. ($($Device.azureActiveDirectoryDeviceId))" -ForegroundColor Green
+            Write-Output "Computer object created. ($($Device.azureActiveDirectoryDeviceId))"
         } catch {
-            Write-Host "Error. Skipping computer object creation." -ForegroundColor Red
+            Write-Error "Error. Skipping computer object creation."
         }
         
         # Perform name mapping
         try {
             Set-ADComputer -Identity "$($Device.azureActiveDirectoryDeviceId.Substring(0,15))" -Add @{'altSecurityIdentities'="$($certPath)$($Device.azureActiveDirectoryDeviceId)"}
-            Write-Host "Name mapping for computer object done. ($($certPath)$($Device.azureActiveDirectoryDeviceId))" -ForegroundColor Green
+            Write-Output "Name mapping for computer object done. ($($certPath)$($Device.azureActiveDirectoryDeviceId))"
         } catch {
-            Write-Host "Error. Skipping name mapping." -ForegroundColor Red
+            Write-Error "Error. Skipping name mapping."
         }
     }
 }
@@ -177,14 +177,14 @@ foreach ($Device in $AutopilotDevices) {
 # Reverse the process and remove any dummmy computer objects in AD that are no longer in Autopilot
 $DummyDevices = Get-ADComputer -Filter * -SearchBase $orgUnit | Select-Object Name, SAMAccountName
 foreach ($DummyDevice in $DummyDevices) {
-  if ($AutopilotDevices.azureActiveDirectoryDeviceId -contains $DummyDevice.Name) {
-        # Write-Host "$($DummyDevice.Name) exists in Autopilot." -ForegroundColor Green
+    if ($AutopilotDevices.azureActiveDirectoryDeviceId -contains $DummyDevice.Name) {
+        # Write-Output "$($DummyDevice.Name) exists in Autopilot."
     } else {
-        Write-Host "$($DummyDevice.Name) does not exist in Autopilot." -ForegroundColor Yellow
-        # Remove-ADComputer -Identity $DummyDevice.SAMAccountName -Confirm:$False -WhatIf 
-        #Remove -WhatIf once you are comfortrable with this workflow and have verified the remove operations are only performed in the OU you specified
+        Write-Output "$($DummyDevice.Name) does not exist in Autopilot. Removing..."
+        # Remove-ADComputer -Identity $DummyDevice.SAMAccountName -Confirm:$False -WhatIf
+        ##Remove -WhatIf once you are comfortable with this workflow and have verified the remove operations are only performed in the OU you specified
     }
-}
+} 
 ```
 
 Here is a play-by-play of the script:
@@ -192,8 +192,8 @@ Here is a play-by-play of the script:
 * Connects to MS Graph with application credentials
   * You could change this to perform an interactive login. For my use case, Azure app-based authentication allows me to schedule this script. The Azure app registration only needs API permissions to read Autopilot devices.
 * Pulls Autopilot device information from MS Graph
-* Createsnewdummy computer objectsinAD using the Autopilot device information
-  * Alreadyexistingdummy devices are skipped
+* Creates new dummy computer objects in AD using the Autopilot device information
+  * Already existing dummy devices are skipped
 * Reverses the process and removes any dummy computer objects in AD that no longer exist in Autopilot
   * **This step is potentially dangerous.** Because of that, I added comments in the script above (line 63) and added *-WhatIf* as further risk control.
 
