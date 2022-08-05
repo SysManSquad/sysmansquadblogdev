@@ -76,7 +76,6 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
       tabWidth = 4
 
 [taxonomies]
-  author = "authors"
   tag = "tags"
   category = "categories"
 
