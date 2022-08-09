@@ -2,7 +2,7 @@
 title: who is logged on, from the system context
 author: johannes
 type: post
-date: 2022-8-09T13:59:21+00:00
+date: 2022-08-09T13:59:21+00:00
 url: /2022/08/09/which-user-is-logged-in-when-running-as-system
 categories:
   - Powershell
