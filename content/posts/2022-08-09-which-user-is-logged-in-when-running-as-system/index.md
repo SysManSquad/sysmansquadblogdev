@@ -32,7 +32,7 @@ $username = Invoke-CimMethod -InputObject $proc[0] -MethodName GetOwner | select
 # examples
 
 # check for a file in the users appdata
-Test-Path -Path  "C:\Users\$username\AppData\Roaming\horse\greenbattery.jgp"
+Test-Path -Path  "C:\Users\$username\AppData\Roaming\horse\greenbattery.jpg"
 
 # or maybe the app you installed needs a license file in the users appdata
 Copy-Item .\licensefile.lic -Destination "C:\Users\$username\appdata\local\MathApp\licensefile.lic
