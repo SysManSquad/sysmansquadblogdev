@@ -1,3 +1,6 @@
 [submodule "public"]
 	path = public
 	url = https://github.com/SysManSquad/sysmansquadblog.git
+[submodule "themes/-f"]
+	path = themes/-f
+	url = https://github.com/SysManSquad/sysmansquadblog_theme.git
