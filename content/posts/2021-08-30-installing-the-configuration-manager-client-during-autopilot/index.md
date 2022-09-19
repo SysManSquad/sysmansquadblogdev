@@ -12,6 +12,20 @@ categories:
 ---
 ## Hey Siri, Write A Blog Post For Me
 
+
+# THE CONTENTS IN THIS POST IS EXPIRED, DO NOT USE THIS ANYMORE
+This method of installing the Configuration Manager Client during Autopilot is no longer needed
+
+Please use the new autopilot into co-management feature.
+
+[Autopilot into Co-Management Overview](https://learn.microsoft.com/en-us/mem/configmgr/comanage/quickstart-autopilot)
+
+[Installing the SCCM Client During Autopilot](https://learn.microsoft.com/en-us/mem/configmgr/comanage/how-to-prepare-win10#install-the-configuration-manager-client)
+
+
+
+## EXPIRED CONTENT BELOW
+
 Deploying the Configuration manager client is usually pretty simple. the procedure is [well documented](https://docs.microsoft.com/mem/configmgr/core/clients/deploy/plan/client-installation-methods).
 
 However there are issues if you plan on installing the CM client during Autopilot using the officially suggested methods
