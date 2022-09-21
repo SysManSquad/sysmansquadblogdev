@@ -44,8 +44,8 @@ Ethernet adapter Ethernet0:
    Autoconfiguration Enabled . . . . : Yes
    IPv4 Address. . . . . . . . . . . : 192.168.0.40(Preferred)
    Subnet Mask . . . . . . . . . . . : 255.255.255.0
-   Default Gateway . . . . . . . . . : this should be blank>
-   NetBIOS over Tcpip. . . . . . . . : Enabled</code></pre>
+   Default Gateway . . . . . . . . . : <this should be blank>
+   NetBIOS over Tcpip. . . . . . . . : Enabled
 ```
 
 ## Planning your AD environment
