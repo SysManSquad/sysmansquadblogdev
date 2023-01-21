@@ -2,8 +2,8 @@
 title: Microphone App Permissions
 author: johannes
 type: post
-date: 2023-1-22T13:59:21+00:00
-url: /2023/1/22/microphone_app_permissions/
+date: 2023-01-21T13:59:21+00:00
+url: /2023/01/21/microphone_app_permissions/
 featured_image: 
 images: 
 categories:
