@@ -3,7 +3,7 @@ title: Moving away from software center to company portal
 author: Johannes
 type: post
 date: 2023-03-10T00:00:00+00:00
-url: /2023/03/10/2023-03-10-moving-away-from-software-center-to-company-portal/
+url: /2023/03/10/moving-away-from-software-center-to-company-portal/
 # featured_image: image-15-1024x336.png
 categories:
   - Endpoint Management
