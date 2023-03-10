@@ -1,6 +1,6 @@
 ---
 title: Moving away from software center to company portal
-author: Johannes
+author: johannes
 type: post
 date: 2023-03-10T00:00:00+00:00
 url: /2023/03/10/moving-away-from-software-center-to-company-portal/
