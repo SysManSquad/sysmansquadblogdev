@@ -11,35 +11,45 @@ https://github.com/SysManSquad/sysmansquadblog
 https://github.com/SysManSquad/sysmansquadblog_theme  
 -->
 
+# Contributing
+
+Fork this repository!
+
+## Fork us
+
+On github, create a fork of `https://github.com/SysManSquad/sysmansquadblogdev`, replace the URL below with the correct URL for your fork:
+
+> Be sure and run the git commands below before running a hugo server or it will cause you all kinds of trouble.
+
 ```sh
 git clone https://github.com/SysManSquad/sysmansquadblogdev
 git submodule init
 git submodule update
 ```
 
-> Be sure and run the git commands above before running a hugo server or it will cause you all kinds of trouble.
+This will download the site code and theme to your computer.
 
-If you want to see your post in Hugo before submitting you'll need Hugo installed. Follow these steps.  
-https://gohugo.io/getting-started/installing#chocolatey-windows
+### Use Hugo to preview your work
 
-`choco install hugo -confirm`  
+If you want to see your post in Hugo before submitting you'll need Hugo installed. Follow these steps:
 
-## This is only needed if you want to create a new empty site
+As an administrator, in powershell:
 
-Create New hugo website  
-`hugo new site <PATH>`  
+```powershell
+Set-Executionpolicy bypass
+install-module chocolatey
+Install-ChocolateySoftware
+Install-ChocolateyPackage hugo
+```
 
-Add Theme as a submodule  
-git submodule add https://github.com/SysManSquad/sysmansquadblog_theme.git themes/sysmansquadblog_theme  
+This installs the chocolatey software manager and the hugo server to your machine.
 
-Add Public repo as a submodule. This will make it easier to publish changes than trying to manage prod and dev branches.  
-git submodule add https://github.com/SysManSquad/sysmansquadblog.git public  
+### To Launch Website Locally
 
-## To Launch Website Locally
-
-Run this command from the root of your sysmansquadblogdev folder
+Run this command from the root of your sysmansquadblogdev folder, replacing the path below
 
 ```ps
-cd C:\GitHub\Blog\sysmansquadblogdev  
-hugo server -D  
+  hugo server -D  
 ```
+
+Hugo will give you a URL to use to view the site as you make changes. Open this link in your browser and leave Hugo running in the background.
