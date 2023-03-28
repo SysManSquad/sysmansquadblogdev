@@ -12,7 +12,48 @@ categories:
 
 All you have to do is know everything about Hugo and the various ways it can be abused!
 
-## Add the author json file
+## Fork us
+
+On github, create a fork of `https://github.com/SysManSquad/sysmansquadblogdev`, replace the URL below with the correct URL for your fork:
+
+> Be sure and run the git commands below before running a hugo server or it will cause you all kinds of trouble.
+
+```sh
+git clone https://github.com/SysManSquad/sysmansquadblogdev
+git submodule init
+git submodule update
+```
+
+This will download the site code and theme to your computer.
+
+### Use Hugo to preview your work
+
+If you want to see your post in Hugo before submitting you'll need Hugo installed. Follow these steps:
+
+As an administrator, in powershell:
+
+```powershell
+Set-Executionpolicy bypass
+install-module chocolatey
+Install-ChocolateySoftware
+Install-ChocolateyPackage hugo
+```
+
+This installs the chocolatey software manager and the hugo server to your machine.
+
+### To Launch Website Locally
+
+Run this command from the root of your sysmansquadblogdev folder, replacing the path below
+
+```ps
+  hugo server -D  
+```
+
+Hugo will give you a URL to use to view the site as you make changes. Open this link in your browser and leave Hugo running in the background.
+
+## Adding an author
+
+### Add the author json file
 
 1. From the main repo, under data/authors, copy an existing json file and name it the same as the stub you'll use in your post files
 2. Adjust the existing fields to match your information
@@ -36,7 +77,7 @@ All you have to do is know everything about Hugo and the various ways it can be 
 }
 ```
 
-## Create the author folder
+### Create the author folder
 
 1. Copy an existing folder under `authors/` , rename it to match your stub and replace `avatar.png` with your own.
 2. Edit index.md and change the title to match your stub
@@ -46,7 +87,7 @@ title: "zeroconf"
 ---
 ```
 
-## Create your first post (or second, or whatever - I'm not your mom)
+### Create your first post (or second, or whatever - I'm not your mom)
 
 1. Create a folder under content/posts with the format `YYYY-MM-DD-a-few-words-from-the-title`
 2. Create an `index.md` file with this content at the top, followed by normal markdown syntax:
