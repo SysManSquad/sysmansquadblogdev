@@ -57,16 +57,16 @@ Looking back at our [previous research](https://devblogs.microsoft.com/scripting
 ![Picture of results of enum get values for system.io.fileattributes](FileAttributesEnum.png)
 There is No Pinned or Unpinned attribute defined. What's going on here?  
 Let's take a step back. What are file attributes anyway?
-File attributes are essentially metadata flags that are represented in a bitmask format. You can think of a bitmask as a virtual DIP switch ![picture of DIP Switch](DIP.png) 
-Where each switch is represented as a power of 2 (2,4,16) (AKA a binary BIT) and as such the entire state can be represented by a single number that is the addition of all switches
+File attributes are essentially metadata flags that are represented in a bitmask format. You can think of a bitmask as a virtual DIP switch. ![picture of DIP Switch](DIP.png) 
+Each switch is represented as a power of 2 (2,4,16) (AKA a binary BIT) and as such the entire state can be represented by a single number that is the addition of all switches.
 ![exampleofattribints](attribnum.png)
 
 ![picture of File Attributes Table from ms learn](AttribTable.png)
 
-```Archive (32) + ReparsePoint (1024) = 1056``` or ```000000000000000000010000100000``` .
+```Archive (32) + ReparsePoint (1024) = 1056``` or ```000000000000000000010000100000```.
 Yet the attributes Pinned or Unpinned are not defined in our FileAttributes Enum. Only some of our virtual DIP switch settings are defined in this class.
 After way too much time spent googling, I found some documentation to help us reach our goal.
-- [Our Extended Attribute Definitions](https://learn.microsoft.com/en-us/windows/win32/fileio/file-attribute-constants)
+- [Our extended attribute definitions](https://learn.microsoft.com/en-us/windows/win32/fileio/file-attribute-constants)
 - [Enumeration types as bit flags](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/enum#enumeration-types-as-bit-flags)
 - [Some powershell examples of attribute manipulation from ss64](https://ss64.com/ps/syntax-attrib.html)
  
@@ -99,41 +99,44 @@ enum FileAttributesEX {
     RecallOnDataAccess = 0x00400000
 }
 ```
-Now when we get our file attributes, let's recast them to our custom enum
+Now when we get our file attributes, let's recast them to our custom enum:
 ![A picture of attributes not being weird numbers](FileAttributesEX.png)
-Great!, but why does the Unpinned file have so many attributes? Well to cut to the chase most of these other attributes are attributes OneDrive manages, such as Offline notates the file is off of disk, RecallOnDataAccess notates that there is a time penalty to opening this file... After OneDrive picks up on the Pinned/Unpinned it will set/unset these flags as it moves them on or off the disk. These details might be interesting to examine at another time but it's not what we are here for. We just need to Set the Pinned and Unpinned attributes and the OneDrive client will take care of the rest.
+Great!, but why does the Unpinned file have so many attributes? Well to cut to the chase most of these other attributes are attributes OneDrive manages. Offline notates the file is off of disk, RecallOnDataAccess notates that there is a time penalty to opening this file... After OneDrive picks up on the Pinned/Unpinned it will set/unset these flags as it moves them on or off the disk. These details might be interesting to examine at another time but it's not what we are here for. We just need to set the Pinned and Unpinned attributes and the OneDrive client will take care of the rest.
 
 How can we do that?
 
 We can do that by manipulating the bitmask through bitwise operations.
  
 - Bitwise AND or `-band`: Our comparison operator. By itself on a bitmask of powers of 2, comparison against a power of 2 will always be 0 ( is unset) or the same power ( is set).
-- Bitwise OR  or `-bor`: Our on toggle. If an attribute isn't set this will set it. It won't turn an attribute off if it is on
-- Bitwise XOR or `-bxor`: Our Flip flop operator. If an attribute is on this will turn it off and if it is off it will turn it on
+- Bitwise OR  or `-bor`: Our on toggle. If an attribute isn't set this will set it. It won't turn an attribute off if it is on.
+- Bitwise XOR or `-bxor`: Our Flip flop operator. If an attribute is on this will turn it off and if it is off it will turn it on.
 - Bitwise NOT or `-band` : Invert our bits, combined with bitwise and this can be a off toggle.
 
 If your unfamiliar with bitwise operators and would like to learn *how* they work. I recommend checking out this [video](https://www.youtube.com/watch?v=igIjGxF2J-w) by Alex Hyett,
-Or Watching Ben Eater's [Series](https://www.youtube.com/watch?v=HyznrdDSSGM&list=PLowKtXNTBypGqImE405J2565dvjafglHU) On building an 8-bit computer from scratch to learn more about low level programming in general.
+Or watching Ben Eater's [Series](https://www.youtube.com/watch?v=HyznrdDSSGM&list=PLowKtXNTBypGqImE405J2565dvjafglHU) on building an 8-bit computer from scratch to learn more about low level programming in general.
 
 You may be wondering *why* windows uses bitmasks for file system attributes and it's a matter of efficiency. Bitmask are very efficient in speed and size and this matters when this applies to every single file and folder on the system.
+
+Let's look at some examples.
+First let's explore unsetting the Unpinned attribute.
 
 ![powershell example of using band and bnot to unset Unpinned](FileAttributesEXbandbnot.png)
 ![powershell example of using band and not again](FileAttributesEXbandandbnot2.png)
 
 As you can see from our examples `-band` and `-bnot` together *only* unset an attribute.
 
-Let's now use `-bor` to set the Pinned attribute.
-![powershell example of using bor](FileAttributesEXbor.png)
+Now let's set the Pinned attribute.
+![powershell example of using bor](FileAttributeEXBor.png)
 
 As you can see from the example bitwise OR always sets an unset attribute and has no effect on a set attribute.
-This is pretty convenient as `-band`,`-bnot` and `-band` are the operators that we need. We can completely ignore the more troublesome `-bxor` which would toggle attributes expectantly if we were not careful to check the state ahead of time.
+This is pretty convenient as `-band`,`-bnot` and `-band` are the only operators that we need. We can completely ignore the more troublesome `-bxor` which would toggle attributes expectantly if we were not careful to check the state ahead of time.
 
 ## Writing the Remediation
 
 Let's first start with our detection script.
 
 **Step 1:**  
-Get the location of the Desktop & Documents folder and make sure KFM is on. If KFM is not on then nothing to do, exit cleanly
+Get the location of the Desktop & Documents folder and make sure KFM is on. If KFM is not on then nothing to do, exit cleanly.
 
 ```powershell
     $ErrorActionPreference = 'Stop'
@@ -153,7 +156,7 @@ if (($Desktop.FullName -notmatch "OneDrive") -OR ($Documents.FullName -notmatch 
 ```
 
 **Step 2:**  
-The Preconditions have been met so let's define our attribute Enum
+The preconditions have been met so let's define our attribute Enum.
 
 ```powershell
 [Flags()]
@@ -183,7 +186,7 @@ The Preconditions have been met so let's define our attribute Enum
  }
 ```
 **Step 3:**  
-Let's check if Desktop & Documents are unpinned
+Let's check if Desktop & Documents are unpinned.
 
 ```powershell
 $DesktopIsPinned = ($Desktop.Attributes -band [FileAttributesEX]::Pinned) -eq [FileAttributesEX]::Pinned.Value__
@@ -194,7 +197,7 @@ $DocumentsUnIsPinned = ($Documents.Attributes -band [FileAttributesEX]::Unpinned
 
 **Step 4:**  
 If Desktop and Documents are not pinned/unpinned exit for remediation.
-  else check for each subfolder/file. If there are any folders/files not pinned/unpinned, exit for remediation
+  else check for each subfolder/file. If there are any folders/files not pinned/unpinned, exit for remediation.
 
 ```powershell
 
@@ -218,10 +221,13 @@ else {
     exit 1
 }
 ```
-
-Now our Remediation Script:
+&nbsp;  
+&nbsp;  
+Now our Remediation Script:  
+&nbsp;  
+&nbsp;  
 **Step 1:**  
-So Like in our Detection Script  We will Check for KFM and Set our Attributes
+So like in our detection script, we will check for KFM and set our attributes.
 ```powershell
 $ErrorActionPreference = 'Stop'
 # Get Folder Paths
@@ -259,8 +265,9 @@ enum FileAttributesEX {
 }
 ```
 
+&nbsp;  
 **Step 2:**  
-Then for Each Folder: Desktop, Documents. We hold the Current Folder object in a temporary variable. This is so if we throw an exception we can act on it. The `$psitem` or `$_` pipe variable gets overwritten by the exception in a try/catch statement.
+Then for each folder: Desktop, Documents. We hold the current folder object in a temporary variable. This is so if we throw an exception we can act on it. The `$psitem` or `$_` pipe variable gets overwritten by the exception in a try/catch statement.
 We then unset the Unpinned attribute, then set the Pinned attribute. 
 ```powershell
 # Set the Pinned attribute on the Desktop and Documents folders. Unpin if unpinned. Pinned if not Pinned
@@ -277,9 +284,10 @@ $Desktop, $Documents | ForEach-Object {
 }
 ```
 
-**Step 3:**
-Since new subfiles and folders will inherit the attributes but existing files won't we need to iterate through each subfolder/file and set them individually
-We want to continue on an error, but throw an error on each file we couldn't process at the end
+&nbsp;&nbsp;  
+**Step 3:**  
+Since existing subfiles and folders won't inherit the attributes, although new files/folders will, we will need to iterate through each subfolder/file and set them individually.
+We want to continue on an error, but throw an error on each file we couldn't process at the end.
 
 ```powershell
  # Iterate through all items in the Desktop & Documents folder and its subfolders. Files created before the Root folder is pinned will not inherit the PINNED attribute. Hence the need.
@@ -308,26 +316,21 @@ else {
 
 &nbsp;&nbsp;  
 &nbsp;&nbsp;  
-&nbsp;&nbsp;  
-&nbsp;&nbsp;  
 
 ## Setting up the PR
 
 You can get the completed PR from my github [here](https://github.com/awebie/Intune/tree/main/Proactive%20Remediations/OnedriveDDPinning)
-Let's set it up shall we?
-
+Let's set it up shall we?  
 **Step 1:**   
-In the Intune Admin Center Navigate to Reports > Endpoint Analytics > Proactive Remediations
+In the Intune Admin Center navigate to Reports > Endpoint Analytics > Proactive Remediations.
 ![A Picture of the Intune Portal](EA1.png)
-
 **Step 2:**  
-Name your PR
+Name your PR.
 ![A Picture of the Intune Portal](EA2.png)
-
 **Step 3:**  
-Upload the detection and remediation scripts. Be sure to set "Run this script using the logged-on credentials"
-![A Picture of the Intune Portal](EA3.png)
-
+Upload the detection and remediation scripts. Be sure to set "Run this script using the logged-on credentials".
+![A Picture of the Intune Portal](EA3.png)  
+  
 **Step 4:**  
 Setup your assignments. When your setting up your assignments you have a few choices. You could apply this to all users or just your frontline workers, you could apply the PR only once as a gentle suggestion or you can set it hourly and force it.
 ![A Picture of the Intune Portal](EA4.png)
