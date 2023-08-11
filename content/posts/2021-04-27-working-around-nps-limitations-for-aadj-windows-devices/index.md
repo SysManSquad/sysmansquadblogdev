@@ -19,6 +19,16 @@ tags:
 
 ---
 
+---
+
+## ⚠️ UPDATE (2023-03-11) ⚠️
+
+Due to changes introduced by Microsoft in [KB5014754](https://support.microsoft.com/topic/kb5014754-certificate-based-authentication-changes-on-windows-domain-controllers-ad2c23b0-15d8-4340-a468-4d4f3b188f16) and being enforced on November 14, 2023, the name mapping method used in the scripts below will no longer work, and authentication will fail at that time. Thankfully, commenter [Anders Hannus](https://github.com/andershannus) has pointed out a policy module named [TameMyCerts](https://github.com/Sleepw4lker/TameMyCerts) for Microsoft Active Directory Certificate Services (AD CS). This policy module, used in conjunction with the below scripts, will let us work around Microsoft's changes and give us the added benefit of no longer needing name mappings that are insecure.
+
+I am currently working on a new blog post that includes major improvements to the `Sync-DummyComputers.ps1` script and also outlines the TameMyCerts configuration. Stay tuned for the link!
+
+---
+
 ## Introduction
 
 In this post, I'll show you a workaround to get device based wireless authentication working for AADJ Windows devices via NPS. Keep in mind this is a workaround and your mileage may vary.

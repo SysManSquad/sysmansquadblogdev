@@ -3,7 +3,7 @@ title: Import Intune Assets into ServiceNow without the costly plugins
 author: jeremy
 type: post
 date: 2022-05-20T00:00:00+00:00
-url: /2022/05/20/2022-05-20-import-intune-assets-into-servicenow-without-the-costly-plugin/
+url: /2022-05-20-import-intune-assets-into-servicenow-without-the-costly-plugin/
 # featured_image: image.png
 categories:
   - Endpoint Management
