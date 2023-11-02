@@ -37,6 +37,12 @@ As it turned out, my fellow sysmansquad member [Grant Dickins](https://sysmansqu
 [System.Environment]::SetEnvironmentVariable('TEMP','c:\temp\','User')
 ```
 
+Or if you need to set a system variable
+
+```powershell 
+[System.Environment]::SetEnvironmentVariable('TEMP','c:\temp\','Machine')
+```
+
 Which both sets the variable and broadcasts the change to the rest of the system!
 
 ## Putting it all together
