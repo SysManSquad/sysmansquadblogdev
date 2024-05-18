@@ -16,7 +16,7 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
   keyword = "ConfigMgr Microsoft Intune Windows WinAdmins"
   slogan = "Just Write Something"
   AuthorName = "WinAdmins"
-  images = "SysManSquad-HorizontalColor-Logo.png"
+  images = ["SysManSquad-HorizontalColor-Logo.png"]
   title = "SysManSquad | Systems Management Squad"
 # Include any custom CSS and/or JS files, url or relative to /static folder
   custom_css = ["css/custom.css"]
