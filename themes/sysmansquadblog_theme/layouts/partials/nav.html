@@ -1,0 +1,45 @@
+<!-- navbar start -->
+<div id="top-bar">
+    <div class="container">
+        <div id="nav-wrapper">
+                <ul class="menu" id="menu-top-menu">
+                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home">
+                        <a href="{{ "/" | relLangURL }}">Home</a>
+                    </li>
+                    {{ $currentPage := . }}
+                    {{ range .Site.Menus.main }}
+                        {{ if .HasChildren }}
+                            <li class="{{ if $currentPage.HasMenuCurrent "main" . }}active{{ end }} menu-item menu-item-type-custom menu-item-object-custom menu-item-home">
+                                <a href="#">
+                                    {{ .Pre }}
+                                    <span>{{ .Name }}</span>
+                                </a>
+                                <ul class="sub-menu menu-item menu-item-type-custom menu-item-object-custom menu-item-home">
+                                    {{ range .Children }}
+                                        <li class="{{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }} menu-item menu-item-type-custom menu-item-object-custom menu-item-home">
+                                            <a href="{{ .URL }}">{{ .Name }}</a>
+                                        </li>
+                                    {{ end }}
+                                </ul>
+                            </li>
+                        {{ else }}
+                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home">
+                                <a href="{{ .URL }}">
+                                    {{ .Pre }}
+                                    <span>{{ .Name }}</span>
+                                </a>
+                            </li>
+                        {{ end }}
+                    {{ end }}
+                </ul>
+        </div>
+        <div id="top-search">
+            <a href="#" class="search"><i class="fa fa-search"></i></a>
+            <div class="show-search">
+                {{ partial "search.html" . }}
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"></div>
+    </div>
+</div>
+<!-- nav end -->

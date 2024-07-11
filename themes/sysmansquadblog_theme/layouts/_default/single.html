@@ -1,0 +1,40 @@
+{{ define "main" }}
+<div id="main" class="fullwidth">
+		<article class="post type-post status-publish format-standard has-post-thumbnail hentry">
+			<div class="post-header">
+				<h1>{{ .Title }}</h1>
+				<p class=p-meta>
+					{{ $author := index .Site.Data.authors (.Params.author | default "default") }}
+					<span class="post-author"><a href="/authors/{{ $author.stub }}">{{ $author.name }}</a> / </span>
+
+					<span class="post-date">{{ .Date.Format "January 2, 2006" }} </span>
+					{{- range .Params.categories }}
+					<span class="post-categories">/ {{ . }}  </span>
+					{{ end }}
+				</p>
+			</div>
+			<div class="post-entry">
+				{{ .Content }}
+				{{ if (ne .Params.layout "noauthor")}}
+				<img src="/authors/{{ $author.stub }}/avatar.png" alt="Photo of {{ $author.name }}" /><br />
+				<strong>{{ $author.name }}</strong>
+				<em>{{ $author.role }}</em>
+					<div>
+					{{ if $author.social.linkedin }}
+					<a href="https://www.linkedin.com/in/{{$author.social.linkedin}}"><img src="/img/social/linkedin.png"></a>
+					{{ end }}
+					</div>
+				<p>{{ $author.bio }}</p>
+				<hr />
+				{{ end }}
+			</div>
+			{{ with .Params.tags }}
+			<div class="post-share">
+				<div class="post-share-box share-comments">
+				</div>
+			</div>
+			{{ end }}
+			{{ if (eq .Params.type "post") }} {{ partial "comments.html" . }}{{ end }}
+		</article>
+</div>
+{{ end }}

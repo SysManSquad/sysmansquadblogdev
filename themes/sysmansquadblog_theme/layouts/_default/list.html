@@ -1,0 +1,44 @@
+{{ define "main" }}
+<div id="main">
+	{{ $paginator := .Paginate (where (where (where .Site.Pages "Type" "post") "IsPage" true) "Draft" "!=" true) }}
+	{{ range $index, $element := $.Paginator.Pages }}
+    <article class="list-item">
+        {{ if .Params.featured_image }}
+        <div class="post-img">
+            <a href="{{ .Permalink }}">
+                <img width="520" height="400" src="{{ .Permalink }}{{ .Params.featured_image }}">
+            </a>
+        </div>
+        {{ end }}
+        <div class="list-content">
+            <div class="post-header">
+                    <h2 class="post-title">
+                        <a href="{{ .Permalink }}">{{ .Title }}</a>
+                    </h2>
+            </div>
+            <div class="list-meta">
+                <span class="post-date">
+                    {{ dateFormat "Monday, January 2, 2006" .Params.date }}
+                </span>
+                 | 
+                <span class="post-author">
+                    {{ $author := index .Site.Data.authors (.Params.author | default "default") }}
+					<a href="/authors/{{ $author.stub }}">{{ $author.name }}</a>
+                </span>
+            </div>
+            <div class="post-entry">
+                <p>
+                {{ with .Description }}
+                        {{ . }}
+                {{ else }}
+                    {{ .Summary}}
+                {{ end }}
+                </p>
+            </div>
+        </div>
+    </article>
+    {{ end }}
+    {{ partial "pagination.html" . }}
+</div>
+{{ partial "sidebar.html" . }}
+{{ end }}

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en-us" }}">
+	{{ partial "head.html" . }}
+		<body class="home blog">
+			<div id="asd-container">
+				<!-- Page Header -->
+				{{ partial "nav.html" . }}
+				{{ partial "header.html" .}}
+				<div class="container">
+					<div id="content">
+						{{ block "main" . }}{{ end }}
+					</div>
+				</div>
+				{{ partial "footer.html" . }}
+			</div>
+		</body>
+</html>

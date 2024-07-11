@@ -1,0 +1,10 @@
+<div class="image">
+  <figure>
+    <a href="{{ .Destination | safeURL }}" target="_blank">
+      <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}">
+    </a>
+    {{ if .Title }}
+    <figcaption>{{ .Title }}</figcaption>
+    {{ end }}
+  </figure>
+</div>

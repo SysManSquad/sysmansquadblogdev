@@ -1,0 +1,31 @@
+<aside id="sidebar">
+	<div class="widget widget_search">
+		{{ partial "search.html" . }}
+		</div>
+	<div>
+	<!--<div class="widget widget_MVP">
+		<a href="https://mvp.microsoft.com/en-us/PublicProfile/5003519?fullName=Adam%20Gross" target="_blank">
+		<img src="/img/MVP_Logo_Horizontal_Secondary_Black_RGB_300ppi.png">
+		</a>
+	</div>-->
+	<div class="widget widget_recent_entries">
+		<h4 class="widget-title">Squad Posts</h4>
+		<ul>
+			{{ range first 5 (where (where (where .Site.Pages "Type" "post") "IsPage" true) "Draft" "!=" true) }}
+			<li><a href="{{ .RelPermalink }}" target="_blank">{{ .Title }}</a></li>
+			{{ end }}
+		</ul>
+	</div>
+	<!--<div class="widget widget_SCD">
+		<h4 class="widget-title">Consulting</h4>
+		<a href="https://systemcenterdudes.com/sccm-consulting-services/?ref=5&campaign=Consulting" target="_blank">
+		<img src="/img/SCDLogo.png">
+		</a>
+	</div>
+	<div class="widget widget_SCD">
+		<h4 class="widget-title">Intune.Training</h4>
+		<a href="http://intune.training" target="_blank">
+		<img src="/img/ITLogo.png">
+		</a>
+	</div>-->
+</aside>
