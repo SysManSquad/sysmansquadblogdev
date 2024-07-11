@@ -1,0 +1,49 @@
+{{ define "main" }}
+<div id="main" class="fullwidth">
+  <article class="post type-post status-publish format-standard has-post-thumbnail hentry">
+    <div class="post-header">
+      {{ $author := index .Site.Data.authors ( .Page.Name | default "default") }}
+
+              <img src="/authors/{{ $author.stub }}/avatar.png" alt="Photo of {{ $author.name }}" /><br />
+              <h1>
+                {{ $author.name }}
+              </h1>
+              <em>{{$author.role}}</em>
+              <div>
+              {{ if $author.social.linkedin }}
+              <a href="https://www.linkedin.com/in/{{$author.social.linkedin}}"><img src="/img/social/linkedin.png" width="40px"></a>
+              {{ end }}
+            </div>
+    </div>
+  </article>
+  {{ range (where .Site.Pages "Params.author" .Title ) }}
+  <article class="list-item">
+    {{ if .Params.featured_image }}
+    <div class="post-img">
+        <a href="{{ .Permalink }}">
+            <img width="520" height="400" src="{{ .Permalink }}{{ .Params.featured_image }}">
+        </a>
+    </div>
+    {{ end }}
+    <div class="list-content">
+      <div class="post-header">
+        <h2><a href="{{ .Permalink }}" class="post-title">{{ .Title }}</a></h2>
+      </div>
+      <div class="list-meta">
+        <span class="post-date">
+          {{ dateFormat "Monday, January 2, 2006" .Params.date }}
+        </span>
+      </div>
+      <div class="post-entry">
+        <p>
+        {{ with .Description }}
+                {{ . }}
+        {{ else }}
+            {{ .Summary}}
+        {{ end }}
+        </p>
+      </div>
+    </div>
+  </article>
+  {{ end }}
+{{ end }}

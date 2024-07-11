@@ -1,0 +1,7 @@
+{{ define "main" }}
+<div id="main">
+  {{ range $.Site.Data.authors}}
+    {{ partial "author" . }}
+  {{ end}}
+</div>
+{{ end }}
